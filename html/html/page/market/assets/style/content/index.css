@@ -1,0 +1,113 @@
+[class*="main-"] {
+    @apply mt-10 mx-auto px-4 max-w-screen-xl
+           md:mt-13
+           lg:mt-16 lg:px-7
+           xl:px-10;
+    & [class*="swiper-button-"] {
+        @apply after:block after:w-full after:h-full after:bg-no-repeat after:bg-center after:transition-opacity after:duration-300 after:opacity-50
+               hover:after:opacity-100;
+    }      
+    & .swiper-button-prev {
+        @apply after:rotate-180;
+    }
+    & .swiper-button-disabled {
+        @apply after:opacity-40;
+    }
+}
+
+.main-visual {
+    @apply relative mt-0 mb-11 !px-0 w-full max-w-none min-h-94
+           md:mb-15 md:h-[27.25rem] md:aspect-auto
+           lg:mb-19 lg:h-[31.25rem]
+           3xl:mb-19 3xl:h-[40.25rem];
+    & .swiper {
+        @apply h-full;
+    }
+    & .swiper-control {
+        @apply absolute z-5 bottom-0 left-1/2 w-full bg-black/20 max-w-screen-xl text-[0.8125rem] text-white/50 -translate-x-1/2
+               md:text-base;
+    }
+    & .swiper-control-container {
+        @apply flex items-center gap-1 absolute right-4 bottom-3
+               md:bottom-5 md:gap-1.5
+               lg:right-7
+               xl:right-10
+    }
+    & .swiper-button {
+        @apply flex items-center overflow-hidden rounded-full bg-black/40 backdrop-blur-lg;
+    }
+    & .swiper-button-prev, & .swiper-button-next, & .swiper-button-toggle {
+        @apply flex items-center justify-center static m-0 w-6.5 h-6.5 cursor-pointer
+               md:w-9 md:h-9;
+    }
+    & .swiper-button-prev, & .swiper-button-next {
+        @apply after:bg-[url(/html/page/market/assets/images/ico-slide-arrow-white.svg)] after:bg-[length:22.22222222222222%];
+    }
+    & .swiper-button-toggle {
+        @apply w-7 border-x border-x-white/10
+               after:bg-[length:19.44444444444444%] after:bg-[url(/html/page/market/assets/images/ico-slide-pause-white.svg)]
+               md:w-9.5;
+        &.is-pause {
+            @apply after:bg-[length:30.55555555555556%] after:bg-[url(/html/page/market/assets/images/ico-slide-play-white.svg)];
+        }
+    }
+    & .swiper-pagination {
+        @apply flex items-center justify-center static ml-1 w-[4.5em] h-6.5 rounded-full bg-[#000]/40 font-medium backdrop-blur-lg
+               md:ml-1.5 md:w-[5em] md:h-9;
+        & span {
+            @apply px-[0.25em];
+        }
+        & .swiper-pagination-current {
+            @apply font-bold text-white;
+        }
+    }
+    & a, & picture {
+        @apply block relative h-full overflow-hidden;
+    }
+    & img {
+        @apply mx-auto h-full object-cover object-top;
+    }
+}
+
+.main-product {
+    @apply relative;
+    & .title {
+        @apply flex items-center mb-3.5 text-lg font-bold
+               md:text-[1.375rem]
+               lg:mb-4 lg:text-[1.625rem];
+        & img {
+            @apply mt-px mr-[0.25em] h-[1em];
+        }
+    }
+    & .swiper-slide {
+        @apply w-40
+               sm:w-50
+               md:w-60
+               lg:w-71
+               xl:w-auto;
+    }
+    & .swiper-button-prev, & .swiper-button-next {
+        @apply mt-0 top-25 w-9 h-9 rounded-full border border-gray2 bg-white shadow-md opacity-100
+               after:bg-[length:18.96551724137931%] after:bg-[url(/html/page/market/assets/images/ico-slide-arrow.svg)]
+               sm:top-29 sm:w-11 sm:h-11       
+               md:top-35 md:w-12 md:h-12       
+               lg:top-41 lg:w-[3.625rem] lg:h-[3.625rem];
+    }
+    & .swiper-button-prev {
+        @apply left-1
+               xl:-left-0;
+    }
+    & .swiper-button-next {
+        @apply right-1
+               xl:-right-0;
+    }
+}
+
+.response {
+    & img.mobile {
+        @apply md-max:block md:hidden w-full;
+    }
+    & img.web {
+        @apply md-max:hidden md:block w-full;
+    }
+}

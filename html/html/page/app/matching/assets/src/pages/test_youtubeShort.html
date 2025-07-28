@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YoutubeShort Modal</title>
+  <style>
+    /* 기본 스타일 */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .btn_play {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+      text-align: center;
+      cursor: pointer;
+      margin: 20px;
+    }
+
+    /* 모달 스타일 */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal iframe {
+      width: 100%;
+      height: 100%;
+    }
+
+    .modal .close_btn {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: #007bff9a;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 10px;
+      right: 10px;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<a class="btn_play">Youtube쇼츠 재생</a>
+
+<!-- 모달 구조 -->
+<div class="modal" id="youtubeModal">
+  <div class="close_btn" id="closeModal">x</div>
+  <iframe 
+    id="youtubeIframe"
+    src=""
+    frameborder="0"
+    allow="autoplay; fullscreen"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<script>
+    // DOM 요소 가져오기
+    const playButton = document.querySelector('.btn_play');
+    const modal = document.getElementById('youtubeModal');
+    const iframe = document.getElementById('youtubeIframe');
+    const closeModal = document.getElementById('closeModal');
+  
+    // 유튜브 쇼츠 영상 URL
+    const youtubeVideoUrl = "https://www.youtube.com/embed/v3DfswuwdKs?autoplay=1&rel=0";
+  
+    // 재생 버튼 클릭 이벤트
+    playButton.addEventListener('click', () => {
+      iframe.src = youtubeVideoUrl; // iFrame에 URL 설정
+      modal.style.display = 'flex'; // 모달 열기
+    });
+  
+    // 닫기 버튼 클릭 이벤트
+    closeModal.addEventListener('click', () => {
+      iframe.src = ""; // iFrame URL 초기화
+      modal.style.display = 'none'; // 모달 닫기
+    });
+</script>
+
+</body>
+</html>

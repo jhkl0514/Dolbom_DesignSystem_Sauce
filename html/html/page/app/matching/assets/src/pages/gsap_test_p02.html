@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>gsap p01</title>
+  
+    <!-- jquery -->
+    <script src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script src="../js/materialize.min.js"></script>
+
+    <!-- guide.js -->
+    <script src="../js/custom/guide.js"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+    <!-- ScrollTrigger Plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>    
+
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="../css/materialize.min.css">
+    <!-- style.css -->
+    <link rel="stylesheet" href="../css/style.css">
+
+
+<style>
+
+    body{background: #ddd;}
+
+    .box{width: 100px;height: 100px;background-color: antiquewhite;}
+
+    .imgTest01{display: inline-block;}
+    .imgTest01 img{width: 200px;filter:grayscale(100%) brightness(20%);}
+</style>
+
+<script>
+
+$(function(){
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to(".imgTest01", {
+        scrollTrigger: {
+            trigger: 'imgTest01',
+            toggleActions: 'play reverse play reverse',
+            markers: true,
+            start: '400px 10%',
+            end : '45% 50%',
+        },
+        x:400, duration: 2,
+    })
+
+
+});
+
+
+</script>
+
+</head>
+<body>
+    <main>
+
+        <div style="height: 1000px;"></div>
+
+        <div class="imgTest01">
+            <img src="/html/page/app/matching/assets/src/images/08etc/money03_40.svg" alt="">
+        </div>
+
+        <div style="height: 100px;"></div>
+
+        <div class="box"></div>
+
+        <div style="height: 1000px;"></div>
+
+
+    </main>
+</body>
+</html>

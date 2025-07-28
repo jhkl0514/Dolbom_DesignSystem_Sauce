@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>F_SNR_004_reg_medi_number.html</title>
+
+
+    <!-- jquery -->
+    <script src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script src="../js/materialize.min.js"></script>
+
+    <!-- guide.js -->
+    <script src="../js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="../css/materialize.min.css">
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script>
+        $(function(){
+
+            // input에 10자리 입력되면 조회버튼의 disabled 클래스 제거
+            $('.evt_maxInput').on('input',function(){
+
+                if ($(this).val().length === 10) {
+                    $('.evtBtn_maxInput').removeClass('disabled');
+                    } else {
+                    $('.evtBtn_maxInput').addClass('disabled');
+                }
+
+            });
+
+        });     
+
+    </script>
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+
+
+        <header>
+            <nav class="top">
+                <a class="btn_back waves-effect" href="#">
+                    <span class="icon"></span>
+                    <span class="txt">요양인정번호 등록</span>
+                </a>
+            </nav>
+        </header>
+
+
+        <main>
+            <section class="intro">
+
+                <form action="">
+
+                    <h3 class="title">
+                        꽃분이님의<br>
+                        <mark class="mk01">요양인정번호</mark>를 입력해주세요
+                    </h3>
+
+                    <div class="h12"></div>
+
+                    <!-- 202505 DEDS-346 -->
+                    <div class="color_t_s font_sbmr">국민건강보험공단에서 발급하는 번호예요.</div>
+                    <!-- 202505 DEDS-346 end -->
+
+                    <div class="h32"></div>
+
+                    <div class="center">
+                        <img src="/html/page/app/matching/assets/src/images/20medi_care/pp_medi_care.svg" alt="요양인정번호"> 
+                    </div>
+
+                    <div class="h20"></div>
+
+
+                    <div class="flex_input_btn">
+                        <!-- <input type="text" class="input_basic" id="numberInput" placeholder="L 없이 숫자 10자리 입력"> -->
+                        
+                        <input type="number" class="input_basic evt_maxInput" maxlength="10" placeholder="L 없이 숫자 10자리 입력" oninput="maxLengthCheck(this)">
+                        <a class="waves-effect btn-large btn_white btn_primary disabled evtBtn_maxInput">조회</a>
+
+                    </div>
+
+                    <div class="h40"></div>
+
+                    <div class="d-flex align-items-center gap08">
+                        <img src="/html/page/app/matching/assets/src/images/18icon/valid_error02.svg">
+                        <div class="font_sblb">요양인정번호가 없다면?</div>
+                    </div>
+
+                    <div class="h08"></div>
+
+                    <div class="color_t_s font_sbmr">
+                        테스트하고 바로 신청하세요
+                    </div>
+
+                    <div class="h24"></div>
+
+                    <div class="list_link noti radius12 back_FFF5E6 noShadow">
+                        <div class="d-flex align-items-center gap08">
+                            <div>
+                                <img class="w54" src="/html/page/app/matching/assets/src/images/08etc/test_80.svg">
+                            </div>
+                            <div>
+                                <div class="font_sbms_2">인정등급 간편 테스트</div>
+                                <div class="marT4 color_t_s font_ssr line_clamp_2">장기요양 혜택, 빠르게 확인하세요.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="h40"></div>
+
+                    <div class="h12 marW-20 back_F7F7F7"></div>
+
+
+
+                    <div class="h40"></div>
+
+                    <div class="d-flex align-items-center gap04">
+                        <img class="w20" src="/html/page/app/matching/assets/src/images/04icon/finger_right.png">
+                        <div class="font_sbmb">요양인정번호 확인방법</div>
+                    </div>
+
+                    <div class="h12"></div>
+
+                    <div class="back_F5F5F5 pad_16_16_20 radius12">
+
+                        <img src="/html/page/app/matching/assets/src/images/20medi_care/img_medi_care_guide.png" class="img_reset" alt="요양인정번호 확인방법">
+
+                        <div class="h20"></div>
+
+                        <ul class="welfase_step_area s02 no_line">
+                            <li>
+                                <div class="font_sbmr">
+                                    장기요양인정서를 준비해 주세요.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="font_sbmr">
+                                    인정번호에서 L 뒤에 나오는 <span class="font_sbmb color_t_danger_b">숫자 10자리만 입력</span>해주세요.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="h40"></div>
+
+                    <div class="h12 marW-20 back_F7F7F7"></div>
+
+                    <div class="h40"></div>
+
+                    <div class="font_sblb">유의사항</div>
+
+                    <div class="h16"></div>
+
+                    <ul class="list_dept1 gray_dot">
+                        <li class="color_t_s font_sbsr">요양인정번호는 어르신 위임 완료 후 진행해주세요. 요양인정번호 조회 후 수정할 수 없어요.</li>
+                    </ul>
+
+                    <div class="h40"></div>
+
+
+                </form>
+
+            </section>
+        </main>
+
+
+
+
+    </div>
+    <!-- wrapper -->
+
+
+<script>
+
+
+    //*****현재 사용안함******
+    //요양인정번호 앞에 L 추가 
+    const inputField = document.getElementById('numberInput');
+
+    inputField.addEventListener('input', function() {
+        if (!inputField.value.startsWith('L') && inputField.value.length > 0) {
+            inputField.value = 'L' + inputField.value.replace(/L/g, '');
+        }
+
+        if (inputField.value.length > 11) { // 1 for 'L' and 10 for digits
+            inputField.value = inputField.value.slice(0, 11);
+        }
+    });
+
+    inputField.addEventListener('keydown', function(event) {
+        // Allow the user to delete the 'L'
+        if (inputField.selectionStart === 0 && (event.key === 'Backspace' || event.key === 'Delete')) {
+            event.preventDefault();
+            inputField.value = inputField.value.substring(1);
+        }
+    });
+
+    inputField.addEventListener('blur', function() {
+        // Re-add 'L' if the user deletes it and leaves the field empty
+        if (inputField.value.length > 0 && !inputField.value.startsWith('L')) {
+            inputField.value = 'L' + inputField.value;
+        }
+    });
+    
+
+</script>
+
+
+</body>
+
+</html>

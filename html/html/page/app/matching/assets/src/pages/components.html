@@ -1,0 +1,3578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+
+  <title>컴포넌트</title>
+
+
+  <!-- jquery -->
+  <script type="text/javascript" src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+  <!-- materialize -->
+  <script type="text/javascript" src="../js/materialize.js"></script>
+
+  <!-- guide.js -->
+  <script type="text/javascript" src="../js/custom/guide.js"></script>
+
+  <!-- materialize CSS -->
+  <link rel="stylesheet" href="../css/materialize.min.css" />
+
+  <!-- style.css -->
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <!-- style guide.css -->
+  <link rel="stylesheet" href="../css/guide_style.css" />
+
+
+  <!-- lottie -->
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+
+
+
+  <style>
+
+  </style>
+
+  <script>
+
+    $(function () {
+
+      //scrollspy
+      $('.scrollspy').scrollSpy({
+        activeClass: 'active',
+        scrollOffset: 20,
+      });
+
+      //본문 타이틀
+      $('.title_g').each(function (index) {
+
+        //아이디 gd(number) 추가
+        $(this).parents('.scrollspy').attr('id', 'gd' + (index + 1));
+
+        var titleTxt = $(this).text();
+
+        //사이드메뉴 추가
+        $('.sidebar_list').append('<a href="#gd' + (index + 1) + '" class="title01">' + titleTxt + '</a>');
+
+      });
+
+      // $.each(arr, function(index){
+
+      //   $('.sidebar_list').append('<a href="#gd'+(index+1)+'" class="title01">'+arr[index]+'</a>')
+
+
+      // });
+
+
+
+    });
+
+  </script>
+
+
+
+</head>
+
+<body class="back_gray">
+  <div class="wrap">
+
+    <div class="sidebar">
+      <h3 class="title padL8">
+        <span class="color_primary">MVP매칭앱</span>
+        <div class="fw300">퍼블리싱가이드</div>
+      </h3>
+
+      <div class="h20"></div>
+      <hr>
+
+      <div class="sidebar_list">
+
+        <!-- <a href="#gd001" class="title01">폰트 사이즈</a>
+        <a href="#gd002" class="title01">컬러</a>
+        <a href="#gd003" class="title01">리스트</a>
+
+        <a href="#gd004" class="title01">폼</a>
+        <a href="#gd003" class="title01">리스트</a>
+        <a href="#gd003" class="title01">리스트</a>
+        <a href="#gd003" class="title01">리스트</a>
+        <a href="#gd003" class="title01">리스트</a> -->
+
+      </div>
+      <!-- sidebar_list -->
+
+
+
+    </div>
+    <!-- sidebar -->
+
+
+
+
+    <main>
+      <section>
+
+        <div class="scrollspy">
+          <a class="title_g">폰트 사이즈</a>
+          <div class="sub_stn">
+            <h2 class="title02 point">
+              Suit : 국문/영문/숫자
+              <span class="font_14_3 color_primary">* 우측은 클래스 단순화 font_14_1~3</span>
+            </h2>
+
+            <div class="h24"></div>
+            <h4 class="title">Heading</h4>
+            <div class="htmlCode">
+              <h2 class="title">h2.title - 32px 가나다라ABcd 1234 </h2>
+              <h2 class="title02">h2.title02 - 28px 가나다라ABcd 1234 </h2>
+              <h3 class="title">h3.title - 24px 가나다라ABcd 1234 </h3>
+              <h4 class="title">h4.title - 22px 가나다라ABcd 1234 </h4>
+              <h5 class="title">h5.title - 20px 가나다라ABcd 1234 </h4>
+            </div>
+            <div class="htmlCode row">
+              <div class="col s12 m6">
+                <div class="font_shx">32px - font_shx(Suit_Heading_XL)</div>
+                <div class="font_shl">28px - font_shl(Suit_Heading_LG)</div>
+                <div class="font_shm">24px - font_shm(Suit_Heading_MD)</div>
+                <div class="font_shs">22px - font_shs(Suit_Heading_SM)</div>
+              </div>
+              <div class="col s6">
+                <div class="font_h1">32px - font_h1(Suit_Heading_XL)</div>
+                <div class="font_h2">28px - font_h2(Suit_Heading_LG)</div>
+                <div class="font_h3">24px - font_h3(Suit_Heading_MD)</div>
+                <div class="font_h4">22px - font_h4(Suit_Heading_SM)</div>
+              </div>
+            </div>
+            <h4 class="title">Body</h4>
+            <div class="h08"></div>
+            <span class="font_ssb color_primary">LG</span>
+            <div class="htmlCode row">
+              <div class="col s6">
+                <div class="font_sblb">20px - font_sblb(Suit_Body_LG_Bold)</div>
+                <div class="font_sbls">20px - font_sbls(Suit_Body_LG_SemiBold)</div>
+                <div class="font_sblr">20px - font_sblr(Suit_Body_LG_Regular)</div>
+              </div>
+              <div class="col s6">
+                <div class="font_20_1">20px - font_20_1(Suit_Body_LG_Bold)</div>
+                <div class="font_20_2">20px - font_20_2(Suit_Body_LG_SemiBold)</div>
+                <div class="font_20_3">20px - font_20_3(Suit_Body_LG_Regular)</div>
+              </div>
+            </div>
+            <span class="font_ssb color_primary">MD</span>
+            <div class="htmlCode row">
+              <div class="col s6">
+                <div class="font_sbmb">18px - font_sbmb(Suit_Body_MD_Bold)</div>
+                <div class="font_sbms">18px - font_sbms(Suit_Body_MD_SemiBold)</div>
+                <div class="font_sbmr">18px - font_sbmr(Suit_Body_MD_Regular)</div>
+                <div class="font_sbmu">18px - font_sbmu(Suit_Body_MD_Underline)</div>
+                <div class="font_sbmst">18px - font_sbmst(Suit_Body_MD_Strike-through)</div>
+              </div>
+              <div class="col s6">
+                <div class="font_18_1">18px - font_18_1(Suit_Body_MD_Bold)</div>
+                <div class="font_18_2">18px - font_18_2(Suit_Body_MD_SemiBold)</div>
+                <div class="font_18_3">18px - font_18_3(Suit_Body_MD_Regular)</div>
+                <div class="font_18_4">18px - font_18_4(Suit_Body_MD_Underline)</div>
+                <div class="font_18_5">18px - font_18_5(Suit_Body_MD_Strike-through)</div>
+              </div>
+            </div>
+            <span class="font_ssb color_primary">SM</span>
+            <div class="htmlCode row">
+              <div class="col s6">
+                <div class="font_sbsb">16px - font_sbsb(Suit_Body_SM_Bold)</div>
+                <div class="font_sbss">16px - font_sbss(Suit_Body_SM_SemiBold)</div>
+                <div class="font_sbsr">16px - font_sbsr(Suit_Body_SM_Regular)</div>
+              </div>
+              <div class="col s6">
+                <div class="font_16_1">16px - font_16_1(Suit_Body_SM_Bold)</div>
+                <div class="font_16_2">16px - font_16_2(Suit_Body_SM_SemiBold)</div>
+                <div class="font_16_3">16px - font_16_3(Suit_Body_SM_Regular)</div>
+              </div>
+            </div>
+            <span class="font_ssb color_primary">SS</span>
+            <div class="htmlCode row">
+              <div class="col s6">
+                <div class="font_ssb">14px - font_ssb(Suit_Body_SS_Bold)</div>
+                <div class="font_sss">14px - font_sss(Suit_Body_SS_SemiBold)</div>
+                <div class="font_ssr">14px - font_ssr(Suit_Body_SS_Regular)</div>
+              </div>
+              <div class="col s6">
+                <div class="font_14_1">14px - font_14_1(Suit_Body_SS_Bold)</div>
+                <div class="font_14_2">14px - font_14_2(Suit_Body_SS_SemiBold)</div>
+                <div class="font_14_3">14px - font_14_3(Suit_Body_SS_Regular)</div>
+              </div>
+            </div>
+            <span class="font_ssb color_primary">XS</span>
+            <div class="htmlCode row">
+              <div class="col s6">
+                <div class="font_scx">12px - font_scx(Suit_Caption_XS)</div>
+                <div class="font_scxst">12px - font_scxst(Suit_Caption_XS_Strike-through)</div>
+              </div>
+              <div class="col s6">
+                <div class="font_12_1">12px - font_12_1(Suit_Caption_XS)</div>
+                <div class="font_12_2">12px - font_12_2(Suit_Caption_XS_Strike-through)</div>
+              </div>
+            </div>
+          </div>
+          <!-- sub_stn end -->
+        </div>
+        <!-- scrollspy -->
+
+
+        <div class="scrollspy">
+          <a class="title_g">컬러</a>
+          <div class="sub_ctn font_14_2 color_st">
+            <div class="htmlCode row">
+              <div class="col s12 m4">
+                <h4 class="title">Color/text</h4>
+                <div class="h16"></div>
+                <div class="color_t_p">color_t_p($--Color-text-primary)</div>
+                <div class="color_t_s">color_t_s($--Color-text-secondary)</div>
+                <div class="color_t_t">color_t_t($--Color-text-teritiary)</div>
+                <div class="color_t_bs">color_t_bs($--Color-text-brand-sub)</div>
+                <div class="color_t_i">color_t_i($--Color-text-info)</div>
+                <div class="color_t_ib">color_t_ib($--Color-text-info-bold)</div>
+                <div class="color_t_success">color_t_success($--Color-text-success)</div>
+                <div class="color_t_success_b">color_t_success_b($--Color-text-success-bold)</div>
+                <div class="color_t_danger">color_t_danger($--Color-text-danger)</div>
+                <div class="color_t_danger_b">color_t_danger_b($--Color-text-danger-bold)</div>
+                <div class="color_t_d">color_t_d($--Color-text-disabled)</div>
+              </div>
+              <div class="col s12 m4">
+                <h4 class="title">Color/text/Primitive</h4>
+                <div class="h16"></div>
+                <div class="color_tp_p">color_tp_p($--Color-text-Primitive-primary)</div>
+                <div class="color_tp_pp">color_tp_pp($--Color-text-Primitive-primary-press)</div>
+                <div class="color_tp_s">color_color_tp_st_p($--Color-text-Primitive-secondary)</div>
+                <div class="color_tp_ss">color_tp_ss($--Color-text-Primitive-secondary-press)</div>
+                <div class="color_tp_selected">color_tp_selected($--Color-text-Primitive-selected)</div>
+                <div class="color_tp_v">color_tp_v($--Color-text-Primitive-visited)</div>
+                <div class="color_tp_i">color_tp_i($--Color-text-Primitive-inverse) <span
+                    class="color_tp_p fw300 fs12">*흰색</span></div>
+              </div>
+              <div class="col s12 m4">
+                <h4 class="title">Color/bg</h4>
+                <div class="h16"></div>
+                <div class="color_b_p">color_b_p($--Color-bg-primary) <span class="color_tp_p fw300 fs12">*흰색</span>
+                </div>
+                <div class="color_b_s">color_b_s($--Color-bg-secondary)</div>
+                <div class="color_b_t">color_b_t($--Color-bg-teritiary)</div>
+                <div class="color_b_point">color_b_point($--Color-bg-point)</div>
+                <div class="color_b_bsb">color_b_bsb($--Color-bg-brand-sub-bold)</div>
+                <div class="color_b_bss">color_b_bss($--Color-bg-brand-sub-subtle)</div>
+                <div class="color_b_ibold">color_b_ibold($--Color-bg-info-bold)</div>
+                <div class="color_b_iss">color_b_iss($--Color-bg-info-subtle)</div>
+                <div class="color_b_sb">color_b_sb($--Color-bg-success-bold)</div>
+                <div class="color_b_db">color_b_db($--Color-bg-danger-bold)</div>
+                <div class="color_b_ds">color_b_ds($--Color-bg-danger-subtle)</div>
+                <div class="color_b_ib">color_b_ib($--Color-bg-inverse-bold)</div>
+                <div class="color_b_ibolder">color_b_ibolder($--Color-bg-inverse-bolder)</div>
+                <div class="color_b_d">color_b_d($--Color-bg-disabled)</div>
+              </div>
+            </div>
+            <!-- htmlCode -->
+            <div class="htmlCode row">
+              <div class="col s12 m4">
+                <h4 class="title">Color/text</h4>
+                <div class="h16"></div>
+                <div class="color_b_pp">color_b_pp($--Color-bg-Primitive-primary)</div>
+                <div class="color_b_ppp">color_b_ppp($--Color-bg-Primitive-primary-press)</div>
+                <div class="color_b_ps">color_b_ps($--Color-bg-Primitive-secondary)</div>
+                <div class="color_b_psp">color_b_psp($--Color-bg-Primitive-secondary-press)</div>
+                <div class="color_b_pselected">color_b_pselected($--Color-bg-Primitive-selected)</div>
+                <div class="color_b_pselected_s">color_b_pselected_s($--Color-bg-Primitive-selected-press)</div>
+              </div>
+              <div class="col s12 m4">
+                <h4 class="title">Color/border</h4>
+                <div class="h16"></div>
+                <div class="color_bd_p">color_bd_p($--Color-border-primary)</div>
+                <div class="color_bd_s">color_bd_s($--Color-border-secondary)</div>
+                <div class="color_bd_t">color_bd_t($--Color-border-teritiary)</div>
+                <div class="color_bd_i">color_bd_i($--Color-border-info)</div>
+                <div class="color_bd_is">color_bd_is($--Color-border-info-subtle)</div>
+                <div class="color_bd_success">color_bd_success($--Color-border-success)</div>
+                <div class="color_bd_success_s">color_bd_success_s($--Color-border-success-subtle)</div>
+                <div class="color_bd_danger">color_bd_danger($--Color-border-danger)</div>
+                <div class="color_bd_danger_s">color_bd_danger_s($--Color-border-danger-subtle)</div>
+                <div class="color_bd_d">color_bd_d($--Color-border-disabled)</div>
+              </div>
+              <div class="col s12 m4">
+                <h4 class="title">Color/border/Primitive</h4>
+                <div class="h16"></div>
+                <div class="color_bd_pp">color_bd_pp($--Color-border-Primitive-primary)</div>
+                <div class="color_bd_ppp">color_bd_ppp($--Color-border-Primitive-primary-press)</div>
+                <div class="color_bd_ps">color_bd_ps($--Color-border-Primitive-secondary)</div>
+                <div class="color_bd_psp">color_bd_psp($--Color-border-Primitive-secondary-press)</div>
+                <div class="color_bd_pt">color_bd_pt($--Color-border-Primitive-teritiary)</div>
+                <div class="color_bd_ptp">color_bd_ptp($--Color-border-Primitive-teritiary-press)</div>
+                <div class="color_bd_pselected">color_bd_pselected($--Color-border-Primitive-selected)</div>
+                <div class="color_bd_pv">color_bd_pv($--Color-border-Primitive-visited)</div>
+                <div class="color_bd_pi">color_bd_pi($--Color-border-Primitive-inverse) <span
+                    class="color_tp_p fw300 fs12">*흰색</span></div>
+              </div>
+            </div>
+            <!-- htmlCode -->
+            <div class="htmlCode row">
+              <div class="col s12 m4">
+                <h4 class="title">Color/icon</h4>
+                <div class="h16"></div>
+                <div class="color_i_p">color_i_p($--Color-icon-primary)</div>
+                <div class="color_i_s">color_i_s($--Color-icon-secondary)</div>
+                <div class="color_i_t">color_i_t($--Color-icon-teritiary)</div>
+                <div class="color_i_bs">color_i_bs($--Color-icon-brand-sub)</div>
+                <div class="color_i_point">color_i_point($--Color-icon-Point)</div>
+                <div class="color_i_i">color_i_i($--Color-icon-info)</div>
+                <div class="color_i_ib">color_i_ib($--Color-icon-info-bold)</div>
+                <div class="color_i_isuccess">color_i_isuccess($--Color-icon-success)</div>
+              </div>
+              <div class="col s12 m4">
+                <h4 class="title">Color/icon/Primitive </h4>
+                <div class="h16"></div>
+                <div class="color_i_pp">color_i_pp($--Color-icon-Primitive-primary)</div>
+                <div class="color_i_ppp">color_i_ppp($--Color-icon-Primitive-primary-press)</div>
+                <div class="color_i_ps">color_i_ps($--Color-icon-Primitive-secondary)</div>
+                <div class="color_i_psp">color_i_psp($--Color-icon-Primitive-secondary-press)</div>
+                <div class="color_i_pt">color_i_pt($--Color-icon-Primitive-teritiary)</div>
+                <div class="color_i_ptp">color_i_ptp($--Color-icon-Primitive-teritiary-press)</div>
+                <div class="color_i_pselected">color_i_pselected($--Color-icon-Primitive-selected)</div>
+                <div class="color_i_pv">color_i_pv($--Color-icon-Primitive-visited)</div>
+                <div class="color_i_pi">color_i_pi($--Color-icon-Primitive-inverse)</div>
+              </div>
+              <div class="col s12 m4">
+                <h4 class="title">따로 지정</h4>
+                <div class="h16"></div>
+                <div class="color_white">color_white <span class="color_tp_p fw300 fs12">*흰색</span></div>
+                <div class="color_primary">color_primary(color_tp_p)</div>
+                <div class="color_secondary">color_secondary(color_t_s)</div>
+                <div class="color_disable">color_disable(color_t_d)</div>
+                <div class="color_danger">color_danger(color_t_danger)</div>
+
+                <div class="c_757575">c_757575</div>
+
+              </div>
+            </div>
+            <!-- htmlCode -->
+          </div>
+          <!-- sub_stn end -->
+        </div>
+        <!-- scrollspy -->
+
+
+        <br><br>
+
+        <div class="scrollspy">
+          <a class="title_g">정렬 - flex gap</a>
+
+
+          <div class="color_tp_p fw600">d-flex</div>
+          <div class="htmlCode">
+            <div class="d-flex">
+              <span class="back_EFF1FD">flex텍스트</span>
+            </div>
+          </div>
+          <!-- htmlCode -->
+
+          <div class="color_tp_p fw600">justify-content-start</div>
+          <div class="htmlCode">
+            <div class="d-flex justify-content-start">
+              <span class="back_EFF1FD">가나다라</span>
+              <span class="back_E8F5E9">마바사아</span>
+            </div>
+          </div>
+          <!-- htmlCode -->
+
+          <div class="color_tp_p fw600">justify-content-center</div>
+          <div class="htmlCode">
+            <div class="d-flex justify-content-center">
+              <span class="back_EFF1FD">가나다라</span>
+              <span class="back_E8F5E9">마바사아</span>
+              <span class="back_FFEBEE">마바사아</span>
+            </div>
+          </div>
+          <!-- htmlCode -->
+
+          <div class="color_tp_p fw600">justify-content-between</div>
+          <div class="htmlCode">
+            <div class="d-flex justify-content-between">
+              <span class="back_EFF1FD">가나다라</span>
+              <span class="back_E8F5E9">마바사아</span>
+              <span class="back_FFEBEE">마바사아</span>
+            </div>
+          </div>
+          <!-- htmlCode -->
+
+          <div class="color_tp_p fw600">align-items-center</div>
+          <div class="htmlCode">
+            <div class="d-flex align-items-center h75">
+              <span class="back_EFF1FD">가나다라</span>
+              <span class="back_E8F5E9">마바사아</span>
+            </div>
+          </div>
+          <!-- htmlCode -->
+
+          <div class="color_tp_p fw600">align_center</div>
+          <div class="htmlCode">
+            <div class="d-flex align_center h75">
+              <span class="back_EFF1FD">가나다라</span>
+              <span class="back_E8F5E9">마바사아</span>
+            </div>
+          </div>
+          <!-- htmlCode -->
+
+          <div class="color_tp_p fw600">align_between_center</div>
+          <div class="htmlCode">
+            <div class="d-flex align_between_center h75">
+              <span class="back_EFF1FD">가나다라</span>
+              <span class="back_E8F5E9">마바사아</span>
+            </div>
+          </div>
+          <!-- htmlCode -->
+
+          <div class="color_tp_p fw600">flex_shrink_0</div>
+          <div class="htmlCode">
+            <div class="d-flex">
+              <div class="w180 flex_shrink_0 pad20 bder_primary">180px - flex_shrink_0</div>
+              <div class="w100p pad20 bder_primary">100%</div>
+            </div>
+          </div>
+          <!-- htmlCode -->
+
+          <div class="color_tp_p fw600">inline_flex</div>
+          <div class="htmlCode">
+            <div class="inline_flex">
+              <div class="back_EFF1FD w140 pad20">140px - 인라인처리</div>
+              <div class="back_E8F5E9 w100p pad20">100%</div>
+            </div>
+          </div>
+          <!-- htmlCode -->
+
+          <div class="color_tp_p fw600">gap02~16 간격 (짝수단위)</div>
+
+          <div class="htmlCode row">
+
+            <div class="col m2">
+              <div class="d-flex gap02">
+                <div class="back_EFF1FD w100p pad20">gap02</div>
+                <div class="back_EFF1FD w100p pad20">gap02</div>
+              </div>
+
+              <div class="h08"></div>
+
+              <div class="d-flex gap04">
+                <div class="back_EFF1FD w100p pad20">gap04</div>
+                <div class="back_EFF1FD w100p pad20">gap04</div>
+              </div>
+
+              <div class="h08"></div>
+
+              <div class="d-flex gap06">
+                <div class="back_EFF1FD w100p pad20">gap06</div>
+                <div class="back_EFF1FD w100p pad20">gap06</div>
+              </div>
+
+              <div class="h08"></div>
+
+              <div class="d-flex gap08">
+                <div class="back_EFF1FD w100p pad20">gap08</div>
+                <div class="back_EFF1FD w100p pad20">gap08</div>
+              </div>
+
+              <div class="h08"></div>
+
+              <div class="d-flex gap10">
+                <div class="back_EFF1FD w100p pad20">gap10</div>
+                <div class="back_EFF1FD w100p pad20">gap10</div>
+              </div>
+
+              <div class="h08"></div>
+
+              <div class="d-flex gap12">
+                <div class="back_EFF1FD w100p pad20">gap12</div>
+                <div class="back_EFF1FD w100p pad20">gap12</div>
+              </div>
+
+              <div class="h08"></div>
+
+              <div class="d-flex gap14">
+                <div class="back_EFF1FD w100p pad20">gap14</div>
+                <div class="back_EFF1FD w100p pad20">gap14</div>
+              </div>
+
+              <div class="h08"></div>
+
+              <div class="d-flex gap16">
+                <div class="back_EFF1FD w100p pad20">gap16</div>
+                <div class="back_EFF1FD w100p pad20">gap16</div>
+              </div>
+            </div>
+
+
+          </div>
+          <!-- htmlCode -->
+
+          <div class="color_tp_p fw600">정렬 align</div>
+          <div class="htmlCode">
+
+            <div class="center back_EFF1FD pad20">
+              가운데 정렬 center
+            </div>
+
+            <div class="h08"></div>
+
+            <div class="l_left back_EFF1FD pad20">
+              왼쪽 정렬 l_left
+            </div>
+
+            <div class="h08"></div>
+
+            <div class="l_right back_EFF1FD pad20">
+              오른쪽 정렬 l_right
+            </div>
+
+            <div class="h08"></div>
+
+          </div>
+          <!-- htmlCode -->
+
+
+        </div>
+        <!-- scrollspy -->
+
+
+        <div class="scrollspy">
+          <a class="title_g">라운드</a>
+          <div class="htmlCode">
+            <div class="d-flex gap04">
+              <div class="back_EFF1FD pad20 radius08">라운드8px - radius08</div>
+              <div class="back_E8F5E9 pad20 radius16">라운드16px - radius16</div>
+            </div>
+
+          </div>
+          <!-- htmlCode -->
+
+        </div>
+        <!-- scrollspy -->
+
+
+
+        <div class="scrollspy">
+          <a class="title_g">사이즈 -width height</a>
+
+          <div class="color_tp_p fw600">가로 사이즈</div>
+
+          <div class="htmlCode">
+
+            <div class="w100p back_E8F5E9 pad20">100% - w100p</div>
+            <div class="w50p back_EFF6FF pad20">50% - w50p</div>
+
+            <div class="h20"></div>
+
+            <div class="d-flex align-items-center gap10">
+              <div class="w10 h40 back_E8F5E9"></div>
+              10px - w10
+            </div>
+
+            <div class="d-flex align-items-center gap10">
+              <div class="w20 h40 back_E8F5E9"></div>
+              20px - w20
+            </div>
+
+            <div class="d-flex align-items-center gap10">
+              <div class="w30 h40 back_E8F5E9"></div>
+              30px - w30
+            </div>
+
+            <div class="d-flex align-items-center gap10">
+              <div class="w40 h40 back_E8F5E9"></div>
+              40px - w40
+            </div>
+
+            <div class="d-flex align-items-center gap10">
+              <div class="w50 h40 back_E8F5E9"></div>
+              50px - w50
+            </div>
+
+            <div class="d-flex align-items-center gap10">
+              <div class="w60 h40 back_E8F5E9"></div>
+              60px - w60
+            </div>
+
+            <div class="d-flex align-items-center gap10">
+              <div class="w70 h40 back_E8F5E9"></div>
+              70px - w70
+            </div>
+
+            <div class="d-flex align-items-center h75">...</div>
+
+            <div class="d-flex align-items-center gap10">
+              <div class="w180 h40 back_E8F5E9"></div>
+              180px - w180
+            </div>
+
+            <div class="d-flex align-items-center gap10">
+              <div class="w190 h40 back_E8F5E9"></div>
+              190px - w190
+            </div>
+
+            <div class="d-flex align-items-center gap10">
+              <div class="w200 h40 back_E8F5E9"></div>
+              200px - w200
+            </div>
+
+            <div class="h20"></div>
+
+            <div class="d-flex align-items-center gap10">
+              <div class="w48 h40 back_E8F5E9"></div>
+              48px - w48
+            </div>
+
+          </div>
+          <!-- htmlCode -->
+
+          <div class="color_tp_p fw600">세로 사이즈</div>
+
+          <div class="htmlCode d-flex gap14">
+
+            <div class="w100p">
+
+              <div class="h04 back_EFF6FF"></div>
+              <div class="h32">h04</div>
+
+              <div class="h08 back_EFF6FF"></div>
+              <div class="h32">h08</div>
+
+              <div class="h10 back_EFF6FF"></div>
+              <div class="h32">h10</div>
+
+              <div class="h12 back_EFF6FF"></div>
+              <div class="h32">h12</div>
+
+              <div class="h14 back_EFF6FF"></div>
+              <div class="h32">h14</div>
+
+              <div class="h16 back_EFF6FF"></div>
+              <div class="h32">h16</div>
+
+              <div class="h16 back_EFF6FF"></div>
+              <div class="h32">h16</div>
+
+              <div class="h18 back_EFF6FF"></div>
+              <div class="h32">h18</div>
+
+              <div class="h20 back_EFF6FF"></div>
+              <div class="h32">h20</div>
+
+              <div class="h24 back_EFF6FF"></div>
+              <div class="h32">h24</div>
+
+              <div class="h28 back_EFF6FF"></div>
+              <div class="h32">h28</div>
+
+              <div class="h32 back_EFF6FF"></div>
+              <div class="h32">h32</div>
+
+              <div class="h40 back_EFF6FF"></div>
+              <div class="h32">h40</div>
+
+              <div class="h42 back_EFF6FF"></div>
+              <div class="h32">h42</div>
+
+              <div class="h44 back_EFF6FF"></div>
+              <div class="h32">h44</div>
+
+            </div>
+
+            <div class="w100p">
+
+              <div class="h46 back_EFF6FF"></div>
+              <div class="h32">h46</div>
+
+              <div class="h48 back_EFF6FF"></div>
+              <div class="h32">h48</div>
+
+              <div class="h56 back_EFF6FF"></div>
+              <div class="h32">h56</div>
+
+              <div class="h60 back_EFF6FF"></div>
+              <div class="h32">h60</div>
+
+              <div class="h64 back_EFF6FF"></div>
+              <div class="h32">h64</div>
+
+              <div class="h67 back_EFF6FF"></div>
+              <div class="h32">h67</div>
+
+              <div class="h75 back_EFF6FF"></div>
+              <div class="h32">h75</div>
+
+              <div class="h80 back_EFF6FF"></div>
+              <div class="h32">h80</div>
+
+              <div class="h100 back_EFF6FF"></div>
+              <div class="h32">h100</div>
+
+
+            </div>
+
+
+          </div>
+
+        </div>
+        <!-- scrollspy -->
+
+
+        <div class="scrollspy">
+          <a class="title_g">여백, hr</a>
+
+          <div class="color_tp_p fw600">padding</div>
+          <div class="htmlCode">
+
+            <div class="noPad back_EFF6FF">
+              noPad - padding: 0 여백없음
+            </div>
+
+            <div class="h08"></div>
+
+            <div class="pad20 back_EFF6FF">
+              pad20 - padding : 20px
+            </div>
+
+            <div class="h08"></div>
+
+            <div class="padH08 back_EFF6FF">
+              padH08 - padding : 8px 0px
+            </div>
+
+            <div class="h08"></div>
+
+            <div class="padH16 back_EFF6FF">
+              padH16 - padding: 16px 0
+            </div>
+
+            <div class="h08"></div>
+
+            <div class="pad020 back_EFF6FF">
+              pad020 - padding: 0 20px
+            </div>
+
+            <div class="h08"></div>
+
+            <div class="padH8W20 back_EFF6FF">
+              padH8W20 - padding: 8px 20px
+            </div>
+
+            <div class="h08"></div>
+
+            <div class="padH12W20 back_EFF6FF">
+              padH12W20 - padding: 12px 20px
+            </div>
+
+            <div class="h08"></div>
+
+            <div class="padH16W20 back_EFF6FF">
+              padH16W20 - padding: 16px 20px
+            </div>
+
+            <div class="h08"></div>
+
+            <div class="padH24W20 back_EFF6FF">
+              padH24W20 - padding: 24px 20px
+            </div>
+
+            <div class="h08"></div>
+
+            <div class="pad_16_20_24 back_EFF6FF">
+              pad_16_20_24 - padding: 16px 20px 24px
+            </div>
+
+            <div class="h08"></div>
+
+            <div class="padR20 back_EFF6FF l_right">
+              padR20 - padding-right: 20px
+            </div>
+
+            <div class="h08"></div>
+
+            <div class="padR80 back_EFF6FF l_right">
+              padR80 - padding-right: 80px
+            </div>
+
+            <div class="h08"></div>
+
+            <div class="padR120 back_EFF6FF l_right">
+              padR120 - padding-right: 120px
+            </div>
+
+            <div class="h08"></div>
+
+            <div class="padL8 back_EFF6FF">
+              padL8 -padding-left: 8px
+            </div>
+
+
+          </div>
+          <!-- htmlCode -->
+
+
+          <div class="color_tp_p fw600">margin</div>
+          <div class="htmlCode row">
+
+
+            <div class="fw600">margin 0</div>
+
+            <div class="bder_valid">
+              <div class="noMar yellow lighten-2">
+                noMar - margin: 0
+              </div>
+
+            </div>
+
+            <div class="h08"></div>
+
+
+            <div class="fw600">margin-top</div>
+
+            <div class="bder_valid">
+
+              <div class="marT2 blue lighten-2">
+                marT2 - margin-top: 2px
+              </div>
+
+            </div>
+
+            <div class="h08"></div>
+
+            <div class="bder_valid">
+
+              <div class="marT4 blue lighten-2">
+                marT4 - margin-top: 4px
+              </div>
+
+            </div>
+
+            <div class="h08"></div>
+
+            <div class="bder_valid">
+
+              <div class="marT5 blue lighten-2">
+                marT5 - margin-top: 5px
+              </div>
+
+            </div>
+
+            <div class="h08"></div>
+
+            <div class="bder_valid">
+
+              <div class="marT8 blue lighten-2">
+                marT8 - margin-top: 8px
+              </div>
+
+            </div>
+
+            <div class="h08"></div>
+
+
+            <div class="fw600">margin-bottom</div>
+
+            <div class="bder_valid">
+
+              <div class="marB4 pink lighten-2">
+                marB4 - margin-bottom: 4px
+              </div>
+
+            </div>
+
+            <div class="h08"></div>
+
+
+            <div class="fw600">margin-right</div>
+
+            <div class="bder_valid">
+
+              <div class="marR4 green lighten-2">
+                marR4 - margin-right: 4px
+              </div>
+
+            </div>
+
+            <div class="h08"></div>
+
+
+            <div class="fw600">margin-left</div>
+
+            <div class="bder_valid">
+
+              <div class="marL4 deep-purple lighten-2">
+                marL4 - margin-left: 4px
+              </div>
+
+            </div>
+
+            <div class="h08"></div>
+
+
+            <div class="fw600">margin-height</div>
+
+            <div class="bder_valid">
+
+              <div class="marH40 yellow lighten-2">
+                marH40 - margin: 40px 0
+              </div>
+
+            </div>
+
+            <div class="h08"></div>
+
+
+            <div class="fw600">margin-width 여백안 내용에서 여백없이 사용</div>
+
+            <div class="bder_valid">
+
+              <div class="marW-20 yellow lighten-2">
+                marW-20 - margin: 0 -20px
+              </div>
+
+            </div>
+
+            <div class="h08"></div>
+
+
+            <div class="fw600">margin-width 여백안 내용에서 여백없이 사용(footer영역에서 사용)</div>
+
+            <div class="h24"></div>
+
+            <div class="bder_valid">
+
+              <div class="marT-20W-20 yellow lighten-2">
+                marT-20W-20 - margin: -20px -20px 0
+              </div>
+
+            </div>
+
+          </div>
+          <!-- htmlCode -->
+
+          <div class="color_tp_p fw600">hr</div>
+          <div class="htmlCode row">
+
+            <hr class="marH08">
+            <hr class="color_gray marH16">
+
+
+
+          </div>
+          <!-- htmlCode -->
+
+
+        </div>
+        <!-- scrollspy -->
+
+
+        <div class="scrollspy">
+          <a class="title_g">리스트 - List</a>
+          <div class="htmlCode">
+            <ul class="list_dept1">
+              <li class="fs12">청각 장애인으로 등록 되어 있어야 지원금 신청 가능 (나이 무관)</li>
+              <li class="fs26">청각장애인 정부 지원금 최대 131만원</li>
+              <li>보건복지부에 고시된 제품에 한해 5년에 1회 한정, 보청기 1대 지원
+                <ul class="list_dept1">
+                  <li class="fs12">복지용구 구매</li>
+                  <li>복지용구 구매</li>
+                </ul>
+              </li>
+            </ul>
+
+            <div class="h12"></div>
+
+            <div class="card back_FFF5E6 noShadow">
+              <div class="card-content pad20">
+                <ul class="list_dept1">
+                  <li>장기요양인정등급을 받으셔야 신청 가능</li>
+                  <li>거동, 생활 보조용품(복지용구) 지원금 연 160만원 보조용품(복지용구) 지원금 연 160만원 보조용품(복지용구) 지원금 연 160만원 보조용품(복지용구) 지원금 연 160만원 보조용품(복지용구) 지원금 연 160만원</li>
+                  <li>전동침대부터 요실금팬티까지 대부분 생활용품 지원</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="h40"></div>
+
+            <div class="font_sbmb">타이틀</div>
+            <div class="h16"></div>
+
+            <div class="card back_F5F5F5 noShadow">
+              <div class="card-content pad20">
+                
+                <ul class="list_dept1">
+                  <li>복지용구 구매시 6~15%의 본인부담금이 발생합니다. (단, 기초생활수급자는 전액 지원)</li>
+                  <li>시설에 모시는 어르신은 복지용구를 신청할 수 없어요.</li>
+                  <li>복지용구 구매비 지원을 받기 위한 절차가 간단하지 않아 국민건강보험공단에 먼저 상담 후 신청을 권장합니다.</li>
+                </ul>
+              </div>
+            </div>
+
+            <ul class="list_dept1 gray_dot">
+              <li class="color_t_s font_sbsr">111장기요양정보 조회 시점에 따라 정보가 다를 수 있어요. </li>
+              <li class="color_t_s font_sbsr">222장기요양정보 조회 시점에 따라 정보가 다를 수 있어요. </li>
+            </ul>
+
+            <ul class="list_dept1 black_dot marT8">
+              <li class="font_sbss">[조금 굵은 도트] 복지용구의 A/S는 장기요양기관에서 안내 할 책임이 있음을 알려드려요. </li>
+            </ul>
+
+            <div class="h20"></div>
+
+            들여쓰기
+            <ul class="list_dept1 indent color_t_s ">
+              <li><span class="color_t_p font_sbms">야외용</span>으로 사용합니다.</li>
+              <li>엉덩이가 닿는 부분에 <span class="color_t_p font_sbms">수납이 가능하고 수납력이 보행차 중 가장 우수</span>합니다.</li>
+              <li>브레이크 위치가 편한 곳에 있는지 확인하세요.</li>
+              <li>신장에 따라 높낮이가 조절됩니다.</li>
+              <li>접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.</li>
+              <li class="fs12">12px 접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.</li>
+              <li class="fs14">14px 접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.</li>
+              <li class="fs16">16px 접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.</li>
+              <li class="fs18">18px 접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.</li>
+              <li class="fs20">20px 접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.</li>
+              <li class="fs22">22px 접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.</li>
+              <li class="fs24">24px 접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.접이가 가능하여 보관이 편하고 휴대가 가능합니다.</li>
+            </ul>
+
+            <ul class="list_dept1 black_dot marT8">
+              <li class="fs12">12px [조금 굵은 도트] 복지용구의 A/S는 장기요양기관에서 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. </li>
+              <li class="fs14">14px [조금 굵은 도트] 복지용구의 A/S는 장기요양기관에서 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. </li>
+              <li class="fs16">16px [조금 굵은 도트] 복지용구의 A/S는 장기요양기관에서 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. </li>
+              <li class="fs18">18px [조금 굵은 도트] 복지용구의 A/S는 장기요양기관에서 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. </li>
+              <li class="fs20">20px [조금 굵은 도트] 복지용구의 A/S는 장기요양기관에서 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. </li>
+              <li class="fs22">22px [조금 굵은 도트] 복지용구의 A/S는 장기요양기관에서 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. </li>
+              <li class="fs24">24px [조금 굵은 도트] 복지용구의 A/S는 장기요양기관에서 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. 안내 할 책임이 있음을 알려드려요. </li>
+            </ul>
+
+
+
+            <div class="h40"></div>
+
+            <div class="list_noti color_t_s font_sbsr">
+              최종 결제금액 및 결제방법은 장기요양기관을 통해 확인해주세요. 장기요양기관의 주문 검토 과정에서, 본인부담률 등 총 예상 금액이 변동 될 수 있어요.
+            </div>
+            <div class="list_noti_danger color_t_danger font_sbsr">
+              한번 주문 시, 배송 완료 시까지 추가 주문이 어려워요. 장바구니는 다음날 모두 사라지니, 서둘러 구매해주세요.
+            </div>
+            
+            <div class="d-flex align-items-center gap04">
+              <div class="icon_btn i_sert02"></div>
+              <div class="color_tp_s font_sbsr"><span class="font_sbsb">10~15분</span> 안에 요양정보를 확인할 수 있어요.</div>
+            </div>
+
+            <div class="vaild_txt">입력하시면 더 빠르게 혜택을 받을 수 있어요</div>
+
+            <div class="list_check">인정등급이란?</div>
+
+            <div class="icon_finger01">제품 유형</div>
+            <div class="icon_caution">설치 주의 사항</div>
+
+            <div class="h40"></div>
+
+            <div class="font_sbmb">복지용구 이용현황</div>
+            <div class="h16"></div>
+
+            <ul class="welfase_step_area">
+              <li>이용현황 조회 요청</li>
+              <li>지원받은 복지용구 확인<br>지원받은 복지용구 확인</li>
+              <li>추가로 받을 수 있는 복지용구 상담</li>
+              <li>필요한 복지용구 수령</li>
+            </ul>
+
+            <div>--상단 위치--</div>
+            <ul class="welfase_step_area top_start">
+              <li>이용현황 조회 요청
+                  <br>
+                  sfsdfsdf<br>
+                  sfsdfsdf<br>
+                  sfsdfsdf<br>
+                  sfsdfsdf<br>
+              </li>
+              <li>지원받은 복지용구 확인</li>
+              <li>추가로 받을 수 있는 복지용구 상담</li>
+              <li>필요한 복지용구 수령</li>
+            </ul>
+
+
+            <div>--작은 사이즈--</div>
+            <ul class="welfase_step_area s02">
+              <li>
+                  <div>
+                      <span class="font_sbsb">10~15분</span>
+                      안에 요양정보를 확인할 수 있어요.
+                  </div>
+              </li>
+              <li>
+                  <div>
+                      장기요양기관에서 연락을 드리면,<br>
+                      <span class="font_sbsb">추가로 이용가능한 복지용구 상담</span>을 받아보실수 있어요.
+                  </div>
+              </li>
+          </ul>
+          
+          <div class="h20"></div>
+          -- 세로라인 x --
+          <ul class="welfase_step_area s02 no_line">
+            <li>
+                <div>
+                    <span class="font_sbsb">10~15분</span>
+                    안에 요양정보를 확인할 수 있어요.
+                </div>
+            </li>
+            <li>
+                <div>
+                    장기요양기관에서 연락을 드리면,<br>
+                    <span class="font_sbsb">추가로 이용가능한 복지용구 상담</span>을 받아보실수 있어요.
+                </div>
+            </li>
+        </ul>
+
+        <br><br>
+
+        -- 개별 --
+        <div class="welfase_step_num num8">어르신 요양정보 조회</div>
+        <div class="welfase_step_num num1">어르신 요양정보 조회</div>
+        <div class="welfase_step_num num4">어르신 요양정보 조회</div>
+
+
+          </div>
+          <!-- htmlCode -->
+        </div>
+        <!-- scrollspy -->
+
+
+        <br><br>
+
+      <div class="scrollspy">
+        <a class="title_g">폼 - input, textarea</a>
+        <div class="htmlCode">
+          <input type="text" class="input_basic" placeholder="입력">
+          <div class="h08"></div>
+          <input type="text" class="input_basic" placeholder="입력하삼" value="홍길동 텍스트가 있으면 valid처리됨">
+          <div class="h08"></div>
+          <input type="text" class="input_basic" placeholder="입력하삼" value="비활성창" disabled>
+          <div class="h08"></div>
+          <input type="text" class="input_basic bder_danger" value="홍길동">
+          <div class="vaild_txt error">이름을 입력해주세요</div>
+          <div class="vaild_txt ok">이름을 입력해주세요</div>
+
+          <div class="h16"></div>
+
+          <label class="relative input_label">
+            <span>아이디</span>
+            <span class="color_t_danger label_star_imp">*</span>
+          </label>
+          <input type="text" class="input_basic" placeholder="새로운 아이디" required="required">
+
+
+
+          <div class="h08"></div>
+          <div class="flex_input_btn">
+            <input type="text" class="input_basic" value="홍*동">
+            <a class="waves-effect btn-large btn_cancel">수정</a>
+          </div>
+
+          <div class="h20"></div>
+          
+          <textarea rows="3" class="input_basic" required="required" placeholder="내용을 입력해주세요"></textarea>
+
+          <div class="h20"></div>
+
+          <div class="evtTextarea_etc">
+            <div class="relative">
+                <textarea rows="3" class="input_basic textBox" required="required" placeholder="취소 사유를 입력해주세요" maxlength="20" style="height:110px !important;"></textarea>
+                <div class="textLengthWrap">
+                    <span class="textCount">0</span>
+                    <span class="textTotal">/20</span>
+                </div>
+            </div>
+          </div>
+          <a class="color_primary fw800" href="F_CSR_005_coun_history_cancel.html">* F_CSR_005_coun_history_cancel.html</a> 참조
+
+
+
+        </div>
+
+      </div>
+      <!-- scrollspy -->
+
+
+        <br><br><br>
+
+        <div class="scrollspy">
+          <a class="title_g">체크 라디오 박스 - check radio</a>
+
+          <div class="color_tp_p fw600">체크박스 chk1_1</div>
+          <div class="htmlCode">
+
+            <input type="checkbox" name="" id="chk_a1" class="chk01_1">
+            <label for="chk_a1">로그인 화면11</label>
+
+            <input type="checkbox" name="" id="chk_a12" class="chk01_1" checked>
+            <label for="chk_a12">로그인 화면2</label>
+
+          </div>
+          <!-- htmlCode -->
+
+          <div class="color_tp_p fw600">체크박스 chk1_2</div>
+
+          <div class="htmlCode">
+
+            <input type="checkbox" name="" id="chk_b1" class="chk01_2">
+            <label for="chk_b1">로그인 화면11</label>
+
+            <input type="checkbox" name="" id="chk_b12" class="chk01_2" checked>
+            <label for="chk_b12">로그인 화면2</label>
+
+          </div>
+          <!-- htmlCode -->
+
+
+          <div class="color_tp_p fw600">체크박스 chk02</div>
+
+          <div class="htmlCode">
+
+            <div class="d-flex gap20">
+
+
+              <input type="checkbox" name="" id="chk_a19_0" class="chk02">
+              <label for="chk_a19_0"></label>
+  
+              <input type="checkbox" name="" id="chk_a19" class="chk02">
+              <label for="chk_a19">로그인 화면</label>
+  
+              <input type="checkbox" name="" id="chk_a20" class="chk02" checked>
+              <label for="chk_a20">로그인 화면2</label>
+  
+              <input type="checkbox" name="" id="chk_a21" class="chk02" disabled>
+              <label for="chk_a21">로그인 화면3</label>
+  
+              <input type="checkbox" name="" id="chk_aa22" class="chk02" checked disabled>
+              <label for="chk_aa22">로그인 화면4</label>
+
+
+
+            </div>
+
+            <br>
+            
+            <div class="d-flex gap20">
+
+              <input type="checkbox" name="" id="chk_newlink" class="chk02">
+              <label for="chk_newlink" class="color_tp_s font_sbsr">새로운 장기요양기관 연결 </label>
+  
+            </div>
+            <br>
+            <div class="d-flex gap20">
+
+              <input type="checkbox" name="" id="chk_aabb1" class="chk02_big">
+              <label for="chk_aabb1"></label>
+              <input type="checkbox" name="" id="chk_aabb2" class="chk02_big">
+              <label for="chk_aabb2">좀 큰 체크박스</label>
+  
+            </div>
+
+
+            
+
+          </div>
+          <!-- htmlCode -->
+
+          <div class="color_tp_p fw600">라디오 chk03</div>
+
+          <div class="htmlCode">
+
+            <input type="radio" name="aa1" id="chk_a30_0" class="chk03">
+            <label for="chk_a30_0"></label>
+
+            <input type="radio" name="aa1" id="chk_a30" class="chk03">
+            <label for="chk_a30">로그인 화면333</label>
+
+            <input type="radio" name="aa1" id="chk_a31" class="chk03" checked>
+            <label for="chk_a31">로그인 화면2</label>
+
+            <input type="radio" name="aa2" id="chk_a32" class="chk03" disabled>
+            <label for="chk_a32">로그인 화면3</label>
+
+            <input type="radio" name="aa2" id="chk_aa33" class="chk03" checked disabled>
+            <label for="chk_aa33">로그인 화면4</label>
+
+          </div>
+          <!-- htmlCode -->
+
+          <div class="color_tp_p fw600">박스형 large</div>
+
+          <div class="htmlCode">
+
+            <input type="checkbox" name="" id="chk_c00" class="chk01_2 large">
+            <label for="chk_c00">로그인 화면11</label>
+
+            <div class="h08"></div>
+
+            <input type="checkbox" name="" id="chk_c01" class="chk02 large ">
+            <label for="chk_c01">로그인 화면77</label>
+
+            <div class="h08"></div>
+
+            <input type="checkbox" name="" id="chk_c02" class="border chk02 large">
+            <label for="chk_c02">로그인 화면888 로그인 화면888 로그인 화면888</label>
+
+            <div class="h08"></div>
+
+            <input type="checkbox" name="" id="chk_c0222" class="chk02 large border_gray">
+            <label for="chk_c0222" class="fw600">전체 동의하기</label>
+
+            <div class="h08"></div>
+
+            <input type="checkbox" name="" id="chk_c034" class="chk01_2 large border_gray">
+            <label for="chk_c034" class="fw600">전체 동의하기</label>
+
+
+          </div>
+          <!-- htmlCode -->
+
+          <div class="htmlCode">
+
+            <input type="radio" name="t01" id="rd_01" class="chk01_3 large border_gray">
+            <label for="rd_01">도움필요</label>
+            <input type="radio" name="t01" id="rd_02" class="chk01_3 large border_gray">
+            <label for="rd_02">도움필요없슴</label>
+
+          </div>
+          <!-- htmlCode -->
+
+          <div class="htmlCode">
+
+            <input type="radio" name="aa1" id="chk_c03" class="chk03 large" checked>
+            <label for="chk_c03">로그인 화면22333</label>
+
+            <div class="h08"></div>
+
+            <input type="radio" name="aa1" id="chk_c03_2" class="chk03 large border_gray" checked>
+            <label for="chk_c03_2">로그인 화면22333</label>
+
+            <div class="h08"></div>
+
+            <input type="radio" name="aa1" id="chk_c03_22" class="chk03 large border_gray_no">
+            <label for="chk_c03_22">로그인 border_gray_no</label>
+
+            <div class="h08"></div>
+
+            <input type="radio" name="aa1" id="chk_c04" class="border chk03 large">
+            <label for="chk_c04">로그인 화면11333</label>
+
+          </div>
+          <!-- htmlCode -->
+
+          <div class="color_tp_p fw600">박스형 large 비활성</div>
+          <div class="htmlCode">
+
+            <input type="checkbox" name="" id="chk_d01" class="chk01_2 large" disabled>
+            <label for="chk_d01">로그인 화면11</label>
+
+            <div class="h08"></div>
+
+            <input type="checkbox" name="" id="chk_d02" class="border chk02 large" disabled>
+            <label for="chk_d02">로그인 화면</label>
+
+            <div class="h08"></div>
+
+            <input type="radio" name="aa1" id="chk_d03" class="border chk03 large" disabled>
+            <label for="chk_d03">로그인 화면333</label>
+
+          </div>
+          <!-- htmlCode -->
+
+
+        </div>
+        <!-- scrollspy -->
+
+
+        <div class="scrollspy">
+          <a class="title_g">Chip & switch & Bedge</a>
+
+
+          <div class="color_tp_p fw600">Chip</div>
+          <div class="htmlCode">
+
+            <a class="color_primary fw800" href="F_CSR_006_consRegion.html">* F_CSR_006_consRegion.html</a> 참조
+
+            <div class="h12"></div>
+
+            <ul title="region01" class="chip_area">
+
+              <li>서울</li>
+              <li>부산</li>
+              <li>대구</li>
+              <li class="active">인천(체크)</li>
+              <li class="active disabled">인천(체크 비활성)</li>
+              <li class="disabled">광주(비활성)</li>
+            </ul>
+
+            <div class="badge_recomm">직장인추천</div>
+            <div class="badge_reco_num">요양인정번호</div>
+            <div class="badge_redLight">총 12문항</div>
+            <div class="badge_greenLight">기본 배송지</div>
+            <div class="badge_blueLight">상급</div>
+            <span class="badge_order rental">대여</span>
+            <span class="badge_order back_primary">궁금해요!</span>
+            <span class="badge_order back_danger_subtle fs12">요양인정번호 필요</span>
+            <span class="badge_order back_gray_subtle fs12">대형</span>
+            
+            <span class="badge_order back_success_bold">15%</span>
+            <span class="back_15803D radius04 color_white font_sss w40 h24 flex_center">5%</span>
+            <span class="back_15803D radius04 color_white font_sss w40 h24 flex_center">96%</span>
+
+          </div>
+          <!-- htmlCode -->
+
+          <div class="htmlCode">
+
+
+            <a class="color_primary fw800" href="F_SAE_002_wel_detail.html">* F_SAE_002_wel_detail.html</a> 참조
+
+
+            <div class="wel_scroll">
+
+              <ul class="chip_area02">
+                <li class="waves-effect">워커</li>
+                <li class="waves-effect active">실버카</li>
+                <li class="waves-effect disabled">롤레이터</li>
+                <li class="waves-effect">수동휠체어</li>
+                <li class="waves-effect">지팡이</li>
+                <li class="waves-effect">안전손잡이 둥형</li>
+                <li class="waves-effect">안전손잡이 벽걸이형</li>
+                <li class="waves-effect">지팡이</li>
+              </ul>
+
+            </div>
+
+
+          </div>
+          <!-- htmlCode -->
+
+
+          <div class="color_tp_p fw600">스위치 Switch</div>
+          <div class="htmlCode">
+
+            <div class="list_normal">
+
+              <span class="font_sbms">스위치</span>
+              <div class="switch">
+                <label>
+                  <input type="checkbox" checked>
+                  <span class="lever"></span>
+                </label>
+              </div>
+
+            </div>
+
+          </div>
+          <!-- htmlCode -->
+
+
+
+
+
+        </div>
+        <!-- scrollspy -->
+
+
+
+
+        <br><br>
+
+        <div class="scrollspy">
+          <a class="title_g">링크 텍스트 - link_text</a>
+          <div class="color_tp_p fw600">링크 텍스트</div>
+          <div class="htmlCode">
+
+
+
+            <span class="waves-effect link_text big color_primary">성인용보행기 외 5건</span>
+            <br>
+            <span class="waves-effect link_text color_teritiary big">조회하기</span>
+            <br>
+            <span class="waves-effect link_text big color_primary"><u>링크 텍스트</u></span>
+            <br><br>
+
+
+            <span class="waves-effect link_text">링크 텍스트</span>
+            <br>
+            <span class="waves-effect link_text"><u>링크 텍스트</u></span>
+            <br>
+            <span class="waves-effect link_text color_primary">링크 텍스트</span>
+            <br>
+            <span class="waves-effect link_text color_primary"><u>링크 텍스트</u></span>
+            <br>
+            <span class="waves-effect link_text color_disable">링크 텍스트</span>
+            <br>
+            <span class="waves-effect link_text color_disable"><u>링크 텍스트</u></span>
+            <br>
+            <br>
+            <span class="waves-effect link_text small">링크 텍스트</span>
+            <br>
+            <span class="waves-effect link_text small"><u>링크 텍스트</u></span>
+            <br>
+            <span class="waves-effect link_text small color_primary">링크 텍스트</span>
+            <br>
+            <span class="waves-effect link_text small color_primary"><u>링크 텍스트</u></span>
+            <br>
+            <span class="waves-effect link_text small color_disable">링크 텍스트</span>
+            <br>
+            <span class="waves-effect link_text small color_disable"><u>링크 텍스트</u></span>
+            <br><br>
+            <span class="waves-effect link_text color_white font_sbmu">더 알아보기</span>
+            <br>
+            <span class="waves-effect link_text color_white">더 알아보기</span>
+            <br>
+            <br><br>
+            <span class="waves-effect link_text small_thin">얇은 링크 텍스트</span>
+            <br>
+            <span class="waves-effect link_text small_thin color_primary">얇은 링크 텍스트</span>
+
+
+            <div class="d-flex align-items-center justify-content-end marT4 marB4">
+              <span class="color_t_s font_sbsr">주문요청내역 보기</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.64645 3.64645C5.84171 3.45118 6.15829 3.45118 6.35355 3.64645L10.3536 7.64645C10.5488 7.84171 10.5488 8.15829 10.3536 8.35355L6.35355 12.3536C6.15829 12.5488 5.84171 12.5488 5.64645 12.3536C5.45118 12.1583 5.45118 11.8417 5.64645 11.6464L9.29289 8L5.64645 4.35355C5.45118 4.15829 5.45118 3.84171 5.64645 3.64645Z" fill="#999999"/>
+              </svg>
+            </div>
+
+
+
+          </div>
+          <!-- htmlCode -->
+
+          <div class="color_tp_p fw600">리스트링크</div>
+          <div class="htmlCode">
+            <div class="waves-effect list_link">리스트링크 라인x</div>
+            <div class="waves-effect list_link bder_bottom">리스트링크</div>
+            <div class="waves-effect list_link bder_bottom font_sbmr">리스트링크</div>
+            <div class="waves-effect list_link bder_bottom ">
+              <span class="font_sbms">리스트링크</span>
+              <span class="font_sbmr">홍*동</span>
+            </div>
+            <div class="waves-effect list_link bder_bottom font_sbms">리스트링크</div>
+            <br><br>
+
+
+            테이블 list_link<br>
+            <a class="list_link table_link font_sbmr">테이블 링크</a>
+
+            <a href="" class="list_link table_link _t02 color_t_t font_sbmr">테이블 링크 등록</a>
+
+
+
+
+            <br><br>
+            <label class="input_label active">본인과의 가족관계 input_basic + list_link</label>
+            <div class="waves-effect input_basic list_link font_sbmr">어머니</div>
+            <div class="waves-effect input_basic list_link font_sbmr disabled">어머니dd</div>
+            <div class="waves-effect input_basic list_link font_sbmr no_bder">선없음</div>
+            <br><br>
+            알림 noti
+            <div class="waves-effect card box_normal list_link noti">
+              <div>
+                <div class="font_sbsb">상담 진행상황</div>
+                <div class="marT8 font_sbmr line_clamp_2">상담은 최대 두줄로 노출, 두줄 이상 넘어가면 말줄임 표시말줄임 표시로 처리된다. 두줄 이상 넘어가면 말줄임
+                  표시말줄임 표시로 처리된다.
+                </div>
+                <div class="marT8 color_t_t font_ssr">오전 11:24</div>
+              </div>
+            </div>
+            <!-- list_link noti -->
+            <div class="waves-effect card box_normal list_link noti back_today noti_dot">
+              <div>
+                <div class="font_sbsb">상담 진행상황ddd</div>
+                <div class="marT8 font_sbmr line_clamp_2">상담은 최대 두줄로 노출, 두줄 이상 넘어가면 말줄임 표시말줄임 표시로 처리된다. 두줄 이상 넘어가면 말줄임
+                  표시말줄임 표시로 처리된다.</div>
+                <div class="marT8 color_t_t font_ssr">오전 11:24</div>
+              </div>
+            </div>
+            <br><br>
+            어르신 길잡이 exp01
+            <div class="waves-effect list_link exp01 bder_bottom">
+              <div>
+                <div class="color_t_s font_sbsr">복지용구</div>
+                <div class="font_sbms">복지용구 신청 절차</div>
+              </div>
+            </div>
+
+            <div class="h10"></div>
+
+
+            <div class="pad20 back_F7F7F7">
+
+              <div class="input_basic list_link arrow_dis font_sbmr no_bder">
+                <div>실생활에서는 이렇게! <span class="font_sbmb">욕실</span></div>
+              </div>
+              <div class="input_basic list_link arrow_dis font_sbmr no_bder marT8">
+                <div>실생활에서는 이렇게! <span class="font_sbmb">거실</span></div>
+              </div>
+              <div class="input_basic list_link arrow_dis font_sbmr no_bder marT8">
+                <div>실생활에서는 이렇게! <span class="font_sbmb">침실</span></div>
+              </div>
+              <div class="input_basic list_link arrow_dis font_sbmr no_bder marT8">
+                <div>실생활에서는 이렇게! <span class="font_sbmb">야외</span></div>
+              </div>
+              <div class="input_basic list_info font_sbmr no_bder marT8">
+                <div>미구현 - <span class="font_sbmb">미구현</span></div>
+              </div>
+  
+            </div>
+
+
+          </div>
+          <!-- htmlCode -->
+
+        </div>
+        <!-- scrollspy -->
+
+
+
+
+        <div class="scrollspy">
+          <a class="title_g">버튼 Button</a>
+          <div class="htmlCode">
+            <div class="relative">
+              <span class="tool_tip">최근로그인</span>
+              <a class="waves-effect btn-large btn_naver w100p align_center">
+                <img class="icon_img" src="../images/08etc/icon_naver.svg">
+                <span><span class="fw700">네이버</span><span class="fw400">로 계속하기</span></span>
+              </a>
+            </div>
+            <div class="h08"></div>
+            <div class="relative">
+              <a class="waves-effect btn-large btn_kakao w100p align_center">
+                <img class="icon_img" src="../images/08etc/icon_kakao.svg">
+                <span><span class="fw700">카카오</span><span class="fw400">로 계속하기</span></span>
+              </a>
+            </div>
+            <div class="h08"></div>
+            <a class="waves-effect btn-large btn_primary w100p">확인</a>
+            <div class="h08"></div>
+            <a class="waves-effect btn-large btn_cancel w100p">취소</a>
+            <div class="h08"></div>
+            <a class="waves-effect btn-large btn_primary w100p btn_disable">확인</a>
+            <div class="h08"></div>
+            <a class="waves-effect btn-large btn_disable w100p">비활성 버튼</a>
+
+            <div class="h08"></div>
+
+            <div class="d-flex gap08">
+              <a class="modal-close waves-effect btn btn-large w100p btn_cancel">취소 *하단 모달확인</a>
+              <a class="modal-close waves-effect btn btn-large w100p btn_primary">확인</a>
+            </div>
+
+            <div class="h08"></div>
+            <a class="waves-effect btn-large btn_white disabled w100p">기본버튼</a>
+
+            <div class="h08"></div>
+            <a class="waves-effect btn-large btn_primary btn_white w100p">기본버튼2</a>
+
+            <div class="h08"></div>
+
+            <a class="waves-effect btn-large btn_primary btn_white disabled w100p">기본버튼3</a>
+
+            <div class="h08"></div>
+
+            <a class="waves-effect btn-large btn_cancel btn_white color_t_t no_bder w100p">기본버튼3</a>
+
+            <div class="h08"></div>
+
+            <a class="waves-effect btn-large btn_default w100p">신청 상세보기</a>
+
+            <div class="h08"></div>
+
+            <a class="waves-effect btn-large btn_default large w100p">
+              <span class="color_tp_s font_sbms">더 보기 btn-large btn_default large</span>
+            </a>
+
+            <div class="h08"></div>
+            <a class="waves-effect btn btn-middle btn_primary w120">중간버튼120px</a>
+            <a class="waves-effect btn btn-middle btn_cancel">중간버튼2</a>
+            
+            <a class="waves-effect btn btn-middle btn_cancel w100p align_center gap08">
+              <span class="color_tp_s font_sbss">더 보기</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M5.52864 3.52827C5.78899 3.26792 6.2111 3.26792 6.47145 3.52827L10.4714 7.52827C10.7318 7.78862 10.7318 8.21073 10.4714 8.47108L6.47145 12.4711C6.2111 12.7314 5.78899 12.7314 5.52864 12.4711C5.26829 12.2107 5.26829 11.7886 5.52864 11.5283L9.05723 7.99967L5.52864 4.47108C5.26829 4.21073 5.26829 3.78862 5.52864 3.52827Z"
+                  fill="#333333" />
+              </svg>
+            </a>
+
+            <div class="h08"></div>
+
+            <a class="waves-effect btn btn-middle btn_default w100p align_center gap08">
+              <span class="color_tp_s font_sbss">인정등급 재발급 신청</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M5.52864 3.52827C5.78899 3.26792 6.2111 3.26792 6.47145 3.52827L10.4714 7.52827C10.7318 7.78862 10.7318 8.21073 10.4714 8.47108L6.47145 12.4711C6.2111 12.7314 5.78899 12.7314 5.52864 12.4711C5.26829 12.2107 5.26829 11.7886 5.52864 11.5283L9.05723 7.99967L5.52864 4.47108C5.26829 4.21073 5.26829 3.78862 5.52864 3.52827Z"
+                  fill="#333333" />
+              </svg>
+            </a>
+
+
+
+
+            <div class="h08"></div>
+            <a class="waves-effect btn btn_cancel">인증번호 재전송 h36</a>
+
+            <a class="waves-effect btn btn_primary align_center inline_flex">
+              작은버튼
+            </a>
+            <a class="rounded waves-effect btn btn_cancel align_center inline_flex gap02">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M6.88614 1.54783C7.3914 0.70826 8.60858 0.708261 9.11384 1.54783L10.6675 4.12943C10.7094 4.19903 10.7777 4.24867 10.8568 4.267L13.7922 4.94683C14.7468 5.16792 15.1229 6.32553 14.4806 7.0655L12.5054 9.34085C12.4522 9.4022 12.4261 9.48252 12.4331 9.56345L12.6936 12.5652C12.7783 13.5414 11.7936 14.2569 10.8914 13.8746L8.11702 12.6993C8.04222 12.6676 7.95776 12.6676 7.88296 12.6993L5.10862 13.8746C4.20637 14.2569 3.22165 13.5414 3.30637 12.5652L3.56689 9.56345C3.57391 9.48252 3.54781 9.4022 3.49456 9.34085L1.51941 7.0655C0.877068 6.32553 1.2532 5.16792 2.20781 4.94683L5.14316 4.267C5.2223 4.24867 5.29062 4.19903 5.33251 4.12943L6.88614 1.54783Z"
+                  fill="#555555" />
+              </svg>
+              대표 설정
+            </a>
+            <a class="modal-close waves-effect btn-middle02 btn_white_bder">H40</a>
+
+            <br>
+            <a class="rounded btn">장바구니</a>
+            <a class="btn_rounded">장바구니</a>
+            <a class="btn_rounded flex_center gap04">
+              <span class="i_cart_white"></span>
+              <span>장바구니</span>
+            </a>
+
+          </div>
+          <!-- htmlCode -->
+        </div>
+        <!-- scrollspy -->
+
+
+        <div class="scrollspy">
+          <a class="title_g">팝업 Modal</a>
+          <div class="htmlCode">
+
+            <!-- Modal Trigger -->
+            <a class="waves-effect waves-light btn btn_primary modal-trigger" href="#modal1">기본Modal1</a>
+
+            <div class="h12"></div>
+
+            <a class="waves-effect waves-light btn btn_cancel modal-trigger" href="#modal2">기본Modal2</a>
+
+            <div class="h12"></div>
+
+            <a class="waves-effect waves-light btn btn_cancel modal-trigger" href="#modal3">하단Modal</a>
+
+            <div class="h12"></div>
+
+            <a class="waves-effect waves-light btn btn_cancel modal-trigger" data-target="modal_fullsreen">풀스크린 Modal</a>
+
+
+          </div>
+          <!-- htmlCode -->
+
+        </div>
+        <!-- scrollspy -->
+
+
+        <div class="scrollspy">
+          <a class="title_g">토스트 Toast</a>
+          <div class="htmlCode">
+
+            <a class="waves-effect btn btn-middle btn_primary w120" onclick="M.toast({html: '네트워크를 확인해주세요'})">Toast</a>
+
+          </div>
+          <!-- htmlCode -->
+
+        </div>
+        <!-- scrollspy -->
+
+
+
+
+
+        <div class="scrollspy">
+          <a class="title_g">테이블</a>
+          <div class="htmlCode">
+            <table class="table_basic">
+              <colgroup>
+                <col style="width:140px;">
+                <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th>타이틀1</th>
+                  <td class="l_right padR20">꽃분이</td>
+                </tr>
+                <tr>
+                  <th>타이틀2</th>
+                  <td class="l_right">
+                    <span class="waves-effect link_text">링크텍스트1 참조</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="h24"></div>
+
+
+            <table class="table_basic bder_bottom">
+              <colgroup>
+                <col style="width:100px;">
+                <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th class="font_sbsr">요양인정번호</th>
+                  <td>
+                    가나다라abcd
+                  </td>
+                </tr>
+                <tr>
+                  <th class="font_sbsr">장기요양기관</th>
+                  <td>
+                    <a href="" class="list_link table_link _t02 color_t_t font_sbmr">상담신청 후 연결</a>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="font_sbsr">장기요양기관</th>
+                  <td class="">
+                    <a class="list_info table_info font_sbms line_clamp_1 modal-trigger" href="#modal_counPlace">행복메디칼 관악지점디칼복메디칼 관악지점디칼복메디칼 관악지점디칼 관악지점</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            
+            
+            <div class="h20"></div>
+
+            하단 줄없는 테이블 bder_no
+            <table class="table_basic bder_bottom bder_no">
+              <colgroup>
+                <col style="width:100px;">
+                <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th class="font_sbsr color_t_s">요양인정번호</th>
+                  <td>
+                    <span class="font_sbms">L123456****</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="font_sbsr color_t_s">장기요양기관</th>
+                  <td>
+                    <span class="color_t_t font_sbmr">연결된 기관 없음</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- htmlCode -->
+
+        </div>
+        <!-- scrollspy -->
+
+        <br>
+        <br>
+
+
+
+        <div class="scrollspy">
+
+          <a class="title_g">리스트박스 box</a>
+
+          <div class="color_tp_p fw600">card service_card</div>
+          <div class="card service_card c01">
+
+            <div class="title_area">
+
+              <span class="txt_cate">복지용구</span>
+              <div class="txt_ctn">
+                내용적는곳<br>
+                c01~c03 컬러
+              </div>
+
+            </div>
+
+            <div class="om_img_area">
+              <img src="../images/10om/rom_01.svg">
+            </div>
+
+            <div class="box_area">
+
+              <div class="box">
+                <img src="../images/08etc/tool_80.svg">
+                <div class="ctn_area">
+                  <div class="font_sbss">타이틀</div>
+
+                  <p class="color_t_s font_sbsr noMar">
+                    내용내용내용내용
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+
+          </div>
+          <!-- card service_card -->
+
+          <br><br>
+
+          
+          <div class="color_tp_p fw600">.box_list_area > .box_om_wel_list.title</div>
+          <div class="box_list_area">
+
+            <a class="box_om_wel_list title">
+                <div class="img_area">
+                  <img src="../images/08etc/document_41.svg" alt="인정등급 발급 절차">
+                </div>
+                <div>
+                    <div class="font_sbms">
+                        인정등급 발급 절차
+                    </div>
+                    <div class="color_t_s font_sbsr marT4 ">소요 기간과 진행 절차 안내</div>
+                </div>
+            </a>
+
+            <a class="box_om_wel_list title">
+                <div class="img_area">
+                  <img src="../images/08etc/accompany_41.svg" alt="외출시 유용한 용품">
+                </div>
+                <div>
+                    <div class="font_sbms">
+                        외출시 유용한 용품
+                    </div>
+                    <div class="color_t_s font_sbsr marT4">야외에서 쾌적하고 안정적인 활동</div>
+                </div>
+            </a>
+
+            <a class="box_om_wel_list title">
+                <div class="img_area">
+                  <img src="../images/08etc/icon_24h.svg" alt="주야간보호센터란?">
+                </div>
+                <div>
+                    <div class="font_sbms">
+                        주야간보호센터란?
+                    </div>
+                    <div class="color_t_s font_sbsr marT4">집에 혼자 계시는 어르신이 걱정된다면</div>
+                </div>
+            </a>
+
+        </div>
+
+
+
+
+
+
+          <div class="color_tp_p fw600">img_list_area</div>
+          <div class="htmlCode">
+            <div class="img_list_area">
+              <div class="img_list_box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M16.2855 3.67451C17.4221 4.81109 18.0606 6.35262 18.0606 7.95998C18.0606 15.0306 21.0909 17.0508 21.0909 17.0508H2.90918C2.90918 17.0508 5.93946 15.0306 5.93946 7.95998C5.93946 6.35262 6.57798 4.81109 7.71456 3.67451C8.85114 2.53794 10.3927 1.89941 12 1.89941C13.6074 1.89941 15.1489 2.53794 16.2855 3.67451ZM14.308 21.1964C15.01 20.6699 15.5935 19.9125 16 19H8C8.4065 19.9125 8.98996 20.6699 9.69196 21.1964C10.394 21.7229 11.1899 22 12 22C12.8101 22 13.606 21.7229 14.308 21.1964Z"
+                    fill="#616161" />
+                </svg>
+              </div>
+              <div class="txt">
+                <div class="title">알림</div>
+                <p class="ctn">알림 메시지 발송</p>
+              </div>
+            </div>
+          </div>
+          <!-- htmlCode -->
+
+          <br><br>
+
+          <div class="color_tp_p fw600">box marW-20</div>
+
+          <div class="box marW-20">
+            <div class="img_area">
+              <img src="../images/08etc/money03_40_2.svg" alt="혜택">
+            </div>
+            <div class="ctn_area">
+              <h5 class="title">받을 수 있는 혜택 확인</h5>
+
+              <p class="color_t_s font_sbmr">
+                관심있는 복지용구를 바탕으로<br>
+                85%~100% 지원 혜택을 받을 수 있는 지 알려드려요
+              </p>
+            </div>
+
+          </div>
+          <!-- box -->
+
+          <br><br>
+
+          <div class="color_tp_p fw600">box_sub01</div>
+
+          <div class="box_sub01">
+            <div class="img_area">
+              <img src="../images/01tool/tool01_01.svg" alt="보행기">
+            </div>
+            <div class="ctn_area">
+              <div class="font_sbmb">성인용 보행기</div>
+
+              <p class="color_t_s font_sbsr">
+                걸어 다니기 불편하신 경우 실내·외에서 혼자서 이동할 수 있도록 도와드려요
+              </p>
+            </div>
+          </div>
+          <!-- box_sub01 -->
+
+          <br><br>
+
+          <div class="color_tp_p fw600">box_om_wel_list title</div>
+
+          <div class="box_om_wel_list title">
+            <div class="img_area">
+              <img src="../images/08etc/bokji01_40.svg" alt="어르신용품">
+            </div>
+            <h4 class="title">
+              어르신용품 구매비 지원
+            </h4>
+          </div>
+
+
+
+
+          <br><br>
+
+          <div class="color_tp_p fw600">box_om_wel_list</div>
+
+          <a class="waves-effect box_om_wel_list">
+            <div class="img_area">
+              <img src="../images/08etc/bokji01_40.svg" alt="어르신용품">
+            </div>
+            <div class="font_sbms">
+              어르신용품 구매비 지원
+            </div>
+          </a>
+
+
+          <br><br>
+
+          어르신 주문상태값<br>
+          상담종류에 따른 상태값
+
+          <div style="width:360px;background-color: #fff;padding:20px;">
+
+            <div class="card w100p radius08 back_F5F5F5 noShadow">
+
+              <div class="card-content box_coun_list _om_box pad12">
+  
+                <div class="img_area trans_s02 ing">
+                  <!-- <span class="txt font_sss">상담<br>연결중</span> -->
+                </div>
+  
+                <div>
+                  <div class="font_sbss line_clamp_1">인정등급 간편테스트 관심 복지용구 글이 길어지면 말줄임33</div>
+  
+                  <div class="breadcrumb_area marT4">
+                    <span class="color_t_s font_sss">14상담완료</span>
+                    <span class="color_t_s font_ssr">2024.01.10</span>
+                  </div>
+  
+                </div>
+  
+              </div>
+  
+            </div>
+
+            <br>
+  
+            <div class="card w100p radius08 back_F5F5F5 noShadow">
+  
+              <div class="card-content box_coun_list _om_box pad12">
+  
+                <div class="img_area trans_s02 ing"></div>
+  
+                <div>
+                  <div class="font_sbss line_clamp_1">관심 복지용구</div>
+  
+                  <div class="breadcrumb_area marT4">
+                    <span class="color_t_danger font_sss">상담취소</span>
+                    <span class="color_t_s font_ssr">2024.01.10</span>
+                  </div>
+  
+                </div>
+  
+              </div>
+  
+            </div>
+
+            <br>
+  
+            <div class="card w100p radius08 back_F5F5F5 noShadow">
+  
+              <div class="card-content box_coun_list _om_box pad12">
+  
+                <div class="img_area trans_s03 ing"></div>
+  
+                <div>
+                  <div class="font_sbss line_clamp_1">어르신돌봄</div>
+  
+                  <div class="breadcrumb_area marT4">
+                    <span class="color_t_s font_sss">상담연결중</span>
+                    <span class="color_t_s font_ssr">2024.01.10</span>
+                  </div>
+  
+                </div>
+  
+              </div>
+  
+            </div>
+
+            <br>
+  
+            <div class="card w100p radius08 back_F5F5F5 noShadow">
+  
+              <div class="card-content box_coun_list _om_box pad12">
+  
+                <div class="img_area trans_s03 ing"></div>
+  
+                <div>
+                  <div class="font_sbss line_clamp_1">어르신돌봄</div>
+  
+                  <div class="breadcrumb_area marT4">
+                    <span class="color_t_danger font_sss">상담취소</span>
+                    <span class="color_t_s font_ssr">2024.01.10</span>
+                  </div>
+  
+                </div>
+  
+              </div>
+  
+            </div>
+
+            <br>
+    
+            <div class="card w100p radius08 back_F5F5F5 noShadow">
+  
+              <div class="card-content box_coun_list _om_box pad12">
+  
+                <div class="img_area trans_s01 ing"></div>
+  
+                <div>
+                  <div class="font_sbss line_clamp_1">인정등급 간편테스트</div>
+  
+                  <div class="breadcrumb_area marT4">
+                    <span class="color_t_s font_sss">상담연결중</span>
+                    <span class="color_t_s font_ssr">2024.01.10</span>
+                  </div>
+  
+                </div>
+  
+              </div>
+  
+            </div>
+
+            <br>
+  
+            <div class="card w100p radius08 back_F5F5F5 noShadow">
+  
+              <div class="card-content box_coun_list _om_box pad12">
+  
+                <div class="img_area trans_s01 ing"></div>
+  
+                <div>
+                  <div class="font_sbss line_clamp_1">인정등급 간편테스트</div>
+  
+                  <div class="breadcrumb_area marT4">
+                    <span class="color_t_danger font_sss">상담취소</span>
+                    <span class="color_t_s font_ssr">2024.01.10</span>
+                  </div>
+  
+                </div>
+  
+              </div>
+  
+            </div>
+
+            <br>
+            주문요청 상태값<br>
+            <div class="card w100p radius08 back_F5F5F5 noShadow">
+  
+              <div class="card-content box_coun_list _om_box pad12">
+  
+                <div class="order_img_area">
+                  <img src="../images/03tool/tool03_06.png" alt="">
+                </div>
+  
+                <div>
+                  <div class="font_sbss line_clamp_1">지팡이 외 6개</div>
+  
+                  <div class="breadcrumb_area marT4">
+                    <span class="color_t_s font_sss">주문확인중</span>
+                    <span class="color_t_s font_ssr">2024.12.31</span>
+                  </div>
+  
+                </div>
+  
+              </div>
+  
+            </div>
+
+            <br>
+    
+            <div class="card w100p radius08 back_F5F5F5 noShadow">
+  
+              <div class="card-content box_coun_list _om_box pad12">
+  
+                <div class="order_img_area">
+                  <img src="../images/03tool/tool03_06.png" alt="">
+                </div>
+  
+                <div>
+                  <div class="font_sbss line_clamp_1">지팡이 외 6개</div>
+  
+                  <div class="breadcrumb_area marT4">
+                    <span class="color_t_danger font_sss">주문취소</span>
+                    <span class="color_t_s font_ssr">2024.01.10</span>
+                  </div>
+  
+                </div>
+  
+              </div>
+  
+            </div>
+  
+  
+          </div>
+
+          <div style="width:360px;padding:20px;">
+  
+            <div class="card waves-effect w100p">
+            
+              <div class="card-content box_coun_list pad20">
+            
+                <div class="img_area trans_s01 ing"></div>
+            
+                <div>
+                  <div class="font_sblb">인정등급 간편테스트 인정등급 간편테스트인정등급 간편테스트인정등급 간편테스트인정등급 간편테스트</div>
+                  <div class="breadcrumb_area marT4">
+                    <span class="color_t_s font_sbss">상담연결중</span>
+                    <span class="color_t_s font_sbsr">2024.12.31</span>
+                  </div>
+                </div>
+            
+              </div>
+            
+            </div>
+            <!-- card -->
+  
+            <br><br>
+  
+            <div class="card waves-effect w100p">
+            
+              <div class="card-content box_coun_list pad20">
+            
+                <div class="img_area trans_s02 ing"></div>
+            
+                <div>
+                  <div class="font_sblb">관심 복지용구</div>
+                  <div class="breadcrumb_area marT4">
+                    <span class="color_t_s font_sbss">상담완료</span>
+                    <span class="color_t_s font_sbsr">2024.01.31</span>
+                  </div>
+                </div>
+            
+              </div>
+            
+            </div>
+            <!-- card -->
+  
+            <br><br>
+  
+            <div class="card waves-effect w100p">
+            
+              <div class="card-content box_coun_list pad20">
+            
+                <div class="img_area trans_s03 ing"></div>
+            
+                <div>
+                  <div class="font_sblb">어르신돌봄</div>
+                  <div class="breadcrumb_area marT4">
+                    <span class="color_t_s font_sbss">상담연결중</span>
+                    <span class="color_t_s font_sbsr">2024.01.31</span>
+                  </div>
+                </div>
+            
+              </div>
+            
+            </div>
+            <!-- card -->
+  
+            <br><br>
+  
+            <div class="card waves-effect w100p">
+            
+              <div class="card-content box_coun_list pad20">
+            
+                <div class="img_area trans_s02 ing"></div>
+            
+                <div>
+                  <div class="font_sblb">관심 복지용구</div>
+                  <div class="breadcrumb_area marT4">
+                    <span class="color_t_danger font_sbss">상담취소</span>
+                    <span class="color_t_s font_sbsr">2024.01.31</span>
+                  </div>
+                </div>
+            
+              </div>
+            
+            </div>
+            <!-- card -->
+
+
+          </div>
+
+
+          <br><br><br><br>
+
+
+
+
+
+          <div class="card waves-effect w100p radius08">
+
+            <div class="card-content box_coun_list pad20">
+
+              <div class="img_area trans_02 ing">
+                <span class="txt font_sss">상담<br>연결중</span>
+              </div>
+
+              <div>
+                <div class="font_sbls">관심 복지용구</div>
+                <div class="marT4">
+                  <span class="color_t_s font_sbsr">복지용구</span>
+                  <span class="marL4 color_t_s font_sbsr">2024.01.10</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <br><br>
+
+          <div class="card waves-effect w100p radius08">
+
+            <div class="card-content box_coun_list pad20">
+
+              <div class="img_area trans_02 ok">
+                <span class="txt font_sss">상담완료</span>
+              </div>
+
+              <div>
+                <div class="font_sbls">관심 복지용구</div>
+                <div class="marT4">
+                  <span class="color_t_s font_sbsr">복지용구</span>
+                  <span class="marL4 color_t_s font_sbsr">2024.01.10</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <br><br>
+
+
+          <div class="card waves-effect w100p radius08">
+
+            <div class="card-content box_coun_list pad20">
+
+              <div class="img_area trans_s02 ing">
+                <!-- <span class="txt font_sss">상담<br>연결중</span> -->
+              </div>
+
+              <div>
+                <div class="font_sbls">111관심 복지용구</div>
+                <div class="breadcrumb_area marT4">
+                  <span class="color_t_s font_sbss">상담완료</span>
+                  <span class="color_t_s font_ssr">2024.12.31</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+
+
+
+
+
+
+
+          <br><br>
+
+          <div>어르신 페이지</div>
+          <div class="card w100p radius08 back_F5F5F5 noShadow">
+
+            <div class="card-content box_coun_list _om_box pad12">
+
+              <div class="img_area trans_02 ing">
+                <span class="txt font_sss">상담<br>연결중</span>
+              </div>
+
+              <div>
+                <div class="font_sbss">관심 복지용구33</div>
+                <div class="marT4">
+                  <span class="color_t_s font_sbsr">2024.01.10</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <br><br>
+
+
+          <div class="card ">
+
+            <a class="card-content box_coun_list s02 _om_box" href="">
+
+              <div class="img_area trans_03 ing">
+              </div>
+
+              <div class="color_t_p font_sblb">
+                꽃분이님, <span class="color_tp_pp">간편 테스트</span>를<br>
+                이어서 진행해보세요
+              </div>
+
+            </a>
+
+          </div>
+          <!-- card -->
+
+          <br><br>
+
+
+        <div class="card marB32">
+
+            <div class="close_x p03"></div>
+
+            <a class="card-content waves-effect box_coun_list s02 _om_box">
+
+                <div class="img_area trans_04 ing">
+                </div>
+
+                <div class="color_t_p font_sbmb">
+                    <span class="color_tp_pp">요양인정번호</span>를<br>등록해주세요
+                    <!-- <span class="txtEvt">꽃분이</span>님, <span class="color_tp_pp">간편 테스트</span>를<br>
+                    이어서 진행해보세요 -->
+                </div>
+
+            </a>
+
+        </div>
+        <!-- card -->
+
+
+          <br><br>
+
+          <div class="color_tp_p fw600">box_custom_service</div>
+
+          <div class="waves-effect box_custom_service back_FFF5E6">
+            <div class="ctn_area">
+              <div class="font_sbsr color_t_s">상담 관련 문의</div>
+              <div class="font_sbmb">어르신의 장기요양기관</div>
+            </div>
+            <div class="img_area">
+              <img src="../images/08etc/bp_40.svg" style="width:80px;height:80px;" alt="혜택">
+            </div>
+          </div>
+
+          <div class="waves-effect box_custom_service back_F5F5F5">
+            <div class="ctn_area">
+              <div class="font_sbsr color_t_s">상담 외 기타 문의</div>
+              <div class="font_sbmb">이로움ON 고객센터</div>
+            </div>
+            <div class="img_area">
+              <img src="../images/08etc/erounon_40.svg" alt="혜택">
+            </div>
+          </div>
+
+
+          <div class="box bder_style01 marT8">
+          
+            <div class="img_area back_EEEEEE">
+              <object data="/html/page/app/matching/assets/src/images/08etc/bp_40.svg"></object>
+            </div>
+            <div class="ctn_area">
+              <div class="font_sbms">이로움사업소</div>
+              <div class="color_t_s font_sbsr">
+                경기 구리시
+              </div>
+            </div>
+          
+          </div>
+
+          <br><br>
+
+          <div class="font_sbls"><span class="color_t_danger">★</span> 박스요소 개별 클래스</div>
+          box_arrowRight : 오른쪽화살표
+          <div class="card box_arrowRight radius12 padH24W20 d-flex align-items-center gap08 back_FFF5E6 bder_1_FF8120">
+          
+            <div class="img_area">
+              <img src="../images/21chat/profile_bomE.svg" alt="인정등급 상세 테스트">
+            </div>
+            <div>
+              <div class="font_sbmb">
+                박스개별 클래스
+              </div>
+              <div class="color_t_s font_sbssr marT4 ">card box_arrowRight radius12 padH24W20 d-flex align-items-center gap08 back_FFF5E6 bder_1_FF8120</div>
+            </div>
+          
+          </div>
+
+
+          <br><br>
+
+          <div class="box_UseSalary">
+            <ul class="breadcrumb_area_2">
+              <li>
+                <span>사용연한</span>
+                <span class="font_sbmb color_t_p">5년</span>
+              </li>
+              <li>
+                <span>급여한도</span>
+                <span class="font_sbmb color_t_p">2개</span>
+              </li>
+            </ul>
+          </div>
+          <div class="box_UseSalary">
+            <div class="flex_shrink_0 font_sbmb">
+              실내
+            </div>
+            <ul class="breadcrumb_area_2">
+              <li>
+                <span>사용연한</span>
+                <span class="font_sbmb color_t_p">2년</span>
+              </li>
+              <li>
+                <span>급여한도</span>
+                <span class="font_sbmb color_t_p">1개</span>
+              </li>
+            </ul>
+          </div>
+
+          
+          <ul class="breadcrumb_area_2 bder_E0E0E0">
+            <li>
+                <a class="d-flex align-items-center gap12 modal-trigger" href="#modal_share">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24"
+                        fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M18.3324 3.44922C17.2054 3.44922 16.2917 4.36287 16.2917 5.48992C16.2917 5.84706 16.3835 6.18276 16.5447 6.47476C16.5538 6.4883 16.5625 6.50222 16.5709 6.51652C16.5792 6.53071 16.5869 6.54505 16.5942 6.55953C16.9535 7.14223 17.5976 7.53063 18.3324 7.53063C19.4595 7.53063 20.3731 6.61697 20.3731 5.48992C20.3731 4.36287 19.4595 3.44922 18.3324 3.44922ZM15.7209 7.8809C16.3682 8.58754 17.2986 9.03063 18.3324 9.03063C20.2879 9.03063 21.8731 7.4454 21.8731 5.48992C21.8731 3.53445 20.2879 1.94922 18.3324 1.94922C16.3769 1.94922 14.7917 3.53445 14.7917 5.48992C14.7917 5.87233 14.8523 6.24058 14.9645 6.58559L9.78108 9.61052C9.13376 8.90391 8.20343 8.46084 7.16961 8.46084C5.21413 8.46084 3.62891 10.0461 3.62891 12.0015C3.62891 13.957 5.21413 15.5422 7.16961 15.5422C8.20358 15.5422 9.13404 15.099 9.78136 14.3923L14.9659 17.4134C14.8528 17.7596 14.7917 18.1292 14.7917 18.5132C14.7917 20.4686 16.3769 22.0539 18.3324 22.0539C20.2879 22.0539 21.8731 20.4686 21.8731 18.5132C21.8731 16.5577 20.2879 14.9725 18.3324 14.9725C17.3001 14.9725 16.371 15.4142 15.7239 16.119L10.5376 13.0969C10.6497 12.752 10.7103 12.3838 10.7103 12.0015C10.7103 11.6191 10.6497 11.2508 10.5375 10.9058L15.7209 7.8809ZM8.90791 10.932C8.91515 10.9464 8.92289 10.9607 8.93114 10.9749C8.93947 10.9892 8.9482 11.0031 8.95731 11.0166C9.11855 11.3086 9.21031 11.6444 9.21031 12.0015C9.21031 12.3588 9.11853 12.6946 8.95725 12.9866C8.94808 13.0002 8.93929 13.0142 8.9309 13.0286C8.92275 13.0426 8.9151 13.0568 8.90795 13.071C8.54865 13.6538 7.90449 14.0422 7.16961 14.0422C6.04256 14.0422 5.12891 13.1286 5.12891 12.0015C5.12891 10.8745 6.04256 9.96084 7.16961 9.96084C7.90447 9.96084 8.5486 10.3493 8.90791 10.932ZM16.2917 18.5132C16.2917 18.1751 16.3739 17.8563 16.5194 17.5756C16.5415 17.5477 16.562 17.5179 16.5804 17.4862C16.5982 17.4556 16.6136 17.4243 16.6267 17.3925C16.9915 16.8383 17.6193 16.4725 18.3324 16.4725C19.4595 16.4725 20.3731 17.3861 20.3731 18.5132C20.3731 19.6402 19.4595 20.5539 18.3324 20.5539C17.2054 20.5539 16.2917 19.6402 16.2917 18.5132Z"
+                            fill="#1F2937" />
+                    </svg>
+                    <span class="font_sbsr">공유하기</span>
+                </a>
+            </li>
+            <li>
+                <a class="d-flex align-items-center gap12" href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18"
+                        fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M4.23415 2.63727e-05C4.57511 -0.00152562 4.91289 0.0654368 5.22751 0.196927C5.54159 0.328189 5.82616 0.521068 6.06452 0.764112L7.85539 2.55237C8.09712 2.79376 8.28887 3.08054 8.41966 3.39619C8.55045 3.71183 8.61776 4.05019 8.61776 4.39188C8.61776 4.73356 8.55045 5.07192 8.41966 5.38757C8.28894 5.70303 8.09736 5.98965 7.85581 6.23096C7.85568 6.2311 7.85595 6.23083 7.85581 6.23096L7.33517 6.75269C7.89433 7.57134 8.52888 8.33611 9.23071 9.03686L9.23248 9.03863C9.93112 9.74126 10.6935 10.3766 11.5095 10.9364L12.0281 10.4168C12.028 10.4169 12.0282 10.4167 12.0281 10.4168C12.2689 10.1747 12.5554 9.98223 12.8707 9.85105C13.1861 9.71983 13.5242 9.65226 13.8658 9.65226C14.2074 9.65226 14.5455 9.71983 14.8609 9.85105C15.1763 9.98228 15.4626 10.1746 15.7035 10.4168L17.4881 12.2114C17.7306 12.4502 17.9229 12.7353 18.0538 13.0496C18.1848 13.3645 18.2515 13.7025 18.25 14.0436C18.2504 14.3849 18.1837 14.723 18.0536 15.0385C17.9234 15.3544 17.7322 15.6415 17.4908 15.8834C17.4904 15.8838 17.4901 15.8842 17.4897 15.8846L16.6361 16.7462C16.6304 16.7519 16.6247 16.7576 16.6188 16.7631C16.1784 17.1776 15.6598 17.4998 15.0933 17.7109C14.5373 17.9181 13.9462 18.0141 13.3535 17.9935C13.1624 18.0027 12.9709 18.0021 12.7798 17.9919C12.7701 17.9914 12.7603 17.9906 12.7506 17.9897C10.162 17.7407 7.13044 16.0757 4.65724 13.5908C2.19491 11.1169 0.524076 8.11804 0.295787 5.52158C0.19869 4.82763 0.256446 4.12064 0.465017 3.45157C0.675623 2.77597 1.03467 2.15614 1.51588 1.63768C1.52214 1.63093 1.52854 1.6243 1.53507 1.61781L2.39605 0.761387C2.63739 0.519535 2.9241 0.327729 3.23975 0.197047C3.55503 0.0665177 3.89295 -0.00044179 4.23415 2.63727e-05ZM4.6936 1.47446C4.54961 1.41429 4.39508 1.38375 4.23917 1.38463L4.23356 1.38467C4.07435 1.38427 3.91661 1.41541 3.76939 1.47636C3.62217 1.53731 3.48833 1.62687 3.37562 1.73996L3.37351 1.74207L2.5218 2.58927C2.1858 2.95415 1.93473 3.3894 1.78689 3.86364C1.63775 4.34208 1.59748 4.84797 1.66909 5.3441C1.67101 5.35743 1.67255 5.37082 1.67369 5.38425C1.85783 7.54659 3.30304 10.2675 5.63861 12.6141C7.9643 14.9508 10.7058 16.3966 12.8684 16.61C13.0163 16.6174 13.1644 16.6172 13.3122 16.6093C13.3343 16.6081 13.3563 16.6079 13.3784 16.6089C13.7977 16.6265 14.2164 16.5601 14.6098 16.4135C14.9997 16.2682 15.3571 16.047 15.6614 15.7627L16.5081 14.908L16.5102 14.9059C16.623 14.7929 16.7126 14.6587 16.7736 14.5108C16.8345 14.3628 16.8657 14.2043 16.8654 14.0441L16.8653 14.0385C16.8662 13.8817 16.8357 13.7263 16.7754 13.5816C16.7152 13.437 16.6266 13.306 16.515 13.1965L16.509 13.1905L14.7217 11.3931C14.7217 11.3931 14.7217 11.3932 14.7217 11.3931C14.6093 11.2801 14.4758 11.1905 14.329 11.1294C14.1821 11.0683 14.0247 11.0369 13.8658 11.0369C13.7069 11.0369 13.5495 11.0683 13.4026 11.1294C13.2557 11.1905 13.1223 11.2801 13.0099 11.3931L12.09 12.3149C11.8607 12.5447 11.5024 12.5843 11.2285 12.4101C10.1508 11.7247 9.15238 10.9217 8.25149 10.0158C7.34747 9.11302 6.54619 8.11258 5.86233 7.03283C5.68916 6.7594 5.72854 6.40248 5.95716 6.17338L6.87702 5.25162C6.9898 5.13899 7.07937 5.00508 7.14051 4.85753C7.20165 4.70997 7.23315 4.55173 7.23315 4.39188C7.23315 4.23202 7.20165 4.07378 7.14051 3.92623C7.07937 3.77868 6.98981 3.64478 6.87704 3.53215C6.87703 3.53215 6.87704 3.53216 6.87704 3.53215L5.07738 1.73513C4.96808 1.62328 4.83758 1.53464 4.6936 1.47446Z"
+                            fill="#333333" />
+                    </svg>
+                    <span class="font_sbsr">전화상담하기</span>
+                </a>
+            </li>
+        </ul>
+
+
+
+          <br><br>
+
+
+          <div class="color_tp_p fw600">부재 박스</div>
+          <div class="htmlCode">
+
+            <div class="card-panel default">
+              이번에 신청하는 상담의 연락처만 수정돼요
+            </div>
+
+          </div>
+          <!-- htmlCode -->
+
+        </div>
+        <!-- scrollspy -->
+
+
+
+
+        <br><br>
+
+
+        <div class="scrollspy">
+          <a class="title_g">복지용구 관련</a>
+          <div class="htmlCode">
+
+            <div class="back_F5F5F5 pad20">
+
+              <div class="walfare_slide marW-20">
+              
+                <div class="ctn">
+                  <div class="img_area">
+                    <img src="../images/01tool/tool01_03.svg" alt="지팡이">
+                  </div>
+                  <div class="title">지팡이</div>
+                  <div class="num">1개</div>
+                </div>
+                <!-- ctn -->
+              
+                <div class="ctn">
+                  <div class="img_area">
+                    <img src="../images/01tool/tool01_01.svg" alt="성인용 보행기">
+                  </div>
+                  <div class="title">성인용 보행기</div>
+                  <div class="num">1개</div>
+                </div>
+                <!-- ctn -->
+              
+                <div class="ctn">
+                  <div class="img_area">
+                    <img src="../images/01tool/tool01_06.svg" alt="미끄럼방지 양말">
+                  </div>
+                  <div class="title">미끄럼방지 양말</div>
+                  <div class="num">1개</div>
+                </div>
+                <!-- ctn -->
+              
+                <div class="ctn">
+                  <div class="img_area">
+                    <img src="../images/01tool/tool01_07.svg" alt="욕창예방매트리스">
+                  </div>
+                  <div class="title">욕창예방매트리스</div>
+                  <div class="num">1개</div>
+                </div>
+                <!-- ctn -->
+              
+                <div class="ctn">
+                  <div class="img_area">
+                    <img src="../images/01tool/tool01_01.svg" alt="성인용 보행기">
+                  </div>
+                  <div class="title">성인용 보행기</div>
+                  <div class="num">1개</div>
+                </div>
+                <!-- ctn -->
+              
+                <div class="ctn">
+                  <div class="img_area">
+                    <img src="../images/01tool/tool01_06.svg" alt="미끄럼방지 양말">
+                  </div>
+                  <div class="title">미끄럼방지 양말</div>
+                  <div class="num">1개</div>
+                </div>
+                <!-- ctn -->
+              
+                <div class="ctn">
+                  <div class="img_area">
+                    <img src="../images/01tool/tool01_07.svg" alt="욕창예방매트리스">
+                  </div>
+                  <div class="title">욕창예방매트리스</div>
+                  <div class="num">1개</div>
+                </div>
+                <!-- ctn -->
+              
+              
+              
+              
+              </div>
+
+
+            </div>
+
+            <div class="h20"></div>
+
+
+
+            
+            <div class="sel_welfare_area">
+              <div class="waves-effect sel_box">
+                  <img src="../images/01tool/tool01_01.svg" alt="성인용 보행기">
+                  <div class="title">성인용 보행기</div>
+              </div>
+              <div class="waves-effect sel_box">
+                  <img src="../images/01tool/tool01_06.svg" alt="미끄럼방지 양말">
+                  <div class="title">미끄럼방지 양말</div>
+              </div>
+              <div class="waves-effect sel_box">
+                  <img src="../images/01tool/tool01_07.svg" alt="욕창예방매트리스">
+                  <div class="title">욕창예방매트리스</div>
+              </div>
+              <div class="waves-effect sel_box active">
+                  <img src="../images/01tool/tool01_02.svg" alt="수동휠체어">
+                  <div class="title">수동휠체어</div>
+              </div>
+            </div>
+
+            
+          </div>
+          <!-- htmlCode -->
+
+
+
+
+
+
+          <div class="box_order_list padH16W12">
+    
+    
+            <div class="order_list_db">
+                <div class="img_area">
+                    <img src="/html/page/app/matching/assets/src/images/sample/sam_order.png" alt="">
+                </div>
+                <ul class="od_txt">
+                    <li class="font_sbss">성인용 보행기</li>
+                    <li class="color_t_s font_ssr marT2">HM-606</li>
+                    <li class="breadcrumb_area marB2">
+                        <span class="color_t_s font_ssr">1개</span>
+                    </li>
+                    <li class="font_sbsb">911,080원</li>
+                </ul>
+            </div>
+
+            <div class="h16"></div>
+    
+    
+            <div class="order_list_db">
+                <div class="img_area">
+                    <div class="no_Thumb_Img">
+                      <img src="/html/page/app/matching/assets/src/images/04icon/back_trans.png" alt="thumb_img">
+                    </div>
+                </div>
+                <ul class="od_txt">
+                    <li class="font_sbss">성인용 보행기</li>
+                    <li class="color_t_s font_ssr marT2">HM-606</li>
+                    <li class="breadcrumb_area marB2">
+                        <span class="color_t_s font_ssr">1개</span>
+                    </li>
+                    <li class="font_sbsb">911,080원</li>
+                </ul>
+            </div>
+
+          </div>
+          <!-- box_order_list -->
+
+
+          <div class="h16"></div>
+
+
+          <div class="box_order_list">
+            <div class="font_sbmb marB8">배송완료</div>
+            <div class="order_list_db">
+              <div class="img_area">
+                <img src="/html/page/app/matching/assets/src/images/sample/sam_order17.png" alt="">
+              </div>
+              <ul class="od_txt">
+                <li class="font_sbss">목욕의자</li>
+                <li class="color_t_s font_ssr marT2">PN-L4152101D 뉴클리어 (신형 원터치)</li>
+                <li class="breadcrumb_area marB2">
+                  <span class="color_t_s font_ssr">오렌지</span>
+                  <span class="color_t_s font_ssr">3개</span>
+                </li>
+                <li class="d-flex gap04">
+                  <span class="font_sbss">예상금액</span>
+                  <span class="font_sbsb">9,999,000원</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+
+          <div class="h16"></div>
+          
+          
+          <div class="box_order_list">
+            <div class="font_sbmb marB8">주문확인중</div>
+            <div class="order_list_db">
+              <div class="img_area">
+                <div class="no_Thumb_Img">
+                  <img src="/html/page/app/matching/assets/src/images/04icon/back_trans.png" alt="thumb_img">
+                </div>
+                <!-- <img src="/html/page/app/matching/assets/src/images/sample/sam_order.png" alt=""> -->
+              </div>
+              <ul class="od_txt">
+                <li class="font_sbss">11성인용 보행기</li>
+                <li class="color_t_s font_ssr marT2">TW-0128</li>
+                <li class="color_t_s font_ssr marB2">1개</li>
+                <li class="d-flex gap04">
+                  <span class="font_sbss">예상금액</span>
+                  <span class="font_sbsb">12,510원</span>
+                </li>
+              </ul>
+            </div>
+          
+            <div class="h16"></div>
+          
+            <a class="waves-effect btn btn-middle btn_cancel w100p">
+              <span class="color_tp_s font_sbss">배송현황</span>
+            </a>
+          
+          </div>
+          
+          
+          <div class="h16"></div>
+
+
+          <div class="orderListItem" style="width:360px; background-color: azure;">
+
+
+            <div class="itemList">
+
+              <div class="item">
+                <div class="itemImgArea">
+                  <span class="iconCart" onclick="toast_order()"></span>
+                  <img src="/html/page/app/matching/assets/src/images/sample/sam_order.png" alt="order_img">
+  
+                </div>
+                <div class="ctnArea">
+                  <div class="itemName">HM-606</div>
+                  <div>
+                    <span class="sale">85%</span>
+                    <span class="price">8,220원</span>
+                  </div>
+                </div>
+  
+              </div>
+              <!-- item -->
+  
+              <div class="item">
+                <div class="itemImgArea">
+                  <span class="iconCart" onclick="toast_order()"></span>
+                  <div class="no_Thumb_Img">
+                    <img src="/html/page/app/matching/assets/src/images/04icon/back_trans.png" alt="thumb_img">
+                  </div>
+  
+                </div>
+                <div class="ctnArea">
+                  <div class="itemName">기본디폴트</div>
+                  <div>
+                    <span class="sale">45%</span>
+                    <span class="price">438,220원</span>
+                  </div>
+                </div>
+  
+              </div>
+              <!-- item -->
+  
+              <div class="item">
+                <div class="itemImgArea">
+                  <span class="iconCart" onclick="toast_order()"></span>
+                  <img src="/html/page/app/matching/assets/src/images/sample/sam_order.png" alt="order_img">
+  
+                </div>
+                <div class="ctnArea">
+                  <div class="itemName">카본 로얄파인더</div>
+                  <div>
+                    <span class="sale">85%</span>
+                    <span class="price">9,998,220원</span>
+                  </div>
+                </div>
+  
+              </div>
+              <!-- item -->
+  
+              <div class="item">
+                <div class="itemImgArea">
+                  <span class="iconCart" onclick="toast_order()"></span>
+                  <img src="/html/page/app/matching/assets/src/images/sample/sam_order.png" alt="order_img">
+  
+                </div>
+                <div class="ctnArea">
+                  <div class="itemName">HM-606</div>
+                  <div>
+                    <span class="sale">85%</span>
+                    <span class="price">8,220원</span>
+                  </div>
+                </div>
+  
+              </div>
+              <!-- item -->
+  
+            </div>
+            <!-- itemList -->
+
+
+          </div>
+          <!-- orderListItem -->
+
+          <div class="h16"></div>
+
+
+
+          <script>
+
+            $(function(){
+
+
+              //disabled 일때
+              $('.cart_obj_area').each(function(){
+
+                  if($(this).find('.cart_chk_area :checkbox').is(':disabled')==true){
+                      $(this).addClass('disabled');
+                  }
+
+                  else{
+                      $(this).removeClass('disabled');
+                  }
+
+
+              });
+
+
+              //장바구니 체크박스
+              function carLengthChk(){
+
+                  var total = $(".cart_chk_area :checkbox").length;
+                  var checked = $(".cart_chk_area :checkbox:checked").length;
+                  
+                  $('.num_total').text(total);
+                  $('.num_chk').text(checked);		
+              };
+
+              carLengthChk();
+
+
+              $('#cart_chk_total').on('click', function() {
+
+                  if($(this).is(':checked')==true){
+                      $('.cart_chk_area :checkbox:not(:disabled)').prop('checked', true);
+
+                      carLengthChk();		
+                  }
+
+                  else{
+                      $('.cart_chk_area :checkbox:not(:disabled)').prop('checked', false);	
+
+                      carLengthChk();
+                  }
+
+              });
+
+
+
+
+              $(".cart_chk_area :checkbox").click(function() {
+
+                  var total = $(".cart_chk_area :checkbox").length;
+                  var checked = $(".cart_chk_area :checkbox:checked").length;
+                  
+                  $('.num_total').text(total);
+                  $('.num_chk').text(checked);	
+
+                  if(total != checked) $("#cart_chk_total").prop("checked", false);
+                  else $("#cart_chk_total").prop("checked", true); 
+
+              });
+
+            });
+
+          </script>
+
+
+          <div class="bder_box_01 pad_16_12_20">
+          
+            <!-- cart_obj_area 카트목록 아이템-->
+            <div class="cart_obj_area">
+          
+              <div class="close_x p03"></div>
+          
+              <div class="cart_chk_area">
+                <input type="checkbox" name="" id="cart_chk_03" class="chk02_big" disabled>
+                <label for="cart_chk_03"></label>
+              </div>
+              <div class="cart_obj_item">
+                <div class="itemImgArea">
+                  <div class="outStock">품절</div>
+                  <img src="/html/page/app/matching/assets/src/images/sample/sam_order02.png" alt="order_img">
+                </div>
+                <div class="ctnArea">
+                  <div class="title font_sbsr">disabled 시 비활성</div>
+                </div>
+          
+                <div class="ctnArea_bottom ">
+          
+                  <div class="option_area breadcrumb_area">
+                    <span>옵션 : 로즈</span>
+                    <span>S(230~235mm)</span>
+                  </div>
+          
+                  <div class="align_between_center">
+          
+                    <div class="order_quantity small_01">
+                      <span class="minus"></span>
+                      <input type="number" class="num input_noClass" value="1" onfocus="this.select()"></input>
+                      <span class="plus"></span>
+                    </div>
+          
+                    <div class="price_area">
+                      <span class="title">예상금액</span>
+                      <span class="price">220원</span>
+                    </div>
+          
+                  </div>
+          
+          
+                </div>
+          
+              </div>
+              <!-- cart_obj_item -->
+          
+            </div>
+            <!-- cart_obj_area -->
+
+          </div>
+          <!-- bder_box_01 -->
+
+
+
+
+
+
+
+
+
+
+        </div>
+        <!-- scrollspy -->
+        <br><br>
+
+
+        <div class="scrollspy">
+          <a class="title_g">태그 - tag</a>
+          <div class="htmlCode">
+            <div class="tag_area">
+              <span class="tag">관심 복지용구</span>
+              <span class="tag">85% ~ 100% 지원</span>
+            </div>
+          </div>
+          <!-- htmlCode -->
+
+        </div>
+        <!-- scrollspy -->
+
+        <br><br>
+
+
+        <div class="scrollspy">
+          <a class="title_g">마크 - mark</a>
+          <div class="htmlCode">
+            <div class="tag_area">
+              <mark class="mk01">mk01 네이처 요양병원 요양병원 요양병원 요양</mark>병원 요양병원 요양병원 요양
+              <br>
+              <mark class="mk02">mk02 네이처 요양병원 요양병원 요양병원 요양</mark>병원 요양병원 요양병원 요양
+              <br>
+              <mark class="mk_orange">mk_orange 네이처 요양병원 요양병원 요양병원 요양</mark>병원 요양병원 요양병원 요양
+              <br>
+              <mark class="mk_blue">mk_blue 네이처 요양병원 요양병원 요양병원 요양</mark>병원 요양병원 요양병원 요양
+            </div>
+          </div>
+          <!-- htmlCode -->
+
+        </div>
+        <!-- scrollspy -->
+
+        <br><br>
+
+
+        <div class="scrollspy">
+          <a class="title_g">어코디언 accordian collapsible</a>
+          <div class="htmlCode">
+
+            <script>
+              $(function(){
+                $('.collapsible').collapsible();
+              });
+            </script>
+            
+            <ul class="collapsible default">
+              <li class="active">
+                <div class="collapsible-header">
+                  <span class="color_t_s font_sbss">새로운 장기요양기관을 원하세요?(하단 16px 여백)</span>
+                  <span class="arrow"></span>
+                </div>
+                <div class="collapsible-body color_t_s font_sbsr">
+                  다른 장기요양기관 연결을 원하시면 아래 체크박스에 체크해 주세요 
+                  <div class="h16"></div>
+                </div>
+              </li>
+              <li >
+                <div class="collapsible-header">
+                  <span class="color_t_s font_sbss">새로운 장기요양기관을 원하세요?(하단 16px 여백)</span>
+                  <span class="arrow"></span>
+                </div>
+                <div class="collapsible-body color_t_s font_sbsr">
+                  다른 장기요양기관 연결을 원하시면 아래 체크박스에 체크해 주세요 
+                  <div class="h16"></div>
+                </div>
+              </li>
+            </ul>
+            
+            <ul class="collapsible default">
+              <li>
+                  <div class="collapsible-header">
+                      <span class="color_t_s font_sbss">새로운 장기요양기관을 원하세요?</span>
+                      <span class="arrow"></span>
+                  </div>
+                  <div class="collapsible-body color_t_s font_sbsr">
+                      다른 장기요양기관 연결을 원하시면 아래 체크박스에 체크해 주세요
+                      
+                      <div class="h12"></div>
+
+                      <input type="checkbox" name="" id="chk_newlinkddd" class="chk02" checked>
+                      <label for="chk_newlinkddd" class="color_tp_s font_sbsr">새로운 장기요양기관 연결 </label>
+
+                  </div>
+              </li>
+          </ul>
+          <ul class="collapsible default">
+            <li class="bder_bottom active">
+                <div class="collapsible-header pad20">
+                    <span class="font_sbms">요양인정번호가 없으신가요?</span>
+                    <span class="arrow"></span>
+                </div>
+                <div class="collapsible-body noPad">
+                    <div class="pad20 back_FAFAFA">
+                        <div class="color_t_s font_sbmr">
+                            인정등급 테스트 후 상담을 신청하면 발급을 도와드려요.
+                        </div>
+
+                        <div class="h12"></div>
+                        
+                        <span class="waves-effect link_text font_sbms"><u>인정등급 간편 테스트 바로가기</u></span>
+
+                    </div>
+                </div>
+            </li>
+            <li class="bder_bottom">
+                <div class="collapsible-header pad20">
+                    <span class="font_sbms">복지용구를 어떻게 받을 수 있나요?</span>
+                    <span class="arrow"></span>
+                </div>
+                <div class="collapsible-body noPad">
+                    <div class="pad20 back_FAFAFA">
+                        <div class="color_t_s font_sbmr">
+                            요양정보를 조회하고 원하는 복지용구를 주문 요청하세요. 전문가가 복지용구를 받으실 수 있도록 도와드려요.
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+
+
+          </div>
+          <!-- htmlCode -->
+
+        </div>
+        <!-- scrollspy -->
+
+
+
+        <br><br>
+
+
+        <div class="scrollspy">
+          <a class="title_g">탭 Tabs</a>
+          <div class="htmlCode">
+              
+            <script>
+
+              $(function () {
+          
+                $(document).ready(function () {
+                  $('.tabs').tabs();
+                });
+          
+              });
+          
+            </script>
+
+            <!-- tab -->
+            <ul class="tabs tabs_layout01">
+              <li class="tab"><a class="active" href="#tab_a01">상담내역</a></li>
+              <li class="tab"><a href="#tab_a02">주문요청내역</a></li>
+            </ul>
+
+            <div id="tab_a01" class="col s12">
+              상담내역
+            </div>
+            <div id="tab_a02" class="col s12">
+              주문요청내역
+            </div>
+
+            <a class="color_primary fw800" href="F_SNR_001_om_main.html" target="_blank">* F_SNR_001_om_main.html</a> 참조
+            <br><br>
+            <a class="color_primary fw800" href="F_SAG_002_welfare_order01.html" target="_blank">* F_SAG_002_welfare_order01.html</a> 참조
+
+
+          </div>
+          <!-- htmlCode -->
+
+        </div>
+        <!-- scrollspy -->
+
+
+
+
+
+        <div class="scrollspy">
+          <a class="title_g">그림자</a>
+
+          <a class="box_om_wel_list">
+            <div class="img_area">
+              <img src="../images/08etc/bokji01_40.svg" alt="어르신용품">
+            </div>
+            <div class="font_sbms">
+              그림자 기본
+            </div>
+          </a>
+
+          <div class="h12"></div>
+
+          <a class="box_om_wel_list shadow_01">
+            <div class="img_area">
+              <img src="../images/08etc/bokji01_40.svg" alt="어르신용품">
+            </div>
+            <div class="font_sbms">
+              그림자 강조01 - shadow_01
+            </div>
+          </a>
+
+          <div class="h12"></div>
+
+          <a class="box_om_wel_list noShadow">
+            <div class="img_area">
+              <img src="../images/08etc/bokji01_40.svg" alt="어르신용품">
+            </div>
+            <div class="font_sbms">
+              그림자 없음 - noShadow
+            </div>
+          </a>
+
+
+        </div>
+        <!-- scrollspy -->
+
+        <br><br>
+
+
+        <div class="scrollspy">
+          <a class="title_g">progress-bar</a>
+          <div class="htmlCode">
+            
+            <progress class="progress01" value="1" min="0" max="6"></progress>
+            <div class="progress_num"><span class="step">1</span>/6</div>
+
+            <div class="h20"></div>
+
+
+            <div class="progress default">
+              <div class="progress-bar" style="width:calc(100% * ( 4 / 6))"></div>
+            </div>
+            <div class="marT4 progress_num"><span class="step">1</span>/6</div>
+            
+            <div class="h20"></div>
+
+            <div class="progress thin">
+              <div class="progress-bar" style="width:40%"></div>
+            </div>
+
+            
+          </div>
+          <!-- htmlCode -->
+
+        </div>
+        <!-- scrollspy -->
+        <br><br>
+
+
+        <div class="scrollspy">
+          <a class="title_g">lottie 애니메이션</a>
+          <div class="htmlCode">
+            
+            
+            <a class="color_tp_p fs24" href="/html/page/app/matching/assets/lottie/lottie.htm" target="_blank">링크클릭</a>
+            
+          </div>
+          <!-- htmlCode -->
+
+        </div>
+        <!-- scrollspy -->
+        <br><br>
+
+
+        <div class="scrollspy">
+          <a class="title_g">이미지 모음</a>
+          <div class="htmlCode">
+            <a class="color_tp_p fs24" href="/html/page/app/matching/assets/src/pages/icons.html" target="_blank">링크클릭</a>
+          </div>
+          <!-- htmlCode -->
+
+        </div>
+        <!-- scrollspy -->
+
+
+
+    <input inputmode="numeric" pattern="[0-9]*">
+
+    <style>
+        .mySwiper_test .swiper-slide{
+            height: 200px;
+        } 
+        .mySwiper_test .swiper-slide.sd01{
+            background-color: darkkhaki;
+        }
+        .mySwiper_test .swiper-slide.sd02{
+            background-color: antiquewhite;
+        }
+        .mySwiper_test .swiper-slide.sd03{
+            background-color: #dfdfdf;
+        }
+        .mySwiper_test .swiper-slide .title,
+        .mySwiper_test .swiper-slide p {
+            opacity: 0;
+            transform: translateY(-70px);
+            transition: all 0.8s ease;
+        }
+
+        .mySwiper_test .swiper-slide p {
+            transform: translateY(30px);
+            transition: all 1.0s ease;
+            transition-delay: 0.5s;
+        }
+
+        /* 활성 슬라이드에 애니메이션 적용 */
+        .mySwiper_test .swiper-slide-active .title {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .mySwiper_test .swiper-slide-active p {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+    <!-- Swiper -->
+    <div class="swiper mySwiper_test">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide sd01">
+                
+                <h3 class="title">Test01</h3>
+
+                <p>01Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate</p>
+
+            </div>
+            <div class="swiper-slide sd02">
+                
+                <h3 class="title">Test02</h3>
+
+                <p>02Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate</p>
+
+            </div>
+            <div class="swiper-slide sd03">
+                
+                <h3 class="title">Test03</h3>
+
+                <p>03Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate</p>
+
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    
+
+
+    <link rel="stylesheet" href="../js/swiper/swiper-bundle.min.css" />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper_test", {
+            pagination: {
+                el: ".swiper-pagination",
+            },
+            on: {
+                slideChangeTransitionStart: function () {
+                    // 모든 슬라이드 안의 요소 초기화
+                    $('.swiper-slide .title, .swiper-slide p').css({
+                        opacity: 0
+                    });
+                },
+                slideChangeTransitionEnd: function () {
+                    // 현재 활성 슬라이드 요소에만 스타일 적용 제거 (CSS가 다시 적용되도록)
+                    var $active = $('.swiper-slide-active');
+                    $active.find('.title').css({ opacity: '' });
+                    $active.find('p').css({ opacity: '' });
+                }
+            },
+            loop : true,
+        });
+    </script>
+
+
+
+
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+  </script>
+
+
+
+        <div class="scrollspy">
+          <a class="title_g">타이틀예시</a>
+          <div class="htmlCode">
+            내용예시ㅇㅇㅇㅇㅇ
+          </div>
+          <!-- htmlCode -->
+
+        </div>
+        <!-- scrollspy -->
+
+
+
+      </section>
+    </main>
+
+
+
+    <!-- Modal1 -->
+    <div id="modal1" class="modal">
+
+      <div class="modal_header">
+        <h4 class="modal_title">title제목</h4>
+      </div>
+      <div class="modal-content">
+
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+          when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        </p>
+        <p class="fs16">내용넣는곳</p>
+
+      </div>
+      <div class="modal-footer">
+        <div class="btn_area d-flex">
+          <a class="modal-close waves-effect btn-large w100p btn_primary">확인</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal2 -->
+    <div id="modal2" class="modal">
+
+      <div class="modal_header">
+        <h4 class="modal_title">title제목</h4>
+      </div>
+      <div class="modal-content">
+
+        <p>내용넣는곳</p>
+        <p class="fs16">내용넣는곳</p>
+
+      </div>
+      <div class="modal-footer">
+        <div class="btn_area d-flex">
+          <a class="modal-close waves-effect btn btn-large w100p btn_cancel">취소</a>
+          <a class="modal-close waves-effect btn btn-large w100p btn_primary">확인</a>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- Modal 하단모달 -->
+    <div id="modal3" class="modal bottom-sheet">
+
+      <div class="modal_header">
+        <h4 class="modal_title">상담을 위해 동의가 필요해요</h4>
+        <div class="close_x modal-close waves-effect"></div>
+      </div>
+
+      <div class="modal-content">
+        하단 모달
+        <div class="group_chk_area">
+          <div>
+            <input type="checkbox" name="" id="chk_j01" class="chk01_2 large" checked>
+            <label for="chk_j01">[필수] 상담 정보는 상담, 서비스 이용을 위해 장기요양기관에 제공되며 1년간 보관 후 폐기합니다.</label>
+          </div>
+        </div>
+
+        <div class="h32"></div>
+
+      </div>
+
+      <!-- modal-content -->
+      <div class="modal-footer">
+        <div class="btn_area d-flex">
+          <a class="modal-close waves-effect btn btn-large w100p btn_primary">동의하고 등록하기</a>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- 장바구니 Modal fullsreen -->
+    <div id="modal_fullsreen" class="modal fullscreen">
+
+      <div class="modal_header">
+        <h4 class="modal_title">타이틀</h4>
+        <div class="close_x modal-close waves-effect"></div>
+      </div>
+
+      <div class="modal-content">
+
+        내용111<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>
+        내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용222
+
+
+        <div class="btn_area d-flex">
+          <a class="modal-close waves-effect btn btn-large w100p btn_cancel">확인</a>
+        </div>
+
+      </div>
+      <!-- modal-content -->
+
+      <div class="modal-footer">
+        <div class="btn_area d-flex">
+          <a class="modal-close waves-effect btn btn-large w100p btn_primary">확인</a>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+  <!-- wrapper -->
+
+
+</body>
+
+</html>

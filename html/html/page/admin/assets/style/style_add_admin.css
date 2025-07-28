@@ -1,0 +1,113 @@
+
+/* 사업소 상담내역 팝업 accordian */
+.coun_accodian_area .coun_title{
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 150%; /* 30px */
+    letter-spacing: -0.44px;
+
+    padding: 10px;
+    margin-top: 30px;
+}
+.coun_accodian_area .coun_title:first-child{
+    margin-top: 0;
+}
+
+.coun_accodian_area .coun_table dl{
+    border-top: 1px solid #eee;
+    padding: 10px 0;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+
+}
+.coun_accodian_area .coun_table dl:first-child{
+    border-top: 2px solid #eee;
+}
+.coun_accodian_area .coun_table dl:last-child{
+    border-bottom: 1px solid #eee;
+}
+
+.coun_accodian_area .coun_table dl dt{
+    padding: 0 10px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 150%; /* 30px */
+    letter-spacing: -0.44px;
+
+}
+.coun_accodian_area .coun_table dl dd{
+    padding: 0 40px 0 10px;
+    position: relative;
+
+    font-size: 1rem;
+    font-weight: 350;
+    line-height: 150%; /* 30px */
+    letter-spacing: -0.44px;
+    border-left: 2px solid #eee;
+    
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    height: 20px;
+
+}
+.coun_accodian_area .coun_table dl dd .arrow{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 2px;
+    right: 4px;
+    width: 24px;
+    height: 20px;
+    background-image: url('../../assets/images/ico-select-arrow.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 14px;
+    opacity: 0.4;
+    cursor: pointer;
+
+}
+
+/* active */
+.coun_accodian_area .coun_table dl.active dd{
+    white-space:initial;
+    height: 100%;
+}
+
+.coun_accodian_area .coun_table dl.active dd .arrow{
+    transform: rotateX(180deg);
+    opacity: 0.9;
+}
+
+.coun_accodian_area .coun_table dl dd.none .arrow{
+    display: none;
+}
+
+/* 체크박스 label안에 checkbox */
+.chk_in_label{display: flex;gap:0.375rem;cursor: pointer;overflow: hidden;}
+.chk_in_label input ~ span.txt{display: inline-block;}
+.chk_in_label input:checked ~ span.txt{font-weight: 700;}
+
+
+
+/* 체크박스 불확정요소 indeterminate*/
+.form-check-input[type=checkbox]:indeterminate{
+    background-color: rgb(28 28 28/var(--tw-bg-opacity));
+    border-color: rgb(28 28 28/var(--tw-bg-opacity));
+}
+
+
+/* 202411 추가*/
+.table-jqgrid {
+    display: table;
+    table-layout: fixed;
+    --tw-shadow: 0px -1px 0px 0px #eee, 0px 1px 0px 0px #eee;
+    --tw-shadow-colored: 0px -1px 0px 0px var(--tw-shadow-color), 0px 1px 0px 0px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    font-size: .875rem;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+    padding-top: 4px;
+}

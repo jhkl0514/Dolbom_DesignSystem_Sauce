@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+
+    <title>GUIDE_005_StyleGuide.html</title>
+
+
+    <!-- jquery -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/materialize.js"></script>
+
+    <!-- guide.js -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/materialize.min.css" />
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/style.css" />
+
+    <!-- guideStyle_2025.css -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/guideStyle_2025.css" />
+
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/atom-one-dark.min.css">
+
+    <!-- highlight.js -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guide_hljsLoad.js"></script>
+
+    <!-- guideStyle_2025.js -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guideStyle_2025.js"></script>
+
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/js/swiper/swiper-bundle.min.css" />
+
+
+
+
+
+
+    <script>
+    </script>
+
+
+    <style>
+
+
+
+
+        .banner_swiper .swiper-slide {
+            padding: 12px 20px;
+
+        }
+
+        .banner_swiper .swiper-pagination {
+            width: auto;
+            top: 24px;
+            right: 32px;
+            left: initial;
+            font-size: 0;
+            line-height: 0;
+        }
+
+    </style>
+
+
+    <style>
+        .om_guide_Swiper {
+            padding: 20px;
+        }
+
+        .om_guide_Swiper .swiper-pagination {
+            width: auto;
+            top: 36px;
+            right: 36px;
+            left: initial;
+            font-size: 0;
+            line-height: 0;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="gs_header">
+
+            <a href="GUIDE_000_index.html" class="logo"><span>돌봄 디자인시스템</span></a>
+
+            <ul class="header_menu">
+                <li><a href="GUIDE_001_Foundation.html">Foundation</a></li>
+                <li><a href="GUIDE_002_Component.html">Component</a></li>
+                <li><a href="GUIDE_003_AppScreen.html">App Screen</a></li>
+                <li><a href="GUIDE_004_WebScreen.html">Web Screen</a></li>
+                <li><a href="GUIDE_005_StyleGuide.html" class="active">Style Guide</a></li>
+                <li class="search"><a href="#"></a></li>
+            </ul>
+
+        </div>
+
+    </header>
+
+    <div class="wrap">
+
+        <main>
+
+
+            <nav class="sidebar">
+
+                <div class="sidebar_header">
+                    <div class="title_area">
+                        <div class="close_x"></div>
+                    </div>
+                    <div class="sidebar_search">
+                        <input type="text" placeholder="검색어를 입력해 주세요.">
+                        <div class="search">
+                            <a href="#"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="title">Style Guide</h4>
+
+                <div class="sidebar_list">
+                    <ul class="tabs_dept_sidebar">
+                        <li class="tab"><a class="active" title="dept_app">App Screen</a></li>
+                        <li class="tab"><a class="" title="dept_web">Web Screen</a></li>
+                    </ul>
+
+                    <div class="tab_list dept_app" title="siteMap_guide">
+                        <ul class="dept1">
+                            <li>
+                                <a class="arrow">Foundation</a>
+                                <ul class="dept2">
+                                    <li><a href="GUIDE_005_StyleGuide.html">Typography</a></li>
+                                    <li><a href="GUIDE_005_F02_Colors.html">Colors</a></li>
+                                    <li><a href="GUIDE_005_F03_Spacing.html">Spacing</a></li>
+                                    <li><a href="GUIDE_005_F04_ObjectStyles.html">Object Styles</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="arrow active ">Component</a>
+                                <ul class="dept2">
+                                    <li><a href="GUIDE_005_C01_Button.html">Button</a></li>
+                                    <li><a href="GUIDE_005_C02_SelectionControls.html">Selection Controls</a></li>
+                                    <li><a href="GUIDE_005_C03_Link.html">Link</a></li>
+                                    <li><a href="GUIDE_005_C04_Chips.html">Chips</a></li>
+                                    <li><a href="GUIDE_005_C05_TextField.html">TextField</a></li>
+
+                                    <li><a href="GUIDE_005_C06_SelectField.html">SelectField</a></li>
+                                    <li><a href="GUIDE_005_C07_OptionList.html">OptionList</a></li>
+                                    <li><a href="GUIDE_005_C08_TopNavigation.html">Top Navigation</a></li>
+                                    <li><a href="GUIDE_005_C09_BottomNavigation.html">Bottom Navigation</a></li>
+                                    <li><a href="GUIDE_005_C10_List.html">List</a></li>
+
+                                    <li><a href="GUIDE_005_C11_Popup.html">Popup</a></li>
+                                    <li><a href="GUIDE_005_C12_BottomSheet.html">BottomSheet</a></li>
+                                    <li><a class="active" href="GUIDE_005_C13_Banner.html">Banner</a></li>
+                                    <li><a href="GUIDE_005_C14_Tab.html">Tab</a></li>
+                                    <li><a href="GUIDE_005_C15_NumberStepper.html">Number Stepper</a></li>
+
+                                    <li><a href="GUIDE_005_C16_TextAreaField.html">TextAreaField</a></li>
+                                    <li><a href="GUIDE_005_C17_Accordion.html">Accordion</a></li>
+                                    <li><a href="GUIDE_005_C18_Progressbar.html">Progress</a></li>
+                                    <li><a href="GUIDE_005_C99_Etc.html">Etc</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a href="GUIDE_005_03_Animation.html">애니메이션</a></li>
+                            <li><a href="GUIDE_005_04_Images.html">이미지</a></li>
+                            <li><a href="GUIDE_005_05_Css.html">CSS 구조</a></li>
+                            <li><a href="GUIDE_005_06_Library.html">라이브러리</a></li>
+
+                        </ul>
+                    </div>
+
+
+                </div>
+
+
+            </nav>
+
+
+
+            <section>
+
+
+                <div class="h48"></div>
+
+                <div class="titleNav">Banner</div>
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Simple</h3>
+
+
+                <div class="lang_htmlCode flex_center">
+
+                    <div class="swiper banner_swiper" style="width:360px;">
+
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide">
+
+                                <div class="card waves-effect banner_card slide_01_bg">
+
+                                    <div class="card-content">
+
+                                        <div class="txt_area">
+                                            <div class="font_sbms_2">독일 건강식품 최대 60% 할인</div>
+
+                                            <p class="color_t_s font_ssr marT4 line_clamp_1">
+                                                한발 빠른 추석 이로움ON 스토어
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- card -->
+
+                            </div>
+                            <!-- swiper-slide -->
+
+
+
+                            <div class="swiper-slide">
+
+                                <div class="card waves-effect banner_card slide_02_bg">
+
+                                    <div class="card-content">
+
+                                        <div class="txt_area">
+                                            <div class="font_sbms_2">유럽 건강식품 할인전 상시 오픈</div>
+
+                                            <p class="color_t_s font_ssr marT4 line_clamp_1">
+                                                시니어를 위한 이로움ON 스토어
+                                            </p>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <!-- card -->
+
+                            </div>
+                            <!-- swiper-slide -->
+
+                        </div>
+                        <!-- swiper-wrapper -->
+
+                        <div class="swiper-pagination"></div>
+
+                    </div>
+                
+                </div>
+
+                <pre><code class="language-html">
+                    &lt;div class=&quot;swiper banner_swiper&quot;&gt;
+
+                        &lt;div class=&quot;swiper-wrapper&quot;&gt;
+
+                            &lt;div class=&quot;swiper-slide&quot;&gt;
+
+                                &lt;div class=&quot;card waves-effect banner_card slide_01_bg&quot;&gt;
+
+                                    &lt;div class=&quot;card-content&quot;&gt;
+
+                                        &lt;div class=&quot;txt_area&quot;&gt;
+                                            &lt;div class=&quot;font_sbms_2&quot;&gt;Title&lt;/div&gt;
+
+                                            &lt;p class=&quot;color_t_s font_ssr marT4 line_clamp_1&quot;&gt;
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                            &lt;/p&gt;
+                                        &lt;/div&gt;
+
+                                    &lt;/div&gt;
+                                
+                                &lt;/div&gt;
+
+                            &lt;/div&gt;
+
+
+                            &lt;div class=&quot;swiper-slide&quot;&gt;
+
+                                &lt;div class=&quot;card waves-effect banner_card slide_02_bg&quot;&gt;
+
+                                    &lt;div class=&quot;card-content&quot;&gt;
+
+                                        &lt;div class=&quot;txt_area&quot;&gt;
+                                            &lt;div class=&quot;font_sbms_2&quot;&gt;Title&lt;/div&gt;
+
+                                            &lt;p class=&quot;color_t_s font_ssr marT4 line_clamp_1&quot;&gt;
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                            &lt;/p&gt;
+                                        &lt;/div&gt;
+
+                                    &lt;/div&gt;
+                                
+                                &lt;/div&gt;
+
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;swiper-pagination&quot;&gt;&lt;/div&gt;
+
+                    &lt;/div&gt;
+                </code></pre>
+
+
+
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Extend</h3>
+
+
+                <div class="lang_htmlCode flex_center">
+
+                    <div class="swiper om_guide_Swiper" style="width:360px;">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+
+                                <div class="card waves-effect om_guide_card back_FFF5E6 slide_01_bg">
+
+                                    <div class="card-content">
+
+                                        <div class="padR120">
+                                            <div class="color_t_bs font_sbsr">어르신 복지</div>
+
+                                            <h4 class="title marT2 line_clamp_2">어르신용품 구매비 지어르신용품 구매비 지어르신용품 구매비 지원</h4>
+
+                                            <p class="color_t_s font_sbsr marT4 line_clamp_2">
+                                                신체활동이 불편하신 어르신이라면, 어르신용품을 신청하세요<br>
+                                                신체활동이 불편하신 어르신이라면, 어르신용품을 신청하세요
+                                            </p>
+                                        </div>
+
+                                        <div class="h46"></div>
+
+                                    </div>
+                                </div>
+                                <!-- card -->
+
+                            </div>
+                            <!-- swiper-slide -->
+
+                            <div class="swiper-slide">
+
+                                <div class="card waves-effect om_guide_card back_EFF1FD slide_02_bg">
+
+                                    <div class="card-content">
+
+                                        <div class="padR120">
+                                            <div class="color_t_bs font_sbsr">어르신 복지</div>
+
+                                            <h4 class="title marT2 line_clamp_2">어르신용품 구매비 지원</h4>
+
+                                            <p class="color_t_s font_sbsr marT4 line_clamp_2">
+                                                신체활동이 불편하신 어르신이라면, 어르신용품을 신청하세요
+                                            </p>
+                                        </div>
+
+                                        <div class="h46"></div>
+
+                                    </div>
+                                </div>
+                                <!-- card -->
+
+                            </div>
+                            <!-- swiper-slide -->
+
+                            <div class="swiper-slide">
+
+                                <div class="card waves-effect om_guide_card back_EFF6FF slide_03_bg">
+
+                                    <div class="card-content">
+
+                                        <div class="padR120">
+                                            <div class="color_t_bs font_sbsr">어르신 복지</div>
+
+                                            <h4 class="title marT2 line_clamp_2">어르신용품 구매비 지원</h4>
+
+                                            <p class="color_t_s font_sbsr marT4 line_clamp_2">
+                                                신체활동이 불편하신 어르신이라면, 어르신용품을 신청하세요
+                                            </p>
+                                        </div>
+
+                                        <div class="h46"></div>
+
+                                    </div>
+                                </div>
+                                <!-- card -->
+
+                            </div>
+                            <!-- swiper-slide -->
+
+                        </div>
+
+                        <div class="swiper-pagination"></div>
+                    </div>
+                
+                </div>
+
+                <pre><code class="language-html">
+                    &lt;div class=&quot;swiper om_guide_Swiper &quot;&gt;
+                        &lt;div class=&quot;swiper-wrapper&quot;&gt;
+                            &lt;div class=&quot;swiper-slide&quot;&gt;
+
+                                &lt;div class=&quot;card waves-effect om_guide_card back_FFF5E6 slide_01_bg&quot;&gt;
+
+                                    &lt;div class=&quot;card-content&quot;&gt;
+
+                                        &lt;div class=&quot;padR120&quot;&gt;
+                                            &lt;div class=&quot;color_t_bs font_sbsr&quot;&gt;subTitle&lt;/div&gt;
+
+                                            &lt;h4 class=&quot;title marT2 line_clamp_2&quot;&gt;Title&lt;/h4&gt;
+
+                                            &lt;p class=&quot;color_t_s font_sbsr marT4 line_clamp_2&quot;&gt;
+                                                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                            &lt;/p&gt;
+                                        &lt;/div&gt;
+
+                                        &lt;div class=&quot;h46&quot;&gt;&lt;/div&gt;
+
+
+
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;!-- card --&gt;
+
+                            &lt;/div&gt;
+                            &lt;!-- swiper-slide --&gt;
+
+                            &lt;div class=&quot;swiper-slide&quot;&gt;
+
+                                &lt;div class=&quot;card waves-effect om_guide_card back_EFF1FD slide_02_bg&quot;&gt;
+
+                                    &lt;div class=&quot;card-content&quot;&gt;
+
+                                        &lt;div class=&quot;padR120&quot;&gt;
+                                            &lt;div class=&quot;color_t_bs font_sbsr&quot;&gt;subTitle&lt;/div&gt;
+
+                                            &lt;h4 class=&quot;title marT2 line_clamp_2&quot;&gt;Title&lt;/h4&gt;
+
+                                            &lt;p class=&quot;color_t_s font_sbsr marT4 line_clamp_2&quot;&gt;
+                                                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                            &lt;/p&gt;
+                                        &lt;/div&gt;
+
+                                        &lt;div class=&quot;h46&quot;&gt;&lt;/div&gt;
+
+
+
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;!-- card --&gt;
+
+                            &lt;/div&gt;
+                            &lt;!-- swiper-slide --&gt;
+
+                            &lt;div class=&quot;swiper-slide&quot;&gt;
+
+                                &lt;div class=&quot;card waves-effect om_guide_card back_EFF6FF slide_03_bg&quot;&gt;
+
+                                    &lt;div class=&quot;card-content&quot;&gt;
+
+                                        &lt;div class=&quot;padR120&quot;&gt;
+                                            &lt;div class=&quot;color_t_bs font_sbsr&quot;&gt;subTitle&lt;/div&gt;
+
+                                            &lt;h4 class=&quot;title marT2 line_clamp_2&quot;&gt;Title&lt;/h4&gt;
+
+                                            &lt;p class=&quot;color_t_s font_sbsr marT4 line_clamp_2&quot;&gt;
+                                                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                            &lt;/p&gt;
+                                        &lt;/div&gt;
+
+                                        &lt;div class=&quot;h46&quot;&gt;&lt;/div&gt;
+
+
+
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;!-- card --&gt;
+
+                            &lt;/div&gt;
+                            &lt;!-- swiper-slide --&gt;
+
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;swiper-pagination&quot;&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                </code></pre>
+
+
+
+
+
+
+                <div class="h100"></div>
+
+            </section>
+
+
+
+        </main>
+
+
+    </div>
+    <!-- wrapper -->
+
+
+
+
+
+    <script src="/html/page/app/matching/assets/src/js/swiper/swiper-bundle.min.js"></script>
+    <script>
+
+    //배너 슬라이드
+    var swiper = new Swiper(".banner_swiper, .om_guide_Swiper", {
+            autoHeight: true,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+
+            },
+        });
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

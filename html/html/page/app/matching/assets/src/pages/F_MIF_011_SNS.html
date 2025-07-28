@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+
+    <title>F_MIF_011_SNS.html</title>
+
+
+    <!-- jquery -->
+    <script type="text/javascript" src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script type="text/javascript" src="../js/materialize.min.js"></script>
+
+    <!-- guide.js -->
+    <script type="text/javascript" src="../js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="../css/materialize.min.css" />
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <script>
+
+    $(function () {
+
+
+            //체크박스
+            $('.switch :checkbox').click(function() {
+
+                if ($(this).is(':checked') == false) {
+                    
+                    $('.lock_modal').modal('open');
+
+                };
+
+            });
+
+
+    });
+
+    </script>
+
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+
+
+        <header>
+            <nav class="top">
+                <a class="btn_back waves-effect" href="#">
+                    <span class="icon"></span>
+                    <span class="txt">SNS연결</span>
+                </a>
+            </nav>
+        </header>
+
+
+        <main>
+            <section class="default">
+
+
+                <div class="list_normal">
+                    
+                    <div class="img_area">
+                        <img src="/html/page/app/matching/assets/src/images/08etc/social_kakao_40.svg" alt="카카오 연결">
+                        <span class="font_sbms">카카오 연결</span>
+                    </div>
+                    <div class="switch">
+                        <label>
+                            <input type="checkbox" checked>
+                            <span class="lever"></span>
+                        </label>
+                    </div>
+                
+                </div>
+
+                <div class="h16"></div>
+
+                <div class="list_normal">
+
+                    <div class="img_area">
+                        <img src="/html/page/app/matching/assets/src/images/08etc/icon_naver02.svg" alt="네이버 연결">
+                        <span class="font_sbms">네이버 연결</span>
+                    </div>
+                    <div class="switch">
+                        <label>
+                            <input type="checkbox">
+                            <span class="lever"></span>
+                        </label>
+                    </div>
+                
+                </div>
+
+                <!-- DEDS-209 202410 -->
+                <div class="h16"></div>
+
+                <div class="list_normal">
+
+                    <div class="img_area">
+                        <img src="/html/page/app/matching/assets/src/images/08etc/icon_Apple02.svg" alt="네이버 연결">
+                        <span class="font_sbms">애플 연결</span>
+                    </div>
+                    <div class="switch">
+                        <label>
+                            <input type="checkbox">
+                            <span class="lever"></span>
+                        </label>
+                    </div>
+                
+                </div>
+                <!-- DEDS-209 202410 End -->
+
+            </section>
+        </main>
+
+
+
+    </div>
+    <!-- wrapper -->
+
+
+    <!-- Modal -->
+    <div id="modal" class="modal lock_modal">
+
+        <div class="modal_header">
+          <h4 class="modal_title">연동을 해지하시겠어요?</h4>
+        </div>
+
+        <div class="h20"></div>
+
+        <div class="modal-footer">
+          <div class="btn_area d-flex">
+            <a class="modal-close waves-effect btn btn-large w100p btn_cancel">취소</a>
+            <a class="modal-close waves-effect btn btn-large w100p btn_primary evt_switch_chk_off">해지하기</a>
+          </div>
+        </div>
+      </div>
+  
+
+</body>
+
+</html>

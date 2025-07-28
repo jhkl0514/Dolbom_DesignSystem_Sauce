@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>F_SAG_002_welfare_order01.html</title>
+
+
+    <!-- jquery -->
+    <script src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script src="../js/materialize.min.js"></script>
+
+    <!-- guide.js -->
+    <script src="../js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="../css/materialize.min.css">
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        .modal_cart_area ~ #toast-container{bottom: 116px;}
+
+    </style>
+    
+    <script>
+
+        $(function () {
+            
+            $('.modal_om_select').modal('');
+
+            //scrollspy
+            $('.scrollspy').scrollSpy({
+                activeClass: 'active',
+                scrollOffset: 96,
+            });
+
+
+        });
+
+        $(function(){
+
+            var scroll_orderFlxNav = function(){
+
+                //스크롤시 orderFlxNav 표시유무
+                var winTop = $(window).scrollTop();
+                
+                //orderListArea 위치
+                var orderListArea_scroll_T = $('.orderListArea').position().top - 60;
+
+                if(winTop >= orderListArea_scroll_T){
+                    $('.orderFlxNav').addClass('active');
+                }
+                else{
+                    $('.orderFlxNav').removeClass('active');
+                }
+
+            };
+
+            scroll_orderFlxNav();
+
+
+
+
+
+            $('.orderFlxNav .tabs_wd a').click(function(){
+
+                    var thisPosition = $(this).position().left;
+                    var thisSl = $('.orderFlxNav .tabs_wd').scrollLeft();
+                    $('.orderFlxNav .tabs_wd').animate({scrollLeft: thisPosition + thisSl - 30}, 300);
+
+            });
+
+                //스크롤시
+                $(window).scroll(function () {
+
+
+                    scroll_orderFlxNav();
+
+                    $('.orderFlxNav .tabs_wd a.active').each(function(){
+
+                        var thisPosition = $(this).position().left;
+                        var thisSl = $('.orderFlxNav .tabs_wd').scrollLeft();
+                        $('.orderFlxNav .tabs_wd').scrollLeft(thisPosition + thisSl - 30);
+                    });
+
+                });  
+
+
+        });
+
+
+        var toast_order = function(){M.toast({
+            html: '장바구니에 담겼어요.'
+        })};
+
+    </script>
+
+
+
+    <!-- lottie -->
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+
+
+        <header>
+            <nav class="top">
+                <a class="btn_back waves-effect" href="#">
+                    <span class="icon"></span>
+                    <span class="txt">놓친 복지용구 받기</span>
+                </a>
+                <div class="d-flex">
+                    <div class="icon_area waves-effect">
+                        <div class="icon_cart i_cart">
+                            <span class="num">888</span>
+                        </div>
+                    </div>
+                    <div class="icon_area waves-effect">
+                        <div class="icon_btn i_home"></div>
+                    </div>
+                </div>
+
+            </nav>
+        </header>
+
+
+        <main>
+            <section class="relative default noPad">
+
+                <div class="back_F5F5F5 padH24W20">
+
+                    <div class="card radius08 modal-trigger" href="#modal_remainPrice">
+                    
+                        <div class="card-content pad_24_20_20">
+
+                            <div class="font_sbsr">남은 장기요양급여</div>
+
+                            <div class="conv_price">812,000원</div>
+
+
+                            <div class="color_t_t font_ssr marT4">2024.06.26 10:00 업데이트</div>
+
+                        </div>
+                    
+                    </div>
+
+                </div>
+                
+                <div class="pad_32_20_16">
+
+                    <div class="font_shm">놓친 복지용구를 받을 수 있어요</div>
+                    
+                </div>
+
+                <div>
+                    
+                    <table class="table_bordered evtScr">
+                        <colgroup>
+                            <col class="w50p">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td class="relative">
+                                    <a href="#wd1" class="scrollspy_btn"></a>
+                                    <span class="align_between_center font_sbsr">
+                                        <span>성인용보행기</span>
+                                        <span class="color_t_t">2</span>
+                                    </span>
+                                </td>
+                                <td class="relative">
+                                    <a href="#wd2" class="scrollspy_btn"></a>
+                                    <span class="align_between_center font_sbsr">
+                                        <span>수동휠체어</span>
+                                        <span class="color_t_t">19</span>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="relative">
+                                    <a href="#wd3" class="scrollspy_btn"></a>
+                                    <span class="align_between_center font_sbsr">
+                                        <span>지팡이</span>
+                                        <span class="color_t_t">92</span>
+                                    </span>
+                                </td>
+                                <td class="relative">
+                                    <a href="#wd4" class="scrollspy_btn"></a>
+                                    <span class="align_between_center font_sbsr">
+                                        <span>안전손잡이</span>
+                                        <span class="color_t_t">19</span>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="relative">
+                                    <a href="#wd5" class="scrollspy_btn"></a>
+                                    <span class="align_between_center font_sbsr">
+                                        <span>미끄럼방지 양말</span>
+                                        <span class="color_t_t">2</span>
+                                    </span>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+
+
+                <!-- scroll -->
+                <div class="orderFlxNav">
+
+                    <ul class="tabs_wd">
+                        <li class="tab"><a href="#wd1">성인용보행기</a></li>
+                        <li class="tab"><a href="#wd2">수동휠체어</a></li>
+                        <li class="tab"><a href="#wd3">지팡이</a></li>
+                        <li class="tab"><a href="#wd4">안전손잡이</a></li>
+                        <li class="tab"><a href="#wd5">미끄럼방지 양말</a></li>
+                    </ul>
+                </div>
+
+
+
+
+                
+                <div class="h08"></div>
+                <div class="orderListArea">
+
+                    <!-- 성인용 보행기 시작 -->
+                    <div id="wd1" class="orderListItem scrollspy">
+                        <div class="title">
+                            <span class="titleName">성인용보행기</span>
+                            <span class="numBuy">구매가능 : 2개</span>
+                        </div>
+                        <div class="itemList">
+
+                            <div class="item">
+                                <div class="itemImgArea">
+                                    <span class="iconCart" onclick="toast_order()"></span>
+                                    <img src="/html/page/app/matching/assets/src/images/sample/sam_order.png" alt="order_img">
+
+                                </div>
+                                <div class="ctnArea">
+                                    <div class="itemName">HM-606</div>
+                                    <div>
+                                        <span class="sale">85%</span>
+                                        <span class="price">8,220원</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- item -->
+
+                            <div class="item">
+                                <div class="itemImgArea">
+                                    <span class="iconCart" onclick="toast_order()"></span>
+                                    <div class="no_Thumb_Img">
+                                        <img src="/html/page/app/matching/assets/src/images/04icon/back_trans.png" alt="thumb_img">
+                                    </div>
+
+                                </div>
+                                <div class="ctnArea">
+                                    <div class="itemName">기본디폴트</div>
+                                    <div>
+                                        <span class="sale">45%</span>
+                                        <span class="price">438,220원</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- item -->
+
+                            <div class="item">
+                                <div class="itemImgArea">
+                                    <span class="iconCart" onclick="toast_order()"></span>
+                                    <img src="/html/page/app/matching/assets/src/images/sample/test_img.jpg" alt="order_img">
+
+                                </div>
+                                <div class="ctnArea">
+                                    <div class="itemName">카본 로얄파인더</div>
+                                    <div>
+                                        <span class="sale">85%</span>
+                                        <span class="price">9,998,220원</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- item -->
+
+                            <div class="item">
+                                <div class="itemImgArea">
+                                    <span class="iconCart" onclick="toast_order()"></span>
+                                    <img src="/html/page/app/matching/assets/src/images/sample/test_img02.png" alt="order_img">
+
+                                </div>
+                                <div class="ctnArea">
+                                    <div class="itemName">HM-606</div>
+                                    <div>
+                                        <span class="sale">85%</span>
+                                        <span class="price">8,220원</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- item -->
+
+                        </div>
+                        <!-- itemList -->
+
+
+                        <div class="h32"></div>
+
+                        <a class="waves-effect btn btn-middle btn_cancel w100p align_center gap08">
+                            <span class="color_tp_s font_sbss">더 보기</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.52864 3.52827C5.78899 3.26792 6.2111 3.26792 6.47145 3.52827L10.4714 7.52827C10.7318 7.78862 10.7318 8.21073 10.4714 8.47108L6.47145 12.4711C6.2111 12.7314 5.78899 12.7314 5.52864 12.4711C5.26829 12.2107 5.26829 11.7886 5.52864 11.5283L9.05723 7.99967L5.52864 4.47108C5.26829 4.21073 5.26829 3.78862 5.52864 3.52827Z" fill="#333333"/>
+                            </svg>
+                        </a>
+
+                    </div>
+                    <!-- orderListItem -->
+
+
+                    <div class="h12 back_F7F7F7"></div>
+                    <!-- 성인용 보행기 끝 -->
+
+
+                    <!-- 수동휠체어 시작 -->
+                    <div id="wd2" class="orderListItem scrollspy">
+                        <div class="title">
+                            <span class="titleName">수동휠체어</span>
+                            <span class="numBuy">대여가능 : 2개</span>
+                        </div>
+                        <div class="itemList">
+
+                            <div class="item">
+                                <div class="itemImgArea">
+                                    <span class="iconCart" onclick="toast_order()"></span>
+                                    <img src="/html/page/app/matching/assets/src/images/sample/sam_order02.png" alt="order_img">
+
+                                </div>
+                                <div class="ctnArea">
+                                    <div class="itemName">MRT-2D</div>
+                                    <div>
+                                        <span class="sale">93%</span>
+                                        <span class="price"><span class="font_sbmr">월</span> 998,220원</span>
+                                    </div>
+                                    <div class="marT4">
+                                        <span class="badge_order rental">대여</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- item -->
+
+                            <div class="item">
+                                <div class="itemImgArea">
+                                    <span class="iconCart" onclick="toast_order()"></span>
+                                    <img src="/html/page/app/matching/assets/src/images/sample/sam_order03.png" alt="order_img">
+
+                                </div>
+                                <div class="ctnArea">
+                                    <div class="itemName">SKT-400</div>
+                                    <div>
+                                        <span class="sale">85%</span>
+                                        <span class="price"><span class="font_sbmr">월</span> 98,220원</span>
+                                    </div>
+                                    <div class="marT4">
+                                        <span class="badge_order rental">대여</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- item -->
+
+                        </div>
+                        <!-- itemList -->
+
+
+                        <div class="h32"></div>
+
+                        <a class="waves-effect btn btn-middle btn_cancel w100p align_center gap08">
+                            <span class="color_tp_s font_sbss">더 보기</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.52864 3.52827C5.78899 3.26792 6.2111 3.26792 6.47145 3.52827L10.4714 7.52827C10.7318 7.78862 10.7318 8.21073 10.4714 8.47108L6.47145 12.4711C6.2111 12.7314 5.78899 12.7314 5.52864 12.4711C5.26829 12.2107 5.26829 11.7886 5.52864 11.5283L9.05723 7.99967L5.52864 4.47108C5.26829 4.21073 5.26829 3.78862 5.52864 3.52827Z" fill="#333333"/>
+                            </svg>
+                        </a>
+
+                    </div>
+                    <!-- orderListItem -->
+
+                    <div class="h12 back_F7F7F7"></div>
+                    <!-- 수동휠체어 끝 -->
+
+
+
+
+                    <!-- 지팡이 시작 -->
+                    <div id="wd3" class="orderListItem scrollspy">
+                        <div class="title">
+                            <span class="titleName">지팡이</span>
+                            <span class="numBuy">구매가능 : 1개</span>
+                        </div>
+                        <div class="itemList">
+
+                            <div class="item">
+                                <div class="itemImgArea">
+                                    <span class="iconCart" onclick="toast_order()"></span>
+                                    <img src="/html/page/app/matching/assets/src/images/sample/sam_order04.png" alt="order_img">
+
+                                </div>
+                                <div class="ctnArea">
+                                    <div class="itemName">백건 남자 지팡이-01</div>
+                                    <div>
+                                        <span class="sale">2%</span>
+                                        <span class="price">7,050원</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- item -->
+
+                            <div class="item">
+                                <div class="itemImgArea">
+                                    <span class="iconCart" onclick="toast_order()"></span>
+                                    <img src="/html/page/app/matching/assets/src/images/sample/sam_order05.png" alt="order_img">
+
+                                </div>
+                                <div class="ctnArea">
+                                    <div class="itemName">백건 남자 지팡이-01</div>
+                                    <div>
+                                        <span class="sale">85%</span>
+                                        <span class="price"><span class="font_sbmr">월</span> 47,000원</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- item -->
+
+                        </div>
+                        <!-- itemList -->
+
+
+                        <div class="h32"></div>
+
+                        <a class="waves-effect btn btn-middle btn_cancel w100p align_center gap08">
+                            <span class="color_tp_s font_sbss">더 보기</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.52864 3.52827C5.78899 3.26792 6.2111 3.26792 6.47145 3.52827L10.4714 7.52827C10.7318 7.78862 10.7318 8.21073 10.4714 8.47108L6.47145 12.4711C6.2111 12.7314 5.78899 12.7314 5.52864 12.4711C5.26829 12.2107 5.26829 11.7886 5.52864 11.5283L9.05723 7.99967L5.52864 4.47108C5.26829 4.21073 5.26829 3.78862 5.52864 3.52827Z" fill="#333333"/>
+                            </svg>
+                        </a>
+
+                    </div>
+                    <!-- orderListItem -->
+
+
+                    <div class="h12 back_F7F7F7"></div>
+                    <!-- 지팡이 끝-->
+
+
+                    <!-- 안전손잡이 시작 -->
+                    <div id="wd4" class="orderListItem scrollspy">
+                        <div class="title">
+                            <span class="titleName">안전손잡이</span>
+                            <span class="numBuy">구매가능 : 4533개</span>
+                        </div>
+                        <div class="itemList">
+
+                            <div class="item">
+                                <div class="itemImgArea">
+                                    <span class="iconCart" onclick="toast_order()"></span>
+                                    <img src="/html/page/app/matching/assets/src/images/sample/sam_order06.png" alt="order_img">
+
+                                </div>
+                                <div class="ctnArea">
+                                    <div class="itemName">MSH-103</div>
+                                    <div>
+                                        <span class="sale">2%</span>
+                                        <span class="price">7,050원</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- item -->
+
+                            <div class="item">
+                                <div class="itemImgArea">
+                                    <span class="iconCart" onclick="toast_order()"></span>
+                                    <img src="/html/page/app/matching/assets/src/images/sample/sam_order07.png" alt="order_img">
+
+                                </div>
+                                <div class="ctnArea">
+                                    <div class="itemName">MSH-103</div>
+                                    <div>
+                                        <span class="sale">85%</span>
+                                        <span class="price"><span class="font_sbmr">월</span> 47,000원</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- item -->
+
+                        </div>
+                        <!-- itemList -->
+
+
+                        <div class="h32"></div>
+
+                        <a class="waves-effect btn btn-middle btn_cancel w100p align_center gap08">
+                            <span class="color_tp_s font_sbss">더 보기</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.52864 3.52827C5.78899 3.26792 6.2111 3.26792 6.47145 3.52827L10.4714 7.52827C10.7318 7.78862 10.7318 8.21073 10.4714 8.47108L6.47145 12.4711C6.2111 12.7314 5.78899 12.7314 5.52864 12.4711C5.26829 12.2107 5.26829 11.7886 5.52864 11.5283L9.05723 7.99967L5.52864 4.47108C5.26829 4.21073 5.26829 3.78862 5.52864 3.52827Z" fill="#333333"/>
+                            </svg>
+                        </a>
+
+                    </div>
+                    <!-- orderListItem -->
+
+
+                    <div class="h12 back_F7F7F7"></div>
+                    <!-- 안전손잡이 끝-->
+
+
+                    <!-- 미끄럼방지 양말 시작 -->
+                    <div id="wd5" class="orderListItem scrollspy">
+                        <div class="title">
+                            <span class="titleName">미끄럼방지 양말</span>
+                            <span class="numBuy">구매가능 : 999999개</span>
+                        </div>
+                        <div class="itemList">
+
+                            <div class="item">
+                                <div class="itemImgArea">
+                                    <span class="iconCart" onclick="toast_order()"></span>
+                                    <img src="/html/page/app/matching/assets/src/images/sample/sam_order08.png" alt="order_img">
+
+                                </div>
+                                <div class="ctnArea">
+                                    <div class="itemName">위풋 논슬립 돌돌이 양말 양면</div>
+                                    <div>
+                                        <span class="sale">2%</span>
+                                        <span class="price">237,050원</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- item -->
+
+                            <div class="item">
+                                <div class="itemImgArea">
+                                    <span class="iconCart" onclick="toast_order()"></span>
+                                    <img src="/html/page/app/matching/assets/src/images/sample/sam_order09.png" alt="order_img">
+
+                                </div>
+                                <div class="ctnArea">
+                                    <div class="itemName">위풋 자석 덧신 양면</div>
+                                    <div>
+                                        <span class="sale">85%</span>
+                                        <span class="price"><span class="font_sbmr">월</span> 600원</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- item -->
+
+                        </div>
+                        <!-- itemList -->
+
+
+                        <div class="h32"></div>
+
+                        <a class="waves-effect btn btn-middle btn_cancel w100p align_center gap08">
+                            <span class="color_tp_s font_sbss">더 보기</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.52864 3.52827C5.78899 3.26792 6.2111 3.26792 6.47145 3.52827L10.4714 7.52827C10.7318 7.78862 10.7318 8.21073 10.4714 8.47108L6.47145 12.4711C6.2111 12.7314 5.78899 12.7314 5.52864 12.4711C5.26829 12.2107 5.26829 11.7886 5.52864 11.5283L9.05723 7.99967L5.52864 4.47108C5.26829 4.21073 5.26829 3.78862 5.52864 3.52827Z" fill="#333333"/>
+                            </svg>
+                        </a>
+
+                    </div>
+                    <!-- orderListItem -->
+
+
+                    <div class="h12 back_F7F7F7"></div>
+                    <!-- 미끄럼방지 양말 끝-->
+
+
+
+
+                    
+                </div>
+                <!-- orderListArea -->
+
+
+                <div class="pad_24_20_20">
+
+                    <div class="font_sblb">유의사항</div>
+
+                    <div class="h16"></div>
+    
+                    <ul class="list_dept1 gray_dot">
+                        <li class="color_t_s font_sbsr">장기요양정보 조회 시점에 따라 정보가 다를 수 있어요. </li>
+                    </ul>
+
+                    <div class="h80"></div>
+
+                </div>
+                
+
+
+
+            </section>
+
+
+
+        </main>
+
+
+
+
+
+
+
+
+
+    </div>
+    <!-- wrapper -->
+
+
+
+
+  <!-- Modal modal_counPlace -->
+  <div id="modal_remainPrice" class="modal bottom-sheet modal_om_select">
+
+    <div class="modal_header">
+      <h4 class="modal_title">남은 장기요양급여</h4>
+      <div class="close_x modal-close waves-effect"></div>
+    </div>
+
+    <div class="modal-content">
+
+        <div class="h04"></div>
+        <hr>
+        <div class="h20"></div>
+
+        <table class="table_basic small">
+            <colgroup>
+                <col style="width:140px;">
+                <col>
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th><span class="color_tp_s font_sbmr">본인 부담률</span></th>
+                    <td class="l_right"><span class="font_sbmr">15%</span></td>
+                </tr>
+                <tr>
+                    <th><span class="color_tp_s font_sbmr">인정 유효기간</span></th>
+                    <td class="l_right"><span class="font_sbmr">2022.09.13~2024.09.12</span></td>
+                </tr>
+                <tr>
+                    <th><span class="color_tp_s font_sbmr">적용기간</span></th>
+                    <td class="l_right"><span class="font_sbmr">2023.09.13~2024.09.12</span></td>
+                </tr>
+        
+            </tbody>
+        </table>
+
+      <div class="h20"></div>
+
+
+
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+    <!-- 장바구니 하단팝업 -->
+    <div class="modal_cart_area">
+        <div class="align_between_center">
+            <a class="btn_rounded flex_center gap04">
+                <span class="i_cart_white"></span>
+                <span>장바구니</span>
+            </a>
+            <div class="font_sbmb">
+                총 <span class="color_tp_pp">50,400,000원</span>이 담겼어요
+            </div>
+        </div>
+
+        <div class="h12"></div>
+
+        <div class="progress thin">
+            <div class="progress-bar" style="width:40%"></div>
+        </div>
+        
+        <!-- <progress class="progress01 thin" value="120000" min="0" max="1200000"></progress> -->
+
+        <div class="h08"></div>
+
+        <div class="l_right">
+            <span class="color_t_s font_ssr">남은 급여: 812,000원</span>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+
+/* 2024 수정 */
+.modal_contents {
+  /* padding: 1.25rem; modal_body가 padding을 가지고 있다 */
+  overflow: overlay;
+}
+/* 사이즈 */
+.modal_contents.eroumon {
+  min-width: 500px;
+}
+.modal_contents.eroumcare {
+  min-width: 640px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+/* modal_top */
+.modal_contents > .modal_top {
+  font-size: 20px;
+  padding: 20px 0;
+}
+/* care */
+.modal_contents.eroumcare > .modal_top {
+  padding: 20px 0 12px;
+}
+.modal_contents > .modal_top h3 {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: #333;
+  margin-bottom: 8px;
+}
+/* care */
+.modal_contents.eroumcare > .modal_top h3 {
+  font-size: 24px;
+  margin: 0 0 20px;
+}
+.modal_contents > .modal_top p {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border-bottom: 1px solid #eee;
+}
+/* care */
+.modal_contents.eroumcare > .modal_top p {
+  gap: 8px;
+  font-size: 16px;
+  border-bottom: 0 none;
+  padding: 8px;
+  background-color: #f5f5f5;
+  height: 43px;
+  line-height: 1;
+  margin: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.modal_contents > .modal_top strong {
+  font-size: 24px;
+  font-weight: 700;
+}
+.modal_contents.eroumcare > .modal_top strong {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* modal_con */
+.modal_contents .modal_con {
+  font-size: 20px;
+  padding: 20px 0;
+}
+/* care */
+.modal_contents.eroumcare .modal_con {
+  padding: 0 0 12px;
+}
+.modal_contents .modal_con p:first-child {
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+/* care */
+.modal_contents.eroumcare .modal_con p:first-child {
+  margin: 0 0 10px 0;
+  font-size: 24px;
+  font-weight: 500;
+}
+.modal_contents .modal_con p:nth-child(2) {
+  margin-bottom: 8px;
+}
+/* care */
+.modal_contents.eroumcare .modal_con p:nth-child(2) {
+  margin: 0;
+}
+
+.modal_contents .modal_con p:nth-child(2) {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  color: #333;
+}
+.modal_contents.eroumcare .modal_con p:nth-child(2) {
+  font-size: 16px;
+}
+
+.modal_contents .modal_con p:nth-child(n + 3) {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* senior imgWrap */
+.modal_contents .senior_imgWrap {
+  padding: 0 19px 15px;
+  width: 100%;
+  display: inline-block;
+  border-radius: 8px;
+}
+.modal_contents .senior_imgWrap > p {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 12px;
+  text-align: center;
+}
+.modal_contents .senior_imgWrap > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal_contents .senior_imgWrap > div > img {
+  width: 150px;
+  height: 150px;
+}
+
+/* care_test imgWrap */
+.modal_contents .careTest_img_g {
+  margin-top: 20px;
+}
+.modal_contents .careTest_img_g .imgWrap {
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal_contents .careTest_img_g .imgWrap img {
+  width: 100%;
+  height: 140px;
+}

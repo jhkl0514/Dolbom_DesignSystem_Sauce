@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>F_SAC_001_simpleTest01.html</title>
+
+
+    <!-- jquery -->
+    <script src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script src="../js/materialize.min.js"></script>
+
+    <!-- guide.js -->
+    <script src="../js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="../css/materialize.min.css">
+
+    <!-- DEDS-260 202412 swiper -->
+    <link rel="stylesheet" href="../js/swiper/swiper-bundle.min.css" />
+
+    <!-- DEDS-260 202412 AOS 추가 -->
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- DEDS-260 202412 css/js -->
+    <style>
+        .st_intro_Swiper{
+            position: relative;
+
+            &::before{
+            display: block;
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 15%, rgba(255,255,255,0) 85%, rgba(255,255,255,0.9) 100%);
+            z-index: 10;
+          }
+
+        }
+        .st_intro_Swiper .swiper {
+          width: 100%;
+          height: 330px;
+
+
+          .swiper-slide{transition: 0.3s all;padding: 0 35px;}
+
+          .swiper-slide.swiper-slide-active, .swiper-slide.swiper-slide-next + .swiper-slide{padding: 0 35px;}
+          .swiper-slide.swiper-slide-next{padding: 0 26px;}
+
+        }
+      </style>
+  
+
+
+
+
+
+    <script>
+
+        $(function () {
+
+            $('.collapsible.default').collapsible({
+            });
+
+        });
+
+    </script>
+    <!-- lottie -->
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+
+
+
+</head>
+
+<!-- DEDS-260 202412 body 클래스 삭제-->
+<body class="">
+    <div class="wrapper">
+
+
+        <header>
+            <nav class="top">
+                <a class="btn_back waves-effect" href="#">
+                    <span class="icon"></span>
+                    <span class="txt">인정등급 간편 테스트</span>
+                </a>
+                <div class="icon_area waves-effect">
+                    <div class="icon_btn i_share"></div>
+                </div>
+
+            </nav>
+        </header>
+
+
+        <main>
+            <!-- DEDS-260 202412 -->
+            <section class="intro">
+
+                <h2 class="title02">
+                    10초만에 예상해보는
+                </h2>
+
+                <h2 class="title color_tp_pp font_shx marT4">
+                    인정등급 간편 테스트
+                </h2>
+
+                <div class="h52"></div>
+
+                <dotlottie-player src="/html/page/app/matching/assets/lottie/simpletest_simple_intro.lottie" background="transparent" speed="1" style="width: 100%; height: 274px;" loop autoplay></dotlottie-player>
+
+                <div class="h24"></div>
+
+                <div class="color_t_t font_sbssr">*인정등급 간편 테스트는 예상 테스트로 실제 판정과 다를 수 있습니다.</div>
+
+                <div class="h56"></div>
+
+                <div class="h12 back_F7F7F7 marW-20"></div>
+
+                <div class="h56"></div>
+
+                <div data-aos="fade-up">
+
+                    <h2 class="title02">
+                        이런 고민<br>
+                        해본 적 있나요?
+                    </h2>
+    
+                    <div class="h48"></div>
+    
+                    <div class="st_intro_Swiper">
+    
+                        <div class="back_gradient"></div>
+    
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                        
+                                    <div class="back_EFF1FD radius08 padH20W24 d-flex align-items-center gap10 h100">
+                                        <div class="flex_center w40">
+                                            <img src="/html/page/app/matching/assets/src/images/08etc/icon_question_01.svg" alt="sw">
+                                        </div>
+                                        <div class="font_sbmr">
+                                            <span class="font_sbmb">미리 등급을</span>
+                                            <br>
+                                            <span class="font_sbmb">예상</span>해보고 싶은데..
+                                        </div>
+                                    </div>
+                        
+                                </div>
+                        
+                                <div class="swiper-slide">
+                                    <div class="back_EFF1FD radius08 padH20W24 d-flex align-items-center gap10 h100">
+                                        <div class="flex_center w40">
+                                            <img src="/html/page/app/matching/assets/src/images/08etc/money03_40.svg" alt="sw">
+                                        </div>
+                                        <div class="font_sbmr">
+                                            나도 <span class="font_sbmb">장기요양급여</span>를
+                                            <br>
+                                            받을 수 있을까?
+                                        </div>
+                                    </div>
+                        
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="back_EFF1FD radius08 padH20W24 d-flex align-items-center gap10 h100">
+                                        <div class="flex_center w40">
+                                            <img src="/html/page/app/matching/assets/src/images/08etc/accompany_40.svg" alt="sw">
+                                        </div>
+                                        <div class="font_sbmr">
+                                            <span class="font_sbmb">누구나 장기요양</span>
+                                            <br>
+                                            신청을 할수 있나?
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="swiper-slide">
+                        
+                                    <div class="back_EFF1FD radius08 padH20W24 d-flex align-items-center gap10 h100">
+                                        <div class="flex_center w40">
+                                            <img src="/html/page/app/matching/assets/src/images/08etc/icon_question_01.svg" alt="sw">
+                                        </div>
+                                        <div class="font_sbmr">
+                                            <span class="font_sbmb">미리 등급을</span>
+                                            <br>
+                                            <span class="font_sbmb">예상</span>해보고 싶은데..
+                                        </div>
+                                    </div>
+                        
+                                </div>
+                        
+                                <div class="swiper-slide">
+                                    <div class="back_EFF1FD radius08 padH20W24 d-flex align-items-center gap10 h100">
+                                        <div class="flex_center w40">
+                                            <img src="/html/page/app/matching/assets/src/images/08etc/money03_40.svg" alt="sw">
+                                        </div>
+                                        <div class="font_sbmr">
+                                            나도 <span class="font_sbmb">장기요양급여</span>를
+                                            <br>
+                                            받을 수 있을까?
+                                        </div>
+                                    </div>
+                        
+                                </div>
+    
+                                <div class="swiper-slide">
+                                    <div class="back_EFF1FD radius08 padH20W24 d-flex align-items-center gap10 h100">
+                                        <div class="flex_center w40">
+                                            <img src="/html/page/app/matching/assets/src/images/08etc/accompany_40.svg" alt="sw">
+                                        </div>
+                                        <div class="font_sbmr">
+                                            <span class="font_sbmb">누구나 장기요양</span>
+                                            <br>
+                                            신청을 할수 있나?
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                            </div>
+                        </div>
+    
+    
+                    </div>
+                    <!-- st_intro_Swiper -->
+
+                </div>
+
+
+                <div class="h56"></div>
+
+                <div class="h12 back_F7F7F7 marW-20"></div>
+
+                <div class="h56"></div>
+
+                <h2 class="title02" data-aos="fade-up">
+                    간단한 질문에 답해보세요
+                </h2>
+
+                <div class="h24"></div>
+
+                <div class="color_t_s font_sbmr" data-aos="fade-up">10초만에 알 수 있는 나의 등급! 더 이상 고민하지 마세요.</div>
+
+                <div class="h52"></div>
+
+                <div class="simpleTest_ani_01" data-aos="fade-up">
+
+                    <div class="check"></div>
+
+                </div>
+
+                <div class="h56"></div>
+
+                <div class="h12 back_F7F7F7 marW-20"></div>
+
+                <div class="h56"></div>
+
+                <h2 class="title02" data-aos="fade-up">
+                    장기요양 인정등급,<br>
+                    왜 필요할까요?
+                </h2>
+
+                <div class="h52"></div>
+
+                <div data-aos="fade-up">
+
+                    <div class="list_check font_sbmb marB12">장기요양 서비스를 받으려면 인정등급이 필요해요</div>
+    
+                    <div class="color_t_s font_sbmr">인정등급은 어르신의 건강 상태를 판단해 드리는 점수예요.</div>
+                    
+                    <div class="h20"></div>
+    
+                    <div class="center">
+                        <img src="/html/page/app/matching/assets/src/images/11easy/long_care_01.svg" alt="">
+                    </div>
+
+                </div>    
+                <div class="h80"></div>
+
+
+                <div data-aos="fade-up">
+
+                    <div class="list_check font_sbmb marB12">전문적인 돌봄을 받을 수 있어요</div>
+    
+                    <div class="color_t_s font_sbmr">인정등급을 받으면 방문 요양 서비스, 주·야간보호 서비스 등을 지원받을 수 있어요.</div>
+                    
+                    <div class="h20"></div>
+    
+                    <div class="center">
+                        <img src="/html/page/app/matching/assets/src/images/11easy/long_care_02.svg" alt="">
+                    </div>
+
+                </div>
+
+                <div class="h80"></div>
+
+
+                <div data-aos="fade-up">
+
+                    <div class="list_check font_sbmb marB12">복지용구를 지원받을 수 있어요</div>
+    
+                    <div class="color_t_s font_sbmr">휠체어, 보행기 등 복지용구로 일상생활을 더 편리하게 누릴 수 있어요.</div>
+                    
+                    <div class="h20"></div>
+    
+                    <div class="center">
+                        <img src="/html/page/app/matching/assets/src/images/11easy/long_care_03.svg" alt="">
+                    </div>
+
+                </div>
+
+                <div class="h80"></div>
+
+
+                <div data-aos="fade-up">
+
+                    <div class="list_check font_sbmb marB12">시설 이용 지원 받을 수 있어요</div>
+    
+                    <div class="color_t_s font_sbmr">주간보호센터, 요양원 등 전문 시설을 이용할 수 있어 가족의 돌봄 부담도 줄어 들어요.</div>
+                    
+                    <div class="h20"></div>
+    
+                    <div class="center">
+                        <img src="/html/page/app/matching/assets/src/images/11easy/long_care_04.svg" alt="">
+                    </div>
+
+                </div>
+
+                <div class="h56"></div>
+
+
+                <div class="h12 back_F7F7F7 marW-20"></div>
+
+
+                <div class="h40"></div>
+
+                <div class="font_sblb">더 자세히 알아보세요</div>
+
+                <div class="h08"></div>
+
+                <div class="marW-20">
+
+                    <ul class="collapsible default">
+                        <li class="bder_bottom active">
+                            <div class="collapsible-header pad20">
+                                <span class="font_sbms">인증등급 신청하기 어려우신가요?</span>
+                                <span class="arrow"></span>
+                            </div>
+                            <div class="collapsible-body noPad">
+                                <div class="pad20 back_FAFAFA">
+                                    <div class="color_t_s font_sbmr">
+                                        간단한 테스트 후 상담을 신청하면, 서류 준비와 절차 걱정 없이 전문가가 도와드려요,
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                        <li class="bder_bottom">
+                            <div class="collapsible-header pad20">
+                                <span class="font_sbms">더 정확한 결과를 원하신다면?</span>
+                                <span class="arrow"></span>
+                            </div>
+                            <div class="collapsible-body noPad">
+                                <div class="pad20 back_FAFAFA">
+                                    <div class="color_t_s font_sbmr">
+                                        나의 상태에 맞는 정확한 등급을 확인하고 싶다면 상세 테스트를 진행해 보세요.
+                                    </div>
+
+                                     <!-- 오픈전까지 히든처리(disNone) -->
+                                    <div class="disNone">
+                                        <div class="h12"></div>
+                                        <span class="waves-effect link_text font_sbms"><u>인정등급 상세 테스트 바로가기</u></span>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+    
+    
+
+                </div>
+
+                <div class="h40"></div>
+
+
+
+
+
+            </section>
+            <!-- DEDS-260 202412 end -->
+        </main>
+
+        <footer class="page-footer">
+
+            <div class="relative">
+                <a class="waves-effect btn-large btn_primary w100p">빠르게 확인하기</a>
+            </div>
+
+        </footer>
+
+
+
+
+
+
+
+    </div>
+    <!-- wrapper -->
+
+
+</body>
+
+</html>
+
+
+<!-- DEDS-260 202412 js -->
+<script src="../js/swiper/swiper-bundle.min.js"></script>
+<script>
+    // Swiper 초기화
+    var swiper = new Swiper('.st_intro_Swiper .swiper', {
+        direction: 'vertical',
+        slidesPerView: 3,
+        spaceBetween: 16,
+        loop: true,
+        autoplay: {
+        delay: 1500,
+        disableOnInteraction: false,
+        },
+    });
+</script>
+
+
+<!-- DEDS-260 202412 -->
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+
+AOS.init({
+    duration: 800,
+    once: true,
+    offset: 150,
+});
+</script>

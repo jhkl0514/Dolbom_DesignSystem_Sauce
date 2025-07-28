@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+	<title>Sitemap</title>
+
+	<!-- jquery -->
+	<script type="text/javascript" src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+	<!-- materialize -->
+	<script type="text/javascript" src="../js/materialize.min.js"></script>
+
+	<!-- guide.js -->
+	<script type="text/javascript" src="../js/custom/guide.js"></script>
+
+	<!-- materialize CSS -->
+	<link rel="stylesheet" href="../css/materialize.css" />
+
+	<!-- style.css -->
+	<link rel="stylesheet" href="../css/style.css" />
+
+	<style>
+		.tabs {
+			position: fixed;
+			left: 0;
+			top: 0;
+			z-index: 10;
+			box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.20), 0px 2px 16px 0px rgba(0, 0, 0, 0.08);
+		}
+
+
+		.tabs .tab a:hover,
+		.tabs .tab a.active {
+			color: #FF8120;
+		}
+
+		.tabs .tab a {
+			color: #FFC77D;
+		}
+
+		.tabs .indicator {
+			background-color: #FF8120;
+		}
+
+		a:active {
+			outline: 1px dotted #d32f2f;
+		}
+
+		.back_gray {
+			background-color: #e4e4e4 !important;
+		}
+
+		h5.title {
+			margin: 50px 0 6px;
+		}
+
+		.card {
+			padding: 10px;
+			margin-bottom: 12px;
+			border: 2px solid transparent;
+			transition: 0.3s all;
+		}
+
+		.card:hover {
+			background-color: #f8f8f8;
+			border: 2px solid #dbdbdb;
+		}
+
+		.sitemap_table tbody {
+			overflow: hidden;
+		}
+
+		.sitemap_table col:nth-child(1) {
+			width: 200px;
+		}
+
+		.sitemap_table col:nth-child(2) {
+			width: 300px;
+		}
+
+		.sitemap_table col:nth-child(3) {
+			width: 400px;
+		}
+
+		tr:first-child td:first-child {
+			font-weight: 700;
+			font-size: 16px;
+		}
+
+		tr:last-child {
+			border: none;
+		}
+
+		.card-panel {
+			margin: 0;
+		}
+
+
+		td.new{
+			font-weight: 900;
+			animation-name: td_new_ani;
+			animation-duration:1s; 
+			animation-iteration-count:infinite;
+			animation-direction:alternate;
+		}
+
+			/* 애니메이션 */
+			@keyframes td_new_ani {
+			0% {
+				color: #f8b931;
+			}
+			100% {
+				color: #ff2e7e;
+			}
+
+		}
+
+
+		/* 완료 */
+		.chk {
+			position: relative;
+		}
+
+		.chk::before {
+			position: absolute;
+			top: -10px;
+			left: -10px;
+			content: '';
+			width: 0px;
+			height: 0px;
+			border: 10px solid transparent;
+			border-top: 10px solid #d32f2f;
+			border-left: 10px solid #d32f2f;
+		}
+		.chk.new::before {
+			position: absolute;
+			top: -10px;
+			left: -10px;
+			content: '';
+			width: 0px;
+			height: 0px;
+			border: 10px solid transparent;
+			border-top: 10px solid #d32f2f;
+			border-left: 10px solid #d32f2f;
+
+			animation-name: chk_new_ani;
+			animation-duration:1s; 
+			animation-iteration-count:infinite;
+			animation-direction:alternate;
+
+
+		}
+
+		/* 애니메이션 */
+		@keyframes chk_new_ani {
+			0% {
+				border-top: 10px solid #d32f2f;
+				border-left: 10px solid #d32f2f;
+			}
+			100% {
+				border-top: 10px solid #ffed4e;
+				border-left: 10px solid #ffed4e;
+			}
+
+		}
+
+
+
+		.add_p{border-top: 2px solid #FF8120;}
+
+		/* 돌봄pc링크 */
+		.addr_pc{
+			position: relative;
+			display: block;
+			background-color: #ff8989;
+			color: #ffffff;
+			font-weight: 600;
+			border-radius: 4px;
+			padding: 0 5px 0 25px;
+			margin-top: 1px;
+			
+			&::before{
+				position: absolute;
+				content: 'PC';
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: #9b1212;
+				border-radius: 50%;
+				width: 19px;height: 19px;
+				top: 1px;left: 2px;
+				color: #fff;
+				font-size: 8px;
+
+			}
+		}
+	</style>
+
+	<script>
+		$(function () {
+
+
+
+			//tabs
+			$('.tabs').tabs();
+
+
+			//card로 감쌈
+			$('.sitemap_table').wrap('<div class="card"></div>');
+
+			//colgroup 생성
+			$('.sitemap_table').prepend(
+				'<colgroup> <col /> <col /> <col /> <col /> </colgroup>'
+			);
+
+			//첫 tr/td 에 rowspan 생성
+			$('.sitemap_table').each(function () {
+				var thisLength = $(this).find('tr').length;
+
+				$(this).find('tr:first-child td:first-child').attr('rowspan', thisLength);
+
+				//$(this).parents('.card').after('<div>'+thisLength+'</div>')
+			});
+
+			//주소링크 생성
+			$('.addr').each(function () {
+				$(this).prop({
+					href: $(this).text(),
+					target: '_blank',
+					class: 'color_tp_p',
+				});
+			});
+
+			//주소링크 생성_pc
+			$('.addr_pc').each(function () {
+				$(this).prop({
+					href: '/html/page/index/contents/' + $(this).text(),
+					target: '_blank',
+				});
+			});
+
+
+
+		});
+	</script>
+</head>
+
+<body class="back_gray">
+
+	<div class="h46"></div>
+
+
+	<ul class="tabs">
+		<li class="tab col s3"><a class="active" href="#tab001">매칭앱</a></li>
+		<li class="tab col s3"><a href="#tab002">이로움 케어</a></li>
+	</ul>
+
+
+	<!-- matching_App -->
+	<div id="tab001">
+
+		<div class="pad20">
+
+
+			<h2 class="title">MVP 매칭앱 Sitemap</h2>
+
+			<h5 class="title color_primary">컴포넌트</h5>
+
+			<table class="sitemap_table">
+				<tbody>
+					<tr>
+						<td>컴포넌트</td>
+						<td></td>
+						<td><a class="addr" href="">components.html</a></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h5 class="title color_primary">회원가입 / 로그인</h5>
+
+			<table class="sitemap_table">
+				<tbody class="chk">
+					<!-- 로그인화면 -->
+					<tr>
+						<td>로그인화면</td>
+						<td>네이버 카카오 로그인</td>
+						<td><a class="addr" href="">F_SGN_001_login01.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>로그인 애플</td>
+						<td>
+							<a class="addr" href="">F_SGN_001_login02.html</a>
+						</td>
+						<td>전체팝업 로그인</td>
+					</tr>
+					<tr>
+						<td>로그인</td>
+						<td><a class="addr" href="">F_SGN_002_join0107.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>회원가입 완료</td>
+						<td><a class="addr" href="">F_SGN_003_join_ok.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>본인인증 안내</td>
+						<td><a class="addr" href="">F_SNR_002_my_cert_info.html</a></td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td>개인정보 입력</td>
+						<td><a class="addr" href="">F_SGN_002_join05.html</a></td>
+						<td><span class="fs12">팝업 / 하단핸들모달</span></td>
+					</tr>
+					<tr>
+						<td>유효성 체크</td>
+						<td><a class="addr" href="">F_SGN_002_join05_validChk.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>회원가입 로그인 예외</td>
+						<td><a class="addr" href="">F_SGN_006_noConnect.html</a></td>
+						<td></td>
+					</tr>
+					<tr class="add_p">
+						<td>통합회원 전환</td>
+						<td><a class="addr" href="">F_SGN_002_con_inter_member.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>본인인증 안내(통합)</td>
+						<td>
+							<div class="card-panel radius08 noPad fs12">
+								본인인증 안내와 같음<br>
+							</div>
+							<a class="addr" href="">F_SNR_002_my_cert_info_inter_member.html</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>통합회원 로그인</td>
+						<td>
+							<div class="card-panel radius08 noPad fs12">
+								회원가입 로그인 예외 UI<br>
+							</div>
+							<a class="addr" href="">F_SGN_006_noConnect_inter_member.html</a>
+						</td>
+						<td>토글 toggle</td>
+					</tr>
+					<tr>
+						<td>딥링크 페이지</td>
+						<td><a class="addr" href="">F_SGN_001_deepLink.html</a></td>
+						<td></td>
+					</tr>
+					<tr class="add_p">
+						<td class="new">사업소 초대링크 접속</td>
+						<td><a class="addr" href="">F_SGN_000_business_inviteLink.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="new">사업소 초대링크 접속(멤버)</td>
+						<td><a class="addr" href="">F_SGN_000_business_inviteLink_member.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="new">딥링크 회원가입완료 </td>
+						<td><a class="addr" href="">F_SGN_000_business_inviteLink_ok.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="new">유효하지 않은 딥링크</td>
+						<td><a class="addr" href="">F_SGN_000_business_inviteLink_invalid.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="new">iosAPP 노티</td>
+						<td><a class="addr" href="">F_SGN_000_iosApp_noti.html</a></td>
+						<td></td>
+					</tr>
+					
+				</tbody>
+			</table>
+
+			<h5 class="title color_primary">온보딩 / 앱접근권한</h5>
+			<table class="sitemap_table">
+				<tbody class="chk">
+					<!-- 온보딩 -->
+					<tr>
+						<td>온보딩</td>
+						<td>온보딩</td>
+						<td><a class="addr" href="">F_ONB_001_onboard01.html</a></td>
+						<td>swipe 특정 슬라이드 이벤트</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table class="sitemap_table">
+				<tbody class="chk">
+					<tr>
+						<td>앱 접근권한</td>
+						<td></td>
+						<td><a class="addr" href="">F_ACS_001_appAccess.html</a></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h5 class="title color_primary">어르신 등록 / 어르신 위임 / 상담 신청</h5>
+
+			<table class="sitemap_table">
+				<tbody class="chk">
+					<!-- 어르신 등록 -->
+					<tr>
+						<td>어르신 등록</td>
+						<td>어르신 첫단계 - 여자 일러스트</td>
+						<td><a class="addr" href="">F_SNR_002_eld_regi01.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>가족 트리</td>
+						<td><a class="addr" href="">F_SNR_002_eld_regi02.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>어르신이름</td>
+						<td><a class="addr" href="">F_SNR_002_eld_regi03.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>어르신생년월일</td>
+						<td><a class="addr" href="">F_SNR_002_eld_regi04.html</a></td>
+						<td>전체팝업</td>
+					</tr>
+					<tr>
+						<td>어르신등록완료</td>
+						<td><a class="addr" href="">F_SNR_002_eld_regi05_ok.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>형제/자매 성별</td>
+						<td><a class="addr" href="">F_SNR_002_eld_gender.html</a></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table class="sitemap_table">
+				<tbody class="chk">
+					<!-- 어르신 위임 -->
+					<tr>
+						<td>어르신 위임</td>
+						<td >본인인증 안내</td>
+						<td>
+							<a class="addr" href="">F_SNR_002_om_deleg_info.html</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td >어르신 위임1</td>
+						<td><a class="addr" href="">F_SGN_002_om_deleg_reg01.html</a></td>
+						<td>* 개인정보입력 참조</td>
+					</tr>
+					<tr>
+						<td >어르신 위임2</td>
+						<td><a class="addr" href="">F_SGN_002_om_deleg_reg02.html</a></td>
+						<td>인증번호 입력</td>
+					</tr>
+					<tr>
+						<td >동의 완료</td>
+						<td><a class="addr" href="">F_SGN_002_om_deleg_reg_ok.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td >어르신위임 온보딩</td>
+						<td><a class="addr" href="">F_SNR_006_om_entrust.html</a></td>
+						<td>이미지 본문 가운데 처리</td>
+					</tr>
+					
+				</tbody>
+			</table>
+
+
+			<table class="sitemap_table">
+				<tbody class="chk">
+					<tr>
+						<td>어르신 선택 바텀시트</td>
+						<td>팝업</td>
+						<td>
+							<a class="addr" href="">F_SNR_005_om_select.html</a>
+							<br />
+							<div class="card-panel radius08 noPad fs12">
+								※서비스 참조<br />
+								<a class="addr" href="">F_SAA_001_service.html</a>
+							</div>
+						</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table class="sitemap_table">
+				<tbody class="chk">
+					<!-- 상담신청 -->
+					<tr>
+						<td>상담신청</td>
+						<td class="new">상담 정보 입력</td>
+						<td><a class="addr" href="">F_CSR_001_consInfo.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td >어르신 연세선택</td>
+						<td><a class="addr" href="">F_CSR_002_om_age65.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td >연락처 수정</td>
+						<td><a class="addr" href="">F_CSR_001_telMdfy.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상담 지역 정보 / 상담제공 동의</td>
+						<td><a class="addr" href="">F_CSR_006_consRegion.html</a></td>
+						<td>시군구 / 하단 핸들모달</td>
+					</tr>
+					<tr>
+						<td>상담 신청 완료</td>
+						<td><a class="addr" href="">F_CSR_007_consCompOk.html</a></td>
+						<td>하단 bottom 모달_시간 1초</td>
+					</tr>
+					<tr>
+						<td class="new">장기요양기관 연결</td>
+						<td>
+							<div>지역불일치</div>
+							<a class="addr" href="">F_CSR_019_long_care_noRegion.html</a><br>
+							<div>상담불가</div>
+							<a class="addr" href="">F_CSR_019_long_care_noCoun.html</a><br>
+						</td>
+						<td></td>
+					</tr>
+
+				</tbody>
+			</table>
+
+			<h5 class="title color_primary">어르신 메뉴</h5>
+
+			<table class="sitemap_table">
+				<tbody class="chk">
+					<!-- 어르신 메뉴 -->
+					<tr>
+						<td>어르신</td>
+						<td>어르신 서브메인</td>
+						<td><a class="addr" href="">F_SNR_001_om_main.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>
+							어르신 서브메인
+							<div class="fs13 color_secondary">
+								요양인정번호X, 어르신만 등록
+							</div>
+						</td>
+						<td><a class="addr" href="">F_SNR_001_om_main_onlyOm.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>어르신 정보수정</td>
+						<td><a class="addr" href="">F_SNR_003_om_info_mdfy.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>어르신 기본정보수정</td>
+						<td>
+							<a class="addr" href="">F_SNR_004_om_info_mdfy_basic01.html</a>
+						</td>
+						<td>input_basic + list_link</td>
+					</tr>
+					<tr>
+						<td>본인과의 가족관계 수정</td>
+						<td>
+							<a class="addr" href="">F_SNR_004_om_info_mdfy_basic02.html</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>어르신 상담정보수정</td>
+						<td>
+							<a class="addr" href="">F_SNR_004_om_info_mdfy_coun.html</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>요양인정번호 등록</td>
+						<td><a class="addr" href="">F_SNR_004_reg_medi_number.html</a></td>
+						<td>input L표시</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table class="sitemap_table">
+				<tbody class="chk">
+					<!-- 장기요양기관 메뉴 -->
+					<tr>
+						<td>
+							장기요양기관 문의 및<br />
+							상담내역
+						</td>
+						<td>상담목록</td>
+						<td>
+							<a class="addr" href="">F_CSR_004_long_care_counList.html</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상담내역</td>
+						<td><a class="addr" href="">F_CSR_005_coun_history.html</a></td>
+						<td>vertical step<br />상담취소<br>header 상단 아이콘 두개</td>
+					</tr>
+					<tr>
+						<td>*상담내역 상세 상황별</td>
+						<td>
+							<a class="addr" href="">F_CSR_005_coun_history_guide.html</a>
+						</td>
+						<td>상담상태 5단계</td>
+					</tr>
+					<tr>
+						<td>상담취소</td>
+						<td><a class="addr" href="">F_CSR_005_coun_history_cancel.html</a></td>
+						<td>글자수 제한</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table class="sitemap_table">
+				<tbody class="chk">
+					<!-- 장기요양기관 메뉴 -->
+					<tr>
+						<td>
+							연결기관 확인
+						</td>
+						<td>[공통]</td>
+						<td>
+							<a class="addr" href="">F_CSR_005_connect_chk_common_Ok.html</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>[재가/인정 한정]</td>
+						<td><a class="addr" href="">F_CSR_005_connect_chk_jega.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>[공통]<br>처리불가 상담/주문</td>
+						<td>
+							<a class="addr" href="">F_CSR_005_connect_chk_common_No.html</a>
+						</td>
+						<td></td>
+					</tr>
+
+				</tbody>
+			</table>
+
+			<table class="sitemap_table">
+				<tbody class="chk">
+					<!-- 시설찾기 메뉴 -->
+					<tr>
+						<td>
+							시설찾기
+						</td>
+						<td class="new">시설찾기</td>
+						<td>
+							<a class="addr" href="">F_SAI_001_search_facility.html</a>
+							<a class="addr_pc" href="">dbapp_F_SAI_001_search_facility.html</a>
+
+							<br>
+
+							<a class="addr" href="">F_SAI_001_search_facility_filter.html</a>(필터)
+							
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="new">지도보기</td>
+						<td>
+							<a class="addr" href="">F_SAI_002_search_facility_viewMap.html</a>
+							<a class="addr_pc" href="">dbapp_F_SAI_002_search_facility_viewMap.html</a>
+
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="new">요양병원상세</td>
+						<td>
+							<a class="addr" href="">F_SAI_007_facility_detail_01.html</a>
+							<br>
+							<a class="addr" href="">F_SAI_007_facility_detail_02.html</a>
+							<br>
+							<a class="addr" href="">F_SAI_007_facility_detail_03.html</a>
+							<br>
+							<a class="addr" href="">F_SAI_007_facility_detail_04.html</a>
+							<br>
+							<a class="addr" href="">F_SAI_007_facility_detail_05.html</a>
+							<br>
+
+							<a class="addr_pc" href="">dbapp_F_SAI_007_facility_detail_01.html</a>
+							<a class="addr_pc" href="">dbapp_F_SAI_007_facility_detail_02.html</a>
+							<a class="addr_pc" href="">dbapp_F_SAI_007_facility_detail_03.html</a>
+							<a class="addr_pc" href="">dbapp_F_SAI_007_facility_detail_04.html</a>
+							<a class="addr_pc" href="">dbapp_F_SAI_007_facility_detail_05.html</a>
+						
+						</td>
+						<td></td>
+					</tr>
+
+				</tbody>
+			</table>
+
+
+
+
+
+
+			<h5 class="title color_primary">서비스(메인) 메뉴</h5>
+
+			<table class="sitemap_table">
+				<tbody class="chk">
+					<!-- 서비스 -->
+					<tr>
+						<td>서비스</td>
+						<td><s>서비스</s></td>
+						<td>
+							<a class="addr" href=""><s>F_SAA_001_service.html</s></a><br>
+							<a class="addr" href="">F_SAA_001_service_new01_bak.html</a>
+						</td>
+						<td>모달 modal open/close Event</td>
+					</tr>
+					<tr>
+						<td class="new">서비스 리뉴얼</td>
+						<td>
+							<a class="addr" href="">F_SAA_001_service_new01.html</a><br>
+							<a class="addr" href="">F_SAA_001_service_new02.html</a><br>
+						</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h5 class="title color_primary">복지용구 알아보기 / 주문</h5>
+
+			<table class="sitemap_table">
+				<tbody class="chk">
+					<!-- 복지용구 알아보기/주문 -->
+					<tr>
+						<td>복지용구 알아보기/<br>주문</td>
+						<td>복지용구 전체보기</td>
+						<td>
+							<a class="addr" href="">F_SAE_002_wel_detail.html</a>
+						</td>
+						<td>폴딩 / scrollSpy / snap</td>
+					</tr>
+					<tr>
+						<td>복지용구 전체보기<br>유튜브</td>
+						<td>
+							<a class="addr" href="">F_SAE_002_wel_detail_short.html</a>
+						</td>
+						<td>폴딩 / scrollSpy / snap</td>
+					</tr>
+					<tr>
+						<td>돌봄pc</td>
+						<td>
+							<a class="addr_pc" href="">dbapp_F_SAI_002_welfareSelect_wd01.html#ac1</a>
+							<a class="addr_pc" href="">dbapp_F_SAI_002_welfareSelect_wd02.html#ac1</a>
+							<a class="addr_pc" href="">dbapp_F_SAI_002_welfareSelect_wd03.html#ac1</a>
+							<a class="addr_pc" href="">dbapp_F_SAI_002_welfareSelect_wd04.html#ac1</a>
+							<a class="addr_pc" href="">dbapp_F_SAI_002_welfareSelect_wd05.html#ac1</a>
+							<a class="addr_pc" href="">dbapp_F_SAI_002_welfareSelect_wd06.html#ac1</a>
+							<a class="addr_pc" href="">dbapp_F_SAI_002_welfareSelect_wd07.html#ac1</a>
+							<a class="addr_pc" href="">dbapp_F_SAI_002_welfareSelect_wd08.html#ac1</a>
+							<a class="addr_pc" href="">dbapp_F_SAI_002_welfareSelect_wd09.html#ac1</a>
+							<a class="addr_pc" href="">dbapp_F_SAI_002_welfareSelect_wd10.html#ac1</a>
+							<a class="addr_pc" href="">dbapp_F_SAI_002_welfareSelect_wd11.html#ac1</a>
+							<a class="addr_pc" href="">dbapp_F_SAI_002_welfareSelect_wd12.html#ac1</a>
+							<a class="addr_pc" href="">dbapp_F_SAI_002_welfareSelect_wd13.html#ac1</a>
+							<a class="addr_pc" href="">dbapp_F_SAI_002_welfareSelect_wd14.html#ac1</a>
+							<a class="addr_pc" href="">dbapp_F_SAI_002_welfareSelect_wd15.html#ac1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>놓친복지용구받기_서브메인</td>
+						<td>
+							<a class="addr" href="">F_SAC_001_welfare_situation_bak.html</a>(유효한 페이지)
+							<a class="addr" href="">F_SAC_001_welfare_situation.html</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>복지용구 이용현황 조회중</td>
+						<td><a class="addr" href="">F_SAC_001_welfare_situation_inq.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>놓친 복지용구 받기_조회완료</td>
+						<td><a class="addr" href="">F_SAG_002_welfare_order01.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>놓친 복지용구 받기_조회완료<br>(기간만료/조회없음)</td>
+						<td><a class="addr" href="">F_SAG_002_welfare_order01_no.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>복지용구 이용현황</td>
+						<td><a class="addr" href="">F_SAC_001_welfare_situation_inq2.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>복지용구 이용현황 조회실패</td>
+						<td><a class="addr" href="">F_SAC_001_welfare_situation_inq3.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상품목록</td>
+						<td>
+							<a class="addr" href="">F_ORD_001_order_product_list_01.html</a>
+							<a class="addr" href="">F_ORD_001_order_product_list_02.html</a>
+						</td>
+						<td>하단 장바구니 모달</td>
+					</tr>
+					<tr>
+						<td>상품목록(목록없음)</td>
+						<td>
+							<a class="addr" href="">F_ORD_001_order_product_list_no.html</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>상품상세</td>
+						<td>
+							<a class="addr" href="">F_ORD_002_order_detail_01.html</a>
+							<a class="addr" href="">F_ORD_002_order_detail_02.html</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>장바구니 전체팝업</td>
+						<td>
+							<a class="addr" href="">F_ORD_003_cart_popup.html</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>장바구니 팝업 (판매개수 노출 / 목록없음)</td>
+						<td>
+							<a class="addr" href="">F_ORD_003_cart_popup_no.html</a>
+						</td>
+						<td>
+							판매개수 노출 팝업 추가
+						</td>
+					</tr>
+					<tr>
+						<td>주문하기</td>
+						<td>
+							<a class="addr" href="">F_ORD_004_cart_order.html</a>
+						</td>
+						<td>
+							- 배송지 등록<br>
+							- 배송지 목록<br>
+							- 배송지 목록 (내용없음)
+						</td>
+					</tr>
+					<tr>
+						<td>주문완료</td>
+						<td>
+							<a class="addr" href="">F_ORD_005_order_OK.html</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>주문목록</td>
+						<td>
+							<a class="addr" href="">F_ORD_001_order_req_list.html</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>주문목록(목록없음)</td>
+						<td>
+							<a class="addr" href="">F_ORD_001_order_req_list_no.html</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>주문상세<br>주문취소</td>
+						<td>
+							<a class="addr" href="">F_ORD_007_order_detailList.html</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>주문상세(박스별)</td>
+						<td>
+							<a class="addr" href="">F_ORD_007_order_detailList_etc.html</a>
+						</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+
+			
+			<table class="sitemap_table">
+				<tbody class="chk">
+					<!-- 인정등급 예상테스트 -->
+					<tr>
+						<td>인정등급 예상테스트</td>
+						<td>테스트 채팅봇</td>
+						<td>
+							<div>신체기능</div>
+							<a class="addr" href="">F_SAH_rating_chatTest01.html</a><br>
+							<div>인지기능</div>
+							<a class="addr" href="">F_SAH_rating_chatTest02.html</a><br>
+							<div>행동변화</div>
+							<a class="addr" href="">F_SAH_rating_chatTest03.html</a><br>
+							<div>간호처치</div>
+							<a class="addr" href="">F_SAH_rating_chatTest04.html</a><br>
+							<div>재활</div>
+							<a class="addr" href="">F_SAH_rating_chatTest05.html</a><br>
+							<div>질병</div>
+							<a class="addr" href="">F_SAH_rating_chatTest06.html</a><br>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>결과 - 대상자</td>
+						<td><a class="addr" href="">F_SAH_001_simpleTest_result.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>결과 - 비대상자</td>
+						<td><a class="addr" href="">F_SAH_001_simpleTest_result_nonTarget.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>결과 - UI모음</td>
+						<td><a class="addr" href="">F_SAH_001_simpleTest_result_guide.html</a></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+
+
+
+
+
+			<table class="sitemap_table">
+				<tbody class="chk">
+					<!-- 간략 서비스 소개 -->
+					<tr>
+						<td>간략 서비스 소개</td>
+						<td class="new">간략 서비스 소개</td>
+						<td><a class="addr" href="">F_SAA_002_br_service_info.html</a></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table class="sitemap_table">
+				<tbody class="chk">
+					<tr>
+						<td>관심 복지용구</td>
+						<td>관심 복지용구서비스_서브메인</td>
+						<td><a class="addr" href="">F_SAB_001_interest_wel.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>관심 복지용구서비스_선택</td>
+						<td>
+							<a class="addr" href="">F_SAB_002_interest_wel_select.html</a>
+						</td>
+						<td>높이 조정가능 하단모달</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table class="sitemap_table">
+				<tbody class="chk">
+					<tr>
+						<td>간편 테스트</td>
+						<td>간편 테스트01</td>
+						<td><a class="addr" href="">F_SAC_001_simpleTest01.html </a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>간편 테스트02</td>
+						<td><a class="addr" href="">F_SAC_001_simpleTest02.html </a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>간편 테스트03</td>
+						<td><a class="addr" href="">F_SAC_001_simpleTest03.html </a></td>
+						<td>오버레이화면</td>
+					</tr>
+					<tr>
+						<td>간편테스트_대상자</td>
+						<td>
+							<a class="addr" href="">F_SAC_003_simpleTest_result.html</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>간편테스트_비대상자</td>
+						<td>
+							<a class="addr" href="">F_SAC_003_simpleTest_result_no.html</a>
+						</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table class="sitemap_table">
+				<tbody class="chk">
+					<tr>
+						<td>어르신 돌봄</td>
+						<td>어르신 돌봄</td>
+						<td><a class="addr" href="">F_SAD_001_om_care.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>어르신 돌봄시간 선택</td>
+						<td><a class="addr" href="">F_SAD_002_om_care_time.html</a></td>
+						<td>돌봄이 시간 선택</td>
+					</tr>
+					<tr>
+						<td>간편 테스트</td>
+						<td>
+							<div class="card-panel radius08 noPad fs12">
+								간편 테스트03 참조<br />
+								<a class="addr" href="">F_SAC_001_simpleTest03.html</a>
+							</div>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>테스트결과_대상자</td>
+						<td><a class="addr" href="">F_SAD_002_test_result.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>테스트결과_비대상자</td>
+						<td>
+							<a class="addr" href="">F_SAD_002_test_result_no.html </a>
+							<div class="card-panel radius08 noPad fs12">
+								간편테스트_비대상자 참조<br />
+								<a class="addr" href="">F_SAC_003_simpleTest_result_no.html</a>
+							</div>
+						</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h5 class="title color_primary">고객센터/자주묻는질문/공지사항</h5>
+
+			<table class="sitemap_table">
+				<tbody class="chk">
+					<tr>
+						<td>고객센터</td>
+						<td>고객센터</td>
+						<td><a class="addr" href="">F_HEP_020_customer_service.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>이로움ON 고객센터</td>
+						<td>
+							<a class="addr" href="">F_HEP_020_customer_service_on.html</a>
+						</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table class="sitemap_table">
+				<tbody class="chk">
+					<tr>
+						<td>자주 묻는 질문</td>
+						<td>자주 묻는 질문</td>
+						<td><a class="addr" href="">F_HEP_001_faq.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>자주 묻는 질문 상세</td>
+						<td><a class="addr" href="">F_HEP_001_faq_detail.html</a></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table class="sitemap_table">
+				<tbody class="chk">
+					<tr>
+						<td>공지사항</td>
+						<td>공지사항 목록</td>
+						<td><a class="addr" href="">F_HEP_011_notice.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>공지사항 상세</td>
+						<td><a class="addr" href="">F_HEP_011_notice_detail.html</a></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h5 class="title color_primary">콘텐츠 메뉴</h5>
+
+			<table class="sitemap_table">
+				<tbody class="chk">
+					<tr>
+						<td>콘텐츠 메뉴</td>
+						<td>어르신 길잡이</td>
+						<td><a class="addr" href="">F_CON_001_om_guide.html</a></td>
+						<td>폴딩</td>
+					</tr>
+					<tr>
+						<td>콘텐츠 상세 디폴트</td>
+						<td><a class="addr" href="">F_CON_002_content_detail.html</a></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table class="sitemap_table">
+				<tbody class="chk">
+					<tr>
+						<td>어르신 복지</td>
+						<td>어르신 복지 목록</td>
+						<td><a class="addr" href="">F_SAF_001_om_wel_list.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>어르신 복지 상세</td>
+						<td><a class="addr" href="">F_SAF_002_om_wel_detail.html</a></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h5 class="title color_primary">알림/푸쉬</h5>
+
+			<table class="sitemap_table">
+				<tbody class="chk">
+					<tr>
+						<td>알림</td>
+						<td>알림목록</td>
+						<td><a class="addr" href="">F_ALT_001_noti_list.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>알림목록_디폴트 (없을때)</td>
+						<td>
+							<a class="addr" href="">F_ALT_001_noti_list_default.html</a>
+						</td>
+						<td>anchor테스트</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h5 class="title color_primary">전체메뉴</h5>
+
+			<table class="sitemap_table">
+				<tbody class="chk">
+					<tr>
+						<td>전체메뉴</td>
+						<td>전체메뉴</td>
+						<td><a class="addr" href="">F_TTM_001_menu_list.html</a></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table class="sitemap_table">
+				<tbody class="chk">
+					<tr>
+						<td>설정</td>
+						<td>설정목록</td>
+						<td><a class="addr" href="">F_TTM_010_setting_list.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>내정보</td>
+						<td><a class="addr" href="">F_MIF_001_info.html</a></td>
+						<td>회원탈퇴 footer</td>
+					</tr>
+					<tr>
+						<td>이메일수정</td>
+						<td><a class="addr" href="">F_MIF_001_email_mdfy.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>SNS연결</td>
+						<td><a class="addr" href="">F_MIF_011_SNS.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>알림설정</td>
+						<td><a class="addr" href="">F_ALT_002_noti_setting.html</a></td>
+						<td>전체체크박스</td>
+					</tr>
+					<tr>
+						<td>약관</td>
+						<td><a class="addr" href="">F_TTM_013_terms.html</a></td>
+						<td>전체 팝업</td>
+					</tr>
+					<tr>
+						<td>아이디 변경 안내</td>
+						<td><a class="addr" href="">F_MIF_001_ID_mdfy.html</a></td>
+						<td>radio</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table class="sitemap_table">
+				<tbody>
+					<tr>
+						<td>회원탈퇴</td>
+						<td>회원탈퇴_사유선택</td>
+						<td><a class="addr" href="">F_MIF_002_member_withdraw_01.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>회원탈퇴_사유선택2</td>
+						<td><a class="addr" href="">F_MIF_002_member_withdraw_02.html</a></td>
+						<td>라디오</td>
+					</tr>
+					<tr>
+						<td>비밀번호 재확인</td>
+						<td><a class="addr" href="">F_MIF_002_member_withdraw_03.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>회원탈퇴</td>
+						<td>
+							<a class="addr" href="">F_MIF_002_member_withdraw_041_naver.html</a><br>
+							<a class="addr" href="">F_MIF_002_member_withdraw_042_kakao.html</a><br>
+							<a class="addr" href="">F_MIF_002_member_withdraw_043_apple.html</a>
+							
+						</td>
+						<td>네이버 / 카카오 / 애플</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+			<h5 class="title color_primary">그 외 기타 기능 및 오류 화면</h5>
+
+			<table class="sitemap_table">
+				<tbody>
+					<!-- 오류 및 예외처리 화면 -->
+					<tr>
+						<td>오류 및 예외처리 화면</td>
+						<td>네트워크 오류</td>
+						<td><a class="addr" href="">ETC_network_error.html</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>공유하기</td>
+						<td><a class="addr" href="">F_SHR_001_share.html</a></td>
+						<td>하단 모달</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h5 class="title color_primary">로딩화면</h5>
+
+			<table class="sitemap_table">
+				<tbody>
+					<tr>
+						<td>로딩화면</td>
+						<td>로딩화면</td>
+						<td>
+							<a class="addr" href="">loading.html</a>
+							<div class="card-panel radius08 noPad fs12">
+								로딩화면 예시<br />
+								<a class="addr" href="">loading_ex_F_CON_001_om_guide.html</a>
+							</div>
+						</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+
+
+			<br />
+			<br />
+
+		</div>
+		<!-- pad20 -->
+
+
+	</div>
+	<!-- matching_App end -->
+
+
+	<!-- ★★★ eroum_care 이로움 케어 -->
+	<div id="tab002">
+
+		<div class="pad20">
+
+
+			<h2 class="title">이로움 케어</h2>
+
+			<h5 class="title color_primary">모달</h5>
+
+			<table class="sitemap_table">
+				<tbody>
+					<tr>
+						<td>모달화면</td>
+						<td>인정등급상담 간편</td>
+						<td>
+							<a class="" target="_blank"
+								href="../../../../../../../html/page/admin/contents/modal_care_test.html">modal_care_test.html</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>재가센터상담</td>
+						<td>
+							<a class="" target="_blank"
+								href="../../../../../../../html/page/admin/contents/modal_care_senior.html">modal_care_senior.html</a>
+						</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+		<!-- pad20 -->
+
+
+	</div>
+	<!-- eroum_care end-->
+
+
+
+
+
+</body>
+
+</html>

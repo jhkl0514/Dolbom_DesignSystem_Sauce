@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>F_SNR_004_om_info_mdfy_basic.html</title>
+
+
+    <!-- jquery -->
+    <script src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script src="../js/materialize.min.js"></script>
+
+    <!-- guide.js -->
+    <script src="../js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="../css/materialize.min.css">
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script>
+
+        $(function () {
+
+            //성별 chip
+            $('.chip_area.c02 li').each(function(){
+
+                $(this).click(function () {
+
+                    //버튼 활성화 클래스변경
+                    $(this).parent('.chip_area.c02').find('li').removeClass('active');
+                    $(this).addClass('active');
+                    $('.evt_btn').removeClass('btn_disable');
+
+                });
+
+
+            });
+
+
+            // input에 10자리 입력되면 조회버튼의 disabled 클래스 제거
+            $('.evt_maxInput').on('input',function(){
+
+                if ($(this).val().length === 10) {
+                    $('.evtBtn_maxInput').removeClass('disabled');
+                    } else {
+                    $('.evtBtn_maxInput').addClass('disabled');
+                }
+
+            });
+
+        });     
+
+    </script>
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+
+
+        <header>
+            <nav class="top">
+                <a class="btn_back waves-effect" href="#">
+                    <span class="icon"></span>
+                    <span class="txt">어르신 기본 정보 수정</span>
+                </a>
+            </nav>
+        </header>
+
+
+        <main>
+            <section class="default">
+
+                <form action="">
+
+                    <label class="input_label">본인과의 가족관계</label>
+                    <div class="waves-effect input_basic list_link font_sbmr bder_valid modal-trigger" href="#modal_family">어머니</div>
+                    <div class="h32"></div>
+
+                    <label class="input_label">어르신 이름</label>
+                    <input type="text" class="input_basic" value="꽃분이" disabled>
+
+                    <div class="h32"></div>
+
+                    <label class="input_label">어르신 성별</label>
+                    <!-- 활성 -->
+                    <ul class="chip_area c02 noPad">
+                        <li class="">남성</li>
+                        <li class="active">여성</li>
+                    </ul>
+                    <!-- 비활성 -->
+                    <ul class="chip_area c02 noPad">
+                        <li class="active disabled">남성</li>
+                        <li class="disabled">여성</li>
+                    </ul>
+
+                    <div class="h32"></div>
+
+                    <label class="input_label">어르신 생년월일</label>
+                    <input type="text" class="input_basic" value="1959/02/16" id="phoneNum" maxlength="10">
+
+                    <div class="h32"></div>
+
+                    <label class="input_label">요양인정번호</label>
+                    <input type="text" class="input_basic" id="numberInput" maxlength="10" placeholder="L 없이 숫자 10자리 입력"  oninput="maxLengthCheck(this)" disabled>
+
+                    <div class="flex_input_btn">
+                        <input type="number" class="input_basic evt_maxInput" maxlength="10" placeholder="L 없이 숫자 10자리 입력" oninput="maxLengthCheck(this)">
+                        <a class="waves-effect btn-large btn_white btn_primary disabled evtBtn_maxInput">조회</a>
+                    </div>
+                    
+                    <div class="flex_input_btn">
+                        <input type="number" class="input_basic evt_maxInput" maxlength="10" placeholder="L 없이 숫자 10자리 입력" oninput="maxLengthCheck(this)" disabled>
+                        <a class="waves-effect btn-large btn_white btn_primary disabled evtBtn_maxInput">조회</a>
+                    </div>
+
+
+                    <!-- 어르신 위임 후 L번호 미입력, 예외 케이스 : 본인 -->
+                    <div class="h40"></div>
+
+                    <div class="d-flex align-items-center gap04">
+                        <img class="w20" src="/html/page/app/matching/assets/src/images/04icon/finger_right.png">
+                        <div class="font_sbmb">요양인정번호 확인방법</div>
+                    </div>
+
+                    <div class="h12"></div>
+
+                    <div class="back_F5F5F5 pad_16_16_20 radius12">
+
+                        <img src="/html/page/app/matching/assets/src/images/20medi_care/img_medi_care_guide.png" class="img_reset" alt="요양인정번호 확인방법">
+
+                        <div class="h20"></div>
+
+                        <ul class="welfase_step_area s02 no_line">
+                            <li>
+                                <div class="font_sbmr">
+                                    장기요양인정서를 준비해 주세요.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="font_sbmr">
+                                    인정번호에서 L 뒤에 나오는 <span class="font_sbmb color_t_danger_b">숫자 10자리만 입력</span>해주세요.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="h40"></div>
+
+                    <div class="h12 marW-20 back_F7F7F7"></div>
+
+                    <!-- 어르신 위임 후 L번호 미입력, 예외 케이스 : 본인 끝-->
+
+
+
+
+
+
+
+
+
+                    <div class="h40"></div>
+
+                    <div class="font_sblb">유의사항</div>
+
+                    <div class="h16"></div>
+
+                    <ul class="list_dept1 gray_dot">
+                        <li class="color_t_s font_sbsr">어르신 이름, 성별, 생년월일을 수정하려면 어르신 위임이 필요해요. 어르신 위임 완료 후 어르신의 이름, 성별, 생년월일은 수정할 수 없어요.</li>
+                        <li class="color_t_s font_sbsr">요양인정번호는 어르신 위임 완료 후 진행해주세요. 요양인정번호 조회 후 수정할 수 없어요.</li>
+                    </ul>
+
+                    <div class="h40"></div>
+
+
+                </form>
+
+            </section>
+        </main>
+
+
+
+        <footer class="page-footer">
+
+            <div class="relative">
+                <a class="waves-effect btn-large btn_primary w100p">수정하기</a>
+            </div>
+
+        </footer>
+
+
+
+
+    <!-- Modal modal_family -->
+    <div id="modal_family" class="modal bottom-sheet">
+
+        <div class="modal_header">
+          <h4 class="modal_title">본인과의 가족관계 수정</h4>
+          <div class="close_x modal-close waves-effect"></div>
+        </div>
+  
+        <div class="modal-content">
+  
+            <div class="family_tree_area padH20">
+
+                <div class="tree">
+                    <div class="dept1 w50p">
+                        <div class="item grandpa" code="005">
+                            <span class="txt">할아버지</span>
+                        </div>
+                        <div class="item grandma" code="009">
+                            <span class="txt">할머니</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tree">
+                    <div class="dept1">
+                        <div class="item father" code="002">
+                            <span class="txt">아버지</span>
+                        </div>
+                        <div class="item mother" code="008">
+                            <span class="txt">어머니</span>
+                        </div>
+                    </div>
+                    <div class="dept1">
+                        <div class="item p_father" code="006">
+                            <span class="txt">배우자 아버지</span>
+                        </div>
+                        <div class="item p_mother" code="010">
+                            <span class="txt">배우자 어머니</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tree">
+                    <div class="dept1">
+                        <div class="item me" code="007">
+                            <span class="txt">나(본인)</span>
+                        </div>
+                        <div class="item partner" code="001">
+                            <span class="txt">배우자</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tree">
+                    <div class="dept2">
+                        <div class="item brother" code="004">
+                            <span class="txt">형제자매</span>
+                        </div>
+                        <div class="item child" code="003">
+                            <span class="txt">자녀</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- family_tree_area -->
+
+            <div class="h32"></div>
+
+  
+        </div>
+  
+      </div>
+
+
+
+    </div>
+    <!-- wrapper -->
+
+<script>
+
+    //생년월일
+
+    var autoHypenPhone = function (str) {
+        str = str.replace(/[^0-9]/g, "");
+        var tmp = "";
+        if (str.length < 4) {
+            return str;
+        } else {
+            tmp += str.substr(0, 4);
+            tmp += "/";
+            tmp += str.substr(4, 2);
+            tmp += "/";
+            tmp += str.substr(6);
+            return tmp;
+        }
+
+        return str;
+    };
+
+    var phoneNum = document.getElementById("phoneNum");
+
+    phoneNum.onkeyup = function () {
+        console.log(this.value);
+        this.value = autoHypenPhone(this.value);
+    };
+
+
+
+    
+
+</script>
+
+
+</body>
+
+</html>

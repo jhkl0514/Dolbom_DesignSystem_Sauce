@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>component</title>
+    <link
+      rel="stylesheet"
+      href="../../../../html/page/admin/assets/style/style.min.css"
+    />
+    <!-- 2024 common modal css -->
+    <link
+      rel="stylesheet"
+      href="../../../../html/page/admin/assets/style/new_modal.css"
+    />
+    <script src="../../../../html/page/admin/assets/script/common.js"></script>
+
+    <style>
+      body {
+        background-color: hsla(0, 0%, 87%, 0.8);
+      }
+      .modal-show {
+        display: block !important;
+        position: relative !important;
+      }
+      .capitalize {
+        text-transform: capitalize;
+      }
+    </style>
+  </head>
+
+  <body class="flex h-screen overflow-hidden">
+    <div>
+      <!--수급자 상담정보 상세-->
+      <div
+        class="modal modal-show"
+        id="popup-detail"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <div
+          class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"
+        >
+          <div class="modal-body">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="text-title">수급자 상담정보 상세</h2>
+                <button data-bs-dismiss="modal" class="btn-close">
+                  모달 닫기
+                </button>
+              </div>
+              <div class="eroumon modal_contents">
+                <div class="modal_top">
+                  <h3>인정등급상담 간편</h3>
+                  <p>
+                    상담받을 연락처
+                    <strong>010-1234-5678</strong>
+                  </p>
+                </div>
+                <div class="modal_con">
+                  <p>상담정보</p>
+                  <p>인정등급 간편 테스트 결과</p>
+                  <p>
+                    ※ 실제 등급 판정 결과와 상이할 수 있으니 참고용으로만
+                    사용바랍니다.
+                  </p>
+                  <p>※ 65세 이상이거나 치매 진단을 받은 어르신입니다.</p>
+                </div>
+                <div class="careTest_img_g">
+                  <div class="imgWrap">
+                    <img
+                      src="../../../../html/page/admin/assets/images/gauge_img1.svg"
+                      alt="장기요양보험 대상자 이미지"
+                    />
+                    <img
+                      src="../../../../html/page/admin/assets/images/gauge_img0.svg"
+                      alt="장기요양보험 비대상자 이미지"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-large">
+                  확인
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

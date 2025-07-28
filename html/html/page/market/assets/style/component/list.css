@@ -1,0 +1,28 @@
+.list-normal, .list-number, .list-dot {
+    @apply space-y-[0.17em];
+    & > li {
+        @apply relative pl-[1em]
+               before:absolute before:top-0 before:left-0 before:w-[1em] before:text-center;
+    }
+}
+
+.list-normal {
+    & > li {
+        @apply before:content-["-"];
+    }
+}
+.list-dot {
+    & > li {
+        @apply before:content-[""] before:top-1.5 before:w-1 before:h-1 before:inline-block before:bg-black1 before:rounded-full;
+    }
+}
+
+.list-number {
+    counter-reset: section;
+    & > li {
+        &::before {
+            counter-increment: section; 
+            content: counter(section)"."; 
+        }
+    }
+}

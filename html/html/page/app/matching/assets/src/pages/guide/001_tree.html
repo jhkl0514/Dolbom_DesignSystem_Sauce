@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+
+    <title>컴포넌트</title>
+
+
+    <!-- jquery -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/materialize.js"></script>
+
+    <!-- guide.js -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/materialize.min.css" />
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/style.css" />
+
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/guideStyle_2025.css" />
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/atom-one-dark.min.css">
+
+    <!-- highlight.js -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/go.min.js"></script>
+
+    <!-- highlight copy -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+
+    <script>
+        hljs.initHighlightingOnLoad();
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((el) => {
+                el.parentNode.classList.add('hljs');
+
+                // 복사 버튼 생성
+                let button = document.createElement("a");
+                button.innerHTML = "📄";
+                button.className = "copy-button";
+                el.parentNode.appendChild(button);
+
+                // 복사 기능 추가
+                button.addEventListener("click", function () {
+                    let text = el.innerText;
+                    navigator.clipboard.writeText(text).then(function () {
+                        button.innerHTML = "Copied!";
+                        setTimeout(function () {
+                            button.innerHTML = "📄";
+                        }, 2000);
+                    }, function (err) {
+                        console.error('복사 실패: ', err);
+                    });
+                });
+            });
+        });
+
+    </script>
+
+    <style>
+    </style>
+
+    <script>
+
+        //tabs
+        $(document).ready(function () {
+            $('.header_menu').tabs();
+        });
+        $(document).ready(function () {
+            $('.tabs_htmlcss').tabs();
+        });
+        $(document).ready(function () {
+            $('.ddd_tabs').tabs();
+        });
+
+        //scrollSpy
+        $(document).ready(function () {
+            $('.scrollspy').scrollSpy({
+                scrollOffset : 100,
+                throttle: 0,
+                speed: 0,
+            });
+        });
+
+    </script>
+
+
+
+</head>
+
+<body>
+    <div class="wrap">
+
+        <header>
+
+            <ul class="header_menu tabs">
+                <li class="tab"><a class="active" href="#m01">Design</a></li>
+                <li class="tab"><a href="#m02">Publishing</a></li>
+                <li class="tab"><a href="#m03">Sitemap</a></li>
+            </ul>
+
+        </header>
+
+
+        <script>
+            $(function () {
+
+                $('.sidebar_list ul li a').each(function () {
+
+                    if($(this).next('ul').length){
+
+                      $(this).addClass('arrow');
+
+                    }
+
+
+                    if ($(this).hasClass('active')) {
+
+                        $(this).parents('ul').prev('a').addClass('active');
+
+                    }
+
+
+
+                    //전체메뉴 하단 토글목록
+                    $(this).on('click', function () {
+
+                        $('.sidebar_list ul li a').removeClass('active');
+                        $(this).addClass('active');
+
+                    });
+
+
+
+                    // $(this).on('click', function() {
+
+                    //     var $siblings = $(this).closest('ul').find('li a.active').not($(this));
+
+                    //     // 현재 활성화된 메뉴 닫기
+                    //     $siblings.removeClass('active').next('ul').not(':animated').slideUp();
+
+                    //     if($(this).hasClass('active')==true){
+                    //         $(this).removeClass('active');
+                    //         $(this).next('ul').not(':animated').slideUp();
+
+                    //     }
+
+                    //     else{
+                    //         $(this).addClass('active');
+                    //         $(this).next('ul').not(':animated').slideDown();
+
+
+                    //     }
+
+                    // });
+
+
+                });
+
+
+            });
+
+
+        </script>
+
+
+        <nav class="sidebar">
+
+            <h3>Logo</h3>
+
+            <div class="sidebar_list">
+
+                <ul class="dept1">
+                    <li><a href="#">스플래시</a></li>
+                    <li><a href="#">온보딩</a></li>
+                    <li>
+                        <a href="#">앱 접근 권한 허용</a>
+                        <ul>
+                            <li><a href="#">dept3 31메뉴</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">회원가입</a>
+
+                        <ul class="dept2">
+                            <li>
+                                <a href="#">회원가입</a>
+                            </li>
+                            <li>
+                                <a href="#">본인인증</a>
+
+                                <ul class="dept3">
+                                    <li><a href="#">dept3 31메뉴</a></li>
+                                    <li><a href="#">dept3 32메뉴</a></li>
+                                    <li><a href="#">dept3 33메뉴</a></li>
+                                </ul>
+
+                            </li>
+                            <li><a href="#">dept2 23메뉴</a></li>
+                            <li>
+                                <a>dept2 24메뉴</a>
+
+                                <ul class="dept3">
+                                    <li><a class="active" href="#">dept3 34메뉴</a></li>
+                                    <li><a href="#dp3_35">dept3 35메뉴</a></li>
+                                    <li><a href="#dp3_36">dept3 36메뉴</a></li>
+                                </ul>
+
+                            </li>
+                        </ul>
+
+                    </li>
+                    <li>
+                        <a href="#dp1_13">dept1 13메뉴</a>
+                        <ul class="dept2">
+                            <li>
+                                <a href="#dp2_25">dept2 25메뉴</a>
+                            </li>
+                            <li>
+                                <a href="#dp2_26">dept2 26메뉴</a>
+
+                                <ul class="dept3">
+                                    <li><a href="#dp3_37">dept3 37메뉴</a></li>
+                                    <li><a href="#dp3_38">dept3 38메뉴</a></li>
+                                    <li><a href="#dp3_39">dept3 39메뉴</a></li>
+                                </ul>
+
+                            </li>
+                            <li><a href="#dp2_27">dept2 27메뉴</a></li>
+                            <li><a href="#dp2_28">dept2 28메뉴</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+
+
+            </div>
+            <!-- sidebar_list -->
+
+
+
+        </nav>
+        <!-- nav.sidebar -->
+
+
+
+
+        <main>
+
+            <section>
+
+                <div class="menuSectionTest">
+
+                    <div id="dp1_11" class="scrollspy" style="height: 800px;">
+                        dp1_11
+                    </div>
+
+                    <div id="dp1_12" class="scrollspy" style="height: 300px;">
+                        dp1_12
+                    </div>
+
+                        <div id="dp2_21" class="scrollspy" style="height: 800px;">
+                            dp2_21
+                        </div>
+
+                        <div id="dp2_22" class="scrollspy" style="height: 800px;">
+                            dp2_22
+                        </div>
+
+                            <div id="dp3_31" class="scrollspy" style="height: 800px;">
+                                dp3_31
+                            </div>
+
+                            <div id="dp3_32" class="scrollspy" style="height: 800px;">
+                                dp3_32
+                            </div>
+
+                            <div id="dp3_33" class="scrollspy" style="height: 800px;">
+                                dp3_33
+                            </div>
+
+                        <div id="dp2_23" class="scrollspy" style="height: 800px;">
+                            dp2_23
+                        </div>
+
+                        <div id="dp2_24" class="scrollspy" style="height: 800px;">
+                            dp2_24
+                        </div>
+
+                            <div id="dp3_34" class="scrollspy" style="height: 800px;">
+                                dp3_34
+                            </div>
+
+                            <div id="dp3_35" class="scrollspy" style="height: 800px;">
+                                dp3_35
+                            </div>
+
+                            <div id="dp3_36" class="scrollspy" style="height: 800px;">
+                                dp3_36
+                            </div>
+
+                    <div id="dp1_13" class="scrollspy" style="height: 800px;">
+                        dp1_13
+                    </div>
+
+                        <div id="dp2_25" class="scrollspy" style="height: 800px;">
+                            dp2_25
+                        </div>
+
+                        <div id="dp2_26" class="scrollspy" style="height: 800px;">
+                            dp2_26
+                        </div>
+
+                            <div id="dp3_37" class="scrollspy" style="height: 800px;">
+                                dp3_37
+                            </div>
+
+                            <div id="dp3_38" class="scrollspy" style="height: 800px;">
+                                dp3_38
+                            </div>
+
+                            <div id="dp3_39" class="scrollspy" style="height: 800px;">
+                                dp3_39
+                            </div>
+
+                        <div id="dp2_27" class="scrollspy" style="height: 800px;">
+                            dp2_27
+                        </div>                            
+
+                        <div id="dp2_28" class="scrollspy" style="height: 800px;">
+                            dp2_28
+                        </div>                            
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+                <ul class="tabs_htmlcss tabs">
+                    <li class="tab"><a class="active" href="#test001">HTML</a></li>
+                    <li class="tab"><a href="#test002">CSS</a></li>
+                </ul>
+
+                <div id="test001">
+                    <pre><code class="language-html">
+            &lt;li class=&quot;tab&quot;&gt;&lt;a href=&quot;#test01&quot;&gt;Design&lt;/a&gt;&lt;/li&gt;
+          </code></pre>
+                </div>
+                <div id="test002">
+                    <pre><code class="language-scss">
+            &.intro_marT20{ //header O
+     
+              margin-top: $header + 20px;
+      
+            }
+          </code></pre>
+                </div>
+
+
+
+                코드예시
+                <pre><code class="language-scss">
+              //x버튼 모바일화면일때 간격벌어짐 (414px기준)
+              @media only screen and (max-width: 414px){
+              
+                  //시설찾기 검색창
+                  .recuSearch_form{
+              
+                      .recuSearch_input_area{
+              
+                          .clear_btn{
+                              right: 140px;
+                          }
+                      }
+              
+                  }
+              }
+              //x버튼 모바일화면일때 간격벌어짐 (414px기준)
+              @media only screen and (max-width: 414px){
+              
+                  //시설찾기 검색창
+                  .recuSearch_form{
+              
+                      .recuSearch_input_area{
+              
+                          .clear_btn{
+                              right: 140px;
+                          }
+                      }
+              
+                  }
+              }
+        </code></pre>
+
+                <h3 class="noMar">sdfsdfsd</h3>
+
+                <pre><code class="language-html">
+            &lt;ul class=&quot;header_menu tabs&quot;&gt;
+              &lt;li class=&quot;tab&quot;&gt;&lt;a href=&quot;&quot;&gt;Design&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;tab&quot;&gt;&lt;a href=&quot;&quot;&gt;Publishing&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;tab&quot;&gt;&lt;a href=&quot;&quot;&gt;Sitemap&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        </code></pre>
+
+
+
+            </section>
+        </main>
+
+
+
+
+    </div>
+    <!-- wrapper -->
+
+
+</body>
+
+</html>

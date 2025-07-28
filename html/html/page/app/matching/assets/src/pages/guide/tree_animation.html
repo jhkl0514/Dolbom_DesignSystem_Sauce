@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>움직이는 나무 애니메이션</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 100vh;
+            background-color: #f0f8ff;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .section {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .ground {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            background: #8B4513;
+        }
+
+        .tree {
+            position: relative;
+            bottom: 20px; /* Position tree slightly into the ground */
+            width: 10px;
+            height: 150px;
+            background: #5D4037; /* Trunk color */
+            border-radius: 10px 10px 0 0;
+            transform-origin: bottom center;
+            animation: tree-sway 10s ease-in-out infinite alternate;
+        }
+
+        .tree::before, .tree::after {
+            content: '';
+            position: absolute;
+            background: #5D4037;
+            transform-origin: bottom center;
+        }
+
+        /* Main branches */
+        .tree::before {
+            width: 8px;
+            height: 80px;
+            bottom: 60px;
+            left: -15px;
+            transform: rotate(-35deg);
+            border-radius: 10px;
+            animation: branch-sway-1 8s ease-in-out infinite alternate;
+        }
+
+        .tree::after {
+            width: 8px;
+            height: 100px;
+            bottom: 80px;
+            right: -15px;
+            transform: rotate(35deg);
+            border-radius: 10px;
+            animation: branch-sway-2 9s ease-in-out infinite alternate;
+        }
+
+        .leaves {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: #4CAF50; /* Main leaf color */
+            border-radius: 50%;
+            top: -100px;
+            left: -70px;
+            transform-origin: bottom center;
+            animation: leaves-rustle 5s ease-in-out infinite alternate;
+        }
+
+        .leaves::before, .leaves::after {
+            content: '';
+            position: absolute;
+            background: #66BB6A; /* Lighter leaf color */
+            border-radius: 50%;
+        }
+
+        .leaves::before {
+            width: 120px;
+            height: 120px;
+            top: -30px;
+            left: -50px;
+            background: #388E3C; /* Darker leaf color */
+            animation: leaves-rustle 6s ease-in-out infinite alternate;
+        }
+
+        .leaves::after {
+            width: 100px;
+            height: 100px;
+            top: 20px;
+            left: 30px;
+            animation: leaves-rustle 7s ease-in-out infinite alternate;
+        }
+
+        /* Keyframe animations */
+        @keyframes tree-sway {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(1.5deg); }
+        }
+
+        @keyframes branch-sway-1 {
+            0% { transform: rotate(-60deg); }
+            100% { transform: rotate(-30deg); }
+        }
+
+        @keyframes branch-sway-2 {
+            0% { transform: rotate(35deg); }
+            100% { transform: rotate(40deg); }
+        }
+
+        @keyframes leaves-rustle {
+            0% { transform: translateX(0) rotate(0deg); }
+            50% { transform: translateX(150px) rotate(1deg); }
+            100% { transform: translateX(-20px) rotate(-1deg); }
+        }
+
+    </style>
+</head>
+<body>
+    <section class="section">
+        <div class="ground"></div>
+        <div class="tree">
+            <div class="leaves"></div>
+        </div>
+    </section>
+</body>
+</html>

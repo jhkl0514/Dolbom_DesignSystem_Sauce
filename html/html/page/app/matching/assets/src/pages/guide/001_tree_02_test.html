@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+
+    <title>컴포넌트</title>
+
+
+    <!-- jquery -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/materialize.js"></script>
+
+    <!-- guide.js -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guide.js"></script>
+
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/materialize.min.css" />
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/style.css" />
+
+    <!-- guideStyle_2025.css -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/guideStyle_2025.css" />
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/atom-one-dark.min.css">
+
+    <!-- highlight.js -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/go.min.js"></script>
+
+    <!-- highlight copy -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+
+    <!-- guideStyle_2025.js -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guideStyle_2025.js"></script>
+
+    <script>
+        hljs.initHighlightingOnLoad();
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((el) => {
+                el.parentNode.classList.add('hljs');
+
+                // 복사 버튼 생성
+                let button = document.createElement("a");
+                button.innerHTML = "📄";
+                button.className = "copy-button";
+                el.parentNode.appendChild(button);
+
+                // 복사 기능 추가
+                button.addEventListener("click", function () {
+                    let text = el.innerText;
+                    navigator.clipboard.writeText(text).then(function () {
+                        button.innerHTML = "Copied!";
+                        setTimeout(function () {
+                            button.innerHTML = "📄";
+                        }, 2000);
+                    }, function (err) {
+                        console.error('복사 실패: ', err);
+                    });
+                });
+            });
+        });
+
+
+        $(function(){
+
+            //주소링크 생성_sitemap
+            $('.sidebar_list .tab_list ul[title="siteMap_app"] li a').each(function () {
+                $(this).prop({
+                    href: '/html/page/app/matching/assets/src/pages/' + $(this).attr('href'),
+                    target: 'if',
+                });
+            });
+
+        });
+
+
+
+    </script>
+
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="gs_header">
+
+            <a href="GUIDE_000_index.html" class="logo"><span>돌봄 디자인시스템</span></a>
+
+            <ul class="header_menu">
+                <li><a href="GUIDE_001_01_Foundation.html">Foundation</a></li>
+                <li><a href="GUIDE_001_02_Component.html">Component</a></li>
+                <li><a href="GUIDE_001_03_AppScreen.html" class="active">App Screen</a></li>
+                <li><a href="GUIDE_001_04_WebScreen.html">Web Screen</a></li>
+                <li><a href="GUIDE_001_05_StyleGuide.html">Style Guide</a></li>
+                <li class="search"><a href="#"></a></li>
+            </ul>
+
+            <div class="m_menu"></div>
+
+        </div>
+
+    </header>
+
+    <div class="wrap">
+
+        <main>
+
+            <nav class="sidebar">
+                
+                <div class="sidebar_header">
+                    <div class="title_area">
+                        <div class="close_x"></div>
+                    </div>
+                    <div class="sidebar_search">
+                        <input type="text" placeholder="검색어를 입력해 주세요.">
+                        <div class="search">
+                            <a href="#"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="title">App Screen</h4>
+
+                <div class="sidebar_list">
+                    <ul class="tabs_dept_sidebar">
+                        <li class="tab"><a class="active" title="dept_app">App Screen</a></li>
+                        <li class="tab"><a class="" title="dept_web">Web Screen</a></li>
+                    </ul>
+
+                    <div class="tab_list dept_app">
+                        
+                        <ul class="dept1" title="siteMap_app">
+                            <li><a href="F_SGN_001_login01.html">네이버 카카오 로그인</a></li>
+                            <li><a href="F_SGN_002_join0107.html">로그인</a></li>
+                            <li><a href="F_SGN_003_join_ok.html">회원가입 완료</a></li>
+                            <li>
+                                <a href="F_SNR_002_my_cert_info.html">본인인증 안내</a>
+                                <ul class="dept2">
+                                    <li><a href="F_SNR_002_my_cert_info.html">본인인증 안내</a></li>
+                                    <li><a href="F_SGN_002_join05.html">개인정보 입력	</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="F_SAI_001_search_facility.html">회원가입</a>
+    
+                                <ul class="dept2">
+                                    <li><a href="F_SAI_001_search_facility.html">회원가입</a></li>
+                                    <li><a href="F_SAI_002_search_facility_viewMap.html">본인인증</a></li>
+                                    <li><a href="F_SAI_007_facility_detail_01.html">회원가입 완료</a></li>
+                                    <li><a href="F_SAI_007_facility_detail_02.html">ON 회원 아이디 찾기</a></li>
+                                    <li><a href="#">ON 회원 비밀번호 찾기</a></li>
+                                    <li><a href="#">계정 연결</a></li>
+                                    <li><a href="#">로그인 유도</a></li>
+                                    <li><a href="#">본인인증(로그인 후)</a></li>
+                                    <li>
+                                        <a href="#">본인인증</a>
+    
+                                        <ul class="dept3">
+                                            <li><a href="#">dept3 31메뉴</a></li>
+                                            <li><a href="#">dept3 32메뉴</a></li>
+                                            <li><a href="#">dept3 33메뉴</a></li>
+                                        </ul>
+    
+                                    </li>
+                                    <li><a href="#">dept2 23메뉴</a></li>
+                                    <li>
+                                        <a>dept2 24메뉴</a>
+    
+                                        <ul class="dept3">
+                                            <li><a class="active" href="#">dept3 34메뉴</a></li>
+                                            <li><a href="#">dept3 35메뉴</a></li>
+                                            <li><a href="#">dept3 36메뉴</a></li>
+                                        </ul>
+    
+                                    </li>
+                                </ul>
+    
+                            </li>
+                            <li>
+                                <a>dept1 13메뉴</a>
+                                <ul class="dept2">
+                                    <li>
+                                        <a href="#">dept2 25메뉴</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">dept2 26메뉴</a>
+    
+                                        <ul class="dept3">
+                                            <li><a href="#">dept3 37메뉴</a></li>
+                                            <li><a href="#">dept3 38메뉴</a></li>
+                                            <li><a href="#">dept3 39메뉴</a></li>
+                                        </ul>
+    
+                                    </li>
+                                    <li><a href="#">dept2 27메뉴</a></li>
+                                    <li><a href="#">dept2 28메뉴</a></li>
+                                </ul>
+                            </li>
+    
+                        </ul>
+
+                    </div>
+                    <!-- dept_app -->
+
+                    <div class="tab_list dept_web">
+                        
+                        <ul class="dept1">
+                            <li><a href="#">스플래시2</a></li>
+                            <li><a href="#">스플래시2</a></li>
+                            <li>
+                                <a>회원가입</a>
+    
+                                <ul class="dept2">
+                                    <li><a href="#">회원가입</a></li>
+                                    <li><a href="#">본인인증</a></li>
+                                    <li><a href="#">회원가입 완료</a></li>
+                                    <li><a href="#">ON 회원 아이디 찾기</a></li>
+                                    <li><a href="#">ON 회원 비밀번호 찾기</a></li>
+                                    <li><a href="#">계정 연결</a></li>
+                                    <li><a href="#">로그인 유도</a></li>
+                                    <li><a href="#">본인인증(로그인 후)</a></li>
+                                    <li>
+                                        <a>본인인증</a>
+    
+                                        <ul class="dept3">
+                                            <li><a href="#">dept3 31메뉴</a></li>
+                                            <li><a href="#">dept3 32메뉴</a></li>
+                                            <li><a href="#">dept3 33메뉴</a></li>
+                                        </ul>
+    
+                                    </li>
+                                    <li><a href="#">dept2 23메뉴</a></li>
+                                    <li>
+                                        <a>dept2 24메뉴</a>
+    
+                                        <ul class="dept3">
+                                            <li><a href="#">dept3 34메뉴</a></li>
+                                            <li><a href="#">dept3 35메뉴</a></li>
+                                            <li><a href="#">dept3 36메뉴</a></li>
+                                        </ul>
+    
+                                    </li>
+                                </ul>
+    
+                            </li>
+                            <li><a href="#">메뉴</a></li>
+    
+                        </ul>
+
+                    </div>
+                    <!-- dept_web -->
+                    
+
+
+
+
+                </div>
+
+
+            </nav>
+            <!-- nav.sidebar -->
+
+
+
+
+
+
+            <section class="gs_section">
+
+                <div class="section_title sitemap">
+                    <span class="titleNav_evt">네이버 카카오 로그인</span>
+
+                    <div class="dept_test">
+                        <span class="dept1">네이버 카카오 로그인</span>
+                        <span class="dept2"></span>
+                        <span class="dept3"></span>
+                    </div>
+
+                </div>
+
+
+                <div class="iframe_back">
+                    <iframe class="gs_iframe" src="/html/page/app/matching/assets/src/pages/F_SGN_001_login01.html" name="if"></iframe>
+                </div>
+
+
+                코드예시
+                <pre><code class="language-scss">
+                    //x버튼 모바일화면일때 간격벌어짐 (414px기준)
+                    @media only screen and (max-width: 414px){
+                    
+                        //시설찾기 검색창
+                        .recuSearch_form{
+                    
+                            .recuSearch_input_area{
+                    
+                                .clear_btn{
+                                    right: 140px;
+                                }
+                            }
+                    
+                        }
+                    }
+                    //x버튼 모바일화면일때 간격벌어짐 (414px기준)
+                    @media only screen and (max-width: 414px){
+                    
+                        //시설찾기 검색창
+                        .recuSearch_form{
+                    
+                            .recuSearch_input_area{
+                    
+                                .clear_btn{
+                                    right: 140px;
+                                }
+                            }
+                    
+                        }
+                    }
+                </code></pre>
+
+
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+    <!-- wrapper -->
+
+
+</body>
+
+</html>

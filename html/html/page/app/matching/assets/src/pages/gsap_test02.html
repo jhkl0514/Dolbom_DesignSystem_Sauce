@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scroll Animation with GSAP</title>
+  
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+  <style>
+    body{margin-bottom: 2000px;}
+    .box {
+      width: 100px;
+      height: 100px;
+      
+      
+    }
+    .box1 { background-color: orange; position: fixed;}
+    .box2 { background-color: greenyellow; }
+    .box3 { background-color: tomato; position: absolute;top: 50px;}
+    .box4 { background-color: cadetblue; position: absolute;}
+
+  </style>
+
+<script>
+    $(function () {
+        // GSAP ScrollTrigger 애니메이션
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.to('.box3', {
+            scrollTrigger: {
+                trigger: '.ddd2',
+                start: 'top 50%',
+                end: '10px bottom',
+                scrub: 1,
+                markers: true,
+
+            },
+
+            left: '300px',
+            top: '20%',
+            position: 'fixed',
+
+        });
+
+
+        gsap.to('.box1', {
+            scrollTrigger: {
+                trigger: '.ddd',
+                start: 'top 60%',
+                end: '10px bottom',
+                scrub: 1,
+                markers: true,
+                onComplete: function() {
+                    $('.box1').addClass('active');
+                }
+            },
+            css: {
+                left: '50%',
+                top: '50%',
+                transform: 'translate(-50%, -50%)',
+                backgroundColor: '#4a3d6e',
+                color: '#fff',
+                border: '12px solid #dd0ffd'
+            },
+
+        });
+
+
+
+
+
+    });
+</script>
+<script>
+    $(function(){
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.trig_01',
+                start: 'top 60%',
+                end: '10px bottom',
+                scrub: 1,
+                markers: true,
+
+            }
+        });
+
+        tl.to('.box4', {
+            css: {
+                left: '50%',
+                top: '50%',
+                transform: 'translate(-50%, -50%)',
+                backgroundColor: '#4a3d6e',
+                color: '#fff',
+                border: '12px solid #dd0ffd'
+            },
+            duration: 1
+        })
+        .to('.box4', {
+            css: {
+                left: '20%',
+                top: '80%',
+                transform: 'translate(-50%, -50%)',
+                backgroundColor: '#ddd',
+                color: '#fff',
+                border: '6px solid #dd0ffd'
+            },
+            duration: 1
+        }); 
+
+    });
+</script>
+
+
+</head>
+<body>
+        <div class="relative">
+            <div class="box box3">box3</div>
+        </div>
+
+        <div style="height: 600px;"></div>
+        <div class="box box2"></div>
+    
+        <div class="ddd">ddddd</div>
+        <div class="ddd2">ddddd</div>
+        <div class="relative">
+
+            <div class="box box1">box1</div>
+
+        </div>
+
+        <h3>2</h3>
+        <div class="relative">
+
+            <div class="trig_01">Trigger</div>
+
+            <div class="box box4">box4</div>
+
+        </div>
+
+</body>
+
+</html>

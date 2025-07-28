@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+
+    <title>GUIDE_005_StyleGuide.html</title>
+
+
+    <!-- jquery -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/materialize.js"></script>
+
+    <!-- guide.js -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/materialize.min.css" />
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/style.css" />
+
+    <!-- guideStyle_2025.css -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/guideStyle_2025.css" />
+
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/atom-one-dark.min.css">
+
+    <!-- highlight.js -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guide_hljsLoad.js"></script>
+
+    <!-- guideStyle_2025.js -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guideStyle_2025.js"></script>
+
+    <!-- lottie -->
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+
+    <script>
+    </script>
+
+
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="gs_header">
+
+            <a href="GUIDE_000_index.html" class="logo"><span>돌봄 디자인시스템</span></a>
+
+            <ul class="header_menu">
+                <li><a href="GUIDE_001_Foundation.html">Foundation</a></li>
+                <li><a href="GUIDE_002_Component.html">Component</a></li>
+                <li><a href="GUIDE_003_AppScreen.html">App Screen</a></li>
+                <li><a href="GUIDE_004_WebScreen.html">Web Screen</a></li>
+                <li><a href="GUIDE_005_StyleGuide.html" class="active">Style Guide</a></li>
+                <li class="search"><a href="#"></a></li>
+            </ul>
+
+        </div>
+
+    </header>
+
+    <div class="wrap">
+
+        <main>
+
+
+            <nav class="sidebar">
+
+                <div class="sidebar_header">
+                    <div class="title_area">
+                        <div class="close_x"></div>
+                    </div>
+                    <div class="sidebar_search">
+                        <input type="text" placeholder="검색어를 입력해 주세요.">
+                        <div class="search">
+                            <a href="#"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="title">Style Guide</h4>
+
+                <div class="sidebar_list">
+                    <ul class="tabs_dept_sidebar">
+                        <li class="tab"><a class="active" title="dept_app">App Screen</a></li>
+                        <li class="tab"><a class="" title="dept_web">Web Screen</a></li>
+                    </ul>
+
+                    <div class="tab_list dept_app" title="siteMap_guide">
+                        <ul class="dept1">
+                            <li>
+                                <a class="arrow">Foundation</a>
+                                <ul class="dept2">
+                                    <li><a href="GUIDE_005_StyleGuide.html">Typography</a></li>
+                                    <li><a href="GUIDE_005_F02_Colors.html">Colors</a></li>
+                                    <li><a href="GUIDE_005_F03_Spacing.html">Spacing</a></li>
+                                    <li><a href="GUIDE_005_F04_ObjectStyles.html">Object Styles</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="arrow active ">Component</a>
+                                <ul class="dept2">
+                                    <li><a href="GUIDE_005_C01_Button.html">Button</a></li>
+                                    <li><a href="GUIDE_005_C02_SelectionControls.html">Selection Controls</a></li>
+                                    <li><a href="GUIDE_005_C03_Link.html">Link</a></li>
+                                    <li><a href="GUIDE_005_C04_Chips.html">Chips</a></li>
+                                    <li><a href="GUIDE_005_C05_TextField.html">TextField</a></li>
+
+                                    <li><a href="GUIDE_005_C06_SelectField.html">SelectField</a></li>
+                                    <li><a href="GUIDE_005_C07_OptionList.html">OptionList</a></li>
+                                    <li><a href="GUIDE_005_C08_TopNavigation.html">Top Navigation</a></li>
+                                    <li><a href="GUIDE_005_C09_BottomNavigation.html">Bottom Navigation</a></li>
+                                    <li><a class="active" href="GUIDE_005_C10_List.html">List</a></li>
+
+                                    <li><a href="GUIDE_005_C11_Popup.html">Popup</a></li>
+                                    <li><a href="GUIDE_005_C12_BottomSheet.html">BottomSheet</a></li>
+                                    <li><a href="GUIDE_005_C13_Banner.html">Banner</a></li>
+                                    <li><a href="GUIDE_005_C14_Tab.html">Tab</a></li>
+                                    <li><a href="GUIDE_005_C15_NumberStepper.html">Number Stepper</a></li>
+
+                                    <li><a href="GUIDE_005_C16_TextAreaField.html">TextAreaField</a></li>
+                                    <li><a href="GUIDE_005_C17_Accordion.html">Accordion</a></li>
+                                    <li><a href="GUIDE_005_C18_Progressbar.html">Progress</a></li>
+                                    <li><a href="GUIDE_005_C99_Etc.html">Etc</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a href="GUIDE_005_03_Animation.html">애니메이션</a></li>
+                            <li><a href="GUIDE_005_04_Images.html">이미지</a></li>
+                            <li><a href="GUIDE_005_05_Css.html">CSS 구조</a></li>
+                            <li><a href="GUIDE_005_06_Library.html">라이브러리</a></li>
+
+                        </ul>
+                    </div>
+
+
+                </div>
+
+
+            </nav>
+
+
+
+            <section>
+
+
+                <div class="h48"></div>
+
+                <div class="titleNav">List</div>
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Type</h3>
+
+                <div class="lang_htmlCode">
+
+                    <div class="back_FAFAFA pad20">
+
+                        <div class="font_sbss marB16">Default</div>
+
+                        <div class="card service_card c01">
+                        
+                            <div class="title_area">
+                        
+                                <span class="txt_cate">복지용구</span>
+                                <div class="txt_ctn">
+                                    내용적는곳<br>
+                                    c01~c03 컬러
+                                </div>
+                        
+                            </div>
+                        
+                            <div class="om_img_area">
+                                <img src="/html/page/app/matching/assets/src/images/10om/rom_01.svg">
+                            </div>
+                        
+                            <div class="box_area">
+                        
+                                <div class="box">
+                                    <img src="/html/page/app/matching/assets/src/images/08etc/tool_80.svg">
+                                    <div class="ctn_area">
+                                        <div class="font_sbss">타이틀</div>
+                        
+                                        <p class="color_t_s font_sbsr noMar">
+                                            내용내용내용내용
+                                        </p>
+                                    </div>
+                        
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                
+                </div>
+
+                <pre><code class="language-html">
+                    &lt;div class=&quot;card service_card c01&quot;&gt;
+                    
+                        &lt;div class=&quot;title_area&quot;&gt;
+                    
+                            &lt;span class=&quot;txt_cate&quot;&gt;&#xBCF5;&#xC9C0;&#xC6A9;&#xAD6C;&lt;/span&gt;
+                            &lt;div class=&quot;txt_ctn&quot;&gt;
+                                &#xB0B4;&#xC6A9;&#xC801;&#xB294;&#xACF3;&lt;br&gt;
+                                c01~c03 &#xCEEC;&#xB7EC;
+                            &lt;/div&gt;
+                    
+                        &lt;/div&gt;
+                    
+                        &lt;div class=&quot;om_img_area&quot;&gt;
+                            &lt;img src=&quot;/html/page/app/matching/assets/src/images/10om/rom_01.svg&quot;&gt;
+                        &lt;/div&gt;
+                    
+                        &lt;div class=&quot;box_area&quot;&gt;
+                    
+                            &lt;div class=&quot;box&quot;&gt;
+                                &lt;img src=&quot;/html/page/app/matching/assets/src/images/08etc/tool_80.svg&quot;&gt;
+                                &lt;div class=&quot;ctn_area&quot;&gt;
+                                    &lt;div class=&quot;font_sbss&quot;&gt;&#xD0C0;&#xC774;&#xD2C0;&lt;/div&gt;
+                    
+                                    &lt;p class=&quot;color_t_s font_sbsr noMar&quot;&gt;
+                                        &#xB0B4;&#xC6A9;&#xB0B4;&#xC6A9;&#xB0B4;&#xC6A9;&#xB0B4;&#xC6A9;
+                                    &lt;/p&gt;
+                                &lt;/div&gt;
+                    
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                </code></pre>
+
+
+
+                <div class="lang_htmlCode">
+                    <div class="waves-effect list_link exp01 bder_bottom">
+                        <div>
+                            <div class="color_t_s font_sbsr">복지용구</div>
+                            <div class="font_sbms">복지용구 신청 절차</div>
+                        </div>
+                    </div>
+                    <div class="waves-effect list_link exp01 bder_bottom">
+                        <div>
+                            <div class="color_t_s font_sbsr">복지용구</div>
+                            <div class="font_sbms">복지용구 신청 절차</div>
+                        </div>
+                    </div>
+                    <div class="waves-effect list_link exp01 bder_bottom">
+                        <div>
+                            <div class="color_t_s font_sbsr">복지용구</div>
+                            <div class="font_sbms">복지용구 신청 절차</div>
+                        </div>
+                    </div>
+                </div>
+
+                <pre><code class="language-html">
+                    &lt;div class=&quot;waves-effect list_link exp01 bder_bottom&quot;&gt;
+                        &lt;div&gt;
+                            &lt;div class=&quot;color_t_s font_sbsr&quot;&gt;Title&lt;/div&gt;
+                            &lt;div class=&quot;font_sbms&quot;&gt;Content&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;waves-effect list_link exp01 bder_bottom&quot;&gt;
+                        &lt;div&gt;
+                            &lt;div class=&quot;color_t_s font_sbsr&quot;&gt;Title&lt;/div&gt;
+                            &lt;div class=&quot;font_sbms&quot;&gt;Content&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;waves-effect list_link exp01 bder_bottom&quot;&gt;
+                        &lt;div&gt;
+                            &lt;div class=&quot;color_t_s font_sbsr&quot;&gt;Title&lt;/div&gt;
+                            &lt;div class=&quot;font_sbms&quot;&gt;Content&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                </code></pre>
+
+
+                <div class="lang_htmlCode">
+
+                    <div class="back_FAFAFA pad20">
+
+                        <div class="box">
+                            <div class="img_area">
+                                <img src="/html/page/app/matching/assets/src/images/08etc/money03_40_2.svg" alt="혜택">
+                            </div>
+                            <div class="ctn_area">
+                                <h5 class="title">받을 수 있는 혜택 확인</h5>
+                        
+                                <p class="color_t_s font_sbmr">
+                                    관심있는 복지용구를 바탕으로<br>
+                                    85%~100% 지원 혜택을 받을 수 있는 지 알려드려요
+                                </p>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="img_area">
+                                <img src="/html/page/app/matching/assets/src/images/08etc/money03_40_2.svg" alt="혜택">
+                            </div>
+                            <div class="ctn_area">
+                                <h5 class="title">받을 수 있는 혜택 확인</h5>
+                        
+                                <p class="color_t_s font_sbmr">
+                                    관심있는 복지용구를 바탕으로<br>
+                                    85%~100% 지원 혜택을 받을 수 있는 지 알려드려요
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <pre><code class="language-html">
+                    &lt;div class=&quot;box&quot;&gt;
+                        &lt;div class=&quot;img_area&quot;&gt;
+                            &lt;img src=&quot;/html/page/app/matching/assets/src/images/08etc/money03_40_2.svg&quot; alt=&quot;&#xD61C;&#xD0DD;&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;ctn_area&quot;&gt;
+                            &lt;h5 class=&quot;title&quot;&gt;Title&lt;/h5&gt;
+                    
+                            &lt;p class=&quot;color_t_s font_sbmr&quot;&gt;
+                                Content&lt;br&gt;
+                                ContentContent ContentContent
+                            &lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;box&quot;&gt;
+                        &lt;div class=&quot;img_area&quot;&gt;
+                            &lt;img src=&quot;/html/page/app/matching/assets/src/images/08etc/money03_40_2.svg&quot; alt=&quot;&#xD61C;&#xD0DD;&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;ctn_area&quot;&gt;
+                            &lt;h5 class=&quot;title&quot;&gt;Title&lt;/h5&gt;
+                    
+                            &lt;p class=&quot;color_t_s font_sbmr&quot;&gt;
+                                Content&lt;br&gt;
+                                ContentContent ContentContent
+                            &lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                </code></pre>
+
+
+                <div class="lang_htmlCode">
+
+
+                    <div class="box_list_area">
+
+                        <a class="box_om_wel_list title">
+                            <div class="img_area">
+                            <img src="/html/page/app/matching/assets/src/images/08etc/document_41.svg" alt="인정등급 발급 절차">
+                            </div>
+                            <div>
+                                <div class="font_sbms">
+                                    인정등급 발급 절차
+                                </div>
+                                <div class="color_t_s font_sbsr marT4 ">소요 기간과 진행 절차 안내</div>
+                            </div>
+                        </a>
+
+                        <a class="box_om_wel_list title">
+                            <div class="img_area">
+                            <img src="/html/page/app/matching/assets/src/images/08etc/accompany_41.svg" alt="외출시 유용한 용품">
+                            </div>
+                            <div>
+                                <div class="font_sbms">
+                                    외출시 유용한 용품
+                                </div>
+                                <div class="color_t_s font_sbsr marT4">야외에서 쾌적하고 안정적인 활동</div>
+                            </div>
+                        </a>
+
+                        <a class="box_om_wel_list title">
+                            <div class="img_area">
+                            <img src="/html/page/app/matching/assets/src/images/08etc/icon_24h.svg" alt="주야간보호센터란?">
+                            </div>
+                            <div>
+                                <div class="font_sbms">
+                                    주야간보호센터란?
+                                </div>
+                                <div class="color_t_s font_sbsr marT4">집에 혼자 계시는 어르신이 걱정된다면</div>
+                            </div>
+                        </a>
+
+                    </div>
+                    
+
+
+
+                </div>
+
+                <pre><code class="language-html">
+                    &lt;a class=&quot;box_om_wel_list title&quot;&gt;
+                        &lt;div class=&quot;img_area&quot;&gt;
+                        &lt;img src=&quot;/html/page/app/matching/assets/src/images/08etc/document_41.svg&quot; alt=&quot;&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div&gt;
+                            &lt;div class=&quot;font_sbms&quot;&gt;
+                                Title
+                            &lt;/div&gt;
+                            &lt;div class=&quot;color_t_s font_sbsr marT4 &quot;&gt;Lorem Ipsum is simply dummy text of the printing&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/a&gt;
+
+                    &lt;a class=&quot;box_om_wel_list title&quot;&gt;
+                        &lt;div class=&quot;img_area&quot;&gt;
+                        &lt;img src=&quot;/html/page/app/matching/assets/src/images/08etc/accompany_41.svg&quot; alt=&quot;&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div&gt;
+                            &lt;div class=&quot;font_sbms&quot;&gt;
+                                Title
+                            &lt;/div&gt;
+                            &lt;div class=&quot;color_t_s font_sbsr marT4&quot;&gt;Lorem Ipsum is simply dummy text of the printing&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/a&gt;
+
+                    &lt;a class=&quot;box_om_wel_list title&quot;&gt;
+                        &lt;div class=&quot;img_area&quot;&gt;
+                        &lt;img src=&quot;/html/page/app/matching/assets/src/images/08etc/icon_24h.svg&quot; alt=&quot;&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div&gt;
+                            &lt;div class=&quot;font_sbms&quot;&gt;
+                                Title
+                            &lt;/div&gt;
+                            &lt;div class=&quot;color_t_s font_sbsr marT4&quot;&gt;Lorem Ipsum is simply dummy text of the printing&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/a&gt;
+                </code></pre>
+
+
+                <div class="lang_htmlCode">
+
+                    <div class="card w100p radius08 back_F5F5F5 noShadow">
+                    
+                        <div class="card-content box_coun_list _om_box pad12">
+                    
+                            <div class="img_area trans_s02 ing">
+                                <!-- <span class="txt font_sss">상담<br>연결중</span> -->
+                            </div>
+                    
+                            <div>
+                                <div class="font_sbss line_clamp_1">인정등급 간편테스트 관심 복지용구 글이 길어지면 말줄임33</div>
+                    
+                                <div class="breadcrumb_area marT4">
+                                    <span class="color_t_s font_sss">14상담완료</span>
+                                    <span class="color_t_s font_ssr">2024.01.10</span>
+                                </div>
+                    
+                            </div>
+                    
+                        </div>
+                    
+                    </div>
+                    
+                    <br>
+                    
+                    <div class="card w100p radius08 back_F5F5F5 noShadow">
+                    
+                        <div class="card-content box_coun_list _om_box pad12">
+                    
+                            <div class="img_area trans_s02 ing"></div>
+                    
+                            <div>
+                                <div class="font_sbss line_clamp_1">관심 복지용구</div>
+                    
+                                <div class="breadcrumb_area marT4">
+                                    <span class="color_t_danger font_sss">상담취소</span>
+                                    <span class="color_t_s font_ssr">2024.01.10</span>
+                                </div>
+                    
+                            </div>
+                    
+                        </div>
+                    
+                    </div>
+                    
+                    <br>
+                    
+                    <div class="card w100p radius08 back_F5F5F5 noShadow">
+                    
+                        <div class="card-content box_coun_list _om_box pad12">
+                    
+                            <div class="img_area trans_s03 ing"></div>
+                    
+                            <div>
+                                <div class="font_sbss line_clamp_1">어르신돌봄</div>
+                    
+                                <div class="breadcrumb_area marT4">
+                                    <span class="color_t_s font_sss">상담연결중</span>
+                                    <span class="color_t_s font_ssr">2024.01.10</span>
+                                </div>
+                    
+                            </div>
+                    
+                        </div>
+                    
+                    </div>
+
+                </div>
+
+                <pre><code class="language-html">
+                    &lt;div class=&quot;card w100p radius08 back_F5F5F5 noShadow&quot;&gt;
+                    
+                        &lt;div class=&quot;card-content box_coun_list _om_box pad12&quot;&gt;
+                    
+                            &lt;div class=&quot;img_area trans_s02 ing&quot;&gt;&lt;/div&gt;
+                    
+                            &lt;div&gt;
+                                &lt;div class=&quot;font_sbss line_clamp_1&quot;&gt;Lorem Ipsum is simply dummy text of the printing and typesetting&lt;/div&gt;
+                    
+                                &lt;div class=&quot;breadcrumb_area marT4&quot;&gt;
+                                    &lt;span class=&quot;color_t_s font_sss&quot;&gt;Ok&lt;/span&gt;
+                                    &lt;span class=&quot;color_t_s font_ssr&quot;&gt;2024.01.10&lt;/span&gt;
+                                &lt;/div&gt;
+                    
+                            &lt;/div&gt;
+                    
+                        &lt;/div&gt;
+                    
+                    &lt;/div&gt;
+
+                    &lt;div class=&quot;card w100p radius08 back_F5F5F5 noShadow&quot;&gt;
+                    
+                        &lt;div class=&quot;card-content box_coun_list _om_box pad12&quot;&gt;
+                    
+                            &lt;div class=&quot;img_area trans_s02 ing&quot;&gt;&lt;/div&gt;
+                    
+                            &lt;div&gt;
+                                &lt;div class=&quot;font_sbss line_clamp_1&quot;&gt;Lorem Ipsum&lt;/div&gt;
+                    
+                                &lt;div class=&quot;breadcrumb_area marT4&quot;&gt;
+                                    &lt;span class=&quot;color_t_danger font_sss&quot;&gt;Cnacel&lt;/span&gt;
+                                    &lt;span class=&quot;color_t_s font_ssr&quot;&gt;2024.01.10&lt;/span&gt;
+                                &lt;/div&gt;
+                    
+                            &lt;/div&gt;
+                    
+                        &lt;/div&gt;
+                    
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;card w100p radius08 back_F5F5F5 noShadow&quot;&gt;
+                    
+                        &lt;div class=&quot;card-content box_coun_list _om_box pad12&quot;&gt;
+                    
+                            &lt;div class=&quot;img_area trans_s03 ing&quot;&gt;&lt;/div&gt;
+                    
+                            &lt;div&gt;
+                                &lt;div class=&quot;font_sbss line_clamp_1&quot;&gt;Lorem Ipsum&lt;/div&gt;
+                    
+                                &lt;div class=&quot;breadcrumb_area marT4&quot;&gt;
+                                    &lt;span class=&quot;color_t_s font_sss&quot;&gt;Connecting&lt;/span&gt;
+                                    &lt;span class=&quot;color_t_s font_ssr&quot;&gt;2024.01.10&lt;/span&gt;
+                                &lt;/div&gt;
+                    
+                            &lt;/div&gt;
+                    
+                        &lt;/div&gt;
+                    
+                    &lt;/div&gt;
+                </code></pre>
+
+
+                <div class="lang_htmlCode back_F5F5F5">
+
+                    <div class="card waves-effect w100p radius08">
+
+                        <div class="card-content box_coun_list pad20">
+
+                            <div class="img_area trans_02 ing">
+                                <span class="txt font_sss">상담<br>연결중</span>
+                            </div>
+
+                            <div>
+                                <div class="font_sbls">관심 복지용구</div>
+                                <div class="marT4">
+                                    <span class="color_t_s font_sbsr">복지용구</span>
+                                    <span class="marL4 color_t_s font_sbsr">2024.01.10</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <br><br>
+
+                    <div class="card waves-effect w100p radius08">
+
+                        <div class="card-content box_coun_list pad20">
+
+                            <div class="img_area trans_02 ok">
+                                <span class="txt font_sss">상담완료</span>
+                            </div>
+
+                            <div>
+                                <div class="font_sbls">관심 복지용구</div>
+                                <div class="marT4">
+                                    <span class="color_t_s font_sbsr">복지용구</span>
+                                    <span class="marL4 color_t_s font_sbsr">2024.01.10</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <br><br>
+
+
+                    <div class="card waves-effect w100p radius08">
+
+                        <div class="card-content box_coun_list pad20">
+
+                            <div class="img_area trans_s02 ing">
+                                <!-- <span class="txt font_sss">상담<br>연결중</span> -->
+                            </div>
+
+                            <div>
+                                <div class="font_sbls">111관심 복지용구</div>
+                                <div class="breadcrumb_area marT4">
+                                    <span class="color_t_s font_sbss">상담완료</span>
+                                    <span class="color_t_s font_ssr">2024.12.31</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <pre><code class="language-html">
+                    
+                    &lt;div class=&quot;card waves-effect w100p radius08&quot;&gt;
+
+                        &lt;div class=&quot;card-content box_coun_list pad20&quot;&gt;
+
+                            &lt;div class=&quot;img_area trans_02 ing&quot;&gt;
+                                &lt;span class=&quot;txt font_sss&quot;&gt;&#xC0C1;&#xB2F4;&lt;br&gt;&#xC5F0;&#xACB0;&#xC911;&lt;/span&gt;
+                            &lt;/div&gt;
+
+                            &lt;div&gt;
+                                &lt;div class=&quot;font_sbls&quot;&gt;Title&lt;/div&gt;
+                                &lt;div class=&quot;marT4&quot;&gt;
+                                    &lt;span class=&quot;color_t_s font_sbsr&quot;&gt;Content&lt;/span&gt;
+                                    &lt;span class=&quot;marL4 color_t_s font_sbsr&quot;&gt;2024.01.10&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class=&quot;card waves-effect w100p radius08&quot;&gt;
+
+                        &lt;div class=&quot;card-content box_coun_list pad20&quot;&gt;
+
+                            &lt;div class=&quot;img_area trans_02 ok&quot;&gt;
+                                &lt;span class=&quot;txt font_sss&quot;&gt;&#xC0C1;&#xB2F4;&#xC644;&#xB8CC;&lt;/span&gt;
+                            &lt;/div&gt;
+
+                            &lt;div&gt;
+                                &lt;div class=&quot;font_sbls&quot;&gt;Title&lt;/div&gt;
+                                &lt;div class=&quot;marT4&quot;&gt;
+                                    &lt;span class=&quot;color_t_s font_sbsr&quot;&gt;Content&lt;/span&gt;
+                                    &lt;span class=&quot;marL4 color_t_s font_sbsr&quot;&gt;2024.01.10&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class=&quot;card waves-effect w100p radius08&quot;&gt;
+
+                        &lt;div class=&quot;card-content box_coun_list pad20&quot;&gt;
+
+                            &lt;div class=&quot;img_area trans_s02 ing&quot;&gt;
+                                &lt;!-- &lt;span class=&quot;txt font_sss&quot;&gt;&#xC0C1;&#xB2F4;&lt;br&gt;&#xC5F0;&#xACB0;&#xC911;&lt;/span&gt; --&gt;
+                            &lt;/div&gt;
+
+                            &lt;div&gt;
+                                &lt;div class=&quot;font_sbls&quot;&gt;Title&lt;/div&gt;
+                                &lt;div class=&quot;breadcrumb_area marT4&quot;&gt;
+                                    &lt;span class=&quot;color_t_s font_sbss&quot;&gt;&#xC0C1;&#xB2F4;&#xC644;&#xB8CC;&lt;/span&gt;
+                                    &lt;span class=&quot;color_t_s font_ssr&quot;&gt;2024.12.31&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+
+
+                </code></pre>
+
+
+                <div class="lang_htmlCode back_F5F5F5">
+
+                    <div class="box bder_style01 marT8">
+                    
+                        <div class="img_area back_EEEEEE">
+                            <object data="/html/page/app/matching/assets/src/images/08etc/bp_40.svg"></object>
+                        </div>
+                        <div class="ctn_area">
+                            <div class="font_sbms">이로움사업소</div>
+                            <div class="color_t_s font_sbsr">
+                                경기 구리시
+                            </div>
+                        </div>
+                    
+                    </div>
+
+                    <br>
+
+                    <div class="waves-effect box_custom_service back_FFF5E6">
+                        <div class="ctn_area">
+                            <div class="font_sbsr color_t_s">상담 관련 문의</div>
+                            <div class="font_sbmb">어르신의 장기요양기관</div>
+                        </div>
+                        <div class="img_area">
+                            <img src="/html/page/app/matching/assets/src/images/08etc/bp_40.svg" style="width:80px;height:80px;" alt="혜택">
+                        </div>
+                    </div>
+                    
+                    <div class="waves-effect box_custom_service back_F5F5F5">
+                        <div class="ctn_area">
+                            <div class="font_sbsr color_t_s">상담 외 기타 문의</div>
+                            <div class="font_sbmb">이로움ON 고객센터</div>
+                        </div>
+                        <div class="img_area">
+                            <img src="/html/page/app/matching/assets/src/images/08etc/erounon_40.svg" alt="혜택">
+                        </div>
+                    </div>
+
+                </div>
+
+                <pre><code class="language-html">
+
+                    &lt;div class=&quot;box bder_style01 marT8&quot;&gt;
+
+                        &lt;div class=&quot;img_area back_EEEEEE&quot;&gt;
+                            &lt;object data=&quot;/html/page/app/matching/assets/src/images/08etc/bp_40.svg&quot;&gt;&lt;/object&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;ctn_area&quot;&gt;
+                            &lt;div class=&quot;font_sbms&quot;&gt;Title&lt;/div&gt;
+                            &lt;div class=&quot;color_t_s font_sbsr&quot;&gt;
+                                Content
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;div class=&quot;waves-effect box_custom_service back_FFF5E6&quot;&gt;
+                        &lt;div class=&quot;ctn_area&quot;&gt;
+                            &lt;div class=&quot;font_sbsr color_t_s&quot;&gt;SubTitle&lt;/div&gt;
+                            &lt;div class=&quot;font_sbmb&quot;&gt;Title&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;img_area&quot;&gt;
+                            &lt;img src=&quot;/html/page/app/matching/assets/src/images/08etc/bp_40.svg&quot; style=&quot;width:80px;height:80px;&quot; alt=&quot;&quot;&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class=&quot;waves-effect box_custom_service back_F5F5F5&quot;&gt;
+                        &lt;div class=&quot;ctn_area&quot;&gt;
+                            &lt;div class=&quot;font_sbsr color_t_s&quot;&gt;SubTitle&lt;/div&gt;
+                            &lt;div class=&quot;font_sbmb&quot;&gt;Title&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;img_area&quot;&gt;
+                            &lt;img src=&quot;/html/page/app/matching/assets/src/images/08etc/erounon_40.svg&quot; alt=&quot;&quot;&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                </code></pre>
+                
+
+
+                <div class="h100"></div>
+
+            </section>
+
+
+
+        </main>
+
+
+    </div>
+    <!-- wrapper -->
+
+
+</body>
+
+</html>

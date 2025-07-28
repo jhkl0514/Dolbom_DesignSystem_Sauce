@@ -1,0 +1,5567 @@
+
+.back_gray{background-color: $--Color-bg-secondary;} //FAFAFA
+
+.wrapper{
+    width:100%;background-color: #fff;
+
+    display: flex;
+    min-height: 100svh;
+    flex-direction: column;
+}
+
+.back_gray .wrapper{background-color: $--Color-bg-secondary;}
+.back_gray02 .wrapper{background-color: #f7f7f7;}
+
+
+//$header = 56px
+
+main{flex:1 0 auto;}
+
+section{
+
+
+    margin: 40px 0 120px; //header X
+    padding: 0 20px;
+
+    &.intro{ //header O
+     
+        margin-top: $header + 40px;
+
+    }
+
+    &.intro_marT20{ //header O
+     
+        margin-top: $header + 20px;
+
+    }
+
+    &.default{ //header O 일반
+
+        margin: $header 0 80px;
+        padding: 20px;
+
+    }
+
+    &.bottom_0{
+        margin-bottom: 0;
+        
+    }
+
+    //간략 서비스 소개
+    &.back_service_info{ 
+
+        margin: 0 0 40px;
+        background-image: linear-gradient(146deg, #FF8120 21.95%, #E54304 82.84%);
+        background-repeat: no-repeat;
+        background-size: 100% 220px;
+
+
+    }
+
+    //지도
+    &.viewMap{
+        height: calc(100vh - $header);
+        margin: $header 0 0;
+        padding: 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    //가운데처리
+    &.section_center{
+        position: relative;
+        margin:0;
+        width:100%; height: 100vh;
+        @include flex_center;
+
+        .noResult{
+            position: absolute;top: 80px;left: 20px;
+        }
+    }
+
+
+}
+
+
+
+h2.title{ 
+    @include Suit_Heading_XL;
+    margin: 0;
+    
+    & + .txt{
+        margin-top: 24px;
+        @include Suit_Body_MD_Regular;
+    }
+}
+
+
+h2.title02{ 
+    @include Suit_Heading_LG;
+    margin: 0;
+
+}
+
+h3.title{
+    @include Suit_Heading_MD;
+    margin: 0;
+    
+}
+
+h4.title{
+    @include Suit_Heading_SM;
+    margin: 0;
+
+}
+
+h5.title{
+    @include Suit_Body_LG_Bold;
+    margin: 0;
+
+}
+
+
+
+
+
+
+//툴팁
+.tool_tip{z-index: 1000; right:10px;bottom:45px; position: absolute;display: inline-block;background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.13), 0px 8px 16px rgba(0, 0, 0, 0.12);
+            padding: 12px;border-radius: 8px;
+            @include Suit_Body_SM_SemiBold;
+
+        animation-name: tool_ip_ani;
+        animation-duration:0.8s; 
+        animation-iteration-count:infinite;
+        animation-direction:alternate;
+
+        &.t_center{
+            bottom: 70px;
+            right: inherit;left: 50%;transform: translateX(-50%);
+            max-width:70%;
+            width: 100%;
+
+            animation-name: tool_ip_om;
+        }
+}
+
+/* 키프레임 이름 = 애니메이션 이름 */
+@keyframes tool_ip_ani {
+    0% {
+      bottom:50px;
+    }
+    100% {
+      bottom:45px;
+    }
+  }
+
+
+/* 애니메이션 어르신 위임 동의 요청 */
+@keyframes tool_ip_om {
+    0% {
+      bottom:73px;
+    }
+    100% {
+      bottom:68px;
+    }
+  }
+
+
+
+.tool_tip:after{position: absolute;bottom:-14px;left:calc(50% - 6px);width:0;height: 0; display: inline-block;content: '';
+    border-top: 8px solid #ffffff;
+    border-right: 6px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 6px solid transparent;
+
+}
+
+.close_x{cursor: pointer;display: block;width:32px;height: 32px;background: url(../images/04icon/close.svg) no-repeat center center;}
+.close_x.p03{display: block;width:32px;height: 32px;background: url(../images/04icon/close_3.svg) no-repeat center center;}
+
+//modal
+.modal{background: #fff;border-radius: 16px;}
+.modal .modal_header{width:100%; display: flex;justify-content:space-between;align-items: center;padding: 24px 20px 12px;}
+
+.modal .modal-content{position: relative;
+    padding: 0 20px 32px;
+    overflow: hidden;
+    height: 100%;
+    @include Suit_Body_MD_Regular;
+}
+
+
+    
+
+
+.modal.bottom-sheet{border-radius: 32px 32px 0 0;max-height: 95vh;}
+.modal.bottom-sheet .modal_header{width:100%; display: flex;justify-content:space-between;align-items: center;padding: 32px 20px 16px;}
+
+.modal.bottom-sheet .modal-content{padding: 0 20px;}
+.modal.bottom-sheet .modal-footer{padding: 0 20px 32px;}
+
+.modal.bottom-sheet .modal_title{
+    color: $--Color-text-Primitive-secondary;
+    @include Suit_Body_LG_Bold;
+
+}
+
+.modal_title{margin: 0; color: $--Color-text-Primitive-secondary;
+    @include Suit_Heading_SM;
+}
+
+
+
+
+.modal .modal-footer{height: auto;text-align: center;padding: 0 20px 20px;background:#fff;position: relative;
+
+    &::before{z-index:1000;content: '';display: block;position: absolute;top:-20px;left:0; width:100%;width:100%;height:20px;
+        background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 60%);
+    }
+
+    & .d-flex{
+        gap:16px 8px;
+    }
+}
+
+//modal 풀스크린
+.modal.fullscreen{
+
+    top:0 !important;
+    border-radius: 0;
+    height: 100%;
+    max-height: 100%;
+    width:100%;
+
+
+    .modal_header{
+        height: 56px;
+        padding: 0 0 0 20px;
+
+        .modal_title{
+            color: $--Color-text-Primitive-secondary;
+            @include Suit_Body_LG_Bold;
+
+        }
+
+        .close_x{
+            width:48px;height:48px;
+        }
+
+    }
+    
+    .modal-content{
+        height:calc(100% - $header - 76px); //modal_header, modal_footer 높이값 제외
+        padding:4px 6px;
+        overflow-y: auto;
+
+        &.no_footer{
+
+            height:calc(100% - $header); //modal_header 높이값 제외
+
+        }
+    }
+
+}
+
+
+
+
+//스크롤박스처리
+.scrollBox{height: 200px;overflow-y: auto;
+
+    &.height_top{height:calc(100vh - 160px)}
+
+}
+
+
+//통신사 선택
+.broad_area li{padding: 12px 8px;color:$--Color-text-Primitive-secondary;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+
+}
+.broad_area li.active{
+    border-radius: 8px;
+    background: $--Color-bg-Primitive-selected url('../images/04icon/check_primary.svg') no-repeat calc(100% - 8px) center;
+
+    
+}
+
+
+
+// 동의체크
+.group_chk_area{
+    position: relative;
+
+    .icon_btn{
+        position: absolute;
+        top:calc(50% - 24px);
+        right:0;
+        width:48px;height:48px;
+        background-size: 50%; //확인체크
+    }
+
+    .icon_btn + div label{padding: 12px 36px 12px 44px;}
+
+    &+.group_chk_area{margin-top: 6px;}
+}
+
+
+//유효성 체크
+.vaild_txt{
+    @include Suit_Body_SS_Regular;
+    
+    margin-top: 8px;
+    color:$--Color-text-secondary;
+    background-image: url(../images/18icon/valid_default.svg);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 24px;
+    padding-left: 28px;
+
+    &.ok{
+     
+        color: $--Color-text-success-bold;
+        background-image: url(../images/18icon/valid_ok.svg);
+
+    }
+
+    &.error{
+     
+        color: $--Color-text-danger-bold;
+        background-image: url(../images/18icon/valid_error.svg);
+
+    }
+
+}
+
+
+//인증번호 시간
+.cert_time{
+    color: $--Color-text-danger;
+    @include Suit_Body_SM_Regular;
+
+}
+
+
+//패스워드 입력창
+.input_password input{
+    width:20px !important;text-align: center;
+    }
+
+.input_password .img_password{
+    width:60px;height:42px;
+    background: url('../images/18icon/icon_dot.svg') repeat-x left center;background-size: 10px;
+}
+
+
+/////온보딩
+//swiper 스와이프
+.swiper_onboard {
+    width:100%;
+
+    .swiper {
+        background-color: pink;
+        height: calc(100vh - 96px - 100px);
+    }
+
+    .swiper-slide{
+        padding: 0 20px;
+    }
+    
+
+    .slide_img {
+        height: calc(100vh - 96px - 200px);
+        @include flex_center;
+    }
+
+}
+
+
+.swiper_onboard .swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: inherit;
+    top:60vh;
+    @include flex_center;
+    }
+@media screen and (min-width:415px) {
+    .swiper_onboard .swiper-pagination-bullets.swiper-pagination-horizontal {
+        top:65vh;
+    }
+    }    
+
+
+
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+    margin: 0 2px !important;
+}
+.swiper-pagination-bullet{width:6px !important;height:6px !important; background: rgba(#999 ,0.3) !important;opacity: 1 !important;}
+.swiper-pagination-bullet-active{background: #999 !important;}
+
+
+
+/////앱 접근권한
+.img_list_area{
+    display: flex;
+    gap:12px;
+
+    .txt{
+
+        .title{
+            color: $--Color-text-primary;
+            @include Suit_Body_MD_SemiBold
+        }
+
+        .ctn{
+            color: $--Color-text-teritiary;
+            @include Suit_Body_SM_Regular
+
+        }
+
+    }
+
+}
+
+
+//아이콘
+.img_list_box{
+    border-radius: 8px;
+    background-color: $--Color-bg-teritiary;
+    width: 54px;
+    height: 54px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 24px;
+
+}
+
+// 현재 안씀
+.i04_alaram_fill{background-image: url('../images/04icon/alaram_fill.svg')}
+
+
+
+
+/////어르신 등록
+.eld_reg_woman{max-height: 60vh;}
+
+//트리
+.family_tree_area {
+    display: flex;
+    flex-direction: column;
+
+    .tree {
+        display: flex;
+        margin-top: 14px;
+    }
+
+    .tree:first-child {
+        margin: 0;
+    }
+
+    .txt {
+        display: block;
+        color: $--Color-text-secondary;
+        @include Suit_Caption_XS;
+    }
+
+
+    //가족
+    [class^='dept'] {
+        position: relative;
+        display: grid;
+        width: 100%;
+        margin: 0 auto;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+
+        &::after {
+            display: block;
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 1px;
+            background: #EEE;
+            z-index: 1;
+            top: 36px;
+        }
+
+        
+
+        &>.item {
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            width: 100%;
+            height: 92px;
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-size: 70px;
+            //transition: 0.3s all;
+            z-index: 2;
+        }
+
+
+    }
+
+    //형제자매, 자녀 트리
+    .dept2 {
+
+        &>.item {
+            background-size: 100px;
+        }
+
+        &::after {
+            background: transparent;
+        }
+
+
+    }
+
+
+}
+
+.item.grandpa{background-image: url('../images/05family_tree/type_grandpa_off.svg');}
+.item.grandpa.active{background-image: url('../images/05family_tree/type_grandpa_on.svg');}
+
+.item.grandma{background-image: url('../images/05family_tree/type_grandma_off.svg');}
+.item.grandma.active{background-image: url('../images/05family_tree/type_grandma_on.svg');}
+
+.item.father{background-image: url('../images/05family_tree/type_fatehr_off.svg');}
+.item.father.active{background-image: url('../images/05family_tree/type_fatehr_on.svg');}
+
+.item.mother{background-image: url('../images/05family_tree/type_mother_off.svg');}
+.item.mother.active{background-image: url('../images/05family_tree/type_mother_on.svg');}
+
+.item.p_father{background-image: url('../images/05family_tree/type_partner_father_off.svg');}
+.item.p_father.active{background-image: url('../images/05family_tree/type_partner_father_on.svg');}
+
+.item.p_mother{background-image: url('../images/05family_tree/type_partner_mother_off.svg');}
+.item.p_mother.active{background-image: url('../images/05family_tree/type_partner_mother_on.svg');}
+
+.item.me{background-image: url('../images/05family_tree/type_me_off.svg');}
+.item.me.active{background-image: url('../images/05family_tree/type_me_on.svg');}
+
+.item.partner{background-image: url('../images/05family_tree/type_partner_off.svg');}
+.item.partner.active{background-image: url('../images/05family_tree/type_partner_on.svg');}
+
+.item.brother{background-image: url('../images/05family_tree/type_brother_off.svg');}
+.item.brother.active{background-image: url('../images/05family_tree/type_brother_on.svg');}
+
+.item.child{background-image: url('../images/05family_tree/type_child_off.svg');}
+.item.child.active{background-image: url('../images/05family_tree/type_child_on.svg');}
+
+
+
+
+.family_sel{
+    display: flex;
+    align-items: center;
+    gap:16px;
+
+    &.dept1{
+        .item{min-width:60px;background-size: 60px;}
+        object{width:60px;}
+    }
+    &.dept2{
+        .item{min-width:100px;background-size: 100px;}
+        object{width:100px;}
+    }
+
+    .item{display: flex;justify-content: center;background-position: left top;background-repeat: no-repeat;
+        transition: 0.3s all;}
+
+    .txt{
+        margin-top: 64px;
+        display: block;
+        color: $--Color-text-secondary;
+        @include Suit_Caption_XS;
+    }
+
+
+}
+
+// IOS 이미지 뭉개짐 버그
+.item.ios_blurry{
+    background-image: none;
+    display: inline-block !important;
+    line-height: 18px;
+
+    &.active{
+        background-image: none;
+    }
+
+    .txt{
+        margin-top: 0;
+    }
+}
+
+
+
+
+//어르신 위임
+//본인인증 안내
+.om_deleg_area{
+    position: relative;
+
+    .family_area{
+        display: flex;justify-content: space-around;align-items: center;
+
+        .family_sel{width: 100%;justify-content: center;}
+        
+        
+    
+        &::before{content: '';position: absolute;top:0;left: 50%;width:1px;height: 100%;
+            border-left: 1px dashed $--Color-border-primary;
+        }
+
+    }
+
+    .flow_area{
+        margin-top: 16px;
+
+        [class*='flow_']{
+            position: relative;
+            display: flex;justify-content: space-around;align-items: center;gap: 42px;
+        
+            > div{flex-basis: 50%;z-index:1;}
+
+            .box_flow01{background-color: $--Color-bg-Primitive-selected;padding: 10px;border-radius: 12px;text-align: center;
+                @include Suit_Body_MD_SemiBold;
+            }
+            .box_flow02{padding: 10px;border-radius: 12px;text-align: center;
+                color: $--Color-text-secondary; 
+                @include Suit_Body_MD_SemiBold;
+    
+                span.back{background-color: #fff;padding: 10px;}
+            }
+
+    
+
+        }
+        .flow_01{
+            margin-bottom: 12px;
+
+            &::after{
+                content: '';
+                position: absolute;
+                top:19px;
+                right:2px;
+                width:calc(50% + 42px);
+                display: block;
+                border: 21px solid transparent;
+                border-image: url("../images/99temp/image_slice_01.svg") 21 24 20 0 fill stretch;
+            }
+
+        }
+        .flow_03{
+            margin-top: 12px;
+
+            &::after{
+                content: '';
+                position: absolute;
+                top:-12px;
+                right:8px;
+                width:calc(50% + 13px);
+                display: block;
+                border: 22px solid transparent;
+                border-image: url("../images/99temp/image_slice_02.svg") 24 23 27 23 fill stretch;
+            }
+
+        }
+
+
+
+
+
+
+    }
+
+}
+
+
+
+
+
+.bottom-sheet_handle .modal_title:has(.breadCb){width: calc(100% - 50px);}
+
+//Breadcrumbs
+.breadCb{
+    display: flex;
+
+    > span{
+        cursor: pointer;
+        color: $--Color-text-disabled;
+        @include Suit_Body_MD_SemiBold;
+
+        position: relative;
+        padding: 14px 16px;
+
+        &.dept01{flex-shrink: 0;}
+
+        &.active{
+
+            color: $--Color-text-Primitive-primary;
+
+        }
+
+        &.selected{
+
+            color: $--Color-text-Primitive-secondary;
+
+        }
+
+
+        + span:nth-child(n+1){
+
+            padding: 14px 16px 14px 32px;
+
+            background: url('../images/04icon/chevron-right_thin_disable.svg') no-repeat left center;
+            background-size: 16px;
+            
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            
+
+        }
+    
+    }
+
+}
+
+//지역선택 chip
+.chip_area{
+    display: grid;grid-template-columns: repeat(3, 1fr);gap: 12px;padding-bottom: 20px;align-content: start;
+
+
+    & > * {
+        cursor: pointer;
+        width:100%;height: 70px;padding: 0 8px;border-radius: 8px;
+        border:1px solid $--Color-border-Primitive-secondary;
+        background-color: #fff;
+        text-align: center;
+        @include Suit_Body_MD_Regular;
+        @include flex_center;
+    
+        &.active{
+            border: 1px solid $--Color-border-Primitive-primary-press;
+            background-color: $--Color-bg-Primitive-selected;
+            color: $--Color-text-Primitive-selected;
+
+            &.disabled{
+                pointer-events:none;
+                border: 1px solid rgba(255, 129, 32, 0.50);
+                background: #FEE3BE;
+                color: #FF9E22;
+
+            }
+
+        }
+    
+        &.disabled{
+            pointer-events:none;
+            border: 1px solid #E0E0E0;
+            background: $--Color-bg-disabled;
+            color: $--Color-text-disabled;
+        
+        }
+    
+    }
+
+    //어르신 성별 chip
+    &.c02{
+        grid-template-columns: repeat(2, 1fr);
+
+        & > * {
+            height: 56px;
+        }
+    }
+
+
+}
+
+
+
+
+//복지용구
+.wel_scroll_area{
+    
+    position: fixed; //sticky
+    top:$header;
+    left: initial;
+    z-index: 100;
+    width:100%;
+    max-width: 600px;
+    background: #f7f7f7;
+
+
+    .wel_scroll{
+        position: relative;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        padding:20px 65px 20px 16px; width:100%;font-size: 0;
+        white-space:nowrap;overflow-y: hidden; overflow-x: auto;
+
+        &.no_scroll_area{padding:20px 16px 20px 16px;}
+
+                //스크롤바 숨김처리
+                &::-webkit-scrollbar {
+                    display: none; 
+                }
+    
+    }
+
+
+    //drop_down 토글
+    .btn_accord_area{
+        position: absolute;
+        top: 0px;right: 0;
+        z-index: 10;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        width:80px;
+        padding-right: 10px;
+
+        background: linear-gradient(270deg, #F5F5F5 58.52%, rgba(255, 255, 255, 0.00) 99.11%);
+
+        .btn_accord{
+            @include flex_center;
+            width: 40px;height: 40px;
+            border-radius: 8px;
+            border: 1px solid $--Color-border-Primitive-secondary;
+            background: $--Color-bg-primary;
+    
+            span{
+                display: inline-block;
+                width: 24px;height: 24px;
+                background-image: url('../images/04icon/chevron-down_thin.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                transition: 0.3s all;
+    
+            }
+        }
+        
+    }
+
+
+
+    //★★ active_drop_down으로 변환
+    &.active{
+
+        .btn_accord_area{
+
+            width: 50px;
+            background: none;
+
+            .btn_accord{
+                span{
+                    transform: rotateX(180deg);
+                }
+            }
+
+        }
+
+        .wel_scroll{
+            display: block;
+            padding:20px 16px 20px 16px;
+            white-space: initial;
+            overflow: initial;
+            height: auto;
+    
+            .chip_area02{
+                
+                flex-wrap: wrap;
+
+            }
+            
+        }
+
+        &+.back_dim{display: block;}
+
+    }
+
+}
+
+.back_dim{
+    content: '';
+    z-index: 99;
+    position: fixed;
+    top:$header;
+    left: initial;
+    display: none;
+    width:100%;
+    max-width: 600px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+
+//chips 02 모음
+.chip_area02{
+    display: flex;
+    gap:8px;
+    
+    & a {
+        
+        width:auto;height:40px;
+        border: 1px solid $--Color-border-Primitive-secondary;
+        border-radius: 50px;
+        background: $--Color-bg-primary;
+        padding: 0 16px;
+        @include Suit_Body_SM_Regular;
+        @include flex_center;
+        display: inline-flex;
+
+        &.active{
+            color:#fff;
+            border: 1px solid $--Color-border-Primitive-primary-press;
+            background: $--Color-bg-Primitive-primary;
+        }
+
+        &.disabled{
+            pointer-events: none;
+            color: $--Color-text-disabled;
+            border: 1px solid #E0E0E0;
+            background: $--Color-bg-disabled;
+        }
+        
+    }
+    
+}
+
+
+//복지용구 재생박스
+.wel_detail_card_area{
+    position: relative; padding: 0 20px; 
+    //scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow-y: auto;
+    height: calc(100vh - 136px - 60px); //header(56px), wel_scroll_area(80px), page-footer(60px) 뺀 세로값
+    position: fixed;
+    top: 136px;
+
+}
+
+@media only screen and (min-width: 600px){
+
+    .wel_detail_card_area{width: 600px;}
+
+}
+
+
+.card.wel_detail_card{
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    
+    .card-content{
+        padding: 16px 20px 24px;
+    
+        .title_area{
+            @include flex_between_center;
+            gap:16px;
+
+            .btn_share{
+                @include flex_center;
+                gap:4px;
+                padding: 12px 0 12px 36px;
+                flex-shrink: 0;
+                color:$--Color-text-Primitive-secondary;
+                @include Suit_Body_SM_SemiBold;
+                background-image: url('../images/04icon/share.svg');
+                background-repeat: no-repeat;
+                background-position: 16px center;
+                background-size: 16px;
+            }
+        }
+
+        .tag_area02{
+            min-height: 48px;
+            margin-top: 8px;
+        
+            .tag{display: inline-block;
+                color: $--Color-text-secondary;
+                @include Suit_Body_SS_Regular; 
+        
+                &::before{
+        
+                    content: '#';
+        
+                }
+            }
+        
+            .tag:nth-child(2n){margin-left: 2px;}
+        
+        }
+    
+    }
+
+    //유튜브화면 16:9
+    .youtube_area{
+
+        position: relative;width: 100%;padding-bottom: 56.25%;
+
+        iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+
+    &+.wel_detail_card{margin-top: 24px;}
+}
+
+
+
+
+
+
+
+//시스템 점검
+//close_x가 modal-header안에 있어 상단올림처리
+.img_system_ins{
+    text-align: center; position: relative;top:-34px;
+
+    img{width:240px;}
+
+}
+
+.img_system_ins + .modal-content{top:-34px;}
+
+
+
+//서비스
+//카드
+.card{
+    margin: 0;border-radius: 16px;overflow: hidden;
+    @include box_shadow;
+
+    &.bder{ //border
+        border: 1px solid $--Color-border-Primitive-secondary;
+        box-shadow: none;
+    }
+
+    &.active{ //active border
+        background: $--Color-bg-Primitive-selected;
+        border: 1px solid $--Color-border-Primitive-primary-press;
+    }
+
+    .card-content{padding: 24px 20px;}
+
+    .card-action{
+        display: flex;
+        padding: 0;
+
+
+        [class*='btn']{
+            border-radius: 0;
+        }
+
+    }
+
+    //카드 닫기
+    [class*='close_x']{position: absolute;z-index: 2;top: 16px;right: 16px;cursor: pointer;}
+
+}
+
+// 서비스
+// 카드 리뉴얼
+.card.service_card{
+
+    width: 100%;
+
+    @include noShadow;
+
+    &.waves-effect img{z-index: initial;}
+
+    .txt_cate{
+        @include Suit_Body_SM_Regular;
+    }
+
+    .txt_ctn{
+        @include Suit_Heading_SM;
+        margin-top: 4px;
+    }
+    
+    &.c01{
+        background-color: #ffecb3;
+
+        .txt_cate{color: #FF6F00;}
+    }
+    &.c02{
+        background-color: #ffcdd2;
+
+        .txt_cate{color: #E54304;}
+    }
+    &.c03{
+        background-color: #dbeafe;
+
+        .txt_cate{color: #1E3A8A;}
+
+    }
+
+    &.c04{
+        background-color: #C8E6C9;
+
+    }
+
+    .title_area{
+        padding: 20px 24px 0;
+    }
+    .om_img_area{
+        line-height: 0;
+        text-align: center;
+        height: 150px;
+    }
+
+    .box_area{
+        padding: 0 16px 16px;
+        
+        .box{
+            padding: 16px;
+            border-radius: 12px;
+            grid-template-columns: 40px 1fr;
+            align-items: center;
+
+            > img{width: 40px;}
+
+        }
+
+    }
+
+}
+
+//카드 - 주문
+.card.service_card_order{
+
+    padding: 24px 24px 32px;
+    
+
+    .txt_cate{
+        color: $--Color-text-Primitive-secondary;
+        @include Suit_Body_SM_Regular;
+        display: inline-block;
+    }
+
+    .txt_ctn{
+        @include Suit_Body_LG_Bold;
+        margin-top: 2px;
+        margin-bottom: 28px;
+    }
+
+    .btn_area{
+
+        .btn_order{
+
+            padding: 8px 12px;
+
+            border-radius: 8px;
+            background: $--Color-bg-success-subtle;
+            color: $--Color-text-success-bold;
+            
+
+            /* Suit/Body/SM/Regular */
+            font-family: var(--font-family-font, Suit);
+            font-size: var(--font-size-400, 16px);
+            font-style: normal;
+            font-weight: 400;
+
+        }
+
+
+    }
+
+    &.backImg_01{
+        background-color: #C8E6C9;
+        background-image: url('../images/10om/money_fund_01.png');
+        background-size: 136px;
+        background-position: calc(100% - 12px) top;
+        background-repeat: no-repeat;
+    }
+
+    &.back_rom_main_01{
+        min-height: 160px;
+        background-image: url('../images/10om/rom_main_01.svg');
+        background-size: 144px;
+        background-position: right bottom;
+        background-repeat: no-repeat;
+    }
+
+    &.back_rom_main_02{
+        min-height: 160px;
+        background-image: url('../images/10om/rom_main_02.svg');
+        background-size: 144px;
+        background-position: right bottom;
+        background-repeat: no-repeat;
+    }
+
+    &.back_rom_main_03{
+        min-height: 160px;
+        background-image: url('../images/10om/rom_main_03.svg');
+        background-size: 144px;
+        background-position: right bottom;
+        background-repeat: no-repeat;
+    }
+
+    &.back_rom_main_04{
+        min-height: 160px;
+        background-image: url('../images/10om/rom_main_04.svg');
+        background-size: 144px;
+        background-position: right bottom;
+        background-repeat: no-repeat;
+    }
+
+    &.back_rom_main_05{
+        min-height: 160px;
+        background-image: url('../images/10om/rom_main_05.svg');
+        background-size: 144px;
+        background-position: right bottom;
+        background-repeat: no-repeat;
+    }
+
+}
+
+
+
+// 복지용구 이용현황 swipe 아이콘
+.wefare_icon{
+    background-color: #fff;
+    width: 68px;height: 68px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+}
+
+//복지용구 이용현황
+.welfase_step_area{
+    position: relative;
+    counter-reset: step;
+
+    &::after{
+        content: '';
+        position: absolute;
+        display: block;
+        width: 1px;
+        height: calc(100% - 36px);
+        top:12px;
+        left:12px;
+        border-left: 1px dashed #bdbdbd;
+        z-index: 1;
+    }
+
+
+    li{
+        display: grid;
+        align-items: center;
+        grid-template-columns: 36px 1fr;
+        color: $--Color-text-Primitive-secondary;
+        @include Suit_Body_LG_SemiBold ;
+        margin-bottom: 24px;
+        position: relative;
+
+        &::before{
+            content: counter(step);
+            counter-increment: step;
+        
+            position: relative;
+        
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 24px;
+            height: 24px;
+            background-color: #000;
+            color:#fff;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 700;
+            z-index: 2;
+        }
+
+
+
+
+        &:last-child{
+            
+
+            &::after{
+                content: inherit;
+            }
+    
+
+        }
+        
+        &.check_ok{
+
+            &::before{
+                content: '';
+                background: #15803D url('../images/18icon/chk01_white02.svg') no-repeat center center;
+                background-size: 14px;
+            }
+        }
+
+    }
+
+
+    //번호 세로상단 정렬
+    &.top_start{
+
+        li{
+            align-items:start;
+
+            &::before{
+                top:3px;
+            }
+            
+        }
+
+    }
+
+
+    //작은사이즈
+    &.s02{
+
+        &::after{
+            content: '';
+            height: calc(100% - 20px);
+            top:10px;
+            left:10px;
+        }
+
+
+        li{
+            grid-template-columns: 28px 1fr;
+            @include Suit_Body_SM_Regular ;
+            margin-bottom: 12px;
+    
+            &::before{
+            
+                position: relative;
+                width: 20px;
+                height: 20px;
+                font-size: 12px;
+
+            }
+
+
+            &:last-child{
+                margin: 0;
+            }
+        }
+    }
+
+
+    &.no_line{
+
+        &::after{
+            border: none;
+        }
+
+    }
+
+    //aos 적용시 z-index 적용안되는 관계로 새로 클래스 생성
+    .line{
+        position: absolute;
+        display: block;
+        width: 1px;
+        height: calc(100% - 36px);
+        top:12px;
+        left:12px;
+        border-left: 1px dashed #bdbdbd;
+    }
+
+
+
+}
+
+//개별 welfase_step_area
+.welfase_step_num{
+    position: relative;
+    @include Suit_Body_LG_Bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &::before{
+        content: '1';
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 24px;
+        height: 24px;
+        background-color: #000;
+        color:#fff;
+        border-radius: 50px;
+        font-size: 15px;
+        font-weight: 700;
+        z-index: 2;
+
+    }
+
+    //&.num1 ~ &.num9
+    @for $i from 1 through 9{
+        &.num#{$i}{
+            &::before{content: '#{$i}';}
+        }
+    }
+
+
+}
+
+
+
+.card.walfare_card{background: linear-gradient(102deg, #FEE3BE 0%, #FFF5E6 36.69%, #FFEBEE 98.86%);
+    @include noShadow;
+}
+
+.walfare_slide{
+    white-space:nowrap;overflow-y: hidden; overflow-x: auto;font-size: 0;
+    padding: 0 14px;
+
+    //스크롤바 숨김처리
+    &::-webkit-scrollbar {
+        display: none; 
+    }
+
+    .ctn{
+        display: inline-block;
+        border-radius: 12px;
+        background: #fff;
+        padding: 8px 12px;
+        margin-left: 8px;
+        min-width: 100px;
+
+        .img_area img{
+            width: 32px;
+            height: 32px;
+        }
+        .title{
+            margin-top: 4px;
+            @include Suit_Body_SM_Regular;
+        }
+        .num{
+            @include Suit_Body_SM_Bold;
+        }
+
+
+        &:first-child{margin-left: 0;}
+        
+    }
+
+}
+
+//복지용구 선택
+.sel_welfare_area{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    .sel_box{
+        flex: 1 1 40%;
+        border-radius: 8px;
+        border: 1px solid $--Color-border-secondary;
+        background: $--Color-bg-teritiary;
+        
+        text-align: center;
+        padding:10px 12px 16px;
+
+
+        &.active{
+            border: 2px solid $--Color-border-Primitive-primary-press;
+            background: $--Color-bg-Primitive-selected;
+        }
+
+        > img{width: 58px;height: 58px;}
+
+        .title{
+            margin-top: 10px;
+            @include Suit_Body_SM_Regular;
+        }
+
+
+    }
+
+    > .empty{
+        flex: 1 1 40%;
+        border: none;
+        background: transparent;
+    }
+
+    
+
+}
+
+
+
+
+
+
+
+// box_om_wel_list 참고
+.box_list_area{
+
+    .box_om_wel_list.title{
+        gap: 20px;
+        padding: 24px 0;
+        border-bottom: 1px solid #f5f5f5;
+        border-radius: 0;
+    
+        &:last-child{
+            border-bottom: none;
+        }
+    }
+
+    .box_om_wel_list + .box_om_wel_list{margin: 0;}
+
+    
+}
+
+
+
+
+//공지사항
+.card.notice .card-content{padding: 16px 20px;background-color: #FFF5E6;}
+.notice_dl{display: flex;align-items: center;gap:8px;}
+.notice_dl dt{
+    flex-shrink: 0;
+    color: $--Color-text-primary;
+    @include Suit_Body_SM_Bold;
+
+
+}
+.notice_dl dd{
+    margin: 0;
+
+    color: $--Color-text-primary;
+    @include Suit_Body_SM_Regular;
+    
+    span{
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+    
+    }
+    
+}
+
+//드롭다운메뉴
+.top_dropdown_area{display: flex;align-items: center;position: relative;}
+.top_dropdown_btn{display: inline-block;width:24px;height:24px;
+    margin-left: 2px;
+    background: url('../images/04icon/circle_down.svg') no-repeat center center;background-size: 100%;transition: 0.3s all;
+}
+.top_dropdown_btn.active{transform:rotate(180deg);}
+
+    //현재 안씀
+    .top_dropdown_menu{position: absolute;top:30px;display: none;}
+    .top_dropdown_menu li a{color:$--Color-text-primary;display: block;width: 100px; background-color: aqua;}
+
+//어르신 슬라이드
+.service_img_area{
+    height: 180px;
+    background-color: #ddd;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+
+
+    &.om_01{
+        background-color: $--Color-bg-info-subtle;
+        background-image: url('../images/10om/om_01.svg');
+    }
+    &.om_02{
+        background-color: $--Color-bg-Primitive-selected;
+        background-image: url('../images/10om/om_02.svg');
+    }
+    &.om_03{
+        background-color: $--Color-bg-danger-subtle;
+        background-image: url('../images/10om/om_03.svg');
+    }
+
+    .title{
+        position: absolute;top:16px;left:16px;
+        display: inline-block;padding: 2px 8px;
+        background: rgba(51, 51, 51, 0.70);border-radius: 50px;
+        color: #fff;
+        @include Suit_Caption_XS;
+    }
+
+    &.card-content{padding: 20px;}
+
+}
+
+
+
+
+//어르신 선택 아이콘 꽃
+//상단 broad_area 참조
+.broad_area.om_select li{
+    padding: 8px;margin-top: 4px;
+}
+
+.img_flower{
+    border-radius: 50%;
+    border: 0.667px solid #e0e0e0;
+    background: $--Color-bg-Primitive-secondary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:48px;
+    height: 48px;; 
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 32px;
+
+    &.fl_01{
+        background-image: url('../images/07flower/fl_01.svg');
+    }
+    &.fl_02{
+        background-image: url('../images/07flower/fl_02.svg');
+    }
+    &.fl_03{
+        background-image: url('../images/07flower/fl_03.svg');
+    }
+    &.fl_04{
+        background-image: url('../images/07flower/fl_04.svg');
+    }
+
+    & + span{
+        margin-left: 8px;
+    }
+
+
+}
+ 
+//추가 등록하기
+.om_add{padding: 8px;color:$--Color-text-Primitive-secondary;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+
+    
+    
+}
+
+//태그
+.tag_area{
+    margin-top: 4px;
+
+    .tag{display: inline-block;
+        color: $--Color-text-secondary;
+        @include Suit_Body_SS_Regular; 
+
+        &::before{
+
+            content: '#';
+
+        }
+    }
+
+    .tag:nth-child(2n){margin-left: 4px;}
+
+}
+
+//간편 테스트
+//
+.box{background-color: #fff;padding:32px 20px;
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    align-items: start;
+    gap: 12px;
+
+    //박스 연속시 2번째부터 간격조정
+    + .box{margin-top: 16px;}
+
+    //이미지 사이즈 56*56인 경우
+    &.w56{
+        grid-template-columns: 56px 1fr;
+        
+        .img_area{
+            width:56px;
+            height:56px;
+    
+        }
+
+
+    }
+
+
+    .img_area{
+        width:48px;
+        height: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: $--Color-bg-Primitive-selected;
+
+        + .ctn_area{
+
+            p{margin-top: 8px;}
+
+        }
+
+
+    }
+
+    &.bder_style01{
+        padding: 16px;
+        background-color: #fafafa !important;
+        border: 1px solid #eee;
+        border-radius: 16px;
+
+    }
+
+}
+
+
+
+.box_sub01{background-color: #fff;padding:14px 0;
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    align-items: start;
+    gap: 12px;
+
+    &:first-child{
+        padding:12px 0 14px;
+    }
+
+
+    .img_area{
+        width:48px;
+        height: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+}
+
+
+
+
+//grid없는 박스
+.box_normal{background-color: #fff;padding:32px 20px;}
+
+.box_normal.gray{
+    border-radius: 8px;
+    background: $--Color-bg-teritiary;
+    padding: 16px 20px;
+}
+
+[class*='box'].noti_dot:after{
+    position: absolute;
+    content: '';
+    display: inline-block;
+    top: 20px;
+    right: 20px;
+    width: 6px;height: 6px;
+    border-radius: 50%;
+    background-color: $--Color-text-danger;
+}
+
+//progress step
+.progress01{
+    appearance: none;width:100%;
+
+    &::-webkit-progress-bar{
+        overflow: hidden;
+        height: 16px;
+        border-radius: 20px;
+        background-color: $--Color-bg-teritiary;
+    }
+    &::-webkit-progress-value{
+        border-radius: 20px;
+        height: 16px;
+        width: 48px;
+        background: linear-gradient(146deg, #FF8120 21.95%, #E54304 82.84%);
+    }
+
+    &.thin{
+
+        &::-webkit-progress-bar{
+            height: 4px;
+            background-color: $--Color-bg-Primitive-secondary;
+        }
+        &::-webkit-progress-value{
+            height: 4px;
+            width: 48px;
+            background: linear-gradient(146deg, #FF8120 21.95%, #E54304 82.84%);
+        }
+
+    }
+
+}
+
+.progress_num{
+    text-align: right;color:$--Color-text-secondary; @include Suit_Body_SM_Regular;
+
+    .step{
+        color: $--Color-text-primary; @include Suit_Body_SM_SemiBold;
+    }
+
+}
+
+
+.progress{
+
+    &.default{
+        height: 16px;
+        background-color: $--Color-bg-Primitive-secondary;
+        border-radius: 100px;
+        margin: 0;
+
+        .progress-bar{
+            height: 16px;
+            border-radius: 100px;
+            background: linear-gradient(146deg, #FF8120 21.95%, #E54304 82.84%);        
+        }
+
+    }
+
+    &.thin{
+        height: 4px;
+        background-color: $--Color-bg-Primitive-secondary;
+        border-radius: 100px;
+        margin: 0;
+        
+        .progress-bar{
+            height: 4px;
+            border-radius: 100px;
+            background: linear-gradient(146deg, #FF8120 21.95%, #E54304 82.84%);        
+        }
+    
+    }
+
+    &.l01{
+        height: 20px;
+        background-color: $--Color-bg-Primitive-secondary;
+        border-radius: 100px;
+        margin: 0;
+
+        .progress-bar{
+            position: relative;
+            height: 20px;
+            border-radius: 100px;
+            background: linear-gradient(90deg, #FF8120 0%, #FFAF49 100%);
+        }
+    }
+
+    &.progressBarIcon{
+        overflow: visible;
+
+        //아이콘 사이즈
+        $pgBarW : 40px;
+        $pgBarH : 40px;
+
+        .progress-bar{
+            &::after{
+                content: '';
+                display: block;
+                position: absolute;
+                top: calc(50% - #{$pgBarW} / 2);right: calc(0% - #{$pgBarW} / 2);
+                width: $pgBarW ;height: $pgBarW;
+
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-image: url('../images/23recu/icon_pgBar01_default.png');
+                background-size: cover;
+
+            }
+        }
+
+        &._no{
+
+            .progress-bar{
+                &::after{
+                    background-image: url('../images/23recu/icon_pgBar01_no.png');
+                }
+
+            }
+        }
+    }
+
+}
+
+
+//연락처 수정
+//그레이 박스
+.card-panel.default{
+    padding: 12px 8px;
+    margin: 0;
+    border-radius: 8px;
+    background: $--Color-bg-teritiary;
+
+    color: $--Color-text-secondary;
+    @include flex_center;
+    @include Suit_Body_SM_Regular;
+
+}
+
+
+//복지용구 서비스 선택
+.wel_select_area{display: grid;grid-template-columns: repeat(3, 1fr);justify-content: space-between; align-items:start;
+
+    .waves-effect img{z-index: initial;}
+
+    li{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+        border-radius: 12px;
+        gap:8px;
+
+        &:nth-child(n+4){
+
+            margin-top: 32px;
+
+        }
+        
+
+        .img_area{
+            position: relative;
+            overflow: hidden;
+            width:90px;height: 90px;
+
+            border-radius: 50%;
+            background: $--Color-bg-teritiary;
+            
+            @include flex_center;
+
+
+            & + .txt{
+                @include Suit_Body_SM_Regular;
+                text-align: center;
+            }
+        }
+
+        .img_area img{
+            transform: scale(1);
+            transition: 0.3s ease-in;
+        }
+
+        &.active .img_area img{
+            transform: scale(1.2);
+        }
+
+
+        .img_area::before{
+            content: '';
+            display: flex;
+            position: absolute;
+            z-index: 1;
+            width:100%;height: 100%;
+            top:0;left:0;
+            border-radius: 60%;
+            background-color: #333333c5;
+            background-image: url('../images/18icon/chk01_white.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 36px;
+            transform: scale(0.01);
+            opacity: 0;
+            transition: 0.2s ease-in;
+            
+        }
+
+        &.active .img_area::before{
+            transform: scale(1);
+            opacity: 1;
+
+        }
+
+
+
+    }
+}
+
+
+
+//복지용구 전체보기
+.wel_total_area{display: grid;grid-template-columns: repeat(3, 1fr);justify-content: space-between; align-items:start;
+
+    
+
+    > *{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+        gap:4px;
+        padding:20px 0 12px;
+        position: relative; overflow: hidden;
+
+
+        .tr_a{display: block;width:100%;height:100%;position: absolute;top: 0;left: 0; z-index: 10;
+        
+
+        }
+
+
+        
+
+        .img_area{
+            position: relative;
+            overflow: hidden;
+            width:96px;height: 96px;
+
+            border-radius: 8px;
+            background: $--Color-bg-teritiary;
+            
+            @include flex_center;
+
+
+            & + .txt{
+                color: $--Color-text-secondary;
+                @include Suit_Body_SM_Regular;
+                text-align: center;
+                width:96px;
+                height: 48px;
+
+            }
+        }
+
+        .img_area img{
+            width: 68px;
+        }
+
+
+
+    }
+}
+
+
+
+
+
+
+//돌봄시간 설정 선택 박스
+.care_time_area{
+    padding: 20px;
+    border:1px solid transparent;
+    display: grid;grid-template-columns: 1fr 120px;
+    transition: 0.3s all;
+
+    img{width:100%;}
+
+    .chk01_2:checked+label{
+        color: $--Color-text-Primitive-primary-press;
+        font-size: 20px !important;
+        font-weight: 700 !important;
+    }
+
+
+    &.active{background:#fff;}
+
+    & + .care_time_area{margin-top: 16px;}
+
+}
+
+//어르신
+/////어르신 등록 슬라이드
+.om_reg_area{margin:0 -20px;}
+.om_reg_area ul{
+    padding:0 20px; width:100%;white-space:nowrap;overflow-y: hidden; overflow-x: auto;font-size: 0;
+
+        //스크롤바 숨김처리
+        &::-webkit-scrollbar {
+            display: none; 
+        }
+
+}
+.om_reg_area ul li{
+
+    display: inline-block;
+    padding:8px 16px 8px 44px;
+    min-width: 102px;
+    
+    height: 40px;
+    border-radius: 50px;
+    border: 1px solid $--Color-border-Primitive-secondary;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: 16px center;
+    background-size: 24px;
+    
+    @include Suit_Body_SM_Regular;
+
+    &+li{
+        margin-left: 8px;
+    }
+
+    &.fl_01{
+        background-image: url('../images/07flower/fl_01_default.svg');
+    }
+    &.fl_02{
+        background-image: url('../images/07flower/fl_02_default.svg');
+    }
+    &.fl_03{
+        background-image: url('../images/07flower/fl_03_default.svg');
+    }
+    &.fl_04{
+        background-image: url('../images/07flower/fl_04_default.svg');
+    }
+    
+    &.reg_btn{
+        padding:8px 16px 8px 36px;
+        background-position: 8px center;
+        background-image: url('../images/18icon/chevron-add_gray.svg');
+    }
+
+
+    &.active{
+        border: 1px solid $--Color-border-Primitive-primary-press;
+        background-color: $--Color-bg-Primitive-primary;
+        
+
+        color: #fff;
+        @include Suit_Body_SM_SemiBold;
+
+        &.fl_01{
+            background-image: url('../images/07flower/fl_01.svg');
+        }
+        &.fl_02{
+            background-image: url('../images/07flower/fl_02.svg');
+        }
+        &.fl_03{
+            background-image: url('../images/07flower/fl_03.svg');
+        }
+        &.fl_04{
+            background-image: url('../images/07flower/fl_04.svg');
+        }
+
+    }
+
+}
+
+//어르신 프로필정보
+.box_om_profile{
+    display: flex;
+    align-items: center;
+    gap:12px;
+    background-image: url('../images/04icon/chevron-right.svg');
+    background-position: calc(100% - 20px) center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+
+    //어르신 정보수정 프로필
+    &.info_mdfy{
+        display: grid;
+        grid-template-columns: 64px 1fr auto;
+        background-image: none;
+        }
+    
+
+    .img_area{
+        overflow: hidden;
+        width:64px;
+        height: 64px;
+        border-radius: 16px;
+        background-color: $--Color-bg-Primitive-selected-press;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 48px;
+
+        display: flex;
+        align-items: end;
+
+        &.fl_01{
+            background-image: url('../images/07flower/fl_01.svg');
+        }
+        &.fl_02{
+            background-image: url('../images/07flower/fl_02.svg');
+        }
+        &.fl_03{
+            background-image: url('../images/07flower/fl_03.svg');
+        }
+        &.fl_04{
+            background-image: url('../images/07flower/fl_04.svg');
+        }
+        
+        .txt{
+            width:100%;
+            height: 24px;
+            background-color: rgba(238, 96, 2, 0.6);
+            color:#fff;
+            @include Suit_Body_SS_Bold;
+            @include flex_center;
+        }
+        
+    }
+
+    //아이콘박스 사이즈 52px
+    &.info_mdfy.size_52{
+
+        grid-template-columns: 52px 1fr auto;
+    
+        & .img_area{
+            width:52px;
+            height: 52px;
+            border-radius: 13px;
+            background-size: 38px;
+
+            .txt{
+                height: 20px;
+                font-size: 12px;
+                font-weight: 700;
+                line-height: 17.063px; 
+            }
+
+        }        
+
+    }
+
+}
+
+
+
+//어르신 상담내역 상태값 박스
+.box_sub02{background-color: #fff;padding:0;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    align-items: center;
+    gap: 12px;
+
+
+    .img_area{
+        width:40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $--Color-bg-Primitive-secondary;
+        border-radius: 50%;
+
+
+    }
+
+}
+
+
+//step
+.step_area{
+
+    .step_txt_area{
+        display: flex;justify-content: space-between;
+    
+        li{
+            color: $--Color-text-teritiary;
+            @include Suit_Caption_XS;
+    
+            &.active{
+                color: $--Color-text-Primitive-selected;
+                @include Suit_Caption_XS;
+            }
+    
+        }
+    
+    }
+    
+    .step_graph_area{
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        border-radius: 50px;
+        height:8px;
+        background-color: $--Color-bg-teritiary;
+        overflow: hidden;
+        margin-top: 8px;
+    
+    
+        .item{
+            position: relative;
+            display: flex;
+            z-index: 3;
+    
+            &:after{
+                position: relative;
+                content: '';
+                width:4px;height:4px;
+                border-radius: 50%;
+                background-color: $--Color-bg-Primitive-primary;
+                top:2px;
+                }
+    
+    
+            &:first-child{left:4px;}
+            &:last-child{right:4px;}
+    
+            &.active{
+                z-index: 1;
+            }
+            &.active:before{
+    
+                position: absolute;
+                top:0;
+                right:-4px;
+                content: '';
+                width:100vw;
+                height:8px;
+                background-color: $--Color-bg-Primitive-selected-press;
+                border-radius: 30px;
+               
+            }
+    
+        }
+    
+    
+    }
+
+
+}
+
+.step_area_vertical{
+    width: 100%;
+    @include disInBlock;
+
+
+    .coun_cancel{
+        padding: 8px 0 8px 24px;
+        display: grid;
+        grid-template-columns: 98px 1fr;
+
+    }
+
+    .step_txt_area{
+
+        position: relative;
+
+        padding-left: 24px;
+        @include Suit_Body_MD_Regular;
+
+        .item{
+            padding: 8px 0;
+            display: grid;
+            grid-template-columns: 98px 1fr;
+
+
+        }
+
+        span.title{
+            position: relative;
+            display: inline-block;
+
+            color: $--Color-text-disabled;
+            @include Suit_Body_MD_Regular;
+            display: inline-block;
+
+            &::before{
+
+                content: '';
+                position: absolute;
+                top:12px;
+                left:-22px;
+                display: inline-block;
+                background-color: $--Color-bg-Primitive-primary ;
+                border-radius: 40px;
+                width:4px;
+                height: 4px;
+                z-index: 3;
+
+            }
+            
+
+
+        }
+
+
+        .active span.title{
+
+            color: $--Color-text-primary;
+            @include Suit_Body_MD_Bold;
+
+        }
+
+        .past span.title{
+
+            color: $--Color-text-primary;
+            @include Suit_Body_MD_Regular;
+
+        }
+
+        //취소될때
+        .active.cancel span.title, .past.cancel span.title{
+
+            color: $--Color-text-disabled;
+            @include Suit_Body_MD_Strike-through;
+
+        }
+
+            
+        .vertical_bar{
+
+            position: absolute; 
+            content: '';
+            top:16px;
+            left:0;
+            display: inline-block;
+            width:8px;
+            border-radius: 40px;
+            background: $--Color-bg-teritiary;
+            overflow: hidden;
+
+            .bar_active{
+
+                position: absolute;
+                content: '';
+                top:0;
+                left:0;
+                display: inline-block;
+                width:8px;
+                padding-bottom: 10px;
+                
+                border-radius: 0 0 40px 40px;
+                background-color: $--Color-bg-Primitive-selected-press;
+
+            }
+
+        }
+
+
+
+    }
+
+
+}
+
+
+
+//관심복지용구 슬라이드
+.wel_select_slide{
+
+    white-space:nowrap;overflow-y: hidden; overflow-x: auto;font-size: 0;
+    padding: 0 14px;
+
+    .waves-effect img{z-index: initial;}
+
+    //스크롤바 숨김처리
+    &::-webkit-scrollbar {
+        display: none; 
+    }
+
+    .ctn{
+        
+        padding: 0 6px;
+        
+    }
+
+    .img_area{
+        width: 80px;
+        height: 80px;
+        @include flex_center;
+
+        border-radius:8px;
+        background: $--Color-bg-teritiary;
+
+            img{
+                width:58px;height: 58px;
+            }
+
+
+        & + .txt{
+            display: block;
+            height: 42px;
+            margin-top: 4px;
+        
+            color: $--Color-text-secondary;
+            text-align: center;
+            @include Suit_Body_SS_Regular;
+        }
+
+    }
+
+}
+
+
+//관심복지용구 대상자 구분
+.grid_walkerSubject{display: grid; grid-template-columns: 1fr 50%; align-items: center;margin-top: 16px;}
+.grid_walkerSubject:first-child{margin: 0;}
+
+
+//인정등급 타이틀 (초록색체크아이콘)
+.list_check{
+    background: url('../images/18icon/list_check.png') no-repeat left 3px;
+    background-size: 20px;
+    padding-left: 28px;
+
+    color: var(--Color-text-primary, #1A1A1A);
+
+    /* Suit/Body/MD/Bold */
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 27px;
+    letter-spacing: -0.27px;
+}
+
+//손가락 아이콘 타이틀
+.icon_finger01{
+    background: url('../images/18icon/icon_finger01.png') no-repeat left center;
+    background-size: 24px;
+    padding-left: 32px;
+
+    /* Suit/Body/LG/Bold */
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 30px;
+    letter-spacing: -0.3px;
+
+}
+//경고 아이콘 타이틀
+.icon_caution{
+    background: url('../images/18icon/icon_caution.png') no-repeat left center;
+    background-size: 24px;
+    padding-left: 32px;
+
+    /* Suit/Body/LG/Bold */
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 30px;
+    letter-spacing: -0.3px;
+
+}
+
+
+
+
+//장기요양기관 상담목록 - 상담진행중, 상담완료
+.box_coun_list{
+    display: grid;
+    grid-template-columns: 68px 1fr;
+    align-items: center;
+    gap:16px;
+    background-image: url('../images/18icon/chevron-right_thin.svg');
+    background-position: calc(100% - 12px) center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+
+
+    //어르신 서브메인
+    &._om_box{
+        background-image: none;
+
+
+    }
+
+    .img_area{
+        overflow: hidden;
+        width:68px;
+        height: 68px;
+        border-radius: 50%;
+        
+        background-repeat: no-repeat; 
+        background-position: center;
+        background-size: 60px;
+        opacity: 0.85;
+
+        &.trans_01{
+            background-image: url('../images/06trans/trans_01.svg');
+        }
+
+        &.trans_02{
+            background-image: url('../images/06trans/trans_02.svg');
+        }
+
+
+
+        &.trans_s01{
+            background-image: url('../images/06trans/trans_s01.svg');
+        }
+
+        &.trans_s02{
+            background-image: url('../images/06trans/trans_s02.svg');
+        }
+
+        &.trans_s03{
+            background-image: url('../images/06trans/trans_s03.svg');
+        }
+
+
+
+        &.ing{
+            background-color: $--Color-bg-brand-sub-bold;
+            
+        }
+        &.ok{
+            background-color: $--Color-bg-inverse-bold;
+        }
+
+
+        & + div{padding-right: 14px;/*20px;*/}
+        
+        .txt{
+            width:100%;
+            height: 100%;
+            color:#fff;
+            text-align: center;
+            @include flex_center;
+            @include text_shadow;
+        }
+        
+    }
+
+
+    &.s02{
+        //image 48px
+        grid-template-columns: 48px 1fr;
+
+        .img_area{
+            overflow: hidden;
+            width:48px;
+            height: 48px;
+            border-radius: 50%;
+            background-size: 28px;
+            background-repeat: no-repeat; 
+            background-position: center;
+    
+            &.trans_03{
+                background-image: url('../images/06trans/trans_03.svg');
+            }
+
+            &.trans_04{
+                background-image: url('../images/06trans/trans_04.svg');
+                background-size: 24px;
+            }
+
+            &.trans_05{
+                background-image: url('../images/06trans/trans_05.svg');
+                background-size: 32px;
+            }
+
+            &.trans_06{
+                background-image: url('../images/06trans/trans_06.svg');
+                background-size: 24px;
+            }
+    
+            &.ing{
+                background-color: $--Color-bg-brand-sub-bold;
+            }
+            &.ok{
+                background-color: $--Color-bg-inverse-bold;
+            }
+            
+        }
+    
+
+    }
+
+    .order_img_area{
+        overflow: hidden;
+        width:68px;
+        height: 68px;
+        border-radius: 8px;
+        border: 1px solid #d9d9d9;
+        padding: 5px;
+        
+        background-color: #fff;
+        background-repeat: no-repeat; 
+        background-position: center;
+        background-size: 60px;
+        opacity: 0.85;
+
+        img{
+            width: 100%;
+        }
+    }
+
+}
+
+
+// 장기요양기관 작은 아이콘 리스트
+.order_imgList{
+    display: flex;
+    align-items: start;
+    gap:4px;
+
+    .img_area{
+        @include flex_center;
+        background-color: #eee;
+        border-radius: 999px;
+        width: 20px;height: 20px;
+        flex-shrink: 0;
+        margin-top: 3px;
+
+        //주황집 아이콘
+        &.bp_40{
+            background-image: url('../images/08etc/bp_40.png');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 28px;
+        }
+
+    }
+
+}
+
+
+
+
+//상담내역
+.box_history_area{
+    padding: 24px 20px;
+    background: linear-gradient(146deg, #FF8120 21.95%, #E54304 82.84%);
+}
+//상담내역 _ 회색 그라데이션
+.box_history_area.gray{
+    padding: 24px 20px;
+    background: linear-gradient(146deg, #999 21.95%, #555 82.84%);
+}
+
+
+//상담취소
+.textLengthWrap{
+    position: absolute;left: 12px;bottom: 12px;width:calc(100% - 24px);
+    border-top: 1px solid #eee;
+    padding-top: 6px;
+    text-align: right;
+
+    color: $--Color-text-teritiary;
+    @include Suit_Body_SS_Regular;
+}
+
+
+
+
+
+
+
+//어르신 길잡이
+.om_guide_card{
+    width: 100%;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 240px;
+
+    &.backImg_01{
+        background-size: 95px;
+        background-image: url('../images/03tool/tool03_00.png');
+    }
+ 
+    &.slide_01_bg{
+        background-image: url('../images/03tool/slide_01_bg.png');
+    }
+    &.slide_02_bg{
+        background-image: url('../images/03tool/slide_02_bg.png');
+    }
+    &.slide_03_bg{
+        background-image: url('../images/03tool/slide_03_bg.png');
+    }
+
+
+}
+
+
+//어르신복지
+.intro_om_wel_list{padding:24px 20px; margin: -20px -20px 0;
+    height: 226px;
+
+    background-color: #FFF5E6;
+    background-image: url('../images/09people/pp_06.svg');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+
+}
+
+//어르신 복지목록
+.box_om_wel_list{
+
+    padding:12px 24px 12px 16px;
+    background-color: #fff;
+    background-image: url('../images/18icon/chevron-right02_thin.svg');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 3px) center;
+    @include box_shadow;
+
+    border-radius: 16px;
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    align-items: center;
+    gap: 12px;
+
+    .img_area{
+        width: 48px;
+        height: 48px;
+        overflow: hidden;
+        border-radius: 50%;
+        border: 1px solid $--Color-border-teritiary;
+        background: $--Color-bg-secondary;
+        @include flex_center;
+        
+
+        img{
+            width: 40px;height: 40px;
+            z-index: initial; //Use wave-effect
+        }
+
+    }
+
+     
+    &.title{
+        padding: 0;
+        box-shadow: none;
+        background-image: none;
+        background-color: transparent;
+    }
+
+    //박스 연속시 2번째부터 간격조정 
+    + .box_om_wel_list{margin-top: 16px;}
+
+}
+
+
+/////고객센터
+.box_custom_service{background-color: #fff;padding:24px 20px;
+    display: grid;
+    grid-template-columns: 1fr 54px;
+    align-items: center;
+    border-radius: 16px;
+    gap: 8px;
+
+
+    .img_area{
+        width:54px;
+        height: 54px;
+        @include flex_center;
+
+        img{
+            width: 100%;height: 100%;
+        }
+
+    }
+
+    &+.box_custom_service{margin-top: 16px;}
+
+}
+
+/////전체메뉴
+.tg_menu_list{
+    @include Suit_Body_SM_SemiBold;
+    display: inline-flex;
+    align-items: center;
+    gap:2px;
+
+    .icon_arrow{
+        display: inline-block;
+        width:20px;
+        height:20px;
+        background-image: url('../images/04icon/chevron-up.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 100%;
+        transform: rotateX(180deg);
+        transition: 0.3s all;
+
+    }
+
+    &.active .icon_arrow{
+        transform: rotateX(0);
+    }
+}
+//드롭다운
+.tg_menu_list_ctn{display: none;}
+
+//이용약관 버튼
+.bread_link{
+    display: flex;
+
+    a{
+        color: $--Color-text-secondary;
+        @include Suit_Body_SS_Regular;
+
+    }
+
+    li+li a::before{
+        content: "|";
+        display: inline-block;
+        font-weight: 400;
+        margin:0 8px;
+    }
+
+}
+
+//공유하기 추천하기 버튼
+.share_icon_area{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 16px 0;
+
+    > *{
+        flex-basis: 100%;
+        text-align: center;
+        padding: 8px 0;
+
+        .txt{
+            display: inline-block;
+            margin-top: 8px;
+        }
+    }
+
+
+}
+
+//시도 시군구 전체모달 
+.history_area{
+    height: calc(100% - 80px);
+    overflow-y: auto;
+}
+
+//이용규약등 외부 iframe
+// .modal.fullscreen.terms.view .history_area iframe.termsView{
+//     border: 0;
+// }
+.history_area iframe.termsView{
+    border: 0;
+}
+
+
+//배너영역 슬라이드
+    .banner_card{
+        width: 100%;
+        background: $--Color-bg-Primitive-secondary;
+        box-shadow: none;
+
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-size: 98px;
+
+
+        .txt_area{
+            padding-right: 70px;
+        }
+
+        &.slide_01_bg{
+            background-image: url('../images/19banner/img_01.png');
+        }
+        &.slide_02_bg{
+            background-image: url('../images/19banner/img_02.png');
+        }
+        &.slide_03_bg{
+            background-image: url('../images/19banner/img_03.png');
+        }
+        
+    }
+
+
+
+
+
+//600px 이상
+@media only screen and (min-width: 600px){
+
+
+    body{
+        background-color: #fff;
+        &.back_gray{
+            background-color: #fff;
+        }
+    }
+    .wrapper{
+        width:600px;
+        margin: 0 auto;
+        }
+
+    nav.top{
+        width:600px;
+        left:calc(50% - 300px);
+    }
+
+    // 지역/필터영역
+    .addr_filter_area{
+        width:600px !important;
+        left:calc(50% - 300px) !important;
+    }
+    
+    .page-footer{
+        width:600px;
+        left:calc(50% - 300px);
+    }
+
+
+    .modal {
+        width:540px;
+    }
+    .modal.fullscreen {
+        width:600px;
+    }
+
+    .modal.bottom-sheet{
+        width:600px;
+        left:calc(50% - 300px);
+    }
+
+    .modal_cart_area{
+        max-width:600px;
+        left:calc(50% - 300px);
+    }
+
+
+
+}
+
+//놓친 복지용구 받기
+.conv_price{
+    @include Suit_Heading_XL;
+
+    display: inline-block;
+    padding-right: 28px;
+    background-image: url('../images/04icon/icon_arrow_down.svg');
+    background-position: right center;
+    background-repeat: no-repeat;
+
+}
+
+
+//놓친 복지용구 상품목록
+.orderListItem{
+
+    padding: 32px 20px;    
+
+
+    .title{
+        display: flex;justify-content: space-between;align-items: center;
+
+        margin-bottom: 20px;
+    
+        .titleName{
+            @include Suit_Body_LG_Bold;
+        }
+        .numBuy{
+            @include Suit_Body_SM_SemiBold;
+            color: $--Color-text-Primitive-primary-press;
+        }
+    
+    }
+
+    .itemList{
+        display: flex;
+        flex-wrap: wrap;
+        gap:32px 12px;
+
+        .item{
+            width:calc(50% - 6px);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            
+
+            .itemImgArea{
+                line-height: 0;
+                border:1px solid #eee;
+                border-radius: 12px;
+                overflow: hidden;
+
+                position: relative;
+
+                @include flex_center;
+
+                &:before{
+                    position: absolute;
+                    display: block;
+                    content: '';
+                    top:0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0,0,0,0.05);
+                }
+
+                .iconCart{
+                    position: absolute;
+                    right: 8px;
+                    bottom:8px;
+                    width: 40px;
+                    height: 40px;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    border: 1px solid #111;
+                    border-radius: 12px;
+                    background-color: #FFF;
+                    background-image: url("../images/04icon/cart.svg");
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.20);
+                    z-index: 2;
+
+                    &:active{
+
+                        background-color: #eee;
+
+                    }
+
+                }
+
+                img{width: 100%;}
+
+            }
+
+            .ctnArea{
+
+                .itemName{
+                    color: $--Color-text-secondary;
+                    @include Suit_Body_SM_Regular;
+                }
+
+                .sale{
+                    color: $--Color-text-danger;
+                    @include Suit_Body_MD_Regular;
+                }
+
+                .price{
+                    color: $--Color-text-primary;
+                    @include Suit_Body_MD_Bold;
+                }
+     
+
+            }
+
+
+
+        }
+        
+    }
+
+}
+
+
+// 섬네일 없을때 기본 이미지
+.no_Thumb_Img{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.no_Thumb_Img:before{
+    position: absolute;
+    content:'';
+    display: inline-block;
+    background-image: url('/html/page/app/matching/assets/src/images/04icon/img_cart_default.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 36px;
+    height: 36px;
+}
+
+
+//상품뱃지 badge
+.badge_order{
+    padding: 2px 8px;
+
+    display: inline-block;
+
+    border-radius: 4px;
+
+    &.rental{
+
+        color: $--Color-text-Primitive-primary-press;
+        @include Suit_Body_SS_Regular;
+
+        border: 1px solid $--Color-border-danger-subtle;
+        background: $--Color-bg-Primitive-selected;
+    
+
+    }
+
+    &.back_primary{
+        color: #fff;
+        @include Suit_Body_SS_SemiBold;
+        background: $--Color-bg-Primitive-primary;
+    }
+
+    &.back_danger_subtle{
+        color: #C62828;
+        @include Suit_Body_SS_Regular;
+        background: $--Color-bg-danger-subtle;
+    }
+
+    &.back_success_bold{
+        color: #fff;
+        @include Suit_Body_SS_SemiBold;
+        background: $--Color-bg-success-bold;
+    }
+
+    &.back_danger_subtle_fs12{
+        color: #C62828;
+        @include Suit_Caption_XS;
+        background: $--Color-bg-danger-subtle;
+    }
+
+    &.back_gray_subtle_fs12{
+        @include Suit_Caption_XS;
+        background: $--Color-bg-teritiary;
+    }
+
+}
+
+
+//scrollspy 클릭 오류문제
+.scrollspy_btn{position: absolute;width: 100%;height: 100%;top: 0;left: 0;}
+
+//카테고리 고정메뉴
+.orderFlxNav{display: none;
+    position: fixed;
+    width:100%;
+    top: 56px;
+    left: initial;
+    z-index: 101;
+    max-width: 600px;
+    background-color: #fff;
+
+    &.active{display: block;}
+
+    ul.tabs_wd{
+
+        &::-webkit-scrollbar{display: none;}
+
+        position: relative;
+        overflow-x: auto;
+        width: 100%;
+        margin: 0 auto;
+        white-space: nowrap;
+        display: flex;
+        border-bottom: 1px solid #EEE;
+
+        user-select: none;
+
+
+        li{
+
+            a, .wd_btn{
+                position: relative;
+                display: block;
+                background-color: #ffffff;
+                padding: 12px 20px;
+                
+                /* Suit/Body/SM/Regular */
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 24px; /* 150% */
+                letter-spacing: -0.15px;
+
+                &.active{
+                    @include Suit_Body_SM_Bold;
+                    
+                    &::after{
+                        display: block;
+                        content: '';
+                        position: absolute;
+                        bottom:0;
+                        left:0;
+                        width:100%;
+                        height: 2px;
+                        background-color: #111;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+}
+
+//상품상세 스와이프
+.order_detail_Swiper{
+
+    // 썸네일 없을때
+    .no_Thumb_Img{
+        background-color: #f5f5f5;
+    }
+
+    .no_Thumb_Img:before{
+        position: absolute;
+        content:'';
+        display: inline-block;
+        background-image: url('/html/page/app/matching/assets/src/images/04icon/img_cart_default.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 84px;
+        height: 84px;
+    }
+
+}
+
+
+//상품상세 - 옵션선택
+.order_chip{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    li{
+        display: flex;
+        height: 48px;
+        padding: 8px 20px;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 8px;
+        border: 1px solid $--Color-border-Primitive-secondary;
+        background: #FFF;
+        cursor: pointer;
+
+
+        @include Suit_Body_MD_Regular;
+        
+        &.active{
+            border: 1px solid $--Color-border-Primitive-primary-press;
+            background: $--Color-bg-Primitive-selected;
+
+            color: $--Color-text-Primitive-selected;
+        }
+
+    }
+}
+
+//상품상세 - 수량
+.order_quantity{
+
+    display: inline-flex;
+    justify-content: start;
+    border: 1px solid $--Color-border-Primitive-secondary;
+    border-radius: 4px;
+    background: #FFF;
+
+    > *, > input[type=number]:not(.browser-default){
+
+        display: flex;
+        width: 44px;
+        height: 40px;
+        padding: 8px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        text-align: center;
+    }
+
+    .minus{
+        background-image: url('../images/04icon/icon_minus.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        border-right: 1px solid $--Color-border-Primitive-secondary;
+
+        &.disa{
+            background-image: url('../images/04icon/icon_minus_disa.svg');
+        }
+    }
+    .plus{
+        background-image: url('../images/04icon/icon_plus.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        border-left: 1px solid $--Color-border-Primitive-secondary;
+    }
+
+    //작은 사이즈
+    &.small_01{
+
+        > *, > input[type=number]:not(.browser-default){
+
+            width: 34px;
+            height: 34px;
+            padding: 4px;
+            gap: 10px;
+        }
+
+        > input[type=number]:not(.browser-default){
+            @include Suit_Body_SS_SemiBold;
+        }
+
+        .minus, .plus{
+            background-size: 20px;
+        }
+
+    }
+
+
+}
+
+
+//상품상세 - 상품설명
+.order_detail_more{
+    position: relative;
+    overflow: hidden;
+    
+    img{width: 100%;display: block;}
+
+    //더보기 토글버튼
+    .toggle_btn_area{
+        position: absolute;
+        width: 100%;
+        bottom:0;
+        padding: 0 20px 24px;
+        background-color: #fff;
+
+        &::before{z-index: 50;content: '';display: block;position: absolute;top:-80px;left:0; width:100%;height:80px;
+            background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 80%);
+        }
+        //background: linear-gradient(180deg, #ffffff00 10%, #ffffff 84px);
+
+        .evt_arrow{
+            transition: 0.2s all;
+        }
+        
+
+        &.active{
+            position: relative;
+
+            .evt_arrow{transform: rotate(180deg);}
+        }
+    }
+
+
+    &:has(> .toggle_btn_area.active){
+        height:100%;
+    }
+
+    /* 더보기 누르기전 상세이미지 보이는 세로영역 - 해당 페이지에도 따로 적용*/
+    &:has(> .toggle_btn_area){
+        height:500px;
+    }
+
+} 
+
+//상품상세 - 주문목록
+//주문날짜
+.order_detail_date{
+    display: flex;justify-content: space-between;align-items: center;
+    padding: 12px 4px 8px 20px;
+    background-color: #f5f5f5;
+}
+
+//주문내역박스
+.box_order_list{
+    padding: 16px 16px 20px;
+    border-radius: var(--Unit-8, 8px);
+    border: 1px solid #E0E0E0;
+    background: transparent;
+
+    .order_list_db{
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        gap:16px;
+        align-items: start;
+
+        .img_area{
+            line-height: 0;
+            font-size: 0;
+            overflow: hidden;
+            border-radius: 6px;
+            border: 1px solid #EEE;
+            height: 80px;
+            position: relative;
+
+            
+            &:before{
+                position: absolute;
+                display: block;
+                content: '';
+                top:0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.05);
+            }
+
+
+            img{width:100%;}
+
+            // 썸네일 없을때
+            .no_Thumb_Img:before{
+                width: 18px;
+                height: 18px;
+            }
+
+        }
+
+        ul.od_txt li{@include line_clamp_1;}
+    }
+}
+
+
+
+//장바구니
+.modal_cart_area{
+    position: fixed;
+    bottom: 0;
+    width:100%;
+    z-index: 200;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 24px 24px 0 0;
+    box-shadow: 0px -4px 16px 0px rgba(0, 0, 0, 0.12);
+
+
+
+}
+
+//장바구니 전체선택
+.cart_totalChkArea{
+    position: sticky;
+    top:0;
+    left:0;
+
+    width: 100%;
+    max-width: 600px;
+    background: #fff;
+    z-index: 110;
+
+    padding: 12px 20px;
+    display: flex;justify-content: space-between;align-items: center;
+    border-bottom: 1px solid $--Color-border-secondary;
+
+
+}
+
+//장바구니 ,카트
+.cart_obj_area{
+    position: relative;
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap:8px;
+
+    .close_x{position: absolute;top:-2px;right:0;width: 24px;height: 24px;}
+
+    //다음카트부터 상단 라인 구분
+    & ~ .cart_obj_area{
+
+        margin-top: 40px;
+    
+        &::before{
+
+            position: absolute;
+            content: '';
+            display: block;
+            top: -20px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            border-top:1px solid #eee;
+            
+
+        }
+    }
+
+
+}
+
+.cart_obj_item{
+
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap:12px 16px;
+    overflow: hidden;
+
+    .itemImgArea{
+        width: 80px;height: 80px;
+        border:1px solid #eee;
+        border-radius: 5px;
+        overflow: hidden;
+        position: relative;
+
+        &:before{
+            position: absolute;
+            display: block;
+            content: '';
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.05);
+        }
+
+
+        img{
+            display: block;
+            width:100%;
+        }
+
+        // 썸네일 없을때
+        .no_Thumb_Img:before{
+            width: 18px;
+            height: 18px;
+        }
+
+        // 품절
+        .outStock{
+            display: none;
+        }
+
+    }
+
+    .ctnArea{
+        .title{
+            padding-top: 4px;
+            padding-right: 32px;
+            @include line_clamp_2;
+        }
+        .detail{
+            margin-top: 4px;
+            @include line_clamp_2;
+        }
+    }
+
+    .ctnArea_bottom{
+        grid-column: span 2 / span 1;
+
+        .option_area{
+            padding: 6px 8px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+            margin-bottom: 12px;
+
+            color: $--Color-text-secondary;
+            @include Suit_Body_SS_Regular;
+
+        }
+
+        .price_area{
+            .title{@include Suit_Body_SM_SemiBold;}
+            .price{@include Suit_Body_SM_Bold;}
+        }
+
+    }
+
+}
+
+//★카트목록 아이템 - 비활성처리★
+.cart_obj_area.disabled{
+
+    .cart_obj_item{
+
+
+        .itemImgArea{
+    
+            .outStock{
+                position: absolute;
+                background: rgba(0, 0, 0, 0.30);
+                width: 100%;
+                height: 100%;
+                @include flex_center;
+    
+                color: #fff;
+                @include Suit_Body_MD_SemiBold;
+    
+            }
+    
+        }
+
+
+        .ctnArea_bottom{
+    
+            .option_area{
+                color: $--Color-text-disabled;
+            }
+
+            .order_quantity{
+                > *, > input[type=number]:not(.browser-default){pointer-events : none;}
+
+                .minus{
+                    background-image: url('../images/04icon/icon_minus_disa.svg');
+                }
+                .plus{
+                    background-image: url('../images/04icon/icon_plus_disa.svg');
+                }
+            }
+    
+            .price_area{
+                .title{color: $--Color-text-disabled;}
+                .price{color: $--Color-text-disabled;}
+            }
+    
+        }
+
+    }
+
+}
+
+
+//인정등급 예상테스트
+//대화창
+.reg_rating_chatAni_area{
+    margin: 52px -20px 0;
+    overflow: hidden;
+    @include flex_center;
+
+    .back_img{
+        width: 320px;
+        height: 410px;
+        background-image: url('../images/21chat/back_hp.png');
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 92px 50px 0;
+
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+
+        .profile img{width: 28px;}
+        .ani_eff_01, .ani_eff_02{
+            background-color: #fafafa;
+            border-radius: 12px;
+            width: 180px;
+            padding: 10px 8px;
+
+            .img_area{
+                margin-top: 10px;
+                width: 100%;
+                text-align: center;
+
+                img.cha_bomE{width: 90px;}
+            }
+
+        
+        }
+
+        .ani_eff_03{
+            margin-top: 6px;
+            display: flex;
+            justify-content: right;
+
+
+            .box_trans{
+                font-size: 12px;
+                color: #fff;
+                padding: 6px 12px;
+                border-radius: 40px;
+                border: 1px solid #EE6002;
+                background: #FF8120;
+
+
+            }
+
+
+            img{width: 106px;}
+        } 
+    }
+
+
+    //scroll 애니메이션 01 - 대화창
+    // .ani_eff_01, .ani_eff_02, .ani_eff_03{
+    //     animation: fadeAnimation both;
+    //     animation-timeline: view(0px);
+    //     animation-timing-function: ease-in-out;
+    // }
+
+    //     @keyframes fadeAnimation {
+    //     0% {
+    //         transform: translateY(200px);
+    //         opacity: 0;
+    //     }
+
+    //     50% {
+    //         transform: translateY(0px);
+    //         opacity: 1;
+    // }
+    // }
+
+} 
+
+
+//등급 그래프
+.reg_rating_graph_area{
+    margin: 52px 0 24px;
+    display: flex;
+    justify-content: space-around;
+    height: 250px;
+
+    .graph_ui{
+
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: end;
+        gap: 8px;
+        
+        
+        .title_rating{
+            color: $--Color-text-Primitive-secondary;
+            @include Suit_Body_SS_SemiBold;
+        }
+
+        .graph{
+            border-radius: 4px;
+            width: 48px;
+            height: 0;
+            opacity: 0;
+            transition: height 0.5s ease-out, opacity 0.5s ease-out;           
+        }
+
+        .num{
+            color: $--Color-text-teritiary;
+            @include Suit_Body_SS_SemiBold;
+
+            &.high{
+                color: $--Color-text-Primitive-primary-press;
+            }
+        }
+
+    }
+
+    .graph_ui:nth-child(1) .graph{background-color: #FFDFB2;}
+    .graph_ui:nth-child(2) .graph{background-color: #FFE0B5;}
+    .graph_ui:nth-child(3) .graph{background-color: #FFE3BC;}
+    .graph_ui:nth-child(4) .graph{background-color: #FFDFB2;}
+    .graph_ui:nth-child(5) .graph{background-color: #FFE0B5;}
+    .graph_ui:nth-child(6) .graph{background-color: #FFE3BC;}
+
+
+    //scroll 애니메이션 02 - 그래프
+    // .graph_ui .graph{
+    //     animation: graphAnimation both;
+    //     animation-timeline: view(60px);
+    // }
+
+    //     @keyframes graphAnimation {
+    //     0% {
+    //         height: 0;
+    //         opacity: 0;
+    //     }
+
+    //     20% {
+    //         opacity: 1;
+    //     }
+
+    // }
+
+    // //scroll 애니메이션 02 - 그래프텍스트
+    // .graph_ui .num{
+    //     animation: graphTxtAnimation both;
+    //     animation-timeline: view(60px);
+    // }
+
+    //     @keyframes graphTxtAnimation {
+    //     20% {
+    //         opacity: 0;
+    //     }
+
+    //     40% {
+    //         opacity: 1;
+    //     }
+    //     100% {
+    //         opacity: 1;
+    //     }
+
+    // }
+
+
+}
+
+
+//★★★ 채팅
+//단계 상태바
+.progress_raTest{
+    position: fixed;
+    top: $header;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #F5F5F5;
+    z-index: 100;
+
+    .progress-bar{
+        height: 100%;
+        background: linear-gradient(146deg, #FF8120 21.95%, #E54304 82.84%);
+    }
+}
+
+//채팅영역
+.chatUnit{
+    display: flex;
+    flex-direction: column;
+
+    &:has( > .boxChatArea){margin-bottom:32px;}
+    &:has( > .active){margin-bottom:32px;}
+}
+.wrap_chatArea{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+
+}
+
+.boxChatArea, .boxChatArea_2{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .profile{
+        width: 40px;height: 40px;
+        background-image: url('../images/21chat/profile.svg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center;
+        
+        img{width: 100%;}
+    }
+
+    //박스챗 공통
+    .box_chat{
+        @include Suit_Body_MD_Regular;
+        min-width:auto;
+        max-width: calc(100% - 40px);
+
+        
+        &:has(.w100p){
+            width: 100%;
+        }
+
+        .img_area{
+            margin-top: 16px;
+            background-color: #fff;
+            border-radius: 8px;
+            
+            &.bomE{
+                display: flex;
+                justify-content: center;
+                align-items: end;
+                padding-top: 4px;
+            }
+        }
+
+        //뱃지설정
+        .badge_greenLight{margin-bottom: 8px;}
+
+        //질문타이틀
+        .title_question{
+            margin-bottom: 20px;
+
+            color: $--Color-text-Primitive-secondary;
+            @include Suit_Body_MD_Bold;
+        }
+    
+    }
+
+    //도우미
+    &.bot_recv{
+        align-items: start;
+
+        .box_chat{
+            padding: 16px 12px;
+            border-radius: 16px;
+            background: #FAFAFA;
+        }
+    }
+
+    //사용자
+    &.bot_trans{
+        margin-top: 32px;
+        align-items: end;
+
+        .box_chat{
+            padding: 8px 20px;
+            border-radius: 24px;
+            border: 1px solid $--Color-border-Primitive-primary-press;
+            background: $--Color-bg-Primitive-primary;
+            color: #fff;
+        }
+
+        //disabled 임시
+        &.disabled .box_chat{border:1px solid #ddd; background: #b8b8b8;}
+
+    }
+    
+    //part아이템
+    .part_item{
+        display: flex;justify-content: space-between;align-items: center;gap: 8px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #EEE;
+        margin-bottom: 16px;
+
+        .title_area{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+
+            .icon{
+                width: 32px;
+                height: 32px;
+                background-color: #fff;
+                border-radius: 100px;
+                border: 1px solid #E0E0E0;
+    
+                @include flex_center;
+    
+                }
+
+        }
+        
+    }
+
+    //선택
+    .chk_area{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+
+
+
+        .list{
+            @include flex_center;
+            padding: 0 20px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            background: #FFF;
+            min-height: 56px;
+            height: 100%;
+
+            
+            input + span{
+                padding: 0;
+                height: auto;
+                @include Suit_Body_MD_Regular;
+            }
+            input + span::before, input + span::after{
+                display: none;
+
+            }
+
+            &:has(input:checked){
+                
+
+                border: 1px solid $--Color-border-Primitive-primary-press;
+                background: $--Color-bg-Primitive-selected;
+
+                input + span{color: $--Color-text-Primitive-selected;}
+
+            }
+        }
+    }
+
+
+}
+
+
+//테스트결과 - 장기요양등급 대상
+.recu_rating_num{
+    position: relative;
+    margin: 24px 0;
+    background: url('../images/08etc/recu_rating_num.svg') no-repeat center center;
+    width: 100px;
+    height: 163px;
+    @include flex_center;
+
+    &.nonTarget{
+        background: url('../images/08etc/recu_rating_num_nonTarget.svg') no-repeat center center;
+    }
+
+    //숫자
+    & span.num{
+        position: relative;
+        top:-5px;
+        left:-1px;
+        color: #fff;
+        font-size: 48px;
+        font-weight: 800;
+    }
+    //인지
+    & span.reco{
+        position: relative;
+        top:-5px;
+        color: #fff;
+        @include Suit_Heading_LG;
+    }
+    
+}
+
+
+
+//어르신의 심신상태 step
+.rating_step_area{
+    .step_txt_area{
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        margin-top: 12px;
+    
+        li{
+            span{
+                text-align: center;
+                display: block;
+                color: $--Color-text-secondary;
+                @include Suit_Body_SS_Bold;
+
+                &.number{
+                    @include Suit_Body_SM_Bold;
+                }
+            }
+        }
+    
+    }
+    .step_graph_area{
+        width:100%;
+        height:8px;
+        border-radius: 100px;
+        background: #f7f7f7; //f7f7f7
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+
+        .item{
+            position: relative;
+            width: 4px;height: 4px;
+            border-radius: 50%;
+            background: $--Color-bg-Primitive-primary;
+
+            &.active{
+                &::before{
+                    display: block;
+                    content: '';
+                    position: absolute;
+                    top:-5px;
+                    left:-5px;
+                    width: 14px;height: 14px;
+                    background-color: #fff;
+                    border: 5px solid $--Color-bg-Primitive-primary-press;
+                    outline: 5px solid rgba(238, 96, 2, 0.25);
+                    border-radius: 50%;
+                }
+                
+            }
+        }
+    }
+}
+
+
+//관심복지용구
+//스크롤 애니메이션01 - 체크표시
+.interest_wel_ani_01{
+    position: relative;
+    margin: 0 auto;
+    width: 320px;
+    height: 350px;
+    background: url('../images/22scrollAni/interest_wel_ani_01_back.png') no-repeat center bottom;
+    background-size: contain;
+
+    .check{
+        position: absolute;
+        display: block;
+        width: 58px;height: 58px;
+
+        background-image: url('../images/22scrollAni/interest_wel_ani_01_chk.png');
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        opacity: 0;
+        transition: 0.2s ease-in;
+        transform: scale(0.01);
+
+
+    }
+
+    .check:nth-child(1){
+        top:144px;
+        right:57px;
+    }
+    .check:nth-child(2){
+        top:244px;
+        left:131px;
+    }
+
+    &.animated .check{
+
+        animation-name: interest_wel_animation_01;
+        animation-duration: 4s; 
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+
+    }
+
+    &.animated .check:nth-child(1){animation-delay: 0.2s;}
+    &.animated .check:nth-child(2){animation-delay: 0.8s;}
+
+}
+
+//interest_wel_ani_01 애니메이션
+@keyframes interest_wel_animation_01 {
+    0% {
+        transform: scale(0.01);
+        opacity: 0;
+    }
+    10% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+//관심복지용구
+//스크롤 애니메이션02 - 스크롤
+.interest_wel_ani_02{
+    position: relative;
+    margin: 0 auto;
+    width: 320px;
+    height: 374px;
+    background: url('../images/22scrollAni/interest_wel_ani_02_back.png') no-repeat center bottom;
+    background-size: contain;
+
+    .ctn_scroll_area{
+        position: absolute;
+        overflow: hidden;
+        width: 230px;height: 194px;
+        left: 44px;
+        bottom:0;
+
+        img{
+            position: absolute;
+            bottom: -940px;
+            width: 100%;
+
+        }
+
+        &.animated img{
+            animation-name: interest_wel_animation_02;
+            animation-duration:5s; 
+            animation-iteration-count:1;
+            animation-fill-mode: forwards;
+            animation-timing-function:linear;
+
+        }
+    }
+
+}
+//interest_wel_ani_02 애니메이션
+@keyframes interest_wel_animation_02 {
+    0% {
+        bottom: -940px;
+    }
+    100% {
+        transform: scale(1);
+        bottom: 10px;
+    }
+}
+
+
+//인정등급 간편테스트트
+//스크롤 애니메이션 - 간편테스트 클릭
+.simpleTest_ani_01{
+
+    position: relative;
+    margin: 0 auto;
+    width: 320px;
+    height: 462px;
+    background: url('../images/22scrollAni/simpleTest_ani_01_back.png') no-repeat center bottom;
+    background-size: contain;
+
+    .check{
+        position: absolute;
+        width:224px;
+        height: 82px;
+        background: url('../images/22scrollAni/simpleTest_ani_01_btn.png') no-repeat center top;
+        background-size: contain;
+        top: 352px;
+        left: 49px;
+
+        animation-name: simpleTest_ani_01;
+        animation-duration:1.5s; 
+        animation-iteration-count:infinite;
+        animation-timing-function:linear;
+    }
+
+
+}
+
+//simpleTest_ani_01 애니메이션
+@keyframes simpleTest_ani_01 {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    51% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+//어르신돌봄
+//스크롤 애니메이션 - 코인
+.wrap_coin_area{
+
+    height: 310px;
+    padding: 12px 12px 24px;
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+    gap: 12px;
+    overflow: hidden;
+
+    .coinLine{
+        flex-grow: 1;
+        overflow: hidden;
+
+        .coin_toolTip{
+            opacity: 0; /* 초기 상태: 투명 */
+            transform: translateY(-10px); /* 살짝 위쪽으로 이동 */
+
+            position: relative;
+            
+            border-radius: 4px;
+            background-color: #FEE3BE;
+            padding: 4px 8px;
+            margin-bottom: 13px;
+            
+            @include flex_center;
+            @include Suit_Body_SS_SemiBold;
+
+            &::after{
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: -9px;
+                left: calc(50% - 5px);
+                width: 11px;
+                height: 11px;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-bottom: 5px solid transparent;
+                border-top: 5px solid #FEE3BE;
+            }
+            
+            //0원
+            &.zero{
+                color:#fff;
+                background-color: #FF8120;
+                
+                &::after{
+                    border-top: 5px solid #FF8120;
+                }
+            }
+     
+        }
+
+        .coin_sort{
+            position: relative;
+
+            min-height: 15px;
+            padding-bottom: 3px;
+            background-image: url('../images/22scrollAni/coin_shadow.svg');
+            background-repeat: no-repeat;
+            background-position: center bottom;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: end;
+
+            .coin{
+                position: relative;
+
+                background-image: url('../images/22scrollAni/coin.png');
+                background-repeat: no-repeat;
+                background-position: center bottom;
+                background-size: cover;
+                display: block;
+
+                width: 32px;
+                height: 11px;
+    
+                transform: translateY(-300px); /* 초기 위치: 위 */
+                opacity: 0; /* 초기 상태: 투명 */
+
+            }
+
+
+
+        }
+
+
+        .txt{
+            margin-top: 8px;
+            color: $--Color-text-Primitive-secondary;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 18px;
+            letter-spacing: -0.21px;
+        }
+
+    }
+
+}
+
+//동전툴팁 애니메이션
+@keyframes coin_tooltipAni {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(4px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+//어르신 돌봄 체크박스div 애니메이션
+//1. 돌봄이 필요한 시간 선택
+.chk01_2_div{
+    position: relative;
+    border: 1px solid $--Color-border-Primitive-secondary;
+    border-radius: 16px;
+    padding: 16px 16px 16px 44px;
+    margin-top: 16px;
+
+    background-color:#fafafa;
+    background-image: url('../images/18icon/icon_default.svg');
+    background-repeat: no-repeat;
+    background-position: 16px center;
+
+    
+
+    @include Suit_Body_MD_Regular;
+    
+
+    &:first-child{margin: 0;}
+
+    &.active{
+        border: 1px solid $--Color-border-Primitive-primary-press;
+        background-color: $--Color-bg-Primitive-selected;
+        background-image: url('../images/18icon/icon_default_active.svg');
+
+        color: $--Color-text-Primitive-primary-press;
+        @include Suit_Body_MD_SemiBold;
+        font-weight: 400 !important;
+
+        &::before{
+            content: '';
+            display: block;
+            position: absolute;
+            width: 54px;height: 48px;
+            background: url('../images/22scrollAni/omCare_ani_active_chk.png') no-repeat center;
+            background-size: contain;
+
+            right: 25px;
+            bottom: -20px;
+        }
+    }
+}
+
+
+//애니메이션
+.chk01_2_div{
+    bottom: -30px;
+    opacity: 0;
+    transition: 0.3s all;
+
+
+}
+.chk01_2_div.animated{
+    bottom: 0px;
+    opacity: 1;
+
+    &.active{
+        animation-name: chk01_2_div_active_before;
+        animation-duration:0.5s; 
+        animation-fill-mode: forwards;
+        animation-iteration-count:1;
+        animation-timing-function:linear;
+    }
+
+}
+
+@keyframes chk01_2_div_active_before {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.97);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+
+
+//2. 인정등급 간편 테스트트
+.chk01_3_div{
+    position: relative;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    background: #fff;
+    height: 48px;
+    margin-top: 16px;
+
+    @include flex_center;
+    @include Suit_Body_SM_Regular;
+
+    
+    &:first-child{margin: 0;}
+    
+    .txt{display: inline-block;padding: 0 30px;}
+
+
+    &.active{
+        border: 1px solid $--Color-border-Primitive-primary-press;
+        background: $--Color-bg-Primitive-selected;
+
+        color: $--Color-text-Primitive-selected;
+        @include Suit_Body_SM_Regular;
+
+        .txt{
+            background: url('../images/18icon/icon_default_active.svg') no-repeat left center;
+        }
+
+
+        &::before{
+            content: '';
+            display: block;
+            position: absolute;
+            width: 54px;height: 48px;
+            background: url('../images/22scrollAni/omCare_ani_active_chk.png') no-repeat center;
+            background-size: contain;
+
+            right: 10px;
+            bottom: -20px;
+        }
+
+    }
+
+}
+
+//애니메이션
+.chk01_3_div{
+    bottom: -30px;
+    opacity: 0;
+    transition: 0.3s all;
+}
+.chk01_3_div.animated{
+    bottom: 0px;
+    opacity: 1;
+    
+    &.active{
+        animation-name: chk01_2_div_active_before;
+        animation-duration:0.5s; 
+        animation-fill-mode: forwards;
+        animation-iteration-count:1;
+        animation-timing-function:linear;
+    }
+}
+
+//3. 신청완료
+.check_ok{
+    bottom: -30px;
+    opacity: 0;
+    transition: 0.3s all;
+    transition-delay: 0.5s;
+
+    &.animated{
+        bottom: 0px;
+        opacity: 1;
+    
+    }
+}
+
+
+//놓친 복지용구 받기
+//4. 복지용구 수령 및 사용
+.welfare_ani_04{
+    position: relative;
+    margin: 0 auto;
+    width: 320px;
+    height: 187px;
+    background: url('../images/11easy/welfare_04.svg') no-repeat center;
+    background-size: contain;
+    
+    [class^='sbtool_']{
+        position: absolute;
+        content: '';
+        display: block;
+        
+        animation-duration:3.2s;
+        animation-iteration-count: infinite;
+        animation-timing-function:linear;
+    }
+
+    .sbtool_01{
+        background: #fff;
+        border-radius: 50%;
+        width: 8px;height: 8px;
+        top: 95px;
+        left: 160px;
+
+        animation-name: sbtool_01;
+    }
+    .sbtool_02{
+        background: #fff;
+        border-radius: 50%;
+        width: 14px;height: 14px;
+        top: 77px;
+        left: 143px;
+
+        animation-name: sbtool_02;
+    }
+    .sbtool_03{
+        background: url('../images/22scrollAni/welfare_sbtool_03.png') no-repeat center;
+        background-size: contain;
+        width: 99px;height: 84px;
+        top: 10px;
+        left: 61px;
+
+        animation-name: sbtool_03;
+    }
+
+}
+
+@keyframes sbtool_01 {
+    0% {opacity: 0;}
+    20% {opacity: 0;}
+    30% {opacity: 1;}
+    100% {opacity: 1;}
+}
+@keyframes sbtool_02 {
+    0% {opacity: 0;}
+    40% {opacity: 0;}
+    50% {opacity: 1;}
+    100% {opacity: 1;}
+}
+@keyframes sbtool_03 {
+    0% {opacity: 0;}
+    70% {opacity: 0;}
+    80% {opacity: 1;}
+    100% {opacity: 1;}
+}
+
+
+//팬티 제품 유형
+.pants_area{
+    display: flex;flex-wrap: wrap;
+
+    > *{
+        flex: 1 1 20%; text-align: center;
+    }
+}
+
+
+
+
+
+
+//★★★★★시설찾기
+//상단 검색
+.recuSearch_form{
+
+    opacity: 0;
+    transform: scaleX(1%);
+    transform-origin: center right;
+    transition: 0.2s all;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 12px 0;
+    background-color: #fff;
+
+    .icon_back{
+        display: inline-block;
+        background: url('../images/04icon/chevron-left_thin.svg') no-repeat center center;
+        text-indent: 40px;
+        width: 48px;
+        height: 48px;
+        flex-shrink: 0;
+    }
+    
+
+    .recuSearch_input_area{
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        border-radius: 8px;
+        background: #F5F5F5;
+        width: calc(100%);
+        height: 48px;
+        padding: 12px 6px 12px 12px;
+        margin-right: 12px;
+    
+
+        .recuSearch_title{
+            flex-shrink: 0;
+    
+            color: #1A1A1A;
+    
+            /* Suit/Body/SM/Bold */
+            font-size: var(--font-size-400, 16px);
+            font-weight: 700;
+            line-height: var(--font-line-height-480, 24px); /* 150% */
+            letter-spacing: var(--font-letter-spacing-tight, -0.15px);
+        }
+    
+        .recuSearch_input{
+            border:none;
+            // width: calc(100% - 100px) !important;
+            padding-right: 30px !important;
+            @include Suit_Body_SM_Regular;
+    
+            &:focus{
+                border: none !important;
+            }
+    
+        }
+    
+        .clear_btn {
+            position: absolute;
+            right: 62px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: url('../images/04icon/close_circle_01.svg') no-repeat center;
+            width: 24px;height: 24px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            display: none;
+        }
+    
+
+    }
+
+    &.active{
+        opacity: 1;
+        transform: scaleX(100%);
+    
+    }
+
+
+}
+
+
+
+// 지역/필터영역
+.addr_filter_area{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background-color: #fff;
+    border-top: 1px solid #EEE;
+    padding: 0 16px;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    overflow-x: hidden;
+
+    .addr{
+        @include line_clamp_1;
+        @include Suit_Body_SM_Regular;
+        background: url('../images/04icon/location_2.svg') no-repeat left center;
+        background-size: 20px;
+        padding-left: 22px;
+    
+    }
+    .change_region{
+        @include Suit_Body_SM_SemiBold;
+        color: $--Color-text-Primitive-primary;
+        padding: 12px 16px;flex-shrink: 0;
+    }
+    
+
+    .filter{
+        display: flex;
+        align-items: center;
+        gap:4px;
+        flex-shrink: 0;
+        padding: 8px 16px;
+
+        color: var(--Color-text-primary, #1A1A1A);
+        @include Suit_Body_SM_Regular;
+
+        border-radius: 100px;
+        border:1px solid #e0e0e0;
+        background: #FFF;
+
+            > .icon{
+                width: 24px;
+            }
+
+        &.active{
+            border: 1px solid #EE6002;
+            background: #FFF5E6;
+        }
+
+    }
+}
+
+//하단 요양시설 선택
+.sel_recu_area{
+    display: flex;flex-wrap: wrap;
+
+    > li{
+        width: 33.33%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        margin: 4px 0 8px;
+
+        .img_recu{
+            position: relative;
+            width: 56px;height: 56px;
+            border-radius: 18px;
+            background:#F5F5F5;
+            background-repeat: no-repeat;
+            background-position: center;
+            
+            &.recu_01{
+                background-image: url('../images/08etc/icon_recu_01.svg');
+            }
+            &.recu_02{
+                background-image: url('../images/08etc/icon_recu_02.svg');
+            }
+            &.recu_03{
+                background-image: url('../images/08etc/icon_recu_03.svg');
+            }
+            &.recu_04{
+                background-image: url('../images/08etc/icon_recu_04.svg');
+            }
+            &.recu_05{
+                background-image: url('../images/08etc/icon_recu_05.svg');
+            }
+
+        }
+
+        .txt{
+            text-align: center;
+            @include Suit_Body_SM_Regular;
+        }
+
+
+        &.active{
+
+            .img_recu{
+                border-radius: 18px;
+                border: 1.5px solid $--Color-border-Primitive-primary;
+
+                &::after{
+                    position: absolute;
+                    content: '';
+                    display: block;
+                    width: 20px;height: 20px;
+                    top: -4px;
+                    right: -4px;
+                    border-radius: 8px;
+                    background: #EE6002;
+                    background-image: url('../images/18icon/chk01_white.png');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: 20px;
+
+
+                }
+            }
+
+        }
+    }
+
+}
+
+@media only screen and (min-width: 768px){
+
+    .sel_recu_area{
+        > li{width: 20%;}
+    }
+
+}
+
+//시설리스트
+.item_facility{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 24px 0;
+    border-bottom: 1px solid #eee;
+
+    .img_area{
+        flex-shrink: 0;
+        width: 100px;height: 100px;
+        @include flex_center;
+        border:1px solid #eee;
+        overflow: hidden;
+        border-radius: 12px;
+        background-color: #f5f5f5;
+        
+        img{width: 100%;}
+
+        .no_Thumb_Img:before{
+            width: 24px;
+            height: 24px;
+        }
+
+    }
+    .ctn_area{
+
+        .partner{
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 2px;
+
+            color: $--Color-text-Primitive-primary-press;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: var(--font-line-height-360, 18px); /* 150% */
+            letter-spacing: var(--font-letter-spacing-tight, -0.15px);
+            padding-bottom: 2px;
+
+            &::before{
+                content: '';
+                display: inline-block;
+                width: 10px;height: 16px;
+                background-image: url('../images/23recu/txt_partner.png');
+                background-size: cover;
+
+            }
+
+            &::after{
+                content: '';
+                display: inline-block;
+                width: 10px;height: 16px;
+                background-image: url('../images/23recu/txt_partner.png');
+                background-size: cover;
+                transform: rotateY(180deg);
+
+            }
+            
+        }
+        .title{
+            @include line_clamp_1;
+            @include Suit_Body_MD_Bold;
+            margin-bottom: 4px;
+        }
+        .addr{
+            @include line_clamp_1;
+            @include Suit_Body_SS_Regular;
+            margin-bottom: 8px;
+        }
+
+    }
+
+}
+
+
+//지도 상단 고정영역
+.top_mapView{
+    position: fixed;
+    width: 100%;
+    max-width: 600px;
+    top: calc($header + 20px);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+
+    .addr_select{
+        min-width: 162px;
+        height: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+
+        padding: 8px 16px;
+        border-radius: 100px;
+        border: 1px solid #E0E0E0;
+        background: #FFF;
+        box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.12), 0px 0px 1px 0px rgba(0, 0, 0, 0.20);
+
+        color: #333;
+
+        @include Suit_Body_SM_SemiBold;
+
+    }
+}
+
+
+
+// 지도 하단 고정영역
+.footer_mapView{
+    position: fixed;
+    z-index: 90;
+    width: 100%;
+    max-width: 600px;
+    bottom: 0;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .mapBtn_area{
+        width: calc(100% - 40px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+
+        > :first-child{display: flex;justify-content: right;width: 60px;}
+        > :last-child{display: flex;justify-content: right; width: 60px;}
+
+    }
+    
+    .btnView{
+        width: 128px;
+        height: 48px;
+        padding:8px 16px;
+        @include flex_center;
+
+        flex-shrink: 1;
+        gap: 8px;
+
+        border-radius: 999px;
+        background:#FF8120;
+        color:#fff;
+        @include Suit_Body_SM_SemiBold;
+    }
+
+    .c_location{
+        cursor: pointer;
+        width: 48px;height: 48px;
+        @include flex_center;
+        border-radius: 100px;
+        border: 1px solid #E0E0E0;
+        background: #FFF url('../images/04icon/icon_c_location.svg') no-repeat center;
+        background-size: 22px;
+
+        box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.12), 0px 0px 1px 0px rgba(0, 0, 0, 0.20);
+
+
+        &:active{
+
+            background: #dfdfdf url('../images/04icon/icon_c_location.svg') no-repeat center;
+        }
+    }
+}
+
+//지도 컨텐츠 고정영역
+
+.map_tooltip{
+    position: absolute;
+    z-index: 9;
+
+    @include flex_center;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #fff;
+    
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.20);
+
+    color: var(--Color-text-primary, #1A1A1A);
+    @include Suit_Body_SS_SemiBold;
+
+    &::after{
+        position: absolute;
+        content: '';
+        display: block;
+        width: 20px;
+        height: 10px;
+        background: url('../images/18icon/tooltip_tail.svg') no-repeat center;
+        left: calc(50% - 10px);
+
+        bottom: -8px;
+        filter:drop-shadow(0 4px 2px rgba(0, 0, 0, 0.20));
+    }
+
+    &.active{
+        border: 1px solid #EE6002;
+        color: #EE6002;
+
+        &::after{
+            background: url('../images/18icon/tooltip_tail_active.svg') no-repeat center;
+        }
+    }
+    
+}
+
+//카카오지도 요양원 말풍선 클릭시 상단으로
+div[style*='z-index']:has(>.map_tooltip.active) {z-index: 100000000 !important;}
+
+
+
+.map_tool_dept{
+    height: 40px;
+
+    position: absolute;
+    z-index: 9;
+    
+    @include flex_center;
+    gap: 4px;
+    
+    padding: 0 12px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.20);    
+
+    @include Suit_Body_SS_SemiBold;
+
+    > .num{
+        display: flex;
+        min-width: 24px;
+        height: 24px;
+        justify-content: center;
+        align-items: center;
+        gap: 14px;
+        padding: 0 4px;
+
+        border-radius: 999px;
+
+        @include Suit_Body_SS_Bold;
+    }
+
+    
+    &.d02{
+        border: 1px solid #10185C;
+        background: #FFF;
+
+        > .num{
+            background: #10185C;
+            color: #FFF;
+        }
+    }
+    
+    &.d01{
+        border: 1px solid #fff;
+        background: #10185C;
+        color: #fff;
+
+        > .num{
+            background: #fff;
+            color: #10185C;
+        }
+    }
+
+    
+
+}
+
+
+
+//시설찾기 병원상세 슬라이드 페이지
+.recu_detail_Swiper{
+
+    .swiper-slide{
+        line-height: 0;position: relative;
+        max-height: 250px;
+    
+        img{
+            width: 100%;
+            height: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            object-position: center center;
+        }
+    
+    }
+
+    .swiper-pagination-fraction{
+        width:auto;
+        display: flex;
+        top: 16px;
+        left: 16px;
+        bottom: initial;
+        padding: 2px 8px;
+        border-radius: 4px;;
+        background: rgba(51, 51, 51, 0.40);
+        color:#fff;
+        @include Suit_Body_SS_Regular;
+    }
+
+}
+
+
+.partner_area{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 7px 0;
+    background: rgba(0, 0, 0, 0.65);
+    @include flex_center;
+    
+
+    .partner{
+        position: relative;
+        color:#fff;
+        @include Suit_Body_SS_SemiBold;
+
+        @include flex_center;
+        gap: 8px;
+
+        
+        &::before{
+            content: '';
+            display: inline-block;
+            width: 15px;height: 24px;
+            background-image: url('../images/23recu/txt_partner.png');
+            background-size: cover;
+
+        }
+
+        &::after{
+            content: '';
+            display: inline-block;
+            width: 15px;height: 24px;
+            background-image: url('../images/23recu/txt_partner.png');
+            background-size: cover;
+            transform: rotateY(180deg);
+
+        }
+
+    }
+}
+
+
+
+
+
+@media only screen and (min-width: 600px){
+
+    //시설찾기 상세페이지 스와이프swiper
+    .recu_detail_Swiper{
+
+        .swiper-slide{
+            max-height:512px;
+
+            img{max-height:512px;}
+        }
+
+    }
+
+
+}
+
+
+
+
+
+
+//시설찾기 병원상세 슬라이드 페이지 팝업
+.recu_detail_Swiper_popup{
+    width:100%;
+    height: calc(100vh - $header);
+    
+    .swiper-wrapper{
+
+        display: flex;
+        align-items: center;
+        height: 100% !important;
+
+    }
+
+    .swiper-slide{
+        line-height: 0;position: relative;
+        height: calc(100vh - $header);
+        @include flex_center;
+
+    
+        img{width: 100%;}
+    }
+
+    .swiper-pagination-fraction{
+        width:auto;
+        display: flex;
+        top: 16px;
+        left: 16px;
+        bottom: initial;
+        padding: 2px 8px;
+        border-radius: 4px;;
+        background: rgba(51, 51, 51, 0.40);
+        color:#fff;
+        @include Suit_Body_SS_Regular;
+    }
+
+}
+
+// 시설안내 서브메뉴
+.recuNav_wrap{
+
+    .recuNav{
+
+        ul.tabs_wd{
+    
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            border-bottom: 1px solid #EEE;
+    
+    
+            li{
+                flex-grow: 1;
+    
+                a, .wd_btn{
+                    position: relative;
+                    display: block;
+                    background-color: #ffffff;
+                    
+                    padding: 12px 20px;
+                    text-align: center;
+                    
+                    /* Suit/Body/SM/Regular */
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 24px; /* 150% */
+                    letter-spacing: -0.15px;
+    
+                    &.active{
+                        @include Suit_Body_SM_Bold;
+                        
+                        &::after{
+                            display: block;
+                            content: '';
+                            position: absolute;
+                            bottom:0;
+                            left:0;
+                            width:100%;
+                            height: 2px;
+                            background-color: #111;
+                        }
+    
+                    }
+    
+                }
+    
+            }
+    
+        }
+    
+    }
+
+    &.active{
+        position: fixed;
+        top:56px;
+        left:0;
+        width: 100%;
+        z-index: 100;
+
+        .recuNav{
+            margin: 0 auto;
+            max-width:600px;
+        }
+    }
+}
+
+
+.recuListArea.active{height: 49px; /* recuNav 높이 */}
+
+
+// 병상수
+.hospital_bed_area{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 12px;
+
+    .box_hospital_bed{
+        flex: 1 1 40%;
+
+        .box_white{
+            margin-top: 12px;
+            padding: 12px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            min-height: 80px;
+        }
+
+        &:nth-child(odd):last-child{
+            flex: none;
+            width: calc(50% - 6px);
+        }
+    }
+}
+
+//인력현황
+.per_status_area{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    .box_per_status{
+        background-color: #fafafa;
+        border-radius: 8px;
+
+        @include flex_center;
+        flex-direction: column;
+        flex: 1 1 40%;
+
+        min-height: 120px;
+
+        &:last-child{
+            flex: 0 1 calc(50% - 4px);
+        }
+
+    }
+
+    &.odd_100{
+
+        .box_per_status{
+            &:last-child{
+                flex: 1 1 40%;
+            }
+    
+        }
+
+    }
+}
+
+
+.copyEvt{cursor: pointer;}
+
+
+//진료시간 및 휴진일
+.medicalH_area{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    .box_medicalH{
+        flex: 1 1 40%;
+
+        &:nth-child(odd):last-child{
+            flex: none;
+            width: calc(50% - 8px);
+        }
+    }
+
+}
+   
+//swiper없을때 기본이미지
+.noImg_recu_detail{
+    position: relative;
+    height: 250px;
+    background: #ecf3ff url('../images/23recu/noImg_recu_detail.png') no-repeat center bottom;
+    background-size: contain;
+}
+
+// 입소가능/불가
+.admIcon{
+    display: inline-block;
+    color: $--Color-text-Primitive-primary-press;
+    @include Suit_Heading_SM;
+    
+    padding-left: 28px;
+    background-repeat: no-repeat;
+    background-position: left center;
+
+    &.ok{
+        background-image: url('../images/23recu/admIcon_ok.svg');
+    }
+    &.no{
+        background-image: url('../images/23recu/admIcon_no.svg');
+    }
+}
+
+
+//입소 breadcrumb
+.enter_breadcrumb_area{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 0 8px;
+
+    li{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex: 1;
+        min-width: 0;
+
+
+        &::after{
+            position: absolute;
+            content: '';
+            display: block;
+            top: 10%;
+            right: -20px;
+            width: 1px;
+            height: 80%;
+            background-color: #E0E0E0;
+            
+        }
+
+        &:last-child{
+
+            &::after{
+                content: none;
+            }
+                
+        }
+    }
+
+    &.b01{
+        gap: 10px;
+        margin: 0;
+        padding: 8px 0;
+
+        li{
+            justify-content: center;
+            gap: 4px;
+
+            &::after{
+                right: -5px;
+            }
+        }
+
+    }
+
+}
+
+.copy_addr{margin-right: 4px;}
+
+
+
+//카카오주소창 스크롤문제
+#__daum__layer_1, #__daum__layer_2, #__daum__layer_3, #__daum__layer_4{height:calc(100vh - 120px);}

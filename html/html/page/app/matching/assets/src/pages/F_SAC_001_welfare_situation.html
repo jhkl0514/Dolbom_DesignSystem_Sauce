@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>F_SAC_001_welfare_situation.html</title>
+
+    <!-- DEDS-118 202411 css/js/html 수정 -->
+
+    <!-- jquery -->
+    <script src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script src="../js/materialize.min.js"></script>
+
+    <!-- guide.js -->
+    <script src="../js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="../css/materialize.min.css">
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="../js/swiper/swiper-bundle.min.css" />
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+
+        /* swipe */
+        .chat_welfare_area{
+            margin: 52px -20px 24px -20px;
+        }
+        .chat_welfare_area .swiper-wrapper {
+            transition-timing-function: linear;
+            }
+
+
+        .chat_welfare_area .swiper-slide {
+            background-color: #ddd;
+            width: 54%;
+            margin-left: 12px;
+            padding: 24px 0 28px;
+            border-radius: 16px;
+            }
+
+        .chat_welfare_area .swiper-slide.bg01{
+            background-color: #C6F68D;
+        }
+        .chat_welfare_area .swiper-slide.bg02{
+            background-color: #BFDBFE;
+        }
+        .chat_welfare_area .swiper-slide.bg03{
+            background-color: #FFCDD2;
+        }
+
+        .chat_welfare_area .swiper-slide .sel_box{
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chat_welfare_area .sel_box .img_area{
+            margin-top: 16px;
+        }
+
+    </style>
+
+    <script>
+
+        $(function () {
+
+            $('.collapsible.default').collapsible({
+            });
+
+        });
+
+    </script>
+
+<script>
+    //그래프 스크롤 애니메이션
+    document.addEventListener('DOMContentLoaded', function () {
+        const graphs = document.querySelectorAll('.graph');
+    
+        function animateGraphs() {
+            const triggerHeight = window.innerHeight * 0.9; // 트리거 높이
+    
+            graphs.forEach(graph => {
+                const graphTop = graph.getBoundingClientRect().top;
+    
+                if (graphTop < triggerHeight) {
+                    const targetHeight = graph.getAttribute('data-height');
+                    graph.style.height = `${targetHeight}px`;
+                    graph.style.opacity = 1;
+                }
+            });
+        }
+    
+        // 스크롤할 때마다 그래프 애니메이션을 확인
+        window.addEventListener('scroll', animateGraphs);
+        animateGraphs(); // 초기 로드 시 확인
+    });
+    
+</script>
+
+</head>
+
+<body>
+    <div class="wrapper">
+
+
+        <header>
+            <nav class="top">
+                <a class="btn_back waves-effect" href="#">
+                    <span class="icon"></span>
+                    <span class="txt">놓친 복지용구 받기</span>
+                </a>
+                <div class="icon_area waves-effect">
+                    <div class="icon_btn i_share"></div>
+                </div>
+
+            </nav>
+        </header>
+
+
+        <main>
+            <section class="intro">
+
+                <h2 class="title02">
+                    챗봇 보미와 함께하는
+                </h2>
+
+                <h2 class="title color_tp_pp marT4">
+                    인정등급 상세 테스트
+                </h2>
+
+                <div class="h32"></div>
+
+                <div class="d-flex align-items-center gap06">
+                      <div class="i_time02"></div>
+                      <div class="font_sbms">3분 소요</div>
+                </div>
+
+                <div class="h12"></div>
+
+                <div class="d-flex align-items-center gap06">
+                      <div class="i_check"></div>
+                      <div><span class="font_sbms">총 26개</span> <span class="color_t_s font_sbsr">(5개영역/52개항목)</span></div>
+                </div>
+
+
+                <!-- Swiper -->
+                <div class="swiper chat_welfare_area">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide bg01">
+                            <div class="sel_box">
+                                <div class="title font_gm_f1">인지기능</div>
+                                <div class="font_sbsr">12문항</div>
+                                <img class="img_area" src="/html/page/app/matching/assets/src/images/08etc/chat_inji_01.svg" alt="인지기능">
+                            </div>
+                        </div>
+                        <div class="swiper-slide bg02">
+                            <div class="sel_box">
+                                <div class="title font_gm_f1">행동변화</div>
+                                <div class="font_sbsr">14문항</div>
+                                <img class="img_area" src="/html/page/app/matching/assets/src/images/08etc/chat_inji_02.svg" alt="행동변화">
+                            </div>
+                        </div>
+                        <div class="swiper-slide bg03">
+                            <div class="sel_box">
+                                <div class="title font_gm_f1">간호처치</div>
+                                <div class="font_sbsr">6문항</div>
+                                <img class="img_area" src="/html/page/app/matching/assets/src/images/08etc/chat_inji_03.svg" alt="간호처치">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- chat_welfare_area end -->
+                
+                <div class="color_t_t font_sbssr">
+                    *보건복지부에서 고시한 장기 요양 등급 판정 기준을 근거로 만들어진 테스트로, 실제 판정 결과와 상이할 수 있어요.
+                </div>
+
+                <div class="h56"></div>
+
+                <div class="marW-20 h12 back_F7F7F7"></div>
+
+                <div class="h56"></div>
+
+                <h2 class="title02">
+                    장기요양 인정등급 판정을<br>
+                    챗봇이 도와드려요
+                </h2>
+
+                <div class="h24"></div>
+
+                <div class="color_t_s font_sbmr">
+                    인정등급이 있어야 국민건강보험공단에서 제공하는 장기요양급여을 받을 수 있어요.
+                </div>
+
+                <div class="reg_rating_chatAni_area">
+                    <div class="back_img">
+
+                        <div class="profile" data-aos="fade-up">
+                            <img src="/html/page/app/matching/assets/src/images/21chat/profile.png">
+                        </div>
+                        <div class="ani_eff_01" data-aos="fade-up" data-aos-delay="200">
+                            <span class="font_scx">안녕하세요. 저는 보미예요.</span>
+                            <div class="img_area">
+                                <img class="cha_bomE" src="/html/page/app/matching/assets/src/images/21chat/bomE.png" alt="보미">
+                            </div>
+                        </div>
+                        <div class="ani_eff_02" data-aos="fade-up" data-aos-delay="200">
+                            <span class="font_scx">어르신이 장기요양보험 혜택을 받을 수 있는 지 확인해드릴게요.</span>
+                            
+                        </div>
+                        <div class="ani_eff_03" data-aos="fade-up" data-aos-delay="200">
+                            <span class="box_trans">내 등급확인하기</span>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- reg_rating_chatAni_area -->
+
+
+
+                <div class="marW-20 h12 back_F7F7F7"></div>
+
+                <div class="h56"></div>
+
+                <h2 class="title02">
+                    테스트는 3분 정도면<br> 
+                    충분해요
+                </h2>
+
+                <div class="h24"></div>
+
+                <div class="color_t_s font_sbmr">
+                    어르신 상태를 알려주시면, 예상되는 장기요양 등급을 바로 알려드릴게요.
+                </div>
+
+                <div class="reg_rating_graph_area">
+                    <div class="graph_ui">
+                        <span class="title_rating">1등급</span>
+                        <span class="graph" data-height="19"></span>
+                        <span class="num">54만명</span>
+                    </div>
+                    <div class="graph_ui">
+                        <span class="title_rating">2등급</span>
+                        <span class="graph" data-height="34"></span>
+                        <span class="num">89만명</span>
+                    </div>
+                    <div class="graph_ui">
+                        <span class="title_rating">3등급</span>
+                        <span class="graph" data-height="107"></span>
+                        <span class="num high">306만명</span>
+                    </div>
+                    <div class="graph_ui">
+                        <span class="title_rating">4등급</span>
+                        <span class="graph" data-height="184"></span>
+                        <span class="num high">524만명</span>
+                    </div>
+                    <div class="graph_ui">
+                        <span class="title_rating">5등급</span>
+                        <span class="graph" data-height="131"></span>
+                        <span class="num high">131만명</span>
+                    </div>
+                    <div class="graph_ui">
+                        <span class="title_rating">인지지원</span>
+                        <span class="graph" data-height="9"></span>
+                        <span class="num">27만명</span>
+                    </div>
+                </div>
+                <!-- reg_rating_graph_area -->
+
+                <div class="color_t_t font_sbssr">*신청자 1,456,909명 대상 센터별 등급판정현황 (24.08.31기준)</div>
+
+                <div class="h56"></div>
+
+                <div class="marW-20 h12 back_F7F7F7"></div>
+
+                <div class="h40"></div>
+
+                <div class="font_sblb">더 자세히 알아보세요</div>
+
+                <div class="h08"></div>
+
+                <div class="marW-20">
+
+                    <ul class="collapsible default">
+                        <li class="bder_bottom active">
+                            <div class="collapsible-header pad20">
+                                <span class="font_sbms">어떤 혜택을 받을 수 있나요?</span>
+                                <span class="arrow"></span>
+                            </div>
+                            <div class="collapsible-body noPad">
+                                <div class="pad20 back_FAFAFA color_t_s font_sbmr">
+                                    복지용구, 요양시설 등 여러가지 혜택이 있지만 어르신 상황에 따라 받을 수 있는 혜택이 달라요.<br>
+                                    상담을 하면 전문가가 어르신이 어떠한 도움을 받을 수 있는지 알려드려요.
+                                </div>
+                            </div>
+                        </li>
+                        <li class="bder_bottom">
+                            <div class="collapsible-header pad20">
+                                <span class="font_sbms">혜택은 어떻게 받을 수 있나요?</span>
+                                <span class="arrow"></span>
+                            </div>
+                            <div class="collapsible-body noPad">
+                                <div class="pad20 back_FAFAFA color_t_s font_sbmr">
+                                    상담을 하면 전문가가 어떻게 장기요양보험 혜택을 받을 수 있을 지 알려드려요.<br>
+                                    어르신 상황을 파악하고 필요한 경우 인정등급 신청을 도와드려요.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="h40"></div>
+      
+
+
+            </section>
+        </main>
+
+        <footer class="page-footer">
+
+            <div class="relative">
+                <a class="waves-effect btn-large btn_primary w100p">인정등급 확인하기</a>
+            </div>
+
+        </footer>
+
+
+
+
+
+
+
+    </div>
+    <!-- wrapper -->
+
+
+
+
+
+
+
+
+    <script src="../js/swiper/swiper-bundle.min.js"></script>
+    <script>
+
+
+    //복지용구 아이콘
+    var swiper = new Swiper(".chat_welfare_area", {
+        autoplay: {
+        delay: 0,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+        },
+        speed:5000,
+
+        loop:true,
+        
+        slidesPerView: "auto",
+        slidesPerGroup: 1,
+        loopedSlides: 1, //noSwiping : true,
+        observer:true, observeParents:true,
+        freemode: true
+    });
+
+    </script>
+
+</body>
+
+</html>
+
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+
+AOS.init({
+    duration: 800,
+    once: true,
+});
+</script>
+

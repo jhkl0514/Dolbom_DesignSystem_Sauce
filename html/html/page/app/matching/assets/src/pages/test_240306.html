@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <title>테스트.html</title>
+
+
+  <!-- jquery -->
+  <script src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+  <!-- materialize -->
+  <script src="../js/materialize.min.js"></script>
+
+  <!-- guide.js -->
+  <script src="../js/custom/guide.js"></script>
+
+  <!-- materialize CSS -->
+  <link rel="stylesheet" href="../css/materialize.min.css">
+
+  <!-- style.css -->
+  <link rel="stylesheet" href="../css/style.css">
+
+
+  <style>
+    .evt_txt_area{display: block; transform: translateX(-2900px);height: 0; transition: 0.2s all;}
+    .evt_txt_area.active{transform: translateX(0px);height: 100px;}
+
+  </style>
+
+  <script>
+
+    $(function () {
+
+      $('.evt_input').each(function(index){
+
+        index++;//1부터 시작
+
+        $('.evt_input.value_'+index).blur(function() {
+
+          //입력값 없으면 경고
+          if ($(this).val().length <= 0) {
+
+            alert('내용이 없습니다');
+          }
+
+          else {
+
+            $('.evt_txt_area.field_'+index).addClass('active');
+
+            $('.evt_input.value_'+index+1).focus();
+
+
+          }
+          
+          //통신사 모달 오픈
+          //.evt_txt_area.field_2
+          if(index == 2){
+
+            $('#modal_broad').modal('open');
+
+          }
+
+
+        });
+
+
+        //통신사 선택시 휴대폰 번호 필드 활성화
+        $('.broad_area li').click(function () {
+
+            $('.evt_txt_area.field_3').addClass('active');
+
+            //포커스 안되서 setTimeout 설정
+            setTimeout(function(){
+              $('.evt_input.value_4').focus();
+            }, 50);
+
+        });
+
+
+      });
+      
+
+
+
+
+    });
+  </script>
+
+
+
+</head>
+
+<body>
+  <div class="wrapper">
+
+
+    <main>
+      <section >
+
+
+
+        <div class="evt_txt_area field_4">
+
+          <label class="input_label">입력창5</label>
+          <input placeholder="입력창 임시" type="text" class="input_basic evt_input value_5" tabindex="6">
+    
+        </div>
+
+        <div class="evt_txt_area field_3">
+
+          <label class="input_label">휴대폰 번호</label>
+          <input placeholder="아이디를 입력해주세요." type="text" class="input_basic evt_input value_4" tabindex="5">
+    
+        </div>
+    
+    
+        <div class="evt_txt_area field_2">
+    
+          <label class="input_label">통신사</label>
+          <a class="input_basic fake_select modal-trigger broad_evt color_disable" href="#modal_broad" tabindex="4">통신사</a>
+    
+        </div>
+    
+    
+    
+        <div class="evt_txt_area field_1">
+    
+          <label class="input_label">주민등록번호</label>
+          <div class="d-flex gap08">
+            <input type="number" class="input_basic" oninput="maxLengthCheck(this)" maxlength="6" tabindex="2">
+            <div class="align_center">-</div>
+            <div class="input_basic input_password">
+              <input type="number" class="evt_input value_2 input_noClass" maxlength="1" oninput="maxLengthCheck(this)" tabindex="3">
+              <div class="img_password"></div>
+           </div>
+          </div>    
+
+        </div>
+    
+        <label class="input_label">이름</label>
+        <input type="text" class="input_basic evt_input value_1" tabindex="1">
+  
+
+      </section>
+    </main>
+
+
+
+
+
+
+
+  </div>
+  <!-- wrapper -->
+
+
+    <!-- Modal modal_broad -->
+    <div id="modal_broad" class="modal bottom-sheet">
+
+      <div class="modal_header">
+        <h4 class="modal_title">통신사를 선택해주세요</h4>
+        <div class="close_x modal-close waves-effect"></div>
+      </div>
+
+      <div class="modal-content">
+
+        <ul class="broad_area">
+          <li class="modal-close">SKT</li>
+          <li class="modal-close">KT</li>
+          <li class="modal-close">LG U+</li>
+          <li class="modal-close">SKT 알뜰폰</li>
+          <li class="modal-close">KT 알뜰폰</li>
+          <li class="modal-close">LG U+ 알뜰폰</li>
+        </ul>
+        <div class="h20"></div>
+
+      </div>
+
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>F_SAH_rating_chatTest01.html</title>
+
+
+    <!-- jquery -->
+    <script src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script src="../js/materialize.min.js"></script>
+
+    <!-- guide.js -->
+    <script src="../js/custom/guide.js"></script>
+
+    <!-- guide_chat.js -->
+    <script src="../js/custom/guide_chat.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="../css/materialize.min.css">
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- style_chat.css -->
+    <link rel="stylesheet" href="../css/style_chat.css">
+
+    <style>
+
+        :root{
+            --speed : 0.8; /* 1 */
+        }
+
+
+        [title="step_1"] {
+            animation-delay: calc(11s * var(--speed));
+        }
+
+        [title="step_1_02"] {
+            animation-delay: calc(12s * var(--speed));
+        }
+    </style>
+
+    <script>
+
+
+        $(function () {
+            $(window).on("load", function () {
+                $('html, body').scrollTop(0); // 페이지 로드 시 상단에 고정
+
+                // 요소가 화면에 나타날 때 스크롤을 이동시키는 함수
+                function scrollToElement(target) {
+                    const offsetTop = $(target).offset().top;
+                    const windowHeight = window.innerHeight;
+                    $('html, body').animate({
+                        scrollTop: offsetTop - windowHeight + $(target).outerHeight() + 20 // 요소 높이와 하단 여백 추가
+                    }, 400); // 스크롤 속도 조절 (400ms)
+                }
+
+                // intro_A02_01이 애니메이션을 시작할 때 스크롤 이동
+                $('[title="intro_A02_01"]').on('animationstart', function() {
+                    scrollToElement('[title="intro_A02_01"]');
+                    
+                    // step_01이 애니메이션을 시작할 때 스크롤 이동
+                    $('[title="step_1"]').on('animationstart', function() {
+                        scrollToElement('[title="step_1"]');
+                    });
+                });
+            });
+        });
+
+
+
+
+
+
+    </script>
+
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+
+
+        <header>
+            <nav class="top">
+                <a class="btn_back waves-effect" href="#">
+                    <span class="icon"></span>
+                    <span class="txt">인정등급 예상 테스트</span>
+                </a>
+                <div class="d-flex">
+                    <div class="icon_area waves-effect">
+                        <div class="icon_btn i_home"></div>
+                    </div>
+                </div>
+
+            </nav>
+        </header>
+
+
+        <main>
+            <section class="default">
+
+                <div class="progress_raTest">
+                    <div class="progress-bar" style="width: calc(100% * ( 1 / 6 ))"></div>
+                </div>
+
+
+
+
+                <div class="wrap_chatArea">
+
+                    <div class="boxChatArea bot_recv" title="intro_A01_01">
+                        <div class="profile"></div>
+                        <div class="box_chat" title="intro_A01_02">
+                            안녕하세요. 저는 보미예요.<br>
+                            어르신이 장기요양보험 혜택을 받을 수 있는지 확인해드릴게요.
+                            
+                            <div class="img_area bomE">
+                                <img src="/html/page/app/matching/assets/src/images/21chat/chat_bomE_01.svg" alt="doumi">
+                            </div>
+                        </div>
+                        <div class="box_chat" title="intro_A01_03">
+                            테스트는 총 5가지 영역으로 약 3분 정도 진행돼요.
+                        </div>
+                        <div class="box_chat" title="intro_A01_04">
+                            저를 잘 따라와주세요!
+                        </div>
+                    </div>
+                    <!-- bot_recv -->
+
+
+                    <div class="boxChatArea bot_recv" title="intro_A02_01">
+                        <div class="profile"></div>
+                        <div class="box_chat" title="intro_A02_02">
+                            <div class="part_item w100p">
+                                <div class="title_area">
+                                    <div class="icon">
+                                        <img src="/html/page/app/matching/assets/src/images/21chat/part01_body.svg" alt="신체기능">
+                                    </div>
+                                    <span class="title">신체기능</span>
+                                </div>
+                                <div class="badge_redLight">총 12문항</div>
+                            </div>
+                            첫번째 영역은 신체기능이에요.
+                        </div>
+                        <div class="box_chat" title="intro_A02_03">
+                            최근 한 달 간 어르신이 다음 동작을 할 때 <span class="font_sbmb">도움이 필요한 정도</span>를 선택해 주세요.
+                        </div>
+
+                    </div>
+                    <!-- bot_recv -->
+
+
+
+
+                    <div class="boxChatArea bot_recv" title="step_1">
+                        <div class="profile"></div>
+                        <div class="box_chat" title="step_1_02">
+                            <div class="badge_greenLight">1문항</div> 
+                            <div class="title_question">혼자 옷을 입고 벗을 수 있나요?</div>
+                            
+                            <div class="chk_area w100p">
+                                <label class="list">
+                                    <input type="radio" name="step001" value="1">
+                                    <span>혼자서 가능함</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step001" value="2">
+                                    <span>도움 필요함</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step001" value="3">
+                                    <span>도움 없이 못 함</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- bot_recv 1-->
+
+
+
+
+                    <!-- step 2부터 클래스:boxChatArea_2 / box_chat에 title속성 삭제 -->
+                    <div class="boxChatArea_2 bot_recv" title="step_2">
+                        <div class="profile"></div>
+                        <div class="box_chat">
+                            <div class="badge_greenLight">2문항</div> 
+                            <div class="title_question">혼자 세수를 할 수 있나요?</div>
+                            
+                            <div class="chk_area w100p">
+                                <label class="list">
+                                    <input type="radio" name="step002" value="1">
+                                    <span>혼자서 가능함</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step002" value="2">
+                                    <span>도움 필요함</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step002" value="3">
+                                    <span>도움 없이 못 함</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- bot_recv 2-->
+
+
+                    <div class="boxChatArea_2 bot_recv" title="step_3">
+                        <div class="profile"></div>
+                        <div class="box_chat">
+                            <div class="badge_greenLight">3문항</div> 
+                            <div class="title_question">혼자 양치질을 할 수 있나요?</div>
+                            
+                            <div class="chk_area w100p">
+                                <label class="list">
+                                    <input type="radio" name="step003" value="1">
+                                    <span>혼자서 가능함</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step003" value="2">
+                                    <span>도움 필요함</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step003" value="3">
+                                    <span>도움 없이 못 함</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- bot_recv 3-->
+
+
+
+                    <div class="boxChatArea_2 bot_recv" title="step_4">
+                        <div class="profile"></div>
+                        <div class="box_chat">
+                            <div class="badge_greenLight">4문항</div> 
+                            <div class="title_question">혼자 목욕을 할 수 있나요?</div>
+                            
+                            <div class="chk_area w100p">
+                                <label class="list">
+                                    <input type="radio" name="step004" value="1">
+                                    <span>혼자서 가능함</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step004" value="2">
+                                    <span>도움 필요함</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step004" value="3">
+                                    <span>도움 없이 못 함</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- bot_recv 4-->
+
+
+
+                    <div class="boxChatArea_2 bot_recv" title="step_5">
+                        <div class="profile"></div>
+                        <div class="box_chat">
+                            <div class="badge_greenLight">5문항</div> 
+                            <div class="title_question">혼자 식사를 할 수 있나요?</div>
+                            
+                            <div class="chk_area w100p">
+                                <label class="list">
+                                    <input type="radio" name="step005" value="1">
+                                    <span>혼자서 가능함</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step005" value="2">
+                                    <span>도움 필요함</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step005" value="3">
+                                    <span>도움 없이 못 함</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- bot_recv 5-->
+
+
+
+                    <div class="boxChatArea_2 bot_recv" title="step_6">
+                        <div class="profile"></div>
+                        <div class="box_chat">
+                            <div class="badge_greenLight">6문항</div> 
+                            <div class="title_question">혼자 자세를 바꿀 수 있나요?</div>
+                            
+                            <div class="chk_area w100p">
+                                <label class="list">
+                                    <input type="radio" name="step006" value="1">
+                                    <span>혼자서 가능함</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step006" value="2">
+                                    <span>도움 필요함</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step006" value="3">
+                                    <span>도움 없이 못 함</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- bot_recv 6-->
+
+
+
+                    <div class="boxChatArea_2 bot_recv" title="step_7">
+                        <div class="profile"></div>
+                        <div class="box_chat">
+                            <div class="badge_greenLight">7문항</div> 
+                            <div class="title_question">혼자 자리에서 일어나 앉을 수 있나요?</div>
+                            
+                            <div class="chk_area w100p">
+                                <label class="list">
+                                    <input type="radio" name="step007" value="1">
+                                    <span>혼자서 가능함</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step007" value="2">
+                                    <span>도움 필요함</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step007" value="3">
+                                    <span>도움 없이 못 함</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- bot_recv 7-->
+
+
+
+                    <div class="boxChatArea_2 bot_recv" title="step_8">
+                        <div class="profile"></div>
+                        <div class="box_chat">
+                            <div class="badge_greenLight">8문항</div> 
+                            <div class="title_question">혼자 자리를 옮겨서 앉을 수 있나요?</div>
+                            
+                            <div class="chk_area w100p">
+                                <label class="list">
+                                    <input type="radio" name="step008" value="1">
+                                    <span>혼자서 가능함</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step008" value="2">
+                                    <span>도움 필요함</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step008" value="3">
+                                    <span>도움 없이 못 함</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- bot_recv 8-->
+
+
+
+                    <div class="boxChatArea_2 bot_recv" title="step_9">
+                        <div class="profile"></div>
+                        <div class="box_chat">
+                            <div class="badge_greenLight">9문항</div> 
+                            <div class="title_question">혼자 방 밖으로 나올 수 있나요?</div>
+                            
+                            <div class="chk_area w100p">
+                                <label class="list">
+                                    <input type="radio" name="step009" value="1">
+                                    <span>혼자서 가능함</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step009" value="2">
+                                    <span>도움 필요함</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step009" value="3">
+                                    <span>도움 없이 못 함</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- bot_recv 9-->
+
+
+
+                    <div class="boxChatArea_2 bot_recv" title="step_10">
+                        <div class="profile"></div>
+                        <div class="box_chat">
+                            <div class="badge_greenLight">10문항</div> 
+                            <div class="title_question">혼자 화장실을 다녀올 수 있나요?</div>
+                            
+                            <div class="chk_area w100p">
+                                <label class="list">
+                                    <input type="radio" name="step010" value="1">
+                                    <span>혼자서 가능함</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step010" value="2">
+                                    <span>도움 필요함</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step010" value="3">
+                                    <span>도움 없이 못 함</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- bot_recv 10-->
+
+
+
+                    <div class="boxChatArea_2 bot_recv" title="step_11">
+                        <div class="profile"></div>
+                        <div class="box_chat">
+                            <div class="badge_greenLight">11문항</div> 
+                            <div class="title_question">혼자 대변 조절을 하실 수 있나요?</div>
+                            
+                            <div class="chk_area w100p">
+                                <label class="list">
+                                    <input type="radio" name="step011" value="1">
+                                    <span>혼자서 가능함</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step011" value="2">
+                                    <span>도움 필요함</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step011" value="3">
+                                    <span>도움 없이 못 함</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- bot_recv 11-->
+
+
+
+                    <div class="boxChatArea_2 bot_recv" title="step_12">
+                        <div class="profile"></div>
+                        <div class="box_chat">
+                            <div class="badge_greenLight">12문항</div> 
+                            <div class="title_question">혼자 소변 조절을 하실 수 있나요?</div>
+                            
+                            <div class="chk_area w100p">
+                                <label class="list">
+                                    <input type="radio" name="step012" value="1">
+                                    <span>혼자서 가능함</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step012" value="2">
+                                    <span>도움 필요함</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step012" value="3">
+                                    <span>도움 없이 못 함</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- bot_recv 12-->
+
+
+
+                    <div class="boxChatArea_2 bot_recv" title="step_13">
+                        <div class="profile"></div>
+                        <div class="box_chat">
+                            <div class="title_question">신체 기능 영역을 완료했어요!</div>
+
+                            <a class="btn btn-large btn_cancel w100p" href="F_SAH_rating_chatTest02.html">
+                                <span class="color_tp_s font_sbms">다음으로</span>
+                              </a>
+                            
+                            
+                        </div>
+                    </div>
+                    <!-- bot_recv 13 end -->
+
+
+
+    
+                </div>
+                <!-- wrap_chatArea -->
+
+            </section>
+        </main>
+
+
+
+
+
+
+
+    </div>
+    <!-- wrapper -->
+
+
+
+</body>
+
+</html>

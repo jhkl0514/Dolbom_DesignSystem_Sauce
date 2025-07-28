@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>F_SAD_001_om_care.html</title>
+
+
+    <!-- jquery -->
+    <script src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script src="../js/materialize.min.js"></script>
+
+    <!-- guide.js -->
+    <script src="../js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="../css/materialize.min.css">
+
+    <!-- DEDS-260 202412 aos 추가 -->
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- DEDS-260 202412 js-->
+    <script>
+
+        $(function () {
+            $(window).scroll(function() {
+
+                // 1. chk01_2_div 애니메이션 처리
+                $('.chk01_2_div').each(function(index) {
+                    var $chk01_2 = $(this);
+                    var chkStep_01_2 = $chk01_2.offset().top;
+                    var windowScrollTop = $(window).scrollTop();
+                    var windowHeight = $(window).height();
+
+                    if (chkStep_01_2 <= windowScrollTop + windowHeight - 200 && !$chk01_2.hasClass('animated')) {
+                        $chk01_2.addClass('animated');
+
+                        // 세 번째 박스에만 1초 후 active 클래스 추가
+                        if (index === 2) {
+                            setTimeout(function() {
+                                $chk01_2.addClass('active');
+
+                                // 2.5초 후 chk01_3_div 애니메이션 시작
+                                setTimeout(function() {
+                                    $('.chk01_3_div').each(function(index3) {
+                                        var $chk01_3 = $(this);
+
+                                        if (!$chk01_3.hasClass('animated')) {
+                                            setTimeout(function() {
+                                                $chk01_3.addClass('animated');
+
+                                                // 두 번째 박스에만 추가 애니메이션 실행
+                                                if (index3 === 1) {
+                                                    setTimeout(function() {
+                                                        $chk01_3.addClass('active');
+
+                                                        // 신청완료 애니메이션
+                                                        $('.check_ok').each(function() {
+                                                            var $check_ok = $(this);
+                                                            $check_ok.addClass('animated');
+                                                        });
+
+                                                    }, 800); // 1초 딜레이
+                                                }
+                                            }, index3 * 300); // 각 요소마다 0.3초씩 지연
+                                        }
+                                    });
+                                }, 1000); // 2.5초 딜레이
+
+                            }, 800); // 1초 딜레이
+                        }
+                    }
+                });
+
+            });
+        });
+
+
+    </script>
+
+
+    <script>
+
+        $(function () {
+
+            $('.collapsible.default').collapsible({
+            });
+
+        });
+
+    </script>
+    <!-- lottie -->
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+
+
+
+</head>
+
+<!-- DEDS-260 202412 body클래스 삭제-->
+<body >
+    <div class="wrapper">
+
+
+        <header>
+            <nav class="top">
+                <a class="btn_back waves-effect" href="#">
+                    <span class="icon"></span>
+                    <span class="txt">어르신 돌봄</span>
+                </a>
+                <div class="icon_area waves-effect">
+                    <div class="icon_btn i_share"></div>
+                </div>
+
+            </nav>
+        </header>
+
+
+        <main>
+            <!-- DEDS-260 202412 -->
+            <section class="intro">
+
+                <h3 class="title">
+                    어르신에게 맞는 돌봄 서비스
+                </h3>
+                <h2 class="title color_tp_pp marT4">
+                    어르신 돌봄
+                </h2>
+
+                <div class="h52"></div>
+
+                <div class="d-flex align-items-center gap06">
+                    <img src="/html/page/app/matching/assets/src/images/08etc/money03_40.svg" style="width: 28px;" alt="sw">
+                    <div class="font_sbms">어르신 돌봄 비용 85%~100% 지원</div>
+                </div>
+
+                <div class="h52"></div>
+
+
+
+                <div class="align_center">
+                    <dotlottie-player src="https://lottie.host/ac99e2a2-35f7-4cac-b2c7-ed578d93a590/E42FDGRKfP.json" background="transparent" speed="1" style="width: 320px; height: 200px;" loop autoplay></dotlottie-player>
+                </div>
+
+                <div class="h56"></div>
+
+                <div class="h12 back_F7F7F7 marW-20"></div>
+
+                <div class="h56"></div>
+
+                <h2 class="title02" data-aos="fade-up">
+                    어르신 돌봄은 어떤 서비스를<br>
+                    받을 수 있나요?
+                </h2>
+
+                <div class="h24"></div>
+
+                <div class="color_t_s font_sbmr" data-aos="fade-up">신체활동, 인지활동 등 어르신 상황에 따라 받을 수 있는 혜택을 확인할 수 있어요.</div>
+
+
+                <div class="h52"></div>
+
+                <div class="back_FAFAFA radius16 padH32W20 center" data-aos="fade-up">
+
+                    <div class="font_shm">정서케어</div>
+
+                    <div class="h32"></div>
+
+                    <dotlottie-player src="/html/page/app/matching/assets/lottie/om_care_01.lottie" background="transparent" speed="1" style="height: 160px;margin: 0 auto;" direction="1" playMode="normal" loop autoplay></dotlottie-player>
+                    
+                    <div class="h32"></div>
+
+                    <div class="color_t_s font_sbmr">정서적 지원으로 친구처럼 함께합니다.</div>
+                </div>
+ 
+                <div class="h16"></div>
+
+                <div class="back_FAFAFA radius16 padH32W20 center" data-aos="fade-up">
+
+                    <div class="font_shm">외출동행(병원동행)</div>
+
+                    <div class="h32"></div>
+
+                    <dotlottie-player src="/html/page/app/matching/assets/lottie/om_care_02.lottie" background="transparent" speed="1" style="height: 160px;margin: 0 auto;" direction="1" playMode="normal" loop autoplay></dotlottie-player>
+                    
+                    <div class="h32"></div>
+
+                    <div class="color_t_s font_sbmr">병원 외래 동행 서비스 제공.</div>
+                </div>
+ 
+                <div class="h16"></div>
+
+                <div class="back_FAFAFA radius16 padH32W20 center" data-aos="fade-up">
+
+                    <div class="font_shm">치매케어</div>
+
+                    <div class="h32"></div>
+
+                    <dotlottie-player src="/html/page/app/matching/assets/lottie/om_care_03.lottie" background="transparent" speed="1" style="height: 160px;margin: 0 auto;" direction="1" playMode="normal" loop autoplay></dotlottie-player>
+
+                    
+                    <div class="h32"></div>
+
+                    <div class="color_t_s font_sbmr">치매 교육받은 요양보호사가<br>전문 케어 진행.</div>
+                </div>
+ 
+                <div class="h56"></div>
+
+                <div class="h12 back_F7F7F7 marW-20"></div>
+
+                <div class="h56"></div>
+
+                <h2 class="title02" data-aos="fade-up">
+                    어르신 돌봄<br>
+                    간편하게 신청하세요!
+                </h2>
+
+                <div class="h52"></div>
+
+
+                <ul class="welfase_step_area no_line top_start">
+                    <div class="line"></div>
+                    <li data-aos="fade-up">
+                        <div>
+                            <div>돌봄이 필요한 시간 선택</div>
+                            <div class="h16"></div>
+
+                            <div class="relative">
+                                <div class="chk01_2_div">3시간 이내</div>
+                                <div class="chk01_2_div">3~8시간</div>
+                                <div class="chk01_2_div">8~10시간</div>
+                            </div>
+
+                            <div class="h24"></div>
+                        </div>
+                        
+                    </li>
+                    <li data-aos="fade-up">
+                        <div>
+                            <div>인정등급 간편 테스트</div>
+                            <div class="h16"></div>
+                            <div class="bder_box_01 back_FAFAFA radius16 padH20W16">
+                                <div class="color_tp_ss font_sbms">Q. 혼자서 식사를  하실 수 있나요?</div>
+                                <div class="h24"></div>
+
+                                <div class="relative">
+                                    <div class="chk01_3_div">
+                                        <span class="txt">도움 없이 가능</span>
+                                    </div>
+                                    <div class="chk01_3_div">
+                                        <span class="txt">도움 필요</span>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="check_ok">신청완료</li>
+                </ul>
+
+
+                <div class="h32"></div>
+
+                <div class="h12 back_F7F7F7 marW-20"></div>
+
+                <div class="h40"></div>
+
+                <div class="font_sblb">더 자세히 알아보세요</div>
+
+                <div class="h08"></div>
+
+                <div class="marW-20">
+
+                    <ul class="collapsible default">
+                        <li class="bder_bottom active">
+                            <div class="collapsible-header pad20">
+                                <span class="font_sbms">인정등급 테스트는 왜 해야 하나요?</span>
+                                <span class="arrow"></span>
+                            </div>
+                            <div class="collapsible-body noPad">
+                                <div class="pad20 back_FAFAFA">
+                                    <div class="color_t_s font_sbmr">
+                                        장기요양등급이 있으면 어르신 돌봄 비용의 85%~100%까지 국가 지원을 받을 수 있어요.
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                        <li class="bder_bottom">
+                            <div class="collapsible-header pad20">
+                                <span class="font_sbms">혜택은 어떻게 받을 수 있나요?</span>
+                                <span class="arrow"></span>
+                            </div>
+                            <div class="collapsible-body noPad">
+                                <div class="pad20 back_FAFAFA">
+                                    <div class="color_t_s font_sbmr">
+                                        상담을 하면 전문가가 어떻게 장기요양보험 혜택을 받을 수 있을 지 알려드려요.<br>
+                                        어르신 상황을 파악하고 필요한 경우 인정등급 신청을 도와드려요.
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+    
+    
+
+                </div>
+
+                <div class="h40"></div>
+
+                
+            </section>
+            <!-- DEDS-260 202412 end -->
+        </main>
+
+        <footer class="page-footer">
+
+            <div class="relative">
+                <a class="waves-effect btn-large btn_primary w100p">돌봄 지원받기</a>
+            </div>
+
+        </footer>
+
+
+
+
+
+
+
+    </div>
+    <!-- wrapper -->
+
+
+
+</body>
+
+</html>
+
+
+<!-- DEDS-260 202412 -->
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+
+AOS.init({
+    duration: 800,
+    once: true,
+    offset: 150,
+});
+</script>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>가이드</title>
+    <link rel="stylesheet" href="../../core/style/style.min.css" />
+    <link rel="stylesheet" href="../../page/index/assets/style/style.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/dark.min.css">
+    <link rel="stylesheet" type="text/css" href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="../../core/vendor/jquery/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>hljs.highlightAll();</script>
+    <style>
+      body { display: flex; flex-direction: row; overflow-x: hidden; background: #fff !important; font-family: Pretendard,'Noto Sans KR', sans-serif; }
+      #list, #content { max-width: none; overflow: overlay; -webkit-overflow-scrolling: touch; }
+      #list::-webkit-scrollbar, #content::-webkit-scrollbar { width: 0.5rem; height: 0.5rem; }
+      #list::-webkit-scrollbar-thumb, #content::-webkit-scrollbar-thumb { border-radius: 0.75rem; background-color: #aaa; }
+      #list::-webkit-scrollbar-track, #content::-webkit-scrollbar-track { background-color: transparent; }
+      #list .nav-link { position: relative; margin-bottom: -1px; z-index: 1; }
+      #list .active { z-index: 10; transition: all 0.5s ease-in-out; background-color: #60a5fa; border-bottom-color: #60a5fa; color: white; }
+      hr { margin: 2rem 0; }
+      hr:last-child { display: none; }
+      [id*="section"] { min-height: 25vh; }
+      .table-guide th, .table-guide td { border: 1px solid #ddd; padding: 0.5rem; letter-spacing: -0.2px; }
+      .table-guide thead th { background-color: #eee; }
+      .table-guide tbody th { background-color: #f5f5f5; }
+      .table-guide a { color: #2563eb; }
+      .table-guide td > p { line-height: 160%; padding-bottom: 0.5rem;  }
+      .table-guide td > p ~ p {border-top: 1px solid #eee; margin: 0 -0.5rem 0; padding: 0.5rem; }
+      .table-guide td > p ~ p:last-child { padding: 0.5rem 0.5rem 0; }
+      .table-guide a:active, .table-guide a:focus, .table-guide a:hover {
+          text-decoration: underline;
+          color: #2563eb;
+      }
+      .not-current a, .not-current { color: #dc2626;}
+  </style>
+  </head>
+  <body class="flex h-screen overflow-hidden">
+    <nav id="list" class="w-30 h-screen overflow-y-auto border-r border-gray-300 bg-gray-100">
+        <ul>
+            <li><a href="#section7" class="nav-link block py-2 px-3 border-b border-gray-300">사용법</a></li>
+            <li><a href="#section0" class="nav-link block py-2 px-3 border-b border-gray-300">라이브러리</a></li>
+            <li><a href="#section1" class="nav-link block py-2 px-3 border-b border-gray-300">반응형 규칙</a></li>
+            <li><a href="#section2" class="nav-link block py-2 px-3 border-b border-gray-300">텍스트 규칙</a></li>
+            <li><a href="#section3" class="nav-link block py-2 px-3 border-b border-gray-300">색상 규칙</a></li>
+            <li><a href="#section4" class="nav-link block py-2 px-3 border-b border-gray-300">여백 규칙</a></li>
+            <li><a href="#section5" class="nav-link block py-2 px-3 border-b border-gray-300">버튼 규칙</a></li>
+            <li><a href="#section6" class="nav-link block py-2 px-3 border-b border-gray-300">폼 규칙</a></li>
+            <li><a href="#section8" class="nav-link block py-2 px-3 border-b border-gray-300">CSS구조</a></li>
+            <li><a href="#section9" class="nav-link block py-2 px-3 border-b border-gray-300">ICONS</a></li>
+            <li><a href="#section10" class="nav-link block py-2 px-3 border-b border-gray-300">화면명</a></li>
+            <li><a href="#section7" class="nav-link block py-2 px-3 border-b border-gray-300">추가아이콘</a></li>
+        </ul>
+    </nav>
+    <main id="content" class="flex-1 py-4 px-5 overflow-auto">
+      <div id="section7" class="min-h-full">
+        <iframe src="method.html"  onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+      </div>
+      <div id="section0" class="min-h-full">
+        <div class="flex flex-col gap-4 py-4 px-5">
+          <h2 class="font-semibold text-4xl">사용 라이브러리</h2>
+          <table class="table-list">
+            <thead>
+              <tr>
+                  <th scope="col">이름</th>
+                  <th scope="col">파일경로</th>
+                  <th scope="col">API</th>
+                  <th scope="col">사용법</th>
+              </tr>
+          </thead>
+            <tbody>
+                <tr>
+                    <th>Swiper</th>
+                    <td>/html/core/vendor/swiperjs</td>
+                    <td><a target="_blank" href="https://swiperjs.com/demos">link</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Masonry</th>
+                    <td>/html/core/vendor/masonry</td>
+                    <td><a target="_blank" href="https://masonry.desandro.com/">link</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>twelements</th>
+                    <td>/html/core/vendor/twelements</td>
+                    <td><a target="_blank" href="https://tw-elements.com/">link</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>datatables</th>
+                    <td>/html/core/vendor/datatables</td>
+                    <td><a target="_blank" href="https://datatables.net/download/">link</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>draggable</th>
+                    <td>/html/core/vendor/draggable/draggable.bundle.js</td>
+                    <td><a target="_blank" href="https://shopify.github.io/draggable/">link</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>bootstrap</th>
+                    <td></td>
+                    <td><a target="_blank" href="https://getbootstrap.com/">link</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th class="!py-2">jquery</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="flex flex-col gap-4 py-4 px-5">
+          <h2 class="font-semibold text-4xl">플러그인</h2>
+          <table class="table-list">
+            <thead>
+              <tr>
+                  <th scope="col">이름</th>
+                  <th scope="col">파일경로</th>
+                  <th scope="col">API</th>
+                  <th scope="col">사용법</th>
+              </tr>
+          </thead>
+            <tbody>
+                <tr>
+                    <th>채널톡</th>
+                    <td></td>
+                    <td><a target="_blank" href="https://desk.channel.io/#/signin?redirectTo=/channels/130549/settings/general/plugins/130305">link</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>채널톡 API</th>
+                    <td></td>
+                    <td><a target="_blank" href="https://developers.channel.io/reference/web-customization-kr">link</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>부트페이</th>
+                    <td></td>
+                    <td><a target="_blank" href="https://www.bootpay.co.kr/">link</a></td>
+                    <td></td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="section1" class="min-h-full">
+        <iframe src="response.html"  onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+      </div>
+      <div id="section2" class="min-h-full">
+        <iframe src="text.html"  onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+      </div>
+      <div id="section3" class="min-h-full">
+        <iframe src="colors.html"  onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+      </div>
+      <div id="section4" class="min-h-full">
+        <iframe src="space.html"  onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+      </div>
+      <div id="section5" class="min-h-full">
+        <iframe src="buttons.html"  onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+      </div>
+      <div id="section6" class="min-h-full">
+        <iframe src="forms.html"  onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+      </div>
+      <div id="section8" class="min-h-full">
+        <iframe src="folder.html"  onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+      </div>
+      <div id="section9" class="min-h-full">
+        <iframe src="icons.html"  onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+      </div>
+      <div id="section10" class="min-h-full">
+        <iframe src="directory.html"  onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+      </div>
+      <div id="section7" class="min-h-full">
+        <iframe src="icons.html"  onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+      </div>
+    </main>
+  </body>
+</html>

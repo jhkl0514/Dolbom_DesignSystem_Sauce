@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+
+    <title>GUIDE_000_index.html</title>
+
+
+    <!-- jquery -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/materialize.js"></script>
+
+    <!-- guide.js -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/materialize.min.css" />
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/style.css" />
+
+    <!-- guideStyle_2025.css -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/guideStyle_2025.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/atom-one-dark.min.css">
+
+    <!-- highlight.js -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/go.min.js"></script>
+
+    <!-- highlight copy -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+
+    <!-- guideStyle_2025.js -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guideStyle_2025.js"></script>
+
+    <script>
+        $(function(){
+
+
+
+        });
+    </script>
+
+
+</head>
+
+<style>
+    /* 모바일화면에만 표시 */
+    /* nav.sidebar{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+
+        transition: 0.1s all;
+        opacity: 0;
+        transform: scaleY(0.01);
+        transform-origin: top left;
+    }
+    nav.sidebar + section{margin: 0;} */
+
+</style>
+
+
+
+<body>
+
+    <header>
+
+        <div class="gs_header">
+
+            <a href="GUIDE_000_index.html" class="logo"><span>돌봄 디자인시스템</span></a>
+
+            <ul class="header_menu">
+                <li><a href="GUIDE_001_Foundation.html">Foundation</a></li>
+                <li><a href="GUIDE_002_Component.html">Component</a></li>
+                <li><a href="GUIDE_003_AppScreen.html">App Screen</a></li>
+                <li><a href="GUIDE_004_WebScreen.html">Web Screen</a></li>
+                <li><a href="GUIDE_005_StyleGuide.html">Style Guide</a></li>
+                <li class="search"><a href="#"></a></li>
+            </ul>
+
+            <div class="m_menu"></div>
+
+
+        </div>
+
+    </header>
+
+    <div class="wrap">
+
+        <main>
+
+            <nav class="sidebar ddd">
+                
+                <div class="sidebar_header">
+                    <div class="title_area">
+                        <div class="close_x"></div>
+                    </div>
+                    <div class="sidebar_search">
+                        <input type="text" placeholder="검색어를 입력해 주세요.">
+                        <div class="search">
+                            <a href="#"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="title">App Screen</h4>
+
+                <div class="sidebar_list">
+                    <ul class="tabs_dept_sidebar">
+                        <li class="tab"><a class="active" title="dept_app">App Screen</a></li>
+                        <li class="tab"><a class="" title="dept_web">Web Screen</a></li>
+                    </ul>
+
+                    <div class="tab_list dept_app" title="siteMap_app_iframe">
+
+                        <ul class="dept1">
+                            
+                            <li><a href="F_SGN_001_login01.html">네이버 카카오 로그인</a></li>
+                            <li><a href="F_SGN_002_join0107.html">로그인</a></li>
+                            <li><a href="F_SGN_003_join_ok.html">회원가입 완료</a></li>
+                            <li>
+                                <a class="arrow" href="F_SNR_002_my_cert_info.html">본인인증 안내11</a>
+                                <ul class="dept2">
+                                    <li>
+                                        <a class="arrow" href="F_SNR_002_my_cert_info.html">본인인증 안내</a>
+                                        <ul class="dept3">
+                                            <li><a href="F_SNR_002_my_cert_info.html">dept3 31메뉴11</a></li>
+                                            <li><a href="F_ALT_001_noti_list.html">dept3 32메뉴</a></li>
+                                            <li><a href="F_ALT_002_noti_setting.html">dept3 33메뉴</a></li>
+                                        </ul>
+                                    
+                                    </li>
+                                    <li>
+                                        <a class="arrow" href="F_CON_001_om_guide.html">개인정보 입력</a>
+                                        <ul class="dept3">
+                                            <li><a href="F_CON_001_om_guide.html">dept3 31메뉴</a></li>
+                                            <li><a href="F_CON_002_content_detail.html">dept3 32메뉴</a></li>
+                                            <li><a href="F_CSR_001_consInfo.html">dept3 33메뉴</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="arrow" href="F_CSR_001_telMdfy.html">회원가입11</a>
+    
+                                <ul class="dept2">
+                                    <li><a href="F_CSR_001_telMdfy.html">회원가입</a></li>
+                                    <li><a href="F_CSR_002_om_age65.html">본인인증</a></li>
+                                    <li><a href="F_CSR_004_long_care_counList.html">회원가입 완료</a></li>
+                                    <li><a href="F_CSR_005_connect_chk_common_No.html">ON 회원 아이디 찾기</a></li>
+                                    <li><a href="F_CSR_005_connect_chk_common_Ok.html">ON 회원 비밀번호 찾기</a></li>
+                                    <li><a href="F_CSR_005_connect_chk_jega.html">계정 연결</a></li>
+                                    <li><a href="F_CSR_005_coun_history_cancel.html">로그인 유도</a></li>
+                                    <li><a href="F_CSR_005_coun_history_guide.html">본인인증(로그인 후)</a></li>
+                                    <li>
+                                        <a class="arrow" href="F_CSR_005_coun_history.html">본인인증</a>
+    
+                                        <ul class="dept3">
+                                            <li><a href="F_CSR_005_coun_history.html">dept3 31메뉴</a></li>
+                                            <li><a href="F_CSR_006_consRegion_원본.html">dept3 32메뉴</a></li>
+                                            <li><a href="F_CSR_006_consRegion.html">dept3 33메뉴</a></li>
+                                        </ul>
+    
+                                    </li>
+                                    <li><a href="F_CSR_007_consCompOk.html">dept2 23메뉴</a></li>
+                                    <li>
+                                        <a class="arrow" href="F_HEP_001_faq_detail.html">dept2 24메뉴</a>
+    
+                                        <ul class="dept3">
+                                            <li><a class="active" href="F_HEP_001_faq_detail.html">dept3 34메뉴(활성)</a></li>
+                                            <li><a href="F_HEP_001_faq.html">dept3 35메뉴</a></li>
+                                            <li><a href="F_HEP_011_notice_detail.html">dept3 36메뉴</a></li>
+                                        </ul>
+    
+                                    </li>
+                                </ul>
+    
+                            </li>
+                            <li>
+                                <a class="arrow" href="F_HEP_011_notice.html">dept1 13메뉴</a>
+                                <ul class="dept2">
+                                    <li>
+                                        <a href="F_HEP_011_notice.html">dept2 25메뉴</a>
+                                    </li>
+                                    <li>
+                                        <a class="arrow" href="F_HEP_020_customer_service_on.html">dept2 26메뉴</a>
+    
+                                        <ul class="dept3">
+                                            <li><a href="F_HEP_020_customer_service_on.html">dept3 37메뉴</a></li>
+                                            <li><a href="F_HEP_020_customer_service.html">dept3 38메뉴</a></li>
+                                            <li><a href="F_MIF_001_email_mdfy.html">dept3 39메뉴</a></li>
+                                        </ul>
+    
+                                    </li>
+                                    <li><a href="F_MIF_001_ID_mdfy.html">dept2 27메뉴</a></li>
+                                    <li><a href="F_MIF_001_info.html">dept2 28메뉴</a></li>
+                                </ul>
+                            </li>
+    
+                        </ul>
+
+                    </div>
+                    <!-- dept_app -->
+
+                    <div class="tab_list dept_web" title="siteMap_web_iframe">
+                        
+                        <ul class="dept1">
+                            <li><a href="F_MIF_002_member_withdraw_01.html">스플래시2</a></li>
+                            <li><a href="F_MIF_002_member_withdraw_02.html">스플래시2</a></li>
+                            <li>
+                                <a class="arrow" href="F_MIF_002_member_withdraw_03.html">회원가입</a>
+    
+                                <ul class="dept2">
+                                    <li><a href="F_MIF_002_member_withdraw_03.html">회원가입</a></li>
+                                    <li><a href="F_MIF_002_member_withdraw_041_naver.html">로그인 유도</a></li>
+                                    <li><a href="F_MIF_002_member_withdraw_042_kakao.html">본인인증(로그인 후)</a></li>
+                                    <li>
+                                        <a class="arrow" href="F_MIF_002_member_withdraw_043_apple.html">본인인증</a>
+    
+                                        <ul class="dept3">
+                                            <li><a href="F_MIF_002_member_withdraw_043_apple.html">dept3 31메뉴</a></li>
+                                            <li><a href="F_MIF_011_SNS.html">dept3 32메뉴</a></li>
+                                            <li><a href="F_ONB_001_onboard01.html">dept3 33메뉴</a></li>
+                                        </ul>
+    
+                                    </li>
+                                    <li><a href="F_ORD_001_order_product_list_01.html">dept2 23메뉴</a></li>
+                                    <li>
+                                        <a class="arrow" href="F_ORD_001_order_product_list_02.html">dept2 24메뉴</a>
+    
+                                        <ul class="dept3">
+                                            <li><a href="F_ORD_001_order_product_list_02.html">dept3 34메뉴</a></li>
+                                            <li><a href="F_ORD_001_order_product_list_no.html">dept3 36메뉴</a></li>
+                                        </ul>
+    
+                                    </li>
+                                </ul>
+    
+                            </li>
+                            <li><a href="F_ORD_001_order_req_list_no.html">메뉴</a></li>
+    
+                        </ul>
+
+                    </div>
+                    <!-- dept_web -->
+                    
+
+
+
+
+                </div>
+
+
+            </nav>
+
+
+
+            <section>
+
+                <div class="dsg_intro_box">
+
+                    <div class="title_area">
+                        
+                        <div class="dsg_title">Design System Guide</div>
+    
+                        <div class="title">이로움돌봄<br>디자인시스템 가이드</div>
+    
+                        <div class="ctn">협업자들이 일관된 기준으로 UI를 제작할 수 있도록 디자인시스템과 퍼블리싱 가이드를 웹으로 제공합니다.</div>
+
+                    </div>
+
+                    <div class="img_area"></div>
+
+                </div>
+
+
+
+                <div class="dsg_total_con_box">
+                    <div class="title">전체 구성</div>
+
+                    <div class="total_con_area">
+
+                        <a href="GUIDE_001_Foundation.html" class="total_con_box">
+                            <div class="img_area img_dsg01"></div>
+                            <div class="ctn_area">
+                                <div class="link_text_gs">
+                                    파운데이션
+                                </div>
+                                <p class="txt">
+                                    디자인의 기본 요소를 구성하는 색상, 타이포그래피, 간격 등을 정의하는 가이드입니다.
+                                </p>
+                            </div>
+
+                        </a>
+
+                        <a href="GUIDE_002_Component.html" class="total_con_box">
+                            <div class="img_area img_dsg02"></div>
+                            <div class="ctn_area">
+                                <div class="link_text_gs">
+                                    컴포넌트
+                                </div>
+                                <p class="txt">
+                                    일관된 사용자 경험을 위해 자주 사용하는 UI 요소를 모아둔 라이브러리입니다.
+                                </p>
+                            </div>
+
+                        </a>
+
+                        <a href="GUIDE_003_AppScreen.html" class="total_con_box mo">
+                            <div class="img_area img_dsg03"></div>
+                            <div class="ctn_area">
+                                <div class="link_text_gs">
+                                    앱 스크린
+                                </div>
+                                <p class="txt">
+                                    모바일 환경에서 사용되는 화면 구성과 UI 요소를 시각적으로 정리하여 제공합니다.
+                                </p>
+                            </div>
+
+                        </a>
+
+                        <a href="GUIDE_004_WebScreen.html" class="total_con_box mo">
+                            <div class="img_area img_dsg04"></div>
+                            <div class="ctn_area">
+                                <div class="link_text_gs">
+                                    웹 스크린
+                                </div>
+                                <p class="txt">
+                                    웹 환경에서 사용되는 화면 구성과 UI 요소를 시각적으로 정리하여 제공합니다.
+                                </p>
+                            </div>
+
+                        </a>
+
+                        <a href="GUIDE_005_StyleGuide.html" class="total_con_box">
+                            <div class="img_area img_dsg05"></div>
+                            <div class="ctn_area">
+                                <div class="link_text_gs">
+                                    스타일가이드
+                                </div>
+                                <p class="txt">
+                                    브랜드 정체성을 유지하기 위한 스타일 규칙과 활용 방안을 제공합니다.
+                                </p>
+                            </div>
+
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <br><br><br><br><br>
+
+
+
+
+
+            </section>
+
+
+        </main>
+
+
+
+    </div>
+    <!-- wrapper -->
+
+
+</body>
+
+</html>

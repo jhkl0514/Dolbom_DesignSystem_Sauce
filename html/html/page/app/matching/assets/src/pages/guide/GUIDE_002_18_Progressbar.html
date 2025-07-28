@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+
+    <title>GUIDE_002_18_Progressbar.html</title>
+
+
+    <!-- jquery -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/materialize.js"></script>
+
+    <!-- guide.js -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/materialize.min.css" />
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/style.css" />
+
+    <!-- guideStyle_2025.css -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/guideStyle_2025.css" />
+
+    <!-- guideStyle_2025.js -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guideStyle_2025.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="gs_header">
+
+            <a href="GUIDE_000_index.html" class="logo"><span>돌봄 디자인시스템</span></a>
+
+            <ul class="header_menu">
+                <li><a href="GUIDE_001_Foundation.html">Foundation</a></li>
+                <li><a href="GUIDE_002_Component.html" class="active">Component</a></li>
+                <li><a href="GUIDE_003_AppScreen.html">App Screen</a></li>
+                <li><a href="GUIDE_004_WebScreen.html">Web Screen</a></li>
+                <li><a href="GUIDE_005_StyleGuide.html">Style Guide</a></li>
+                <li class="search"><a href="#"></a></li>
+            </ul>
+
+        </div>
+
+    </header>
+
+    <div class="wrap">
+
+        <main>
+
+
+            <nav class="sidebar">
+                
+                <div class="sidebar_header">
+                    <div class="title_area">
+                        <div class="close_x"></div>
+                    </div>
+                    <div class="sidebar_search">
+                        <input type="text" placeholder="검색어를 입력해 주세요.">
+                        <div class="search">
+                            <a href="#"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="title">Component</h4>
+
+                <div class="sidebar_list">
+                    <ul class="tabs_dept_sidebar">
+                        <li class="tab"><a class="active" title="dept_app">App Screen</a></li>
+                        <li class="tab"><a class="" title="dept_web">Web Screen</a></li>
+                    </ul>
+
+                    <div class="tab_list dept_app" title="siteMap_guide">
+                        <ul class="dept1">
+                            <li><a href="GUIDE_002_Component.html">Button</a></li>
+                            <li><a href="GUIDE_002_02_SelectionControls.html">Selection Controls</a></li>
+                            <li><a href="GUIDE_002_03_Link.html">Link</a></li>
+                            <li><a href="GUIDE_002_04_Chips.html">Chips</a></li>
+                            <li><a href="GUIDE_002_05_TextField.html">TextField</a></li>
+                            
+                            <li><a href="GUIDE_002_06_SelectField.html">SelectField</a></li>
+                            <li><a href="GUIDE_002_07_OptionList.html">OptionList</a></li>
+                            <li><a href="GUIDE_002_08_TopNavigation.html">Top Navigation</a></li>
+                            <li><a href="GUIDE_002_09_BottomNavigation.html">Bottom Navigation</a></li>
+                            <li><a href="GUIDE_002_10_List.html">List</a></li>
+                            
+                            <li><a href="GUIDE_002_11_Popup.html">Popup</a></li>
+                            <li><a href="GUIDE_002_12_BottomSheet.html">BottomSheet</a></li>
+                            <li><a href="GUIDE_002_13_Banner.html">Banner</a></li>
+                            <li><a href="GUIDE_002_14_Tab.html">Tab</a></li>
+                            <li><a href="GUIDE_002_15_NumberStepper.html">Number Stepper</a></li>
+
+                            <li><a href="GUIDE_002_16_TextAreaField.html">TextAreaField</a></li>
+                            <li><a href="GUIDE_002_17_Accordion.html">Accordion</a></li>
+                            <li><a class="active" href="GUIDE_002_18_Progressbar.html">Progressbar</a></li>
+
+                        </ul>
+                    </div>
+
+
+                </div>
+
+
+            </nav>
+
+
+ 
+            <section>
+
+
+                <div class="h48"></div>
+
+                <div class="titleNav">Progressbar</div>
+
+                <div class="h24"></div>
+ 
+                <div class="roundBox_01">
+                    프로그레스바(Progress Bar)는 사용자가 시스템 내 작업 또는 프로세스의 진행 상태를 한눈에 이해할 수 있도록,
+                    전체 진행률 대비 현재 완료된 비율을 시각적으로 표현하는 컴포넌트입니다.  
+                </div>
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Anatomy, 컴포넌트 내부요소</h3>
+
+                <div class="h24"></div>
+
+                <div class="roundBox_01 flex_center h240">
+                    <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_91_01_progressbar.svg" alt="">
+                </div>
+
+                <div class="h16"></div>
+
+                <ul class="d-flex gap16 color_t_s font_ssr">
+                    <li>1.Container</li>
+                    <li>2.ProgressBar</li>
+                </ul>
+
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Type, 종류</h3>
+
+                <div class="h24"></div>
+
+                <div class="roundBox_01 noPad back_E0E0E0">
+                    <div class="grid_container">
+                        <div class="item flex_center h200">
+                            <div class="infoFix">
+                                <span class="f_head text">Collapsed</span>
+                                <div>
+                                    <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_92_01_progressbar.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item flex_center h200">
+                            <div class="infoFix">
+                                <span class="f_head text">Expended</span>
+                                <div>
+                                    <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_92_02_progressbar.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item flex_center h200">
+                            <div class="infoFix">
+                                <span class="f_head text">Collapsed</span>
+                                <div>
+                                    <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_92_03_progressbar.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item flex_center h200">
+                            <div class="infoFix">
+                                <span class="f_head text">Expended</span>
+                                <div>
+                                    <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_92_04_progressbar.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item flex_center h200">
+                            <div class="infoFix">
+                                <span class="f_head text">Expended</span>
+                                <div>
+                                    <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_92_05_progressbar.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item flex_center"></div>
+                    </div>
+                </div>
+
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Table of Figma Propertie, 피그마 속성</h3>
+
+                <div class="h24"></div>
+
+                <table class="guide_table">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Type</th>
+                            <th>ProgressStep</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="color_tp_s font_sbss">Values</span></td>
+                            <td>Thick, Default, Thin, IconWithBar, MultiStepBar</td>
+                            <td>1,2,3,4</td>
+                        </tr>
+                        <tr>
+                            <td><span class="color_tp_s font_sbss">Default Value</span></td>
+                            <td>Default</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Spec, 제작가이드</h3>
+
+                <div class="h24"></div>
+
+                <h5 class="title fw700">Container는 배경색 또는 Border-radius 스타일을 적용할 수 있어야 합니다.</h5>
+
+                <div class="h08"></div>
+
+                <div class="color_tp_s font_sbmr">
+                    Container는 상황에 따라 다양한 배경색이나 모서리 둥글기(Border-radius)를 적용하여,
+                    각 화면의 컨텍스트와 시각적 일관성에 맞게 유연하게 표현해야 합니다.
+                </div>
+
+                <div class="h24"></div>
+
+                <h5 class="title fw700">ProgressBar는 단색 또는 Gradient 스타일을 적용할 수 있습니다.</h5>
+
+                <div class="h08"></div>
+
+                <div class="color_tp_s font_sbmr">
+                    진행 구간은 단색 또는 그라데이션 스타일로 표현할 수 있으며, 서비스 톤앤매너에 따라 일관성 있게 적용해야 합니다.
+                </div>
+
+                <div class="h24"></div>
+
+                <h5 class="title fw700">부가 요소(아이콘, 라벨, 스텝 표시)는 상황에 따라 선택적으로 사용할 수 있습니다.</h5>
+
+                <div class="h08"></div>
+
+                <div class="color_tp_s font_sbmr">
+                    아이콘이나 텍스트 라벨은 사용자의 현재 상태를 보조하거나, 스텝 구간 구분을 돕는 역할을 하며 필요한 경우에만 노출합니다.
+                </div>
+
+                <div class="h24"></div>
+
+                <h5 class="title fw700">다단계 Progress가 필요한 경우, 컴포넌트를 분해하여 사용해야 합니다.</h5>
+
+                <div class="h08"></div>
+
+                <div class="color_tp_s font_sbmr">
+                    기존 Progress 컴포넌트는 기본적인 1~4개 단계 기준으로 설계되어 있으며,<br>
+                    5단계 이상 복잡한 진행 표시가 필요할 경우, 컴포넌트를 분리하거나 새롭게 구성하여 사용해야 합니다.
+                </div>
+
+                <div class="h16"></div>
+
+
+                <div class="roundBox_01 flex_center">
+                    <div>
+                        <div class="h20"></div>
+                        <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_93_01_progressbar.svg" alt="">
+                        <div class="h20"></div>
+                    </div>
+                </div>
+
+
+
+                <div class="h100"></div>
+
+            </section>
+
+
+
+        </main>
+
+
+    </div>
+    <!-- wrapper -->
+
+</body>
+
+</html>

@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+
+    <title>F_SAA_001_service_new01.html</title>
+
+
+    <!-- jquery -->
+    <script type="text/javascript" src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script type="text/javascript" src="../js/materialize.min.js"></script>
+
+    <!-- guide.js -->
+    <script type="text/javascript" src="../js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="../css/materialize.min.css" />
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="../js/swiper/swiper-bundle.min.css" />
+
+
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+
+    <style>
+
+
+        /* 배너 swipe */
+        .banner_swiper{
+          margin: -12px -20px;
+        }
+
+        .banner_swiper .swiper-slide {
+            background-color: #fff;
+            padding: 12px 20px;
+
+        }
+
+        .banner_swiper .swiper-pagination {
+            width: auto;
+            top: 24px;
+            right: 32px;
+            left: initial;
+            font-size: 0;
+            line-height: 0;
+        }
+
+
+        /* 복지용구 이용현황 */
+        /* swipe */
+        .welfare_swiper .swiper-wrapper {
+            margin: 28px 0 32px;
+            transition-timing-function: linear;
+            }
+
+
+        .welfare_swiper .swiper-slide {
+            width: 68px;
+            margin-left: 20px;
+            /* width: calc(100% - 40px); */
+            }
+
+
+
+
+        /* 공지사항 */
+        .notice_Swiper {
+            height: 24px;
+        }
+
+        .notice_Swiper .swiper-slide {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            display: flex;
+        }
+
+    </style>
+
+
+    <script>
+
+        $(function () {
+
+            //어르신 선택시 상단 텍스트 변경
+            $('.broad_area.om_select li').click(function () {
+
+                var thisTxt = $(this).find('span').text();
+
+                $('.txtEvt').text(thisTxt);
+
+            });
+
+
+            //modal 오픈시 active 추가
+            var openEvt = function () {
+                $('.top_dropdown_btn').addClass('active');
+            };
+
+            //modal 닫을시 active 삭제
+            var closeEvt = function () {
+                $('.top_dropdown_btn').removeClass('active');
+
+            };
+
+
+            $(".modal_om_select").modal({
+                onOpenStart: openEvt,
+                onCloseStart: closeEvt,
+            });
+
+
+        });
+
+
+        $(function () {
+
+            //닫기
+            $('.close_x').click(function () {
+
+                $(this).closest('.card').slideUp(150);
+
+            });
+
+        });
+
+
+    </script>
+
+
+</head>
+
+<body class="">
+    <div class="wrapper">
+
+
+        <header>
+            <nav class="top">
+                <div class="btn_back">
+                    <div class="txt">
+
+                        <span class="txtEvt">어르신</span>
+
+                        <!-- top_dropdown_area -->
+                        <div class="top_dropdown_area">
+                            <a class="top_dropdown_btn modal-trigger" href="#modal_om_select"></a>
+                        </div>
+                        <!-- top_dropdown_area end-->
+
+                        <span class="color_tp_s font_sbls marL4">님을 위한 서비스</span>
+
+                    </div>
+                </div>
+                <div class="icon_area waves-effect">
+                    <div class="icon_btn i_alarm noti_dot"></div>
+                </div>
+
+
+
+            </nav>
+        </header>
+
+
+        <main>
+            <section class="default">
+
+                <div class="card marB32">
+
+                    <div class="close_x p03"></div>
+
+                    <a class="card-content waves-effect box_coun_list s02 _om_box">
+
+                        <div class="img_area trans_04 ing">
+                        </div>
+
+                        <div class="color_t_p font_sbmb">
+                            <span class="color_tp_pp">요양인정번호</span>를<br>등록해주세요
+                        </div>
+
+                    </a>
+
+                </div>
+                <!-- card -->
+
+                <!-- 추천메뉴1 -->
+                <div class="card marB32">
+
+                    <div class="close_x p03"></div>
+
+                    <a class="card-content waves-effect box_coun_list s02 _om_box">
+
+                        <div class="img_area trans_05 ing">
+                        </div>
+
+                        <div class="color_t_p font_sbmb">
+                            놓치고 있는<br>
+                            <span class="color_tp_pp">복지용구 확인</span>하세요
+                        </div>
+
+                    </a>
+
+                </div>
+                <!-- card -->
+                 
+                <!-- 추천메뉴2 -->
+                <div class="card marB32">
+
+                    <div class="close_x p03"></div>
+
+                    <a class="card-content waves-effect box_coun_list s02 _om_box">
+
+                        <div class="img_area trans_06 ing">
+                        </div>
+
+                        <div class="color_t_p font_sbmb">
+                            장바구니에 담은 복지용구가<br>
+                            잠시후 사라져요
+                        </div>
+
+                    </a>
+
+                </div>
+                <!-- card -->
+
+
+                <div class="card service_card_order backImg_01">
+
+                    <div class="d-flex">
+
+                        <div class="title_area">
+
+                            <span class="txt_cate">어르신 요양정보</span>
+                            <div class="txt_ctn">
+                                지원금 160만원으로<br>
+                                놓친 복지용구 주문
+                            </div>
+
+                            <div class="btn_area">
+
+                                <a class="waves-effect btn_order">지원금 확인하기</a>
+                                
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+                <!-- card service_card -->
+
+                <div class="h20"></div>
+
+                
+                <div class="card service_card c04">
+
+                    <div class="title_area">
+
+                        <div class="font_sblb">복지용구 이용현황</div>
+
+                        <div class="color_tp_s font_sbmr marT2">지원받은 복지용구 확인하세요</div>
+
+                    </div>
+                    
+                    <!-- Swiper -->
+                    <div class="swiper welfare_swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="wefare_icon">
+                                    <img src="../images/01tool/tool01_01.svg" alt="보행기">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="wefare_icon">
+                                    <img src="../images/01tool/tool01_02.svg" alt="휠체어">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="wefare_icon">
+                                    <img src="../images/01tool/tool01_03.svg" alt="지팡이">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="wefare_icon">
+                                    <img src="../images/01tool/tool01_06.svg" alt="미끄럼방지 양말">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="wefare_icon">
+                                    <img src="../images/01tool/tool01_04.svg" alt="안전손잡이">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="wefare_icon">
+                                    <img src="../images/01tool/tool01_09.svg" alt="자세변환용구">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="wefare_icon">
+                                    <img src="../images/01tool/tool01_10.svg" alt="요실금팬티">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="wefare_icon">
+                                    <img src="../images/01tool/tool01_11.svg" alt="목욕의자">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="h20"></div>
+
+
+
+                <div class="card service_card c01">
+
+                    <div class="title_area">
+
+                        <span class="txt_cate">복지용구</span>
+                        <div class="txt_ctn">
+                            불편하세요?<br>
+                            간편한 복지용구 신청
+                        </div>
+
+                    </div>
+
+                    <div class="om_img_area">
+                        <img src="../images/10om/rom_01.svg">
+                    </div>
+
+                    <div class="box_area">
+
+                        <div class="box">
+                            <img src="../images/08etc/tool_80.svg">
+                            <div class="ctn_area">
+                                <div class="font_sbss">관심 복지용구</div>
+
+                                <p class="color_t_s font_sbsr noMar">
+                                    쉽고 빠르게 신청해요
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- card service_card -->
+
+                <div class="h20"></div>
+
+                <div class="card service_card c02">
+
+                    <div class="title_area">
+
+                        <span class="txt_cate">복지용구</span>
+                        <div class="txt_ctn">
+                            혜택 받을 수 있는지<br>빠르게 확인
+                        </div>
+
+                    </div>
+
+                    <div class="om_img_area">
+                        <img src="../images/10om/rom_02.svg">
+                    </div>
+
+                    <div class="box_area">
+
+                        <div class="box">
+                            <img src="../images/08etc/test_80.svg">
+                            <div class="ctn_area">
+                                <div class="font_sbss">인정등급 간편 테스트</div>
+                                <p class="color_t_s font_sbsr noMar">
+                                    간단하게 확인하세요
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- card service_card -->
+
+                <div class="h20"></div>
+
+                <div class="card service_card c03">
+
+                    <div class="title_area">
+
+                        <span class="txt_cate">복지용구</span>
+                        <div class="txt_ctn">
+                            혼자 계시지 않도록<br>
+                            돌봄 신청
+                        </div>
+
+                    </div>
+
+                    <div class="om_img_area">
+                        <img src="../images/10om/rom_03.svg">
+                    </div>
+
+                    <div class="box_area">
+
+                        <div class="box">
+                            <img src="../images/08etc/time03_80.svg">
+                            <div class="ctn_area">
+                                <div class="font_sbss">어르신 돌봄</div>
+                                <p class="color_t_s font_sbsr noMar">
+                                    걱정을 덜어드릴게요
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- card service_card -->
+
+                <div class="h48"></div>
+
+
+                <div class="swiper banner_swiper">
+
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+
+                            <div class="card waves-effect banner_card slide_03_bg">
+
+                                <div class="card-content">
+
+                                    <div class="txt_area">
+                                        <div class="font_sbms_2">즐기세요, 당신의 시니어 라이프!</div>
+                                
+                                        <p class="color_t_s font_ssr marT4 line_clamp_1">
+                                            격이 맞는 이웃, 위례 심포니아
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- card -->
+                        </div>
+
+                        <div class="swiper-slide">
+
+                            <div class="card waves-effect banner_card slide_01_bg">
+
+                                <div class="card-content">
+
+                                    <div class="txt_area">
+                                        <div class="font_sbms_2">독일 건강식품 최대 60% 할인</div>
+                                
+                                        <p class="color_t_s font_ssr marT4 line_clamp_1">
+                                          한발 빠른 추석 이로움ON 스토어
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- card -->
+
+                        </div>
+                        <!-- swiper-slide -->
+
+
+
+                        <div class="swiper-slide">
+
+                            <div class="card waves-effect banner_card slide_02_bg">
+
+                                <div class="card-content">
+
+                                    <div class="txt_area">
+                                        <div class="font_sbms_2">유럽 건강식품 할인전 상시 오픈</div>
+
+                                        <p class="color_t_s font_ssr marT4 line_clamp_1">
+                                            시니어를 위한 이로움ON 스토어
+                                        </p>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <!-- card -->
+
+                        </div>
+                        <!-- swiper-slide -->
+
+                    </div>
+                    <!-- swiper-wrapper -->
+
+                    <div class="swiper-pagination"></div>
+
+                </div>
+
+
+
+                <div class="h48"></div>
+
+                <div class="font_shs">유용한 정보를 모았어요</div>
+
+                <div class="h20"></div>
+
+                <div class="box_list_area">
+
+                    <a class="box_om_wel_list title">
+                        <div class="img_area">
+                          <img src="../images/08etc/document_41.svg" alt="인정등급 발급 절차">
+                        </div>
+                        <div>
+                            <div class="font_sbms">
+                                인정등급 발급 절차
+                            </div>
+                            <div class="color_t_s font_sbsr marT4 ">소요 기간과 진행 절차 안내</div>
+                        </div>
+                    </a>
+
+                    <a class="box_om_wel_list title">
+                        <div class="img_area">
+                          <img src="../images/08etc/accompany_41.svg" alt="외출시 유용한 용품">
+                        </div>
+                        <div>
+                            <div class="font_sbms">
+                                외출시 유용한 용품
+                            </div>
+                            <div class="color_t_s font_sbsr marT4">야외에서 쾌적하고 안정적인 활동</div>
+                        </div>
+                    </a>
+
+                    <a class="box_om_wel_list title">
+                        <div class="img_area">
+                          <img src="../images/08etc/icon_24h.svg" alt="주야간보호센터란?">
+                        </div>
+                        <div>
+                            <div class="font_sbms">
+                                주야간보호센터란?
+                            </div>
+                            <div class="color_t_s font_sbsr marT4">집에 혼자 계시는 어르신이 걱정된다면</div>
+                        </div>
+                    </a>
+
+                    <a class="box_om_wel_list title">
+                        <div class="img_area">
+                          <img src="../images/08etc/money03_40.svg" alt="인정등급 별 혜택">
+                        </div>
+                        <div>
+                            <div class="font_sbms">
+                                인정등급 별 혜택
+                            </div>
+                            <div class="color_t_s font_sbsr marT4">받을 수 있는 혜택</div>
+                        </div>
+                    </a>
+
+
+                </div>
+                <!-- box_list_area -->
+
+                <div class="h48"></div>
+
+
+                <div class="card notice w100p noShadow ">
+
+                    <div class="card-content">
+
+                        <dl class="notice_dl">
+                            <dt>공지사항</dt>
+
+                            <!-- Swiper -->
+                            <dd class="swiper notice_Swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+
+                                        <span class="waves-effect">이용약관이 변경되었습니다.</span>
+
+                                    </div>
+                                    <div class="swiper-slide">
+
+                                        <span class="waves-effect">글자수가 길어진 이용약관이 변경되었습니다.</span>
+
+                                    </div>
+                                    <div class="swiper-slide">
+
+                                        <span class="waves-effect">글자수가 너무 길어지면 점점처리 하고 이용약관이 이용약관이 이용약관이 이렇게
+                                            변경되었습니다.</span>
+
+                                    </div>
+                                    <div class="swiper-slide">
+
+                                        <span class="waves-effect">이렇게 변경되었습니다.</span>
+
+                                    </div>
+                                    <div class="swiper-slide">
+
+                                        <span class="waves-effect">공지글이 5개로 기본설정되서 변경되었습니다.</span>
+
+                                    </div>
+                                </div>
+                            </dd>
+
+
+                        </dl>
+
+                    </div>
+                </div>
+                <!-- card -->
+
+
+            </section>
+        </main>
+
+        <footer class="page-footer bottomNav">
+
+            <ul class="bottomNav_menu">
+
+                <li class="btn_om ">
+                    <a class="waves-effect">
+                        <span class="txt">어르신</span>
+                    </a>
+                </li>
+                <li class="btn_wel">
+                    <a class="waves-effect">
+                        <span class="txt">복지용구</span>
+                    </a>
+                </li>
+                <li class="btn_service active">
+                    <a class="waves-effect">
+                        <span class="txt">서비스</span>
+                    </a>
+                </li>
+                <li class="btn_guide">
+                    <a class="waves-effect">
+                        <span class="txt">길잡이</span>
+                    </a>
+                </li>
+                <li class="btn_entier">
+                    <a class="waves-effect">
+                        <span class="txt">전체</span>
+                    </a>
+                </li>
+
+            </ul>
+
+        </footer>
+
+
+
+    </div>
+    <!-- wrapper -->
+
+
+
+
+    <!-- Modal modal_om_select -->
+    <div id="modal_om_select" class="modal bottom-sheet modal_om_select">
+
+        <div class="modal_header">
+            <h4 class="modal_title">어르신을 선택해주세요</h4>
+            <div class="close_x modal-close waves-effect"></div>
+        </div>
+
+        <div class="modal-content">
+
+            <div class="scrollBox heightAuto" style="max-height: 50vh;">
+                <ul class="broad_area om_select">
+                    <li class="modal-close active">
+                        <div class="img_flower fl_01"></div>
+                        <span>꽃분이</span>
+                    </li>
+                    <li class="modal-close">
+                        <div class="img_flower fl_02"></div>
+                        <span>꽃순이</span>
+                    </li>
+                    <li class="modal-close">
+                        <div class="img_flower fl_03"></div>
+                        <span>꽃돌이</span>
+                    </li>
+                    <li class="modal-close">
+                        <div class="img_flower fl_04"></div>
+                        <span>꽃박이</span>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="h20"></div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <script src="../js/swiper/swiper-bundle.min.js"></script>
+    <script>
+
+    //배너 슬라이드
+    var swiper = new Swiper(".banner_swiper", {
+            autoHeight: true,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+
+            },
+        });
+
+
+
+    //복지용구 아이콘
+    // ** service.jsp와 설정 값이 다름
+    var swiper = new Swiper(".welfare_swiper", {
+        autoplay: {
+        delay: 0,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+        },
+        speed:2000,
+
+        loop:true,
+        
+        slidesPerView: "auto",
+        slidesPerGroup: 1,
+        loopedSlides: 1, //noSwiping : true,
+        observer:true, observeParents:true,
+    });
+
+
+    //공지사항
+    var swiper = new Swiper(".notice_Swiper", {
+      spaceBetween: 10,
+      direction: "vertical",
+      loop: true,
+      centeredSlides: false,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+    });
+    </script>
+
+
+</body>
+
+</html>

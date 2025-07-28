@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+
+    <title>GUIDE_002_02_SelectionControls.html</title>
+
+
+    <!-- jquery -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/materialize.js"></script>
+
+    <!-- guide.js -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/materialize.min.css" />
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/style.css" />
+
+    <!-- guideStyle_2025.css -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/guideStyle_2025.css" />
+
+    <!-- guideStyle_2025.js -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guideStyle_2025.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="gs_header">
+
+            <a href="GUIDE_000_index.html" class="logo"><span>돌봄 디자인시스템</span></a>
+
+            <ul class="header_menu">
+                <li><a href="GUIDE_001_Foundation.html">Foundation</a></li>
+                <li><a href="GUIDE_002_Component.html" class="active">Component</a></li>
+                <li><a href="GUIDE_003_AppScreen.html">App Screen</a></li>
+                <li><a href="GUIDE_004_WebScreen.html">Web Screen</a></li>
+                <li><a href="GUIDE_005_StyleGuide.html">Style Guide</a></li>
+                <li class="search"><a href="#"></a></li>
+            </ul>
+
+        </div>
+
+    </header>
+
+    <div class="wrap">
+
+        <main>
+
+
+            <nav class="sidebar">
+                
+                <div class="sidebar_header">
+                    <div class="title_area">
+                        <div class="close_x"></div>
+                    </div>
+                    <div class="sidebar_search">
+                        <input type="text" placeholder="검색어를 입력해 주세요.">
+                        <div class="search">
+                            <a href="#"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="title">Component</h4>
+
+                <div class="sidebar_list">
+                    <ul class="tabs_dept_sidebar">
+                        <li class="tab"><a class="active" title="dept_app">App Screen</a></li>
+                        <li class="tab"><a class="" title="dept_web">Web Screen</a></li>
+                    </ul>
+
+                    <div class="tab_list dept_app" title="siteMap_guide">
+                        <ul class="dept1">
+                            <li><a href="GUIDE_002_Component.html">Button</a></li>
+                            <li><a class="active" href="GUIDE_002_02_SelectionControls.html">Selection Controls</a></li>
+                            <li><a href="GUIDE_002_03_Link.html">Link</a></li>
+                            <li><a href="GUIDE_002_04_Chips.html">Chips</a></li>
+                            <li><a href="GUIDE_002_05_TextField.html">TextField</a></li>
+                            
+                            <li><a href="GUIDE_002_06_SelectField.html">SelectField</a></li>
+                            <li><a href="GUIDE_002_07_OptionList.html">OptionList</a></li>
+                            <li><a href="GUIDE_002_08_TopNavigation.html">Top Navigation</a></li>
+                            <li><a href="GUIDE_002_09_BottomNavigation.html">Bottom Navigation</a></li>
+                            <li><a href="GUIDE_002_10_List.html">List</a></li>
+                            
+                            <li><a href="GUIDE_002_11_Popup.html">Popup</a></li>
+                            <li><a href="GUIDE_002_12_BottomSheet.html">BottomSheet</a></li>
+                            <li><a href="GUIDE_002_13_Banner.html">Banner</a></li>
+                            <li><a href="GUIDE_002_14_Tab.html">Tab</a></li>
+                            <li><a href="GUIDE_002_15_NumberStepper.html">Number Stepper</a></li>
+
+                            <li><a href="GUIDE_002_16_TextAreaField.html">TextAreaField</a></li>
+                            <li><a href="GUIDE_002_17_Accordion.html">Accordion</a></li>
+                            <li><a href="GUIDE_002_18_Progressbar.html">Progressbar</a></li>
+
+                        </ul>
+                    </div>
+
+
+                </div>
+
+
+            </nav>
+
+
+ 
+            <section>
+
+
+                <div class="h48"></div>
+
+                <div class="titleNav">Selection Controls</div>
+
+                <div class="h24"></div>
+ 
+                <div class="roundBox_01">
+                    셀렉션 컨트롤(Selection Controls)은 사용자가 선택 옵션들을 제어할 수 있도록 돕는 컴포넌트입니다.
+                    다중선택을 위한 체크 박스, 다수의 옵션 중 하나의 선택을 위한 라디오 버튼, 효과 전환을 위한 토글 스위치로 나눕니다.
+                </div>
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Anatomy, 컴포넌트 내부요소</h3>
+
+                <div class="h24"></div>
+
+                <div class="roundBox_01 noPad back_E0E0E0">
+                    <div class="grid_container H1W3">
+                        <div class="item">
+                            <div class="infoFix">
+                                <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_11_01_sc.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="infoFix">
+                                <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_11_02_sc.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="infoFix">
+
+                                <img class="disBlock marT12" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_11_03_sc.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="h16"></div>
+
+                <ul class="d-flex gap16 color_t_s font_ssr">
+                    <li>1. Container </li>
+                    <li>2. Mark</li>
+                    <li>3. Track</li>
+                    <li>4. Thumb</li>
+                </ul>
+
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Type, 종류</h3>
+                
+                <div class="h24"></div>
+
+                <h5 class="title fw700">1.Checkbox</h5>
+
+                <div class="h08"></div>
+
+                <div class="color_tp_s font_sbmr">
+                    체크박스는 제공된 옵션 항목 중 한 개 이상 선택할 수 있을 때 사용합니다.
+                </div>
+
+                <div class="h16"></div>
+
+                <div class="roundBox_01 noPad flex_center align-items-start">
+                    <img class="disBlock marT12" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_12_01_sc.svg" alt="">
+                </div>
+
+                <div class="h32"></div>
+
+                <h5 class="title fw700">2.Radio button</h5>
+
+                <div class="h08"></div>
+
+                <div class="color_tp_s font_sbmr">
+                    라디오 버튼은 제공된 옵션 항목 중 한개만 선택할 수 있을 때 사용합니다.
+                </div>
+
+                <div class="h16"></div>
+
+                <div class="roundBox_01 noPad flex_center align-items-start">
+                    <img class="disBlock marT12" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_13_01_sc.svg" alt="">
+                </div>
+
+                <div class="h32"></div>
+
+                <h5 class="title fw700">3.Switch</h5>
+
+                <div class="h08"></div>
+
+                <div class="color_tp_s font_sbmr">
+                    스위치는 제공된 화면의 설정을 켜거나 끌 때 사용합니다. 
+                </div>
+
+                <div class="h16"></div>
+
+                <div class="roundBox_01 noPad flex_center align-items-start">
+                    <img class="disBlock marT12" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_14_01_sc.svg" alt="">
+                </div>
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">State, 상태</h3>
+                
+                <div class="h24"></div>
+
+                <h5 class="title fw700">1.Checkbox</h5>
+
+                <div class="h16"></div>
+
+                <div class="roundBox_01 flex_center">
+                    <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_15_01_sc.svg" alt="">
+                </div>
+
+                <div class="h24"></div>
+
+                <div class="font_sbms">Table of Figma Propertie, 피그마 속성</div>
+
+                <div class="h24"></div>
+
+                <table class="guide_table">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Values</th>
+                            <th>Default Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="color_tp_s font_sbss">State</span></td>
+                            <td>Default, Pressed, Disabled</td>
+                            <td>Default</td>
+                        </tr>
+                        <tr>
+                            <td><span class="color_tp_s font_sbss">Selected</span></td>
+                            <td>True, False</td>
+                            <td>False</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="h32"></div>
+
+                <h5 class="title fw700">2.Radio button</h5>
+
+                <div class="h16"></div>
+                
+                <div class="roundBox_01 flex_center">
+                    <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_16_01_sc.svg" alt="">
+                </div>
+
+                <div class="h24"></div>
+
+                <div class="font_sbms">Table of Figma Propertie, 피그마 속성</div>
+
+                <div class="h24"></div>
+
+                <table class="guide_table">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Values</th>
+                            <th>Default Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="color_tp_s font_sbss">State</span></td>
+                            <td>Default, Pressed, Disabled</td>
+                            <td>Default</td>
+                        </tr>
+                        <tr>
+                            <td><span class="color_tp_s font_sbss">Selected</span></td>
+                            <td>True, False</td>
+                            <td>False</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="h32"></div>
+
+                <h5 class="title fw700">3.Switch</h5>
+
+                <div class="h16"></div>
+
+                <div class="roundBox_01 flex_center h180">
+                    <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_17_01_sc.svg" alt="">
+                </div>
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Spec, 제작가이드</h3>
+
+                <div class="h12"></div>
+
+                <div class="color_tp_s font_sbmr">
+                    체크박스, 라디오버튼 사이즈는 최소 20x20px, 스위치는 최소 36px를, 세로 사이즈는 최소 20px를 사용합니다. 
+                </div>
+
+                <div class="h24"></div>
+
+                <div class="roundBox_01 noPad back_E0E0E0">
+                    <div class="grid_container H1W3">
+                        <div class="item">
+                            <div class="infoFix">
+                                <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_18_01_sc.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="infoFix">
+                                <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_18_02_sc.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="infoFix">
+                                <img class="disBlock marT12" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_18_03_sc.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="h100"></div>
+
+            </section>
+
+
+
+        </main>
+
+
+    </div>
+    <!-- wrapper -->
+
+
+</body>
+
+</html>

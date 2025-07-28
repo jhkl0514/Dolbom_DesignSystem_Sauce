@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+
+    <title>F_SGN_006_noConnect_inter_member.html</title>
+
+
+    <!-- jquery -->
+    <script type="text/javascript" src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script type="text/javascript" src="../js/materialize.min.js"></script>
+
+    <!-- guide.js -->
+    <script type="text/javascript" src="../js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="../css/materialize.min.css" />
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <script>
+
+        $(function () {
+
+            $('.btn_evt_area .btn-large').click(function(){
+
+                $('.btn_evt_area .btn-large').removeClass('btn_primary_light').addClass('btn_white');
+
+                $(this).addClass('btn_primary_light').removeClass('btn_white');
+
+            });
+
+        });
+
+    </script>
+
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+
+
+        <header>
+            <nav class="top">
+                <a class="btn_back waves-effect" href="#">
+                    <span class="icon"></span>
+                    <!-- <span class="txt">상담 신청 완료</span> -->
+                </a>
+
+
+            </nav>
+        </header>
+
+
+        <main>
+            <section class="intro">
+
+                <h3 class="title">
+                    아래 계정으로 로그인해주세요
+                </h3>
+
+                <div class="h40"></div>
+
+                <div class="color_t_s font_sbsr">이로움ON 통합회원 계정</div>
+
+                <div class="h08"></div>
+
+                <div class="btn_evt_area">
+                    <div class="waves-effect btn-large justify-content-start maxHeightNo radius16 no_bder btn_primary_light">
+                        <img class="icon_img"
+                            src="/html/page/app/matching/assets/src/images/08etc/social_kakao_40.svg">
+                        <span class="font_sbmr">thkc@kakao.com</span>
+                    </div>
+                
+                    <div class="h04"></div>
+                
+                    <div class="waves-effect btn-large justify-content-start maxHeightNo radius16 no_bder btn_white">
+                        <img class="icon_img"
+                            src="/html/page/app/matching/assets/src/images/08etc/icon_naver02.svg">
+                        <span class="font_sbmr">thkc@naver.com</span>
+                    </div>
+                
+                    <!-- DEDS-209 202410 -->
+                    <div class="h04"></div>
+                
+                    <div class="waves-effect btn-large justify-content-start maxHeightNo radius16 no_bder btn_white">
+                        <img class="icon_img"
+                            src="/html/page/app/matching/assets/src/images/08etc/icon_Apple02.svg">
+                        <span class="font_sbmr">thkc@icloud.com</span>
+                    </div>
+                    <!-- DEDS-209 202410 End -->
+                
+                    <div class="h04"></div>
+                
+                    <div class="waves-effect btn-large justify-content-start maxHeightNo radius16 no_bder btn_white">
+                        <img class="icon_img"
+                            src="/html/page/app/matching/assets/src/images/08etc/login_on_40.svg" alt="eroumOn">
+                        <span class="font_sbmr">thkc@kakao.com</span>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+        <footer class="page-footer">
+
+            <div class="relative">
+                <a class="waves-effect btn-large btn_primary">로그인하기</a>
+            </div>
+
+        </footer>
+
+
+
+
+
+
+
+
+    </div>
+    <!-- wrapper -->
+
+
+
+</body>
+
+</html>

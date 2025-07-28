@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YoutubeShort Modal</title>
+  <script src="../js/jquery/jquery-3.6.0.min.js"></script>
+  <script src="../js/materialize.min.js"></script>
+  <script src="../js/custom/guide.js"></script>
+  <link rel="stylesheet" href="../css/materialize.min.css">
+  <link rel="stylesheet" href="../js/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .shortSwiper {
+      width: 100%;
+      height: 100%;
+    }
+    .shortSwiper .swiper-slide {
+      position: relative;
+    }
+    .shortSwiper .video-wrapper {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; /* 클릭 및 터치 이벤트 차단 */
+    }
+    .shortSwiper iframe {
+      width: 100%;
+      height: 100%;
+      pointer-events: auto; /* iframe에 대해서만 터치 이벤트 허용 */
+    }
+
+    .shortSwiper .btn_playStop{position: absolute;z-index: 1001;top:0;left: 0;width: 100%;height: 100%;background-color: #f0ffff8f;}
+    .shortSwiper .btn_naver{position: absolute;z-index: 1002;top:30px;left: 0;background-color: aquamarine;padding: 10px;}
+  </style>
+
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <nav class="top">
+        <a class="btn_back waves-effect" href="#">
+          <span class="icon"></span>
+          <span class="txt">상품상세</span>
+        </a>
+        <div class="d-flex"></div>
+      </nav>
+    </header>
+    <main>
+      <section class="default padT0">
+        <a class="btn btn_primary modal-trigger" data-slide="1">1번째 슬라이드</a>
+        <a class="btn btn_primary modal-trigger" data-slide="2">2번째 슬라이드</a>
+        <a class="btn btn_primary modal-trigger" data-slide="3">3번째 슬라이드</a>
+      </section>
+    </main>
+  </div>
+
+
+
+  <div id="modal_fullscreen01" class="modal fullscreen youtubeShort">
+    <div class="modal_header">
+      <h4 class="modal_title">이용약관</h4>
+      <div class="close_x modal-close waves-effect"></div>
+    </div>
+    <div class="modal-content no_footer noPad">
+      <div class="swiper shortSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="btn_playStop">재생정지버튼 - 뿌연화면은 선택영역표시로 의도적입니다.</div>
+            <div class="video-wrapper">
+              <iframe class="youtubeIframe" src="https://www.youtube.com/embed/QQ6IPAMRgUM?rel=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="btn_playStop">재생정지버튼 - 뿌연화면은 선택영역표시로 의도적입니다.</div>
+            <div class="video-wrapper">
+              <iframe class="youtubeIframe" src="https://www.youtube.com/embed/yLDL8JdNlE4?rel=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="btn_naver">
+              <a href="http://www.naver.com" target="_blank">네이버</a>
+            </div>
+            <div class="btn_playStop">
+              재생정지버튼 - 뿌연화면은 선택영역표시로 의도적입니다.
+            </div>
+            <div class="video-wrapper">
+              <iframe class="youtubeIframe" src="https://www.youtube.com/embed/AfbusT0Qw5Q?rel=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  
+  
+  
+  <script>
+    document.querySelectorAll('.modal-trigger').forEach((button) => {
+        button.addEventListener('click', function () {
+            let slideIndex = parseInt(this.getAttribute('data-slide')) - 1; // 1부터 시작 → 0부터 시작하도록 변환
+            let modal = document.querySelector('#modal_fullscreen01');
+
+            // Swiper가 초기화되었는지 확인하고 슬라이드 이동
+            if (swiper && swiper.initialized) {
+                swiper.slideTo(slideIndex, 0, false);
+            } else {
+                console.warn("Swiper가 아직 초기화되지 않았습니다. 재시도...");
+                setTimeout(() => swiper.slideTo(slideIndex, 0, false), 100);
+            }
+
+            // 모달을 연 뒤 슬라이드 이동 (애니메이션 없이)
+            setTimeout(() => {
+                swiper.slideTo(slideIndex, 0, false);
+            }, 300);
+
+            // 모달 열기
+            let instance = M.Modal.getInstance(modal);
+            instance.open();
+        });
+    });
+
+    let players = {}; // 유튜브 플레이어 객체 저장
+    let iframes = document.querySelectorAll('.youtubeIframe'); // 모든 iframe 요소 가져오기
+
+    // ✅ YouTube API가 로드되면 실행될 함수 (버튼 이벤트 추가 포함)
+    function onYouTubeIframeAPIReady() {
+        document.querySelectorAll('.youtubeIframe').forEach((iframe, index) => {
+            if (!iframe.src.includes("enablejsapi=1")) {
+                iframe.src += (iframe.src.includes("?") ? "&" : "?") + "enablejsapi=1";
+            }
+
+            let videoId = new URL(iframe.src).pathname.split('/')[2]; // 영상 ID 추출
+            players[index] = new YT.Player(iframe, {
+                videoId: videoId,
+                playerVars: {
+                    'autoplay': 0,
+                    'rel': 0
+                },
+                events: {
+                    'onReady': (event) => {
+                        console.log(`Player ${index} Ready`);
+                        attachButtonEvents(); // ✅ 버튼 이벤트 추가
+                    }
+                }
+            });
+        });
+    }
+
+    // ✅ 버튼 클릭 이벤트 (onYouTubeIframeAPIReady 실행 후 등록)
+    function attachButtonEvents() {
+        document.querySelectorAll('.btn_playStop').forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+                let player = players[index];
+                if (player && player.getPlayerState) {
+                    if (player.getPlayerState() === 1) {
+                        player.pauseVideo();
+                    } else {
+                        player.playVideo();
+                    }
+                }
+            });
+        });
+    }
+
+    // ✅ Swiper 설정 (슬라이드 이동 시 자동재생)
+    var swiper = new Swiper(".shortSwiper", {
+        direction: "vertical",
+        mousewheel: true,
+        pagination: {
+            clickable: true,
+        },
+        touchEventsTarget: 'container',
+        on: {
+            init: function () {
+                console.log("✅ Swiper가 초기화되었습니다.");
+                this.initialized = true;
+            },
+            slideChange: function () {
+                // 모든 비디오 정지
+                Object.values(players).forEach(player => player.pauseVideo());
+
+                // 현재 활성화된 슬라이드의 비디오 자동재생
+                let activeSlide = this.slides[this.activeIndex];
+                let iframe = activeSlide.querySelector('.youtubeIframe');
+                let index = [...iframes].indexOf(iframe);
+
+                if (players[index]) {
+                    players[index].playVideo();
+                }
+            },
+        },
+    });
+
+    // ✅ 닫기 버튼 클릭 시 모든 유튜브 정지
+    document.querySelector('.youtubeShort .close_x').addEventListener('click', function () {
+        Object.values(players).forEach(player => player.pauseVideo());
+    });
+
+</script>
+
+
+
+
+</body>
+</html>

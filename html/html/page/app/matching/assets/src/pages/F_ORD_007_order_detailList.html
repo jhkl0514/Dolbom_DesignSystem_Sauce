@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>F_ORD_007_order_detailList.html</title>
+
+
+    <!-- jquery -->
+    <script src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script src="../js/materialize.min.js"></script>
+
+    <!-- guide.js -->
+    <script src="../js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="../css/materialize.min.css">
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        
+
+    </style>
+
+    <script>
+
+        $(function () {
+
+            $('#modal_fullsreen_orderCancel').modal();
+
+
+
+            // 타이핑 제한
+            $('.textBox').on('input propertychange keyup', function (e) {
+                let content = $(this).val();
+                
+                // 글자수 세기
+                if (content.length == 0 || content == '') {
+                    $('.textCount').text('0');
+                } else {
+                    $('.textCount').text(content.length);
+                }
+                
+                // 글자수 제한
+                if (content.length > 20) {
+                    // 20자 부터는 타이핑 되지 않도록
+                    $(this).val(content.substring(0, 20));
+                    $('.textCount').text('20'); // 글자수 표시를 20으로 고정
+                }
+            });
+
+
+            //줄 제한
+            $('.textBox').keydown(function(){
+                var rows = $('.textBox').val().split('\n').length;
+                var maxRows = 2;
+                if( rows > maxRows){
+                    modifiedText = $('.textBox').val().split("\n").slice(0, maxRows);
+                    $('.textBox').val(modifiedText.join("\n"));
+                }
+            });
+
+
+
+            //[직접 입력할께요] 선택시 textarea 표시
+            $('.evt_msgTextarea').hide();
+
+            //[직접 입력할께요] 선택시 textarea 표시
+            $('.broad_area li').click(function () {
+
+                if ($(this).hasClass('evt_orderSelfMsg')) {
+
+                    if ($(this).hasClass('active')) {
+                        $('.evt_msgTextarea').show();
+                        setTimeout(function () {
+                            $('.evt_msgTextarea textarea').focus(); // 포커스에 약간의 딜레이 추가
+                        }, 100);
+                    }
+                } else {
+                    // evt_orderSelfMsg가 아닌 다른 li를 클릭하면 textarea 숨김
+                    $('.evt_msgTextarea').hide();
+                }
+            });
+
+
+
+        });
+
+    </script>
+    
+    <!-- DEDS-311 -->
+    <script>
+        $(function(){
+            $('.collapsible').collapsible();
+        });
+    </script>
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+
+
+        <header>
+            <nav class="top">
+                <a class="btn_back waves-effect" href="#">
+                    <span class="icon"></span>
+                    <span class="txt">주문상세</span>
+                </a>
+                <div class="d-flex">
+                    <div class="icon_area waves-effect">
+                        <div class="icon_btn i_home"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+
+
+        <main>
+            <section class="default noPad">
+
+                <div class="padH12W20">
+                    
+                    <table class="table_basic small_2">
+                        <colgroup>
+                            <col style="width:120px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th class="color_t_s font_sbmr">주문 일시</th>
+                                <td class="font_sbmr">2024.10.24 오후 12:00</td>
+                            </tr>
+                            <tr>
+                                <th class="color_t_s font_sbmr">주문서 번호</th>
+                                <td class="font_sbmr">DB1234567890</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+                
+                <div class="h12 back_F7F7F7"></div>
+
+                <div class="pad20">
+
+                    <div class="align_between_center">
+                        <div class="font_sbls">이로움사업소</div> 
+
+                        <a class="rounded waves-effect btn btn_cancel align_center gap08">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <g clip-path="url(#clip0_7674_6560)">
+                                  <path fill-rule="evenodd" clip-rule="evenodd" d="M7.99967 2.08301C4.73199 2.08301 2.08301 4.73199 2.08301 7.99967C2.08301 11.2674 4.73199 13.9163 7.99967 13.9163C11.2674 13.9163 13.9163 11.2674 13.9163 7.99967C13.9163 4.73199 11.2674 2.08301 7.99967 2.08301ZM0.583008 7.99967C0.583008 3.90356 3.90356 0.583008 7.99967 0.583008C12.0958 0.583008 15.4163 3.90356 15.4163 7.99967C15.4163 12.0958 12.0958 15.4163 7.99967 15.4163C3.90356 15.4163 0.583008 12.0958 0.583008 7.99967ZM7.99967 7.31201C8.41389 7.31201 8.74967 7.6478 8.74967 8.06201V10.8675C8.74967 11.2817 8.41389 11.6175 7.99967 11.6175C7.58546 11.6175 7.24967 11.2817 7.24967 10.8675V8.06201C7.24967 7.6478 7.58546 7.31201 7.99967 7.31201ZM7.99967 4.50651C7.58546 4.50651 7.24967 4.8423 7.24967 5.25651C7.24967 5.67072 7.58546 6.00651 7.99967 6.00651H8.00523C8.41944 6.00651 8.75523 5.67072 8.75523 5.25651C8.75523 4.8423 8.41944 4.50651 8.00523 4.50651H7.99967Z" fill="#333333"/>
+                                </g>
+                                <defs>
+                                  <clipPath id="clip0_7674_6560">
+                                    <rect width="16" height="16" fill="white"/>
+                                  </clipPath>
+                                </defs>
+                            </svg>
+                            <span class="color_tp_s font_sbss">정보</span>
+                        </a>
+                    </div>
+
+                    <div class="h20"></div>
+                    
+                    <!-- DEDS-311 -->
+                    <div class="color_tp_pp font_sbms">최종 주문요청</div>
+                    
+                    <div class="h20"></div>
+                    <!-- DEDS-311 end -->
+
+                    <div class="box_order_list">
+                        <div class="font_sbmb marB8">배송완료</div>
+                        <div class="order_list_db">
+                            <div class="img_area">
+                                <div class="no_Thumb_Img">
+                                    <img src="/html/page/app/matching/assets/src/images/04icon/back_trans.png" alt="thumb_img">
+                                </div>
+                                <!-- <img src="/html/page/app/matching/assets/src/images/sample/sam_order.png" alt=""> -->
+                            </div>
+                            <ul class="od_txt">
+                                <li class="font_sbss">11성인용 보행기</li>
+                                <li class="color_t_s font_ssr marT2">TW-0128</li>
+                                <li class="color_t_s font_ssr marB2">1개</li>
+                                <li class="d-flex gap04">
+                                     <span class="font_sbsb">12,510원</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="h16"></div>
+                        
+                        <a class="waves-effect btn btn-middle btn_cancel w100p">
+                            <span class="color_tp_s font_sbss">배송현황</span>
+                        </a>
+
+                    </div>
+                    <!-- box_order_list -->
+
+                    <div class="h12"></div>
+
+
+                    <div class="box_order_list">
+                        <div class="font_sbmb marB8">배송완료</div>
+                        <div class="order_list_db">
+                            <div class="img_area">
+                                <img src="/html/page/app/matching/assets/src/images/sample/sam_order16.png" alt="">
+                            </div>
+                            <ul class="od_txt">
+                                <li class="font_sbss">요실금팬티</li>
+                                <li class="color_t_s font_ssr marT2">MSPT-001(여성)</li>
+                                <li class="breadcrumb_area marB2">
+                                    <span class="color_t_s font_ssr">M(95)</span>
+                                    <span class="color_t_s font_ssr">1개</span>
+                                </li>
+                                <li class="d-flex gap04">
+                                    <span class="font_sbsb">5,000원</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="h16"></div>
+                        
+                        <a class="waves-effect btn btn-middle btn_cancel w100p">
+                            <span class="color_tp_s font_sbss">배송현황</span>
+                        </a>
+
+                    </div>
+                    <!-- box_order_list -->
+
+
+                </div>
+                <!-- pad20 -->
+
+                <!-- DEDS-311 -->
+                <ul class="collapsible default">
+                    <li class="bder_bottom">
+                        <div class="collapsible-header pad20">
+                            <span class="font_sbms">최초 주문요청</span>
+                            <span class="arrow"></span>
+                        </div>
+                        <div class="collapsible-body noPad">
+                            <div class="pad20 back_FAFAFA">
+                                
+
+                                <div class="box_order_list">
+                                    <div class="font_sbmb marB8">배송완료</div>
+                                    <div class="order_list_db">
+                                        <div class="img_area">
+                                            <div class="no_Thumb_Img">
+                                                <img src="/html/page/app/matching/assets/src/images/sample/sam_order14.png" alt="">
+                                            </div>
+                                        </div>
+                                        <ul class="od_txt">
+                                            <li class="font_sbss">11성인용 보행기</li>
+                                            <li class="color_t_s font_ssr marT2">TW-0128</li>
+                                            <li class="color_t_s font_ssr marB2">1개</li>
+                                            <li class="d-flex gap04">
+                                                 <span class="font_sbsb">523,850원</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+            
+                                </div>
+                                <!-- box_order_list -->
+            
+                                <div class="h12"></div>
+            
+            
+                                <div class="box_order_list">
+                                    <div class="color_t_danger font_sbmb marB8">취소요청</div>
+                                    <div class="order_list_db">
+                                        <div class="img_area">
+                                            <img src="/html/page/app/matching/assets/src/images/sample/sam_order16.png" alt="">
+                                        </div>
+                                        <ul class="od_txt">
+                                            <li class="font_sbss">요실금팬티</li>
+                                            <li class="color_t_s font_ssr marT2">MSPT-001(여성)</li>
+                                            <li class="breadcrumb_area marB2">
+                                                <span class="color_t_s font_ssr">M(95)</span>
+                                                <span class="color_t_s font_ssr">1개</span>
+                                            </li>
+                                            <li class="d-flex gap04">
+                                                <span class="font_sbsb">5,000원</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+            
+                                    <div class="h16"></div>
+                                    
+                                    <a class="waves-effect btn btn-middle btn_cancel w100p">
+                                        <span class="color_tp_s font_sbss">취소사유</span>
+                                    </a>
+            
+                                </div>
+                                <!-- box_order_list -->
+
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- DEDS-311 end -->
+
+
+                <div class="h12 back_F7F7F7"></div>
+
+                <div class="padH24W20">
+
+                    <div class="font_sblb">총 예상 본인부담금</div>
+
+                    <div class="h20"></div>
+
+                    <div class="align_between_center">
+                        <div class="breadcrumb_area">
+                            <span class="font_sbss">3개</span>
+                        </div>
+                        <div class="font_sblb">99,300원</div>
+                    </div>
+
+                    <div class="h32"></div>
+    
+                    <ul class="list_dept1 gray_dot">
+                        <li class="color_t_s font_sbsr">최종 결제금액 및 결제방법은 장기요양기관을 통해 확인해주세요. </li>
+                        <li class="color_t_s font_sbsr marT12">장기요양기관의 주문 검토 과정에서, 본인부담률 등 총 예상 금액이 변동 될 수 있어요.</li>
+                    </ul>
+
+                </div>
+                <!-- padH24W20 -->
+
+                <div class="h12 back_F7F7F7"></div>
+
+                <div class="padH24W20">
+
+                    <div class="font_sblb">주문자 정보</div>
+
+                    <div class="h20"></div>
+
+                    <table class="table_basic small_2">
+                        <colgroup>
+                            <col style="width:50%;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th class="font_sbmr">주문자 이름</th>
+                                <td class="font_sbmr">홍길동</td>
+                            </tr>
+                            <tr>
+                                <th class="font_sbmr">주문자 연락처</th>
+                                <td class="font_sbmr">010-1111-2222</td>
+                            </tr>
+                            <tr>
+                                <th class="font_sbmr">어르신 이름</th>
+                                <td class="font_sbmr">꽃분이</td>
+                            </tr>
+                            <tr>
+                                <th class="font_sbmr">요양인정번호</th>
+                                <td class="font_sbmr">L123456****</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <!-- padH24W20 -->
+
+                <div class="h12 back_F7F7F7"></div>
+
+                <div class="padH24W20">
+
+                    <div class="font_sblb">배송지 정보</div>
+
+                    <div class="h20"></div>
+
+                    <table class="table_basic small_2">
+                        <colgroup>
+                            <col style="width:50%;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th class="font_sbmr">받는분</th>
+                                <td class="font_sbmr">꽃*이</td>
+                            </tr>
+                            <tr>
+                                <th class="font_sbmr">받는분 연락처</th>
+                                <td class="font_sbmr">010-5689-7890</td>
+                            </tr>
+                            <tr>
+                                <th class="font_sbmr">주소</th>
+                                <td class="font_sbmr">서울시 금천구 서부샛길 606 대성디폴리스 B동 13층</td>
+                            </tr>
+                            <tr>
+                                <th class="font_sbmr">배송메모</th>
+                                <td class="font_sbmr">직접받고 부재 시 문 앞</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <!-- padH24W20 -->
+
+                <div class="h12 back_F7F7F7"></div>
+
+                <div class="pad_24_20_40">
+
+                    <div class="font_sblb">주문 유의사항</div>
+
+                    <div class="h16"></div>
+
+                    <div class="font_sbss">정확한 정보는 장기요양 기관에 문의해주세요.</div>
+    
+                    <ul class="list_dept1 gray_dot marT8">
+                        <li class="color_t_s font_sbsr">장기요양기관에서 검토 후, 주문 진행이 이루어져요.</li>
+                        <li class="color_t_s font_sbsr">장기요양기관에 본인부담금을 지불하셔야 주문이 가능해요.</li>
+                        <li class="color_t_s font_sbsr">최종결제금액 및 결제방법은 장기요양기관에서 확인해주세요.</li>
+                        <li class="color_t_s font_sbsr">복지용구 주문 시점이나, 어르신의 장기요양정보에 따라 주문정보가 다를 수 있어요.</li>
+                        <li class="color_t_s font_sbsr">교환/반품시, 장기요양기관에 문의해야해요.</li>
+                        <li class="color_t_s font_sbsr">주문취소는 [주문접수] 상태에서만 가능해요. 이후에는 장기요양기관에 직접 문의하여 취소해주세요.</li>
+                    </ul>
+                    <ul class="list_dept1 black_dot marT8">
+                        <li class="font_sbss">복지용구의 A/S는 장기요양기관에서 안내 할 책임이 있음을 알려드려요.</li>
+                    </ul>
+
+                </div>
+                <!-- pad_24_20_40 -->
+
+                <div class="h12 back_F7F7F7"></div>
+
+                <a class="waves-effect padH16W20 w100p color_t_s font_sbmr modal-trigger" href="#modal_fullsreen_orderCancel">주문취소</a>
+
+
+            </section>
+        </main>
+
+
+    </div>
+    <!-- wrapper -->
+
+
+
+
+        <!-- 주문취소 Modal fullsreen -->
+        <div id="modal_fullsreen_orderCancel" class="modal fullscreen">
+
+            <div class="modal_header">
+                <h4 class="modal_title">주문취소</h4>
+                <div class="close_x modal-close waves-effect"></div>
+            </div>
+
+            <div class="modal-content noPad">
+
+                <div class="pad20">
+
+                    <div class="box_order_list">
+                        <div class="order_list_db">
+                            <div class="img_area">
+                                <img src="/html/page/app/matching/assets/src/images/sample/sam_order.png" alt="">
+                            </div>
+                            <ul class="od_txt">
+                                <li class="font_sbss">성인용 보행기</li>
+                                <li class="color_t_s font_ssr marT2">TW-0128</li>
+                                <li class="color_t_s font_ssr marB2">1개</li>
+                            </ul>
+                        </div>
+    
+                    </div>
+    
+                    <div class="h12"></div>
+    
+                    <div class="box_order_list">
+                        <div class="order_list_db">
+                            <div class="img_area">
+                                <img src="/html/page/app/matching/assets/src/images/sample/sam_order16.png" alt="">
+                            </div>
+                            <ul class="od_txt">
+                                <li class="font_sbss">성인용 보행기</li>
+                                <li class="color_t_s font_ssr marT2">TW-0128</li>
+                                <li class="breadcrumb_area marB2">
+                                    <span class="color_t_s font_ssr">M(95)</span>
+                                    <span class="color_t_s font_ssr">1개</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- pad20 -->
+
+                <div class="h12 back_F7F7F7"></div>
+
+                <div class="padH24W20">
+
+                    <div class="font_sblb">취소 사유</div>
+
+                    <div class="h20"></div>
+
+                    <a class="input_basic fake_select broad_evt color_disable modal-trigger" href="#modal_shipping_msg">취소 사유를 선택해주세요</a>
+
+                    <div class="evt_msgTextarea">
+
+                        <div class="relative marT8">
+                            <textarea rows="3" class="input_basic textBox" required="required" placeholder="" maxlength="20" style="height:110px !important;"></textarea>
+                            <div class="textLengthWrap">
+                                <span class="textCount">0</span>
+                                <span class="textTotal">/20</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- padH24W20 -->
+
+                <div class="h12 back_F7F7F7"></div>
+
+                <div class="pad_24_20_40">
+
+                    <div class="font_sblb">취소 유의사항</div>
+
+                    <div class="h16"></div>
+
+                    <div class="font_sbss">정확한 정보는 장기요양 기관에 문의해주세요. </div>
+    
+                    <ul class="list_dept1 gray_dot marT8">
+                        <li class="color_t_s font_sbsr">[주문접수] 상태인 경우 취소요청 즉시 취소완료돼요. 결제 진행 전 취소되어 환불할 금액이 없어요.</li>
+                    </ul>
+
+                </div>
+
+
+
+                <div class="h80"></div>
+
+
+                
+                
+            </div>
+            <!-- modal-content -->
+
+            <div class="modal-footer">
+                <div class="btn_area d-flex">
+                    <a class="modal-close waves-effect btn btn-large w100p btn_primary">주문취소</a>
+                </div>
+            </div>
+
+
+
+        </div>
+        <!-- fullsreen end -->
+
+
+
+
+
+        <!-- Modal modal_shipping_msg -->
+        <div id="modal_shipping_msg" class="modal bottom-sheet">
+
+            <div class="modal_header">
+                <h4 class="modal_title">취소 사유를 선택해주세요</h4>
+                <div class="close_x modal-close waves-effect"></div>
+            </div>
+
+            <div class="modal-content">
+
+
+                <ul class="broad_area">
+                    <li class="modal-close active">단순 변심</li>
+                    <li class="modal-close">사이즈/색상 변경</li>
+                    <li class="modal-close">배송지 변경</li>
+                    <li class="modal-close">재주문</li>
+                    <li class="modal-close evt_orderSelfMsg">직접 입력할게요</li>
+                </ul>
+                <div class="h20"></div>
+
+            </div>
+
+        </div>
+        <!-- modal end -->
+
+
+
+</body>
+
+</html>

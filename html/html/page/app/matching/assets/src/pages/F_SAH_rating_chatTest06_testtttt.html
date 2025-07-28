@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>F_SAH_rating_chatTest06.html</title>
+
+
+    <!-- jquery -->
+    <script src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script src="../js/materialize.min.js"></script>
+
+    <!-- guide.js -->
+    <script src="../js/custom/guide.js"></script>
+
+    <!-- guide_chat.js -->
+    <script src="../js/custom/guide_chat.js"></script>
+
+    <!-- bottom_sheet.js -->
+    <script type="text/javascript" src="../js/custom/script_bottom_sheet_pb.js" defer></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="../css/materialize.min.css">
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- style_chat.css -->
+    <link rel="stylesheet" href="../css/style_chat.css">
+
+    <style>
+
+        :root{
+            --speed : 0.8; /* 1 */
+        }
+
+
+        [title="step_1"] {
+            animation-delay: calc(3s * var(--speed));
+        }
+
+        [title="step_1_02"] {
+            animation-delay: calc(4s * var(--speed));
+        }
+    </style>
+
+    <script>
+
+        $(function(){
+
+
+            $(window).on("load", function () {
+                $('html, body').scrollTop(0); // 상단에 고정
+
+                // 요소가 화면에 나타날 때 스크롤을 이동시키는 함수
+                function scrollToElement(target) {
+                    const offsetTop = $(target).offset().top;
+                    const windowHeight = window.innerHeight;
+                    $('html, body').animate({
+                        scrollTop: offsetTop - windowHeight + $(target).outerHeight() + 20 // 요소 높이와 하단 여백 추가
+                    }, 400); // 스크롤 속도 조절 (400ms)
+                }
+
+                // intro_B01_01이 애니메이션을 시작할 때 스크롤 이동
+                $('[title="intro_B01_01"]').on('animationstart', function() {
+                    scrollToElement('[title="intro_B01_01"]');
+                    
+                    // step_01이 애니메이션을 시작할 때 스크롤 이동
+                    $('[title="step_1"]').on('animationstart', function() {
+                        scrollToElement('[title="step_1"]');
+                    });
+                });
+
+            });
+
+
+
+        });
+
+
+    </script>
+
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+
+
+        <header>
+            <nav class="top">
+                <a class="btn_back waves-effect" href="#">
+                    <span class="icon"></span>
+                    <span class="txt">인정등급 예상 테스트</span>
+                </a>
+                <div class="d-flex">
+                    <div class="icon_area waves-effect">
+                        <div class="icon_btn i_home"></div>
+                    </div>
+                </div>
+
+            </nav>
+        </header>
+
+ 
+        <main>
+            <section class="default">
+
+                <div class="progress_raTest">
+                    <div class="progress-bar" style="width: calc(100% * ( 6 / 6 ))"></div>
+                </div>
+
+
+
+
+                <div class="wrap_chatArea">
+
+                    <div class="boxChatArea bot_recv" title="intro_B01_01">
+                        <div class="profile"></div>
+                        <div class="box_chat" title="intro_B01_02">
+                            <div class="part_item w100p">
+                                <div class="title_area">
+                                    <div class="icon">
+                                        <img src="/html/page/app/matching/assets/src/images/21chat/part06_dis.svg" alt="질병">
+                                    </div>
+                                    <span class="title">질병</span>
+                                </div>
+                            </div>
+                            <span class="font_sbmb">질병</span>이 있는 지 확인할게요.<br>
+                            등급산정에는 영향이 없으나, 의사의 진단서와 함께 신체기능 저하 상태를 뒷받침할 수 있어요.
+                        </div>
+
+                    </div>
+                    <!-- bot_recv -->
+
+
+
+
+                    <div class="boxChatArea bot_recv" title="step_1">
+                        <div class="profile"></div>
+                        <div class="box_chat" title="step_1_02">
+                            <div class="title_question"><span class="font_sbmr">어르신이 현재 앓고 있는 </span>질병<span class="font_sbmr">이 있으세요?</span></div>
+                            
+                            <div class="chk_area w100p">
+                                <label class="list">
+                                    <input type="radio" name="step001" value="1">
+                                    <span>있음</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step001" value="2">
+                                    <span>없음</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- bot_recv 1-->
+
+                    
+                    <!-- step 2부터 클래스:boxChatArea_2 / box_chat에 title속성 삭제 -->
+                    <div class="boxChatArea_2 bot_recv" title="step_2">
+                        <div class="profile"></div>
+                        <div class="box_chat">
+                            <div class="title_question">
+                                <span class="font_sbmr">어르신이 현재 앓고 있는 질병을 </span>모두 선택<span class="font_sbmr">해주세요. 의사 진단서와 함께 신체기능 관련 근거가 돼요.</span>
+                            </div>
+
+                            <div class="chk_area w100p">
+                                <label class="list">
+                                    <input type="checkbox" name="step002" value="1">
+                                    <span>치매</span>
+                                </label>
+                                <label class="list">
+                                    <input type="checkbox" name="step002" value="2">
+                                    <span>중풍(뇌졸증)</span>
+                                </label>
+                                <label class="list">
+                                    <input type="checkbox" name="step002" value="3">
+                                    <span>고혈압</span>
+                                </label>
+                                <label class="list">
+                                    <input type="checkbox" name="step002" value="4">
+                                    <span>당뇨병</span>
+                                </label>
+                                <label class="list">
+                                    <input type="checkbox" name="step002" value="5">
+                                    <span>관절염(퇴행성, 류마티스)</span>
+                                </label>
+                                <label class="list">
+                                    <input type="checkbox" name="step002" value="6">
+                                    <span>요통, 좌골통(디스크)</span>
+                                </label>
+                                <label class="list">
+                                    <input type="checkbox" name="step002" value="7">
+                                    <span>심부전, 폐질환, 천식 등</span>
+                                </label>
+                                <label class="list">
+                                    <input type="checkbox" name="step002" value="8">
+                                    <span>난청</span>
+                                </label>
+                                <label class="list">
+                                    <input type="checkbox" name="step002" value="9">
+                                    <span>백내장, 녹내장</span>
+                                </label>
+                                <label class="list">
+                                    <input type="checkbox" name="step002" value="10">
+                                    <span>골절, 탈골, 사고 휴유증</span>
+                                </label>
+                                <label class="list">
+                                    <input type="checkbox" name="step002" value="11">
+                                    <span>암</span>
+                                </label>
+                                <label class="list">
+                                    <input type="checkbox" name="step002" value="12">
+                                    <span>신부전</span>
+                                </label>
+                                <label class="list">
+                                    <input type="checkbox" name="step002" value="13">
+                                    <span>욕창</span>
+                                </label>
+                            </div>
+
+                            <div class="h20"></div>
+
+                            <a class="btn btn-large btn_primary evtBtn_checkbox disabled">선택완료</a>
+                            
+                        </div>
+                    </div>
+                    <!-- bot_recv 2-->
+
+                    <div class="boxChatArea_2 bot_recv" title="step_3">
+                        <div class="profile"></div>
+                        <div class="box_chat">
+                            <div class="title_question">
+                                <span class="font_sbmr">선택한 질병 중 </span>더 위중한 질병<span class="font_sbmr">을 선택해주세요.</span>
+                            </div>
+                            
+                            <div class="chk_area w100p">
+                                <label class="list">
+                                    <input type="checkbox" name="step003" value="1">
+                                    <span>aaaa</span>
+                                </label>
+                            </div>
+
+                            <div class="h20"></div>
+
+                            <a class="btn btn-large btn_primary evtBtn_checkbox disabled">선택완료</a>
+
+                        </div>
+                    </div>
+                    <!-- bot_recv 3-->
+
+
+
+
+                    <div class="boxChatArea_2 bot_recv" title="step_4">
+                        <div class="profile"></div>
+                        <div class="box_chat">
+                            <div class="title_question">
+                                간호 처치 영역을 완료했어요!
+                                <div class="font_sblr">
+                                    어르신이 어떤 혜택을 받을 수 있는 지 알려드릴게요. 
+                                </div>
+                            </div>
+
+                            <a class="btn btn-large btn_cancel w100p" href="F_SAH_rating_chatTest05.html">
+                                <span class="color_tp_s font_sbms">테스트 결과 확인</span>
+                            </a>
+                            
+                            
+                        </div>
+                    </div>
+                    <!-- bot_recv 4 end -->
+    
+                </div>
+                <!-- wrap_chatArea -->
+
+            </section>
+        </main>
+
+
+
+
+
+
+
+    </div>
+    <!-- wrapper -->
+
+
+
+
+
+    <!-- 복지용구 소개 -->
+    <div id="welInfo_modal" class="bottom-sheet_handle">
+        <div class="sheet-overlay"></div>
+        <div class="content">
+            <div class="drag_handle_area drag-icon">
+                <span class="drag_handle"></span>
+            </div>
+            <div class="modal_header">
+                <h4 class="modal_title">간호처치 상세보기</h4>
+                <div class="close_x close_modal"></div>
+            </div>
+            <div class="modal-content">
+
+
+                <div class="font_sbmb">기관지 절개관 간호</div>
+                <div class="color_t_s font_sbsr marT8">기관지를 절개하여 인공기도를 확보함</div>
+
+                <div class="h28"></div>
+
+                <div class="font_sbmb">흡인</div>
+                <div class="color_t_s font_sbsr marT8">카테터 등으로 인위적으로 분비물을 제거하여 기도를 유지함</div>
+
+                <div class="h28"></div>
+
+                <div class="font_sbmb">산소요법</div>
+                <div class="color_t_s font_sbsr marT8">저산소증이나 저 산소혈증을 치료, 감소 시키기위해 산소공급장치로 산소를 공급함</div>
+
+                <div class="h28"></div>
+
+                <div class="font_sbmb">욕창 간호</div>
+                <div class="color_t_s font_sbsr marT8">장기적인 고정체위로 인해 압박 부위가 손상되어 드레싱과 체위변경이 필요함</div>
+
+                <div class="h28"></div>
+
+                <div class="font_sbmb">경관 영양</div>
+                <div class="color_t_s font_sbsr marT8">구강으로 음식섭취가 어려워 관을 통해 위, 십이지장 등에 직접 영양을 공급해야함</div>
+
+                <div class="h28"></div>
+
+                <div class="font_sbmb">암성통증 간호</div>
+                <div class="color_t_s font_sbsr marT8">암의 진행을 억제하지 못하여 극심한 통증에 발생하여 간호함</div>
+
+                <div class="h28"></div>
+
+                <div class="font_sbmb">도뇨 관리</div>
+                <div class="color_t_s font_sbsr marT8">자율적으로 배뇨 관리가 불가능하여 인위적으로 방광을 비우거나 관리함</div>
+
+                <div class="h28"></div>
+
+                <div class="font_sbmb">장루(창자샛길) 간호</div>
+                <div class="color_t_s font_sbsr marT8">인공항문을 통해 체외로 대변을 배설시키는 경우, 부착장치를 지속적으로 관리함</div>
+
+                <div class="h28"></div>
+                
+                <div class="font_sbmb">투석</div>
+                <div class="color_t_s font_sbsr marT8">장기적인 신부전증으로 인해 혈액 투석이 필요함</div>
+                
+                <div class="h32"></div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>

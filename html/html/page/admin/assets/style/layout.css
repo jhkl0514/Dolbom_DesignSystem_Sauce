@@ -1,0 +1,153 @@
+body {
+    @apply scrollbars flex-row min-w-[1366px] !overflow-x-auto text-sm text-black1 tracking-tight bg-fixed bg-no-repeat bg-[url(../images/bg-dashboard.jpg)] bg-[position:left_bottom];
+}
+
+#header {
+    @apply relative flex flex-col flex-none w-72 h-screen overflow-hidden bg-no-repeat bg-[length:theme("spacing[17]")_100%,theme("spacing[55]")_100%] bg-[position:left_top,right_top] bg-[linear-gradient(180deg,_#000000b3_0%,_#000000b3_100%),_linear-gradient(180deg,_#eee_0%,_#eee_100%)];
+    & .system-title {
+        @apply flex m-3.5 ml-6.5;
+    }
+    & .back {
+        @apply absolute z-10 bottom-1 left-3 w-11 h-11 overflow-hidden bg-center bg-no-repeat bg-[url(../images/ico-admin-back.svg)] -indent-96 press-action;
+    }
+}
+
+#navigation {
+    @apply flex-1 overflow-hidden pl-17;
+    & .menu-items {
+        @apply absolute -translate-y-1/2 select-none top-1/2 left-2;
+        & a {
+            @apply flex flex-col justify-center items-center whitespace-nowrap relative my-2.5 w-13 h-13 rounded-md border border-white bg-white leading-none text-center text-[0.6875rem] press-action active:bg-white/80
+                   before:block before:mx-auto before:mb-0.5 before:w-7 before:h-7 before:bg-no-repeat before:bg-center before:bg-[length:1.5rem];
+            &.menu-item1 {
+                @apply before:bg-[url(../images/ico-menu1.svg)];
+            }
+            &.menu-item2 {
+                @apply before:bg-[url(../images/ico-menu2.svg)];
+            }
+            &.menu-item3 {
+                @apply before:bg-[url(../images/ico-menu3.svg)] before:bg-[length:1.375rem];
+            }
+            &.menu-item4 {
+                @apply before:bg-[url(../images/ico-menu4.svg)] before:bg-[length:1.25rem];
+            }
+            &.menu-item5 {
+                @apply before:bg-[url(../images/ico-menu5.svg)];
+            }
+            &.menu-item6 {
+                @apply before:bg-[url(../images/ico-menu6.svg)] before:bg-[length:1.25rem];
+            }
+            &.menu-item7 {
+                @apply before:bg-[url(../images/ico-menu7.svg)];
+            }
+            &.menu-item8 {
+                @apply before:bg-[url(../images/ico-menu8.svg)] before:bg-[length:1.375rem];
+            }
+            &.menu-item9 {
+                @apply before:bg-[url(../images/ico-menu9.svg)] before:bg-[length:1.375rem];
+            }
+            &.menu-item10 {
+                @apply before:bg-[url(../images/ico-menu10.svg)];
+            }
+            &.menu-item11 {
+                @apply before:bg-[url(../images/ico-menu11.svg)];
+            }
+            &.menu-item12 {
+                @apply before:bg-[url(../images/ico-menu12.svg)] before:bg-[length:1.5rem];
+            }
+            &.active {
+                @apply text-white bg-transparent after:absolute after:top-1/2 after:-right-1 after:-translate-y-1/2 after:w-2 after:h-5 after:bg-white after:rounded-md;
+                &.menu-item1 {
+                    @apply before:bg-[url(../images/ico-menu1-white.svg)];
+                }
+                &.menu-item2 {
+                    @apply before:bg-[url(../images/ico-menu2-white.svg)];
+                }
+                &.menu-item3 {
+                    @apply before:bg-[url(../images/ico-menu3-white.svg)];
+                }
+                &.menu-item4 {
+                    @apply before:bg-[url(../images/ico-menu4-white.svg)];
+                }
+                &.menu-item5 {
+                    @apply before:bg-[url(../images/ico-menu5-white.svg)];
+                }
+                &.menu-item6 {
+                    @apply before:bg-[url(../images/ico-menu6-white.svg)];
+                }
+                &.menu-item7 {
+                    @apply before:bg-[url(../images/ico-menu7-white.svg)];
+                }
+                &.menu-item8 {
+                    @apply before:bg-[url(../images/ico-menu8-white.svg)];
+                }
+                &.menu-item9 {
+                    @apply before:bg-[url(../images/ico-menu9-white.svg)];
+                }
+                &.menu-item10 {
+                    @apply before:bg-[url(../images/ico-menu10-white.svg)];
+                }
+                &.menu-item11 {
+                    @apply before:bg-[url(../images/ico-menu11-white.svg)];
+                }
+                &.menu-item12 {
+                    @apply before:bg-[url(../images/ico-menu12-white.svg)];
+                }
+            }
+        }
+    }
+    & .list-items {
+        @apply hidden h-full px-2 overflow-auto scrollbars;
+        & p {
+            @apply pb-3 sticky-top text-title3 bg-gray2;
+        }
+        & > ul {
+            & > li {
+                @apply mt-1 overflow-hidden leading-tight transition-all duration-300 bg-white rounded-md hover:bg-gray3;
+                & > a {
+                    @apply block text-sm py-3 px-4.5;
+                }
+                & > ul {
+                    @apply px-5 py-0.5 mx-1.5 mb-1.5 rounded bg-gray2 text-[0.8125rem];
+                    & li {
+                        @apply relative py-1 pl-3
+                               before:absolute before:top-2.5 before:mt-px before:left-0 before:w-1.5 before:h-px before:bg-black2;
+                    }
+                }
+                &.active {
+                    @apply text-white bg-black1;
+                    & > ul {
+                        @apply bg-white/20;
+                        & li {
+                            @apply before:bg-white;
+                        }
+                    }
+                }
+            }
+        }
+        &.active {
+            @apply block;
+        }
+    }
+}
+
+#container {
+    @apply flex-1 h-screen py-6 pb-0 overflow-auto bg-white scrollbars px-7;
+}
+
+#page-header {
+    @apply flex items-center mb-7.5;
+    & .breadcrumb {
+        @apply mt-auto mb-3 ml-3 mr-auto;
+    }
+    & .user-info {
+        @apply ml-auto;
+    }
+    & .btn-logout {
+        @apply ml-1.5;
+    }
+}
+
+#page-content {
+    padding-bottom: 2rem;
+}

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>F_SAH_rating_chatTest03.html</title>
+
+
+    <!-- jquery -->
+    <script src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script src="../js/materialize.min.js"></script>
+
+    <!-- guide.js -->
+    <script src="../js/custom/guide.js"></script>
+
+    <!-- guide_chat.js -->
+    <script src="../js/custom/guide_chat.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="../css/materialize.min.css">
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- style_chat.css -->
+    <link rel="stylesheet" href="../css/style_chat.css">
+
+    <style>
+
+        :root{
+            --speed : 0.8; /* 1 */
+        }
+
+
+        [title="step_1"] {
+            animation-delay: calc(5.5s * var(--speed));
+        }
+
+        [title="step_1_02"] {
+            animation-delay: calc(6.5s * var(--speed));
+        }
+    </style>
+
+    <script>
+
+        $(function(){
+
+            $(window).on("load", function () {
+                $('html, body').scrollTop(0); // 상단에 고정
+
+                // 요소가 화면에 나타날 때 스크롤을 이동시키는 함수
+                function scrollToElement(target) {
+                    const offsetTop = $(target).offset().top;
+                    const windowHeight = window.innerHeight;
+                    $('html, body').animate({
+                        scrollTop: offsetTop - windowHeight + $(target).outerHeight() + 20 // 요소 높이와 하단 여백 추가
+                    }, 400); // 스크롤 속도 조절 (400ms)
+                }
+
+                // intro_B01_01이 애니메이션을 시작할 때 스크롤 이동
+                $('[title="intro_B01_01"]').on('animationstart', function() {
+                    scrollToElement('[title="intro_B01_01"]');
+                    
+                    // step_01이 애니메이션을 시작할 때 스크롤 이동
+                    $('[title="step_1"]').on('animationstart', function() {
+                        scrollToElement('[title="step_1"]');
+                    });
+                });
+
+            });
+
+        });
+
+
+    </script>
+
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+
+
+        <header>
+            <nav class="top">
+                <a class="btn_back waves-effect" href="#">
+                    <span class="icon"></span>
+                    <span class="txt">인정등급 예상 테스트</span>
+                </a>
+                <div class="d-flex">
+                    <div class="icon_area waves-effect">
+                        <div class="icon_btn i_home"></div>
+                    </div>
+                </div>
+
+            </nav>
+        </header>
+
+
+        <main>
+            <section class="default">
+
+                <div class="progress_raTest">
+                    <div class="progress-bar" style="width: calc(100% * ( 3 / 6 ))"></div>
+                </div>
+
+
+
+
+                <div class="wrap_chatArea">
+
+                    <div class="boxChatArea bot_recv" title="intro_B01_01">
+                        <div class="profile"></div>
+                        <div class="box_chat" title="intro_B01_02">
+                            <div class="part_item w100p">
+                                <div class="title_area">
+                                    <div class="icon">
+                                        <img src="/html/page/app/matching/assets/src/images/21chat/part03_beh.svg" alt="행동변화">
+                                    </div>
+                                    <span class="title">행동변화</span>
+                                </div>
+                                <div class="badge_redLight">총 14문항</div>
+                            </div>
+                            세번째 영역은 행동 변화에요. 치매, 알츠하이머 증상이 있는지 확인해요.
+                        </div>
+                        <div class="box_chat" title="intro_B01_03">
+                            최근 한 달간 어르신에게 <span class="font_sbmb">해당하는 증상을 선택</span>해 주세요.
+                        </div>
+
+                    </div>
+                    <!-- bot_recv -->
+
+
+
+
+                    <div class="boxChatArea bot_recv" title="step_1">
+                        <div class="profile"></div>
+                        <div class="box_chat" title="step_1_02">
+                            <div class="badge_greenLight">1문항</div> 
+                            <div class="title_question">사람들이 무엇을 훔쳤다고 믿거나 자기를 해하려 한다고 잘못 믿고 있다.</div>
+                            
+                            <div class="chk_area w100p">
+                                <label class="list">
+                                    <input type="radio" name="step001" value="1">
+                                    <span>증상 있음</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step001" value="2">
+                                    <span>증상 없음</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- bot_recv 1-->
+
+                    <!-- step 2부터 클래스:boxChatArea_2 / box_chat에 title속성 삭제 -->
+                    <div class="boxChatArea_2 bot_recv" title="step_2">
+                        <div class="profile"></div>
+                        <div class="box_chat">
+                            <div class="badge_greenLight">2문항</div> 
+                            <div class="title_question">헛것을 보거나 환청을 듣는다.</div>
+                            
+                            <div class="chk_area w100p">
+                                <label class="list">
+                                    <input type="radio" name="step002" value="1">
+                                    <span>증상 있음</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step002" value="2">
+                                    <span>증상 없음</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- bot_recv 2-->
+
+
+                    <div class="boxChatArea_2 bot_recv" title="step_3">
+                        <div class="profile"></div>
+                        <div class="box_chat">
+                            <div class="badge_greenLight">3문항</div> 
+                            <div class="title_question">슬퍼 보이거나 기분이 처져 있으며 때로 울기도 한다.</div>
+                            
+                            <div class="chk_area w100p">
+                                <label class="list">
+                                    <input type="radio" name="step003" value="1">
+                                    <span>증상 있음</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step003" value="2">
+                                    <span>증상 없음</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- bot_recv 3-->
+
+
+                    <div class="boxChatArea_2 bot_recv" title="step_4">
+                        <div class="profile"></div>
+                        <div class="box_chat">
+                            <div class="badge_greenLight">4문항</div> 
+                            <div class="title_question">
+                                밤에 자다가 일어나 주위 사람을 깨우거나 아침에 너무 일찍 일어난다. 또는 낮에는 지나치게 잠을 자고 밤에는 잠을 이루지 못한다.
+                            </div>
+                            
+                            <div class="chk_area w100p">
+                                <label class="list">
+                                    <input type="radio" name="step004" value="1">
+                                    <span>증상 있음</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step004" value="2">
+                                    <span>증상 없음</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- bot_recv 4-->
+
+
+                    <div class="boxChatArea_2 bot_recv" title="step_5">
+                        <div class="profile"></div>
+                        <div class="box_chat">
+                            <div class="badge_greenLight">5문항</div> 
+                            <div class="title_question">주위사람이 도와주려 할 때 도와주는 것에 저항한다.</div>
+                            
+                            <div class="chk_area w100p">
+                                <label class="list">
+                                    <input type="radio" name="step005" value="1">
+                                    <span>증상 있음</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step005" value="2">
+                                    <span>증상 없음</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- bot_recv 5-->
+
+
+                    <div class="boxChatArea_2 bot_recv" title="step_6">
+                        <div class="profile"></div>
+                        <div class="box_chat">
+                            <div class="badge_greenLight">6문항</div> 
+                            <div class="title_question">한군데 가만히 있지 못하고 서성거리거나 왔다 갔다 하며 안절부절 못한다.</div>
+                            
+                            <div class="chk_area w100p">
+                                <label class="list">
+                                    <input type="radio" name="step006" value="1">
+                                    <span>증상 있음</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step006" value="2">
+                                    <span>증상 없음</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- bot_recv 6-->
+
+
+                    <div class="boxChatArea_2 bot_recv" title="step_7">
+                        <div class="profile"></div>
+                        <div class="box_chat">
+                            <div class="badge_greenLight">7문항</div> 
+                            <div class="title_question">길을 잃거나 헤맨 적이 있다. 외출하면 집이나 병원, 시설로 혼자 들어올 수 없다.</div>
+                            
+                            <div class="chk_area w100p">
+                                <label class="list">
+                                    <input type="radio" name="step007" value="1">
+                                    <span>증상 있음</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step007" value="2">
+                                    <span>증상 없음</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- bot_recv 7-->
+
+
+                    <div class="boxChatArea_2 bot_recv" title="step_8">
+                        <div class="profile"></div>
+                        <div class="box_chat">
+                            <div class="badge_greenLight">8문항</div> 
+                            <div class="title_question">화를 내며 폭언이나 폭행을 하는 등 위협적인 행동을 보인다.</div>
+                            
+                            <div class="chk_area w100p">
+                                <label class="list">
+                                    <input type="radio" name="step008" value="1">
+                                    <span>증상 있음</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step008" value="2">
+                                    <span>증상 없음</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- bot_recv 8-->
+
+
+                    <div class="boxChatArea_2 bot_recv" title="step_9">
+                        <div class="profile"></div>
+                        <div class="box_chat">
+                            <div class="badge_greenLight">9문항</div> 
+                            <div class="title_question">혼자서 밖으로 나가려고 해서 눈을 뗄 수가 없다.</div>
+                            
+                            <div class="chk_area w100p">
+                                <label class="list">
+                                    <input type="radio" name="step009" value="1">
+                                    <span>증상 있음</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step009" value="2">
+                                    <span>증상 없음</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- bot_recv 9-->
+
+
+                    <div class="boxChatArea_2 bot_recv" title="step_10">
+                        <div class="profile"></div>
+                        <div class="box_chat">
+                            <div class="badge_greenLight">10문항</div> 
+                            <div class="title_question">물건을 망가뜨리거나 부순다.</div>
+                            
+                            <div class="chk_area w100p">
+                                <label class="list">
+                                    <input type="radio" name="step010" value="1">
+                                    <span>증상 있음</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step010" value="2">
+                                    <span>증상 없음</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- bot_recv 10-->
+
+
+                    <div class="boxChatArea_2 bot_recv" title="step_11">
+                        <div class="profile"></div>
+                        <div class="box_chat">
+                            <div class="badge_greenLight">11문항</div> 
+                            <div class="title_question">의미 없거나 부적절한 행동을 자주 보인다.</div>
+                            
+                            <div class="chk_area w100p">
+                                <label class="list">
+                                    <input type="radio" name="step011" value="1">
+                                    <span>증상 있음</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step011" value="2">
+                                    <span>증상 없음</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- bot_recv 11-->
+
+
+                    <div class="boxChatArea_2 bot_recv" title="step_12">
+                        <div class="profile"></div>
+                        <div class="box_chat">
+                            <div class="badge_greenLight">12문항</div> 
+                            <div class="title_question">돈이나 물건을 장롱같이 찾기 어려운 곳에 감춘다.</div>
+                            
+                            <div class="chk_area w100p">
+                                <label class="list">
+                                    <input type="radio" name="step012" value="1">
+                                    <span>증상 있음</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step012" value="2">
+                                    <span>증상 없음</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- bot_recv 12-->
+
+
+                    <div class="boxChatArea_2 bot_recv" title="step_13">
+                        <div class="profile"></div>
+                        <div class="box_chat">
+                            <div class="badge_greenLight">13문항</div> 
+                            <div class="title_question">옷을 부적절하게 입는다.</div>
+                            
+                            <div class="chk_area w100p">
+                                <label class="list">
+                                    <input type="radio" name="step013" value="1">
+                                    <span>증상 있음</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step013" value="2">
+                                    <span>증상 없음</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- bot_recv 13-->
+
+
+                    <div class="boxChatArea_2 bot_recv" title="step_14">
+                        <div class="profile"></div>
+                        <div class="box_chat">
+                            <div class="badge_greenLight">14문항</div> 
+                            <div class="title_question">대소변을 벽이나 옷에 바르는 등의 행위를 한다.</div>
+                            
+                            <div class="chk_area w100p">
+                                <label class="list">
+                                    <input type="radio" name="step014" value="1">
+                                    <span>증상 있음</span>
+                                </label>
+                                <label class="list">
+                                    <input type="radio" name="step014" value="2">
+                                    <span>증상 없음</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- bot_recv 14-->
+
+
+                    <div class="boxChatArea_2 bot_recv" title="step_15">
+                        <div class="profile"></div>
+                        <div class="box_chat">
+                            이제 얼마 안 남았어요. 테스트를 완료하면 장기요양보험 혜택을 받을 수 있어요. 보미가 응원해요!
+
+                            <div class="img_area bomE">
+                                <img src="/html/page/app/matching/assets/src/images/21chat/chat_bomE_02.svg" alt="doumi">
+                            </div>
+
+                            <div class="h20"></div>
+
+                            <a class="btn btn-large btn_cancel w100p" href="F_SAH_rating_chatTest04.html">
+                                <span class="color_tp_s font_sbms">다음으로</span>
+                            </a>
+                            
+                            
+                        </div>
+                    </div>
+                    <!-- bot_recv 15 end -->
+
+
+
+    
+                </div>
+                <!-- wrap_chatArea -->
+
+            </section>
+        </main>
+
+
+
+
+
+
+
+    </div>
+    <!-- wrapper -->
+
+
+
+</body>
+
+</html>

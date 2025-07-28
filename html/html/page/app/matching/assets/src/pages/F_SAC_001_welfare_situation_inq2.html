@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>F_SAC_001_welfare_situation_inq2.html</title>
+
+
+    <!-- jquery -->
+    <script src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script src="../js/materialize.min.js"></script>
+
+    <!-- guide.js -->
+    <script src="../js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="../css/materialize.min.css">
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script>
+
+        $(function () {
+
+            $('.sel_welfare_area .sel_box').on('click', function() {
+                
+                if($(this).hasClass('active')==true){
+                    $(this).removeClass('active');
+                }
+
+                else{
+                    $(this).addClass('active');
+                }
+
+            });
+
+            //복지용구 갯수 홀수일 경우 empty박스 삽입
+            $('.sel_welfare_area').each(function(){
+
+                const selbox_len = $(this).find('.sel_box').length;
+
+                if(selbox_len%2==0){
+                     return;
+                }else{
+                    $(this).append('<div class="empty"></div>');
+                }
+
+            });
+
+            
+        });
+
+    </script>
+
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+
+
+        <header>
+            <nav class="top">
+                <a class="btn_back waves-effect" href="#">
+                    <span class="icon"></span>
+                    <span class="txt">복지용구 이용현황_2</span>
+                </a>
+                <div class="icon_area waves-effect">
+                    <div class="icon_btn i_home"></div>
+                </div>
+
+            </nav>
+        </header>
+
+
+        <main>
+            <section class="default">
+
+
+                <div class="card walfare_card">
+
+                    <div class="card-content">
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="font_sbls">이용 중인 복지용구</div>
+                            <div class="font_sblb">총 4개</div>
+                        </div>
+
+                        <div class="h24"></div>
+
+                        <div class="walfare_slide marW-20">
+
+                            <div class="ctn">
+                                <div class="img_area">
+                                    <img src="../images/01tool/tool01_03.svg" alt="지팡이">
+                                </div>
+                                <div class="title">지팡이</div>
+                                <div class="num">1개</div>
+                            </div>
+                            <!-- ctn -->
+
+                            <div class="ctn">
+                                <div class="img_area">
+                                    <img src="../images/01tool/tool01_01.svg" alt="성인용 보행기">
+                                </div>
+                                <div class="title">성인용 보행기</div>
+                                <div class="num">1개</div>
+                            </div>
+                            <!-- ctn -->
+
+                            <div class="ctn">
+                                <div class="img_area">
+                                    <img src="../images/01tool/tool01_06.svg" alt="미끄럼방지 양말">
+                                </div>
+                                <div class="title">미끄럼방지 양말</div>
+                                <div class="num">1개</div>
+                            </div>
+                            <!-- ctn -->
+
+                            <div class="ctn">
+                                <div class="img_area">
+                                    <img src="../images/01tool/tool01_07.svg" alt="욕창예방매트리스">
+                                </div>
+                                <div class="title">욕창예방매트리스</div>
+                                <div class="num">1개</div>
+                            </div>
+                            <!-- ctn -->
+
+                            <div class="ctn">
+                                <div class="img_area">
+                                    <img src="../images/01tool/tool01_01.svg" alt="성인용 보행기">
+                                </div>
+                                <div class="title">성인용 보행기</div>
+                                <div class="num">1개</div>
+                            </div>
+                            <!-- ctn -->
+
+                            <div class="ctn">
+                                <div class="img_area">
+                                    <img src="../images/01tool/tool01_06.svg" alt="미끄럼방지 양말">
+                                </div>
+                                <div class="title">미끄럼방지 양말</div>
+                                <div class="num">1개</div>
+                            </div>
+                            <!-- ctn -->
+
+                            <div class="ctn">
+                                <div class="img_area">
+                                    <img src="../images/01tool/tool01_07.svg" alt="욕창예방매트리스">
+                                </div>
+                                <div class="title">욕창예방매트리스</div>
+                                <div class="num">1개</div>
+                            </div>
+                            <!-- ctn -->
+
+
+
+                            
+                        </div>
+                        <!-- walfare_slide -->
+
+                        <div class="h12"></div>
+
+                        <div class="l_right">
+                            <span class="color_t_t font_sbssr">남은 장기요양금액 : </span>
+                            <span class="color_t_s font_sss">812,000원</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="h48"></div>
+
+                <!-- 복지용구 내용 없을때 -->
+                <div class="card walfare_card">
+
+                    <div class="card-content">
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="font_sbls">이용 중인 복지용구</div>
+                        </div>
+
+                        <div class="h24"></div>
+
+                        <div class="color_t_s font_sbmr center pad12">이용 중인 복지용구가 없어요</div>
+
+                    </div>
+                </div>
+
+
+
+                <div class="h48"></div>
+
+                <h3 class="title">
+                    {꽃분이}님이<br>
+                    추가로 받을 수 있는 복지용구
+                </h3>
+                
+                <div class="color_t_s font_sbsr marT8">
+                    장기요양기관의 상담을 통해 복지용구를 추가로 지원 받으세요.
+                </div>
+
+                <div class="h24"></div>
+
+                <!-- 복지용구 없을때 -->
+                <div class="h32"></div>
+                <div class="center">
+                    <img src="../images/08etc/icon_no_docu.svg" alt="복지용구 없음">
+                    <div class="h16"></div>
+                    <div class="color_t_s font_sbsr">받을 수 있는 복지용구가 없어요</div>
+                </div>
+                <div class="h32"></div>
+
+
+                
+                <!-- 복지용구 있을때 -->
+                <!-- 복지용구 없을때 -->
+                <div class="h32"></div>
+                <div class="center">
+                    <img src="../images/08etc/icon_no_docu.svg" alt="복지용구 없음">
+                    <div class="h16"></div>
+                    <div class="color_t_s font_sbsr">받을 수 있는 복지용구가 없어요</div>
+                </div>
+                <div class="h32"></div>
+
+
+                
+                <!-- 복지용구 있을때 -->
+                <div class="sel_welfare_area">
+                    <div class="sel_box">
+                        <img src="../images/01tool/tool01_01.svg" alt="성인용 보행기">
+                        <div class="title">성인용 보행기</div>
+                    </div>
+                    <div class="sel_box">
+                        <img src="../images/01tool/tool01_06.svg" alt="미끄럼방지 양말">
+                        <div class="title">미끄럼방지 양말</div>
+                    </div>
+                    <div class="sel_box">
+                        <img src="../images/01tool/tool01_07.svg" alt="욕창예방매트리스">
+                        <div class="title">욕창예방매트리스</div>
+                    </div>
+                    <div class="sel_box active">
+                        <img src="../images/01tool/tool01_02.svg" alt="수동휠체어">
+                        <div class="title">수동휠체어</div>
+                    </div>
+
+                    <div class="sel_box">
+                        <img src="../images/01tool/tool01_03.svg" alt="지팡이">
+                        <div class="title">지팡이</div>
+                    </div>
+                    <div class="sel_box">
+                        <img src="../images/01tool/tool01_04.svg" alt="안전손잡이">
+                        <div class="title">안전손잡이</div>
+                    </div>
+                    <div class="sel_box">
+                        <img src="../images/01tool/tool01_05.svg" alt="미끄럼방지 매트">
+                        <div class="title">미끄럼방지 매트</div>
+                    </div>
+                    <div class="sel_box">
+                        <img src="../images/01tool/tool01_07.svg" alt="욕창예방매트리스(대여)">
+                        <div class="title">욕창예방매트리스(대여)</div>
+                    </div>
+
+                    <div class="sel_box">
+                        <img src="../images/01tool/tool01_08.svg" alt="욕창예방방석">
+                        <div class="title">욕창예방방석</div>
+                    </div>
+                    <div class="sel_box active">
+                        <img src="../images/01tool/tool01_09.svg" alt="자세변환용구">
+                        <div class="title">자세변환용구</div>
+                    </div>
+                    <div class="sel_box">
+                        <img src="../images/01tool/tool01_10.svg" alt="요실금팬티">
+                        <div class="title">요실금팬티</div>
+                    </div>
+                    <div class="sel_box ">
+                        <img src="../images/01tool/tool01_11.svg" alt="목욕의자">
+                        <div class="title">목욕의자</div>
+                    </div>
+
+                    <div class="sel_box">
+                        <img src="../images/01tool/tool01_12.svg" alt="이동변기">
+                        <div class="title">이동변기</div>
+                    </div>
+                    <div class="sel_box">
+                        <img src="../images/01tool/tool01_13.svg" alt="간이변기">
+                        <div class="title">간이변기</div>
+                    </div>
+                    <div class="sel_box">
+                        <img src="../images/01tool/tool01_14.svg" alt="경사로(실내용)">
+                        <div class="title">경사로(실내용)</div>
+                    </div>
+                    <!-- <div class="sel_box">
+                        <img src="../images/01tool/tool01_14.svg" alt="경사로(실외용)">
+                        <div class="title">경사로(실외용)</div>
+                    </div> -->
+                    <!-- <div class="empty"></div> -->
+
+
+                </div>
+                <!-- sel_welfare_area -->
+                
+                <div class="h20"></div>
+
+                <div class="d-flex align-items-center justify-content-end">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.94446 8.49995C2.94446 5.70785 5.20791 3.4444 8.00001 3.4444C10.7921 3.4444 13.0556 5.70785 13.0556 8.49995C13.0556 11.2921 10.7921 13.5555 8.00001 13.5555C5.20791 13.5555 2.94446 11.2921 2.94446 8.49995ZM8.00001 2.4444C4.65562 2.4444 1.94446 5.15556 1.94446 8.49995C1.94446 11.8443 4.65562 14.5555 8.00001 14.5555C11.3444 14.5555 14.0556 11.8443 14.0556 8.49995C14.0556 5.15556 11.3444 2.4444 8.00001 2.4444ZM8.49996 5.16665C8.49996 4.8905 8.2761 4.66665 7.99996 4.66665C7.72382 4.66665 7.49996 4.8905 7.49996 5.16665V8.49998C7.49996 8.68937 7.60696 8.8625 7.77635 8.94719L9.99857 10.0583C10.2456 10.1818 10.5459 10.0817 10.6694 9.8347C10.7929 9.58771 10.6928 9.28737 10.4458 9.16388L8.49996 8.19096V5.16665Z" fill="#999999"/>
+                    </svg>
+                    <span class="color_t_t font_ssr">2024.06.26 10:00 업데이트</span>
+                </div>
+
+
+                <div class="h40"></div>
+                <div class="h12 back_F5F5F5 marW-20"></div>
+                <div class="h24"></div>
+
+
+                <div class="font_sblb">유의사항</div>
+
+                <div class="h16"></div>
+
+                <ul class="list_dept1 gray_dot">
+                    <li class="color_t_s font_sbsr">조회 시점과 어르신 상황에 따라 정보가 달라질 수 있습니다. </li>
+                    <li class="color_t_s font_sbsr">정확한 정보는 상담 신청 후 연결된 장기요양기관을 통해 확인바랍니다.</li>
+                    <li class="color_t_s font_sbsr">이용 중인 복지용구는 종류 별 사용 가능 햇수에 따라 보여집니다.</li>
+                </ul>
+
+                <!-- 해당 상담이 ‘상담취소’, ‘상담완료’ 상태일 때만 버튼 노출 -->
+                <div>
+                    <div class="h48"></div>
+                    <a class="waves-effect btn-large btn_cancel w100p">다시 조회 신청</a>
+                </div>
+
+
+
+            </section>
+
+
+
+        </main>
+
+        <footer class="page-footer">
+
+            <div class="relative">
+                <a class="waves-effect btn-large btn_primary w100p">관심 설정하고 신청하기</a>
+            </div>
+
+        </footer>
+
+
+
+
+
+
+
+    </div>
+    <!-- wrapper -->
+
+
+
+</body>
+
+</html>

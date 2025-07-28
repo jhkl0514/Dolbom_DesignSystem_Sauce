@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>F_SAB_001_interest_wel.html</title>
+
+
+    <!-- jquery -->
+    <script src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script src="../js/materialize.min.js"></script>
+
+    <!-- guide.js -->
+    <script src="../js/custom/guide.js"></script>
+
+    <!-- DEDS-260 202412 bottom_sheet.js 추가 -->
+    <script type="text/javascript" src="../js/custom/script_bottom_sheet_pb.js" defer></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="../css/materialize.min.css">
+
+    <!-- DEDS-260 202412 AOS 추가 -->
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="../css/style.css">
+
+
+
+    <!-- DEDS-260 202412 js-->
+    <script>
+
+        //welAni_01 체크
+        $(function () {
+            
+            $(window).scroll(function(){
+
+                var $welAni01 = $('.interest_wel_ani_01');
+                var welAniTop_01 = $welAni01.offset().top;
+                var windowScrollTop = $(window).scrollTop();
+                var windowHeight = $(window).height();
+
+                if (welAniTop_01 <= windowScrollTop + windowHeight - 400) {
+
+                    if (!$welAni01.hasClass('animated')) {
+                        $welAni01.addClass('animated');
+                    }
+                }
+
+            });
+
+        });
+
+
+        //welAni_02 스크롤
+        $(function () {
+        
+            $(window).scroll(function(){
+
+                var $welAni02 = $('.interest_wel_ani_02 .ctn_scroll_area');
+                var welAniTop_02 = $welAni02.offset().top;
+                var windowScrollTop = $(window).scrollTop();
+                var windowHeight = $(window).height();
+
+                if (welAniTop_02 <= windowScrollTop + windowHeight - 150) {
+
+                    if (!$welAni02.hasClass('animated')) {
+                        $welAni02.addClass('animated');
+                    }
+                }
+
+            });
+
+        });
+
+
+        //welAni_03 숫자증가
+        $(function () {
+            
+            // 상태 추적 변수
+            var hasAnimated = false;
+            
+            $(window).scroll(function(){
+        
+                var $welAni03 = $('.interest_wel_ani_03');
+                var welAniTop_03 = $welAni03.offset().top;
+                var windowScrollTop = $(window).scrollTop();
+                var windowHeight = $(window).height();
+        
+                // 화면에 보이면 숫자 애니메이션 실행 (한 번만 실행)
+                if (welAniTop_03 <= windowScrollTop + windowHeight && !hasAnimated) {
+        
+                    $('.counting').each(function() {
+                        var $this = $(this),
+                            countTo = $this.attr('data-count');
+                        
+                        $({ countNum: $this.text()}).animate({
+                            countNum: countTo
+                        },
+        
+                        {
+                            duration: 1500,
+                            easing:'linear',
+                            step: function() {
+                                // 콤마를 추가하기 위해 toLocaleString() 사용
+                                $this.text(Math.floor(this.countNum).toLocaleString());
+                            },
+                            complete: function() {
+                                $this.text(Math.floor(this.countNum).toLocaleString());
+                                // 애니메이션이 끝나면 상태 추적 변수 변경
+                                hasAnimated = true;
+                            }
+                        });  
+                    });
+        
+                }//if end
+                
+            });
+        });                    
+    </script>
+
+    <script>
+
+        $(function () {
+
+            $('.collapsible.default').collapsible({
+            });
+
+        });
+
+    </script>
+
+
+    <!-- lottie -->
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+
+
+</head>
+
+<body class="back_gray02">
+    <div class="wrapper">
+
+
+        <header>
+            <nav class="top">
+                <a class="btn_back waves-effect" href="#">
+                    <span class="icon"></span>
+                    <span class="txt">관심 복지용구</span>
+                </a>
+                <div class="icon_area waves-effect">
+                    <div class="icon_btn i_share"></div>
+                </div>
+
+            </nav>
+        </header>
+
+
+        <main>
+            <!-- DEDS-260 202412 section 클래스 확인-->
+            <section class="intro bottom_0">
+
+
+                <h2 class="title02">
+                    신체활동이 불편하다면?
+                </h2>
+                <h2 class="title color_tp_pp marT4">
+                    관심 복지용구
+                </h2>
+
+                <div class="h32"></div>
+
+                <div class="d-flex align-items-center gap06">
+                    <img class="w28" src="/html/page/app/matching/assets/src/images/08etc/money03_40.svg">
+                    <div class="font_sbms">장기요양급여 85%~100% 지원</div>
+                </div>
+
+                <div class="h52"></div>
+
+                
+                <div class="relative">
+                    <dotlottie-player src="https://lottie.host/7ce7ad02-6126-4279-8a56-a391e177b220/vujuLfGlU9.lottie" background="transparent" speed="1" style="width: 100%; height: auto; position: absolute;bottom: 0;" loop autoplay></dotlottie-player>
+                    <div style="aspect-ratio: 9/6;"></div>
+                </div>
+
+                <!-- DEDS-260 202412 -->
+                <div class="back_white marW-20">
+                                    
+                    <div class="h56"></div>
+
+                    <div class="pad020">
+
+                        <div class="font_shl" data-aos="fade-up">간편하게 신청 하세요</div>
+
+                        <div class="h24"></div>
+
+                        <div class="color_t_s font_sbmr" data-aos="fade-up">
+                            필요한 복지용구를 선택만 하세요. 이용할 수 있도록 도와드려요.
+                        </div>
+
+                    </div>
+
+                    <div class="h52"></div>
+
+                    <div class="interest_wel_ani_01" data-aos="fade-up">
+
+                        <div class="check"></div>
+                        <div class="check"></div>
+                        
+                    </div>
+                    
+                </div>
+
+                <div class="h12"></div>
+
+                <div class="back_white marW-20">
+         
+                    <div class="h56"></div>
+
+                    <div class="pad020">
+
+                        <div class="font_shl" data-aos="fade-up">복지용구 쉽게 알아보세요</div>
+
+                        <div class="h24"></div>
+
+                        <div class="color_t_s font_sbmr" data-aos="fade-up">
+                            복지용구의 주요 기능을 간단하게 확인할 수 있어요.
+                        </div>
+
+                    </div>
+
+                    <div class="h52"></div>
+
+                    <div class="interest_wel_ani_02" data-aos="fade-up">
+
+                        <div class="ctn_scroll_area">
+                            <img src="/html/page/app/matching/assets/src/images/22scrollAni/interest_wel_ani_02_scroll.png" alt="ctn">
+                        </div>
+                        
+                    </div>
+
+                    
+
+                    <div class="h56"></div>
+
+                </div>
+
+                <div class="h12"></div>
+
+                <div class="back_white marW-20">
+
+                    <div class="h56"></div>
+
+                    <div class="pad020">
+
+                        <div class="font_shl" data-aos="fade-up">
+                            인정등급으로<br>
+                            더 저렴하게 구매하세요
+                        </div>
+    
+                        <div class="h24"></div>
+    
+                        <div class="color_t_s font_sbmr" data-aos="fade-up">
+                            인정 등급이 없어도 상담은 가능하며, 상담 후 추가 안내를 받을 수 있어요.
+                        </div>
+
+                        <div class="h52"></div>
+
+
+                        <div class="interest_wel_ani_03 back_FAFAFA radius12 padH20W16" data-aos="fade-up">
+
+                            <span class="badge_order back_primary">궁금해요!</span>
+
+                            <div class="h08"></div>
+
+                            <div class="font_sbls" data-aos="fade-up">
+                                600,000원 보행기 구매 시,<br>
+                                <mark class="mk02">개인 부담 비용</mark>은 어떻게 되나요?
+                            </div>
+
+                            <div class="h20"></div>
+
+                            <div class="back_FFF5E6 bder_1_FF8120 radius12 padH20W16" data-aos="fade-up">
+
+                                <div class="d-flex align-items-center gap12">
+                                    <div class="family_sel dept1">
+                                        <div class="item grandpa active">
+                                            <span class="txt"></span>
+                                        </div>
+                                    </div>
+                                    <div class="font_sbmb">인정등급이 있는 어르신</div>
+                                </div>
+
+                                <hr class="color_gray marH16">
+
+                                <div class="h08"></div>
+
+                                <div>
+                                    <div class="grid_walkerSubject" data-aos="fade-up">
+                                        <div class="color_t_s font_sbsr">일반 대상자</div>
+                                        <div class="align_between_center">
+                                            <span class="back_15803D radius04 color_white font_sss w40 h24 flex_center">15%</span>
+                                            <div class="font_sbms"><span class="counting" data-count="90000">0</span>원</div>
+                                        </div>
+                                    </div>
+                                    <div class="grid_walkerSubject" data-aos="fade-up">
+                                        <div class="color_t_s font_sbsr">감경 대상자</div>
+                                        <div class="align_between_center">
+                                            <span class="back_15803D radius04 color_white font_sss w40 h24 flex_center">9%</span>
+                                            <div class="font_sbms"><span class="counting" data-count="54000">0</span>원</div>
+                                        </div>
+                                    </div>
+                                    <div class="grid_walkerSubject" data-aos="fade-up">
+                                        <div class="color_t_s font_sbsr">감경 대상자</div>
+                                        <div class="align_between_center">
+                                            <span class="back_15803D radius04 color_white font_sss w40 h24 flex_center">6%</span>
+                                            <div class="font_sbms"><span class="counting" data-count="36000">0</span>원</div>
+                                        </div>
+                                    </div>
+                                    <div class="grid_walkerSubject" data-aos="fade-up">
+                                        <div class="color_t_s font_sbsr">기초생활 수급자</div>
+                                        <div class="align_between_center">
+                                            <span class="back_15803D radius04 color_white font_sss w40 h24 flex_center">0%</span>
+                                            <div class="font_sbms">0원</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="h24"></div>
+
+                                <div class="color_t_t font_sbssr" data-aos="fade-up">※ 연간 160만원 한도 장기요양급여 지원 </div>
+
+                            </div>
+
+                            <div class="h24"></div>
+
+                            <div class="l_right">
+                                <span class="waves-effect link_text small show-modal welInfo"><u>인정등급 더 알아보기</u></span>
+                            </div>
+
+
+                        </div>
+
+                        <div class="h56"></div>
+
+                    </div>
+
+
+
+                </div>
+
+                <div class="h12"></div>
+
+                <div class="back_white marW-20">
+
+                    <div class="h40"></div>
+
+                    <div class="font_sblb pad020">더 자세히 알아보세요</div>
+    
+                    <div class="h08"></div>
+    
+    
+                    <ul class="collapsible default">
+                        <li class="bder_bottom active">
+                            <div class="collapsible-header pad20">
+                                <span class="font_sbms">인정등급이 필요하신가요?</span>
+                                <span class="arrow"></span>
+                            </div>
+                            <div class="collapsible-body noPad">
+                                <div class="pad20 back_FAFAFA">
+                                    <div class="color_t_s font_sbmr">
+                                        인정등급 테스트 후 상담을 신청하면 발급을 도와드려요.
+                                    </div>
+                                    <div class="h12"></div>
+                                    
+                                    <span class="waves-effect link_text"><u>인정등급 간편 테스트 바로가기</u></span>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+
+                    <div class="h160 back_white"></div>
+
+
+                </div>
+
+            </section>
+            <!-- DEDS-260 202412 end -->
+        </main>
+
+        <footer class="page-footer">
+
+            <div class="relative">
+                <a class="waves-effect btn-large btn_primary w100p">복지용구 지원받기 </a>
+            </div>
+
+        </footer>
+
+
+
+
+
+
+
+    </div>
+    <!-- wrapper -->
+
+
+    <!-- DEDS-260 202412 하단 모달-->
+    <!-- 인정등급 더 알아보기 -->
+    <div id="welInfo_modal" class="bottom-sheet_handle">
+        <div class="sheet-overlay"></div>
+        <div class="content">
+            <div class="drag_handle_area drag-icon">
+                <span class="drag_handle"></span>
+            </div>
+            <div class="modal_header">
+                <h4 class="modal_title">인정등급 더 알아보기</h4>
+                <div class="close_x close_modal"></div>
+            </div>
+            <div class="modal-content">
+
+                <div class="h04"></div>
+
+                <div class="">
+
+                    <div class="list_check marB8">인정등급이란?</div>
+                    <p class="color_t_s font_sbsr">장기요양보험 대상자를 판정하는 등급으로,인정등급에 따라 복지용구 지원 혜택과 본인 부담금이 달라져요.</p>
+
+                    <div class="h24"></div>
+
+                    <div class="list_check marB8">인정등급이 왜 필요할까요?</div>
+                    <ul class="list_dept1 gray_dot">
+                        <li class="color_t_s font_sbsr">복지용구를 저렴하게 이용할 수 있어요.</li>
+                        <li class="color_t_s font_sbsr">인정등급에 따라 필요한 복지용구가 다를 수 있어요. 적합한 등급을 받아야 내 상태에 맞는 복지용구를 제공받을 수 있어요.</li>
+                    </ul>
+
+                    <div class="h24"></div> 
+
+                    <div class="list_check marB8">인정등급 확인 방법은?</div>
+                    <ul class="list_dept1 gray_dot">
+                        <li class="color_t_s font_sbsr">인정등급 테스트 후 대상자인지 확인할 수 있어요. 상담을 신청하면 발급을 도와드려요.</li>
+                    </ul>
+                    <div class="h08"></div>
+
+                    <div class="l_right">
+                        <span class="waves-effect link_text small"><u>인정등급 간편 테스트 바로가기</u></span>
+                    </div>
+
+                    <div class="h60"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>
+
+
+
+<!-- DEDS-260 202412 -->
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+
+AOS.init({
+    duration: 800,
+    once: true,
+    offset: 150,
+});
+</script>

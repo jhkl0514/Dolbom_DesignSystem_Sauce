@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+
+    <title>F_SAA_001_service_new01.html</title>
+
+
+    <!-- jquery -->
+    <script type="text/javascript" src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script type="text/javascript" src="../js/materialize.min.js"></script>
+
+    <!-- guide.js -->
+    <script type="text/javascript" src="../js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="../css/materialize.min.css" />
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="../js/swiper/swiper-bundle.min.css" />
+
+
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <!-- lottie -->
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+
+
+    <style>
+        /* 배너 swipe */
+        .banner_swiper {
+            margin: -12px -20px;
+        }
+
+        .banner_swiper .swiper-slide {
+            background-color: #fff;
+            padding: 12px 20px;
+
+        }
+
+        .banner_swiper .swiper-pagination {
+            width: auto;
+            top: 24px;
+            right: 32px;
+            left: initial;
+            font-size: 0;
+            line-height: 0;
+        }
+
+
+
+        /* 공지사항 */
+        .notice_Swiper {
+            height: 24px;
+        }
+
+        .notice_Swiper .swiper-slide {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            display: flex;
+        }
+
+
+        /* 대상 어워드 <!-- DEDS-235 202411 --> */
+        .award_swiper .swiper-slide {
+            padding: 24px 24px 24px 44px;
+        }
+
+        .award_swiper .swiper-slide .iconImg {
+            height: 48px;
+        }
+
+        .award_swiper .swiper-prev,
+        .swiper-next {
+            position: absolute;
+            display: flex;
+            z-index: 10;
+            top: calc(50% - 16px);
+
+            img {
+                width: 32px;
+                height: 32px;
+            }
+        }
+
+        .award_swiper .swiper-prev {
+            left: 10px;
+            transform: rotate(180deg);
+        }
+
+        .award_swiper .swiper-next {
+            right: 10px;
+        }
+
+
+        /* 대상 어워드 <!-- DEDS-235 202412 --> */
+        /* 앰블럼배너 유무에 따른 간격조절 */
+        .award_swiper_area {
+            background-color: #f5f5f5;
+            margin: 0 -20px;
+        }
+
+        /* 앰블럼배너 유 */
+        .award_swiper_area:has(.award_swiper) {
+            padding-bottom: 60px;
+        }
+
+        /* 앰블럼배너 무 */
+        .award_swiper_area:not(:has(.award_swiper)) {
+            padding-top: 60px;
+            background-color: #fff;
+        }
+    </style>
+
+
+<style>
+    .page-footer.bottomNav .bottomNav_menu li a dotlottie-player {
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: -1; /* 배경으로 설정하지 않으면 물결 효과 발생 시 어색함 */
+    }
+  </style>
+
+
+    <script>
+
+        $(function () {
+
+            //어르신 선택시 상단 텍스트 변경
+            $('.broad_area.om_select li').click(function () {
+
+                var thisTxt = $(this).find('span').text();
+
+                $('.txtEvt').text(thisTxt);
+
+            });
+
+
+            //modal 오픈시 active 추가
+            var openEvt = function () {
+                $('.top_dropdown_btn').addClass('active');
+            };
+
+            //modal 닫을시 active 삭제
+            var closeEvt = function () {
+                $('.top_dropdown_btn').removeClass('active');
+
+            };
+
+
+            $(".modal_om_select").modal({
+                onOpenStart: openEvt,
+                onCloseStart: closeEvt,
+            });
+
+
+        });
+
+
+        $(function () {
+
+            //닫기
+            $('.close_x').click(function () {
+
+                $(this).closest('.card').slideUp(150);
+
+            });
+
+        });
+
+
+    </script>
+
+
+</head>
+
+<body class="">
+    <div class="wrapper">
+
+
+        <header>
+            <nav class="top">
+                <div class="btn_back">
+                    <div class="txt">
+
+                        <span class="txtEvt">어르신</span>
+
+                        <!-- top_dropdown_area -->
+                        <div class="top_dropdown_area">
+                            <a class="top_dropdown_btn modal-trigger" href="#modal_om_select"></a>
+                        </div>
+                        <!-- top_dropdown_area end-->
+
+                        <span class="color_tp_s font_sbls marL4">님을 위한 서비스</span>
+
+                    </div>
+                </div>
+                <div class="icon_area waves-effect">
+                    <div class="icon_btn i_alarm noti_dot"></div>
+                </div>
+
+
+
+            </nav>
+        </header>
+
+
+        <main>
+                <section class="default bottom_0">
+
+                    <div class="card marB32">
+
+                        <div class="close_x p03"></div>
+
+                        <a class="card-content waves-effect box_coun_list s02 _om_box">
+
+                            <div class="img_area trans_04 ing">
+                            </div>
+
+                            <div class="color_t_p font_sbmb">
+                                <span class="color_tp_pp">요양인정번호</span>를<br>등록해주세요
+                            </div>
+
+                        </a>
+
+                    </div>
+                    <!-- card -->
+
+                    <!-- DP2025-8 202503 -->
+                    <h5 class="title">요양시설 찾기</h5>
+
+                    <div class="h20"></div>
+
+                    <ul class="sel_recu_area">
+                        <li>
+                            <div class="img_recu recu_01"></div>
+                            <span class="txt">요양병원</span>
+                        </li>
+                        <li>
+                            <div class="img_recu recu_02"></div>
+                            <span class="txt">주야간보호</span>
+                        </li>
+                        <li>
+                            <div class="img_recu recu_03"></div>
+                            <span class="txt">방문요양</span>
+                        </li>
+                        <li>
+                            <div class="img_recu recu_04"></div>
+                            <span class="txt">요양원</span>
+                        </li>
+                        <li>
+                            <div class="img_recu recu_05"></div>
+                            <span class="txt">복지용구기관</span>
+                        </li>
+    
+                    </ul>
+
+                    <div class="h40"></div>
+
+
+                    <div class="card service_card_order pad_28_24_0 back_C8E6C9 back_rom_main_01 noShadow">
+
+                        <div class="d-flex">
+
+                            <div class="title_area">
+
+                                <span class="font_sblb">복지용구 주문하기</span>
+                                <div class="color_t_s font_sbsr marT4">
+                                    복지용구 지원금 잔여금액<br>
+                                    확인하고, 바로 주문하세요
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- card service_card -->
+
+                    <div class="h20"></div>
+
+                    <div class="card service_card_order pad_28_24_0 back_FFEBEE back_rom_main_02 noShadow">
+
+                        <div class="d-flex">
+
+                            <div class="title_area">
+
+                                <span class="font_sblb">어르신 건강 간편점검</span>
+                                <div class="color_t_s font_sbsr marT4">
+                                    돌봄이 필요한 상태인지,<br>
+                                    빠르게 점검해보세요
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- card service_card -->
+
+                    <div class="h20"></div>
+
+                    <div class="card service_card_order back_FFF5E6 back_rom_main_03 noShadow">
+
+                        <div class="d-flex">
+
+                            <div class="title_area">
+
+                                <span class="font_sblb">인정등급 예상 테스트</span>
+                                <div class="color_t_s font_sbsr marT4">
+                                    건강보험공단 심사 기준으로,<br>
+                                    등급 가능성 확인해보세요
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- card service_card -->
+
+
+                    <div class="h20"></div>
+
+                    <div class="card service_card_order back_EFF1FD back_rom_main_04 noShadow">
+
+                        <div class="d-flex">
+
+                            <div class="title_area">
+
+                                <span class="font_sblb">복지용구 상담신청</span>
+                                <div class="color_t_s font_sbsr marT4">
+                                    내 상황에 꼭 맞는 복지용구,<br>
+                                    전문가가 알려드려요
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- card service_card -->
+
+
+                    <div class="h20"></div>
+
+                    <div class="card service_card_order back_E8F5E9 back_rom_main_05 noShadow">
+
+                        <div class="d-flex">
+
+                            <div class="title_area">
+
+                                <span class="font_sblb">어르신 돌봄 상담신청</span>
+                                <div class="color_t_s font_sbsr marT4">
+                                    등급 신청부터 맞춤 돌봄까지<br>
+                                    전문가가 도와드려요
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- card service_card -->
+
+                    <!-- DP2025-8 202503 end -->
+
+
+                    <div class="h48"></div>
+
+
+                    <div class="swiper banner_swiper">
+
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide">
+
+                                <div class="card waves-effect banner_card slide_03_bg">
+
+                                    <div class="card-content">
+
+                                        <div class="txt_area">
+                                            <div class="font_sbms_2">즐기세요, 당신의 시니어 라이프!</div>
+
+                                            <p class="color_t_s font_ssr marT4 line_clamp_1">
+                                                격이 맞는 이웃, 위례 심포니아
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- card -->
+                            </div>
+
+                            <div class="swiper-slide">
+
+                                <div class="card waves-effect banner_card slide_01_bg">
+
+                                    <div class="card-content">
+
+                                        <div class="txt_area">
+                                            <div class="font_sbms_2">독일 건강식품 최대 60% 할인</div>
+
+                                            <p class="color_t_s font_ssr marT4 line_clamp_1">
+                                                한발 빠른 추석 이로움ON 스토어
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- card -->
+
+                            </div>
+                            <!-- swiper-slide -->
+
+
+
+                            <div class="swiper-slide">
+
+                                <div class="card waves-effect banner_card slide_02_bg">
+
+                                    <div class="card-content">
+
+                                        <div class="txt_area">
+                                            <div class="font_sbms_2">유럽 건강식품 할인전 상시 오픈</div>
+
+                                            <p class="color_t_s font_ssr marT4 line_clamp_1">
+                                                시니어를 위한 이로움ON 스토어
+                                            </p>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <!-- card -->
+
+                            </div>
+                            <!-- swiper-slide -->
+
+                        </div>
+                        <!-- swiper-wrapper -->
+
+                        <div class="swiper-pagination"></div>
+
+                    </div>
+
+
+
+                    <div class="h48"></div>
+
+                    <div class="font_shs">유용한 정보를 모았어요</div>
+
+                    <div class="h20"></div>
+
+                    <div class="box_list_area">
+
+                        <a class="box_om_wel_list title">
+                            <div class="img_area">
+                                <img src="../images/08etc/document_41.svg" alt="인정등급 발급 절차">
+                            </div>
+                            <div>
+                                <div class="font_sbms">
+                                    인정등급 발급 절차
+                                </div>
+                                <div class="color_t_s font_sbsr marT4 ">소요 기간과 진행 절차 안내</div>
+                            </div>
+                        </a>
+
+                        <a class="box_om_wel_list title">
+                            <div class="img_area">
+                                <img src="../images/08etc/accompany_41.svg" alt="외출시 유용한 용품">
+                            </div>
+                            <div>
+                                <div class="font_sbms">
+                                    외출시 유용한 용품
+                                </div>
+                                <div class="color_t_s font_sbsr marT4">야외에서 쾌적하고 안정적인 활동</div>
+                            </div>
+                        </a>
+
+                        <a class="box_om_wel_list title">
+                            <div class="img_area">
+                                <img src="../images/08etc/icon_24h.svg" alt="주야간보호센터란?">
+                            </div>
+                            <div>
+                                <div class="font_sbms">
+                                    주야간보호센터란?
+                                </div>
+                                <div class="color_t_s font_sbsr marT4">집에 혼자 계시는 어르신이 걱정된다면</div>
+                            </div>
+                        </a>
+
+                        <a class="box_om_wel_list title">
+                            <div class="img_area">
+                                <img src="../images/08etc/money03_40.svg" alt="인정등급 별 혜택">
+                            </div>
+                            <div>
+                                <div class="font_sbms">
+                                    인정등급 별 혜택
+                                </div>
+                                <div class="color_t_s font_sbsr marT4">받을 수 있는 혜택</div>
+                            </div>
+                        </a>
+
+
+                    </div>
+                    <!-- box_list_area -->
+
+                    <div class="h48"></div>
+
+
+                    <div class="card notice w100p noShadow ">
+
+                        <div class="card-content">
+
+                            <dl class="notice_dl">
+                                <dt>공지사항</dt>
+
+                                <!-- Swiper -->
+                                <dd class="swiper notice_Swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+
+                                            <span class="waves-effect">이용약관이 변경되었습니다.</span>
+
+                                        </div>
+                                        <div class="swiper-slide">
+
+                                            <span class="waves-effect">글자수가 길어진 이용약관이 변경되었습니다.</span>
+
+                                        </div>
+                                        <div class="swiper-slide">
+
+                                            <span class="waves-effect">글자수가 너무 길어지면 점점처리 하고 이용약관이 이용약관이 이용약관이 이렇게
+                                                변경되었습니다.</span>
+
+                                        </div>
+                                        <div class="swiper-slide">
+
+                                            <span class="waves-effect">이렇게 변경되었습니다.</span>
+
+                                        </div>
+                                        <div class="swiper-slide">
+
+                                            <span class="waves-effect">공지글이 5개로 기본설정되서 변경되었습니다.</span>
+
+                                        </div>
+                                    </div>
+                                </dd>
+
+
+                            </dl>
+
+                        </div>
+                    </div>
+                    <!-- card -->
+
+                    <div class="h40"></div>
+
+                    <div class="award_swiper_area">
+
+                        <div class="swiper award_swiper">
+
+                            <div class="swiper-wrapper">
+
+                                <div class="swiper-slide">
+                                    <div class="d-flex align-items-center gap12">
+                                        <img class="iconImg"
+                                            src="/html/page/app/matching/assets/src/images/19banner/bn_01.png"
+                                            alt="대한민국굿컴퍼니">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="d-flex align-items-center gap12">
+                                        <img class="iconImg"
+                                            src="/html/page/app/matching/assets/src/images/19banner/bn_02.png"
+                                            alt="앱어워드코리아">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- swiper-wrapper -->
+
+                            <div class="swiper-prev">
+                                <img src="/html/page/app/matching/assets/src/images/18icon/chevron-right02_thin.svg"
+                                    alt="arrow-prev">
+                            </div>
+                            <div class="swiper-next">
+                                <img src="/html/page/app/matching/assets/src/images/18icon/chevron-right02_thin.svg"
+                                    alt="arrow-next">
+                            </div>
+                        </div>
+                        <!-- swiper -->
+
+                    </div>
+
+
+                </section>
+        </main>
+
+        <footer class="page-footer bottomNav">
+
+            <ul class="bottomNav_menu">
+
+                <li class="btn_om">
+                    <a class="waves-effect">
+                        <span class="txt">어르신</span>
+                    </a>
+                </li>
+                <li class="btn_wel">
+                    <a class="waves-effect">
+                        <span class="txt">복지용구</span>
+                    </a>
+                </li>
+                <li class="btn_service">
+                    <a class="waves-effect">
+                        <dotlottie-player src="https://lottie.host/2cbd0efd-aaae-4abd-86eb-e44245b6cb77/lXRjGbpf4b.lottie" background="transparent" speed="1" style="width: 24px;height: 24px;" direction="1" playMode="forward" autoplay></dotlottie-player>
+                        <span class="txt">홈</span>
+                    </a>
+                </li>
+                <li class="btn_guide">
+                    <a class="waves-effect">
+                        <span class="txt">길잡이</span>
+                    </a>
+                </li>
+                <li class="btn_entier">
+                    <a class="waves-effect">
+                        <span class="txt">전체</span>
+                    </a>
+                </li>
+
+            </ul>
+
+        </footer>
+
+
+
+    </div>
+    <!-- wrapper -->
+
+
+
+
+    <!-- Modal modal_om_select -->
+    <div id="modal_om_select" class="modal bottom-sheet modal_om_select">
+
+        <div class="modal_header">
+            <h4 class="modal_title">어르신을 선택해주세요</h4>
+            <div class="close_x modal-close waves-effect"></div>
+        </div>
+
+        <div class="modal-content">
+
+            <div class="scrollBox heightAuto" style="max-height: 50vh;">
+                <ul class="broad_area om_select">
+                    <li class="modal-close active">
+                        <div class="img_flower fl_01"></div>
+                        <span>꽃분이</span>
+                    </li>
+                    <li class="modal-close">
+                        <div class="img_flower fl_02"></div>
+                        <span>꽃순이</span>
+                    </li>
+                    <li class="modal-close">
+                        <div class="img_flower fl_03"></div>
+                        <span>꽃돌이</span>
+                    </li>
+                    <li class="modal-close">
+                        <div class="img_flower fl_04"></div>
+                        <span>꽃박이</span>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="h20"></div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <script src="../js/swiper/swiper-bundle.min.js"></script>
+    <script>
+
+        //배너 슬라이드
+        var swiper = new Swiper(".banner_swiper", {
+            autoHeight: true,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+
+            },
+        });
+
+
+
+
+
+        //공지사항
+        var swiper = new Swiper(".notice_Swiper", {
+            spaceBetween: 10,
+            direction: "vertical",
+            loop: true,
+            centeredSlides: false,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+        });
+
+        //어워드 배너 DEDS-235 202411
+        var swiper = new Swiper(".award_swiper", {
+            autoHeight: true,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+
+            navigation: {
+                nextEl: ".swiper-next",
+                prevEl: ".swiper-prev",
+            },
+        });
+
+
+
+    </script>
+
+
+</body>
+
+</html>

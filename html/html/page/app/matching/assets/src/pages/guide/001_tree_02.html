@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+
+    <title>컴포넌트</title>
+
+
+    <!-- jquery -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/materialize.js"></script>
+
+    <!-- guide.js -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guide.js"></script>
+
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/materialize.min.css" />
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/style.css" />
+
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/guideStyle_2025.css" />
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/atom-one-dark.min.css">
+
+    <!-- highlight.js -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/go.min.js"></script>
+
+    <!-- highlight copy -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guide_hljsLoad.js"></script>
+
+    <!-- guideStyle_2025.js -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guideStyle_2025.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="gs_header">
+
+            <h1 class="logo"><span>돌봄 디자인시스템</span></h1>
+
+            <ul class="header_menu">
+                <li><a href="#" class="active">Foundation</a></li>
+                <li><a href="#">Component</a></li>
+                <li><a href="#">App Screen</a></li>
+                <li><a href="#">Web Screen</a></li>
+                <li><a href="#">Style Guide</a></li>
+                <li class="search"><a href="#"></a></li>
+            </ul>
+
+            <div class="m_menu"></div>
+
+        </div>
+
+    </header>
+
+    <div class="wrap">
+
+        <main>
+
+            <nav class="sidebar">
+                
+                <div class="sidebar_header">
+                    <div class="title_area">
+                        <div class="close_x"></div>
+                    </div>
+                    <div class="sidebar_search">
+                        <input type="text" placeholder="검색어를 입력해 주세요.">
+                        <div class="search">
+                            <a href="#"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="title">App Screen</h4>
+
+
+                <div class="sidebar_list">
+                    <ul class="tabs_dept_sidebar">
+                        <li class="tab"><a class="active" title="dept_app">App Screen</a></li>
+                        <li class="tab"><a class="" title="dept_web">Web Screen</a></li>
+                    </ul>
+
+                    <div class="tab_list dept_app">
+                        
+                        <ul class="dept1">
+                            <li><a href="#">스플래시</a></li>
+                            <li><a href="#">스플래시</a></li>
+                            <li><a href="#">스플래시</a></li>
+                            <li><a href="#">스플래시</a></li>
+                            <li><a href="#">온보딩</a></li>
+                            <li>
+                                <a>앱 접근 권한 허용</a>
+                                <ul class="dept2">
+                                    <li><a href="#">dept3 31메뉴</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a>회원가입</a>
+    
+                                <ul class="dept2">
+                                    <li><a href="#">회원가입</a></li>
+                                    <li><a href="#">본인인증</a></li>
+                                    <li><a href="#">회원가입 완료</a></li>
+                                    <li><a href="#">ON 회원 아이디 찾기</a></li>
+                                    <li><a href="#">ON 회원 비밀번호 찾기</a></li>
+                                    <li><a href="#">계정 연결</a></li>
+                                    <li><a href="#">로그인 유도</a></li>
+                                    <li><a href="#">본인인증(로그인 후)</a></li>
+                                    <li>
+                                        <a href="#">본인인증</a>
+    
+                                        <ul class="dept3">
+                                            <li><a href="#">dept3 31메뉴</a></li>
+                                            <li><a href="#">dept3 32메뉴</a></li>
+                                            <li><a href="#">dept3 33메뉴</a></li>
+                                        </ul>
+    
+                                    </li>
+                                    <li><a href="#">dept2 23메뉴</a></li>
+                                    <li>
+                                        <a>dept2 24메뉴</a>
+    
+                                        <ul class="dept3">
+                                            <li><a class="active" href="#">dept3 34메뉴</a></li>
+                                            <li><a href="#">dept3 35메뉴</a></li>
+                                            <li><a href="#">dept3 36메뉴</a></li>
+                                        </ul>
+    
+                                    </li>
+                                </ul>
+    
+                            </li>
+                            <li>
+                                <a>dept1 13메뉴</a>
+                                <ul class="dept2">
+                                    <li>
+                                        <a href="#">dept2 25메뉴</a>
+                                    </li>
+                                    <li>
+                                        <a>dept2 26메뉴</a>
+    
+                                        <ul class="dept3">
+                                            <li><a href="#">dept3 37메뉴</a></li>
+                                            <li><a href="#">dept3 38메뉴</a></li>
+                                            <li><a href="#">dept3 39메뉴</a></li>
+                                        </ul>
+    
+                                    </li>
+                                    <li><a href="#">dept2 27메뉴</a></li>
+                                    <li><a href="#">dept2 28메뉴</a></li>
+                                </ul>
+                            </li>
+    
+                        </ul>
+                    </div>
+                    <!-- dept_app -->
+
+                    <div class="tab_list dept_web">
+                        
+                        <ul class="dept1">
+                            <li><a href="#">스플래시2</a></li>
+                            <li><a href="#">스플래시2</a></li>
+                            <li>
+                                <a href="#">회원가입</a>
+    
+                                <ul class="dept2">
+                                    <li><a href="#">회원가입</a></li>
+                                    <li><a href="#">본인인증</a></li>
+                                    <li><a href="#">회원가입 완료</a></li>
+                                    <li><a href="#">ON 회원 아이디 찾기</a></li>
+                                    <li><a href="#">ON 회원 비밀번호 찾기</a></li>
+                                    <li><a href="#">계정 연결</a></li>
+                                    <li><a href="#">로그인 유도</a></li>
+                                    <li><a href="#">본인인증(로그인 후)</a></li>
+                                    <li>
+                                        <a>본인인증</a>
+    
+                                        <ul class="dept3">
+                                            <li><a href="#">dept3 31메뉴</a></li>
+                                            <li><a href="#">dept3 32메뉴</a></li>
+                                            <li><a href="#">dept3 33메뉴</a></li>
+                                        </ul>
+    
+                                    </li>
+                                    <li><a href="#">dept2 23메뉴</a></li>
+                                    <li>
+                                        <a>dept2 24메뉴</a>
+    
+                                        <ul class="dept3">
+                                            <li><a href="#">dept3 34메뉴</a></li>
+                                            <li><a href="#">dept3 35메뉴</a></li>
+                                            <li><a href="#">dept3 36메뉴</a></li>
+                                        </ul>
+    
+                                    </li>
+                                </ul>
+    
+                            </li>
+                            <li><a href="#">메뉴</a></li>
+    
+                        </ul>
+
+                    </div>
+                    <!-- dept_web -->
+                    
+
+
+
+
+                </div>
+
+
+            </nav>
+            <!-- nav.sidebar -->
+
+
+
+
+
+
+            <section class="">
+
+                <div class="menuSectionTest">
+
+                    <div style="height: 800px;">
+                        내용들어가는곳1111<br>
+                        내용들어가는곳2222<br>
+                        내용들어가는곳<br>
+                        내용들어가는곳<br>
+                        내용들어가는곳<br>
+                        내용들어가는곳<br>
+                        내용들어가는곳<br>
+                        내용들어가는곳<br>
+                        내용들어가는곳<br>
+                        내용들어가는곳<br>
+                        내용들어가는곳<br>
+                        내용들어가는곳<br>
+                        내용들어가는곳<br>
+                        내용들어가는곳<br>
+                        내용들어가는곳<br>
+                        내용들어가는곳<br>
+                        내용들어가는곳<br>
+                        내용들어가는곳<br>
+                        내용들어가는곳<br>
+                        내용들어가는곳<br>
+                        내용들어가는곳<br>
+                        내용들어가는곳<br>
+                        내용들어가는곳<br>
+                        내용들어가는곳<br>
+                        내용들어가는곳<br>
+                        내용들어가는곳<br>
+                        내용들어가는곳<br>
+                        내용들어가는곳<br>
+                        내용들어가는곳<br>
+                        내용들어가는곳<br>
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+                <ul class="tabs_htmlcss tabs">
+                    <li class="tab"><a class="active" href="#test001">HTML</a></li>
+                    <li class="tab"><a href="#test002">CSS</a></li>
+                </ul>
+
+                <div id="test001">
+                    <pre><code class="language-html">
+            &lt;li class=&quot;tab&quot;&gt;&lt;a href=&quot;#test01&quot;&gt;Design&lt;/a&gt;&lt;/li&gt;
+          </code></pre>
+                </div>
+                <div id="test002">
+                    <pre><code class="language-scss">
+            &.intro_marT20{ //header O
+     
+              margin-top: $header + 20px;
+      
+            }
+          </code></pre>
+                </div>
+
+
+
+                코드예시
+                <pre><code class="language-scss">
+              //x버튼 모바일화면일때 간격벌어짐 (414px기준)
+              @media only screen and (max-width: 414px){
+              
+                  //시설찾기 검색창
+                  .recuSearch_form{
+              
+                      .recuSearch_input_area{
+              
+                          .clear_btn{
+                              right: 140px;
+                          }
+                      }
+              
+                  }
+              }
+              //x버튼 모바일화면일때 간격벌어짐 (414px기준)
+              @media only screen and (max-width: 414px){
+              
+                  //시설찾기 검색창
+                  .recuSearch_form{
+              
+                      .recuSearch_input_area{
+              
+                          .clear_btn{
+                              right: 140px;
+                          }
+                      }
+              
+                  }
+              }
+        </code></pre>
+
+                <h3 class="noMar">sdfsdfsd</h3>
+
+                <pre><code class="language-html">
+            &lt;ul class=&quot;header_menu tabs&quot;&gt;
+              &lt;li class=&quot;tab&quot;&gt;&lt;a href=&quot;&quot;&gt;Design&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;tab&quot;&gt;&lt;a href=&quot;&quot;&gt;Publishing&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;tab&quot;&gt;&lt;a href=&quot;&quot;&gt;Sitemap&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        </code></pre>
+
+
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+    <!-- wrapper -->
+
+
+</body>
+
+</html>

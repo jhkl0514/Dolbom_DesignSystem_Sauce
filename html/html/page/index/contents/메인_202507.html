@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>이로움돌봄메인</title>
+
+    <!-- plugin -->
+    <link rel="stylesheet" href="../../../core/vendor/swiperjs/swiper-bundle.css">
+    <script src="../../../core/vendor/jquery/jquery-3.6.0.min.js"></script>
+    <!-- <script src="../../../core/vendor/swiperjs/swiper-bundle.min.js"></script> -->
+    <script src="/html/page/app/matching/assets/src/js/swiper/swiper-bundle.min.js"></script>
+    
+    
+    <script src="../../../core/vendor/masonry/masonry.pkgd.min.js"></script>
+
+    <link rel="stylesheet" href="../assets/style/style.min.css">
+    <script src="../assets/script/index.js"></script>
+
+    <!-- OEOS-912 202507 CSS 경로수정 -->
+    <link rel="stylesheet" href="/html/page/index/assets/css/style_index_2025.css">
+
+
+
+    <script>
+        $(function() {
+            function updateConsultLink() {
+                const isMobile = $(window).width() <= 768;
+                const $link = $('.respArea');
+
+                if (isMobile) {
+                    $link.attr('target', '_blank')
+                        .attr('href', 'https://play.google.com/store/apps/details?id=kr.co.eroum.dolbom&pli=1')
+                        .removeAttr('data-bs-toggle')
+                        .removeAttr('data-bs-target');
+                } else {
+                    $link.attr('target', '_self')
+                        .removeAttr('href') // href가 있으면 modal 대신 링크 이동하므로 제거
+                        .attr('data-bs-toggle', 'modal')
+                        .attr('data-bs-target', '#dbapp_modal');
+                }
+            }
+
+            updateConsultLink();
+
+            // 창 크기 바뀔 때도 업데이트
+            $(window).resize(function () {
+                updateConsultLink();
+            });
+        });
+    </script>
+
+
+
+
+</head>
+<body>
+    <!-- notice -->
+    <aside id="notice">
+        <div class="container" >
+            <div class="notice-banner1">
+                <dl>
+                    <dt><em>장기요양인정등급</em>을 이미 받으셨나요?</dt>
+                    <dd>올해 남은 복지 혜택을 <em>여기에서 확인</em>하세요</dd>
+                </dl>
+                <a href="#">남은 금액 보기</a>
+            </div>
+            <div class="notice-banner2">
+                <dl>
+                    <dt>부모님 맞춤 제품이 필요하세요?</dt>
+                    <dd>편안한 일상생활 &amp; 미식을 책임지는 쇼핑몰</dd>
+                </dl>
+                <a href="#">지금 둘러보기</a>
+            </div>
+            <button type="button" class="notice-close">닫기</button>
+        </div>
+    </aside>
+    <!-- //notice -->
+
+    <!-- header -->
+    <header id="header">
+        <h1 id="logo" class="global-logo">
+            <a href="#"><em>이로움ON</em></a>
+        </h1>
+        <nav id="navigation">
+            <ul class="nav-items">
+                <li class="nav-item">
+                    <a href="#">이로움 서비스</a>
+                    <div class="nav-sub-items">
+                        <ul>
+                            <li class="nav-sub-item"><a href="#">요양정보 간편조회</a></li>
+                            <li class="nav-sub-item"><a href="#">인정등급 예상 테스트</a></li>
+                            <li class="nav-sub-item"><a href="#">복지정보 서비스</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#">시니어 길잡이</a>
+                    <div class="nav-sub-items">
+                        <ul>
+                            <li class="nav-sub-item"><a href="#">노인장기요양보험제도</a></li>
+                            <li class="nav-sub-item"><a href="#">복지용구 알아보기</a></li>
+                            <li class="nav-sub-item"><a href="#">복지용구 선택하기</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div id="utility">
+            <ul>
+                <li><a href="#">로그인</a></li>
+                <!-- <li><a href="#">로그아웃</a></li> -->
+                <li><a href="#" class="join">회원가입</a></li>
+                <li><a href="#" class="cost">남은 금액보기</a></li>
+            </ul>
+        </div>
+        <button type="button" id="allmenu-toggle" data-bs-toggle="offcanvas" data-bs-target="#allmenu">전체 메뉴 열기/닫기</button>
+    </header>
+    <div id="allmenu" tabindex="-1" class="offcanvas offcanvas-end">
+        <div class="offcanvas-header">
+            <ul>
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">회원가입</a></li>
+            </ul>
+            <button class="closed" type="button" data-bs-toggle="offcanvas" data-bs-target="#allmenu-layer">레이어 닫기</button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="user-info">
+                <div class="thumb"></div>
+                <div class="name">
+                    김정래
+                    <small>님</small>
+                    <img src="/html/core/images/ico-kakao.png" alt="">
+                    <!-- 소셜 아이콘
+                    <img src="/html/core/images/ico-naver.png" alt="">
+                    -->
+                </div>
+                <a href="#" class="logout">로그아웃</a>
+            </div>
+            <dl class="menu-item1">
+                <dt><a href="#"><img src="/html/page/index/assets/images/ico-allmenu1.png" alt=""> 이로움 서비스</a></dt>
+                <dd>
+                    <ul>
+                        <li><a href="#">요양정보 간편조회</a></li>
+                        <li><a href="#">인정 등급 예상 테스트</a></li>
+                        <li><a href="#">복지정보 서비스</a></li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl class="menu-item2">
+                <dt><a href="#"><img src="/html/page/index/assets/images/ico-allmenu1.png" alt=""> 시니어 길잡이</a></dt>
+                <dd>
+                    <ul>
+                        <li><a href="#">노인장기요양보험제도</a></li>
+                        <li><a href="#">복지용구 알아보기</a></li>
+                        <li><a href="#">복지용구 선택하기</a></li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <!-- //header -->
+    
+
+    <main id="container">
+
+        <!-- OEOS-912 202507 -->
+        <div class="wrap_mainVisBanner_area">
+
+            <div class="mainVisBanner_area">
+    
+                <div class="swiper mainVisBanner_01">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide s01">
+
+                            <div class="ctnArea">
+
+                                <h2 class="title">
+                                    복지용구 지원금 160만원,<br>
+                                    똑똑하게 쓰는 법 알려드려요
+                                </h2>
+
+                                <p class="ctn01">상담부터 간편 주문까지</p>
+                            </div>
+
+                            <a href="" class="button arrow">복지용구 상담하기</a>
+
+                        </div>
+                        <div class="swiper-slide s02">
+
+                            <div class="ctnArea">
+
+                                <h2 class="title">
+                                    부모님 돌봄이 막막할 땐,<br>
+                                    이로움돌봄과 함께하세요
+                                </h2>
+
+                                <p class="ctn01">등급 신청부터 요양보호사 연결까지</p>
+                            </div>
+
+                            <a href="" class="button arrow">돌봄(재가기관) 상담하기</a>
+
+                        </div>
+                        <div class="swiper-slide s03">
+
+                            <div class="ctnArea">
+
+                                <h2 class="title">
+                                    복지용구 혜택,<br>
+                                    잘 관리하고 계신가요?
+                                </h2>
+
+                                <p class="ctn01">잔여 금액과 유효기간, 한눈에 확인</p>
+                            </div>
+
+                            <a href="" class="button arrow">이로움돌봄 가입하기</a>
+
+                        </div>
+                    </div>
+    
+                    <div class="box_prevNext">
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                    
+    
+    
+                </div>
+    
+                
+                <div class="mainVisBanner_02">
+                    <div class="ctnArea">
+
+                        <h2 class="title">
+                            장기요양 돌봄서비스 앱
+                            <strong>이로움돌봄</strong>
+                        </h2>
+
+                    </div>
+
+                    <a href="" class="button download">앱 다운로드하기</a>
+                </div>
+    
+    
+            </div>
+            <!-- mainVisBanner_area -->
+
+        </div>
+        <!-- wrap_mainVisBanner_area -->
+
+
+        <div class="menu_mainCareArea">
+            <h2 class="title"><strong>요양시설</strong> 찾기</h2>
+            <div class="list">
+                <a href="" class="item">
+                    <div class="icon_mainCareArea_01" href=""></div>
+                    <span class="txt">요양병원</span>
+                </a>
+                <a href="" class="item">
+                    <div class="icon_mainCareArea_02" href=""></div>
+                    <span class="txt">주야간보호</span>
+                </a>
+                <a href="" class="item">
+                    <div class="icon_mainCareArea_03" href=""></div>
+                    <span class="txt">방문요양</span>
+                </a>
+                <a href="" class="item">
+                    <div class="icon_mainCareArea_04" href=""></div>
+                    <span class="txt">요양원</span>
+                </a>
+                <a href="" class="item">
+                    <div class="icon_mainCareArea_05" href=""></div>
+                    <span class="txt">복지용구기관</span>
+                </a>
+                <div class="item empty"></div>
+            </div>
+        </div>
+        <!-- menu_mainCareArea -->
+        <!-- OEOS-912 202507 end -->
+
+
+        <div class="main-inner">
+        <div class="main-bottom-zero">
+
+
+
+            <div class="main-visual mainArea">
+
+                <!-- 202409 banner -->
+                <div class="banner_card_area">
+                    
+                    <div class="swiper mainBannerSwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                
+                                <!-- OEOS-870 202507 -->
+                                <a id="clickUrl" onclick="location.href='https://www.eroum.co.kr/search/web/list?careCenterType=NURSING_HOSPITAL';"
+                                    >
+                                    <div class="banner_card mo 26" style='background-color: #eff1fd;'>
+                                        <img src="/html/page/index/assets/images/banner/MO_banner_CareFacility.png" alt="어르신에게 딱 맞는 요양시설찾기">
+                                    </div>
+                                </a>
+                                <a id="clickUrl" onclick="location.href='https://www.eroum.co.kr/search/web/list?careCenterType=NURSING_HOSPITAL';"
+                                    >
+                                    <div class="banner_card pc 26" style='background-color: #eff1fd;'>
+                                        <img src="/html/page/index/assets/images/banner/PC_banner_CareFacility.png" alt="어르신에게 딱 맞는 요양시설찾기">
+                                    </div>
+                                </a>
+                                <!-- OEOS-870 202507 end -->
+
+                            </div>
+                            <div class="swiper-slide">
+                                <a id="clickUrl"
+                                    onclick="fn_banner_clickOpenUrl('P','https://www.eroum.co.kr/search/web/list?careCenterType=NURSING_HOSPITAL');">
+                                    <div class="banner_card mo 26" style='background-color: #ff0000;'>
+                                        <img src="/html/page/index/assets/images/banner/MO_banner_CareFacility.png" alt="어르신에게 딱 맞는 요양시설찾기">
+                                    </div>
+                                </a>
+                                <a id="clickUrl"
+                                    onclick="fn_banner_clickOpenUrl('P','https://www.eroum.co.kr/search/web/list?careCenterType=NURSING_HOSPITAL');">
+                                    <div class="banner_card pc 26" style='background-color: #ff0000;'>
+                                        <img src="/html/page/index/assets/images/banner/PC_banner_CareFacility.png" alt="어르신에게 딱 맞는 요양시설찾기">
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <a id="clickUrl"
+                                    onclick="fn_banner_clickOpenUrl('P','https://www.eroum.co.kr/search/web/list?careCenterType=NURSING_HOSPITAL');">
+                                    <div class="banner_card mo 26" style='background-color: #00ff00;'>
+                                        <img src="/html/page/index/assets/images/banner/MO_banner_CareFacility.png" alt="어르신에게 딱 맞는 요양시설찾기">
+                                    </div>
+                                </a>
+                                <a id="clickUrl"
+                                    onclick="fn_banner_clickOpenUrl('P','https://www.eroum.co.kr/search/web/list?careCenterType=NURSING_HOSPITAL');">
+                                    <div class="banner_card pc 26" style='background-color: #00ff00;'>
+                                        <img src="/html/page/index/assets/images/banner/PC_banner_CareFacility.png" alt="어르신에게 딱 맞는 요양시설찾기">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    
+                    </div>
+
+
+
+                </div>
+                <!-- OEOS-870 202506 swipe 추가 end -->
+
+            </div>
+
+            <div id="abs"></div>
+
+            
+
+
+            <div class="main-content-wrapper">
+
+                <a name="scroll_anchor" class="disInBlock"></a>
+
+                <div class="main-content4">
+                    <div class="box">
+                        <h2>
+                            <small>100만명이 받은 복지혜택  저도 받았어요</small>
+                            <p>부모님과 나를 위한,</p>
+                            <em class="text-primary3">복지서비스</em>
+                        </h2>
+                        <p>65세부터 꼭 혜택 받으세요!</p>
+                        <p>복지혜택 확인하기 이로움ON에서 5분이면 가능해요</p> 
+                        <p>신청부터 상담까지 한번에!</p>
+                        <a href="#" class="btn btn-large2 btn-outline-primary3 btn-arrow"><strong>인정등급 테스트하기</strong></a>
+                    </div>
+                    <button class="image-youtube" data-bs-toggle="modal" data-bs-target="#watching-youtube">
+                        <img src="../assets/images/img-promotion-youtube.png" alt="부모님과 나를 위한 복지서비스"/>
+                    </button>
+
+                    <div class="modal modal-media fade" id="watching-youtube" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                   <button data-bs-dismiss="modal" class="btn-close"> 닫기 </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="embed-container" id="youtube-player">
+                                        <iframe src="https://www.youtube.com/embed/YpfWKyDGPB4" frameborder="0" allowfullscreen title="시니어 정보 플랫폼 이로움ON - 수급자 보호자 편"></iframe>
+                                    </div>
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="main-content1">
+                    <div class="image">
+                        <div class="object1"></div>
+                        <div class="object2"></div>
+                    </div>
+                    <div class="box">
+                        <h2>
+                            <small>신청방법부터 등급별 혜택까지</small>
+                            <em class="text-primary2">노인장기요양보험,</em><br>
+                            차근 차근 배워보세요
+                        </h2>
+                        <p>우리 부모님은<br> 지원대상일까요?</p>
+                        <p>어떤 요양 서비스와 용품이<br> 제공될까요?</p>
+                        <a href="#" class="btn btn-large2 btn-outline-primary2 btn-arrow"><strong>쉽게 알아보기</strong></a>
+                    </div>
+                </div>
+        
+                <div class="main-content2">
+                    <div class="image">
+                        <div class="object1"></div>
+                    </div>
+                    <div class="box">
+                        <h2>
+                            <small>100만명이 받은 복지혜택  저도 받았어요</small>
+                            <em class="text-primary2">부모님과 나를 위한,</em><br>
+                            복지서비스
+                        </h2>
+                        <p>65세부터 꼭 혜택 받으세요!</p>
+                        <p>복지혜택 확인하기 이로움ON에서 5분이면 가능해요</p>
+                        <p>신청부터 상담까지 한번에!</p>
+                        <a href="/main/cntnts/page1" class="btn btn-large2 btn-outline-primary2 btn-arrow"><strong>인정등급 테스트하기</strong></a>
+                    </div>
+                </div>
+        
+                <div class="main-content3">
+                    <div class="image">
+                        <div class="object1"></div>
+                        <div class="object2"></div>
+                    </div>
+                    <div class="box">
+                        <h2>
+                            <small>똑똑하게 복지용구 선택하기</small>
+                            <em class="text-primary2">부모님을 위한 복지용구,</em><br>
+                            아무거나 고를 순 없어요
+                        </h2>
+                        <p>높은 금액의 복지용구,</p>
+                        <p>혜택받는 방법과<br> 고르는 법을 알려드려요</p>
+                        <a href="#" class="btn btn-large2 btn-outline-primary2 btn-arrow"><strong>복지용구 선택하기</strong></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-welfare-search">
+                <div class="container">
+                    <p class="desc">시니어를 위한 <strong>복지서비스</strong><br> <strong>한 곳에 모아서!</strong></p>
+                    <p class="count"><strong>17,790</strong>건</p>
+                    <form action="" class="form">
+                        <legend class="sr-only">복지서비스 검색</legend>
+                        <label for="city" class="sr-only">시</label>
+                        <select id="city" name="" class="form-control">
+                            <option value="">서울특별시</option>
+                            <option value="">서울특별시</option>
+                        </select>
+                        <label for="gu" class="sr-only">구</label>
+                        <select id="gu" name="" class="form-control">
+                            <option value="">금천구</option>
+                        </select>
+                        <button type="submit" class="btn">바로 확인</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="main-banner">
+                <div class="market-banner">
+                    <strong>
+                        부모님 맞춤 제품이 필요하세요?
+                        <small>편안한 일상생활 & 미식을 책임지는 쇼핑몰</small>
+                    </strong>
+                    <a href="#">지금둘러보기</a>
+                </div>
+            </div>
+
+            <!--구글플레이, QR-->
+            <hr class="mt-8 divide-x-1"/>
+            <div class="main-store">
+                <div class="main-store-inner">
+                    <div class="main-store-text">
+                        <p>지금 바로 앱 다운로드하고,</p>
+                        <strong>다양한 혜택을 누려보세요</strong>
+                    </div>
+                    <div class="main-store-link">
+                        <img src="../assets/images/img-qr.svg" alt="QR Code" class="hidden md:block"/>
+                        <a href="https://play.google.com/store/apps/details?id=kr.co.eroum&pli=1" target="_blank"><img src="../assets/images/img-google-play.png" alt="google play"/></a>
+                    </div>
+                </div>
+            </div>
+            <!--//구글플레이, QR-->
+        </div>
+
+
+
+
+
+        <!-- OEOS-870 202506 배너 swiper -->
+        <script>
+            var swiper = new Swiper(".mainBannerSwiper", {
+                pagination: {
+                    el: ".swiper-pagination",
+                },
+                loop: true,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                autoplay: {
+                    delay: 25000000,
+                    disableOnInteraction: false,
+                },
+            });
+        </script>
+
+
+    </main>
+
+    <div id="quick" class="global-quick is-active">
+        <button type="button" class="moveTop">위로 이동</button>
+        <button type="button" class="channelTalk">위로 이동</button>
+    </div>
+
+    <!-- footer -->
+    <footer id="footer" class="global-footer">
+        <div class="footer-link">
+            <!-- 회사 메뉴 -->
+            <nav class="footer-menu">
+                <ul>
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+                    <li><a href="#"><strong>위치기반 서비스 이용약관</strong></a></li>
+                    <li><a href="#"><strong>제휴/입점 문의</strong></a></li>
+                </ul>
+            </nav>
+            <!-- //회사 메뉴 -->
+
+            <!-- 패밀리 사이트 -->
+            <div class="footer-family">
+                <dl>
+                    <dt class="sr-only">패밀리 사이트</dt>
+                    <dd>
+                        <ul class="global-link align_items_center">
+    
+                            <li><a href="https://blog.naver.com/eroum_on" target="_blank" class="link-item5"><span class="sr-only">이로움ON</span></a></li>
+                            <li><a href="//www.youtube.com/@eroumon" target="_blank" class="link-item4"><span class="sr-only">이로움ON</span></a></li>
+    
+                            <!-- 20240220 leemw -->
+                            <li>
+                                <!-- iphone z-index 오류로 버튼 클릭시 .btn_menu_dropdown_area에 .relative 클래스 토글 -->
+                                <!-- div.grade-floating 내용을 footer.jsp안에 넣으면 해결가능한데 이 부분은 따로 협의가 필요 -->
+                                <!-- 현재(240509) 메인(인덱스)만 적용 -->
+                                <div class="btn_menu_dropdown_area">
+                                    <div class="btn_menu_dropdown">
+                                        <div class="title">패밀리 사이트 바로가기</div>
+                                        
+                                        <div class="arrow">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                                                <path d="M0.220355 0.229122C0.361712 0.0823892 0.553132 -4.12936e-07 0.752686 -4.04213e-07C0.95224 -3.9549e-07 1.14366 0.0823892 1.28502 0.229122L5.00783 4.10732L8.73064 0.229122C8.87322 0.0893285 9.06246 0.0128741 9.25824 0.0159656C9.45402 0.0190571 9.64095 0.101452 9.7794 0.245683C9.91785 0.389915 9.99695 0.584645 9.99991 0.788596C10.0029 0.992547 9.92949 1.18968 9.7953 1.33822L5.53966 5.77045C5.39843 5.91743 5.20696 6 5.00733 6C4.80769 6 4.61622 5.91743 4.47499 5.77045L0.220355 1.33822C0.079257 1.1911 -4.33459e-08 0.991639 -3.42554e-08 0.783672C-2.51649e-08 0.575704 0.079257 0.376244 0.220355 0.229122Z" fill="#333333"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="menu_dropdown">
+                                        <ul>
+                                            <li><a href="/" >이로움ON</a></li>
+                                            <li><a href="/market/" target="_blank">이로움ON 마켓</a></li>
+                                            <li><a href="https://eroumcare.com/" target="_blank">이로움CARE</a></li>
+                                            <li><a href="https://www.seniortalktalk.com/" target="_blank">시니어톡톡</a></li>
+                                            <li><a href="https://pro.seniortalktalk.com/" target="_blank">시니어톡톡PRO</a></li>
+                                            <li><a href="http://www.thkc.co.kr" target="_blank">티에이치케이컴퍼니 </a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+    
+    
+    
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+            <!-- //패밀리 사이트 -->
+        </div>
+        
+        <hr>
+
+        <div class="footer-center">
+            <!-- 사이트 정보-->
+            <dl class="footer-company">
+                <dt><a href="#footer-collapse" data-bs-toggle="collapse" aria-expanded="false">(주)티에이치케이컴퍼니</a></dt>
+                <dd id="footer-collapse" class="collapse">
+                    <p>대표 : 신종호</p>
+                    <p>사업자등록번호 : 617-86-14330 [<a href="#">사업자정보확인</a>]</p>
+                    <p>통신판매신고번호 : 2016-부산금정-0114</p>
+                    <address>
+                        <p>주소 : 부산광역시 금정구 중앙대로 1815, 5층(구서동, 가루라빌딩)</p>
+                        <p>사무소 : 서울시 금천구 서부샛길 606 대성디폴리스 B동 1401호</p>
+                        <p>물류센터 : 인천광역시 서구 이든1로 21</p>
+                    </address>
+                </dd>
+            </dl>
+            <!-- //사이트 정보-->
+
+            <!-- 고객센터 -->
+            <dl class="footer-customer">
+                <dt>고객센터</dt>
+                <dd>
+                    <p><strong>주문안내 :</strong> <a href="tel:1588-1312">1588-1312</a></p>
+                    <p><strong>시스템안내 :</strong> <a href="tel:02-830-1312">02-830-1312</a></p>
+                </dd>
+                <dd>
+                    <p><strong>운영시간 :</strong> 월~금 오전 9:00~오후 6:00 점심시간 오후 12시 ~ 1시 (주말 및 공휴일 휴무)</p>
+                </dd>
+            </dl>
+            <!-- //고객센터 -->
+        </div>
+
+        <hr>
+
+        <!-- 카피 라이트 -->
+        <div class="footer-copyright">Copyright ⓒ<strong>EROUMMARKET</strong> All righs reserved</div>
+        <!-- //카피 라이트 -->
+    </footer>
+    <!-- //footer -->
+
+
+
+
+
+
+
+
+
+        <!--돌봄앱 모달-->
+        <div class="modal modal-index fade" id="dbapp_modal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="text-title">이로움돌봄</h2>
+                        <button data-bs-dismiss="modal" class="btn-close">모달 닫기</button>
+                    </div>
+        
+                    <div class="h32"></div>
+        
+                    <div class="modal_ctn">
+                        앱으로 더 쉽고 편리하게 확인하세요
+                    </div>
+        
+                    <div class="h16"></div>
+        
+                    <div class="link_area">
+                        <div class="qr_code_area">
+        
+                        </div>
+                        <div class="google_area">
+                            <a target="_blank" href="https://play.google.com/store/apps/details?id=kr.co.eroum.dolbom"
+                                class="btn_google">
+                                <img src="/html/page/index/assets/images/dbapp_qrcode/btn_google.svg" alt="">
+                            </a>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="휴대폰 번호(-없이 입력)">
+                            </div>
+                        </div>
+        
+                    </div>
+        
+                    <div class="h32"></div>
+        
+                    <div class="form-check warning">
+                        <input class="form-check-input" type="checkbox" checked="" id="check-item1a">
+                        <label class="form-check-label" for="check-item1a">휴대폰 번호 수집 및 이용동의</label>
+                    </div>
+        
+        
+                    <div class="h16"></div>
+        
+                    <div class="box_area01">
+                        <ul class="dept_1_1">
+                            <li>수집하는 개인정보 항목: 휴대폰 번호</li>
+                            <li>개인정보 수집 목적: 이로움돌봄 앱 다운로드 메시지 발송</li>
+                            <li>개인정보 보유 기간: 수집 목적 달성 시 즉시 파기</li>
+                        </ul>
+        
+                    </div>
+        
+                    <div class="h40"></div>
+        
+                    <div class="flex flex-col items-center items-end w-full gap-2">
+                        <button type="button" class="btn btn-primary2 large w-50">동의하고 보내기</button>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- OEOS-912 202507 배너 swiper -->
+        <script>
+            var swiper = new Swiper(".mainVisBanner_01", {
+
+                initialSlide: 0,
+
+                pagination: {
+                    el: ".swiper-pagination",
+                    type: "fraction",
+                },
+                
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+
+                loop: true,
+
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+            });
+
+            // '/' -> '|'로 교체
+            function replaceFractionSeparator() {
+                const paginationEl = document.querySelector(".swiper-pagination-fraction");
+                if (paginationEl) {
+                    paginationEl.childNodes.forEach((node) => {
+                        if (node.nodeType === Node.TEXT_NODE && node.textContent.includes('/')) {
+                            // 원래 separator 텍스트 노드 삭제
+                            const newDash = document.createElement("span");
+                            newDash.className = "dash";
+                            newDash.textContent = "";
+
+                            // 구분자 node 교체
+                            paginationEl.replaceChild(newDash, node);
+                        }
+                    });
+                }
+            }
+
+            swiper.on('slideChange', function () {
+            replaceFractionSeparator();
+            });
+
+            // 첫 로딩 시 한 번 실행
+            replaceFractionSeparator();
+
+
+
+        </script>
+        <!-- OEOS-912 202507 배너 swiper end -->
+
+
+
+
+
+
+    <script src="../../../core/vendor/twelements/index.min.js"></script>
+    <script src="../../../core/vendor/twelements/popper.min.js"></script>
+    <script>
+        $(function() {
+            $('#watching-youtube').on('show.bs.modal', function () {     
+				var modal = $(this);
+				modal.appendTo('body');
+			});
+            $('#watching-youtube').on('hidden.bs.modal', function () {
+                $("#watching-youtube iframe").attr("src", $("#watching-youtube iframe").attr("src"))
+            });
+        })
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+
+
+
+body{background-color: #eee;}
+
+
+//돌봄앱600px -> 이로움돌봄768px
+@media only screen and (min-width: 600px){
+    nav.top{
+        width: 100%;
+        left:0;
+    }
+    .wrapper{
+        width: 100%;
+    }            
+}
+
+@media only screen and (min-width: 768px){
+
+    nav.top{
+        width: 768px;
+        left: calc(50% - 384px);
+    }
+
+    .wrapper{
+        width: 768px;
+    }
+
+    .modal.fullscreen {
+        width:768px;
+    }
+
+    .modal.bottom-sheet{
+        width:768px;
+        left:calc(50% - 384px);
+    }
+
+
+    .bottom-sheet_handle .content {
+        max-width: 768px;
+    }
+
+    
+    .addr_filter_area{
+        width:768px !important;
+        left:calc(50% - 384px) !important;
+    }
+
+    .page-footer{
+        width: 768px;
+        left: calc(50% - 384px);
+    }
+
+}
+
+//카테고리 고정메뉴
+.orderFlxNav{max-width: 768px;}
+
+.footer_mapView{max-width: 768px;}
+
+// ★★★★★확인 후 돌봄앱css 이동예정
+
+//ancher값 조절
+.orderListArea {
+    scroll-margin-top: 104px;
+    
+}
+
+.tableWD_Evt{opacity: 0;transition: 0.2s all;}
+.tableWD_Evt.active{opacity: 1;}
+
+
+/* swiper처리로 기존기능제한 */
+.orderFlxNav{z-index: 98;}
+.orderFlxNav .welfare_swiper{border-bottom: 1px solid #EEE;}
+.orderFlxNav .welfare_swiper ul.tabs_wd{overflow-x: initial;border-bottom: none;}
+.orderFlxNav .welfare_swiper ul.tabs_wd .swiper-slide{width: auto;}
+
+
+
+/* 유튜브화면 16:9 */
+.youtube_size_wrap{
+    max-width: 800px;margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    line-height: 0;
+
+    .thumb_img{position: relative;
+
+        &::after{
+            content: '';
+            position: absolute;
+            display: block;
+            width: 100%;height: 100%;
+            top: 0;left: 0;
+            background: url('../images/youtube/icon_play.png') no-repeat center center;background-size: 90px;}
+    }
+        
+
+
+
+    .youtube_area{
+        position: relative;width: 100%; padding-bottom: 56.25%;
+    
+        iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+}
+
+
+//시설찾기 검색창
+.recuSearch_form{
+
+    .recuSearch_input_area{
+        width: calc(100% - 156px);
+
+        .clear_btn{
+            right: 150px;
+        }
+    }
+
+}
+
+//x버튼 모바일화면일때 간격벌어짐 (414px기준)
+@media only screen and (max-width: 414px){
+
+    //시설찾기 검색창
+    .recuSearch_form{
+
+        .recuSearch_input_area{
+
+            .clear_btn{
+                right: 140px;
+            }
+        }
+
+    }
+}
+
+
+//토스트 pc 가운데 처리
+@media only screen and (min-width: 601px){
+    #toast-container{
+        top: initial;
+        left: calc(50% - 384px);
+        max-width: 100%;
+        width: 768px;
+    }
+}
+
+
+
+
+//시설찾기 상세 탭
+.recuNav_wrap.active .recuNav{
+    max-width: 768px;
+}

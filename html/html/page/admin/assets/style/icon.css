@@ -1,0 +1,126 @@
+@layer components {
+    .ico-base {
+        @apply inline-block bg-no-repeat overflow-hidden -indent-96 text-left bg-[length:100%_100%];
+    }
+
+    .ico-reply {
+        @apply ico-base w-[0.5625rem] h-2.5 bg-[url(../images/ico-reply.svg)];
+        &.white {
+            @apply bg-[url(../images/ico-reply-white.svg)];
+        }
+    }
+
+    .ico-close {
+        @apply ico-base w-[0.5625rem] h-[0.5625rem] bg-[url(../images/ico-close.svg)];
+        &.white {
+            @apply bg-[url(../images/ico-close-white.svg)];
+        }
+    }
+
+    .ico-calendar {
+        @apply ico-base w-4 h-4 bg-[url(../images/ico-calendar.svg)];
+        &.white {
+            @apply bg-[url(../images/ico-calendar-white.svg)];
+        }
+    }
+
+    .ico-external {
+        @apply ico-base w-[0.9375rem] h-[0.9375rem] bg-[url(../images/ico-external.svg)];
+        &.white {
+            @apply bg-[url(../images/ico-external-white.svg)];
+        }
+    }
+
+    .ico-download {
+        @apply ico-base w-[0.8125rem] h-[0.6875rem] bg-[url(../images/ico-download.svg)];
+        &.white {
+            @apply bg-[url(../images/ico-download-white.svg)];
+        }
+    }
+
+    .ico-file {
+        @apply ico-base w-[0.8125rem] h-[0.9375rem] bg-[url(../images/ico-file.svg)];
+        &.white {
+            @apply bg-[url(../images/ico-file-white.svg)];
+        }
+    }
+
+    .ico-member-mo {
+        @apply ico-base w-[1.0625rem] h-8 bg-[url(../images/ico-member-mo.svg)];
+        &.white {
+            @apply bg-[url(../images/ico-member-mo-white.svg)];
+        }
+    }
+
+    .ico-member-pc {
+        @apply ico-base w-9 h-[1.8125rem] bg-[url(../images/ico-member-pc.svg)];
+        &.white {
+            @apply bg-[url(../images/ico-member-pc-white.svg)];
+        }
+    }
+
+    .ico-loader {
+        @apply ico-base w-[3.375rem] h-2 bg-[url(../images/img-loader.svg)];
+        &.white {
+            @apply bg-[url(../images/img-loader-white.svg)];
+        }
+    }
+
+    .ico-arrow-left {
+        @apply ico-base w-[0.6875rem] h-2.5 bg-[url(../images/ico-nav-arrow.svg)];
+        &.white {
+            @apply bg-[url(../images/ico-nav-arrow-white.svg)];
+        }
+    }
+
+    .ico-arrow-right {
+        @apply ico-arrow-left rotate-180;
+    }
+    
+    .ico-arrow-top {
+        @apply ico-arrow-left rotate-90;
+    }
+
+    .ico-arrow-bottom {
+        @apply ico-arrow-left -rotate-90;
+    }
+
+    .ico-angle-bottom {
+        @apply ico-base w-2.5 h-1.5 bg-[url(../images/ico-select-arrow.svg)];
+        &.white {
+            @apply bg-[url(../images/ico-select-arrow-white.svg)];
+        }
+    }
+
+    .ico-angle-left {
+        @apply ico-angle-bottom rotate-90;
+    }
+
+    .ico-angle-right {
+        @apply ico-angle-bottom -rotate-90;
+    }
+
+    .ico-angle-top {
+        @apply ico-angle-bottom rotate-180;
+    }
+
+
+    .ico-alert {
+        @apply ico-base w-10 h-10 bg-[url(../images/ico-alert.svg)];
+        &.orange {
+            @apply bg-[url(../images/ico-alert-orange.svg)];
+        }
+        
+    }
+
+    .ico-alert2 {
+        @apply  ico-base w-5 h-5 bg-no-repeat bg-center bg-[length:99.9%];
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cg id='Oval' fill='none' stroke='%23333' stroke-miterlimit='10' stroke-width='1'%3E%3Ccircle cx='8' cy='8' r='8' stroke='none'/%3E%3Ccircle cx='8' cy='8' r='7.5' fill='none'/%3E%3C/g%3E%3Cpath id='Rectangle_5' data-name='Rectangle 5' d='M.75,10V8h2v2Zm0-3L0,.75.75,0h2L3.5.75,2.75,7Z' transform='translate(6.25 3)' fill='%23333'/%3E%3C/svg%3E");
+        &.size-sm {
+            @apply w-3.5 h-3.5 bg-[length:0.875rem] mt-px;
+        }
+        &.size-md {
+            @apply w-8 h-8 bg-[length:100%];
+        }
+    }
+}

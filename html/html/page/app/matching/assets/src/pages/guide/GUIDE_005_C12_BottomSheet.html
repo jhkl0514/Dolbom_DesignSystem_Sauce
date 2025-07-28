@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+
+    <title>GUIDE_005_StyleGuide.html</title>
+
+
+    <!-- jquery -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/materialize.js"></script>
+
+    <!-- guide.js -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/materialize.min.css" />
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/style.css" />
+
+    <!-- guideStyle_2025.css -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/guideStyle_2025.css" />
+
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/atom-one-dark.min.css">
+
+    <!-- highlight.js -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guide_hljsLoad.js"></script>
+
+    <!-- guideStyle_2025.js -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guideStyle_2025.js"></script>
+
+
+    <!-- bottom_sheet.js -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/script_bottom_sheet_pb.js" defer></script>
+
+    <script>
+    </script>
+
+    <style>
+        .lang_htmlCode .modal.bottom-sheet{
+            transform: none !important;
+            display: block;
+            position: relative;
+            width: 360px;
+            left: 0;
+        }
+        .lang_htmlCode .bottom-sheet_handle{
+            transform: none !important;
+            display: block;
+            position: relative;
+            width: 360px;
+            left: 0;
+            opacity: 1;
+            pointer-events:initial;
+            z-index: inherit;
+
+            .content{
+                transform:translateY(0%);
+                height: auto;
+            }
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="gs_header">
+
+            <a href="GUIDE_000_index.html" class="logo"><span>돌봄 디자인시스템</span></a>
+
+            <ul class="header_menu">
+                <li><a href="GUIDE_001_Foundation.html">Foundation</a></li>
+                <li><a href="GUIDE_002_Component.html">Component</a></li>
+                <li><a href="GUIDE_003_AppScreen.html">App Screen</a></li>
+                <li><a href="GUIDE_004_WebScreen.html">Web Screen</a></li>
+                <li><a href="GUIDE_005_StyleGuide.html" class="active">Style Guide</a></li>
+                <li class="search"><a href="#"></a></li>
+            </ul>
+
+        </div>
+
+    </header>
+
+    <div class="wrap">
+
+        <main>
+
+
+            <nav class="sidebar">
+
+                <div class="sidebar_header">
+                    <div class="title_area">
+                        <div class="close_x"></div>
+                    </div>
+                    <div class="sidebar_search">
+                        <input type="text" placeholder="검색어를 입력해 주세요.">
+                        <div class="search">
+                            <a href="#"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="title">Style Guide</h4>
+
+                <div class="sidebar_list">
+                    <ul class="tabs_dept_sidebar">
+                        <li class="tab"><a class="active" title="dept_app">App Screen</a></li>
+                        <li class="tab"><a class="" title="dept_web">Web Screen</a></li>
+                    </ul>
+
+                    <div class="tab_list dept_app" title="siteMap_guide">
+                        <ul class="dept1">
+                            <li>
+                                <a class="arrow">Foundation</a>
+                                <ul class="dept2">
+                                    <li><a href="GUIDE_005_StyleGuide.html">Typography</a></li>
+                                    <li><a href="GUIDE_005_F02_Colors.html">Colors</a></li>
+                                    <li><a href="GUIDE_005_F03_Spacing.html">Spacing</a></li>
+                                    <li><a href="GUIDE_005_F04_ObjectStyles.html">Object Styles</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="arrow active ">Component</a>
+                                <ul class="dept2">
+                                    <li><a href="GUIDE_005_C01_Button.html">Button</a></li>
+                                    <li><a href="GUIDE_005_C02_SelectionControls.html">Selection Controls</a></li>
+                                    <li><a href="GUIDE_005_C03_Link.html">Link</a></li>
+                                    <li><a href="GUIDE_005_C04_Chips.html">Chips</a></li>
+                                    <li><a href="GUIDE_005_C05_TextField.html">TextField</a></li>
+
+                                    <li><a href="GUIDE_005_C06_SelectField.html">SelectField</a></li>
+                                    <li><a href="GUIDE_005_C07_OptionList.html">OptionList</a></li>
+                                    <li><a href="GUIDE_005_C08_TopNavigation.html">Top Navigation</a></li>
+                                    <li><a href="GUIDE_005_C09_BottomNavigation.html">Bottom Navigation</a></li>
+                                    <li><a href="GUIDE_005_C10_List.html">List</a></li>
+
+                                    <li><a href="GUIDE_005_C11_Popup.html">Popup</a></li>
+                                    <li><a class="active" href="GUIDE_005_C12_BottomSheet.html">BottomSheet</a></li>
+                                    <li><a href="GUIDE_005_C13_Banner.html">Banner</a></li>
+                                    <li><a href="GUIDE_005_C14_Tab.html">Tab</a></li>
+                                    <li><a href="GUIDE_005_C15_NumberStepper.html">Number Stepper</a></li>
+
+                                    <li><a href="GUIDE_005_C16_TextAreaField.html">TextAreaField</a></li>
+                                    <li><a href="GUIDE_005_C17_Accordion.html">Accordion</a></li>
+                                    <li><a href="GUIDE_005_C18_Progressbar.html">Progress</a></li>
+                                    <li><a href="GUIDE_005_C99_Etc.html">Etc</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a href="GUIDE_005_03_Animation.html">애니메이션</a></li>
+                            <li><a href="GUIDE_005_04_Images.html">이미지</a></li>
+                            <li><a href="GUIDE_005_05_Css.html">CSS 구조</a></li>
+                            <li><a href="GUIDE_005_06_Library.html">라이브러리</a></li>
+
+                        </ul>
+                    </div>
+
+
+                </div>
+
+
+            </nav>
+
+
+
+            <section>
+
+
+                <div class="h48"></div>
+
+                <div class="titleNav">BottomSheet</div>
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Type</h3>
+
+
+                <div class="lang_htmlCode">
+
+                    <div class="font_sbss marB16">Components</div>
+
+                    <div class="back_FAFAFA pad20">
+
+                        <div class="font_sbsr marB16">Fixed</div>
+
+                        <div class="flex_center">
+
+                            <div class="modal bottom-sheet">
+
+                                <div class="modal_header">
+                                    <h4 class="modal_title">정렬 선택</h4>
+                                    <div class="close_x modal-close waves-effect"></div>
+                                </div>
+                        
+                                <div class="modal-content">
+
+                                    <div class="h20"></div>
+
+                                    <div class="d-flex f-column gap04">
+                                        <input type="radio" name="bs01" id="chk_c0t1" class="chk01_2 large">
+                                        <label for="chk_c0t1">기본순</label>
+
+                                        <input type="radio" name="bs01" id="chk_c0t2" class="chk01_2 large" checked>
+                                        <label for="chk_c0t2">추천순</label>
+
+                                        <input type="radio" name="bs01" id="chk_c0t3" class="chk01_2 large">
+                                        <label for="chk_c0t3">조회순</label>
+
+                                    </div>
+
+                                    <div class="h32"></div>
+                            
+                                </div>
+
+                                <!-- modal-content --> 
+                                <div class="modal-footer">
+                                    <div class="btn_area d-flex">
+                                        <a class="modal-close waves-effect btn btn-large w100p btn_primary">확인</a>
+                                    </div>
+                                </div>
+                        
+                            </div>
+
+                        </div>
+
+
+                        <hr class="marH40">
+
+                        <div class="font_sbsr marB16">Draggable</div>
+
+                        <div class="flex_center">
+
+                            <div class="bottom-sheet_handle">
+                                <div class="content">
+                                    <div class="drag_handle_area drag-icon">
+                                        <span class="drag_handle"></span>
+                                    </div>
+                                    <div class="modal_header">
+                                        <h4 class="modal_title">정렬 선택</h4>
+                                        <div class="close_x close_modal"></div>
+                                    </div>
+                                    <div class="modal-content">
+
+                                        <div class="h20"></div>
+
+                                        <div class="d-flex f-column gap04">
+                                            <input type="radio" name="bs02" id="chk_c0t4" class="chk01_2 large" checked>
+                                            <label for="chk_c0t4">기본순</label>
+
+                                            <input type="radio" name="bs02" id="chk_c0t5" class="chk01_2 large">
+                                            <label for="chk_c0t5">추천순</label>
+
+                                            <input type="radio" name="bs02" id="chk_c0t6" class="chk01_2 large">
+                                            <label for="chk_c0t6">조회순</label>
+
+                                        </div>
+                                        <div class="h40"></div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <div class="btn_area d-flex">
+                                            <a title="region01_apply" class="close_modal waves-effect btn btn-large w100p btn_primary">확인</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        
+                    </div>
+                
+                </div>
+
+                <pre><code class="language-html">
+                    &lt;!-- bottom-sheet --&gt;
+                    &lt;div class=&quot;modal bottom-sheet&quot;&gt;
+
+                        &lt;div class=&quot;modal_header&quot;&gt;
+                            &lt;h4 class=&quot;modal_title&quot;&gt;&#xC815;&#xB82C; &#xC120;&#xD0DD;&lt;/h4&gt;
+                            &lt;div class=&quot;close_x modal-close waves-effect&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                
+                        &lt;div class=&quot;modal-content&quot;&gt;
+
+                            &lt;div class=&quot;h20&quot;&gt;&lt;/div&gt;
+
+                            &lt;div class=&quot;d-flex f-column gap04&quot;&gt;
+                                &lt;input type=&quot;radio&quot; name=&quot;bs01&quot; id=&quot;chk_c0t1&quot; class=&quot;chk01_2 large&quot;&gt;
+                                &lt;label for=&quot;chk_c0t1&quot;&gt;&#xAE30;&#xBCF8;&#xC21C;&lt;/label&gt;
+
+                                &lt;input type=&quot;radio&quot; name=&quot;bs01&quot; id=&quot;chk_c0t2&quot; class=&quot;chk01_2 large&quot; checked&gt;
+                                &lt;label for=&quot;chk_c0t2&quot;&gt;&#xCD94;&#xCC9C;&#xC21C;&lt;/label&gt;
+
+                                &lt;input type=&quot;radio&quot; name=&quot;bs01&quot; id=&quot;chk_c0t3&quot; class=&quot;chk01_2 large&quot;&gt;
+                                &lt;label for=&quot;chk_c0t3&quot;&gt;&#xC870;&#xD68C;&#xC21C;&lt;/label&gt;
+
+                            &lt;/div&gt;
+
+                            &lt;div class=&quot;h32&quot;&gt;&lt;/div&gt;
+                    
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;modal-footer&quot;&gt;
+                            &lt;div class=&quot;btn_area d-flex&quot;&gt;
+                                &lt;a class=&quot;modal-close waves-effect btn btn-large w100p btn_primary&quot;&gt;&#xD655;&#xC778;&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                
+                    &lt;/div&gt;
+
+                    &lt;!-- bottom-sheet_handle --&gt;
+                    &lt;div class=&quot;bottom-sheet_handle&quot;&gt;
+                        &lt;div class=&quot;content&quot;&gt;
+                            &lt;div class=&quot;drag_handle_area drag-icon&quot;&gt;
+                                &lt;span class=&quot;drag_handle&quot;&gt;&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;modal_header&quot;&gt;
+                                &lt;h4 class=&quot;modal_title&quot;&gt;&#xC815;&#xB82C; &#xC120;&#xD0DD;&lt;/h4&gt;
+                                &lt;div class=&quot;close_x close_modal&quot;&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;modal-content&quot;&gt;
+
+                                &lt;div class=&quot;h20&quot;&gt;&lt;/div&gt;
+
+                                &lt;div class=&quot;d-flex f-column gap04&quot;&gt;
+                                    &lt;input type=&quot;radio&quot; name=&quot;bs02&quot; id=&quot;chk_c0t4&quot; class=&quot;chk01_2 large&quot; checked&gt;
+                                    &lt;label for=&quot;chk_c0t4&quot;&gt;&#xAE30;&#xBCF8;&#xC21C;&lt;/label&gt;
+
+                                    &lt;input type=&quot;radio&quot; name=&quot;bs02&quot; id=&quot;chk_c0t5&quot; class=&quot;chk01_2 large&quot;&gt;
+                                    &lt;label for=&quot;chk_c0t5&quot;&gt;&#xCD94;&#xCC9C;&#xC21C;&lt;/label&gt;
+
+                                    &lt;input type=&quot;radio&quot; name=&quot;bs02&quot; id=&quot;chk_c0t6&quot; class=&quot;chk01_2 large&quot;&gt;
+                                    &lt;label for=&quot;chk_c0t6&quot;&gt;&#xC870;&#xD68C;&#xC21C;&lt;/label&gt;
+
+                                &lt;/div&gt;
+                                &lt;div class=&quot;h40&quot;&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class=&quot;modal-footer&quot;&gt;
+                                &lt;div class=&quot;btn_area d-flex&quot;&gt;
+                                    &lt;a title=&quot;region01_apply&quot; class=&quot;close_modal waves-effect btn btn-large w100p btn_primary&quot;&gt;&#xD655;&#xC778;&lt;/a&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                </code></pre>
+
+
+
+
+
+
+                <div class="lang_htmlCode">
+
+                    <div class="font_sbss marB16">Live demo</div>
+
+                    <div class="back_FAFAFA pad20 flex_center">
+                        <div>
+
+                            <a class="waves-effect btn btn-large w100p btn_primary modal-trigger" href="#b_modal01">Live demo BottomSheet (Fixed)</a>
+
+                            <div class="h12"></div>
+
+                            <a class="waves-effect btn btn-large btn_primary show-modal welInfo">Live demo BottomSheet (Draggable)</a>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <pre><code class="language-html">
+
+                    &lt;a class=&quot;waves-effect btn btn-large w100p btn_primary modal-trigger&quot;href=&quot;#b_modal01&quot;&gt;Live demo BottomSheet (Fixed)&lt;/a&gt;
+
+                    &lt;a class=&quot;waves-effect btn btn-large btn_primary show-modal welInfo&quot;&gt;Live demo BottomSheet (Draggable)&lt;/a&gt;
+
+                </code></pre>
+
+
+
+
+                <div class="lang_htmlCode">
+
+                    <div class="back_FAFAFA pad20">
+
+                        <div class="font_sbsr marB16">버튼1개</div>
+
+                        <div class="flex_center">
+
+                            <div class="modal bottom-sheet">
+
+                                <div class="modal_header">
+                                    <h4 class="modal_title">약관 동의가 필요해요</h4>
+                                    <div class="close_x modal-close waves-effect"></div>
+                                </div>
+                                
+                                <div class="modal-content">
+                                
+                                    <div class="color_t_s font_sbmr">
+                                        본 기능은 위치정보 기반으로 제공되며, 약관 동의 후, 이용 가능합니다.
+                                    </div>
+                                
+                                    <div class="h20"></div>
+                                
+                                    <div class="group_chk_area">
+                                        <span class="icon_btn i_right waves-effect modal-trigger" data-target="modal_fullsreen"></span>
+                                        <div>
+                                            <input type="checkbox" name="" id="chk_hj01" class="chk01_2 large total_evt_sub" checked>
+                                            <label for="chk_hj01">[필수] 위치기반 서비스 이용약관</label>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="h32"></div>
+                                
+                                </div>
+
+                                <!-- modal-content -->
+                                <div class="modal-footer">
+                                    <div class="btn_area d-flex">
+                                        <a class="modal-close waves-effect btn btn-large w100p btn_primary">확인</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <hr class="marH40">
+
+                        <div class="font_sbsr marB16">버튼2개</div>
+
+                        <div class="flex_center">
+
+                            <div class="modal bottom-sheet">
+
+                                <div class="modal_header">
+                                    <h4 class="modal_title">어르신을 추가 등록 하시겠습니까?</h4>
+                                    <div class="close_x modal-close waves-effect"></div>
+                                </div>
+                                
+                                <div class="modal-content">
+                                
+                                    <div class="color_t_s font_sbmr">
+                                        다른 어르신도 혜택을 받을 수 있는 지 확인해보세요
+                                    </div>
+                                
+                                    <div class="h32"></div>
+                                
+                                </div>
+
+                                <!-- modal-content -->
+                                <div class="modal-footer">
+                                    <div class="btn_area">
+                                        <a class="waves-effect btn btn-large w100p btn_primary">추가 등록</a>
+                                        <a class="marT8 waves-effect btn-large btn_cancel btn_white color_t_t no_bder w100p">나중에</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <hr class="marH40">
+
+                        <div class="font_sbsr marB16">Select</div>
+
+                        <div class="flex_center">
+
+                            <div class="modal bottom-sheet">
+
+                                <div class="modal_header">
+                                    <h4 class="modal_title">어르신을 추가 등록 하시겠습니까?</h4>
+                                    <div class="close_x modal-close waves-effect"></div>
+                                </div>
+                                
+                                <div class="modal-content">
+                                
+                                    <div class="d-flex f-column gap04">
+                                        <input type="radio" name="bs_a02" id="chk_c0t_b4" class="chk01_2 large" checked>
+                                        <label for="chk_c0t_b4">기본순</label>
+
+                                        <input type="radio" name="bs_a02" id="chk_c0t_b5" class="chk01_2 large">
+                                        <label for="chk_c0t_b5">추천순</label>
+
+                                        <input type="radio" name="bs_a02" id="chk_c0t_b6" class="chk01_2 large">
+                                        <label for="chk_c0t_b6">조회순</label>
+
+                                    </div>
+                                    <div class="h40"></div>
+
+                                
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                        <hr class="marH40">
+
+                        <div class="font_sbsr marB16">Share</div>
+
+                        <div class="flex_center">
+
+                            <div class="modal bottom-sheet">
+
+                                <div class="modal_header">
+                                    <h4 class="modal_title">추천하기</h4>
+                                    <div class="close_x modal-close waves-effect"></div>
+                                </div>
+                                
+                                <div class="modal-content">
+                                    <ul class="share_icon_area">
+                                    
+                                        <li class="waves-effect link_copy" onclick="M.toast({html: '복사되었어요'})">
+                                            <div class="img_area">
+                                                <img src="/html/page/app/matching/assets/src/images/08etc/social__share_40.svg" alt="">
+                                            </div>
+                                            <span class="txt">링크 복사</span>
+                                        </li>
+                                    
+                                        <li class="waves-effect kakao">
+                                            <div class="img_area">
+                                                <img src="/html/page/app/matching/assets/src/images/08etc/social_kakao_40.svg" alt="">
+                                            </div>
+                                            <span class="txt">카카오톡</span>
+                                        </li>
+                                    
+                                        <li class="waves-effect msg">
+                                            <div class="img_area">
+                                                <img src="/html/page/app/matching/assets/src/images/08etc/social__message_40_2.svg" alt="">
+                                            </div>
+                                            <span class="txt">메시지</span>
+                                        </li>
+                                    
+                                        <li class="waves-effect more">
+                                            <div class="img_area">
+                                                <img src="/html/page/app/matching/assets/src/images/08etc/social__more_40.svg" alt="">
+                                            </div>
+                                            <span class="txt">더보기</span>
+                                        </li>
+                                    
+                                    </ul>
+                                    
+                                    <div class="h40"></div>
+                                
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+
+
+                        <hr class="marH40">
+
+                        <div class="font_sbsr marB16">Image</div>
+
+                        <div class="flex_center">
+
+                            <div class="modal bottom-sheet">
+
+                                <div class="modal_header">
+                                    <h4 class="modal_title">복지용구란?</h4>
+                                    <div class="close_x modal-close waves-effect"></div>
+                                </div>
+                                
+                                <div class="modal-content" style="height:340px;overflow-y:auto;">
+
+                                    <div class="color_t_s font_sbmr">
+                                        수급자의 일상생활과 신체활동 지원 및 인지기능 유지와 향상에 필요한 용구
+                                    </div>
+
+                                    <div class="box_sub01">
+                                        <div class="img_area">
+                                            <img src="/html/page/app/matching/assets/src/images/01tool/tool01_01.svg" alt="보행기">
+                                        </div>
+                                        <div class="ctn_area">
+                                            <div class="font_sbmb">성인용 보행기</div>
+                                    
+                                            <p class="color_t_s font_sbsr">
+                                                걸어 다니기 불편하신 경우 실내·외에서 혼자서 이동할 수 있도록 도와드려요
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!-- box_sub01 -->
+                                    
+                                    <div class="box_sub01">
+                                        <div class="img_area">
+                                            <img src="/html/page/app/matching/assets/src/images/01tool/tool01_02.svg" alt="휠체어">
+                                        </div>
+                                        <div class="ctn_area">
+                                            <div class="font_sbmb">수동휠체어</div>
+                                    
+                                            <p class="color_t_s font_sbsr">
+                                                걸으실 수 없거나 장시간 걷기가 곤란한 경우 이동할 수 있도록 도와드려요
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!-- box_sub01 -->
+                                    
+                                    <div class="box_sub01">
+                                        <div class="img_area">
+                                            <img src="/html/page/app/matching/assets/src/images/01tool/tool01_03.svg" alt="지팡이">
+                                        </div>
+                                        <div class="ctn_area">
+                                            <div class="font_sbmb">지팡이</div>
+                                    
+                                            <p class="color_t_s font_sbsr">
+                                                걸어 다니기 불편한 경우 이동할 수 있도록 도와드려요
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!-- box_sub01 -->
+                                    
+                                    <div class="box_sub01">
+                                        <div class="img_area">
+                                            <img src="/html/page/app/matching/assets/src/images/01tool/tool01_04.svg" alt="안전손잡이">
+                                        </div>
+                                        <div class="ctn_area">
+                                            <div class="font_sbmb">안전손잡이</div>
+                                    
+                                            <p class="color_t_s font_sbsr">
+                                                앉거나 일어설 때 손잡이를 잡으면 안전하게 움직일 수 있어요
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!-- box_sub01 -->
+                                
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+
+                        <hr class="marH40">
+
+                        <div class="font_sbsr marB16">Contents</div>
+
+                        <div class="flex_center">
+
+                            <div class="modal bottom-sheet">
+
+                                <div class="modal_header">
+                                    <h4 class="modal_title"> </h4>
+                                    <div class="close_x modal-close waves-effect"></div>
+                                </div>
+
+                                <div class="img_system_ins">
+                                    <img src="/html/page/app/matching/assets/src/images/18icon/img_system_ins.png" alt="시스템 점검">
+                                </div>
+
+                                <div class="modal-content">
+
+                                    <div class="h24"></div>
+
+                                    <div class="color_tp_pp font_sblb">인증을 위해 동의가 필요해요</div>
+                                    <div class="color_tp_s font_sbms marT4">다른 어르신도 혜택을 받을 수 있는 지 확인</div>
+
+                                    <div class="h12"></div>
+
+                                    <p class="color_t_s font_sbmr">더 빠르고 안정적인 서비스를 만들기 위해 서버를 점검하고 있습니다</p>
+
+
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="btn_area d-flex">
+                                        <a class="modal-close waves-effect btn btn-large w100p btn_primary">확인</a>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+                </div>
+
+                <pre><code class="language-html">
+                    &lt;div class=&quot;modal bottom-sheet&quot;&gt;
+
+                        &lt;div class=&quot;modal_header&quot;&gt;
+                            &lt;h4 class=&quot;modal_title&quot;&gt;Title&lt;/h4&gt;
+                            &lt;div class=&quot;close_x modal-close waves-effect&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class=&quot;modal-content&quot;&gt;
+                            ...&lt;br&gt;
+                            Content&lt;br&gt;
+                            ...&lt;br&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;modal-footer&quot;&gt;
+                            &lt;div class=&quot;btn_area d-flex&quot;&gt;
+                                &lt;a class=&quot;modal-close waves-effect btn btn-large w100p btn_primary&quot;&gt;&#xD655;&#xC778;&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                </code></pre>
+
+
+
+                <div class="h100"></div>
+
+            </section>
+
+
+
+        </main>
+
+
+    </div>
+    <!-- wrapper -->
+
+
+<!-- bottom-sheet -->
+<div id="b_modal01" class="modal bottom-sheet">
+
+    <div class="modal_header">
+        <h4 class="modal_title">정렬 선택</h4>
+        <div class="close_x modal-close waves-effect"></div>
+    </div>
+
+    <div class="modal-content">
+
+        <div class="h20"></div>
+
+        <div class="d-flex f-column gap04">
+            <input type="radio" name="bs_a01" id="chk_c0t_a1" class="chk01_2 large">
+            <label for="chk_c0t_a1">기본순</label>
+
+            <input type="radio" name="bs_a01" id="chk_c0t_a2" class="chk01_2 large" checked>
+            <label for="chk_c0t_a2">추천순</label>
+
+            <input type="radio" name="bs_a01" id="chk_c0t_a3" class="chk01_2 large">
+            <label for="chk_c0t_a3">조회순</label>
+
+        </div>
+
+        <div class="h32"></div>
+
+    </div>
+
+    <div class="modal-footer">
+        <div class="btn_area d-flex">
+            <a class="modal-close waves-effect btn btn-large w100p btn_primary">확인</a>
+        </div>
+    </div>
+
+</div>
+
+<!-- bottom-sheet_handle -->
+<div id="welInfo_modal" class="bottom-sheet_handle">
+    <div class="sheet-overlay"></div>
+    <div class="content">
+        <div class="drag_handle_area drag-icon">
+            <span class="drag_handle"></span>
+        </div>
+        <div class="modal_header">
+            <h4 class="modal_title">정렬 선택</h4>
+            <div class="close_x close_modal"></div>
+        </div>
+        <div class="modal-content">
+
+            <div class="h20"></div>
+
+            <div class="d-flex f-column gap04">
+                <input type="radio" name="bs_a02" id="chk_c0t_a4" class="chk01_2 large" checked>
+                <label for="chk_c0t_a4">기본순</label>
+
+                <input type="radio" name="bs_a02" id="chk_c0t_a5" class="chk01_2 large">
+                <label for="chk_c0t_a5">추천순</label>
+
+                <input type="radio" name="bs_a02" id="chk_c0t_a6" class="chk01_2 large">
+                <label for="chk_c0t_a6">조회순</label>
+
+            </div>
+            <div class="h40"></div>
+        </div>
+
+        <div class="modal-footer">
+            <div class="btn_area d-flex">
+                <a title="region01_apply" class="close_modal waves-effect btn btn-large w100p btn_primary">확인</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
+
+</html>

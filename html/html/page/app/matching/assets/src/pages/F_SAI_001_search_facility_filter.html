@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+
+    <title>F_SAI_001_search_facility.html</title>
+
+
+    <!-- jquery -->
+    <script type="text/javascript" src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script type="text/javascript" src="../js/materialize.min.js"></script>
+
+    <!-- guide.js -->
+    <script type="text/javascript" src="../js/custom/guide.js"></script>
+
+    <!-- bottom_sheet.js -->
+    <script type="text/javascript" src="../js/custom/script_bottom_sheet_pb.js" defer></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="../css/materialize.min.css" />
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="../js/swiper/swiper-bundle.min.css" />
+
+
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+
+    <style>
+
+    </style>
+
+
+    <script>
+
+    </script>
+
+
+</head>
+
+<body class="">
+    <div class="wrapper">
+
+
+        <header>
+            <nav class="top">
+                <div class="btn_back">
+                    <span class="icon"></span>
+                    <div class="txt">
+                        <span class="txtEvt">요양병원</span>
+
+                        <!-- top_dropdown_area -->
+                        <div class="top_dropdown_area">
+                            <a class="top_dropdown_btn modal-trigger" href="#modal_om_select"></a>
+                        </div>
+                        <!-- top_dropdown_area end-->
+
+                    </div>
+                </div>
+                <div class="icon_area waves-effect">
+                    <div class="icon_btn i_search"></div>
+                </div>
+
+
+
+            </nav>
+        </header>
+
+
+        <main>
+            <section class="default noPad">
+
+                <div class="addr_filter_area" style="overflow-x: auto;">
+
+                    
+                    <a class="filter modal-trigger" href="#modal_select_filter">
+                        <img class="icon" src="/html/page/app/matching/assets/src/images/04icon/icon_filter.svg" alt="filter">
+                        <span>(요양병원)</span>
+                    </a>
+                    <a class="filter modal-trigger" href="#modal_select_filter02">
+                        <img class="icon" src="/html/page/app/matching/assets/src/images/04icon/icon_filter.svg" alt="filter">
+                        <span>(요양원)</span>
+                    </a>
+                    <a class="filter modal-trigger" href="#modal_select_filter03">
+                        <img class="icon" src="/html/page/app/matching/assets/src/images/04icon/icon_filter.svg" alt="filter">
+                        <span>(주야간보호)</span>
+                    </a>
+                    <a class="filter modal-trigger" href="#modal_select_filter03_2">
+                        <img class="icon" src="/html/page/app/matching/assets/src/images/04icon/icon_filter.svg" alt="filter">
+                        <span>(방문요양)</span>
+                    </a>
+                    <a class="filter modal-trigger" href="#modal_select_filter04">
+                        <img class="icon" src="/html/page/app/matching/assets/src/images/04icon/icon_filter.svg" alt="filter">
+                        <span>(복지용구기관)</span>
+                    </a>
+
+                </div>
+
+                <div class="h12 back_F5F5F5"></div>
+
+                <div class="padH24W20">
+
+                    <div class="color_t_s font_sbsr">총 <span class="color_t_p font_sbsb">500개</span>의 시설이 있어요. </div>
+
+                    <div class="facility_list_area">
+                    
+                        <div class="item_facility">
+    
+                            <div class="img_area">
+                                <img src="/html/page/app/matching/assets/src/images/sample/recu_thumb.jpg"  alt="">
+                            </div>
+                            <div class="ctn_area">
+                                <div class="partner">파트너</div>
+                                <div class="title">네이처 요양병원 요양병원 요양병원 요양병원</div>
+                                <div class="addr">서울특별시 강남구 헌릉로569길 21-40(세곡동)</div>
+                                <div>
+                                    <span class="badge_order back_danger_subtle_fs12">1등급</span>
+                                    <span class="badge_order back_gray_subtle_fs12">대형</span>
+                                    <span class="badge_order back_gray_subtle_fs12">설립400년</span>
+                                </div>
+    
+                            </div>
+    
+                        </div>
+    
+    
+                    </div>
+                    <!-- facility_list_area -->
+    
+
+
+
+                </div>
+                <!-- padH24W20 -->
+
+
+                <div class="footer_mapView">
+
+                    <a href="" class="btnView">
+                        <img src="/html/page/app/matching/assets/src/images/04icon/location_2_white.svg">
+                        지도보기
+                    </a>
+
+                </div>
+
+            </section>
+        </main>
+
+
+
+    </div>
+    <!-- wrapper -->
+
+
+    <!-- 1 -->
+    <!-- 필터선택 요양병원 -->
+    <div id="modal_select_filter" class="modal fullscreen term1">
+
+        <div class="modal_header">
+          <h4 class="modal_title titleEvt">필터 선택 - 요양병원</h4>
+          <div class="close_x modal-close waves-effect"></div>
+        </div>
+
+        <div class="modal-content padNo evt_reset_form">
+
+            <div class="pad_24_20_40">
+                
+                <div class="font_sbmb">시설규모</div>
+
+                <div class="h20"></div>
+
+                <div class="d-flex gap08 flex_wrap">
+                    <input type="checkbox" name="scaleFacility" id="Y1_chkSF_01" class="btn_chk">
+                    <label for="Y1_chkSF_01">대형</label>
+                    <input type="checkbox" name="scaleFacility" id="Y1_chkSF_02" class="btn_chk">
+                    <label for="Y1_chkSF_02">중형</label>
+                    <input type="checkbox" name="scaleFacility" id="Y1_chkSF_03" class="btn_chk">
+                    <label for="Y1_chkSF_03">소형</label>
+                </div>
+
+                <div class="h40"></div>
+
+                <div class="font_sbmb">평가등급</div>
+
+                <div class="h20"></div>
+
+                <div class="d-flex gap08 flex_wrap">
+                    <input type="checkbox" name="evalRating" id="Y1_chkER_01" class="btn_chk">
+                    <label for="Y1_chkER_01">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_rating_1.svg" alt="1">
+                        1등급
+                    </label>
+
+                    <input type="checkbox" name="evalRating" id="Y1_chkER_02" class="btn_chk">
+                    <label for="Y1_chkER_02">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_rating_2.svg" alt="2">
+                        2등급
+                    </label>
+
+                    <input type="checkbox" name="evalRating" id="Y1_chkER_03" class="btn_chk">
+                    <label for="Y1_chkER_03">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_rating_3.svg" alt="3">
+                        3등급
+                    </label>
+                    
+                    <input type="checkbox" name="evalRating" id="Y1_chkER_04" class="btn_chk">
+                    <label for="Y1_chkER_04">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_rating_4.svg" alt="4">
+                        4등급
+                    </label>
+
+                    <input type="checkbox" name="evalRating" id="Y1_chkER_05" class="btn_chk">
+                    <label for="Y1_chkER_05">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_rating_4.svg" alt="4">
+                        5등급
+                    </label>
+                    <input type="checkbox" name="evalRating" id="Y1_chkER_etc" class="btn_chk">
+                    <label for="Y1_chkER_etc">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_rating_4.svg" alt="4">
+                        등급외
+                    </label>
+                </div>
+
+                <div class="h40"></div>
+
+                <div class="font_sbmb">설립년도</div>
+
+                <div class="h20"></div>
+
+                <div class="d-flex gap08 flex_wrap">
+                    <input type="radio" name="since" id="Y1_chkSC_01" class="btn_chk">
+                    <label for="Y1_chkSC_01">신규시설</label>
+                    <input type="radio" name="since" id="Y1_chkSC_02" class="btn_chk">
+                    <label for="Y1_chkSC_02">5년이내</label>
+                    <input type="radio" name="since" id="Y1_chkSC_03" class="btn_chk">
+                    <label for="Y1_chkSC_03">10년이내</label>
+                    <input type="radio" name="since" id="Y1_chkSC_04" class="btn_chk">
+                    <label for="Y1_chkSC_04">10년이상</label>
+                </div>
+
+            </div>
+
+            <div class="h12 back_F7F7F7"></div>
+
+            <div class="pad_24_20_40">
+
+                <div class="font_sbmb">특화영역</div>
+
+                <div class="h20"></div>
+
+                <div class="d-flex gap08 flex_wrap">
+                    <input type="checkbox" name="special" id="Y1_chkSP_01" class="btn_chk column resp_specialArea">
+                    <label for="Y1_chkSP_01">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_special_1.svg" alt="1">
+                        물리치료
+                    </label>
+
+                    <input type="checkbox" name="special" id="Y1_chkSP_01" class="btn_chk column resp_specialArea">
+                    <label for="Y1_chkSP_02">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_special_2.svg" alt="2">
+                        재활치료
+                    </label>
+                    <input type="checkbox" name="special" id="Y1_chkSP_01" class="btn_chk column resp_specialArea">
+                    <label for="Y1_chkSP_03">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_special_3.svg" alt="3">
+                        혈액투석
+                    </label>
+                    <input type="checkbox" name="special" id="Y1_chkSP_01" class="btn_chk column resp_specialArea">
+                    <label for="Y1_chkSP_04">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_special_4.svg" alt="4">
+                        양한방협진
+                    </label>
+                </div>
+
+                <div class="h40"></div>
+
+                <div class="font_sbmb">특수시설</div>
+
+                <div class="h20"></div>
+
+                <div class="d-flex gap08 flex_wrap">
+                    <input type="checkbox" name="s_f" id="Y1_chkS_f_01" class="btn_chk">
+                    <label for="Y1_chkS_f_01">격리병실 있음  </label>
+                    <input type="checkbox" name="s_f" id="Y1_chkS_f_02" class="btn_chk">
+                    <label for="Y1_chkS_f_02">상급병실 있음</label>
+                </div>
+
+                <div class="h40"></div>
+
+                <div class="font_sbmb">종교활동</div>
+
+                <div class="h20"></div>
+
+                <div class="d-flex gap08 flex_wrap">
+                    <input type="checkbox" name="religion" id="Y1_chkRG_01" class="btn_chk">
+                    <label for="Y1_chkRG_01">종교활동 지원</label>
+                </div>
+
+
+
+
+            </div>
+
+            <div class="h12 back_F7F7F7"></div>
+
+            <div class="pad_24_20_40">
+
+                <div class="font_sbmb">진료과목</div>
+
+                <div class="h20"></div>
+
+                <div class="d-flex gap08 flex_wrap">
+                    <input type="checkbox" name="medical" id="Y1_chkMD_01" class="btn_chk">
+                    <label for="Y1_chkMD_01">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_medical_01.svg" alt="1">
+                        내과
+                    </label>
+
+                    <input type="checkbox" name="medical" id="Y1_chkMD_02" class="btn_chk">
+                    <label for="Y1_chkMD_02">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_medical_02.svg" alt="2">
+                        가정의학과
+                    </label>
+
+                    <input type="checkbox" name="medical" id="Y1_chkMD_03" class="btn_chk">
+                    <label for="Y1_chkMD_03">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_medical_03.svg" alt="3">
+                        외과
+                    </label>
+
+                    <input type="checkbox" name="medical" id="Y1_chkMD_04" class="btn_chk">
+                    <label for="Y1_chkMD_04">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_special_2.svg" alt="23">
+                        재활의학과
+                    </label>
+
+                    <input type="checkbox" name="medical" id="Y1_chkMD_05" class="btn_chk">
+                    <label for="Y1_chkMD_05">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_medical_04.svg" alt="4">
+                        정형외과
+                    </label>
+
+                    <input type="checkbox" name="medical" id="Y1_chkMD_06" class="btn_chk">
+                    <label for="Y1_chkMD_06">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_medical_05.svg" alt="5">
+                        한방내과
+                    </label>
+
+                    <input type="checkbox" name="medical" id="Y1_chkMD_07" class="btn_chk">
+                    <label for="Y1_chkMD_07">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_medical_06.svg" alt="6">
+                        신경과
+                    </label>
+
+                    <input type="checkbox" name="medical" id="Y1_chkMD_08" class="btn_chk">
+                    <label for="Y1_chkMD_08">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_medical_06.svg" alt="6">
+                        신경외과
+                    </label>
+
+                    <input type="checkbox" name="medical" id="Y1_chkMD_09" class="btn_chk">
+                    <label for="Y1_chkMD_09">침구과</label>
+
+                    <input type="checkbox" name="medical" id="Y1_chkMD_10" class="btn_chk">
+                    <label for="Y1_chkMD_10">한방재활의학과</label>
+
+                    <input type="checkbox" name="medical" id="Y1_chkMD_11" class="btn_chk">
+                    <label for="Y1_chkMD_11">한방소아과</label>
+                
+                </div>
+
+
+
+            </div>
+
+        </div>
+        <!-- modal-content -->
+
+        <div class="modal-footer">
+
+            <div class="d-flex gap08">
+                <a class="waves-effect btn btn-large w100p btn_cancel btn_evt_reset">초기화</a>
+                <a class="modal-close waves-effect btn btn-large w100p btn_primary">적용하기</a>
+            </div>            
+        </div>
+
+    </div>
+    <!-- 필터선택 end -->
+
+
+
+
+    <!-- 2 -->
+    <!-- 필터선택 요양원 -->
+    <div id="modal_select_filter02" class="modal fullscreen term1">
+
+        <div class="modal_header">
+          <h4 class="modal_title titleEvt">필터 선택 - 요양원</h4>
+          <div class="close_x modal-close waves-effect"></div>
+        </div>
+
+        <div class="modal-content padNo evt_reset_form">
+
+            <div class="pad_24_20_40">
+                
+                <div class="font_sbmb">돌봄 파트너 </div>
+
+                <div class="h20"></div>
+
+                <div class="d-flex gap08 flex_wrap">
+                    <input type="checkbox" name="scaleFacility" id="Y2_chkDP_01" class="btn_chk">
+                    <label for="Y2_chkDP_01">돌봄파트너 인증시설</label>
+                </div>
+                
+                <div class="h40"></div>
+                
+                <div class="font_sbmb">시설규모</div>
+
+                <div class="h20"></div>
+
+                <div class="d-flex gap08 flex_wrap">
+                    <input type="checkbox" name="scaleFacility" id="Y2_chkSF_01" class="btn_chk">
+                    <label for="Y2_chkSF_01">대형</label>
+                    <input type="checkbox" name="scaleFacility" id="Y2_chkSF_02" class="btn_chk">
+                    <label for="Y2_chkSF_02">중형</label>
+                    <input type="checkbox" name="scaleFacility" id="Y2_chkSF_03" class="btn_chk">
+                    <label for="Y2_chkSF_03">소형</label>
+                </div>
+
+                <div class="h40"></div>
+
+                <div class="font_sbmb">평가등급</div>
+
+                <div class="h20"></div>
+
+                <div class="d-flex gap08 flex_wrap">
+                    <input type="checkbox" name="evalRating" id="Y2_chkER_01" class="btn_chk">
+                    <label for="Y2_chkER_01">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_rating_1.svg" alt="1">
+                        A등급
+                    </label>
+
+                    <input type="checkbox" name="evalRating" id="Y2_chkER_02" class="btn_chk">
+                    <label for="Y2_chkER_02">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_rating_2.svg" alt="2">
+                        B등급
+                    </label>
+
+                    <input type="checkbox" name="evalRating" id="Y2_chkER_03" class="btn_chk">
+                    <label for="Y2_chkER_03">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_rating_3.svg" alt="3">
+                        C등급
+                    </label>
+                    
+                    <input type="checkbox" name="evalRating" id="Y2_chkER_04" class="btn_chk">
+                    <label for="Y2_chkER_04">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_rating_4.svg" alt="4">
+                        D등급
+                    </label>
+
+                    <input type="checkbox" name="evalRating" id="Y2_chkER_05" class="btn_chk">
+                    <label for="Y2_chkER_05">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_rating_4.svg" alt="4">
+                        E등급
+                    </label>
+                    <input type="checkbox" name="evalRating" id="Y2_chkER_etc" class="btn_chk">
+                    <label for="Y2_chkER_etc">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_rating_4.svg" alt="4">
+                        등급외
+                    </label>
+                </div>
+
+                <div class="h40"></div>
+
+                <div class="font_sbmb">설립년도</div>
+
+                <div class="h20"></div>
+
+                <div class="d-flex gap08 flex_wrap">
+                    <input type="radio" name="since" id="Y2_chkSC_01" class="btn_chk">
+                    <label for="Y2_chkSC_01">신규시설</label>
+                    <input type="radio" name="since" id="Y2_chkSC_02" class="btn_chk">
+                    <label for="Y2_chkSC_02">5년이내</label>
+                    <input type="radio" name="since" id="Y2_chkSC_03" class="btn_chk">
+                    <label for="Y2_chkSC_03">10년이내</label>
+                    <input type="radio" name="since" id="Y2_chkSC_04" class="btn_chk">
+                    <label for="Y2_chkSC_04">10년이상</label>
+                </div>
+
+            </div>
+
+            <div class="h12 back_F7F7F7"></div>
+
+            <div class="pad_24_20_40">
+
+
+                <div class="font_sbmb">특수시설</div>
+
+                <div class="h20"></div>
+
+                <div class="d-flex gap08 flex_wrap">
+                    <input type="checkbox" name="s_f" id="Y2_chkS_f_01" class="btn_chk">
+                    <label for="Y2_chkS_f_01">상급침실 있음</label>
+                    <input type="checkbox" name="s_f" id="Y2_chkS_f_02" class="btn_chk">
+                    <label for="Y2_chkS_f_02">치매전담실</label>
+                </div>
+
+            </div>
+
+            <div class="h12 back_F7F7F7"></div>
+
+            <div class="pad_24_20_40">
+
+                <div class="font_sbmb">프로그램</div>
+
+                <div class="h20"></div>
+
+                <div class="d-flex gap08 flex_wrap">
+                    <input type="checkbox" name="medical" id="Y2_chkMD_01" class="btn_chk">
+                    <label for="Y2_chkMD_01">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_program_01.svg" alt="1">
+                        운동보조
+                    </label>
+
+                    <input type="checkbox" name="medical" id="Y2_chkMD_02" class="btn_chk">
+                    <label for="Y2_chkMD_02">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_program_02.svg" alt="2">
+                        운동요법
+                    </label>
+
+                    <input type="checkbox" name="medical" id="Y2_chkMD_03" class="btn_chk">
+                    <label for="Y2_chkMD_03">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_program_03.svg" alt="3">
+                        음악활동
+                    </label>
+
+                    <input type="checkbox" name="medical" id="Y2_chkMD_04" class="btn_chk">
+                    <label for="Y2_chkMD_04">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_program_04.svg" alt="23">
+                        인지자극활동
+                    </label>
+
+                    <input type="checkbox" name="medical" id="Y2_chkMD_05" class="btn_chk">
+                    <label for="Y2_chkMD_05">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_medical_06.svg" alt="4">
+                        인지기능향상
+                    </label>
+
+                    <input type="checkbox" name="medical" id="Y2_chkMD_06" class="btn_chk">
+                    <label for="Y2_chkMD_06">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_program_05.svg" alt="5">
+                        현실인식훈련
+                    </label>
+
+                    <input type="checkbox" name="medical" id="Y2_chkMD_07" class="btn_chk">
+                    <label for="Y2_chkMD_07">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_program_06.svg" alt="6">
+                        가족참여
+                    </label>
+
+                    <input type="checkbox" name="medical" id="Y2_chkMD_08" class="btn_chk">
+                    <label for="Y2_chkMD_08">기타</label>
+                
+                </div>
+
+
+
+            </div>
+
+        </div>
+        <!-- modal-content -->
+
+        <div class="modal-footer">
+
+            <div class="d-flex gap08">
+                <a class="waves-effect btn btn-large w100p btn_cancel btn_evt_reset">초기화</a>
+                <a class="modal-close waves-effect btn btn-large w100p btn_primary">적용하기</a>
+            </div>            
+        </div>
+
+    </div>
+    <!-- 필터선택 end -->
+
+
+
+
+
+    <!-- 3 -->
+    <!-- 필터선택 주야간보호 -->
+    <div id="modal_select_filter03" class="modal fullscreen term1">
+
+        <div class="modal_header">
+          <h4 class="modal_title titleEvt">필터 선택 - 주야간보호</h4>
+          <div class="close_x modal-close waves-effect"></div>
+        </div>
+
+        <div class="modal-content padNo evt_reset_form">
+
+            <div class="pad_24_20_40">
+
+                <div class="font_sbmb">돌봄 파트너 </div>
+
+                <div class="h20"></div>
+
+                <div class="d-flex gap08 flex_wrap">
+                    <input type="checkbox" name="scaleFacility" id="Y3_chkDP_01" class="btn_chk">
+                    <label for="Y3_chkDP_01">돌봄파트너 인증시설</label>
+                </div>
+                
+                <div class="h40"></div>
+                
+                <div class="font_sbmb">시설규모</div>
+
+                <div class="h20"></div>
+
+                <div class="d-flex gap08 flex_wrap">
+                    <input type="checkbox" name="scaleFacility" id="Y3_chkSF_01" class="btn_chk">
+                    <label for="Y3_chkSF_01">대형</label>
+                    <input type="checkbox" name="scaleFacility" id="Y3_chkSF_02" class="btn_chk">
+                    <label for="Y3_chkSF_02">중형</label>
+                    <input type="checkbox" name="scaleFacility" id="Y3_chkSF_03" class="btn_chk">
+                    <label for="Y3_chkSF_03">소형</label>
+                </div>
+
+                <div class="h40"></div>
+
+                <div class="font_sbmb">평가등급</div>
+
+                <div class="h20"></div>
+
+                <div class="d-flex gap08 flex_wrap">
+                    <input type="checkbox" name="evalRating" id="Y3_chkER_01" class="btn_chk">
+                    <label for="Y3_chkER_01">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_rating_1.svg" alt="1">
+                        A등급
+                    </label>
+
+                    <input type="checkbox" name="evalRating" id="Y3_chkER_02" class="btn_chk">
+                    <label for="Y3_chkER_02">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_rating_2.svg" alt="2">
+                        B등급
+                    </label>
+
+                    <input type="checkbox" name="evalRating" id="Y3_chkER_03" class="btn_chk">
+                    <label for="Y3_chkER_03">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_rating_3.svg" alt="3">
+                        C등급
+                    </label>
+                    
+                    <input type="checkbox" name="evalRating" id="Y3_chkER_04" class="btn_chk">
+                    <label for="Y3_chkER_04">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_rating_4.svg" alt="4">
+                        D등급
+                    </label>
+
+                    <input type="checkbox" name="evalRating" id="Y3_chkER_05" class="btn_chk">
+                    <label for="Y3_chkER_05">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_rating_4.svg" alt="4">
+                        E등급
+                    </label>
+                    <input type="checkbox" name="evalRating" id="Y3_chkER_etc" class="btn_chk">
+                    <label for="Y3_chkER_etc">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_rating_4.svg" alt="4">
+                        등급외
+                    </label>
+                </div>
+
+                <div class="h40"></div>
+
+                <div class="font_sbmb">설립년도</div>
+
+                <div class="h20"></div>
+
+                <div class="d-flex gap08 flex_wrap">
+                    <input type="radio" name="since" id="Y3_chkSC_01" class="btn_chk">
+                    <label for="Y3_chkSC_01">신규시설</label>
+                    <input type="radio" name="since" id="Y3_chkSC_02" class="btn_chk">
+                    <label for="Y3_chkSC_02">5년이내</label>
+                    <input type="radio" name="since" id="Y3_chkSC_03" class="btn_chk">
+                    <label for="Y3_chkSC_03">10년이내</label>
+                    <input type="radio" name="since" id="Y3_chkSC_04" class="btn_chk">
+                    <label for="Y3_chkSC_04">10년이상</label>
+                </div>
+
+            </div>
+
+
+            <div class="h12 back_F7F7F7"></div>
+
+            <div class="pad_24_20_40">
+
+                <div class="font_sbmb">특수시설</div>
+
+                <div class="h20"></div>
+
+                <div class="d-flex gap08 flex_wrap">
+                    <input type="checkbox" name="s_f" id="Y3_chkS_f_02" class="btn_chk">
+                    <label for="Y3_chkS_f_02">치매전담실</label>
+                </div>
+
+            </div>
+
+            <div class="h12 back_F7F7F7"></div>
+
+            <div class="pad_24_20_40">
+
+                <div class="font_sbmb">프로그램</div>
+
+                <div class="h20"></div>
+
+                <div class="d-flex gap08 flex_wrap">
+                    <input type="checkbox" name="medical" id="Y3_chkMD_01" class="btn_chk">
+                    <label for="Y3_chkMD_01">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_program_01.svg" alt="1">
+                        운동보조
+                    </label>
+
+                    <input type="checkbox" name="medical" id="Y3_chkMD_02" class="btn_chk">
+                    <label for="Y3_chkMD_02">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_program_02.svg" alt="2">
+                        운동요법
+                    </label>
+
+                    <input type="checkbox" name="medical" id="Y3_chkMD_03" class="btn_chk">
+                    <label for="Y3_chkMD_03">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_program_03.svg" alt="3">
+                        음악활동
+                    </label>
+
+                    <input type="checkbox" name="medical" id="Y3_chkMD_04" class="btn_chk">
+                    <label for="Y3_chkMD_04">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_program_04.svg" alt="23">
+                        인지자극활동
+                    </label>
+
+                    <input type="checkbox" name="medical" id="Y3_chkMD_05" class="btn_chk">
+                    <label for="Y3_chkMD_05">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_medical_06.svg" alt="4">
+                        인지기능향상
+                    </label>
+
+                    <input type="checkbox" name="medical" id="Y3_chkMD_06" class="btn_chk">
+                    <label for="Y3_chkMD_06">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_program_05.svg" alt="5">
+                        현실인식훈련
+                    </label>
+
+                    <input type="checkbox" name="medical" id="Y3_chkMD_07" class="btn_chk">
+                    <label for="Y3_chkMD_07">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_program_06.svg" alt="6">
+                        가족참여
+                    </label>
+
+                    <input type="checkbox" name="medical" id="Y3_chkMD_08" class="btn_chk">
+                    <label for="Y3_chkMD_08">기타</label>
+                
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+        <!-- modal-content -->
+
+        <div class="modal-footer">
+
+            <div class="d-flex gap08">
+                <a class="waves-effect btn btn-large w100p btn_cancel btn_evt_reset">초기화</a>
+                <a class="modal-close waves-effect btn btn-large w100p btn_primary">적용하기</a>
+            </div>            
+        </div>
+
+    </div>
+    <!-- 필터선택 end -->
+
+
+
+
+
+    <!-- 3_2 -->
+    <!-- 필터선택 방문요양 -->
+    <div id="modal_select_filter03_2" class="modal fullscreen term1">
+
+        <div class="modal_header">
+          <h4 class="modal_title titleEvt">필터 선택 - 방문요양</h4>
+          <div class="close_x modal-close waves-effect"></div>
+        </div>
+
+        <div class="modal-content padNo evt_reset_form">
+
+            <div class="pad_24_20_40">
+
+                <div class="font_sbmb">돌봄 파트너 </div>
+
+                <div class="h20"></div>
+
+                <div class="d-flex gap08 flex_wrap">
+                    <input type="checkbox" name="scaleFacility" id="Y3_2_chkDP_01" class="btn_chk">
+                    <label for="Y3_2_chkDP_01">돌봄파트너 인증시설</label>
+                </div>
+                
+                <div class="h40"></div>
+                
+                <div class="font_sbmb">시설규모</div>
+
+                <div class="h20"></div>
+
+                <div class="d-flex gap08 flex_wrap">
+                    <input type="checkbox" name="scaleFacility" id="Y3_2_chkSF_01" class="btn_chk">
+                    <label for="Y3_2_chkSF_01">대형</label>
+                    <input type="checkbox" name="scaleFacility" id="Y3_2_chkSF_02" class="btn_chk">
+                    <label for="Y3_2_chkSF_02">중형</label>
+                    <input type="checkbox" name="scaleFacility" id="Y3_2_chkSF_03" class="btn_chk">
+                    <label for="Y3_2_chkSF_03">소형</label>
+                </div>
+
+                <div class="h40"></div>
+
+                <div class="font_sbmb">평가등급</div>
+
+                <div class="h20"></div>
+
+                <div class="d-flex gap08 flex_wrap">
+                    <input type="checkbox" name="evalRating" id="Y3_2_chkER_01" class="btn_chk">
+                    <label for="Y3_2_chkER_01">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_rating_1.svg" alt="1">
+                        A등급
+                    </label>
+
+                    <input type="checkbox" name="evalRating" id="Y3_2_chkER_02" class="btn_chk">
+                    <label for="Y3_2_chkER_02">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_rating_2.svg" alt="2">
+                        B등급
+                    </label>
+
+                    <input type="checkbox" name="evalRating" id="Y3_2_chkER_03" class="btn_chk">
+                    <label for="Y3_2_chkER_03">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_rating_3.svg" alt="3">
+                        C등급
+                    </label>
+                    
+                    <input type="checkbox" name="evalRating" id="Y3_2_chkER_04" class="btn_chk">
+                    <label for="Y3_2_chkER_04">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_rating_4.svg" alt="4">
+                        D등급
+                    </label>
+
+                    <input type="checkbox" name="evalRating" id="Y3_2_chkER_05" class="btn_chk">
+                    <label for="Y3_2_chkER_05">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_rating_4.svg" alt="4">
+                        E등급
+                    </label>
+                    <input type="checkbox" name="evalRating" id="Y3_2_chkER_etc" class="btn_chk">
+                    <label for="Y3_2_chkER_etc">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_rating_4.svg" alt="4">
+                        등급외
+                    </label>
+                </div>
+
+                <div class="h40"></div>
+
+                <div class="font_sbmb">설립년도</div>
+
+                <div class="h20"></div>
+
+                <div class="d-flex gap08 flex_wrap">
+                    <input type="radio" name="since" id="Y3_2_chkSC_01" class="btn_chk">
+                    <label for="Y3_2_chkSC_01">신규시설</label>
+                    <input type="radio" name="since" id="Y3_2_chkSC_02" class="btn_chk">
+                    <label for="Y3_2_chkSC_02">5년이내</label>
+                    <input type="radio" name="since" id="Y3_2_chkSC_03" class="btn_chk">
+                    <label for="Y3_2_chkSC_03">10년이내</label>
+                    <input type="radio" name="since" id="Y3_2_chkSC_04" class="btn_chk">
+                    <label for="Y3_2_chkSC_04">10년이상</label>
+                </div>
+
+            </div>
+
+            <div class="h12 back_F7F7F7"></div>
+
+            <div class="pad_24_20_40">
+
+                <div class="font_sbmb">프로그램</div>
+
+                <div class="h20"></div>
+
+                <div class="d-flex gap08 flex_wrap">
+                    <input type="checkbox" name="medical" id="Y3_2_chkMD_01" class="btn_chk">
+                    <label for="Y3_2_chkMD_01">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_program_01.svg" alt="1">
+                        운동보조
+                    </label>
+
+                    <input type="checkbox" name="medical" id="Y3_2_chkMD_02" class="btn_chk">
+                    <label for="Y3_2_chkMD_02">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_program_02.svg" alt="2">
+                        운동요법
+                    </label>
+
+                    <input type="checkbox" name="medical" id="Y3_2_chkMD_03" class="btn_chk">
+                    <label for="Y3_2_chkMD_03">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_program_03.svg" alt="3">
+                        음악활동
+                    </label>
+
+                    <input type="checkbox" name="medical" id="Y3_2_chkMD_04" class="btn_chk">
+                    <label for="Y3_2_chkMD_04">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_program_04.svg" alt="23">
+                        인지자극활동
+                    </label>
+
+                    <input type="checkbox" name="medical" id="Y3_2_chkMD_05" class="btn_chk">
+                    <label for="Y3_2_chkMD_05">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_medical_06.svg" alt="4">
+                        인지기능향상
+                    </label>
+
+                    <input type="checkbox" name="medical" id="Y3_2_chkMD_06" class="btn_chk">
+                    <label for="Y3_2_chkMD_06">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_program_05.svg" alt="5">
+                        현실인식훈련
+                    </label>
+
+                    <input type="checkbox" name="medical" id="Y3_2_chkMD_07" class="btn_chk">
+                    <label for="Y3_2_chkMD_07">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_program_06.svg" alt="6">
+                        가족참여
+                    </label>
+
+                    <input type="checkbox" name="medical" id="Y3_2_chkMD_08" class="btn_chk">
+                    <label for="Y3_2_chkMD_08">기타</label>
+                
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+        <!-- modal-content -->
+
+        <div class="modal-footer">
+
+            <div class="d-flex gap08">
+                <a class="waves-effect btn btn-large w100p btn_cancel btn_evt_reset">초기화</a>
+                <a class="modal-close waves-effect btn btn-large w100p btn_primary">적용하기</a>
+            </div>            
+        </div>
+
+    </div>
+    <!-- 필터선택 end -->
+
+
+
+
+
+
+
+    <!-- 4 -->
+    <!-- 필터선택 복지용구기관 -->
+    <div id="modal_select_filter04" class="modal fullscreen term1">
+
+        <div class="modal_header">
+          <h4 class="modal_title titleEvt">필터 선택 - 복지용구기관</h4>
+          <div class="close_x modal-close waves-effect"></div>
+        </div>
+
+        <div class="modal-content padNo evt_reset_form">
+
+            <div class="pad_24_20_40">
+
+                <div class="font_sbmb">돌봄 파트너 </div>
+
+                <div class="h20"></div>
+
+                <div class="d-flex gap08 flex_wrap">
+                    <input type="checkbox" name="scaleFacility" id="Y4_chkDP_01" class="btn_chk">
+                    <label for="Y4_chkDP_01">돌봄파트너 인증시설</label>
+                </div>
+                
+                <div class="h40"></div>
+
+                <div class="font_sbmb">평가등급</div>
+
+                <div class="h20"></div>
+
+                <div class="d-flex gap08 flex_wrap">
+                    <input type="checkbox" name="evalRating" id="Y4_chkER_01" class="btn_chk">
+                    <label for="Y4_chkER_01">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_rating_1.svg" alt="1">
+                        A등급
+                    </label>
+
+                    <input type="checkbox" name="evalRating" id="Y4_chkER_02" class="btn_chk">
+                    <label for="Y4_chkER_02">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_rating_2.svg" alt="2">
+                        B등급
+                    </label>
+
+                    <input type="checkbox" name="evalRating" id="Y4_chkER_03" class="btn_chk">
+                    <label for="Y4_chkER_03">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_rating_3.svg" alt="3">
+                        C등급
+                    </label>
+                    
+                    <input type="checkbox" name="evalRating" id="Y4_chkER_04" class="btn_chk">
+                    <label for="Y4_chkER_04">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_rating_4.svg" alt="4">
+                        D등급
+                    </label>
+
+                    <input type="checkbox" name="evalRating" id="Y4_chkER_05" class="btn_chk">
+                    <label for="Y4_chkER_05">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_rating_4.svg" alt="4">
+                        E등급
+                    </label>
+                    <input type="checkbox" name="evalRating" id="Y4_chkER_etc" class="btn_chk">
+                    <label for="Y4_chkER_etc">
+                        <img src="/html/page/app/matching/assets/src/images/23recu/icon_rating_4.svg" alt="4">
+                        등급외
+                    </label>
+                </div>
+
+                <div class="h40"></div>
+
+                <div class="font_sbmb">설립년도</div>
+
+                <div class="h20"></div>
+
+                <div class="d-flex gap08 flex_wrap">
+                    <input type="radio" name="since" id="Y4_chkSC_01" class="btn_chk">
+                    <label for="Y4_chkSC_01">신규시설</label>
+                    <input type="radio" name="since" id="Y4_chkSC_02" class="btn_chk">
+                    <label for="Y4_chkSC_02">5년이내</label>
+                    <input type="radio" name="since" id="Y4_chkSC_03" class="btn_chk">
+                    <label for="Y4_chkSC_03">10년이내</label>
+                    <input type="radio" name="since" id="Y4_chkSC_04" class="btn_chk">
+                    <label for="Y4_chkSC_04">10년이상</label>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- modal-content -->
+
+        <div class="modal-footer">
+
+            <div class="d-flex gap08">
+                <a class="modal-close waves-effect btn btn-large w100p btn_cancel btn_evt_reset">초기화</a>
+                <a class="modal-close waves-effect btn btn-large w100p btn_primary">적용하기</a>
+            </div>            
+        </div>
+
+    </div>
+    <!-- 필터선택 end -->
+
+
+
+
+</body>
+
+</html>

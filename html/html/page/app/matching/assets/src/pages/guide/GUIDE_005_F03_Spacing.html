@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+
+    <title>GUIDE_005_StyleGuide.html</title>
+
+
+    <!-- jquery -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/materialize.js"></script>
+
+    <!-- guide.js -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/materialize.min.css" />
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/style.css" />
+
+    <!-- guideStyle_2025.css -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/guideStyle_2025.css" />
+
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/atom-one-dark.min.css">
+
+    <!-- highlight.js -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guide_hljsLoad.js"></script>
+
+    <!-- guideStyle_2025.js -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guideStyle_2025.js"></script>
+
+    <script>
+    </script>
+
+
+
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="gs_header">
+
+            <a href="GUIDE_000_index.html" class="logo"><span>돌봄 디자인시스템</span></a>
+
+            <ul class="header_menu">
+                <li><a href="GUIDE_001_Foundation.html">Foundation</a></li>
+                <li><a href="GUIDE_002_Component.html">Component</a></li>
+                <li><a href="GUIDE_003_AppScreen.html">App Screen</a></li>
+                <li><a href="GUIDE_004_WebScreen.html">Web Screen</a></li>
+                <li><a href="GUIDE_005_StyleGuide.html" class="active">Style Guide</a></li>
+                <li class="search"><a href="#"></a></li>
+            </ul>
+
+        </div>
+
+    </header>
+
+    <div class="wrap">
+
+        <main>
+
+
+            <nav class="sidebar">
+
+                <div class="sidebar_header">
+                    <div class="title_area">
+                        <div class="close_x"></div>
+                    </div>
+                    <div class="sidebar_search">
+                        <input type="text" placeholder="검색어를 입력해 주세요.">
+                        <div class="search">
+                            <a href="#"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="title">Style Guide</h4>
+
+                <div class="sidebar_list">
+                    <ul class="tabs_dept_sidebar">
+                        <li class="tab"><a class="active" title="dept_app">App Screen</a></li>
+                        <li class="tab"><a class="" title="dept_web">Web Screen</a></li>
+                    </ul>
+
+                    <div class="tab_list dept_app" title="siteMap_guide">
+                        <ul class="dept1">
+                            <li>
+                                <a class="arrow active">Foundation</a>
+                                <ul class="dept2">
+                                    <li><a href="GUIDE_005_StyleGuide.html">Typography</a></li>
+                                    <li><a href="GUIDE_005_F02_Colors.html">Colors</a></li>
+                                    <li><a class="active" href="GUIDE_005_F03_Spacing.html">Spacing</a></li>
+                                    <li><a href="GUIDE_005_F04_ObjectStyles.html">Object Styles</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="arrow">Component</a>
+                                <ul class="dept2">
+                                    <li><a href="GUIDE_005_C01_Button.html">Button</a></li>
+                                    <li><a href="GUIDE_005_C02_SelectionControls.html">Selection Controls</a></li>
+                                    <li><a href="GUIDE_005_C03_Link.html">Link</a></li>
+                                    <li><a href="GUIDE_005_C04_Chips.html">Chips</a></li>
+                                    <li><a href="GUIDE_005_C05_TextField.html">TextField</a></li>
+
+                                    <li><a href="GUIDE_005_C06_SelectField.html">SelectField</a></li>
+                                    <li><a href="GUIDE_005_C07_OptionList.html">OptionList</a></li>
+                                    <li><a href="GUIDE_005_C08_TopNavigation.html">Top Navigation</a></li>
+                                    <li><a href="GUIDE_005_C09_BottomNavigation.html">Bottom Navigation</a></li>
+                                    <li><a href="GUIDE_005_C10_List.html">List</a></li>
+
+                                    <li><a href="GUIDE_005_C11_Popup.html">Popup</a></li>
+                                    <li><a href="GUIDE_005_C12_BottomSheet.html">BottomSheet</a></li>
+                                    <li><a href="GUIDE_005_C13_Banner.html">Banner</a></li>
+                                    <li><a href="GUIDE_005_C14_Tab.html">Tab</a></li>
+                                    <li><a href="GUIDE_005_C15_NumberStepper.html">Number Stepper</a></li>
+
+                                    <li><a href="GUIDE_005_C16_TextAreaField.html">TextAreaField</a></li>
+                                    <li><a href="GUIDE_005_C17_Accordion.html">Accordion</a></li>
+                                    <li><a href="GUIDE_005_C18_Progressbar.html">Progress</a></li>
+                                    <li><a href="GUIDE_005_C99_Etc.html">Etc</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a href="GUIDE_005_03_Animation.html">애니메이션</a></li>
+                            <li><a href="GUIDE_005_04_Images.html">이미지</a></li>
+                            <li><a href="GUIDE_005_05_Css.html">CSS 구조</a></li>
+                            <li><a href="GUIDE_005_06_Library.html">라이브러리</a></li>
+
+                        </ul>
+                    </div>
+
+
+                </div>
+
+
+            </nav>
+
+
+
+            <section>
+
+
+                <div class="h48"></div>
+
+                <div class="titleNav">Spacing</div>
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Padding (패딩)</h3>
+
+                <div class="lang_htmlCode fw700">
+
+                    <div class="padCtrl">
+                        <div class="padNo noPad">padding : 0px</div>
+
+                        <div class="padT0">padT0 - padding-top : 0px</div>
+
+                        <div class="h20"></div>
+
+                        <div class="pad12">pad12 - padding : 12px</div>
+                        <div class="pad16">pad16 - padding : 16px</div>
+                        <div class="pad20">pad20 - padding : 20px</div>
+                        <div class="pad20">pad20 - padding : 20px</div>
+
+                        <div class="h20"></div>
+
+                        <div class="padH06">padH06 - padding : 6px 0</div>
+                        <div class="padH08">padH08 - padding : 8px 0</div>
+                        <div class="padH12">padH12 - padding : 12px 0</div>
+                        <div class="padH16">padH16 - padding : 16px 0</div>
+                        <div class="padH20">padH20 - padding : 20px 0</div>
+
+                        <div class="h20"></div>
+
+                        <div class="padR16">padR16 - padding-right : 16px</div>
+                        <div class="padR20">padR20 - padding-right : 20px</div>
+                        <div class="padR80">padR80 - padding-right : 80px</div>
+                        <div class="padR120">padR120 - padding-right : 120px</div>
+                        
+                        <div class="h20"></div>
+
+                        <div class="padL8">padL8 - padding-left : 8px</div>
+                        <div class="padL24">padL24 - padding-left : 24px</div>
+                    </div>
+
+                </div>
+                <pre><code class="language-html">
+                    &lt;div class=&quot;padNo noPad&quot;&gt;noPad, padNo&lt;/div&gt;
+                    &lt;div class=&quot;padT0&quot;&gt;padT0 - padding-top : 0px&lt;/div&gt;
+
+                    &lt;div class=&quot;pad12&quot;&gt;pad12 - padding : 12px&lt;/div&gt;
+                    &lt;div class=&quot;pad16&quot;&gt;pad16 - padding : 16px&lt;/div&gt;
+                    &lt;div class=&quot;pad20&quot;&gt;pad20 - padding : 20px&lt;/div&gt;
+                    &lt;div class=&quot;pad20&quot;&gt;pad20 - padding : 20px&lt;/div&gt;
+
+                    &lt;div class=&quot;padH06&quot;&gt;padH06 - padding : 6px 0&lt;/div&gt;
+                    &lt;div class=&quot;padH08&quot;&gt;padH08 - padding : 8px 0&lt;/div&gt;
+                    &lt;div class=&quot;padH12&quot;&gt;padH12 - padding : 12px 0&lt;/div&gt;
+                    &lt;div class=&quot;padH16&quot;&gt;padH16 - padding : 16px 0&lt;/div&gt;
+                    &lt;div class=&quot;padH20&quot;&gt;padH20 - padding : 20px 0&lt;/div&gt;
+
+                    &lt;div class=&quot;padR16&quot;&gt;padR16 - padding-right : 16px&lt;/div&gt;
+                    &lt;div class=&quot;padR20&quot;&gt;padR20 - padding-right : 20px&lt;/div&gt;
+                    &lt;div class=&quot;padR80&quot;&gt;padR80 - padding-right : 80px&lt;/div&gt;
+                    &lt;div class=&quot;padR120&quot;&gt;padR120 - padding-right : 120px&lt;/div&gt;
+
+                    &lt;div class=&quot;padL8&quot;&gt;padL8 - padding-left : 8px&lt;/div&gt;
+                    &lt;div class=&quot;padL24&quot;&gt;padL24 - padding-left : 24px&lt;/div&gt;
+                </code></pre>
+
+
+
+
+
+                <div class="lang_htmlCode fw700">
+
+                    <div class="padCtrl">
+                        <div class="padH6W8">padH6W8 - padding: 6px 8px</div>
+                        <div class="padH8W12">padH8W12 - padding: 8px 12px</div>
+                        <div class="padH8W16">padH8W16 - padding: 8px 16px</div>
+                        <div class="padH8W20">padH8W20 - padding: 8px 20px</div>
+                        
+                        <div class="padH12W16">padH12W16 - padding: 12px 16px</div>
+                        <div class="padH12W20">padH12W20 - padding: 12px 20px</div>
+                        
+                        <div class="padH16W10">padH16W10 - padding: 16px 10px</div>
+                        <div class="padH16W10">padH16W10 - padding: 16px 10px</div>
+                        <div class="padH16W12">padH16W12 - padding: 16px 12px</div>
+                        <div class="padH16W20">padH16W20 - padding: 16px 20px</div>
+                        
+                        <div class="padH20W8">padH20W8 - padding: 20px 8px</div>
+                        <div class="padH20W16">padH20W16 - padding: 20px 16px</div>
+                        <div class="padH20W24">padH20W24 - padding: 20px 24px</div>
+
+                        <div class="padH24W20">padH24W20 - padding: 24px 20px</div>
+                        
+                        <div class="padH32W20">padH32W20 - padding: 32px 20px</div>
+                        
+                        <div class="padH40W20">padH40W20 - padding: 40px 20px</div>
+                        
+                        <div class="padH48W20">padH48W20 - padding: 48px 20px</div>
+                    </div>
+
+                </div>
+                <pre><code class="language-html">
+                    &lt;div class=&quot;padH6W8&quot;&gt;padH6W8 - padding: 6px 8px&lt;/div&gt;
+                    &lt;div class=&quot;padH8W12&quot;&gt;padH8W12 - padding: 8px 12px&lt;/div&gt;
+                    &lt;div class=&quot;padH8W16&quot;&gt;padH8W16 - padding: 8px 16px&lt;/div&gt;
+                    &lt;div class=&quot;padH8W20&quot;&gt;padH8W20 - padding: 8px 20px&lt;/div&gt;
+                    
+                    &lt;div class=&quot;padH12W16&quot;&gt;padH12W16 - padding: 12px 16px&lt;/div&gt;
+                    &lt;div class=&quot;padH12W20&quot;&gt;padH12W20 - padding: 12px 20px&lt;/div&gt;
+                    
+                    &lt;div class=&quot;padH16W10&quot;&gt;padH16W10 - padding: 16px 10px&lt;/div&gt;
+                    &lt;div class=&quot;padH16W10&quot;&gt;padH16W10 - padding: 16px 10px&lt;/div&gt;
+                    &lt;div class=&quot;padH16W12&quot;&gt;padH16W12 - padding: 16px 12px&lt;/div&gt;
+                    &lt;div class=&quot;padH16W20&quot;&gt;padH16W20 - padding: 16px 20px&lt;/div&gt;
+                    
+                    &lt;div class=&quot;padH20W8&quot;&gt;padH20W8 - padding: 20px 8px&lt;/div&gt;
+                    &lt;div class=&quot;padH20W16&quot;&gt;padH20W16 - padding: 20px 16px&lt;/div&gt;
+                    &lt;div class=&quot;padH20W24&quot;&gt;padH20W24 - padding: 20px 24px&lt;/div&gt;
+
+                    &lt;div class=&quot;padH24W20&quot;&gt;padH24W20 - padding: 24px 20px&lt;/div&gt;
+                    
+                    &lt;div class=&quot;padH32W20&quot;&gt;padH32W20 - padding: 32px 20px&lt;/div&gt;
+                    
+                    &lt;div class=&quot;padH40W20&quot;&gt;padH40W20 - padding: 40px 20px&lt;/div&gt;
+                    
+                    &lt;div class=&quot;padH48W20&quot;&gt;padH48W20 - padding: 48px 20px&lt;/div&gt;
+                </code></pre>
+
+
+                <div class="lang_htmlCode fw700">
+
+                    <div class="padCtrl">
+                        <div class="pad_0_20_12">pad_0_20_12 - padding: 0 20px 12px</div>
+                        
+                        <div class="pad_12_20_40">pad_12_20_40 - padding: 12px 20px 40px</div>
+                        
+                        <div class="pad_16_12_20">pad_16_12_20 - padding: 16px 20px 20px</div>
+                        <div class="pad_16_16_20">pad_16_16_20 - padding: 16px 16px 20px</div>
+                        <div class="pad_16_20_20">pad_16_20_20 - padding: 16px 20px 20px</div>
+                        <div class="pad_16_20_24">pad_16_20_24 - padding: 16px 20px 24px</div>
+                        
+                        <div class="pad_20_16_16">pad_20_16_16 - padding: 20px 16px 16px</div>
+                        <div class="pad_20_20_24">pad_20_20_24 - padding: 20px 20px 24px</div>
+                        <div class="pad_20_20_40">pad_20_20_40 - padding: 20px 20px 40px</div>
+                        
+                        <div class="pad_24_20_16">pad_24_20_16 - padding: 24px 20px 16px</div>
+                        <div class="pad_24_20_20">pad_24_20_20 - padding: 24px 20px 20px</div>
+                        <div class="pad_24_20_40">pad_24_20_40 - padding: 24px 20px 40px</div>
+                        
+                        <div class="pad_24_20_40">pad_24_20_40 - padding: 24px 20px 40px</div>
+
+                        <div class="pad_28_24_0">pad_28_24_0 - padding: 28px 24px 0</div>
+
+                        <div class="pad_32_20_16">pad_32_20_16 - padding: 32px 20px 16px</div>
+
+                    </div>
+
+                </div>
+                <pre><code class="language-html">
+                    &lt;div class=&quot;pad_0_20_12&quot;&gt;pad_0_20_12 - padding: 0 20px 12px&lt;/div&gt;
+                    &lt;div class=&quot;pad_12_20_40&quot;&gt;pad_12_20_40 - padding: 12px 20px 40px&lt;/div&gt;
+                    &lt;div class=&quot;pad_16_12_20&quot;&gt;pad_16_12_20 - padding: 16px 20px 20px&lt;/div&gt;
+                    &lt;div class=&quot;pad_16_16_20&quot;&gt;pad_16_16_20 - padding: 16px 16px 20px&lt;/div&gt;
+                    &lt;div class=&quot;pad_16_20_20&quot;&gt;pad_16_20_20 - padding: 16px 20px 20px&lt;/div&gt;
+                    &lt;div class=&quot;pad_16_20_24&quot;&gt;pad_16_20_24 - padding: 16px 20px 24px&lt;/div&gt;
+                    &lt;div class=&quot;pad_20_16_16&quot;&gt;pad_20_16_16 - padding: 20px 16px 16px&lt;/div&gt;
+                    &lt;div class=&quot;pad_20_20_24&quot;&gt;pad_20_20_24 - padding: 20px 20px 24px&lt;/div&gt;
+                    &lt;div class=&quot;pad_20_20_40&quot;&gt;pad_20_20_40 - padding: 20px 20px 40px&lt;/div&gt;
+                    &lt;div class=&quot;pad_24_20_16&quot;&gt;pad_24_20_16 - padding: 24px 20px 16px&lt;/div&gt;
+                    &lt;div class=&quot;pad_24_20_20&quot;&gt;pad_24_20_20 - padding: 24px 20px 20px&lt;/div&gt;
+                    &lt;div class=&quot;pad_24_20_40&quot;&gt;pad_24_20_40 - padding: 24px 20px 40px&lt;/div&gt;
+                    &lt;div class=&quot;pad_24_20_40&quot;&gt;pad_24_20_40 - padding: 24px 20px 40px&lt;/div&gt;
+                    &lt;div class=&quot;pad_28_24_0&quot;&gt;pad_28_24_0 - padding: 28px 24px 0&lt;/div&gt;
+                    &lt;div class=&quot;pad_32_20_16&quot;&gt;pad_32_20_16 - padding: 32px 20px 16px&lt;/div&gt;
+                </code></pre>
+
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Margin (마진)</h3>
+
+                <div class="lang_htmlCode fw700">
+
+                    <div class="marCtrl">
+                        <div class="bder_valid">
+                            <div class="marNo noMar">margin: 0</div>
+                        </div>
+                        <div class="bder_valid">
+                            <div class="marT2">margin-top: 2px</div>
+                        </div>
+                    
+                        <div class="bder_valid">
+                            <div class="marT4">margin-top: 4px</div>
+                        </div>
+
+                        <div class="bder_valid">
+                            <div class="marT5">margin-top: 5px</div>
+                        </div>
+
+                        <div class="bder_valid">
+                            <div class="marT8">margin-top: 8px</div>
+                        </div>
+
+                        <div class="bder_valid">
+                            <div class="marT12">margin-top: 12px</div>
+                        </div>
+
+                        <div class="bder_valid">
+                            <div class="marT16">margin-top: 16px</div>
+                        </div>
+
+                        <div class="bder_valid">
+                            <div class="marT20">margin-top: 20px</div>
+                        </div>
+
+
+                        <div class="bder_valid">
+                            <div class="marB2">margin-bottom: 2px </div>
+                        </div>
+
+                        <div class="bder_valid">
+                            <div class="marB4">margin-bottom: 4px </div>
+                        </div>
+
+                        <div class="bder_valid">
+                            <div class="marB8">margin-bottom: 8px </div>
+                        </div>
+
+                        <div class="bder_valid">
+                            <div class="marB12">margin-bottom: 12px </div>
+                        </div>
+
+                        <div class="bder_valid">
+                            <div class="marB16">margin-bottom: 16px </div>
+                        </div>
+
+                        <div class="bder_valid">
+                            <div class="marB20">margin-bottom: 20px </div>
+                        </div>
+
+                        <div class="bder_valid">
+                            <div class="marB32">margin-bottom: 32px </div>
+                        </div>
+
+
+                        <div class="bder_valid">
+                            <div class="marR4">margin-right: 4px </div>
+                        </div>
+
+
+                        <div class="bder_valid">
+                            <div class="marL4">margin-left: 4px </div>
+                        </div>
+
+                        <div class="bder_valid">
+                            <div class="marL24">margin-left: 24px </div>
+                        </div>
+
+
+                        <div class="bder_valid">
+                            <div class="marH06">margin: 6px 0 </div>
+                        </div>
+
+                        <div class="bder_valid">
+                            <div class="marH08">margin: 8px 0 </div>
+                        </div>
+
+                        <div class="bder_valid">
+                            <div class="marH12">margin: 12px 0 </div>
+                        </div>
+
+                        <div class="bder_valid">
+                            <div class="marH16">margin: 16px 0 </div>
+                        </div>
+
+                        <div class="bder_valid">
+                            <div class="marH20">margin: 20px 0 </div>
+                        </div>
+
+                        <div class="bder_valid">
+                            <div class="marH40">margin: 40px 0 </div>
+                        </div>
+
+
+                        <div class="bder_valid">
+                            <div class="marW-20">margin: 0 -20px </div>
+                        </div>
+
+                        <br>
+
+                        <div class="bder_valid">
+                            <div class="marT-20W-20">margin: -20px -20px 0</div>
+                        </div>
+
+                    
+                    </div>
+
+                </div>
+                <pre><code class="language-html">
+                    &lt;div class=&quot;marNo noMar&quot;&gt;margin: 0&lt;/div&gt;
+                    &lt;div class=&quot;marT2&quot;&gt;margin-top: 2px&lt;/div&gt;
+                    &lt;div class=&quot;marT4&quot;&gt;margin-top: 4px&lt;/div&gt;
+                    &lt;div class=&quot;marT5&quot;&gt;margin-top: 5px&lt;/div&gt;
+                    &lt;div class=&quot;marT8&quot;&gt;margin-top: 8px&lt;/div&gt;
+                    &lt;div class=&quot;marT12&quot;&gt;margin-top: 12px&lt;/div&gt;
+                    &lt;div class=&quot;marT16&quot;&gt;margin-top: 16px&lt;/div&gt;
+                    &lt;div class=&quot;marT20&quot;&gt;margin-top: 20px&lt;/div&gt;
+                    &lt;div class=&quot;marB2&quot;&gt;margin-bottom: 2px &lt;/div&gt;
+                    &lt;div class=&quot;marB4&quot;&gt;margin-bottom: 4px &lt;/div&gt;
+                    &lt;div class=&quot;marB8&quot;&gt;margin-bottom: 8px &lt;/div&gt;
+                    &lt;div class=&quot;marB12&quot;&gt;margin-bottom: 12px &lt;/div&gt;
+                    &lt;div class=&quot;marB16&quot;&gt;margin-bottom: 16px &lt;/div&gt;
+                    &lt;div class=&quot;marB20&quot;&gt;margin-bottom: 20px &lt;/div&gt;
+                    &lt;div class=&quot;marB32&quot;&gt;margin-bottom: 32px &lt;/div&gt;
+                    &lt;div class=&quot;marR4&quot;&gt;margin-right: 4px &lt;/div&gt;
+                    &lt;div class=&quot;marL4&quot;&gt;margin-left: 4px &lt;/div&gt;
+                    &lt;div class=&quot;marL24&quot;&gt;margin-left: 24px &lt;/div&gt;
+                    &lt;div class=&quot;marH06&quot;&gt;margin: 6px 0 &lt;/div&gt;
+                    &lt;div class=&quot;marH08&quot;&gt;margin: 8px 0 &lt;/div&gt;
+                    &lt;div class=&quot;marH12&quot;&gt;margin: 12px 0 &lt;/div&gt;
+                    &lt;div class=&quot;marH16&quot;&gt;margin: 16px 0 &lt;/div&gt;
+                    &lt;div class=&quot;marH20&quot;&gt;margin: 20px 0 &lt;/div&gt;
+                    &lt;div class=&quot;marH40&quot;&gt;margin: 40px 0 &lt;/div&gt;
+                    &lt;div class=&quot;marW-20&quot;&gt;margin: 0 -20px &lt;/div&gt;
+                    &lt;div class=&quot;marT-20W-20&quot;&gt;margin: -20px -20px 0&lt;/div&gt;
+                </code></pre>
+
+
+
+                <div class="h100"></div>
+
+            </section>
+
+
+
+        </main>
+
+
+    </div>
+    <!-- wrapper -->
+
+
+</body>
+
+</html>

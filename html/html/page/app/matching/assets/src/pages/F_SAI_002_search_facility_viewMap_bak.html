@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+
+    <title>F_SAI_001_search_facility.html</title>
+
+
+    <!-- jquery -->
+    <script type="text/javascript" src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script type="text/javascript" src="../js/materialize.min.js"></script>
+
+    <!-- guide.js -->
+    <script type="text/javascript" src="../js/custom/guide.js"></script>
+
+    <!-- bottom_sheet.js -->
+    <script type="text/javascript" src="../js/custom/script_bottom_sheet_pb.js" defer></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="../css/materialize.min.css" />
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="../js/swiper/swiper-bundle.min.css" />
+
+
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+
+    <style>
+
+        .faList_Swiper{width: 100%;margin-top: 20px;}
+
+        .faList_Swiper .swiper-slide{width: calc(100% - 40px);}
+
+    </style>
+
+
+    <script>
+
+        $(function(){
+
+            //시도 지역선택 chip
+            $('.chip_area li').each(function(){
+
+            var thisRegion = $(this).parent('.chip_area').attr('title');
+            var thisTxt = $(this).text();
+
+            $(this).click(function () {
+
+                
+                //region01_modal 클릭
+                if ($(this).closest('#region01_modal').length > 0) {
+
+                    //모달 breadcrumb 텍스트 변경
+                    $('[id$="_modal"]').find('.breadCb .dept01').text(thisTxt);
+
+                    //region01_modal적용하기 버튼 활성화
+                    $('[title="region01_apply"]').removeClass('btn_disable').addClass('btn_primary')
+
+                    //적용하기버튼, breadcrumb dept02 버튼 클릭시
+                    $('[title=region01_apply], .breadCb .dept02').click(function(){
+
+                        //주소필터 텍스트 변경
+                        $('.region01_evt_txt').text(thisTxt);
+
+                    });
+                    
+                }
+
+                //region02_modal 클릭
+                if ($(this).closest('#region02_modal').length > 0) {
+
+                    //모달 breadcrumb 텍스트 변경
+                    $('[id$="_modal"]').find('.breadCb .dept02').text(thisTxt);
+                    
+                    //region02_modal적용하기 버튼 활성화
+                    $('[title="region02_apply"]').removeClass('btn_disable').addClass('btn_primary')
+
+                    $('[title=region02_apply]').click(function(){
+
+                        //주소필터 텍스트 변경
+                        $('.region02_evt_txt').text(thisTxt);
+
+                    });
+
+                }
+
+
+                //버튼 활성화 클래스변경
+                $(this).parent('.chip_area').find('li').removeClass('active');
+                $(this).addClass('active');
+
+            });
+
+
+            });
+
+        });
+
+
+        $(function(){
+
+            //지도 클릭하면 슬라이더 숨김
+
+            $('.mapTest').click(function(){
+
+                $('.faList_Swiper').slideUp(150);
+
+            });
+
+        });
+
+    </script>
+
+
+</head>
+
+<body class="">
+    <div class="wrapper">
+
+
+        <header>
+            <nav class="top">
+                <div class="btn_back">
+                    <span class="icon"></span>
+                    <div class="txt">
+                        <span class="txtEvt">요양병원</span>
+                    </div>
+                </div>
+                <div class="icon_area waves-effect">
+                    <div class="icon_btn i_search"></div>
+                </div>
+
+
+
+            </nav>
+        </header>
+
+        <main>
+            <section class="viewMap">
+
+                <div class="relative mapTest" style="background: url('/html/page/app/matching/assets/src/images/sample/map_sam01.png') no-repeat center;background-size: cover; height: 100%;">
+                    지도샘플
+                </div>
+
+                <div title="sampleCk01" class="map_tooltip active" style="top:60px;left:20px;">해야요양병원</div>
+                <div title="sampleCk02" class="map_tooltip" style="top:120px;left:20px;">가나요양병원</div>
+                <div title="sampleCk03" class="map_tooltip" style="top:180px;left:20px;">네이처이름<br>긴요양병원</div>
+                <div title="sampleCk04" class="map_tooltip" style="top:260px;left:20px;">우리요양병원</div>
+
+                <div class="map_tool_dept d02" style="top:60px;right:20px;">영등포구<span class="num">21</span></div>
+                <div class="map_tool_dept d02" style="top:110px;right:20px;">동작구<span class="num">1</span></div>
+                <div class="map_tool_dept d02" style="top:160px;right:-20px;">용산구<span class="num">486</span></div>
+
+                <div class="map_tool_dept d01" style="top:230px;right:20px;">서울<span class="num">21</span></div>
+                <div class="map_tool_dept d01" style="top:280px;right:-20px;">인천<span class="num">1</span></div>
+                <div class="map_tool_dept d01" style="top:330px;right:20px;">경기<span class="num">486</span></div>
+                
+
+                <!-- 상단 고정 -->
+                <div class="top_mapView">
+
+                    <div class="addr_select show-modal region01_btn_evt">
+                        <div>
+                            <span class="region01_evt_txt">서울시</span>
+                            <span class="region02_evt_txt">강남구</span>
+                        </div>
+                        <img src="/html/page/app/matching/assets/src/images/04icon/chevron-down.svg" alt="">
+                    </div>
+
+                </div>
+
+
+                <!-- 하단 고정-->
+                <div class="footer_mapView">
+
+                    <ul class="mapBtn_area">
+                        
+                        <li></li>
+                        <li>
+                            <a href="F_SAI_001_search_facility.html" class="btnView">
+                                <img src="/html/page/app/matching/assets/src/images/04icon/icon_viewList.svg">
+                                목록보기
+                            </a>
+                        </li>
+                        <li>
+                            <div class="c_location"></div>
+                        </li>
+                        
+                        
+                    </ul>
+
+
+                    <!-- Swiper -->
+                    <div class="swiper faList_Swiper">
+                        <div class="swiper-wrapper">
+
+                            <div title="sampleCk01" class="swiper-slide">
+                                <div class="card item_facility padH20W16">
+
+                                    <div class="ctn_area">
+                                        <div class="title">111해야요양병원 요양병원 요양병원 요양병원 요양병원</div>
+                                        <div class="addr">서울특별시 강남구 헌릉로569길 21-40(세곡동) 주소가 너무 길어요</div>
+                                        <div>
+                                            <span class="badge_order back_danger_subtle_fs12">1등급</span>
+                                            <span class="badge_order back_gray_subtle_fs12">대형</span>
+                                            <span class="badge_order back_gray_subtle_fs12">설립4년</span>
+                                        </div>
+            
+                                    </div>
+                                </div>
+                                <!-- card -->
+                            </div>
+                            <!-- swiper-slide -->
+
+                            <div title="sampleCk02" class="swiper-slide">
+                                <div class="card item_facility padH20W16">
+
+                                    <div class="ctn_area">
+                                        <div class="title">222가나 요양병원 요양병원 요양병원</div>
+                                        <div class="addr">서울특별시 강남구 헌릉로569길 21-40(세곡동)</div>
+                                        <div>
+                                            <span class="badge_order back_danger_subtle_fs12">1등급</span>
+                                            <span class="badge_order back_gray_subtle_fs12">대형</span>
+                                            <span class="badge_order back_gray_subtle_fs12">설립400년</span>
+                                        </div>
+            
+                                    </div>
+                                </div>
+                                <!-- card -->
+                            </div>
+                            <!-- swiper-slide -->
+
+                            <div title="sampleCk03" class="swiper-slide">
+                                <div class="card item_facility padH20W16">
+
+                                    <div class="ctn_area">
+                                        <div class="title">333네이처이름요양병원</div>
+                                        <div class="addr">서울특별시 강남구 헌릉로569길 21-40(세곡동)</div>
+                                        <div>
+                                            <span class="badge_order back_danger_subtle_fs12">2등급</span>
+                                            <span class="badge_order back_gray_subtle_fs12">대형</span>
+                                            <span class="badge_order back_gray_subtle_fs12">설립400년</span>
+                                        </div>
+            
+                                    </div>
+                                </div>
+                                <!-- card -->
+                            </div>
+                            <!-- swiper-slide -->
+
+                            <div title="sampleCk04" class="swiper-slide">
+                                <div class="card item_facility padH20W16">
+
+                                    <div class="ctn_area">
+                                        <div class="title">444우리요양병원</div>
+                                        <div class="addr">서울특별시 강남구 헌릉로569길 21-40(세곡동)</div>
+                                        <div>
+                                            <span class="badge_order back_danger_subtle_fs12">2등급</span>
+                                            <span class="badge_order back_gray_subtle_fs12">대형</span>
+                                            <span class="badge_order back_gray_subtle_fs12">설립400년</span>
+                                        </div>
+            
+                                    </div>
+                                </div>
+                                <!-- card -->
+                            </div>
+                            <!-- swiper-slide -->
+
+
+                        </div>
+                    </div>
+                    <!-- swiper -->
+
+
+
+
+                </div>
+                <!-- footer_mapView -->
+                
+
+            </section>
+        </main>
+
+
+
+    </div>
+    <!-- wrapper -->
+
+
+
+
+        <!-- 시/도 modal -->
+        <div id="region01_modal" class="bottom-sheet_handle">
+            <div class="sheet-overlay"></div>
+            <div class="content">
+                <div class="drag_handle_area drag-icon">
+                    <span class="drag_handle"></span>
+                </div>
+                <div class="modal_header">
+                    <h4 class="modal_title">
+                        <div class="breadCb">
+                            <span class="dept01 active">시/도</span>
+                            <span class="dept02 show-modal region02_btn_evt close_modal">시/군/구</span>
+                        </div>
+                    </h4>
+                    <div class="close_x close_modal"></div>
+                </div>
+                <div class="modal-content">
+
+
+                    <div class="h16"></div>
+
+                    <ul title="region01" class="chip_area">
+    
+                        <li>서울</li>
+                        <li>부산</li>
+                        <li>대구</li>
+                        <li>인천</li>
+                        <li>광주</li>
+    
+                        <li>대전</li>
+                        <li>울산</li>
+                        <li>서울</li>
+                        <li>부산</li>
+                        <li>대구</li>
+    
+                        <li>인천</li>
+                        <li>광주</li>
+                        <li>대전</li>
+                        <li>울산</li>
+                        <li>서울</li>
+    
+    
+                    </ul>
+
+                    <div class="h40"></div>
+    
+    
+
+                </div>
+
+                <div class="modal-footer">
+                    <div class="btn_area d-flex">
+                        <a title="region01_apply" class="modal-close waves-effect btn btn-large w100p show-modal region02_btn_evt close_modal btn_disable">적용하기</a>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+        <!-- mr1_modal -->
+
+
+        <!-- 시/군/구 modal -->
+        <div id="region02_modal" class="bottom-sheet_handle">
+            <div class="sheet-overlay"></div>
+            <div class="content">
+                <div class="drag_handle_area drag-icon">
+                    <span class="drag_handle"></span>
+                </div>
+                <div class="modal_header">
+                    <h4 class="modal_title">
+                        <div class="breadCb">
+                            <span class="dept01 selected show-modal region01_btn_evt close_modal">시/도</span>
+                            <span class="dept02 active">시/군/구</span>
+                        </div>
+                    </h4>
+                    <div class="close_x close_modal"></div>
+                </div>
+                <div class="modal-content">
+
+
+                    <div class="h16"></div>
+
+                    <ul title="region02" class="chip_area">
+
+                        <li>전체</li>
+                        <li>강동구</li>
+                        <li>강북구</li>
+                        <li>강서구</li>
+                        <li>관악구</li>
+    
+                        <li>광진구</li>
+                        <li>구로구</li>
+                        <li>금천구</li>
+                        <li>노원구</li>
+                        <li>창원시<br>마산합포구</li>
+    
+                        <li>창원시<br>일이삼사오</li>
+                        <li>두구</li>
+                        <li>구로구</li>
+                        <li>금천구</li>
+                        <li>노원구</li>
+    
+                        <li>강남구</li>
+                        <li>강동구</li>
+                        <li>강북구</li>
+                        <li>강서구</li>
+                        <li>관악구</li>
+    
+                        <li>광진구</li>
+                        <li>구로구</li>
+                        <li>금천구</li>
+                        <li>노원구</li>
+                        <li>도봉구</li>
+    
+                        <li>동대문구</li>
+                        <li>광진구</li>
+                        <li>구로구</li>
+    
+                    </ul>
+    
+    
+
+                </div>
+
+                <div class="modal-footer">
+                    <div class="btn_area d-flex">
+                        <a title="region02_apply" class="modal-close waves-effect btn btn-large w100p close_modal btn_disable">적용하기</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- mr2_modal -->
+
+
+    <script src="../js/swiper/swiper-bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var swiper = new Swiper(".faList_Swiper", {
+                slidesPerView: "auto",
+                spaceBetween: 8,
+                centeredSlides: true,  
+                loop: true,
+                pagination: {
+                    clickable: true,
+                },
+                on: {
+                    slideChangeTransitionEnd: function () {
+                        updateActiveTooltip();
+                    }
+                }
+            });
+
+            //Swiper 슬라이드 변경 시 map_tooltip 업데이트
+            function updateActiveTooltip() {
+                let activeSlide = $(".swiper-slide-active");
+                if (!activeSlide.length) return;
+
+                let activeTitle = activeSlide.attr("title");
+
+                // 모든 map_tooltip에서 active 제거 후, 해당 title 가진 요소만 active 추가
+                $(".map_tooltip").removeClass("active");
+                $('.map_tooltip[title="' + activeTitle + '"]').addClass("active");
+            }
+
+            //map_tooltip 클릭 시 해당 swiper-slide로 이동
+            $(".map_tooltip").on("click", function () {
+                let clickedTitle = $(this).attr("title");
+
+                // 모든 map_tooltip에서 active 제거 후 클릭된 요소만 active 추가
+                $(".map_tooltip").removeClass("active");
+                $(this).addClass("active");
+
+                //숨김처리되었을때 슬라이더 표시
+                $('.faList_Swiper').delay(100).slideDown(150);
+
+                // Swiper에서 해당 title을 가진 슬라이드 찾기 (loop 모드 대응)
+                let targetIndex = null;
+
+                $(".faList_Swiper .swiper-slide").each(function (index) {
+                    if ($(this).attr("title") === clickedTitle) {
+                        targetIndex = $(this).index(); // 현재 슬라이드의 실제 index 저장
+                        return false; // 반복문 중단
+                    }
+                });
+
+                if (targetIndex !== null) {
+                    swiper.slideTo(targetIndex); // Swiper를 해당 index로 이동
+                }
+            });
+        });
+
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+
+    <title>GUIDE_002_08_TopNavigation.html</title>
+
+
+    <!-- jquery -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/materialize.js"></script>
+
+    <!-- guide.js -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/materialize.min.css" />
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/style.css" />
+
+    <!-- guideStyle_2025.css -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/guideStyle_2025.css" />
+
+    <!-- guideStyle_2025.js -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guideStyle_2025.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="gs_header">
+
+            <a href="GUIDE_000_index.html" class="logo"><span>돌봄 디자인시스템</span></a>
+
+            <ul class="header_menu">
+                <li><a href="GUIDE_001_Foundation.html">Foundation</a></li>
+                <li><a href="GUIDE_002_Component.html" class="active">Component</a></li>
+                <li><a href="GUIDE_003_AppScreen.html">App Screen</a></li>
+                <li><a href="GUIDE_004_WebScreen.html">Web Screen</a></li>
+                <li><a href="GUIDE_005_StyleGuide.html">Style Guide</a></li>
+                <li class="search"><a href="#"></a></li>
+            </ul>
+
+        </div>
+
+    </header>
+
+    <div class="wrap">
+
+        <main>
+
+
+            <nav class="sidebar">
+                
+                <div class="sidebar_header">
+                    <div class="title_area">
+                        <div class="close_x"></div>
+                    </div>
+                    <div class="sidebar_search">
+                        <input type="text" placeholder="검색어를 입력해 주세요.">
+                        <div class="search">
+                            <a href="#"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="title">Component</h4>
+
+                <div class="sidebar_list">
+                    <ul class="tabs_dept_sidebar">
+                        <li class="tab"><a class="active" title="dept_app">App Screen</a></li>
+                        <li class="tab"><a class="" title="dept_web">Web Screen</a></li>
+                    </ul>
+
+                    <div class="tab_list dept_app" title="siteMap_guide">
+                        <ul class="dept1">
+                            <li><a href="GUIDE_002_Component.html">Button</a></li>
+                            <li><a href="GUIDE_002_02_SelectionControls.html">Selection Controls</a></li>
+                            <li><a href="GUIDE_002_03_Link.html">Link</a></li>
+                            <li><a href="GUIDE_002_04_Chips.html">Chips</a></li>
+                            <li><a href="GUIDE_002_05_TextField.html">TextField</a></li>
+                            
+                            <li><a href="GUIDE_002_06_SelectField.html">SelectField</a></li>
+                            <li><a href="GUIDE_002_07_OptionList.html">OptionList</a></li>
+                            <li><a class="active" href="GUIDE_002_08_TopNavigation.html">Top Navigation</a></li>
+                            <li><a href="GUIDE_002_09_BottomNavigation.html">Bottom Navigation</a></li>
+                            <li><a href="GUIDE_002_10_List.html">List</a></li>
+                            
+                            <li><a href="GUIDE_002_11_Popup.html">Popup</a></li>
+                            <li><a href="GUIDE_002_12_BottomSheet.html">BottomSheet</a></li>
+                            <li><a href="GUIDE_002_13_Banner.html">Banner</a></li>
+                            <li><a href="GUIDE_002_14_Tab.html">Tab</a></li>
+                            <li><a href="GUIDE_002_15_NumberStepper.html">Number Stepper</a></li>
+
+                            <li><a href="GUIDE_002_16_TextAreaField.html">TextAreaField</a></li>
+                            <li><a href="GUIDE_002_17_Accordion.html">Accordion</a></li>
+                            <li><a href="GUIDE_002_18_Progressbar.html">Progressbar</a></li>
+
+                        </ul>
+                    </div>
+
+
+                </div>
+
+
+            </nav>
+
+
+ 
+            <section>
+
+
+                <div class="h48"></div>
+
+                <div class="titleNav">Top Navigation</div>
+
+                <div class="h24"></div>
+ 
+                <div class="roundBox_01">
+                    탑 내비게이션(Top Navigation)은 현재 화면의 정보 및 사용자가 수행 가능한 액션 혹은 기능이 표시되는 컴포넌트입니다.
+                </div>
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Anatomy, 컴포넌트 내부요소</h3>
+
+                <div class="h24"></div>
+
+                <div class="roundBox_01 flex_center">
+                    <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_45_01_topNavigation.svg" alt="">
+                </div>
+
+                <div class="h16"></div>
+
+                <ul class="d-flex gap16 color_t_s font_ssr">
+                    <li>1. Container</li>
+                    <li>2. Left Icon Area</li>
+                    <li>3. Text Label</li>
+                    <li>4. Right Icon Area</li>
+                </ul>
+
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Type, 타입</h3>
+                
+                <div class="h24"></div>
+
+                <div class="roundBox_01 flex_center">
+                    <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_46_01_topNavigation.svg" alt="">
+                </div>
+
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Spec, 제작가이드</h3>
+
+                <div class="h12"></div>
+
+                <div class="color_tp_s font_sbmr">
+                    Chip의 높이는 최소 40px값을 권장하며, 텍스트와 컨테이너 사이의 패딩 값은 16~20px를 권장합니다.
+                </div>
+
+                <div class="h24"></div>
+
+                <div class="roundBox_01 flex_center">
+                    <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_47_01_topNavigation.svg" alt="">
+                </div>
+
+
+
+
+
+
+
+
+
+                <div class="h100"></div>
+
+            </section>
+
+
+
+        </main>
+
+
+    </div>
+    <!-- wrapper -->
+
+
+</body>
+
+</html>

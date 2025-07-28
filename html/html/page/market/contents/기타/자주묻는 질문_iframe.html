@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>market</title>
+
+    <!-- plugin -->
+    <link rel="stylesheet" href="../../../../core/vendor/swiperjs/swiper-bundle.css">
+    <script src="../../../../core/vendor/jquery/jquery-3.6.0.min.js"></script>
+    <script src="../../../../core/vendor/swiperjs/swiper-bundle.min.js"></script>
+
+    <!-- market -->
+    <link rel="stylesheet" href="../../assets/style/style.min.css">
+
+    <!-- ckview -->
+    <link rel="stylesheet" href="/html/core/script/ckeditor5-online-builder/sample/ckview.css">
+
+    <script src="../../assets/script/common.js"></script>
+    <script src="../../assets/script/product.js"></script>
+</head>
+<body class="is-banner">
+    <!-- access -->
+    <ul id="skip-navigation">
+        <li><a href="#container">본문 바로가기</a></li>
+    </ul>
+    <!-- //access -->
+
+    <!-- header -->
+    <header id="header">
+        <!-- banner -->
+        <aside id="banner">
+            <div class="container">
+                <img src="/html/page/market/assets/images/dummy/img-dummy-notice.jpg" alt="">
+                <button type="button">
+                    <span class="sr-only">닫기</span>
+                </button>
+            </div>
+        </aside>
+        <script>
+            $('#banner button').on('click', function() {
+                $('body').removeClass('is-banner');
+            })
+        </script>
+        <!-- //banner -->
+
+        <!-- header logo -->
+        <div id="utility">
+            <h1 class="global-logo"><a href="#"><em>이로움 ON</em></a></h1>
+            <ul class="utility-menu">
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">회원가입</a></li>
+                <li><a href="#">고객센터</a></li>
+            </ul>
+        </div>
+        <!-- //header logo -->
+    
+        <!-- navigation -->
+        <nav id="navigation">
+            <div class="container">
+                <div class="navigation-allmenu">
+                    <button type="button" class="allmenu-toggle">
+                        <i></i>
+                        <span>전체 카테고리</span>
+                    </button>
+                    <div class="allmenu-list">
+                        <div class="allmenu-group">
+                            <ul>
+                                <li class="allmenu-item is-depth">
+                                    <a href="#">
+                                        <i><img src="/html/page/market/assets/images/ico-navigation-menu1.png" alt=""></i>
+                                        복지용구
+                                    </a>
+                                    <div class="allmenu-group2">
+                                        <ul>
+                                            <li class="allmenu-item2 is-depth">
+                                                <a href="#">고령친화우수식품</a>
+                                                <div class="allmenu-group3">
+                                                    <ul>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="allmenu-item2 is-depth">
+                                                <a href="#">고령친화우수식품</a>
+                                                <div class="allmenu-group3">
+                                                    <ul>
+                                                        <li class="allmenu-item3"><a href="#">유동식2</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="allmenu-item2">
+                                                <a href="#">고령친화우수식품</a>
+                                                <div class="allmenu-group3">
+                                                    <ul>
+                                                        <li class="allmenu-item3"><a href="#">유동식3</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="allmenu-item2 is-depth">
+                                                <a href="#">고령친화우수식품</a>
+                                                <div class="allmenu-group3">
+                                                    <ul>
+                                                        <li class="allmenu-item3"><a href="#">유동식4</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="allmenu-item2">
+                                                <a href="#">고령친화우수식품</a>
+                                            </li>
+                                            <li class="allmenu-item2">
+                                                <a href="#">고령친화우수식품</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="allmenu-item is-depth">
+                                    <a href="#">
+                                        <i><img src="/html/page/market/assets/images/ico-navigation-menu2.png" alt=""></i>
+                                        식품관
+                                    </a>
+                                    <div class="allmenu-group2">
+                                        <ul>
+                                            <li class="allmenu-item2 is-depth">
+                                                <a href="#">고령친화우수식품</a>
+                                                <div class="allmenu-group3">
+                                                    <ul>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="allmenu-item2 is-depth">
+                                                <a href="#">고령친화우수식품</a>
+                                                <div class="allmenu-group3">
+                                                    <ul>
+                                                        <li class="allmenu-item3"><a href="#">유동식2</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="allmenu-item2">
+                                                <a href="#">고령친화우수식품</a>
+                                                <div class="allmenu-group3">
+                                                    <ul>
+                                                        <li class="allmenu-item3"><a href="#">유동식3</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="allmenu-item2 is-depth">
+                                                <a href="#">고령친화우수식품</a>
+                                                <div class="allmenu-group3">
+                                                    <ul>
+                                                        <li class="allmenu-item3"><a href="#">유동식4</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="allmenu-item2">
+                                                <a href="#">고령친화우수식품</a>
+                                            </li>
+                                            <li class="allmenu-item2">
+                                                <a href="#">고령친화우수식품</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="allmenu-item is-depth">
+                                    <a href="#">
+                                        <i><img src="/html/page/market/assets/images/ico-navigation-menu3.png" alt=""></i>
+                                        시니어관
+                                    </a>
+                                    <div class="allmenu-group2">
+                                        <ul>
+                                            <li class="allmenu-item2 is-depth">
+                                                <a href="#">고령친화우수식품</a>
+                                                <div class="allmenu-group3">
+                                                    <ul>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                        <li class="allmenu-item3"><a href="#">유동식</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="allmenu-item2 is-depth">
+                                                <a href="#">고령친화우수식품</a>
+                                                <div class="allmenu-group3">
+                                                    <ul>
+                                                        <li class="allmenu-item3"><a href="#">유동식2</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="allmenu-item2">
+                                                <a href="#">고령친화우수식품</a>
+                                                <div class="allmenu-group3">
+                                                    <ul>
+                                                        <li class="allmenu-item3"><a href="#">유동식3</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="allmenu-item2 is-depth">
+                                                <a href="#">고령친화우수식품</a>
+                                                <div class="allmenu-group3">
+                                                    <ul>
+                                                        <li class="allmenu-item3"><a href="#">유동식4</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="allmenu-item2">
+                                                <a href="#">고령친화우수식품</a>
+                                            </li>
+                                            <li class="allmenu-item2">
+                                                <a href="#">고령친화우수식품</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="allmenu-item">
+                                    <a href="#">
+                                        <i><img src="/html/page/market/assets/images/ico-navigation-menu1.png" alt=""></i>
+                                        복지용구
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="allmenu-user">
+                            <a href="#">로그인</a>
+                            <a href="#">회원가입</a>
+                            <a href="#">고객센터</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="navigation-submenu">
+                    <ul>
+                        <li><a href="#">기획전</a></li>
+                        <li><a href="#">이벤트</a></li>
+                        <li><a href="#">고령친화 우수식품</a></li>
+                        <li><a href="#">스토리</a></li>
+                    </ul>
+                </div>
+                <div class="navigation-search">
+                    <button class="search-toggle">검색 펼치기 접기</button>
+                    <form action="" class="search-form">
+                        <div class="form-field">
+                            <legend>통합검색</legend>
+                            <input type="text" placeholder="검색어를 입력하세요">
+                            <button type="submit">검색</button>
+                        </div>
+                        <div class="form-current">
+                            <p class="current-title">
+                                <strong>최근 검색어</strong>
+                                <button type="button">전체 삭제</button>
+                            </p>
+                            <div class="current-items">
+                                <div class="current-item">
+                                    <a href="#">실버카</a>
+                                    <button type="button">삭제</button>
+                                </div>
+                                <div class="current-item">
+                                    <a href="#">실버카</a>
+                                    <button type="button">삭제</button>
+                                </div>
+                                <div class="current-item">
+                                    <a href="#">실버카</a>
+                                    <button type="button">삭제</button>
+                                </div>
+                                <div class="current-item">
+                                    <a href="#">실버카</a>
+                                    <button type="button">삭제</button>
+                                </div>
+                                <div class="current-item">
+                                    <a href="#">실버카</a>
+                                    <button type="button">삭제</button>
+                                </div>
+                                <div class="current-item">
+                                    <a href="#">실버카</a>
+                                    <button type="button">삭제</button>
+                                </div>
+                            </div>
+                            <div class="current-option">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="search-save">
+                                    <label class="form-check-label" for="search-save">검색어 저장 끄기</label>
+                                </div>
+                                <button type="button" class="option-close">닫기</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <ul class="navigation-util">
+                    <li>
+                        <a href="#" class="util-item1">
+                            <span class="sr-only">마이페이지</span>
+                            <i>2</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="util-item2">
+                            <span class="sr-only">찜한상품</span>
+                            <i>2</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="util-item3">
+                            <span class="sr-only">장바구니</span>
+                            <i>2</i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- //navigation -->
+    </header>
+    <!-- //header -->
+
+    <!-- container -->
+    <main id="container">
+        <div id="page-header">
+            <ul class="page-header-breadcrumb">
+                <li><a href="#">홈</a></li>
+                <li><a href="#">복지용구</a></li>
+                <li><a href="#">복지용구</a></li>
+                <li><a href="#">복지용구</a></li>
+            </ul>
+            <div class="page-header-title">
+                <a href="#" class="back">이전 페이지 가기</a>
+                <h2 class="subject"><a href="#">복지용구</a></h2>
+            </div>
+            <button type="button" id="page-sidenav-toggle">사이드메뉴 레이어 열기/닫기</button>
+        </div>
+
+        <div id="page-container">
+            <nav id="page-sidenav">
+                <div class="page-sidenav-menu">
+                    <div class="menu-container">
+                        <div class="menu-group">
+                            <div class="content">
+                                <ul class="menulist">
+                                    <li class="is-active"><a href="#">자주묻는 질문</a></li>
+                                    <li><a href="#">1:1 문의</a></li>
+                                    <li><a href="#">공지사항</a></li>
+                                    <li><a href="#">이로움 혜택</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div id="page-content">
+                <ul class="tabs is-cols-6">
+                    <li><a href="/market/etc/faq/list" class="tabs-link sortBy h-10 text-sm md:h-13 md:text-base lg:h-15 lg:text-lg active">전체</a></li>
+                    <li><a href="/market/etc/faq/list?ctgryNo=1" class="tabs-link h-10 text-sm md:h-13 md:text-base lg:h-15 lg:text-lg sortBy1">상품관련</a></li>
+                    <li><a href="/market/etc/faq/list?ctgryNo=2" class="tabs-link h-10 text-sm md:h-13 md:text-base lg:h-15 lg:text-lg sortBy2">주문/결제</a></li>
+                    <li><a href="/market/etc/faq/list?ctgryNo=3" class="tabs-link h-10 text-sm md:h-13 md:text-base lg:h-15 lg:text-lg sortBy3">배송관련</a></li>
+                    <li><a href="/market/etc/faq/list?ctgryNo=4" class="tabs-link h-10 text-sm md:h-13 md:text-base lg:h-15 lg:text-lg sortBy4">환불/AS</a></li>
+                    <li><a href="/market/etc/faq/list?ctgryNo=5" class="tabs-link h-10 text-sm md:h-13 md:text-base lg:h-15 lg:text-lg sortBy5">마일리지/쿠폰</a></li>
+                    <li><a href="/market/etc/faq/list?ctgryNo=6" class="tabs-link h-10 text-sm md:h-13 md:text-base lg:h-15 lg:text-lg sortBy6">기타문의</a></li>
+                    <li><a href="/market/etc/faq/list?ctgryNo=7" class="tabs-link h-10 text-sm md:h-13 md:text-base lg:h-15 lg:text-lg sortBy7">마일리지</a></li>
+                    <li><a href="/market/etc/faq/list?ctgryNo=8" class="tabs-link h-10 text-sm md:h-13 md:text-base lg:h-15 lg:text-lg sortBy8">쿠폰</a></li>
+                </ul>
+
+                <div class="mt-7.5 space-y-5 md:mt-13 md:space-y-7.5" id="accordion-question">
+                    <div class="question-item">
+                        <div class="item-container">
+                            <a href="#collapse-item1" class="item-header" data-bs-toggle="collapse" data-bs-target="#collapse-item1" aria-expanded="true">
+                                주문/결제
+                                <strong>결제 시 에러 메시지가 나오는 경우 어떻게 해야하나요?</strong>
+                            </a>
+                            <div id="collapse-item1" class="item-body collapse show" data-bs-parent="#accordion-question">
+                                <div class="container ck-content">
+                                    <p>테스트입니다240227최종혁테스트입니다240227최종혁테스트입니다240227최종혁&nbsp;테스트입니다240227최종혁테스트입니다240227최종혁테스트입니다240227최종혁&nbsp;</p>
+                                    <p>&nbsp;</p>
+                                    <p><span class="text-huge"><strong>테스트입니다240227최종혁테스트입니다240227최종혁테스트입니다240227최종혁&nbsp;</strong></span></p>
+                                    <p>&nbsp;</p>
+                                    <p>테스트입니다240227최종혁테스트입니다240227최종혁테스트입니다240227</p>
+                                    <p>최종혁테스트입니다240227최종혁테스트입니다240227최종혁테스트입니다240227최종혁&nbsp;</p>
+                                    <p>&nbsp;</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="question-item">
+                        <div class="item-container">
+                            <a href="#collapse-item2" class="item-header" data-bs-toggle="collapse" data-bs-target="#collapse-item2" aria-expanded="false">
+                                주문/결제
+                                <strong>결제 시 에러 메시지가 나오는 경우 어떻게 해야하나요?</strong>
+                            </a>
+                            <div id="collapse-item2" class="item-body collapse show" data-bs-parent="#accordion-question">
+                                <div class="container ck-content">
+                                    <p>테스트입니다2405</p>
+                                    <h2>테스트입니다2405</h2>
+                                    <p><strong>테스트입니다2405</strong></p>
+                                    <p>&nbsp;</p>
+                                    <p><span style="background-color:hsl(30, 75%, 60%);">ㅇㄹㄴㅇㄴㅇㄹㄹㅇ</span></p>
+                                    <p><span class="text-huge">ㄴㅇ1121212ㄹㄴㅇㄹㄴㅇㄹ</span></p>
+                                    
+                                    <p>급여비용 연간 한도액 적용기간은 수급자의 유효기간 개시일부터 1년간이며, 한도액은 보건복지부장관의 연간한도액 160만원입니다.&nbsp;<br>복지용구 급여비용 (공단부담액 + 본인부담액)으로 구입과
+                                        대여를 합산한 총금액이 연간 160만원을 초과하면 초과한 금액부터 전액 본인 부담입니다.&nbsp;</p>
+                                    <p>복지용구 상담 및 급여가 구매는 장기요양 기관으로 등록된 복지용구 사업소에 문의하시면 됩니다.</p>
+                                    <p>복지용구 사업소 안내 : 국민건강관리보험공단 장기요양보험 홈페이지 (로그인 필요 없음)</p>
+                                    <p><a href="https://www.longtermcare.or.kr/npbs/indexr.jsp">https://www.longtermcare.or.kr/npbs/indexr.jsp</a></p>
+                                    <p>우측 메뉴 '장기요양기관' 찾기에서 검색하시면 됩니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="question-item">
+                        <div class="item-container">
+                            <a href="#collapse-item3" class="item-header" data-bs-toggle="collapse" data-bs-target="#collapse-item3" aria-expanded="false">
+                                주문/결제
+                                <strong>결제 시 에러 메시지가 나오는 경우 어떻게 해야하나요?</strong>
+                            </a>
+                            <div id="collapse-item3" class="item-body collapse show" data-bs-parent="#accordion-question">
+                                <div class="container">
+                                    고객님께서 주문 또는 카드 결제 취소를 신청하시면 저희가 카드회사로 취소 청구를 합니다.
+                                    배송조회에서 주문취소로 표시되었다면 염려하지 않으셔도 됩니다.
+                                    결제대행사를 거쳐 처리가 되므로 취소접수후 3~5일후  카드회사로도 취소 내역을
+                                    확인하실 수 있습니다.
+                                    감사합니다.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pagination">
+                    <div class="paging">
+                        <a href="#" class="prev">이전</a>
+                        <a href="#" class="page active">1</a>
+                        <a href="#" class="page">2</a>
+                        <a href="#" class="page">3</a>
+                        <a href="#" class="page">4</a>
+                        <a href="#" class="page">5</a>
+                        <a href="#" class="next">다음</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- //container -->
+
+    <!-- quick -->
+    <div id="quick" class="global-quick">
+        <button type="button" class="moveTop">위로 이동</button>
+        <button type="button" class="channelTalk">위로 이동</button>
+    </div>
+    <!-- //quick -->
+
+    <!-- footer -->
+    <footer id="footer" class="global-footer">
+        <div class="footer-link">
+            <!-- 회사 메뉴 -->
+            <nav class="footer-menu">
+                <ul>
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">전자금융거래약관</a></li>
+                    <li><a href="#"><strong>개인정보보호방침</strong></a></li>
+                </ul>
+            </nav>
+            <!-- //회사 메뉴 -->
+
+            <!-- 패밀리 사이트 -->
+            <div class="footer-family">
+                <dl>
+                    <dt>슈퍼시니어</dt>
+                    <dd>
+                        <ul class="global-link">
+                            <li><a href="#" class="link-item4"><span class="sr-only">슈퍼시니어</span></a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>패밀리 사이트</dt>
+                    <dd>
+                        <ul class="global-link">
+                            <li>
+                                <a href="#" class="link-item1">
+                                    <div class="bubble">
+                                        <small>시니어 라이프 케어 플랫폼</small>
+                                        <strong>"이로움ON"</strong>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="link-item2">
+                                    <div class="bubble">
+                                        <strong>이로움ON 멤버스</strong>
+                                        <small>전국 2,432개 업체와 함께합니다</small>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="link-item3">
+                                    <div class="bubble">
+                                        <strong><img src="/html/core/images/txt-brand-link3.png" alt="이로움ON 마켓"></strong>
+                                        <small>
+                                            복지용구 사업소와 수급자 매칭부터<br>
+                                            주문, 계약 및 결제까지 한번에!
+                                        </small>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+            <!-- //패밀리 사이트 -->
+        </div>
+        
+        <hr>
+
+        <div class="footer-center">
+            <!-- 사이트 정보-->
+            <dl class="footer-company">
+                <dt><a href="#footer-collapse" data-bs-toggle="collapse" aria-expanded="false">(주)티에이치케이컴퍼니</a></dt>
+                <dd id="footer-collapse" class="collapse">
+                    <p>대표 : 신종호</p>
+                    <p>사업자등록번호 : 617-86-14330 [<a href="#">사업자정보확인</a>]</p>
+                    <p>통신판매신고번호 : 2016-부산금정-0114</p>
+                    <address>
+                        <p>주소 : 부산광역시 금정구 중앙대로 1815, 5층(구서동, 가루라빌딩)</p>
+                        <p>사무소 : 서울시 금천구 서부샛길 606 대성디폴리스 B동 1401호</p>
+                        <p>물류센터 : 인천광역시 서구 이든1로 21</p>
+                    </address>
+                </dd>
+            </dl>
+            <!-- //사이트 정보-->
+
+            <!-- 고객센터 -->
+            <dl class="footer-customer">
+                <dt>고객센터</dt>
+                <dd>
+                    <p><strong>주문안내 :</strong> <a href="tel:1588-1312">1588-1312</a></p>
+                    <p><strong>시스템안내 :</strong> <a href="tel:02-830-1312">02-830-1312</a></p>
+                </dd>
+                <dd>
+                    <p><strong>운영시간 :</strong> 월~금 오전 9:00~오후 6:00 점심시간 오후 12시 ~ 1시 (주말 및 공휴일 휴무)</p>
+                </dd>
+            </dl>
+            <!-- //고객센터 -->
+        </div>
+
+        <hr>
+
+        <!-- 카피 라이트 -->
+        <div class="footer-copyright">Copyright ⓒ<strong>EROUMMARKET</strong> All righs reserved</div>
+        <!-- //카피 라이트 -->
+    </footer>
+    <!-- //footer -->
+
+    <!-- 공지 레이어 배너 -->
+    <div class="notice-layer">
+        <div class="layer-content">
+            <img src="../../assets/images/dummy/img-dummy-detail-content.png" alt="">
+        </div>
+        <div class="layer-footer">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="check-close">
+                <label class="form-check-label" for="check-close">1일동안 보지 않음</label>
+            </div>
+            <button type="button" class="layer-close">닫기</button>
+        </div>
+    </div>
+    <!-- //공지 레이어 배너 -->
+
+    <script src="../../../../core/vendor/twelements/index.min.js"></script>
+    <script src="../../../../core/vendor/twelements/popper.min.js"></script>
+</body>
+</html>

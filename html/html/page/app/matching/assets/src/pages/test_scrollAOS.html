@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>number counter</title>
+  
+    <!-- jquery -->
+    <script src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script src="../js/materialize.min.js"></script>
+
+    <!-- guide.js -->
+    <script src="../js/custom/guide.js"></script>
+
+    <!-- DEDS-260 202412 bottom_sheet.js 추가 -->
+    <script type="text/javascript" src="../js/custom/script_bottom_sheet_pb.js" defer></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="../css/materialize.min.css">
+
+    <!-- DEDS-260 202412 AOS 추가 -->
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="../css/style.css">
+
+<script>
+
+    //welAni_03 숫자증가
+    $(function () {
+        
+        // 상태 추적 변수
+        var hasAnimated = false;
+        
+        $(window).scroll(function(){
+    
+            var $welAni03 = $('.interest_wel_ani_03');
+            var welAniTop_03 = $welAni03.offset().top;
+            var windowScrollTop = $(window).scrollTop();
+            var windowHeight = $(window).height();
+    
+            // 화면에 보이면 숫자 애니메이션 실행 (한 번만 실행)
+            if (welAniTop_03 <= windowScrollTop + windowHeight && !hasAnimated) {
+    
+                $('.counting').each(function() {
+                    var $this = $(this),
+                        countTo = $this.attr('data-count');
+                    
+                    $({ countNum: $this.text()}).animate({
+                        countNum: countTo
+                    },
+    
+                    {
+                        duration: 1000,
+                        easing:'linear',
+                        step: function() {
+                            // 콤마를 추가하기 위해 toLocaleString() 사용
+                            $this.text(Math.floor(this.countNum).toLocaleString());
+                        },
+                        complete: function() {
+                            $this.text(Math.floor(this.countNum).toLocaleString());
+                            // 애니메이션이 끝나면 상태 추적 변수 변경
+                            hasAnimated = true;
+                        }
+                    });  
+                });
+    
+            }//if end
+            
+        });
+    });
+
+</script>
+
+</head>
+<body>
+
+    <div style="height: 1500px;"></div>
+
+    <div class="interest_wel_ani_03">
+        <p><span class="counting" data-count="90000">0</span></p>
+
+        <p><span class="counting" data-count="65000">0</span></p>
+
+        <p><span class="counting" data-count="5230">0</span></p>
+    </div>
+
+    <div style="height: 1500px;"></div>
+
+</body>
+</html>

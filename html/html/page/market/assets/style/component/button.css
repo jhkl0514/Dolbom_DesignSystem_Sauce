@@ -1,0 +1,365 @@
+/* button */
+@layer components {
+    .btn {
+        @apply px-4 h-[2.625rem] text-[0.9375rem] leading-tight break-keep
+               hover:outline-0 hover:bg-gray2
+               focus:outline-0 focus:border-gray1 focus:bg-gray2 focus:ring-gray2
+               active:outline-0 active:border-gray1 active:bg-white active:ring-gray2
+               disabled:!border-gray2 disabled:!bg-gray2 disabled:!text-gray1
+               md:px-5 md:h-12 md:text-base;
+        &.btn-small {
+            @apply rounded px-3.5 h-8 text-sm
+                   md:px-5 md:h-9 md:text-[0.9375rem];
+        }
+        &.btn-large {
+            @apply px-6 h-[3.125rem] text-base
+                   md:px-9 md:h-[4.375rem] md:text-lg;
+        }
+        &.disabled {
+            @apply !border-gray2 !bg-gray2 !text-gray1;
+        }
+    }
+
+    .btn-small {
+        @apply rounded px-3.5 h-8 text-sm
+               md:px-5 md:h-9 md:text-[0.9375rem];
+    }
+
+    .btn-large {
+        @apply px-6 h-[3.125rem] text-base
+               md:px-9 md:h-[4.375rem] md:text-lg;
+    }
+
+    .btn-animate {
+        @apply min-w-[7em] transition-[transform,background-color,background-image,border,padding] duration-300 ease-in-out
+               before:absolute before:-top-[20%] before:-left-[200%] before:w-[158.75%] before:pt-[158.75%] before:bg-gray2 before:transition-all before:duration-700 before:-translate-y-[15.5%] before:-rotate-[35deg] before:ease-[cubic-bezier(0.25,0.1,0.25,1.0)]
+               hover:before:-left-[16%];
+        & strong {
+            @apply relative duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1.0)];
+        }
+        &.btn-large {
+            @apply min-w-[10em] duration-[400ms,500ms,500ms,500ms,500ms,500ms]
+                   before:duration-1000;
+            & strong {
+                @apply duration-1000;
+            }
+        }
+    }
+
+    .btn-primary, .btn-outline-primary {
+        @apply border-black2 hover:border-black2 hover:ring-black2/10 focus:border-black2 focus:ring-black2/10 active:border-black2 active:ring-black2/10;
+    }
+
+    .btn-primary {
+        @apply text-white bg-black2 hover:bg-black2 focus:bg-black2 active:bg-black2;
+        &.btn-animate {
+            @apply before:bg-white hover:bg-black2 hover:text-black2 focus:bg-black2 focus:text-white active:bg-white active:text-black2;
+        }
+    }
+
+    .btn-primary2 {
+        background-color: #ff6800;
+        @apply  text-white hover:bg-black2 focus:bg-black2 active:bg-black2;
+        &.btn-animate {
+            @apply before:bg-white hover:bg-black2 hover:text-black2 focus:bg-black2 focus:text-white active:bg-white active:text-black2;
+        }
+    }
+
+
+    .btn-outline-primary {
+        @apply bg-white text-black2 hover:bg-white focus:bg-white active:bg-white;
+        &.btn-animate {
+            @apply before:bg-black2 hover:bg-white hover:text-white focus:bg-white focus:text-black2 active:bg-black2 active:text-white;
+        }
+    }
+
+    .btn-secondary, .btn-outline-secondary {
+        @apply border-gray1 text-black2 hover:border-gray1 focus:border-gray1 active:border-gray1;
+    }
+
+    .btn-secondary {
+        @apply border-gray2 bg-gray2 hover:border-gray2 hover:bg-gray2 focus:border-gray2 focus:bg-gray2 active:border-gray2 active:bg-gray2;
+               &.btn-animate {
+                   @apply before:bg-white hover:border-gray1 focus:border-gray1 active:bg-white;
+               }
+    }
+
+    .btn-outline-secondary {
+        @apply bg-white hover:bg-white focus:bg-white active:bg-white;
+        &.btn-animate {
+            @apply before:bg-gray2 hover:bg-white focus:bg-white active:bg-gray2;
+        }
+    }
+
+    .btn-danger, .btn-outline-danger {
+        @apply border-red3 hover:border-red3 hover:ring-red3/10 focus:border-red3 focus:ring-red3/10 active:border-red3 active:ring-red3/10;
+    }
+
+    .btn-danger {
+        @apply text-white bg-red3 hover:bg-red3 focus:bg-red3 active:bg-red3;
+        &.btn-animate {
+            @apply before:bg-white hover:bg-red3 hover:text-red3 focus:bg-red3 focus:text-white active:bg-white active:text-red3;
+        }
+    }
+
+    .btn-outline-danger {
+        @apply bg-white text-red3 hover:bg-white focus:bg-white active:bg-white;
+        &.btn-animate {
+            @apply before:bg-red3 hover:bg-white hover:text-white focus:bg-white focus:text-red3 active:bg-red3 active:text-white;
+        }
+    }
+
+    .btn-success, .btn-outline-success {
+        @apply border-blue3 hover:border-blue3 hover:ring-blue3/10 focus:border-blue3 focus:ring-blue3/10 active:border-blue3 active:ring-blue3/10;
+    }
+
+    .btn-success {
+        @apply text-white bg-blue3 hover:bg-blue3 focus:bg-blue3 active:bg-blue3;
+        &.btn-animate {
+            @apply before:bg-white hover:bg-blue3 hover:text-blue3 focus:bg-blue3 focus:text-white active:bg-white active:text-blue3;
+        }
+    }
+
+    .btn-outline-success {
+        @apply bg-white text-blue3 hover:bg-white focus:bg-white active:bg-white;
+        &.btn-animate {
+            @apply before:bg-blue3 hover:bg-white hover:text-white focus:bg-white focus:text-blue3 active:bg-blue3 active:text-white;
+        }
+    }
+    
+    .btn-icon {
+        @apply p-0 overflow-hidden bg-no-repeat bg-center -indent-96 w-auto aspect-[1/1];
+        &.btn-small {
+            @apply h-8 p-0 md:h-9;
+        }
+        &.btn-large {
+            @apply p-0 h-[3.125rem]
+                       md:h-[4.375rem];
+        }
+    }
+    
+    .btn-refresh {
+        @apply btn-primary btn-icon bg-[length:1rem] bg-[url(/html/page/market/assets/images/ico-refresh-white.svg)]
+               md:bg-[length:1.125rem];
+        &.is-reverse {
+            @apply bg-[url(/html/page/market/assets/images/ico-refresh.svg)] bg-white text-black2
+                   hover:bg-white
+                   focus:bg-white
+                   active:bg-white;
+        }
+        &.btn-small {
+            @apply bg-[length:0.75rem]
+                   md:bg-[length:0.875rem];
+        }
+        &.btn-large {
+            @apply bg-[length:1.625rem]
+                   md:bg-[length:2rem];
+        }
+    }
+    
+    .btn-coupon, .btn-mileage, .btn-point, .btn-refresh2 {
+        @apply btn-primary pl-9 bg-no-repeat bg-[length:auto_1.25rem]
+               md:pl-12 md:bg-[length:auto_1.5rem];
+        &.is-reverse {
+            @apply bg-white text-black2 hover:bg-white focus:bg-white active:bg-white;
+        }
+        &.btn-small {
+            @apply pl-6 bg-[length:auto_1rem]
+                   md:pl-8 md:bg-[length:auto_1.125rem];
+        }
+        &.btn-large {
+            @apply pl-11 bg-[length:auto_1.625rem]
+                   md:pl-16 md:bg-[length:auto_1.75rem];
+        }
+    }
+
+    .btn-refresh2 {
+        @apply bg-[url(/html/page/market/assets/images/ico-refresh-white.svg)] bg-[left_0.75rem_center] bg-[length:1rem]
+               md:bg-[left_1rem_center] md:bg-[length:1.125rem];
+        &.btn-small {
+            @apply bg-[left_0.375rem_center] bg-[length:0.875rem]
+                   md:bg-[left_0.625rem_center] md:bg-[length:1rem];
+        }
+        &.btn-large {
+            @apply bg-[left_0.75rem_center] bg-[length:1.625rem]
+                   md:bg-[left_1.125rem_center] md:bg-[length:2rem];
+        }
+        &.is-reverse {
+            @apply bg-[url(/html/page/market/assets/images/ico-refresh.svg)];
+        }
+    }
+
+    .btn-coupon {
+        @apply bg-[url(/html/page/market/assets/images/txt-coupon-white.svg)] bg-[left_0.625rem_center]
+               md:bg-[left_0.875rem_center];
+        &.btn-small {
+            @apply bg-[left_0.5rem_center]
+                   md:bg-[left_0.625rem_center];
+        }
+        &.btn-large {
+            @apply bg-[left_0.875rem_center]
+                   md:bg-[left_1.5rem_center];
+        }
+        &.is-reverse {
+            @apply bg-[url(/html/page/market/assets/images/txt-coupon.svg)];
+        }
+    }
+    
+    .btn-mileage {
+        @apply bg-[url(/html/page/market/assets/images/txt-mileage-white.svg)] bg-[left_0.5625rem_center]
+               md:bg-[left_0.75rem_center];
+        &.btn-small {
+            @apply bg-[left_0.375rem_center]
+                   md:bg-[left_0.55rem_center];
+        }
+        &.btn-large {
+            @apply bg-[left_0.75rem_center]
+                   md:bg-[left_1.375rem_center];
+        }
+        &.is-reverse {
+            @apply bg-[url(/html/page/market/assets/images/txt-mileage.svg)];
+        }
+    }
+
+    .btn-point {
+        @apply bg-[url(/html/page/market/assets/images/txt-point-white.svg)] bg-[left_0.8125rem_center]
+               md:bg-[left_1.125rem_center];
+        &.btn-small {
+            @apply bg-[left_0.625rem_center]
+                   md:bg-[left_0.75rem_center];
+        }
+        &.btn-large {
+            @apply bg-[left_1rem_center]
+                   md:bg-[left_1.625rem_center];
+        }
+        &.is-reverse {
+            @apply bg-[url(/html/page/market/assets/images/txt-point.svg)];
+        }
+    }
+
+    .btn-love {
+        @apply btn-icon btn-outline-danger bg-[url(/html/page/market/assets/images/ico-attent-plus-red.svg)] bg-[length:1.25rem]
+               md:bg-[length:1.5rem];
+        &.is-active {
+            @apply !bg-red3 !bg-[url(/html/page/market/assets/images/ico-attent-minus-white.svg)];
+        }
+        &.btn-small {
+            @apply bg-[length:0.875rem]
+                   md:bg-[length:1rem];
+        }
+        &.btn-large {
+            @apply bg-[length:1.875rem]
+                   md:bg-[length:2.25rem];
+        }
+    }
+
+    .btn-compare {
+        @apply btn-icon btn-outline-primary bg-[url(/html/page/market/assets/images/ico-compare2.svg)] bg-[length:1.25rem]
+               md:bg-[length:1.5rem];
+        &.is-active {
+            @apply bg-black2 bg-[url(/html/page/market/assets/images/ico-compare2-white.svg)];
+        }
+        &.btn-small {
+            @apply bg-[length:0.875rem]
+                   md:bg-[length:1rem];
+        }
+        &.btn-large {
+            @apply bg-[length:1.875rem]
+                   md:bg-[length:2.25rem];
+        }
+    }
+
+    .btn-cart {
+        @apply btn-icon btn-outline-primary bg-[url(/html/page/market/assets/images/ico-cart.svg)] bg-[length:1.375rem]
+               md:bg-[length:1.625rem];
+        &.is-active {
+            @apply bg-black2 bg-[url(/html/page/market/assets/images/ico-cart-white.svg)];
+        }
+        &.btn-small {
+            @apply bg-[length:1rem]
+                   md:bg-[length:1.125rem];
+        }
+        &.btn-large {
+            @apply bg-[length:2rem]
+                   md:bg-[length:2.375rem];
+        }
+    }
+
+    .btn-toggle {
+        @apply btn-outline-primary pr-9.5 bg-no-repeat bg-[right_0.75rem_center] bg-[url(/html/page/market/assets/images/ico-angle-down.svg)] bg-[length:0.75rem];
+        &.is-active {
+            @apply btn-primary pr-9.5 bg-[url(/html/page/market/assets/images/ico-angle-up-white.svg)];
+        }
+        &.btn-small {
+            @apply pr-8 bg-[right_0.625rem_center] bg-[length:0.625rem];
+            &.is-active {
+                @apply pr-8;
+            }
+        }
+        &.btn-large {
+            @apply pr-13 bg-[right_1rem_center] bg-[length:0.875rem];
+            &.is-active {
+                @apply pr-13;
+            }
+        }
+    }
+    
+    .btn-payment {
+        @apply btn-primary border-0 bg-no-repeat bg-[url(/html/page/market/assets/images/bg-payment.svg)] pl-10 pr-4
+               md:pr-6 md:pl-12 bg-[length:2.5rem] bg-[left_-0.25rem_top_0.625rem] md:bg-[left_-0.25rem_top_1rem] md:bg-[length:3rem];
+        &.btn-small {
+            @apply pr-3 pl-7 md:pr-4 md:pl-8 bg-[left_-0.25rem_top_0.75rem] bg-[length:1.75rem]
+                   md:bg-[left_-0.25rem_top_0.75rem] md:bg-[length:2rem];
+        }
+        &.btn-large {
+            @apply px-15 bg-[left_-0.375rem_top_1rem] bg-[length:3.75rem]
+                   md:bg-[left_-0.375rem_top_1.5rem] md:bg-[length:4.375rem];
+        }
+    }
+
+    .btn-plus {
+        @apply btn-icon h-6.5 rounded bg-[url(/html/page/market/assets/images/ico-plus.svg)] bg-[length:0.75rem];
+    }
+    
+    .btn-minus {
+        @apply btn-icon h-6.5 rounded bg-[url(/html/page/market/assets/images/ico-minus.svg)] bg-[length:0.75rem];
+    }
+
+    .btn-delete {
+        @apply btn-icon btn-primary h-6.5 rounded bg-[url(/html/page/market/assets/images/ico-close-white.svg)] bg-[length:0.75rem];
+        &.is-reverse {
+            @apply bg-white border-white bg-[url(/html/page/market/assets/images/ico-close.svg)];
+        }
+    }
+     .btn-delete2 { 
+        @apply w-6 h-6 bg-white overflow-hidden bg-center bg-no-repeat -indent-96 bg-[length:0.5625rem];
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8.9' height='8.9' viewBox='0 0 8.9 8.9'%3E%3Cpath id='Rectangle_6_Copy_6' data-name='Rectangle 6 Copy 6' d='M8.046,8.753l-3.6-3.6-3.6,3.6a.5.5,0,0,1-.707-.707l3.6-3.6L.147.853A.5.5,0,0,1,.853.147l3.6,3.6,3.6-3.6a.5.5,0,0,1,.707.707l-3.6,3.6,3.6,3.6a.5.5,0,0,1-.707.707Z' transform='translate(0 0)' fill='%231c1c1c'/%3E%3C/svg%3E%0A");
+    }
+
+    .btn-more {
+        @apply btn-icon btn-outline-primary h-5 rounded-full bg-[url(/html/page/market/assets/images/ico-angle-right.svg)] bg-[length:0.375rem]
+               md:h-5.5;
+    }
+
+    .btn-more2 {
+        @apply btn-primary py-0 pr-5 pl-2.5 h-5 rounded-full bg-no-repeat bg-[url(/html/page/market/assets/images/ico-angle-right-white.svg)] bg-[length:0.375rem] bg-[right_0.5rem_center] text-[0.8125rem]
+               md:pr-6 md:pl-3 md:h-5.5 md:text-sm md:bg-[right_0.625rem_center];
+    }
+
+    .btn-fold {
+        @apply btn-primary py-0 w-34 h-5 rounded-full text-[0.8125rem]
+               md:w-38 md:h-5.5 md:text-sm;
+    }
+    
+    .btn-delivery {
+        @apply btn-outline-primary flex-col px-2.5 h-[3.125rem] space-y-0.5 text-sm font-medium
+               md:py-2.5 md:px-3.5 md:h-[4.375rem] md:text-[0.9375rem] md:space-y-1.5;
+        & .name {
+            @apply flex items-center;
+            & img {
+                @apply mr-1 scale-75
+                       md:mr-1.5 md:scale-100;
+            }
+        }
+    }
+}

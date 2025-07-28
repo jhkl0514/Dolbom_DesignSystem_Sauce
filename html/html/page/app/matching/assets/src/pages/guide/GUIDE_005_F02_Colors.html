@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+
+    <title>GUIDE_005_StyleGuide.html</title>
+
+
+    <!-- jquery -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/materialize.js"></script>
+
+    <!-- guide.js -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/materialize.min.css" />
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/style.css" />
+
+    <!-- guideStyle_2025.css -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/guideStyle_2025.css" />
+
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/atom-one-dark.min.css">
+
+    <!-- highlight.js -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guide_hljsLoad.js"></script>
+
+    <!-- guideStyle_2025.js -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guideStyle_2025.js"></script>
+
+    <script>
+    </script>
+
+
+
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="gs_header">
+
+            <a href="GUIDE_000_index.html" class="logo"><span>돌봄 디자인시스템</span></a>
+
+            <ul class="header_menu">
+                <li><a href="GUIDE_001_Foundation.html">Foundation</a></li>
+                <li><a href="GUIDE_002_Component.html">Component</a></li>
+                <li><a href="GUIDE_003_AppScreen.html">App Screen</a></li>
+                <li><a href="GUIDE_004_WebScreen.html">Web Screen</a></li>
+                <li><a href="GUIDE_005_StyleGuide.html" class="active">Style Guide</a></li>
+                <li class="search"><a href="#"></a></li>
+            </ul>
+
+        </div>
+
+    </header>
+
+    <div class="wrap">
+
+        <main>
+
+
+            <nav class="sidebar">
+
+                <div class="sidebar_header">
+                    <div class="title_area">
+                        <div class="close_x"></div>
+                    </div>
+                    <div class="sidebar_search">
+                        <input type="text" placeholder="검색어를 입력해 주세요.">
+                        <div class="search">
+                            <a href="#"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="title">Style Guide</h4>
+
+                <div class="sidebar_list">
+                    <ul class="tabs_dept_sidebar">
+                        <li class="tab"><a class="active" title="dept_app">App Screen</a></li>
+                        <li class="tab"><a class="" title="dept_web">Web Screen</a></li>
+                    </ul>
+
+                    <div class="tab_list dept_app" title="siteMap_guide">
+                        <ul class="dept1">
+                            <li>
+                                <a class="arrow active">Foundation</a>
+                                <ul class="dept2">
+                                    <li><a href="GUIDE_005_StyleGuide.html">Typography</a></li>
+                                    <li><a class="active" href="GUIDE_005_F02_Colors.html">Colors</a></li>
+                                    <li><a href="GUIDE_005_F03_Spacing.html">Spacing</a></li>
+                                    <li><a href="GUIDE_005_F04_ObjectStyles.html">Object Styles</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="arrow">Component</a>
+                                <ul class="dept2">
+                                    <li><a href="GUIDE_005_C01_Button.html">Button</a></li>
+                                    <li><a href="GUIDE_005_C02_SelectionControls.html">Selection Controls</a></li>
+                                    <li><a href="GUIDE_005_C03_Link.html">Link</a></li>
+                                    <li><a href="GUIDE_005_C04_Chips.html">Chips</a></li>
+                                    <li><a href="GUIDE_005_C05_TextField.html">TextField</a></li>
+
+                                    <li><a href="GUIDE_005_C06_SelectField.html">SelectField</a></li>
+                                    <li><a href="GUIDE_005_C07_OptionList.html">OptionList</a></li>
+                                    <li><a href="GUIDE_005_C08_TopNavigation.html">Top Navigation</a></li>
+                                    <li><a href="GUIDE_005_C09_BottomNavigation.html">Bottom Navigation</a></li>
+                                    <li><a href="GUIDE_005_C10_List.html">List</a></li>
+
+                                    <li><a href="GUIDE_005_C11_Popup.html">Popup</a></li>
+                                    <li><a href="GUIDE_005_C12_BottomSheet.html">BottomSheet</a></li>
+                                    <li><a href="GUIDE_005_C13_Banner.html">Banner</a></li>
+                                    <li><a href="GUIDE_005_C14_Tab.html">Tab</a></li>
+                                    <li><a href="GUIDE_005_C15_NumberStepper.html">Number Stepper</a></li>
+
+                                    <li><a href="GUIDE_005_C16_TextAreaField.html">TextAreaField</a></li>
+                                    <li><a href="GUIDE_005_C17_Accordion.html">Accordion</a></li>
+                                    <li><a href="GUIDE_005_C18_Progressbar.html">Progress</a></li>
+                                    <li><a href="GUIDE_005_C99_Etc.html">Etc</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a href="GUIDE_005_03_Animation.html">애니메이션</a></li>
+                            <li><a href="GUIDE_005_04_Images.html">이미지</a></li>
+                            <li><a href="GUIDE_005_05_Css.html">CSS 구조</a></li>
+                            <li><a href="GUIDE_005_06_Library.html">라이브러리</a></li>
+
+                        </ul>
+                    </div>
+
+
+                </div>
+
+
+            </nav>
+
+
+
+            <section>
+
+
+                <div class="h48"></div>
+
+                <div class="titleNav">Colors</div>
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Color/Text</h3>
+
+                <div class="h24"></div>
+
+                <table class="guide_table g02">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>CSS 변수</th>
+                            <th>HEX 코드</th>
+                            <th>미리보기</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>color_t_p</td>
+                            <td>$--Color-text-primary</td>
+                            <td class="setFontColorTD_c">#1A1A1A</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_t_s</td>
+                            <td>$--Color-text-secondary</td>
+                            <td class="setFontColorTD_c">#616161</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_t_t</td>
+                            <td>$--Color-text-teritiary</td>
+                            <td class="setFontColorTD_c">#999999</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_t_bs</td>
+                            <td>$--Color-text-brand-sub</td>
+                            <td class="setFontColorTD_c">#10185C</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_t_i</td>
+                            <td>$--Color-text-info</td>
+                            <td class="setFontColorTD_c">#1477F8</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_t_ib</td>
+                            <td>$--Color-text-info-bold</td>
+                            <td class="setFontColorTD_c">#1E40AF</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_t_success</td>
+                            <td>$--Color-text-success</td>
+                            <td class="setFontColorTD_c">#43A047</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_t_success_b</td>
+                            <td>$--Color-text-success-bold</td>
+                            <td class="setFontColorTD_c">#166534</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_t_danger</td>
+                            <td>$--Color-text-danger</td>
+                            <td class="setFontColorTD_c">#E53935</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_t_danger_b</td>
+                            <td>$--Color-text-danger-bold</td>
+                            <td class="setFontColorTD_c">#C62828</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_t_d</td>
+                            <td>$--Color-text-disabled</td>
+                            <td class="setFontColorTD_c">#BDBDBD</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <!-- <div class="lang_htmlCode fs24 fw700">
+                    <div class="color_t_p">color_t_p($--Color-text-primary)</div>
+                    <div class="color_t_s">color_t_s($--Color-text-secondary)</div>
+                    <div class="color_t_t">color_t_t($--Color-text-teritiary)</div>
+                    <div class="color_t_bs">color_t_bs($--Color-text-brand-sub)</div>
+                    <div class="color_t_i">color_t_i($--Color-text-info)</div>
+                    <div class="color_t_ib">color_t_ib($--Color-text-info-bold)</div>
+                    <div class="color_t_success">color_t_success($--Color-text-success)</div>
+                    <div class="color_t_success_b">color_t_success_b($--Color-text-success-bold)</div>
+                    <div class="color_t_danger">color_t_danger($--Color-text-danger)</div>
+                    <div class="color_t_danger_b">color_t_danger_b($--Color-text-danger-bold)</div>
+                    <div class="color_t_d">color_t_d($--Color-text-disabled)</div>
+                </div> -->
+                <pre><code class="language-html">
+                    &lt;div class=&quot;color_t_p&quot;&gt;color_t_p($--Color-text-primary)&lt;/div&gt;
+                    &lt;div class=&quot;color_t_s&quot;&gt;color_t_s($--Color-text-secondary)&lt;/div&gt;
+                    &lt;div class=&quot;color_t_t&quot;&gt;color_t_t($--Color-text-teritiary)&lt;/div&gt;
+                    &lt;div class=&quot;color_t_bs&quot;&gt;color_t_bs($--Color-text-brand-sub)&lt;/div&gt;
+                    &lt;div class=&quot;color_t_i&quot;&gt;color_t_i($--Color-text-info)&lt;/div&gt;
+                    &lt;div class=&quot;color_t_ib&quot;&gt;color_t_ib($--Color-text-info-bold)&lt;/div&gt;
+                    &lt;div class=&quot;color_t_success&quot;&gt;color_t_success($--Color-text-success)&lt;/div&gt;
+                    &lt;div class=&quot;color_t_success_b&quot;&gt;color_t_success_b($--Color-text-success-bold)&lt;/div&gt;
+                    &lt;div class=&quot;color_t_danger&quot;&gt;color_t_danger($--Color-text-danger)&lt;/div&gt;
+                    &lt;div class=&quot;color_t_danger_b&quot;&gt;color_t_danger_b($--Color-text-danger-bold)&lt;/div&gt;
+                    &lt;div class=&quot;color_t_d&quot;&gt;color_t_d($--Color-text-disabled)&lt;/div&gt;
+                </code></pre>
+
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Color/Text/Primitive</h3>
+
+                <div class="h24"></div>
+
+                <table class="guide_table g02">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>CSS 변수</th>
+                            <th>HEX 코드</th>
+                            <th>미리보기</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>color_tp_p</td>
+                            <td>$--Color-text-Primitive-primary</td>
+                            <td class="setFontColorTD_c">#FF8120</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_tp_pp</td>
+                            <td>$--Color-text-Primitive-primary-press</td>
+                            <td class="setFontColorTD_c">#EE6002</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_tp_st_p</td>
+                            <td>$--Color-text-Primitive-secondary</td>
+                            <td class="setFontColorTD_c">#333333</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_tp_ss</td>
+                            <td>$--Color-text-Primitive-secondary-press</td>
+                            <td class="setFontColorTD_c">#1A1A1A</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_tp_selected</td>
+                            <td>$--Color-text-Primitive-selected</td>
+                            <td class="setFontColorTD_c">#EE6002</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_tp_v</td>
+                            <td>$--Color-text-Primitive-visited</td>
+                            <td class="setFontColorTD_c">#323DA3</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_tp_i</td>
+                            <td>$--Color-text-Primitive-inverse</td>
+                            <td class="setFontColorTD_c">#FFFFFF</td>
+                            <td class="setColorTD_c back_black"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pre><code class="language-html">
+                    &lt;div class=&quot;color_tp_p&quot;&gt;color_tp_p($--Color-text-Primitive-primary)&lt;/div&gt;
+                    &lt;div class=&quot;color_tp_pp&quot;&gt;color_tp_pp($--Color-text-Primitive-primary-press)&lt;/div&gt;
+                    &lt;div class=&quot;color_tp_s&quot;&gt;color_color_tp_st_p($--Color-text-Primitive-secondary)&lt;/div&gt;
+                    &lt;div class=&quot;color_tp_ss&quot;&gt;color_tp_ss($--Color-text-Primitive-secondary-press)&lt;/div&gt;
+                    &lt;div class=&quot;color_tp_selected&quot;&gt;color_tp_selected($--Color-text-Primitive-selected)&lt;/div&gt;
+                    &lt;div class=&quot;color_tp_v&quot;&gt;color_tp_v($--Color-text-Primitive-visited)&lt;/div&gt;
+                    &lt;div class=&quot;color_tp_i&quot;&gt;color_tp_i($--Color-text-Primitive-inverse)&lt;/div&gt;
+                </code></pre>
+
+
+
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Color/bg</h3>
+
+                <div class="h24"></div>
+
+                <table class="guide_table g02">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>CSS 변수</th>
+                            <th>HEX 코드</th>
+                            <th>미리보기</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>color_b_p</td>
+                            <td>$--Color-bg-primary</td>
+                            <td class="setBackgroundTD_c">#FFFFFF</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_b_s</td>
+                            <td>$--Color-bg-secondary</td>
+                            <td class="setBackgroundTD_c">#FAFAFA</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_b_t</td>
+                            <td>$--Color-bg-teritiary</td>
+                            <td class="setBackgroundTD_c">#F5F5F5</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_b_point</td>
+                            <td>$--Color-bg-point</td>
+                            <td class="setBackgroundTD_c">#FEE3BE</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_b_point-subtle</td>
+                            <td>-</td>
+                            <td class="setBackgroundTD_c">#FFF5E6</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_b_bsb</td>
+                            <td>$--Color-bg-brand-sub-bold</td>
+                            <td class="setBackgroundTD_c">#10185C</td>
+                            <td class="setColorTD_c color_white"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_b_bss</td>
+                            <td>$--Color-bg-brand-sub-subtle</td>
+                            <td class="setBackgroundTD_c">#EFF1FD</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_b_ibold</td>
+                            <td>$--Color-bg-info-bold</td>
+                            <td class="setBackgroundTD_c">#1D4ED8</td>
+                            <td class="setColorTD_c color_white"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_b_iss</td>
+                            <td>$--Color-bg-info-subtle</td>
+                            <td class="setBackgroundTD_c">#EFF6FF</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_b_sb</td>
+                            <td>$--Color-bg-success-bold</td>
+                            <td class="setBackgroundTD_c">#15803D</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_b_db</td>
+                            <td>$--Color-bg-danger-bold</td>
+                            <td class="setBackgroundTD_c">#D32F2F</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_b_ds</td>
+                            <td>$--Color-bg-danger-subtle</td>
+                            <td class="setBackgroundTD_c">#FFEBEE</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_b_ib</td>
+                            <td>$--Color-bg-inverse-bold</td>
+                            <td class="setBackgroundTD_c">#333333</td>
+                            <td class="setColorTD_c color_white"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_b_ibolder</td>
+                            <td>$--Color-bg-inverse-bolder</td>
+                            <td class="setBackgroundTD_c">#1A1A1A</td>
+                            <td class="setColorTD_c color_white"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_b_d</td>
+                            <td>$--Color-bg-disabled</td>
+                            <td class="setBackgroundTD_c">#EEEEEE</td>
+                            <td class="setColorTD_c color_white"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+
+
+
+                    </tbody>
+                </table>
+                <pre><code class="language-html">
+                    &lt;div class=&quot;color_b_p&quot;&gt;color_b_p($--Color-bg-primary)&lt;/div&gt;
+                    &lt;div class=&quot;color_b_s&quot;&gt;color_b_s($--Color-bg-secondary)&lt;/div&gt;
+                    &lt;div class=&quot;color_b_t&quot;&gt;color_b_t($--Color-bg-teritiary)&lt;/div&gt;
+                    &lt;div class=&quot;color_b_point&quot;&gt;color_b_point($--Color-bg-point)&lt;/div&gt;
+                    &lt;div class=&quot;color_b_bsb&quot;&gt;color_b_bsb($--Color-bg-brand-sub-bold)&lt;/div&gt;
+                    &lt;div class=&quot;color_b_bss&quot;&gt;color_b_bss($--Color-bg-brand-sub-subtle)&lt;/div&gt;
+                    &lt;div class=&quot;color_b_ibold&quot;&gt;color_b_ibold($--Color-bg-info-bold)&lt;/div&gt;
+                    &lt;div class=&quot;color_b_iss&quot;&gt;color_b_iss($--Color-bg-info-subtle)&lt;/div&gt;
+                    &lt;div class=&quot;color_b_sb&quot;&gt;color_b_sb($--Color-bg-success-bold)&lt;/div&gt;
+                    &lt;div class=&quot;color_b_db&quot;&gt;color_b_db($--Color-bg-danger-bold)&lt;/div&gt;
+                    &lt;div class=&quot;color_b_ds&quot;&gt;color_b_ds($--Color-bg-danger-subtle)&lt;/div&gt;
+                    &lt;div class=&quot;color_b_ib&quot;&gt;color_b_ib($--Color-bg-inverse-bold)&lt;/div&gt;
+                    &lt;div class=&quot;color_b_ibolder&quot;&gt;color_b_ibolder($--Color-bg-inverse-bolder)&lt;/div&gt;
+                    &lt;div class=&quot;color_b_d&quot;&gt;color_b_d($--Color-bg-disabled)&lt;/div&gt;   
+                </code></pre>
+
+
+
+
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Color/bg/Primitive</h3>
+
+                <div class="h24"></div>
+
+                <table class="guide_table g02">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>CSS 변수</th>
+                            <th>HEX 코드</th>
+                            <th>미리보기</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>color_b_pp</td>
+                            <td>$--Color-bg-Primitive-primary</td>
+                            <td class="setBackgroundTD_c">#FF8120</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_b_ppp</td>
+                            <td>$--Color-bg-Primitive-primary-press</td>
+                            <td class="setBackgroundTD_c">#EE6002</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_b_ps</td>
+                            <td>$--Color-bg-Primitive-secondary</td>
+                            <td class="setBackgroundTD_c">#EEEEEE</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_b_psp</td>
+                            <td>$--Color-bg-Primitive-secondary-press</td>
+                            <td class="setBackgroundTD_c">#E0E0E0</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_b_pselected</td>
+                            <td>$--Color-bg-Primitive-selected</td>
+                            <td class="setBackgroundTD_c">#FFF5E6</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_b_pselected_s</td>
+                            <td>$--Color-bg-Primitive-selected-press</td>
+                            <td class="setBackgroundTD_c">#FFC77D</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <pre><code class="language-html">
+                    &lt;div class=&quot;color_b_pp&quot;&gt;color_b_pp($--Color-bg-Primitive-primary)&lt;/div&gt;
+                    &lt;div class=&quot;color_b_ppp&quot;&gt;color_b_ppp($--Color-bg-Primitive-primary-press)&lt;/div&gt;
+                    &lt;div class=&quot;color_b_ps&quot;&gt;color_b_ps($--Color-bg-Primitive-secondary)&lt;/div&gt;
+                    &lt;div class=&quot;color_b_psp&quot;&gt;color_b_psp($--Color-bg-Primitive-secondary-press)&lt;/div&gt;
+                    &lt;div class=&quot;color_b_pselected&quot;&gt;color_b_pselected($--Color-bg-Primitive-selected)&lt;/div&gt;
+                    &lt;div class=&quot;color_b_pselected_s&quot;&gt;color_b_pselected_s($--Color-bg-Primitive-selected-press)&lt;/div&gt;
+                </code></pre>
+
+
+
+
+
+
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Color/border</h3>
+
+                <div class="h24"></div>
+
+                <table class="guide_table g02">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>CSS 변수</th>
+                            <th>HEX 코드</th>
+                            <th>미리보기</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>color_bd_p</td>
+                            <td>$--Color-border-primary</td>
+                            <td class="setBorderTD_c">#BDBDBD</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_bd_s</td>
+                            <td>$--Color-border-secondary</td>
+                            <td class="setBorderTD_c">#EEEEEE</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_bd_t</td>
+                            <td>$--Color-border-teritiary</td>
+                            <td class="setBorderTD_c">#F5F5F5</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_bd_i</td>
+                            <td>$--Color-border-info</td>
+                            <td class="setBorderTD_c">#1477F8</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_bd_is</td>
+                            <td>$--Color-border-info-subtle</td>
+                            <td class="setBorderTD_c">#DBEAFE</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_bd_success</td>
+                            <td>$--Color-border-success</td>
+                            <td class="setBorderTD_c">#43A047</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_bd_success_s</td>
+                            <td>$--Color-border-success-subtle</td>
+                            <td class="setBorderTD_c">#C8E6C9</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_bd_danger</td>
+                            <td>$--Color-border-danger</td>
+                            <td class="setBorderTD_c">#E53935</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_bd_danger_s</td>
+                            <td>$--Color-border-danger-subtle</td>
+                            <td class="setBorderTD_c">#FFCDD2</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_bd_d</td>
+                            <td>$--Color-border-disabled</td>
+                            <td class="setBorderTD_c">#FFCDD2</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>-</td>
+                            <td class="setBorderTD_c">#111111</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <pre><code class="language-html">
+                    &lt;div class=&quot;color_bd_p&quot;&gt;color_bd_p($--Color-border-primary)&lt;/div&gt;
+                    &lt;div class=&quot;color_bd_s&quot;&gt;color_bd_s($--Color-border-secondary)&lt;/div&gt;
+                    &lt;div class=&quot;color_bd_t&quot;&gt;color_bd_t($--Color-border-teritiary)&lt;/div&gt;
+                    &lt;div class=&quot;color_bd_i&quot;&gt;color_bd_i($--Color-border-info)&lt;/div&gt;
+                    &lt;div class=&quot;color_bd_is&quot;&gt;color_bd_is($--Color-border-info-subtle)&lt;/div&gt;
+                    &lt;div class=&quot;color_bd_success&quot;&gt;color_bd_success($--Color-border-success)&lt;/div&gt;
+                    &lt;div class=&quot;color_bd_success_s&quot;&gt;color_bd_success_s($--Color-border-success-subtle)&lt;/div&gt;
+                    &lt;div class=&quot;color_bd_danger&quot;&gt;color_bd_danger($--Color-border-danger)&lt;/div&gt;
+                    &lt;div class=&quot;color_bd_danger_s&quot;&gt;color_bd_danger_s($--Color-border-danger-subtle)&lt;/div&gt;
+                    &lt;div class=&quot;color_bd_d&quot;&gt;color_bd_d($--Color-border-disabled)&lt;/div&gt;
+                </code></pre>
+
+
+
+
+
+
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Color/border/Primitive</h3>
+
+                <div class="h24"></div>
+
+                <table class="guide_table g02">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>CSS 변수</th>
+                            <th>HEX 코드</th>
+                            <th>미리보기</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>color_bd_pp</td>
+                            <td>$--Color-border-Primitive-primary</td>
+                            <td class="setBorderTD_c">#FF8120</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_bd_ppp</td>
+                            <td>$--Color-border-Primitive-primary-press</td>
+                            <td class="setBorderTD_c">#EE6002</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_bd_ps</td>
+                            <td>$--Color-border-Primitive-secondary</td>
+                            <td class="setBorderTD_c">#E0E0E0</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_bd_psp</td>
+                            <td>$--Color-border-Primitive-secondary-press</td>
+                            <td class="setBorderTD_c">#999999</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_bd_pt</td>
+                            <td>$--Color-border-Primitive-teritiary</td>
+                            <td class="setBorderTD_c">#EEEEEE</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_bd_ptp</td>
+                            <td>$--Color-border-Primitive-teritiary-press</td>
+                            <td class="setBorderTD_c">#E0E0E0</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_bd_pselected</td>
+                            <td>$--Color-border-Primitive-selected</td>
+                            <td class="setBorderTD_c">#EE6002</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_bd_pv</td>
+                            <td>$--Color-border-Primitive-visited</td>
+                            <td class="setBorderTD_c">#323DA3</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_bd_pi</td>
+                            <td>$--Color-border-Primitive-inverse</td>
+                            <td class="setBorderTD_c">#FFFFFF</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <pre><code class="language-html">
+                    &lt;div class=&quot;color_bd_pp&quot;&gt;color_bd_pp($--Color-border-Primitive-primary)&lt;/div&gt;
+                    &lt;div class=&quot;color_bd_ppp&quot;&gt;color_bd_ppp($--Color-border-Primitive-primary-press)&lt;/div&gt;
+                    &lt;div class=&quot;color_bd_ps&quot;&gt;color_bd_ps($--Color-border-Primitive-secondary)&lt;/div&gt;
+                    &lt;div class=&quot;color_bd_psp&quot;&gt;color_bd_psp($--Color-border-Primitive-secondary-press)&lt;/div&gt;
+                    &lt;div class=&quot;color_bd_pt&quot;&gt;color_bd_pt($--Color-border-Primitive-teritiary)&lt;/div&gt;
+                    &lt;div class=&quot;color_bd_ptp&quot;&gt;color_bd_ptp($--Color-border-Primitive-teritiary-press)&lt;/div&gt;
+                    &lt;div class=&quot;color_bd_pselected&quot;&gt;color_bd_pselected($--Color-border-Primitive-selected)&lt;/div&gt;
+                    &lt;div class=&quot;color_bd_pv&quot;&gt;color_bd_pv($--Color-border-Primitive-visited)&lt;/div&gt;
+                    &lt;div class=&quot;color_bd_pi&quot;&gt;color_bd_pi($--Color-border-Primitive-inverse)&lt;/div&gt;
+                </code></pre>
+
+
+
+
+
+
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Color/icon</h3>
+
+                <div class="h24"></div>
+
+                <table class="guide_table g02">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>CSS 변수</th>
+                            <th>HEX 코드</th>
+                            <th>미리보기</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>color_i_p</td>
+                            <td>$--Color-icon-primary</td>
+                            <td class="setIconTD_c">#333333</td>
+                            <td class="d-flex align-items-center">
+                                <img src="/html/page/app/matching/assets/src/images/100guide/icon/icon_heart_01.svg" alt="icon_heart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>color_i_s</td>
+                            <td>$--Color-icon-secondary</td>
+                            <td class="setIconTD_c">#616161</td>
+                            <td class="d-flex align-items-center">
+                                <img src="/html/page/app/matching/assets/src/images/100guide/icon/icon_heart_02.svg" alt="icon_heart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>color_i_t</td>
+                            <td>$--Color-icon-teritiary</td>
+                            <td class="setIconTD_c">#999999</td>
+                            <td class="d-flex align-items-center">
+                                <img src="/html/page/app/matching/assets/src/images/100guide/icon/icon_heart_03.svg" alt="icon_heart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>color_i_bs</td>
+                            <td>$--Color-icon-brand-sub</td>
+                            <td class="setIconTD_c">#10185C</td>
+                            <td class="d-flex align-items-center">
+                                <img src="/html/page/app/matching/assets/src/images/100guide/icon/icon_heart_04.svg" alt="icon_heart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>color_i_point</td>
+                            <td>$--Color-icon-Point</td>
+                            <td class="setIconTD_c">#FFC77D</td>
+                            <td class="d-flex align-items-center">
+                                <img src="/html/page/app/matching/assets/src/images/100guide/icon/icon_heart_05.svg" alt="icon_heart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>color_i_i</td>
+                            <td>$--Color-icon-info</td>
+                            <td class="setIconTD_c">#1477F8</td>
+                            <td class="d-flex align-items-center">
+                                <img src="/html/page/app/matching/assets/src/images/100guide/icon/icon_heart_06.svg" alt="icon_heart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>color_i_ib</td>
+                            <td>$--Color-icon-info-bold</td>
+                            <td class="setIconTD_c">#1E40AF</td>
+                            <td class="d-flex align-items-center">
+                                <img src="/html/page/app/matching/assets/src/images/100guide/icon/icon_heart_07.svg" alt="icon_heart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>color_i_isuccess</td>
+                            <td>$--Color-icon-success</td>
+                            <td class="setIconTD_c">#43A047</td>
+                            <td class="d-flex align-items-center">
+                                <img src="/html/page/app/matching/assets/src/images/100guide/icon/icon_heart_08.svg" alt="icon_heart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>-</td>
+                            <td class="setIconTD_c">#166534</td>
+                            <td class="d-flex align-items-center">
+                                <img src="/html/page/app/matching/assets/src/images/100guide/icon/icon_heart_09.svg" alt="icon_heart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>-</td>
+                            <td class="setIconTD_c">#E53935</td>
+                            <td class="d-flex align-items-center">
+                                <img src="/html/page/app/matching/assets/src/images/100guide/icon/icon_heart_10.svg" alt="icon_heart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>-</td>
+                            <td class="setIconTD_c">#C62828</td>
+                            <td class="d-flex align-items-center">
+                                <img src="/html/page/app/matching/assets/src/images/100guide/icon/icon_heart_11.svg" alt="icon_heart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>-</td>
+                            <td class="setIconTD_c">#BDBDBD</td>
+                            <td class="d-flex align-items-center">
+                                <img src="/html/page/app/matching/assets/src/images/100guide/icon/icon_heart_12.svg" alt="icon_heart">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pre><code class="language-html">
+                    &lt;div class=&quot;color_i_p&quot;&gt;color_i_p($--Color-icon-primary)&lt;/div&gt;
+                    &lt;div class=&quot;color_i_s&quot;&gt;color_i_s($--Color-icon-secondary)&lt;/div&gt;
+                    &lt;div class=&quot;color_i_t&quot;&gt;color_i_t($--Color-icon-teritiary)&lt;/div&gt;
+                    &lt;div class=&quot;color_i_bs&quot;&gt;color_i_bs($--Color-icon-brand-sub)&lt;/div&gt;
+                    &lt;div class=&quot;color_i_point&quot;&gt;color_i_point($--Color-icon-Point)&lt;/div&gt;
+                    &lt;div class=&quot;color_i_i&quot;&gt;color_i_i($--Color-icon-info)&lt;/div&gt;
+                    &lt;div class=&quot;color_i_ib&quot;&gt;color_i_ib($--Color-icon-info-bold)&lt;/div&gt;
+                    &lt;div class=&quot;color_i_isuccess&quot;&gt;color_i_isuccess($--Color-icon-success)&lt;/div&gt;
+                </code></pre>
+
+
+
+
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Color/icon/Primitive</h3>
+
+                <div class="h24"></div>
+
+                <table class="guide_table g02">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>CSS 변수</th>
+                            <th>HEX 코드</th>
+                            <th>미리보기</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>color_i_pp</td>
+                            <td>$--Color-icon-Primitive-primary</td>
+                            <td class="setIconTD_c">#FF8120</td>
+                            <td class="d-flex align-items-center">
+                                <img src="/html/page/app/matching/assets/src/images/100guide/icon/icon_p_heart_01.svg" alt="icon_heart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>color_i_ppp</td>
+                            <td>$--Color-icon-Primitive-primary-press</td>
+                            <td class="setIconTD_c">#EE6002</td>
+                            <td class="d-flex align-items-center">
+                                <img src="/html/page/app/matching/assets/src/images/100guide/icon/icon_p_heart_02.svg" alt="icon_heart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>color_i_ps</td>
+                            <td>$--Color-icon-Primitive-secondary</td>
+                            <td class="setIconTD_c">#555555</td>
+                            <td class="d-flex align-items-center">
+                                <img src="/html/page/app/matching/assets/src/images/100guide/icon/icon_p_heart_03.svg" alt="icon_heart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>color_i_psp</td>
+                            <td>$--Color-icon-Primitive-secondary-press</td>
+                            <td class="setIconTD_c">#1A1A1A</td>
+                            <td class="d-flex align-items-center">
+                                <img src="/html/page/app/matching/assets/src/images/100guide/icon/icon_p_heart_04.svg" alt="icon_heart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>color_i_pt</td>
+                            <td>$--Color-icon-Primitive-teritiary</td>
+                            <td class="setIconTD_c">#EEEEEE</td>
+                            <td class="d-flex align-items-center">
+                                <img src="/html/page/app/matching/assets/src/images/100guide/icon/icon_p_heart_05.svg" alt="icon_heart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>color_i_ptp</td>
+                            <td>$--Color-icon-Primitive-teritiary-press</td>
+                            <td class="setIconTD_c">#E0E0E0</td>
+                            <td class="d-flex align-items-center">
+                                <img src="/html/page/app/matching/assets/src/images/100guide/icon/icon_p_heart_06.svg" alt="icon_heart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>color_i_pselected</td>
+                            <td>$--Color-icon-Primitive-selected</td>
+                            <td class="setIconTD_c">#E0E0E0</td>
+                            <td class="d-flex align-items-center">
+                                <img src="/html/page/app/matching/assets/src/images/100guide/icon/icon_p_heart_07.svg" alt="icon_heart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>color_i_pv</td>
+                            <td>$--Color-icon-Primitive-visited</td>
+                            <td class="setIconTD_c">#323DA3</td>
+                            <td class="d-flex align-items-center">
+                                <img src="/html/page/app/matching/assets/src/images/100guide/icon/icon_p_heart_09.svg" alt="icon_heart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>color_i_pi</td>
+                            <td>$--Color-icon-Primitive-inverse</td>
+                            <td class="setIconTD_c">#FFFFFF</td>
+                            <td class="d-flex align-items-center">
+                                <img src="/html/page/app/matching/assets/src/images/100guide/icon/icon_p_heart_08.svg" alt="icon_heart">
+                            </td>
+                        </tr>                        
+                    </tbody>
+                </table>
+                <pre><code class="language-html">
+                    &lt;div class=&quot;color_i_pp&quot;&gt;color_i_pp($--Color-icon-Primitive-primary)&lt;/div&gt;
+                    &lt;div class=&quot;color_i_ppp&quot;&gt;color_i_ppp($--Color-icon-Primitive-primary-press)&lt;/div&gt;
+                    &lt;div class=&quot;color_i_ps&quot;&gt;color_i_ps($--Color-icon-Primitive-secondary)&lt;/div&gt;
+                    &lt;div class=&quot;color_i_psp&quot;&gt;color_i_psp($--Color-icon-Primitive-secondary-press)&lt;/div&gt;
+                    &lt;div class=&quot;color_i_pt&quot;&gt;color_i_pt($--Color-icon-Primitive-teritiary)&lt;/div&gt;
+                    &lt;div class=&quot;color_i_ptp&quot;&gt;color_i_ptp($--Color-icon-Primitive-teritiary-press)&lt;/div&gt;
+                    &lt;div class=&quot;color_i_pselected&quot;&gt;color_i_pselected($--Color-icon-Primitive-selected)&lt;/div&gt;
+                    &lt;div class=&quot;color_i_pv&quot;&gt;color_i_pv($--Color-icon-Primitive-visited)&lt;/div&gt;
+                    &lt;div class=&quot;color_i_pi&quot;&gt;color_i_pi($--Color-icon-Primitive-inverse)&lt;/div&gt;
+                </code></pre>
+
+
+
+
+
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Color/Etc</h3>
+
+                <div class="h24"></div>
+
+                <table class="guide_table g02">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>CSS 변수</th>
+                            <th>HEX 코드</th>
+                            <th>미리보기</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>color_white</td>
+                            <td>-</td>
+                            <td class="setBackgroundTD_c">#FFFFFF</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_primary</td>
+                            <td>color_tp_p</td>
+                            <td class="setBackgroundTD_c">#FF8120</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_secondary</td>
+                            <td>color_t_s</td>
+                            <td class="setBackgroundTD_c">#616161</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_disable</td>
+                            <td>color_t_d</td>
+                            <td class="setBackgroundTD_c">#BDBDBD</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                        <tr>
+                            <td>color_danger</td>
+                            <td>color_t_danger</td>
+                            <td class="setBackgroundTD_c">#E53935</td>
+                            <td class="setColorTD_c"><div class="setBox">이로움돌봄</div></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pre><code class="language-html">
+                    &lt;div class=&quot;color_white&quot;&gt;color_white&lt;/div&gt;
+                    &lt;div class=&quot;color_primary&quot;&gt;color_primary(color_tp_p)&lt;/div&gt;
+                    &lt;div class=&quot;color_secondary&quot;&gt;color_secondary(color_t_s)&lt;/div&gt;
+                    &lt;div class=&quot;color_disable&quot;&gt;color_disable(color_t_d)&lt;/div&gt;
+                    &lt;div class=&quot;color_danger&quot;&gt;color_danger(color_t_danger)&lt;/div&gt;
+                </code></pre>
+
+
+                <div class="h100"></div>
+
+            </section>
+
+
+
+        </main>
+
+
+    </div>
+    <!-- wrapper -->
+
+
+</body>
+
+</html>

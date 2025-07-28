@@ -1,0 +1,698 @@
+
+
+$headerHeight : 80px;
+$navWidth : 250px;
+$sectionTitleHeight : 150px;
+
+
+//iframe 전체화면 토글
+body.iframeFullpage{
+
+    header{display: none;}
+    .wrap{
+        max-width: initial;
+        nav.sidebar{
+            display: none;
+        
+            & + section{
+                margin: 0;
+            
+                .section_title{display: none;}
+
+                .iframe_back{
+                    padding: 0;
+                
+                    .gs_iframe{
+                        height: 100vh;
+                        max-width: initial;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #BDBDBD;
+    //background: #fff;
+
+
+    .gs_header {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+
+        display: flex;
+        justify-content: space-between;
+
+        width: 100%;
+        padding-top: 16px;
+        height: $headerHeight;
+    
+        background-color: #fff;
+    
+    
+        .logo{
+            margin: 0;
+            @include flex_center;
+            background: url('/html/page/app/matching/assets/src/images/08etc/App_Icon.svg') no-repeat left center;
+            background-size: 32px;
+            padding-left: 40px;
+            
+            span{
+              @include Suit_Heading_SM;
+              color: $--Color-text-Primitive-secondary;
+            }
+            
+    
+        }
+    
+    
+        .header_menu {
+          display: flex;
+          align-items: center;
+          
+            li{
+                height: 64px;
+                display: flex;
+                justify-content: center;
+
+                a {
+                  color: $--Color-text-Primitive-secondary;
+        
+                  @include flex_center;
+                  @include Suit_Body_MD_SemiBold;
+                  padding: 12px 20px 16px;
+
+                  border-bottom: 1.5px solid transparent ;
+        
+                  
+                  &:focus, &:focus.active {
+                    background-color: initial;
+                    
+                  }
+
+                  &.active, &:hover,&:focus.active{
+                    border-bottom: 1.5px solid #111 ;
+                  }
+        
+                }
+
+                &.search{
+                    a{
+                        padding: 0;
+                        background: url('/html/page/app/matching/assets/src/images/04icon/search.svg') center 40% no-repeat;
+                        background-size: 100%;
+                        width: 24px;
+                    }
+                }
+    
+            }
+
+    
+        }
+
+        //hamberger GNB 메뉴
+        .m_menu{
+            display: none;
+            
+            position: absolute;
+            background: url('/html/page/app/matching/assets/src/images/04icon/icon_topMenu.svg') no-repeat center;
+            width: 48px;height: 48px;
+            top: calc(50% - 24px);
+            right: 0;
+            
+        }
+    
+    
+    }
+
+}
+
+.wrap{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+
+    main{display: flex;}
+
+    &.fullpage{max-width: inherit;}
+}
+
+
+  nav.sidebar {
+    color: initial;
+    background: initial;
+    line-height: initial;
+    
+    top: calc($headerHeight + 1px); //1px: border
+    left: 0;
+    width: $navWidth;
+    height: calc(100vh - ($headerHeight + 1px));
+    background-color: #fff;
+    z-index: 10;
+    position: sticky;
+    overflow-y:auto;
+    flex-shrink: 0;
+
+    overscroll-behavior: contain;
+
+
+    transition: none;
+
+    .sidebar_header{display: none;}
+
+    h4.title{
+        position: relative;
+        padding: 40px 8px 16px;
+        border-bottom: 1px solid #8A949E;
+
+        display: flex;
+        justify-content: space-between;
+
+        //사이트맵 버튼
+        .evt_btn_sitemap{
+            cursor: pointer;
+            display: flex;
+            height: 36px;
+            padding: 8px 16px;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 8px;
+            border: 1px solid #E0E0E0;
+
+            color: var(--Color-text-Primitive-secondary, #333);
+
+            /* Suit/Body/SM/SemiBold */
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 24px; /* 150% */
+            letter-spacing: -0.15px;
+
+        }
+    }
+
+
+
+
+    .sidebar_list{
+        padding-bottom: 20px;
+
+        //dept1 tab영역
+        .tabs_dept_sidebar{
+            display: none;
+        }
+
+        //dept2 영역
+        .tab_list{
+            display: none;
+            &.active{display: block;}
+
+        }
+
+
+        //reset 공통
+        li{float: initial;
+        
+            a{color: initial;padding: 10px;
+            
+                display: block;
+                position: relative;
+                
+                color:$--Color-text-primary;
+
+
+                &:hover{background-color: initial;}
+    
+                //하단에 ul.dept있으면 arrow 붙임
+                //arrow active에는 스타일 효과x
+                &.arrow.active{
+                    background: none !important;color: initial;
+                    &::before{background-color: initial;}
+                }
+                
+                &.arrow::after{
+                    position: absolute;
+                    content: '';
+                    display: block;
+                    background: url('/html/page/app/matching/assets/src/images/04icon/chevron-down.svg') no-repeat center;
+                    background-size: cover;
+                    width:20px;
+                    height: 20px;
+                    top:calc(50% - 10px);
+                    right: 10px;
+    
+                }
+
+                &.active{
+                    background: #EFF6FF;
+                    color:#10185C;
+
+                    &::before{
+                        background-color: #10185C !important;
+                    }
+                }
+                
+                &.active::after{
+                    transform: rotate(180deg);
+                }
+        
+                & + ul{display: none;}
+                &.active + ul{display: block;}
+
+
+
+            }
+
+            &.title{
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 800;
+                line-height: 24px; /* 150% */
+                letter-spacing: -0.24px;
+                padding: 12px 0 4px 16px;
+                border-bottom: 1px solid #E0E0E0;
+            }
+
+            &.hr{
+                border-bottom: 1px dotted #c4c4c4;
+                width: calc(100% - 20px);
+                height: 1px;
+                margin-left: 10px;
+            }
+        }
+
+
+        ul.dept1{
+            > li{
+                
+                > a{
+                    font-size:18px;
+                    font-weight: 700;
+                    line-height: 27px; /* 150% */
+                    letter-spacing: -0.27px;
+                    padding: 16px 8px;
+                    border-bottom: 1px solid #E0E0E0;
+
+
+                    &.active:not(.arrow){
+                        border-bottom: 2px solid #10185C;
+                    }
+                }
+                
+            }
+        }
+            // dept2
+            ul.dept2{
+                margin: 8px 0;
+                
+                > li{
+                    
+
+                    > a{
+                        //임시
+                        //background-color: #FF8120;
+
+                        @include Suit_Body_MD_Regular;
+                        padding:12px 12px 12px 28px;
+                        position: relative;
+                        border-radius: 4px;
+
+                        &::before{
+                          position: absolute;
+                          content: '';
+                          width: 4px;height: 4px;
+                          top:calc(50% - 2px);
+                          left:16px;
+                          border-radius: 50%;
+                          background-color: #33363D;
+                        }
+                        
+
+                        &.active{
+                            
+                        }
+
+                        &.arrow{
+                            padding:12px 36px 12px 28px;
+                        }
+                    }
+
+                }
+
+                > li:has(> a.arrow.active){margin: 8px 0;}
+            }
+                // dept3
+                ul.dept3{
+                    
+                    > li{
+
+                        > a{
+                            //임시
+                            //background-color: #20ff8f;
+
+
+                            @include Suit_Body_MD_Regular;
+                            padding:12px 16px 12px 32px;
+                            border-radius: 4px;
+
+                            &.active{
+                                
+                            }
+                        }
+
+                    }
+                }
+        // ul:has(.active){
+        //     display: block;
+        // }
+    }
+
+  }
+
+  nav.sidebar + section{margin: 0 0 0 54px;}
+
+  section{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    
+
+    .section_title{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 48px;
+
+        &.sitemap{
+            height: $sectionTitleHeight;
+        }
+        
+        .titleNav_evt{
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 52px;
+            letter-spacing: -0.2px;
+        }
+
+        .breadcrumb_dept{
+            @include Suit_Body_SS_Regular;
+            color: #969696;
+            
+            span{
+                display: inline-block;
+                position: relative;
+
+                &::before{
+                    content: '>';
+                }
+
+                &:first-child{
+                    &::before{
+                        content: '';
+                    }   
+                }
+                
+            }
+        }
+    }
+
+    .iframe_back{
+        position: relative;
+        background-color: #F5F5F5;
+        display: flex;
+        justify-content: center;
+        padding: 48px 0;
+
+
+        .gs_iframe{
+            display: block;
+            max-width: 615px;
+            width: 100%;
+            height: calc(100vh - ($headerHeight + 1px + $sectionTitleHeight + 96px));
+            border:none;
+
+            &.fullPage{
+                max-width: inherit;
+                height: calc(100vh - ($headerHeight + 1px));
+            }
+
+        }
+
+        .btn_pageFull{
+            cursor: pointer;
+            position: absolute;
+            display: block;
+            width: 48px;height: 48px;
+            border-radius: 100%;
+            background: #333333cc url('/html/page/app/matching/assets/src/images/04icon/icon_pageFull.svg') no-repeat center;
+            z-index: 300;
+            right: 20px;
+            bottom:76px;
+
+            &.active{
+
+                background: #333333cc url('/html/page/app/matching/assets/src/images/04icon/icon_pageDefault.svg') no-repeat center;
+
+            }
+            
+        }
+
+
+    }
+
+    .titleNav{
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 52px;
+        letter-spacing: -0.2px;
+    }
+
+    
+  }
+
+
+
+//★★★모바일 화면 900기준
+@media only screen and (max-width: 900px){
+
+  $headerHeight: 56px;
+
+  header{
+    border-bottom: 1px solid #e0e0e0;
+
+    .gs_header {
+
+        height: $headerHeight;
+        padding-top: 0;
+        position: relative;
+    
+    
+        .logo{
+          background-size: 20px;
+          padding-left: 28px;
+          margin-left: 20px;
+          
+          span{
+            @include Suit_Body_SM_Bold;
+          }
+        }
+        
+        .header_menu{
+          display: none;
+        }
+    
+        //hamberger GNB 메뉴
+        .m_menu{
+            display: block;
+        }
+    
+      }
+
+  }
+
+
+  body:has(nav.sidebar.active){overflow: hidden;}
+
+  nav.sidebar{
+
+    
+
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 200;
+
+    transition: 0.1s all;
+    opacity: 0;
+    transform: scaleY(0.01);
+    transform-origin: top left;
+
+    &.active{opacity: 1;transform: scaleY(1);}
+    
+    .sidebar_header{
+        display: block;
+        border-bottom: 1px solid #e0e0e0;
+
+
+        .title_area{
+            height: $headerHeight;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+
+            .close_x{
+                width: 48px;height: 48px;
+            }
+        }
+
+        .sidebar_search{
+            position: relative;
+            height: $headerHeight;
+            @include flex_center;
+            padding: 0 16px;
+            margin-bottom: 16px;
+
+            input[type=text]{
+                border-radius: 8px;
+                background: #F5F5F5;
+                border: none;
+
+                padding: 16px 48px 16px 16px;
+                height: auto;
+
+                @include Suit_Body_SM_Regular;
+            
+                &:focus{border:none !important;}
+            }
+            .search{
+                position: absolute;
+                right: 16px;
+
+                a{
+                    display: block;
+                    padding: 0;
+                    background: url('/html/page/app/matching/assets/src/images/04icon/search.svg') center 40% no-repeat;
+                    background-size: 24px;
+                    width: 48px;
+                    height: 48px;
+                }
+            }
+
+
+        }
+
+    
+    }
+
+
+    
+    h4.title{display: none;}
+
+    .sidebar_list{
+        display: flex;
+        background: linear-gradient(90deg, rgb(239,246,255,1) 109px, rgba(255,255,255,0) 109.1px);
+
+        //dept1 tab영역
+        .tabs_dept_sidebar{
+            display: block;
+            flex-shrink: 0;
+            width: 110px;
+            height: 100vh;
+
+
+            a{
+                height: 64px;
+                @include flex_center;
+                @include Suit_Body_SM_Bold;
+
+                &.active{
+                    background-color: #fff;
+                }
+            }
+           
+        }
+
+        //dept2 영역
+        .tab_list{
+            display: none;
+            width: 100%;
+            padding: 0 16px;
+
+            &.active{display: block;}
+
+        }
+
+
+
+        ul.dept2 > li{
+            & > a{
+                margin-top: 12px;
+              }
+
+            &:first-child > a{margin-top: 0;}
+        } 
+        ul.dept3 > li{
+            & > a{
+                margin-top: 4px;
+              }
+
+            &:first-child > a{margin-top: 0;}
+        } 
+    } 
+  }
+
+  nav.sidebar + section{margin: 0;}
+
+  section{
+
+    $sectionTitleHeight : 104px;
+
+    .section_title{
+        display: flex;
+        padding: 48px 0 0 20px;
+        align-items: start;
+        background-color: #f5f5f5;
+
+        &.sitemap{
+            height: $sectionTitleHeight;
+        }
+
+        .titleNav_evt{
+            @include Suit_Heading_SM;
+        }
+
+        .breadcrumb_dept{
+            display: none;
+            @include Suit_Body_SS_SemiBold;
+        }
+    }
+
+
+    .iframe_back{
+        
+        padding: 0;
+
+        .gs_iframe{
+            height: calc(100vh - ($headerHeight + 1px + $sectionTitleHeight));
+        }
+
+    }
+    
+  }
+
+
+
+}
+//모바일 끝
+
+
+

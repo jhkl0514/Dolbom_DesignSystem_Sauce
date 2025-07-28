@@ -1,0 +1,115 @@
+
+//handle bottomsheet - 핸들형 하단시트
+
+
+
+.bottom-sheet_handle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: 0.1s linear;
+  z-index: 1000;
+}
+.bottom-sheet_handle.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+.bottom-sheet_handle .sheet-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  background: #000;
+}
+.bottom-sheet_handle .content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+  background: #fff;
+  max-height: calc(100dvh - 60px);
+  height: 50vh;
+  transform: translateY(100%);
+  border-radius: 32px 32px 0 0;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+  transition: 0.3s ease;
+}
+.bottom-sheet_handle.show .content{
+  transform: translateY(0%);
+}
+.bottom-sheet_handle.dragging .content {
+  transition: none;
+}
+.bottom-sheet_handle.fullscreen .content {
+  overflow-y: hidden;
+}
+
+
+
+.drag_handle_area{width:100%;padding:16px 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .drag_handle{
+      border-radius: 999px;
+      background: #79747E;
+      width: 32px;
+      height: 4px;
+  }
+
+}
+
+.bottom-sheet_handle .modal_header{width:100%; display: flex;justify-content:space-between;align-items: center;padding: 32px 20px 16px;}
+
+.drag_handle_area + .modal_header{padding: 24px 20px 16px;}
+
+
+.bottom-sheet_handle .modal-content{padding: 0 20px;height: 100%;
+  overflow-y: auto;
+  scrollbar-width: thin;}
+.bottom-sheet_handle .modal-footer{padding: 0 20px 32px;}
+
+.bottom-sheet_handle .modal_title{
+  margin: 0;
+    color: $--Color-text-Primitive-secondary;
+    @include Suit_Body_LG_Bold;
+
+}
+
+
+
+
+
+.bottom-sheet_handle .modal-footer{height: auto;text-align: center;padding: 0 20px 20px;background:#fff;position: relative;
+
+    &::before{z-index:1000;content: '';display: block;position: absolute;top:-20px;left:0; width:100%;width:100%;height:20px;
+        background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 60%);
+    }
+
+    & .d-flex{
+        gap:16px 8px;
+    }
+}
+
+
+
+
+
+
+
+
+
+

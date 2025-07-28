@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+
+    <title>GUIDE_002_14_Tab.html</title>
+
+
+    <!-- jquery -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/materialize.js"></script>
+
+    <!-- guide.js -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/materialize.min.css" />
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/style.css" />
+
+    <!-- guideStyle_2025.css -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/guideStyle_2025.css" />
+
+    <!-- guideStyle_2025.js -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guideStyle_2025.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="gs_header">
+
+            <a href="GUIDE_000_index.html" class="logo"><span>돌봄 디자인시스템</span></a>
+
+            <ul class="header_menu">
+                <li><a href="GUIDE_001_Foundation.html">Foundation</a></li>
+                <li><a href="GUIDE_002_Component.html" class="active">Component</a></li>
+                <li><a href="GUIDE_003_AppScreen.html">App Screen</a></li>
+                <li><a href="GUIDE_004_WebScreen.html">Web Screen</a></li>
+                <li><a href="GUIDE_005_StyleGuide.html">Style Guide</a></li>
+                <li class="search"><a href="#"></a></li>
+            </ul>
+
+        </div>
+
+    </header>
+
+    <div class="wrap">
+
+        <main>
+
+
+            <nav class="sidebar">
+                
+                <div class="sidebar_header">
+                    <div class="title_area">
+                        <div class="close_x"></div>
+                    </div>
+                    <div class="sidebar_search">
+                        <input type="text" placeholder="검색어를 입력해 주세요.">
+                        <div class="search">
+                            <a href="#"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="title">Component</h4>
+
+                <div class="sidebar_list">
+                    <ul class="tabs_dept_sidebar">
+                        <li class="tab"><a class="active" title="dept_app">App Screen</a></li>
+                        <li class="tab"><a class="" title="dept_web">Web Screen</a></li>
+                    </ul>
+
+                    <div class="tab_list dept_app" title="siteMap_guide">
+                        <ul class="dept1">
+                            <li><a href="GUIDE_002_Component.html">Button</a></li>
+                            <li><a href="GUIDE_002_02_SelectionControls.html">Selection Controls</a></li>
+                            <li><a href="GUIDE_002_03_Link.html">Link</a></li>
+                            <li><a href="GUIDE_002_04_Chips.html">Chips</a></li>
+                            <li><a href="GUIDE_002_05_TextField.html">TextField</a></li>
+                            
+                            <li><a href="GUIDE_002_06_SelectField.html">SelectField</a></li>
+                            <li><a href="GUIDE_002_07_OptionList.html">OptionList</a></li>
+                            <li><a href="GUIDE_002_08_TopNavigation.html">Top Navigation</a></li>
+                            <li><a href="GUIDE_002_09_BottomNavigation.html">Bottom Navigation</a></li>
+                            <li><a href="GUIDE_002_10_List.html">List</a></li>
+                            
+                            <li><a href="GUIDE_002_11_Popup.html">Popup</a></li>
+                            <li><a href="GUIDE_002_12_BottomSheet.html">BottomSheet</a></li>
+                            <li><a href="GUIDE_002_13_Banner.html">Banner</a></li>
+                            <li><a class="active" href="GUIDE_002_14_Tab.html">Tab</a></li>
+                            <li><a href="GUIDE_002_15_NumberStepper.html">Number Stepper</a></li>
+
+                            <li><a href="GUIDE_002_16_TextAreaField.html">TextAreaField</a></li>
+                            <li><a href="GUIDE_002_17_Accordion.html">Accordion</a></li>
+                            <li><a href="GUIDE_002_18_Progressbar.html">Progressbar</a></li>
+
+                        </ul>
+                    </div>
+
+
+                </div>
+
+
+            </nav>
+
+
+ 
+            <section>
+
+
+                <div class="h48"></div>
+
+                <div class="titleNav">Tab</div>
+
+                <div class="h24"></div>
+ 
+                <div class="roundBox_01">
+                    탭(Tab)은 버튼을 눌러 여러 개의 콘텐츠 섹션을 전환할 수 있는 컴포넌트입니다.
+                    콘텐츠 섹션은 동일한 영역 내에서 전환되기 때문에 정보를 탐색하는 맥락을 유지할 수 있고 작은 공간에 많은 양의 콘텐츠를 효과적으로 표현할 수 있습니다.
+                </div>
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Anatomy, 컴포넌트 내부요소</h3>
+
+                <div class="h24"></div>
+
+                <div class="roundBox_01 flex_center">
+                    <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_73_01_tab.svg" alt="">
+                </div>
+
+                <div class="h16"></div>
+
+                <ul class="d-flex gap16 color_t_s font_ssr">
+                    <li>1. Tab</li>
+                    <li>2. Indicator(인디게이터)</li>
+                    <li>3. Label </li>
+                </ul>
+
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Type, 종류</h3>
+                
+                <div class="h24"></div>
+
+                <h5 class="title fw700">1. 라인형</h5>
+
+                <div class="h08"></div>
+                
+                <div class="color_tp_s font_sbmr">
+                    주로 화면의 최상단에 위치하며, 화면의 콘텐츠를 모두 변경하는 탭입니다.<br>
+                    최상의 정보 계층 그룹을 제공합니다. 필요 시, 2depth를 제공할 수 있습니다.
+                </div>
+
+                <div class="h16"></div>
+
+                <div class="roundBox_01 flex_center">
+                    <div>
+                        <div class="h20"></div>
+                        <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_74_01_tab.svg" alt="">
+                        <div class="h20"></div>
+                    </div>
+                </div>
+
+                <div class="h32"></div>
+
+                <h5 class="title fw700">2.세그먼트형</h5>
+
+                <div class="h08"></div>
+
+                <div class="color_tp_s font_sbmr">
+                    콘텐츠 내 또는 화면 중간의 특정 영역만 변경하는 탭입니다.<br>
+                    최상의 정보 계층 그룹을 제공합니다. 필요 시, 2depth를 제공할 수 있습니다.
+                </div>
+
+                <div class="h16"></div>
+
+                <div class="roundBox_01 flex_center">
+                    <div>
+                        <div class="h20"></div>
+                        <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_75_01_tab.svg" alt="">
+                        <div class="h20"></div>
+                    </div>
+                </div>
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">State, 상태</h3>
+
+                <div class="h24"></div>
+
+                <div class="roundBox_01 noPad back_E0E0E0">
+                    <div class="grid_container">
+                        <div class="item flex_center ">
+                            <div class="infoFix">
+                                <span class="f_head text">on</span>
+                                <div>
+                                    <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_76_01_tab.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item flex_center">
+                            <div class="infoFix">
+                                <span class="f_head text">off</span>
+                                <div>
+                                    <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_76_02_tab.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Table of Figma Propertie, 피그마 속성</h3>
+
+                <div class="h24"></div>
+
+                <table class="guide_table">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Values</th>
+                            <th>Default Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="color_tp_s font_sbss">Type</span></td>
+                            <td>Line, Segment</td>
+                            <td>Line</td>
+                        </tr>
+                        <tr>
+                            <td><span class="color_tp_s font_sbss">Switch</span></td>
+                            <td>on, off</td>
+                            <td>on</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Spec, 제작가이드</h3>
+
+                <div class="h24"></div>
+
+                <h5 class="title fw700">1.라인형</h5>
+
+                <ul class="list_dept1">
+                    <li>항목 너비: 텍스트 길이에 따라 유동적으로 적용.</li>
+                    <li>탭 배치:</li>
+                </ul>
+                    <ul class="list_dept1 marT8 marL24">
+                        <li>한 화면 내 모든 탭을 표시할 경우, 각 탭 항목 간의 패딩 값을 유지.</li>
+                        <li>Swipe(스와이프) 또는 좌우 스크롤이 가능한 탭에서는 패딩 값을 유지하고, 너비는 텍스트 길이에 따라 조정.</li>
+                    </ul>
+
+                <div class="h16"></div>
+
+                <div class="roundBox_01 flex_center">
+                    <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_77_01_tab.svg" alt="">
+                </div>
+
+                <div class="h32"></div>
+
+                <h5 class="title fw700">2.세그먼트형</h5>
+
+                <div class="h08"></div>
+
+                <ul class="list_dept1">
+                    <li>항목 너비: 화면 내에 모든 탭 항목이 동일한 비율로 균등 배치</li>
+                    <li>탭 배치:</li>
+                </ul>
+                    <ul class="list_dept1 marT8 marL24">
+                        <li>한 화면에 모든 탭이 노출되도록 설계하며, 각 항목의 너비는 고정 비율로 적용. (최대 3개)</li>
+                    </ul>
+
+                <div class="h16"></div>
+
+                <div class="roundBox_01 flex_center">
+                    <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_78_01_tab.svg" alt="">
+                </div>
+
+                <div class="h32"></div>
+
+                <h5 class="title fw700">Tip.사용법</h5>
+
+                <div class="h08"></div>
+
+                <div class="color_tp_s font_sbmr">
+                    여러개의 탭이 중첩할 경우, 서로 다른 수준의 탭이 명확하게 구분되도록 사용해야합니다.<br>
+                    1depth는 Tab을 사용하고 2depth는 Filter Chips을 사용합니다.
+                </div>
+
+                <div class="h16"></div>
+
+                <div class="roundBox_01 flex_center">
+                    <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_79_01_tab.svg" alt="">
+                </div>
+
+
+
+                <div class="h100"></div>
+
+            </section>
+
+
+
+        </main>
+
+
+    </div>
+    <!-- wrapper -->
+
+</body>
+
+</html>

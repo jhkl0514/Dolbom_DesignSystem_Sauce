@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Vimeo 모달</title>
+
+  <script src="https://player.vimeo.com/api/player.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* 모달 스타일 */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal iframe {
+      width: 90%;
+      height: 90%;
+      border: none;
+    }
+
+    .modal .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      background: rgba(255, 36, 36, 0.5);
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div>
+    <a class="btn_play" style="cursor: pointer;">Vimeo 재생</a>
+  </div>
+
+  <!-- 모달 -->
+  <div class="modal" id="vimeoModal">
+    <button class="close">닫기x</button>
+    <iframe 
+      id="vimeoPlayer" 
+      src="https://player.vimeo.com/video/1038794351?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+      allow="autoplay; fullscreen; picture-in-picture" 
+      title="Vimeo Video">
+    </iframe>
+  </div>
+
+  <script>
+    // DOM 요소 참조
+    const modal = document.getElementById('vimeoModal');
+    const closeButton = modal.querySelector('.close');
+    const playButton = document.querySelector('.btn_play');
+    const iframe = document.getElementById('vimeoPlayer');
+    const player = new Vimeo.Player(iframe);
+
+    // 모달 열기
+    playButton.addEventListener('click', () => {
+      modal.classList.add('active');
+      player.play().catch(err => console.error(err));
+    });
+
+    // 모달 닫기
+    closeButton.addEventListener('click', () => {
+      modal.classList.remove('active');
+      player.pause().catch(err => console.error(err));
+    });
+
+    // ESC 키로 모달 닫기
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+        player.pause().catch(err => console.error(err));
+      }
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,333 @@
+html {
+    @apply overflow-visible;
+}
+
+body {
+    @apply block relative w-full h-screen max-h-screen text-black2;
+}
+
+
+/* banner */
+#banner {
+    @apply hidden -mt-11 bg-[#485EB2] leading-[1.16] text-center font-medium text-white
+           md:-mt-[55px];
+    & .container {
+        @apply relative mx-auto px-0 max-w-screen-xl
+               lg:px-7
+               xl:px-10;
+    }
+    & img {
+        @apply mx-auto h-11 object-cover md:h-[55px];
+    }
+    & button {
+        @apply absolute top-1/2 right-4 w-5 h-5 rounded-full bg-white/20 bg-no-repeat bg-center bg-[length:74%] bg-[url(../images/ico-close2-white.svg)] -translate-y-1/2
+               lg:right-7 lg:w-5.5 lg:h-5.5
+               xl:right-10;
+    }
+}
+
+
+/* header */
+#header {
+    @apply relative top-0 left-0 z-80 w-full min-h-20 bg-white
+           md:min-h-[6.1875rem]
+           lg:min-h-[7.625rem];
+}
+
+#utility {
+    @apply flex items-start relative mx-auto px-4 max-w-screen-xl
+           lg:px-7
+           xl:px-10;
+}
+
+.global-logo {
+    & a {
+        @apply pt-3 pb-0
+               lg:pt-5 lg:pb-2;
+    }
+}
+
+.utility-menu {
+    @apply hidden gap-5 absolute right-0 leading-tight text-sm text-gray1
+           md:top-3
+           lg:right-7
+           lg:flex xl:right-10;
+}
+
+/* navigation */
+#navigation {
+    @apply top-0 left-0 w-full border-b border-b-gray3 bg-white;
+    & .container {
+        @apply flex relative z-85 mx-auto pl-4 pr-13 max-w-screen-xl
+               md:pr-15
+               lg:px-7
+               xl:px-10;
+    }
+}
+
+.navigation-allmenu {
+    @apply flex items-center;
+    & .allmenu-toggle {
+        @apply flex items-center py-3 px-4 -mx-4;
+        & i {
+            @apply block mt-px w-4 h-4 bg-no-repeat bg-[length:100%] bg-center bg-[url(../images/ico-navigation-menu.svg)]
+                   md:w-4.5 md:h-4.5;
+        }
+        & span {
+            @apply sr-only
+                   lg:not-sr-only lg:ml-3;
+        }
+        &.is-active {
+            & i {
+                @apply bg-[length:0.875rem] bg-[url(../images/ico-navigation-close.svg)]
+                       md:bg-[length:1rem];
+            }
+        }
+    }
+    & .allmenu-list {
+        @apply hidden absolute top-full mt-px left-0 w-full bg-white
+               lg:left-7 lg:w-auto lg:min-h-[31.25rem] lg:max-h-[46.875rem]
+               xl:left-10;
+        &.is-active {
+            @apply block;
+        }
+        & ul {
+            @apply scrollbars h-full overflow-y-auto;
+        }
+    }
+    & [class*="allmenu-group"] {
+        @apply hidden space-y-px border-gray3
+               lg:min-h-[31.25rem] lg:max-h-[46.875rem] lg:border-b lg:bg-white;
+        &.is-active {
+            @apply block;
+        }
+    }
+    & .allmenu-group {
+        @apply block border-r w-40
+               lg:w-[250px] lg:border-l;
+    }
+    & .allmenu-group2 {
+        @apply absolute top-0 left-40 w-[calc(100%-10rem)] shadow-[inset_5px_0px_0px_0px_#f5f5f5] 
+               lg:left-full lg:-ml-px lg:w-[250px] lg:border-x;
+    }
+    & .allmenu-group3 {
+        @apply lg:absolute lg:top-0 lg:left-full lg:-ml-px lg:w-[250px] lg:border-x lg:shadow-[inset_5px_0px_0px_0px_#f5f5f5]
+               lg-max:py-2.5 lg-max:!h-auto;
+    
+    }
+    & [class*="allmenu-item"] {
+        & > a {
+            @apply flex items-center relative pl-6 h-[3.125rem] text-[0.9375rem] font-medium
+                   lg:pl-5;
+        }
+        &.is-depth {
+            & > a {
+                @apply pr-9
+                       after:absolute after:top-1/2 after:right-6.5 after:w-[7px] after:h-[14px] after:bg-no-repeat after:bg-[100%_auto] after:bg-center after:bg-[url(../images/ico-angle-right.svg)] after:-translate-y-1/2 after:rotate-90
+                       lg:pr-7
+                       lg:after:right-4.5 lg:after:opacity-0 lg:after:rotate-0;
+            }
+        }
+        &.is-active {
+            & > a {
+                @apply bg-neutral-100 font-bold text-[#FD8106];
+            }
+            &.is-depth {
+                & > a {
+                    @apply after:-rotate-90 after:opacity-100
+                           lg:after:rotate-0;
+                }
+            }
+        }
+    }
+    & .allmenu-item {
+        & > a {
+            @apply pl-0 text-base
+                   lg-max:h-15;
+            & i {
+                @apply flex items-center justify-center w-12 h-full;
+                & img {
+                    @apply h-5.5;
+                }
+            }
+        }
+        &.is-depth {
+            & > a {
+                @apply pr-6 
+                       after:right-3.5 after:opacity-0 after:!rotate-0
+                       lg:pr-7
+                       lg:after:right-4.5;
+            }
+        }
+    }
+    & .allmenu-item3 {
+        & > a {
+            @apply pl-9 h-9
+                   lg:pl-6.5 lg:h-[3.125rem];
+        }
+    }
+    & .allmenu-user {
+        @apply flex items-center gap-[10px] py-[5px] px-[12px] border-t border-gray3 text-[13px] text-gray1
+               lg:hidden;
+        & a {
+            @apply flex items-center px-[4px] h-[36px]
+                   last:ml-auto last:text-sm last:font-medium last:text-black2;
+        }
+    }
+}
+
+.navigation-submenu {
+    @apply flex-1 overflow-hidden whitespace-nowrap;
+    & ul {
+        @apply flex relative ml-3 overflow-auto
+               before:hidden before:absolute before:top-1/2 before:left-0 before:mt-px before:w-px before:h-[1em] before:bg-gray1 before:-translate-y-1/2
+               lg:ml-4 lg:pl-6
+               lg:before:block
+               xl:ml-6.5 xl:pl-[3.125rem];
+        &::-webkit-scrollbar {
+            @apply w-0 h-0;
+        }
+        &::-webkit-scrollbar-thumb {
+            @apply border-transparent bg-transparent;
+        }
+    }
+    & li {
+        @apply mr-1
+               md:mr-7
+               xl:mr-15
+               last:mr-0;
+    }
+    & a {
+        @apply block py-3 px-2;
+    }
+}
+
+.navigation-search {
+    & .search-toggle {
+        @apply absolute top-0 right-1 w-[2.8125rem] h-[2.8125rem] overflow-hidden bg-no-repeat bg-center bg-[url(../images/ico-navigation-search.svg)] bg-[length:1rem] -indent-96
+               md:w-12 md:h-12 md:bg-[length:1.125rem]
+               lg:hidden;
+        &.is-active {
+            @apply bg-[length:0.875rem] bg-[url(../images/ico-navigation-close.svg)]
+                   md:[length:1rem];
+        }
+    }
+    & .search-form {
+        @apply hidden absolute top-full mt-px left-0 w-full bg-white
+               lg:!block lg:absolute lg:-top-7 lg:left-auto lg:right-45 lg:mt-0 lg:w-60 lg:!h-auto
+               xl:w-70;
+        &.is-active {
+            @apply flex flex-col;
+        }
+    }
+    & .form-field {
+        @apply flex px-4 py-6.5 border-b border-b-gray1/20
+               lg:p-0 lg:border-b-black2;
+        & legend {
+            @apply sr-only;
+        }
+        & input {
+            @apply flex-1 min-w-0 px-4.5 h-9 rounded-full bg-gray2 text-[0.9375rem] outline-none
+                   lg:px-0 lg:h-7.5 lg:rounded-none lg:bg-white;
+        }
+        & button[type="Submit"] {
+            @apply overflow-hidden bg-no-repeat bg-center ml-1 w-9 h-9 bg-[length:55.555555%] bg-[url(../images/ico-navigation-search.svg)] -indent-96
+                   placeholder:text-black2/30
+                   lg:ml-0 lg:w-7.5 lg:h-7.5 lg:bg-[length:60%]
+                   lg:placeholder:text-black2;
+        }
+    }
+    & .form-current {
+        @apply flex-1 flex flex-col bg-white pt-4.5 px-4 leading-tight text-sm
+               lg:hidden lg:-mx-4 lg:rounded-md lg:shadow-[0px_4px_8px_#00000033];
+        &.is-active {
+            @apply flex
+                   lg:block;
+        }
+    }
+    & .current-title {
+        @apply flex items-center justify-between mb-2;
+        & button {
+            @apply font-normal text-[0.8125rem] text-gray1 underline;
+        }
+    }
+    & .current-items {
+        @apply flex-1 flex flex-col overflow-x-hidden overflow-y-auto
+               lg:overflow-visible;
+    }
+    & .current-item {
+        @apply flex items-center justify-between;
+        & a {
+            @apply flex-shrink text-base font-medium py-1.5
+                   hover:underline;
+        }
+        & button {
+            @apply block -mr-3 w-8 h-8 overflow-hidden bg-[url(../images/ico-navigation-close.svg)] bg-[center_top_calc(50%+1px)] bg-no-repeat bg-[length:0.5rem] opacity-50 -indent-96;
+        }
+    }
+    & .current-option {
+        @apply flex items-center justify-between mt-2 -mx-4 px-4 border-t border-t-gray1/20;
+        & .form-switch {
+            @apply pl-[1.5em];
+            & .form-check-input {
+                @apply mt-[0.1428em] -ml-[1.5em] w-[1.285em] h-[0.857em] rounded-md;
+                &:checked {
+                    @apply border-[#8c8c8c] bg-[#8c8c8c];
+                    & + .form-check-label {
+                        @apply text-gray1 font-medium;
+                    }
+                }
+            }
+            & .form-check-label {
+                @apply text-gray1 font-medium;
+            }
+        }
+        & .option-close {
+            @apply py-2.5 px-3 font-medium bg-[url(../images/ico-navigation-close.svg)] bg-[right_top_calc(50%+1px)] bg-no-repeat bg-[length:0.5rem] opacity-50;
+        }
+    }
+}
+
+.navigation-util {
+    @apply flex absolute -top-9 gap-1 right-3
+           md:gap-1.5 md:-top-11
+           lg:-top-8 lg:right-7
+           xl:right-10;
+    & [class*="util-item"] {
+        @apply block relative w-8 h-8 bg-no-repeat bg-center
+               md:w-9 md:h-9
+               lg:w-10 lg:h-10;
+        & i {
+            @apply absolute -top-0.5 left-full -ml-4 py-0.5 px-1 min-w-[1.5em] rounded-full bg-[#FF3838] leading-none text-[0.6875rem] text-center font-serif text-white font-bold
+                   md:text-xs md:px-1.5;
+        }
+    }
+    & .util-item1 {
+        @apply bg-[length:65%] bg-[url(../images/ico-user.svg)];
+    }
+    & .util-item2 {
+        @apply bg-[length:65%] bg-[url(../images/ico-attent-equal.svg)];
+    }
+    & .util-item3 {
+        @apply bg-[length:80%] bg-[url(../images/ico-cart.svg)];
+    }
+}
+
+
+/* scroll match */
+.is-banner {
+    & #banner {
+        @apply block mt-0;
+    }
+    & #header {
+        @apply min-h-31
+               md:min-h-[9.6875rem]
+               lg:min-h-[11.1875rem];
+    }
+}
+
+.is-scroll {
+    & #navigation {
+        @apply lg-max:fixed;
+    }
+}

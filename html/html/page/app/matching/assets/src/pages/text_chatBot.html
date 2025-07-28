@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>text_chatBot.html</title>
+
+
+    <!-- jquery -->
+    <script src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script src="../js/materialize.min.js"></script>
+
+    <!-- guide.js -->
+    <script src="../js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="../css/materialize.min.css">
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script>
+
+        $(function () {
+
+
+        });
+
+    </script>
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+
+
+        <header>
+            <nav class="top">
+                <a class="btn_back waves-effect" href="#">
+                    <span class="icon"></span>
+                    <span class="txt">인정등급 예상 테스트</span>
+                </a>
+                <div class="d-flex">
+                    <div class="icon_area waves-effect">
+                        <div class="icon_btn i_home"></div>
+                    </div>
+                </div>
+
+            </nav>
+        </header>
+
+        <style>
+            .wrap_chatArea{
+                display: flex;
+                flex-direction: column;
+                gap:30px;
+
+            }
+
+            .boxChatArea{display: flex;gap: 8px;align-items: end;}
+
+            .boxChatArea.bot_recv{justify-content: left;flex-direction: row-reverse;}
+            .boxChatArea.bot_trans{justify-content: right;}
+
+            .boxChatArea .box_chat{
+                border-radius: 20px;padding: 10px 12px;
+                min-width:auto;
+                max-width: calc(100% - 80px);
+
+                img{width:100px;}
+            }
+            
+            .boxChatArea.bot_recv .box_chat{background-color: #f7f7f7;}
+            
+            .boxChatArea.bot_trans .box_chat{background-color: #dce4ff;}
+        </style>
+
+
+        <script>
+            $(function(){
+
+                //버튼 스크롤 이동
+                $('.evtBtn').each(function(){
+
+                    var thisTarget = $(this).attr('title');
+
+                    var thisTargetChatValue = thisTarget.substr(4,50) ;
+
+                    var thisTargetChatOffsetTop = $('[title='+thisTargetChatValue+']').offset().top;
+
+                    $(this).click(function(){
+
+                        //alert(thisTargetChatValue);
+
+                        $("html, body").animate({scrollTop: thisTargetChatOffsetTop - 56}, 500);
+
+                    });
+
+                });
+
+            });
+        </script>
+
+        <main>
+            <section class="default">
+
+                <div class="wrap_chatArea">
+
+                    <div class="boxChatArea bot_recv">
+                        <div>1</div>
+                        <div class="box_chat">
+                            내용 들어감내용 들어감내용 들어감내용 들어감내용 들어감내용 들어감내용 들어감내용 들어감내용 들어감내용 들어감<br>
+                            내용 들어감<br>내용 들어감<br>
+                        </div>
+                    </div>
+
+                    <div class="boxChatArea bot_trans">
+                        <div>읽음</div>
+                        <div class="box_chat">
+                            ㅇㅇ<br>
+                            <a class="btn btn_primary w100p evtBtn" title="btn_b_exp_e_104">이동버튼2</a>
+                        </div>
+                    </div>
+
+                    <div class="boxChatArea bot_recv" title="b_exp_e_101">
+                        <div>1</div>
+                        <div class="box_chat">
+                            내용 들어감내용<br>내용 들어감<br>내용 들어감<br>
+                            <div class="color_t_danger">여기임111</div>
+                        </div>
+                    </div>
+
+                    <div class="boxChatArea bot_recv" title="b_exp_e_102">
+                        <div>읽음</div>
+                        <div class="box_chat">
+                            내용 들어감내용 들어감내용 들어감내용 들어감내용 들어감내용 들어감내용 들어감내용 들어감내용 들어감내용 들어감<br>내용 들어감<br>내용 들어감<br>
+                            <div class="color_t_danger">여기임222</div>
+                        </div>
+                    </div>
+
+                    <div class="boxChatArea bot_recv" title="b_exp_e_103">
+                        <div>읽음</div>
+                        <div class="box_chat">
+                            내용 들어감내용 들어감내용 들어감내용 들어감내용 들어감내용 들어감내용 들어감내용 들어감내용 들어감내용 들어감<br>내용 들어감<br>내용 들어감<br>
+                        </div>
+                    </div>
+
+                    <div class="boxChatArea bot_trans">
+                        <div>11</div>
+                        <div class="box_chat">
+                            ㅇdfdfㅇ<br>
+                            <img src="/html/page/app/matching/assets/src/images/09people/pp_04.svg" alt="">
+                            <img src="/html/page/app/matching/assets/src/images/09people/pp_04.svg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="boxChatArea bot_trans">
+                        <div>읽음</div>
+                        <div class="box_chat">
+                            어감내용 들어감내용 들어감내용 들어감내용 들어감내용어감내용 들어감내용 들어감내용어감내용 들어감내용 들어감내용어감내용 들어감내용 들어감내용 들어감<br>
+                            내용 내용 들어감<br>
+                            내용 들어감<br>
+                            내용 들어감<br>
+                            내용 들어감<br>
+                            내용 들어감<br>
+                            내용 들어감<br>
+                            내용 들어감<br>
+                            내용 들어감<br>
+                            내용 들어감<br>
+                            내용 들어감<br>
+                            내용 들어감<br>
+                            내용 들어감<br>
+                            내용 들어감<br>
+                            내용 들어감<br>
+                            내용 들어감<br>
+                            내용 들어감<br><br>
+                            <a class="btn btn_primary w100p evtBtn" title="btn_b_exp_e_101">이동버튼1</a>
+                        </div>
+                    </div>
+
+                    <div class="boxChatArea bot_recv" title="b_exp_e_104">
+                        <div>읽음</div>
+                        <div class="box_chat">
+                            내용 들어감내용 들어감내용 들어감내용 들어감내용 들어감내용 들어감내용 들어감내용 들어감내용 들어감내용 들어감<br>
+                            내용 들어감<br>
+                            내용 들어감<br>
+                            <a class="btn btn_primary w100p evtBtn" title="btn_b_exp_e_102">이동버튼2</a>
+                        </div>
+                    </div>
+
+                    <div>여기까지 읽으셨습니다.</div>
+    
+                </div>
+
+            </section>
+        </main>
+
+        <footer class="page-footer">
+
+            <div class="relative">
+                <a class="waves-effect btn-large btn_primary w100p">시작하기</a>
+            </div>
+
+        </footer>
+
+
+
+
+
+
+
+    </div>
+    <!-- wrapper -->
+
+
+
+</body>
+
+</html>

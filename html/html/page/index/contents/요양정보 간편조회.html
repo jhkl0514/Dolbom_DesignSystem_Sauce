@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title></title>
+
+    <!-- plugin -->
+    <link rel="stylesheet" href="../../../core/vendor/swiperjs/swiper-bundle.css">
+    <script src="../../../core/vendor/jquery/jquery-3.6.0.min.js"></script>
+    <script src="../../../core/vendor/swiperjs/swiper-bundle.min.js"></script>
+    <script src="../../../core/vendor/masonry/masonry.pkgd.min.js"></script>
+
+    <link rel="stylesheet" href="../assets/style/style.min.css">
+    <script src="../assets/script/index.js"></script>
+</head>
+<body>
+    <!-- notice -->
+    <aside id="notice">
+        <div class="notice-banner1">
+            <dl>
+                <dt><em>장기요양인정등급</em>을 이미 받으셨나요?</dt>
+                <dd>올해 남은 복지 혜택을 <em>여기에서 확인</em>하세요</dd>
+            </dl>
+            <a href="#">남은 금액 보기</a>
+        </div>
+        <div class="notice-banner2">
+            <dl>
+                <dt>부모님 맞춤 제품이 필요하세요?</dt>
+                <dd>편안한 일상생활 &amp; 미식을 책임지는 쇼핑몰</dd>
+            </dl>
+            <a href="#">지금 둘러보기</a>
+        </div>
+    </aside>
+    <!-- //notice -->
+
+    <!-- header -->
+    <header id="header">
+        <h1 id="logo" class="global-logo">
+            <a href="#"><em>이로움ON</em></a>
+        </h1>
+        <nav id="navigation">
+            <ul class="nav-items">
+                <li class="nav-item">
+                    <a href="#">이로움 서비스</a>
+                    <div class="nav-sub-items">
+                        <ul>
+                            <li class="nav-sub-item"><a href="#">수급자 요양정보</a></li>
+                            <li class="nav-sub-item"><a href="#">인정등급 예상 테스트</a></li>
+                            <li class="nav-sub-item"><a href="#">복지정보 서비스</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#">시니어 길잡이</a>
+                    <div class="nav-sub-items">
+                        <ul>
+                            <li class="nav-sub-item"><a href="#">노인장기요양보험제도</a></li>
+                            <li class="nav-sub-item"><a href="#">복지용구 알아보기</a></li>
+                            <li class="nav-sub-item"><a href="#">복지용구 선택하기</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div id="utility">
+            <ul>
+                <li><a href="#">로그인</a></li>
+                <!-- <li><a href="#">로그아웃</a></li> -->
+                <li><a href="#" class="join">회원가입</a></li>
+                <li><a href="#" class="cost">남은 금액보기</a></li>
+            </ul>
+        </div>
+        <button type="button" id="allmenu-toggle" data-bs-toggle="offcanvas" data-bs-target="#allmenu">전체 메뉴 열기/닫기</button>
+    </header>
+    <div id="allmenu" tabindex="-1" class="offcanvas offcanvas-end">
+        <div class="offcanvas-header">
+            <ul>
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">회원가입</a></li>
+            </ul>
+            <button class="closed" type="button" data-bs-toggle="offcanvas" data-bs-target="#allmenu-layer">레이어 닫기</button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="user-info">
+                <div class="thumb"></div>
+                <div class="name">
+                    김정래
+                    <small>님</small>
+                    <img src="/html/core/images/ico-kakao.png" alt="카카오소셜아이콘">
+                    <!-- 소셜 아이콘
+                    <img src="/html/core/images/ico-naver.png" alt="네이버소셜아이콘">
+                    -->
+                </div>
+                <a href="#" class="logout">로그아웃</a>
+            </div>
+            <dl class="menu-item1">
+                <dt><a href="#"><img src="/html/page/index/assets/images/ico-allmenu1.png" alt="이로움 서비스를 표현한 아이콘"> 이로움 서비스</a></dt>
+                <dd>
+                    <ul>
+                        <li><a href="#">요양정보 간편조회</a></li>
+                        <li><a href="#">인정 등급 예상 테스트</a></li>
+                        <li><a href="#">복지정보 서비스</a></li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl class="menu-item2">
+                <dt><a href="#"><img src="/html/page/index/assets/images/ico-allmenu1.png" alt="이로움 서비스를 표현한 아이콘"> 시니어 길잡이</a></dt>
+                <dd>
+                    <ul>
+                        <li><a href="#">노인장기요양보험제도</a></li>
+                        <li><a href="#">복지용구 알아보기</a></li>
+                        <li><a href="#">복지용구 선택하기</a></li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <!-- //header -->
+    
+    <main id="container">
+        <header id="subject">
+            <nav class="breadcrumb">
+                <ul>
+                    <li class="home"><a href="#">홈</a></li>
+                    <li>이로움서비스</li>
+                    <li>수급자 요양정보</li>
+                </ul>
+            </nav>
+
+            <div class="mt-6">
+                <a href="#" class="btn" data-bs-toggle="modal" data-bs-target="#pop-consulting">
+                    <strong>알림</strong>
+                </a>
+                <a href="#" class="btn" data-bs-toggle="modal" data-bs-target="#pop-consulting-info">
+                    <strong>L번호가 있는 수급자의 경우 : 상담정보확인</strong>
+                </a>
+                <a href="#" class="btn" data-bs-toggle="modal" data-bs-target="#pop-consulting-complated">
+                    <strong>상담확인</strong>
+                </a>
+            </div>
+            <h2 class="subject">
+                수급자 요양정보 
+                <!-- <img src="/html/page/index/assets/images/ico-subject2.png" alt=""> -->
+                <small>올해 남은 급여 금액을 확인 후 복지 혜택 상담을 신청해보세요</small>
+            </h2>
+        </header>
+
+        <div id="content">
+            <div class="mx-auto max-w-[800px]">
+                <form class="careinfo-search">
+                    <fieldset>
+                        <legend class="sr-only">요양정보 검색</legend>
+                        <div class="field">
+                            <dl>
+                                <dt><label for="search-item1">이름</label></dt>
+                                <dd><input type="text" id="search-item1" class="form-control"></dd>
+                            </dl>
+                            <dl>
+                                <dt><label for="search-item2">요양인정번호</label></dt>
+                                <dd><input type="text" id="search-item2" class="form-control"></dd>
+                            </dl>
+                        </div>
+                        <button class="btn btn-large btn-primary3">조회하기</button>
+                    </fieldset>
+                </form>
+
+                <div class="careinfo-mask">
+                    <div class="careinfo-layer">
+                        <strong>요양정보간편조회가 궁금하시다면</strong>
+                        <a href="#" class="btn btn-large">간편 로그인/회원가입</a>
+                    </div>
+
+                    <div class="careinfo-myinfo">
+                        <div class="flex-none mb-2  md:flex md:justify-between">
+                            <h3 class="careinfo-title mb-0"><span class="blurring"><span class="mask"></span>이로미(L123456789)</span> 님의 요양정보</h3>
+                            <div class="flex items-end justify-end gap-3">
+                                <span class="text-sm text-black2/50">2023년 10월 04일 11:11:11</span>
+                                <button class="btn-lightgrey">다시 조회하기 <i class="icon-refresh"></i></button>
+                            </div>
+                        </div>
+                        <div class="myinfo-wrapper">
+                            <div class="myinfo-box1">
+                                <p class="name"><span class="blurring">이로미님</span> <a href="#">정보수정</a></p>
+                                <dl class="numb">
+                                    <dt class="desc">요양인정번호</dt>
+                                    <dd><span class="blurring">L123456789</span></dd>
+                                </dl>
+                                <dl class="date">
+                                    <dt class="desc">인정 유효기간</dt>
+                                    <dd><span class="blurring">2023년 1월 1일<br> ~ 2023년 12월 31일</span></dd>
+                                </dl>
+                            </div>
+                            <div class="myinfo-box2">
+                                <p class="desc">잔여급여</p>
+                                <p class="cost"><span class="blurring"><strong>1,250,000</strong>원</span></p>
+                                <dl class="used1">
+                                    <dt class="desc">사용</dt>
+                                    <dd class="percent">
+                                        <div class="track">
+                                            <div class="bar" style="width: 25%;"></div>
+                                        </div>
+                                        <div class="won"><span class="blurring">350,000원</span></div>
+                                    </dd>
+                                </dl>
+                                <dl class="used2">
+                                    <dt class="desc">총 급여</dt>
+                                    <dd class="percent">
+                                        <div class="track">
+                                            <div class="bar" style="width: 75%;"></div>
+                                        </div>
+                                        <div class="won"><span class="blurring">1,600,000원</span></div>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="myinfo-box3">
+                                <p class="desc">인정등급</p>
+                                <p class="cost"><span class="blurring"><strong>15</strong>등급</span></p>
+                                <p class="desc">제품가 최소 85% 지원</p>
+                            </div>
+                            <div class="myinfo-box4">
+                                <p class="name">본인부담율</p>
+                                <p class="cost"><span class="blurring"><strong>15</strong>%</span></p>
+                                <p class="desc">월 145만원내에서<br> 요양보호사 신청 가능</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="careinfo-status">
+                        <h3 class="careinfo-title">나의 복지용구 현황</h3>
+                        <div class="status-swiper">
+                            <div class="swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide swiper-item1">
+                                        <strong>성인용 보행기</strong>
+                                        <i></i>
+                                        <dl>
+                                            <dt>계약완료</dt>
+                                            <dd><span class="blurring">1</span></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>구매예상</dt>
+                                            <dd><span class="blurring">0</span></dd>
+                                        </dl>
+                                    </div>
+                                    <div class="swiper-slide swiper-item2">
+                                        <strong>수동휠체어</strong>
+                                        <i></i>
+                                        <dl>
+                                            <dt>계약완료</dt>
+                                            <dd><span class="blurring">1</span></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>구매예상</dt>
+                                            <dd><span class="blurring">0</span></dd>
+                                        </dl>
+                                    </div>
+                                    <div class="swiper-slide swiper-item3">
+                                        <strong>지팡이</strong>
+                                        <i></i>
+                                        <dl>
+                                            <dt>계약완료</dt>
+                                            <dd><span class="blurring">1</span></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>구매예상</dt>
+                                            <dd><span class="blurring">0</span></dd>
+                                        </dl>
+                                    </div>
+                                    <div class="swiper-slide swiper-item4">
+                                        <strong>안전손잡이</strong>
+                                        <i></i>
+                                        <dl>
+                                            <dt>계약완료</dt>
+                                            <dd><span class="blurring">1</span></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>구매예상</dt>
+                                            <dd><span class="blurring">0</span></dd>
+                                        </dl>
+                                    </div>
+                                    <div class="swiper-slide swiper-item5">
+                                        <strong>미끄럼방지 매트</strong>
+                                        <i></i>
+                                        <dl>
+                                            <dt>계약완료</dt>
+                                            <dd><span class="blurring">1</span></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>구매예상</dt>
+                                            <dd><span class="blurring">0</span></dd>
+                                        </dl>
+                                    </div>
+                                    <div class="swiper-slide swiper-item6">
+                                        <strong>미끄럼방지 양말</strong>
+                                        <i></i>
+                                        <dl>
+                                            <dt>계약완료</dt>
+                                            <dd><span class="blurring">1</span></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>구매예상</dt>
+                                            <dd><span class="blurring">0</span></dd>
+                                        </dl>
+                                    </div>
+                                    <div class="swiper-slide swiper-item7">
+                                        <strong>욕창예방 매트리스</strong>
+                                        <i></i>
+                                        <dl>
+                                            <dt>계약완료</dt>
+                                            <dd><span class="blurring">1</span></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>구매예상</dt>
+                                            <dd><span class="blurring">0</span></dd>
+                                        </dl>
+                                    </div>
+                                    <div class="swiper-slide swiper-item8">
+                                        <strong>욕창예방 방석</strong>
+                                        <i></i>
+                                        <dl>
+                                            <dt>계약완료</dt>
+                                            <dd><span class="blurring">1</span></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>구매예상</dt>
+                                            <dd><span class="blurring">0</span></dd>
+                                        </dl>
+                                    </div>
+                                    <div class="swiper-slide swiper-item9">
+                                        <strong>자세변환용구</strong>
+                                        <i></i>
+                                        <dl>
+                                            <dt>계약완료</dt>
+                                            <dd><span class="blurring">1</span></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>구매예상</dt>
+                                            <dd><span class="blurring">0</span></dd>
+                                        </dl>
+                                    </div>
+                                    <div class="swiper-slide swiper-item10">
+                                        <strong>요실금 팬티</strong>
+                                        <i></i>
+                                        <dl>
+                                            <dt>계약완료</dt>
+                                            <dd><span class="blurring">1</span></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>구매예상</dt>
+                                            <dd><span class="blurring">0</span></dd>
+                                        </dl>
+                                    </div>
+                                    <div class="swiper-slide swiper-item11">
+                                        <strong>목욕의자</strong>
+                                        <i></i>
+                                        <dl>
+                                            <dt>계약완료</dt>
+                                            <dd><span class="blurring">1</span></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>구매예상</dt>
+                                            <dd><span class="blurring">0</span></dd>
+                                        </dl>
+                                    </div>
+                                    <div class="swiper-slide swiper-item12">
+                                        <strong>이동변기</strong>
+                                        <i></i>
+                                        <dl>
+                                            <dt>계약완료</dt>
+                                            <dd><span class="blurring">1</span></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>구매예상</dt>
+                                            <dd><span class="blurring">0</span></dd>
+                                        </dl>
+                                    </div>
+                                    <div class="swiper-slide swiper-item13">
+                                        <strong>간이변기</strong>
+                                        <i></i>
+                                        <dl>
+                                            <dt>계약완료</dt>
+                                            <dd><span class="blurring">1</span></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>구매예상</dt>
+                                            <dd><span class="blurring">0</span></dd>
+                                        </dl>
+                                    </div>
+                                    <div class="swiper-slide swiper-item14">
+                                        <strong>경사로(실내)</strong>
+                                        <i></i>
+                                        <dl>
+                                            <dt>계약완료</dt>
+                                            <dd><span class="blurring">1</span></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>구매예상</dt>
+                                            <dd><span class="blurring">0</span></dd>
+                                        </dl>
+                                    </div>
+                                    <div class="swiper-slide swiper-item15">
+                                        <strong>경사로(실외)</strong>
+                                        <i></i>
+                                        <dl>
+                                            <dt>계약완료</dt>
+                                            <dd><span class="blurring">1</span></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>구매예상</dt>
+                                            <dd><span class="blurring">0</span></dd>
+                                        </dl>
+                                    </div>
+                                    <div class="swiper-slide swiper-item16">
+                                        <strong>전동침대</strong>
+                                        <i></i>
+                                        <dl>
+                                            <dt>계약완료</dt>
+                                            <dd><span class="blurring">1</span></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>구매예상</dt>
+                                            <dd><span class="blurring">0</span></dd>
+                                        </dl>
+                                    </div>
+                                    <div class="swiper-slide swiper-item17">
+                                        <strong>수동침대</strong>
+                                        <i></i>
+                                        <dl>
+                                            <dt>계약완료</dt>
+                                            <dd><span class="blurring">1</span></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>구매예상</dt>
+                                            <dd><span class="blurring">0</span></dd>
+                                        </dl>
+                                    </div>
+                                    <div class="swiper-slide swiper-item18">
+                                        <strong>이동욕조</strong>
+                                        <i></i>
+                                        <dl>
+                                            <dt>계약완료</dt>
+                                            <dd><span class="blurring">1</span></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>구매예상</dt>
+                                            <dd><span class="blurring">0</span></dd>
+                                        </dl>
+                                    </div>
+                                    <div class="swiper-slide swiper-item19">
+                                        <strong>목욕리프트</strong>
+                                        <i></i>
+                                        <dl>
+                                            <dt>계약완료</dt>
+                                            <dd><span class="blurring">1</span></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>구매예상</dt>
+                                            <dd><span class="blurring">0</span></dd>
+                                        </dl>
+                                    </div>
+                                    <div class="swiper-slide swiper-item20">
+                                        <strong>배회감지기</strong>
+                                        <i></i>
+                                        <dl>
+                                            <dt>계약완료</dt>
+                                            <dd><span class="blurring">1</span></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>구매예상</dt>
+                                            <dd><span class="blurring">0</span></dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+    
+                        <div class="collapse" id="collapse-agree1">
+                            <h4 class="status-title">복지용구 상세 현황</h4>
+                            <table class="status-table">
+                                <caption class="hidden">복지용구 품목명, 계약완료상태, 구매예상 표입니다</caption>
+                                <colgroup>
+                                    <col class="min-w-10 w-[15%]">
+                                    <col>
+                                    <col class="min-w-16 w-1/5">
+                                    <col class="min-w-16 w-1/5">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">품목명</th>
+                                        <th scope="col">계약완료</th>
+                                        <th scope="col">구매예상</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td class="subject">수동휠체어</td>
+                                        <td>1개</td>
+                                        <td>1개</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td class="subject">수동휠체어</td>
+                                        <td>1개</td>
+                                        <td>1개</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+            
+                            <h4 class="status-title">대여 복지용구 상세 현황</h4>
+                            <table class="status-table">
+                                <caption class="hidden">대여 복지용구 품목명, 계약완료상태, 구매예상 표입니다</caption>
+                                <colgroup>
+                                    <col class="min-w-10 w-[15%]">
+                                    <col>
+                                    <col class="min-w-16 w-1/5">
+                                    <col class="min-w-16 w-1/5">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">품목명</th>
+                                        <th scope="col">계약완료</th>
+                                        <th scope="col">구매예상</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="blurring">1</span></td>
+                                        <td class="subject">수동휠체어</td>
+                                        <td><span class="blurring">1개</span></td>
+                                        <td><span class="blurring">1개</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="blurring">1</span></td>
+                                        <td class="subject">수동휠체어</td>
+                                        <td><span class="blurring">1개</span></td>
+                                        <td><span class="blurring">1개</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="text-center mt-3 text-sm">※ 위 내용은 데이터 조회 시점에 따라 <span class="underline font-bold">실제와 다를 수 있으니 참고용</span>으로만 사용해주세요. </p>
+                        </div>
+    
+                        <button type="button" class="btn status-toggle" data-bs-target="#collapse-agree1" data-bs-toggle="collapse" aria-expanded="false">상세열기</button>
+                    </div>
+                </div>
+
+                <div class="market-banner">
+                    <strong>
+                        부모님 맞춤 제품이 필요하세요?
+                        <small>편안한 일상생활 & 미식을 책임지는 쇼핑몰</small>
+                    </strong>
+                    <a href="#">지금둘러보기</a>
+                </div>
+
+                <div class="careinfo-content">
+                    <div class="content-item1">
+                        <dl>
+                            <dt>신청방법부터<br> 등급별 혜택까지</dt>
+                            <dd>노인장기요양보험,<br> 차근차근 배워보세요</dd>
+                        </dl>
+                        <div>
+                            <img src="/html/page/index/assets/images/img-careinfo-content1.png" alt="쉽게 알아보기">
+                            <a href="#" class="btn btn-outline-primary2 is-arrow"><strong>쉽게 알아보기</strong></a>
+                        </div>
+                    </div>
+                    <div class="content-item2">
+                        <dl>
+                            <dt>부모님의 생활을<br> 한층 편하게</dt>
+                            <dd>삶의 질을 높여주는<br> 복지용구, 소개해드릴게요</dd>
+                        </dl>
+                        <div>
+                            <img src="/html/page/index/assets/images/img-careinfo-content2.png" alt="복지용구 알아보기">
+                            <a href="#" class="btn btn-outline-primary3 is-arrow"><strong>복지용구 알아보기</strong></a>
+                        </div>
+                    </div>
+                    <div class="content-item3">
+                        <dl>
+                            <dt>똑똑하게<br> 복지용구 선택하기</dt>
+                            <dd>부모님을 위한 복지용구,<br> 아무거나 고를 순 없어요</dd>
+                        </dl>
+                        <div>
+                            <img src="/html/page/index/assets/images/img-careinfo-content3.png" alt="복지용구 선택하기">
+                            <a href="#" class="btn btn-outline-primary2 is-arrow"><strong>복지용구 선택하기</strong></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center text-xl md:text-4xl mt-22">
+                    <span class="text-hightlight-blue font-bold">올해 남은 급여 금액</span>을 확인 후 <br>
+                    복지 혜택 <span class="text-hightlight-blue font-bold">상담을 신청해보세요</span>
+                </div>
+
+                <a href="#" class="grade-floating consulting" data-bs-toggle="modal" data-bs-target="#pop-consulting-info">
+                    <strong>상담하기</strong>
+                </a>
+
+                <!--상담하기 팝업소스-->
+                <div class="modal modal-index fade" id="pop-consulting" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="text-title">알림</h2>
+                            <button data-bs-dismiss="modal" class="btn-close">모달 닫기</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-bg-wrap">
+                                <div class="text-center text-xl">
+                                    진행중인 요양정보 상담이 있습니다. <br>
+                                    상담 내역을 확인하시겠습니까?
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary large w-[52.5%]">상담내역 확인하기</button>
+                            <button type="button" class="btn btn-outline-primary large w-[47.5%] md:whitespace-nowrap">새롭게 진행하기</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--L번호가 있는 수급자의 경우 : 상담정보확인-->
+                <div class="modal modal-index fade" id="pop-consulting-info" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="text-title">상담 정보 확인</h2>
+                            <button data-bs-dismiss="modal" class="btn-close">모달 닫기</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="text-subtitle -mb-4">
+                                <i class="icon-alert"></i>
+                                <p>회원이 이용약관에 따라 수급자 등록과 관리하는 것에 동의합니다</p>
+                            </div>
+                            <table class="table-detail">
+                                <caption class="hidden">상담정보확인 위한 수급자와의 관계(필수), 수급자성명(필수), 요양인정번호, 상담받을연락처(필수), 실거주지 주소(필수), 생년월일(필수),성별(필수), 상담유형 입력폼입니다 </caption>
+                                <colgroup>
+                                    <col class="w-22 xs:w-32">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr class="wrapRelation">
+                                        <tr class="top-border">
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <th scope="row">
+                                            <p>
+                                                <label for="recipter">수급자와의 관계<sup class="text-danger text-base md:text-lg">*</sup></label>
+                                            </p>
+                                        </th>
+                                        <td>
+                                            <select name="relationSelect" id="relationSelect" class="form-control w-full lg:w-8/12">
+                                                <option value="">선택</option>
+                                                <option value="001">본인</option>
+                                                <option value="002">아버지</option>
+                                                <option value="003">어머니</option>
+                                                <option value="004">시아버지</option>
+                                                <option value="005">시어머니</option>
+                                                <option value="006">배우자</option>
+                                                <option value="007">형제자매</option>
+                                                <option value="100">기타</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr class="wrapNm">
+                                        <th scope="row">
+                                            <p>
+                                                <label for="recipter">수급자 성명<sup class="text-danger text-base md:text-lg">*</sup></label>
+                                            </p>
+                                        </th>
+                                        <td>
+                                            <input type="text" class="form-control w-full  lg:w-8/12" id="recipter" name="testName" maxlength="50" value="">
+                                        </td>
+                                    </tr>
+                                    <tr class="wrapNo">
+                                        <th scope="row">
+                                            <p>
+                                                <label for="rcperRcognNo">요양인정번호</label>
+                                            </p>
+                                        </th>
+                                        <td>
+                                            <div class="flex flex-row gap-2.5 mb-1.5">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="yn" id="yes" checked>
+                                                    <label class="form-check-label" for="yes">있음</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="yn" id="no">
+                                                    <label class="form-check-label" for="no">없음</label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group w-full flex lg:w-8/12">
+                                                <p class="px-1.5 font-serif text-[1.375rem] font-bold md:text-2xl">L</p>
+                                                <input  type="text" class="form-control " id="rcperRcognNo" name="rcperRcognNo" maxlength="13" value="">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <p><label for="search-item6">상담받을 연락처</label></p>
+                                        </th>
+                                        <td><input type="text" class="form-control w-full lg:w-8/12" id="info-tel"></td>
+                                    </tr> 
+                                    <tr>
+                                        <th scope="row">
+                                            <p><label for="search-item6">실거주지 주소<sup class="text-danger text-base md:text-lg">*</sup></label></p>
+                                        </th>
+                                        <td>
+                                            <fieldset class="addr-select">
+                                                <select name="" id="" class="form-control">
+                                                    <option value="">시/도</option>
+                                                </select>
+                                                <select name="" id="" class="form-control">
+                                                    <option value="">시/군/구</option>
+                                                </select>
+                                                <select name="" id="" class="form-control md:col-span-2 lg:col-span-1">
+                                                    <option value="">동/읍/면</option>
+                                                </select>
+                                            </fieldset>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><p><label for="search-item4">생년월일<sup class="text-danger text-base md:text-lg">*</sup></label></p></th>
+                                        <td><input type="text" class="form-control w-full  lg:w-8/12" id="search-item4"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><p><label for="search-item4">상담유형</label></p></th>
+                                        <td>요양정보상담</td>
+                                    </tr>
+                                    <tr class="top-border">
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <ul class="list-style1">
+                                <li>상기 정보는 장기요양등급 신청 및 상담이 가능한 장기요양기관에 제공되며 원활한 상담 진행 목적으로 상담 기관이 변경될 수도 있습니다.</li>
+                                <li>제공되는 정보는 상기 목적으로만 활용하며 1년간 보관 후 폐기됩니다.</li>
+                                <li>가입 시 동의받은 개인정보 제3자 제공동의에따라 위의 개인정보가 제공됩니다. 동의하지 않을 경우 서비스 이용이 제한될 수 있습니다.</li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer md:w-3/4 mx-auto mt-4">
+                            <button type="button" class="btn btn-primary3 large w-[60%] md:w-[70%]" data-bs-toggle="modal" data-bs-target="#pop-consulting-complated">상담신청하기</button>
+                            <button type="button" class="btn btn-outline-primary large w-[40%] md:w-[30%] md:whitespace-nowrap">취소하기</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--상담신청완료-->
+                <div class="modal modal-index fade" id="pop-consulting-complated" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="text-title">알림</h2>
+                            <button data-bs-dismiss="modal" class="btn-close">모달 닫기</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="text-center">
+                                <div class="provide-complate">
+                                    <div class="wrapper">
+                                        <svg width="45.1731884px" height="44.9930805px" viewBox="0 0 45.1731884 44.9930805">
+                                            <g id="airplane" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <g id="airplane" transform="translate(-836.3067, -384.1337)" fill="#FFFFFF">
+                                                    <g id="airplane" transform="translate(787, 329)">
+                                                        <path d="M49.8149249,79.6635069 L92.9878533,55.2632727 C93.4686607,54.9915327 94.078721,55.1610153 94.350461,55.6418227 C94.4586743,55.8332916 94.5007484,56.0550947 94.470169,56.2728912 L89.2316897,93.5830877 C89.0781107,94.6769283 88.0668774,95.439161 86.9730368,95.285582 C86.8468774,95.2678688 86.7226991,95.2381419 86.6021946,95.1968067 L75.5767429,91.4148747 C74.7376734,91.1270585 73.8092758,91.426319 73.2962443,92.1499725 L67.940117,99.7050262 C67.620703,100.155574 66.9965258,100.261879 66.5459782,99.9424645 C66.2814978,99.7549621 66.1243285,99.4508781 66.1243285,99.1266759 L66.1243285,89.5357494 C66.1243285,88.8171161 66.3822929,88.1223582 66.8512931,87.5778653 L81.6305995,70.4196045 C81.8108177,70.2103773 81.7873014,69.8946695 81.5780742,69.7144512 C81.3931938,69.555204 81.1203694,69.552664 80.9325561,69.7084415 L62.4817313,85.0120537 C61.6191487,85.727503 60.4297149,85.9025231 59.3976054,85.4658696 L49.9173201,81.4550557 C49.4086824,81.2398669 49.1707951,80.6530897 49.3859839,80.1444521 C49.4719751,79.9411962 49.6227902,79.7720965 49.8149249,79.6635069 Z" id="Path-4"></path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                        <div class="object1"></div>
+                                        <div class="object2"></div>
+                                        <div class="object3"></div>
+                                    </div>
+                                </div>
+                                <p class="mt-5.5 text-lg font-bold md:mt-6 md:text-xl lg:mt-7 lg:text-2xl">상담 신청이 완료되었습니다.</p>
+                                <p class="mt-2 mb-4 text-sm md:text-base tracking-tight">
+                                    "영업일 기준, 2일 이내 해피콜 통해 <span class="block md:inline-block">안내 받으실 수 있어요"</span>
+                                </p>
+                            </div>
+            
+                            <script>
+                                $('.provide-complate').addClass('animate1');
+                                $('.provide-complate svg').one('animationend transitionend',function(){
+                                    $('.provide-complate').removeClass('animate1').addClass('animate2');
+                                });
+                            </script>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#" class="btn btn-large btn-primary3 w-57 md:w-70">이로움ON 메인으로</a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+            </div>
+
+            <script>
+                $(function() {
+                    var swiper = new Swiper(".swiper", {
+                        slidesPerView : 'auto',
+                        spaceBetween : 10,
+                        navigation: {
+                            nextEl: ".swiper-button-next",
+                            prevEl: ".swiper-button-prev",
+                        },
+                        breakpoints: {
+                            spaceBetween : 12,
+                        },
+                    });
+                    
+                    $('.status-toggle').on('click', function() {
+                        $(this).toggleClass('is-active').prev('.status-list').toggleClass('hidden');
+                    })
+                })
+            </script>
+        </div>
+    </main>
+
+    <!-- footer -->
+    <footer id="footer" class="global-footer">
+        <div class="footer-link">
+            <!-- 회사 메뉴 -->
+            <nav class="footer-menu">
+                <ul>
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">전자금융거래약관</a></li>
+                    <li><a href="#"><strong>개인정보보호방침</strong></a></li>
+                </ul>
+            </nav>
+            <!-- //회사 메뉴 -->
+
+            <!-- 패밀리 사이트 -->
+            <div class="footer-family">
+                <dl>
+                    <dt>슈퍼시니어</dt>
+                    <dd>
+                        <ul class="global-link">
+                            <li><a href="#" class="link-item4"><span class="sr-only">슈퍼시니어</span></a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>패밀리 사이트</dt>
+                    <dd>
+                        <ul class="global-link">
+                            <li>
+                                <a href="#" class="link-item1">
+                                    <div class="bubble">
+                                        <small>시니어 라이프 케어 플랫폼</small>
+                                        <strong>"이로움ON"</strong>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="link-item2">
+                                    <div class="bubble">
+                                        <strong>이로움ON 멤버스</strong>
+                                        <small>전국 2,432개 업체와 함께합니다</small>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="link-item3">
+                                    <div class="bubble">
+                                        <strong><img src="/html/core/images/txt-brand-link3.png" alt="이로움ON 마켓"></strong>
+                                        <small>
+                                            복지용구 사업소와 수급자 매칭부터<br>
+                                            주문, 계약 및 결제까지 한번에!
+                                        </small>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+            <!-- //패밀리 사이트 -->
+        </div>
+        
+        <hr>
+
+        <div class="footer-center">
+            <!-- 사이트 정보-->
+            <dl class="footer-company">
+                <dt><a href="#footer-collapse" data-bs-toggle="collapse" aria-expanded="false">(주)티에이치케이컴퍼니</a></dt>
+                <dd id="footer-collapse" class="collapse">
+                    <p>대표 : 신종호</p>
+                    <p>사업자등록번호 : 617-86-14330 [<a href="#">사업자정보확인</a>]</p>
+                    <p>통신판매신고번호 : 2016-부산금정-0114</p>
+                    <address>
+                        <p>주소 : 부산광역시 금정구 중앙대로 1815, 5층(구서동, 가루라빌딩)</p>
+                        <p>사무소 : 서울시 금천구 서부샛길 606 대성디폴리스 B동 1401호</p>
+                        <p>물류센터 : 인천광역시 서구 이든1로 21</p>
+                    </address>
+                </dd>
+            </dl>
+            <!-- //사이트 정보-->
+
+            <!-- 고객센터 -->
+            <dl class="footer-customer">
+                <dt>고객센터</dt>
+                <dd>
+                    <p><strong>주문안내 :</strong> <a href="tel:1588-1312">1588-1312</a></p>
+                    <p><strong>시스템안내 :</strong> <a href="tel:02-830-1312">02-830-1312</a></p>
+                </dd>
+                <dd>
+                    <p><strong>운영시간 :</strong> 월~금 오전 9:00~오후 6:00 점심시간 오후 12시 ~ 1시 (주말 및 공휴일 휴무)</p>
+                </dd>
+            </dl>
+            <!-- //고객센터 -->
+        </div>
+
+        <hr>
+
+        <!-- 카피 라이트 -->
+        <div class="footer-copyright">Copyright ⓒ<strong>EROUMMARKET</strong> All righs reserved</div>
+        <!-- //카피 라이트 -->
+    </footer>
+    <!-- //footer -->
+
+    <script src="../../../core/vendor/twelements/index.min.js"></script>
+    <script src="../../../core/vendor/twelements/popper.min.js"></script>
+</body>
+</html>

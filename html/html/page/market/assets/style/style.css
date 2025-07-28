@@ -1,0 +1,49 @@
+/* core include */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import url('//fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900');
+
+/* component core */
+@import "../../../../core/style/utility.css";
+@import "../../../../core/style/button.css";
+@import "../../../../core/style/form.css";
+@import "../../../../core/style/modal.css";
+@import "../../../../core/style/offcanvas.css";
+@import "../../../../core/style/pagination.css";
+
+/* component */
+@import "component/alert.css";
+@import "component/box.css";
+@import "component/button.css";
+@import "component/form.css";
+@import "component/modal.css";
+@import "component/label.css";
+@import "component/list.css";
+@import "component/pagination.css";
+@import "component/text.css";
+@import "component/table.css";
+@import "component/tabs.css";
+@import "component/tooltip.css";
+@import "component/popover.css";
+
+/* layout */
+@import "layout/header.css";
+@import "layout/container.css";
+
+/* content */
+@import "content/common.css";
+@import "content/product.css";
+@import "content/coupon.css";
+@import "content/order.css";
+@import "content/payment.css";
+@import "content/mypage.css";
+@import "content/other.css";
+@import "content/index.css";  
+
+
+
+@import "style_add_market.css";  
+
+

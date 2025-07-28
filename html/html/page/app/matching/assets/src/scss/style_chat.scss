@@ -1,0 +1,126 @@
+
+:root{
+    --speed : 1; /* 1 */
+}
+
+
+
+.boxChatArea{
+    opacity: 0;
+    animation: Show 0.2s forwards;
+}
+.boxChatArea_2{
+    opacity: 0;
+    transform: translateY(30px);
+    transform-origin: center;
+    height: 1px;
+    transition: 0.8s all;
+
+    & > .box_chat{height:1px;}
+    & .chk_area .list{height: 1px; min-height:1px;}
+
+    &.active{
+        opacity: 1;transform: translateY(0px);height: auto;transition-delay: 1.0s;
+    
+        & > .box_chat{height:auto;}
+        & .chk_area .list{height: 100%;min-height:56px;}
+    
+    }
+
+
+
+}
+
+
+.box_chat{
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+//답변챗
+.bot_trans .box_chat{transition: 0.3s all;animation: fadeIn_2 0.8s forwards;animation-delay: 0.5s;}
+
+
+// 1. 신체기능
+[title="intro_A01_01"] {
+animation-delay: 0;
+}
+    
+[title="intro_A01_02"] {
+animation-delay: calc(1s * var(--speed));
+}
+
+[title="intro_A01_03"] {
+animation-delay: calc(2.5s * var(--speed));
+}
+
+[title="intro_A01_04"] {
+animation-delay: calc(4s * var(--speed));
+}
+
+
+
+[title="intro_A02_01"] {
+animation-delay: calc(6s * var(--speed));
+}
+
+[title="intro_A02_02"] {
+animation-delay: calc(7.5s * var(--speed));
+}
+
+[title="intro_A02_03"] {
+animation-delay: calc(9s * var(--speed));
+}
+
+
+
+
+// 2. 인지기능 ~
+
+[title="intro_B01_01"] {
+    animation-delay: 0;
+}
+[title="intro_B01_02"] {
+    animation-delay: calc(1s * var(--speed));
+}
+[title="intro_B01_03"] {
+    animation-delay: calc(2.5s * var(--speed));
+}
+
+
+
+
+/* 채팅영역 */
+@keyframes Show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* 채팅영역 - 채팅창*/
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 채팅영역 - 채팅창*/
+@keyframes fadeIn_2 {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

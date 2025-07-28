@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>202412_이벤트페이지</title>
+
+    <!-- plugin -->
+    <link rel="stylesheet" href="../../../core/vendor/swiperjs/swiper-bundle.css">
+
+
+    <script src="../../../core/vendor/jquery/jquery-3.6.0.min.js"></script>
+    <script src="../../../core/vendor/swiperjs/swiper-bundle.min.js"></script>
+    <script src="../../../core/vendor/masonry/masonry.pkgd.min.js"></script>
+
+    <link rel="stylesheet" href="../assets/style/style.min.css">
+    <script src="../assets/script/index.js"></script>
+
+
+
+    <style>
+
+        #container {
+            padding-bottom: 0 !important;
+        }
+        
+    </style>
+
+    <!-- 이벤트페이지 OEOS-730 202412 -->
+    <style>
+
+        .evtPageTop{display: flex;justify-content: center;
+
+            /* background: linear-gradient(#C8E7E1 881px, #ffffff 0px); */
+            background: url('../assets/images/event/event_top_bgLine.png') repeat-x left top;
+            
+            
+            img{width: 100%;}
+        
+        }
+
+        .popup_detail_area{display: flex;flex-direction: column; gap:20px;margin-bottom: 48px;}
+        .popup_button_area{display: flex;flex-direction: column; align-items: center; gap:16px;margin-bottom: 48px;
+        
+            .pc_area{display: none;}
+        }
+
+
+        .popup_imgMO{display: block;width: 100%;}
+        .popup_imgPC{display: none;}
+
+        .popup_notice_area{background-color: #ECECEC;
+            .content{padding: 40px 20px;}
+
+            .notice_list li{text-indent: -20px;padding-left: 20px;margin-bottom: 6px;font-size: 15px;}
+
+        }
+
+
+        /* 768px 이상 pc */
+        @media (min-width: 768px) {
+
+            .evtPageTop{
+            
+                img{max-width: 1920px;width: auto;}
+                
+            }
+
+            .popup_detail_area{gap:26px;margin-bottom: 120px;}
+            .popup_button_area{gap:30px;margin-bottom: 120px;
+            
+                .pc_area{display: grid;grid-template-columns: 1fr 1fr; gap: 36px 20px;
+
+                    :nth-child(1){grid-column: 1 / span 2;}
+
+                }
+                
+            }
+
+            .popup_imgMO{display: none;}
+            .popup_imgPC{display: block;}
+
+
+            .popup_notice_area{
+                .content{padding: 54px 200px;}
+
+                .notice_list li{font-size: 20px;}
+                
+                
+            }
+
+            
+        }
+        
+    </style>
+    <!-- 이벤트페이지 OEOS-730 202412 end -->
+
+
+</head>
+
+
+<body class="pb-19">
+
+
+
+    <!-- header -->
+    <header id="header">
+        <h1 id="logo" class="global-logo">
+            <a href="#"><em>이로움ON</em></a>
+        </h1>
+        <nav id="navigation">
+            <ul class="nav-items">
+                <li class="nav-item">
+                    <a href="#">이로움 서비스</a>
+                    <div class="nav-sub-items">
+                        <ul>
+                            <li class="nav-sub-item"><a href="#">요양정보 간편조회</a></li>
+                            <li class="nav-sub-item"><a href="#">인정등급 예상 테스트</a></li>
+                            <li class="nav-sub-item"><a href="#">복지정보 서비스</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#">시니어 길잡이</a>
+                    <div class="nav-sub-items">
+                        <ul>
+                            <li class="nav-sub-item"><a href="#">노인장기요양보험제도</a></li>
+                            <li class="nav-sub-item"><a href="#">복지용구 알아보기</a></li>
+                            <li class="nav-sub-item"><a href="#">복지용구 선택하기</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div id="utility">
+            <ul>
+                <li><a href="#">로그인</a></li>
+                <!-- <li><a href="#">로그아웃</a></li> -->
+                <li><a href="#" class="join">회원가입</a></li>
+                <li><a href="#" class="cost">혜택 상담하기</a></li>
+            </ul>
+        </div>
+        <button type="button" id="allmenu-toggle" data-bs-toggle="offcanvas" data-bs-target="#allmenu">전체 메뉴
+            열기/닫기</button>
+    </header>
+    <div id="allmenu" tabindex="-1" class="offcanvas offcanvas-end">
+        <div class="offcanvas-header">
+            <ul>
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">회원가입</a></li>
+            </ul>
+            <button class="closed" type="button" data-bs-toggle="offcanvas" data-bs-target="#allmenu-layer">레이어
+                닫기</button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="user-info">
+                <div class="thumb"></div>
+                <div class="name">
+                    김정래
+                    <small>님</small>
+                    <img src="/html/core/images/ico-kakao.png" alt="">
+                    <!-- 소셜 아이콘
+                    <img src="/html/core/images/ico-naver.png" alt="">
+                    -->
+                </div>
+                <a href="#" class="logout">로그아웃</a>
+            </div>
+            <dl class="menu-item1">
+                <dt><a href="#"><img src="../assets/images/ico-allmenu1.png" alt=""> 이로움 서비스</a></dt>
+                <dd>
+                    <ul>
+                        <li><a href="#">요양정보 간편조회</a></li>
+                        <li><a href="#">인정 등급 예상 테스트</a></li>
+                        <li><a href="#">복지정보 서비스</a></li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl class="menu-item2">
+                <dt><a href="#"><img src="../assets/images/ico-allmenu1.png" alt=""> 시니어 길잡이</a></dt>
+                <dd>
+                    <ul>
+                        <li><a href="#">노인장기요양보험제도</a></li>
+                        <li><a href="#">복지용구 알아보기</a></li>
+                        <li><a href="#">복지용구 선택하기</a></li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <!-- //header -->
+
+    <main id="container">
+        <header id="subject">
+            <nav class="breadcrumb">
+                <ul>
+                    <li class="home"><a href="#">홈</a></li>
+                    <li>이로움 서비스</li>
+                    <li>이로움돌봄</li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <!-- 성공 알림 모달 -->
+        <!-- <a href="#"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_success_dbapp">성공 알림 모달</a> -->
+
+
+
+
+
+        <!-- 이벤트 페이지 OEOS-730 202412 -->
+        <div class="evtPageWrap">
+            <div class="evtPageTop">
+                <!-- mobile -->
+                <img class="popup_imgMO" src="/html/page/index/assets/images/event/event_top_mo.png" alt="pc_event">
+                <!-- pc -->
+                <img class="popup_imgPC" src="/html/page/index/assets/images/event/event_top_pc.png" alt="pc_event">
+            </div>
+
+
+            <div class="content">
+
+                <div class="popup_detail_area">
+                    <!-- mobile -->
+                    <img class="popup_imgMO" src="/html/page/index/assets/images/event/box1_mo.png" alt="이벤트 참여 방법">
+                    <img class="popup_imgMO" src="/html/page/index/assets/images/event/box2_mo.png" alt="이벤트 참여 기간">
+                    <img class="popup_imgMO" src="/html/page/index/assets/images/event/box3_mo.png" alt="당첨자 발표">
+                    <img class="popup_imgMO" src="/html/page/index/assets/images/event/box4_mo.png" alt="참여 경품">
+                    <img class="popup_imgMO" src="/html/page/index/assets/images/event/box5_mo.png" alt="부모님과의 감동 사연 예시">
+                    <!-- pc -->
+                    <img class="popup_imgPC" src="/html/page/index/assets/images/event/box1_pc.png" alt="이벤트 참여 방법">
+                    <img class="popup_imgPC" src="/html/page/index/assets/images/event/box2_pc.png" alt="이벤트 참여 기간">
+                    <img class="popup_imgPC" src="/html/page/index/assets/images/event/box3_pc.png" alt="당첨자 발표">
+                    <img class="popup_imgPC" src="/html/page/index/assets/images/event/box4_pc.png" alt="참여 경품">
+                    <img class="popup_imgPC" src="/html/page/index/assets/images/event/box5_pc.png" alt="부모님과의 감동 사연 예시">
+                        
+                </div>
+                <!-- popup_detail_area -->
+
+                <div class="popup_button_area">
+                    
+                    <!-- mobile -->
+                    <a class="popup_imgMO" href="https://docs.google.com/forms/d/e/1FAIpQLScPueFoBJKxv-_-fj-uQe3j9wdJap7ijIWbw53EcmGE45M2ug/viewform" target="_blank">
+                        <img src="/html/page/index/assets/images/event/btn01_mo.png" alt="감동사연 이벤트 참여하기">
+                    </a>
+                    <a class="popup_imgMO" href="https://play.google.com/store/apps/details?id=kr.co.eroum.dolbom" target="_blank">
+                        <img src="/html/page/index/assets/images/event/btn02_mo.png" alt="이로움돌봄 앱 다운받기">
+                    </a>
+                    <a class="popup_imgMO" href="https://www.instagram.com/eroumdolbom" target="_blank">
+                        <img src="/html/page/index/assets/images/event/btn03_mo.png" alt="인스타그램 공유하고 당첨확률 UP!">
+                    </a>
+
+                    <!-- pc -->
+                    <div class="pc_area">
+                        
+                        <a class="popup_imgPC" href="https://docs.google.com/forms/d/e/1FAIpQLScPueFoBJKxv-_-fj-uQe3j9wdJap7ijIWbw53EcmGE45M2ug/viewform" target="_blank">
+                            <img src="/html/page/index/assets/images/event/btn01_pc.png" alt="감동사연 이벤트 참여하기">
+                        </a>
+
+                        <a class="popup_imgPC" href="" data-bs-toggle="modal" data-bs-target="#dbapp_modal">
+                            <img src="/html/page/index/assets/images/event/btn02_pc.png" alt="이로움돌봄 앱 다운받기">
+                        </a>
+                        <a class="popup_imgPC" href="https://www.instagram.com/eroumdolbom" target="_blank">
+                            <img src="/html/page/index/assets/images/event/btn03_pc.png" alt="인스타그램 공유하고 당첨확률 UP!">
+                        </a>
+
+                    </div>
+        
+                </div>
+                <!-- popup_button_area -->
+                
+            </div>
+
+            <div class="popup_notice_area">
+
+                <div class="content">
+
+                    <div class="mb-5 text-xl font-semibold md:text-3xl ">주의사항</div> 
+
+                    <ul class="text-base md:text-xl notice_list">
+                        <li>※ 한 아이디당 1회만 참여 가능합니다.</li>
+                        <li>※ 신규회원 기존회원 모두 참여 가능합니다.</li>
+                        <li>※ 기존에 상담신청 완료하신 분들도 모두 참여 가능합니다.</li>
+                        <li>※ 구글폼 미제출 시 이벤트 참여 불가합니다.</li>
+                        <li>※ 보내주신 사연은 향후 이로움돌봄 마케팅 자료로 활용될 수 있습니다.</li>
+                        <li>※ 경품의 제세공과금은 (주)티에이치케이컴퍼니 부담입니다.</li>
+                        <li>※ 잘못된 개인정보 입력, 기타 사유 등으로 인해 당첨자에게 연락이 불가능하거나 경품이 분실, 오발송 또는 반송될 경우 재발송되지 않으며 당사에서 책임지지 않습니다.</li>
+                    </ul>
+
+                </div>
+
+            </div>
+            <!-- popup_notice -->
+
+        </div>
+        <!-- 이벤트 페이지 OEOS-730 202412 end -->
+
+
+    </main>
+
+    <!-- footer -->
+    <footer id="footer" class="global-footer">
+        <div class="footer-link">
+            <!-- 회사 메뉴 -->
+            <nav class="footer-menu">
+                <ul>
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">전자금융거래약관</a></li>
+                    <li><a href="#"><strong>개인정보보호방침</strong></a></li>
+                </ul>
+            </nav>
+            <!-- //회사 메뉴 -->
+
+            <!-- 패밀리 사이트 -->
+            <div class="footer-family">
+                <dl>
+                    <dt class="sr-only">패밀리 사이트</dt>
+                    <dd>
+                        <ul class="global-link">
+                            <!-- li>
+                                <a href="${_membersPath}" class="link-item2" target="_blank" title="새창열림">
+                                    <div class="bubble">
+                                        <strong>이로움ON 멤버스</strong>
+                                        <small>전국 1,600개 업체와 함께합니다</small>
+                                    </div>
+                                </a>
+                            </li> -->
+    
+                            <li><a href="//www.youtube.com/@eroumon" target="_blank" class="link-item4"><span class="sr-only">이로움ON</span></a></li>
+                            <li><a href="#" target="_blank" title="새창열림" class="link-item1">
+                                    <div class="bubble">
+                                        <small>시니어 라이프 케어 플랫폼</small> <strong>"이로움ON"</strong>
+                                    </div>
+                            </a></li>
+                            <li>
+                                <a href="#" class="link-item3" target="_blank" title="새창열림">
+                                    <div class="bubble">
+                                        <strong><img src="/html/core/images/txt-brand-link3.png" alt="이로움ON 마켓"></strong>
+                                        <small>복지용구부터 시니어 생활용품까지 한번에!</small>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+            <!-- //패밀리 사이트 -->
+        </div>
+
+        <hr>
+
+        <div class="footer-center">
+            <!-- 사이트 정보-->
+            <dl class="footer-company">
+                <dt><a href="#footer-collapse" data-bs-toggle="collapse" aria-expanded="false">(주)티에이치케이컴퍼니</a></dt>
+                <dd id="footer-collapse" class="collapse">
+                    <p>대표 : 신종호</p>
+                    <p>사업자등록번호 : 617-86-14330 [<a href="#">사업자정보확인</a>]</p>
+                    <p>통신판매신고번호 : 2016-부산금정-0114</p>
+                    <address>
+                        <p>주소 : 부산광역시 금정구 중앙대로 1815, 5층(구서동, 가루라빌딩)</p>
+                        <p>사무소 : 서울시 금천구 서부샛길 606 대성디폴리스 B동 1401호</p>
+                        <p>물류센터 : 인천광역시 서구 이든1로 21</p>
+                    </address>
+                </dd>
+            </dl>
+            <!-- //사이트 정보-->
+
+            <!-- 고객센터 -->
+            <dl class="footer-customer">
+                <dt>고객센터</dt>
+                <dd>
+                    <p><strong>주문안내 :</strong> <a href="tel:1588-1312">1588-1312</a></p>
+                    <p><strong>시스템안내 :</strong> <a href="tel:02-830-1312">02-830-1312</a></p>
+                </dd>
+                <dd>
+                    <p><strong>운영시간 :</strong> 월~금 오전 9:00~오후 6:00 점심시간 오후 12시 ~ 1시 (주말 및 공휴일 휴무)</p>
+                </dd>
+            </dl>
+            <!-- //고객센터 -->
+        </div>
+
+        <hr>
+
+        <!-- 카피 라이트 -->
+        <div class="footer-copyright">Copyright ⓒ<strong>EROUMMARKET</strong> All righs reserved</div>
+        <!-- //카피 라이트 -->
+    </footer>
+    <!-- //footer -->
+
+    <!-- 성공 알림 모달 -->
+    <div class="modal modal-default fade" id="modal_success_dbapp" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="text-title">알림</h2>
+                    <button data-bs-dismiss="modal" class="btn-close">모달 닫기</button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <div class="provide-complate">
+                            <div class="wrapper">
+                                <svg width="45.1731884px" height="44.9930805px" viewBox="0 0 45.1731884 44.9930805">
+                                    <g id="airplane" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <g id="airplane" transform="translate(-836.3067, -384.1337)" fill="#FFFFFF">
+                                            <g id="airplane" transform="translate(787, 329)">
+                                                <path
+                                                    d="M49.8149249,79.6635069 L92.9878533,55.2632727 C93.4686607,54.9915327 94.078721,55.1610153 94.350461,55.6418227 C94.4586743,55.8332916 94.5007484,56.0550947 94.470169,56.2728912 L89.2316897,93.5830877 C89.0781107,94.6769283 88.0668774,95.439161 86.9730368,95.285582 C86.8468774,95.2678688 86.7226991,95.2381419 86.6021946,95.1968067 L75.5767429,91.4148747 C74.7376734,91.1270585 73.8092758,91.426319 73.2962443,92.1499725 L67.940117,99.7050262 C67.620703,100.155574 66.9965258,100.261879 66.5459782,99.9424645 C66.2814978,99.7549621 66.1243285,99.4508781 66.1243285,99.1266759 L66.1243285,89.5357494 C66.1243285,88.8171161 66.3822929,88.1223582 66.8512931,87.5778653 L81.6305995,70.4196045 C81.8108177,70.2103773 81.7873014,69.8946695 81.5780742,69.7144512 C81.3931938,69.555204 81.1203694,69.552664 80.9325561,69.7084415 L62.4817313,85.0120537 C61.6191487,85.727503 60.4297149,85.9025231 59.3976054,85.4658696 L49.9173201,81.4550557 C49.4086824,81.2398669 49.1707951,80.6530897 49.3859839,80.1444521 C49.4719751,79.9411962 49.6227902,79.7720965 49.8149249,79.6635069 Z"
+                                                    id="Path-4"></path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                                <div class="object1"></div>
+                                <div class="object2"></div>
+                                <div class="object3"></div>
+                            </div>
+                        </div>
+                        <p class="mt-5.5 text-lg font-bold md:mt-6 md:text-xl lg:mt-7 lg:text-2xl">상담 신청이 완료되었습니다.</p>
+                        <p class="mt-2 mb-4 text-sm tracking-tight md:text-base">
+                            "영업일 기준, 2일 이내 해피콜 통해 <span class="block md:inline-block">안내 받으실 수 있어요"</span>
+                        </p>
+                    </div>
+
+                    <script>
+                        $('.provide-complate').addClass('animate1');
+                        $('.provide-complate svg').one('animationend transitionend', function () {
+                            $('.provide-complate').removeClass('animate1').addClass('animate2');
+                        });
+                    </script>
+                </div>
+
+                <!-- 상단배너추가 -->
+                <div class="top_banner_area dbapp popup">
+                    <div class="width_area">
+                        <div class="icon_area">
+                            <img src="/html/page/index/assets/images/banner/store_dbapp.png" alt="돌봄앱 아이콘">
+                            <div class="txt">
+                                <span class="resp_block"><strong>간단한 테스트</strong>로</span>
+                                <span class="resp_block">더 <strong>빠르게 확인</strong>하세요!</span>
+                            </div>
+                        </div>
+
+                        <div class="rest_btn">
+                            <a href="" class="btn-dbapp01" data-bs-toggle="modal" data-bs-target="#dbapp_modal">앱 다운로드</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="h20"></div>
+                <div class="modal-footer">
+                    <a href="#" class="flex-1 btn-warning large2 md:flex-none md:w-1/2">동의하고 보내기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+        <!--돌봄앱 모달-->
+        <div class="modal modal-index fade" id="dbapp_modal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="text-title">이로움돌봄</h2>
+                        <button data-bs-dismiss="modal" class="btn-close">모달 닫기</button>
+                    </div>
+        
+                    <div class="h32"></div>
+        
+                    <div class="modal_ctn">
+                        앱으로 더 쉽고 편리하게 확인하세요
+                    </div>
+        
+                    <div class="h16"></div>
+        
+                    <div class="link_area">
+                        <div class="qr_code_area">
+        
+                        </div>
+                        <div class="google_area">
+                            <a target="_blank" href="https://play.google.com/store/apps/details?id=kr.co.eroum.dolbom"
+                                class="btn_google">
+                                <img src="/html/page/index/assets/images/dbapp_qrcode/btn_google.svg" alt="">
+                            </a>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="휴대폰 번호(-없이 입력)">
+                            </div>
+                        </div>
+        
+                    </div>
+        
+                    <div class="h32"></div>
+        
+                    <div class="form-check warning">
+                        <input class="form-check-input" type="checkbox" checked="" id="check-item1a">
+                        <label class="form-check-label" for="check-item1a">휴대폰 번호 수집 및 이용동의</label>
+                    </div>
+        
+        
+                    <div class="h16"></div>
+        
+                    <div class="box_area01">
+                        <ul class="dept_1_1">
+                            <li>수집하는 개인정보 항목: 휴대폰 번호</li>
+                            <li>개인정보 수집 목적: 이로움돌봄 앱 다운로드 메시지 발송</li>
+                            <li>개인정보 보유 기간: 수집 목적 달성 시 즉시 파기</li>
+                        </ul>
+        
+                    </div>
+        
+                    <div class="h40"></div>
+        
+                    <div class="flex flex-col items-center items-end w-full gap-2">
+                        <button type="button" class="btn btn-primary2 large w-50">동의하고 보내기</button>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+
+
+    <!-- jsp는 삭제 -->
+    <script src="../../../core/vendor/twelements/index.min.js"></script>
+    <script src="../../../core/vendor/twelements/popper.min.js"></script>
+
+
+
+    <script>
+            //modal open
+
+    </script>
+
+
+</body>
+
+</html>

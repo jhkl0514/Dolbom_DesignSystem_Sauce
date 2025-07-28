@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>F_ORD_002_order_detail_02.html</title>
+
+
+    <!-- jquery -->
+    <script src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script src="../js/materialize.min.js"></script>
+
+    <!-- guide.js -->
+    <script src="../js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="../css/materialize.min.css">
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="../js/swiper/swiper-bundle.min.css" />
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        .order_detail_Swiper{margin: 0 -20px;}
+        .order_detail_Swiper .swiper-slide{line-height: 0;}
+        .order_detail_Swiper .swiper-slide img{width: 100%;}
+        .order_detail_Swiper .swiper-pagination-fraction{
+            width:auto;
+            display: flex;
+            top: 12px;
+            left: 12px;
+            bottom: initial;
+            padding: 2px 10px;
+            border-radius: 4px;;
+            background: rgba(51, 51, 51, 0.40);
+            color:#fff;
+        }
+
+        .order_detail_Swiper .swiper-pagination-fraction .swiper-pagination-current{
+            font-weight: 700;
+        }
+        .order_detail_Swiper .swiper-pagination-fraction .swiper-pagination-total{
+            font-weight: 300;
+        }
+
+        /* toast */
+        #toast-container{bottom: 136px;}
+
+
+
+        /* 더보기 누르기전 상세이미지 보이는 세로영역 */
+        .order_detail_more:has(> .toggle_btn_area){
+            height:500px;
+        }
+
+</style>
+
+    <script>
+
+        //2개 이상되면 나오는 토스트
+        var toast_order_over2 = function(){M.toast({
+            html: '2개까지만 추가 가능해요'
+        })};
+
+        $(function(){
+
+            //옵션셀렉트
+            $('.order_chip li').click(function(){
+
+                $(this).parent('.order_chip').find('li').removeClass('active');
+
+                $(this).addClass('active');
+
+            });
+
+            //수량 0일때 마이너스(-)버튼 비활성화 초기화
+            $('.order_quantity .num').each(function(){
+
+                var currentVal = parseInt($(this).val());
+
+                if(currentVal == 0){
+
+                    $(this).parent('.order_quantity').find('.minus').addClass('disa');
+                    
+                }
+
+                });
+
+
+            //수량 + 버튼
+            $('.order_quantity .plus').click(function(){
+
+                var thisNum = $(this).parent('.order_quantity').find('.num');
+                var currentVal = parseInt(thisNum.val());
+
+                if (currentVal >= 2){ //수량 2이상이면 toast 출력
+                    toast_order_over2();
+                    return false;
+                    }
+                else if (currentVal >= 0) {
+                    thisNum.val(++currentVal);
+                    $('.evt_BtnShop').removeClass('disabled');  // 수량이 증가할 때 disabled 제거
+                    $(this).parent('.order_quantity').find('.minus').removeClass('disa');
+
+                }
+
+            });
+
+            //수량 - 버튼
+            $('.order_quantity .minus').click(function(){
+
+                var thisNum = $(this).parent('.order_quantity').find('.num');
+                var currentVal = parseInt(thisNum.val());
+
+                if (currentVal > 1) {  // 수량이 1 이상일 때 감소 가능
+                    thisNum.val(--currentVal);
+                    $('.evt_BtnShop').removeClass('disabled');  // 수량이 0이 아니므로 disabled 제거
+                }
+                else if (currentVal == 1) {  // 수량이 1일 때 0으로 감소
+                    thisNum.val(--currentVal);
+                    $('.evt_BtnShop').addClass('disabled');  // 수량이 0이 되면 disabled 추가
+                    $(this).addClass('disa'); //비활성화
+                }
+            });
+
+
+            // input 직접 입력 시
+            $('.order_quantity .num').on('input', function() {
+                var currentVal = parseInt($(this).val());
+
+                if (currentVal >= 2){
+                    toast_order_over2();
+                    return false;
+                }
+                else if (currentVal > 0) {
+                    $('.evt_BtnShop').removeClass('disabled');  // 수량이 0보다 크면 disabled 제거
+                } else {
+                    $('.evt_BtnShop').addClass('disabled');  // 수량이 0 또는 그 이하이면 disabled 추가
+                }
+            });
+
+            //더 보기 버튼토글
+            $('.toggle_btn_area .evt_detailBtn').on('click', function() {
+                
+                if($(this).parent('.toggle_btn_area').hasClass('active')==true){
+                    $(this).parent('.toggle_btn_area').removeClass('active');
+                    $('.evt_title').text('더 보기');
+
+                }
+
+                else{
+                    $(this).parent('.toggle_btn_area').addClass('active');
+                    $('.evt_title').text('접기');
+                    
+                }
+
+            });
+
+
+        });
+
+        
+    </script>
+
+    <script>
+        // youtude 영상
+        $(function(){
+
+            $('.card.wel_detail_card .img_area').on('click', function () {
+                var jobjContainer = $(this).closest('.wel_detail_card');
+                var youtube_src = jobjContainer.attr('youtube_src')
+                var youtubeIframe = '<iframe '
+                +' src="'+youtube_src+'"'
+                +' title="YouTube video player" frameborder="0"'
+                +' allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"'
+                +' allowfullscreen>'
+                +' </iframe>';
+
+                var jobjYoutube = jobjContainer.find('.youtube_area');
+                jobjYoutube.removeClass("disNone");
+                jobjYoutube.html(youtubeIframe);
+
+                $(this).remove();
+
+                return false;
+            });
+
+        });
+
+
+        ////////////////////////////////
+        //장바구니 팝업
+        $(function(){
+
+
+            //disabled 일때
+            $('.cart_obj_area').each(function(){
+
+                if($(this).find('.cart_chk_area :checkbox').is(':disabled')==true){
+                    $(this).addClass('disabled');
+                }
+
+                else{
+                    $(this).removeClass('disabled');
+                }
+
+
+            });
+
+            
+            //장바구니 체크박스
+            function carLengthChk(){
+
+                var total = $(".cart_chk_area :checkbox").length;
+                var checked = $(".cart_chk_area :checkbox:checked").length;
+                
+                $('.num_total').text(total);
+                $('.num_chk').text(checked);		
+            };
+
+            carLengthChk();
+
+
+            $('#cart_chk_total').on('click', function() {
+
+                if($(this).is(':checked')==true){
+                    $('.cart_chk_area :checkbox:not(:disabled)').prop('checked', true);
+
+                    carLengthChk();		
+                }
+
+                else{
+                    $('.cart_chk_area :checkbox:not(:disabled)').prop('checked', false);	
+
+                    carLengthChk();
+                }
+
+            });
+
+
+
+
+            $(".cart_chk_area :checkbox").click(function() {
+
+                var total = $(".cart_chk_area :checkbox").length;
+                var checked = $(".cart_chk_area :checkbox:checked").length;
+                
+                $('.num_total').text(total);
+                $('.num_chk').text(checked);	
+
+                if(total != checked) $("#cart_chk_total").prop("checked", false);
+                else $("#cart_chk_total").prop("checked", true); 
+
+            });
+
+        });
+
+
+    </script>
+
+    <script>
+
+        $(function(){
+
+            //open
+            $('.cart_modal').modal('open');
+
+            //modal_header내용을 modal-content안에 이동
+            $('.cart_modal .modal_header').prependTo($('.cart_modal .modal-content'));
+
+        });
+
+    </script>
+
+
+</head>
+
+<body class="">
+    <div class="wrapper">
+
+
+        <header>
+            <nav class="top">
+                <a class="btn_back waves-effect" href="#">
+                    <span class="icon"></span>
+                    <span class="txt">상품상세 -장바구니 예시페이지</span>
+                </a>
+                <div class="d-flex">
+                    <div class="icon_area waves-effect">
+                        <div class="icon_cart i_cart modal-trigger" data-target="modal_fullsreen">
+                            <span class="num">10</span>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+
+
+        <main>
+            <section class="default padT0">
+
+
+                <!-- Swiper -->
+                <div class="swiper order_detail_Swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+
+                            <img src="/html/page/app/matching/assets/src/images/sample/sam_Product Image02.png" alt="sample">
+
+                        </div>
+                        <!-- swiper-slide -->
+                        <div class="swiper-slide">
+
+                            <img src="/html/page/app/matching/assets/src/images/sample/sam_Product Image02.png" alt="sample">
+
+                        </div>
+                        <!-- swiper-slide -->
+                        <div class="swiper-slide">
+
+                            <img src="/html/page/app/matching/assets/src/images/sample/sam_Product Image01.png" alt="sample">
+
+                        </div>
+                        <!-- swiper-slide -->
+                        <div class="swiper-slide">
+
+                            <img src="/html/page/app/matching/assets/src/images/sample/sam_Product Image01.png" alt="sample">
+
+                        </div>
+                        <!-- swiper-slide -->
+
+                    </div>
+
+                    <div class="swiper-pagination"></div>
+
+
+                </div>
+                <!-- order_detail_Swiper -->
+
+                <div class="OD_product marW-20">
+                    
+                    <div class="padH24W20">
+
+                        <div class="d-flex align-items-center gap08">
+
+                            <span class="badge_order rental">대여</span>
+
+                            <div class="color_tp_s font_sbsr">자세변환용구</div>
+    
+                        </div>
+
+                        <div class="h12"></div>
+
+                        <div class="font_shm">우측 상단 장바구니 클릭 돌돌이 양말 양면</div>
+
+                        <div class="h24"></div>
+
+                        <div class="color_t_s font_sbsr">예상 본인부담률(15%)</div>
+
+                        <div class="h04"></div>
+
+                        <div class="d-flex gap04">
+                            <span class="color_danger font_shm">85%</span>
+                            <span class="font_shm">12,000원</span>
+                        </div>
+
+                        <div class="color_t_t font_sbmst">80,000원</div>
+
+                        <div class="h24"></div>
+                        <hr>
+                        <div class="h24"></div>
+
+                        <div class="list_noti color_t_s font_sbsr">
+                            최종 결제금액 및 결제방법은 장기요양기관을 통해 확인해주세요. 장기요양기관의 주문 검토 과정에서, 본인부담률 등 총 예상 금액이 변동 될 수 있어요.
+                        </div>
+                        <div class="list_noti color_t_s font_sbsr">
+                            배송 지연 상품으로 배송이 조금 늦어질 수 있어요.
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="marW-20 h12 back_F7F7F7"></div>
+
+                <div class="OD_product marW-20 pad_24_20_40">
+                    
+                   <div class="font_sblb">옵션선택</div>
+
+                   <div class="h16"></div>
+
+                   <div class="color_t_s font_sbsr">수량</div>
+
+                   <div class="h12"></div>
+
+                    <div class="order_quantity">
+                        <span class="minus"></span>
+                        <input type="number" class="num input_noClass" value="0" onfocus="this.select()"></input>
+                        <span class="plus"></span>
+                    </div>
+                    --임시 추가--
+                    <div class="order_quantity">
+                        <span class="minus"></span>
+                        <input type="number" class="num input_noClass" value="0" onfocus="this.select()"></input>
+                        <span class="plus"></span>
+                    </div>
+
+
+
+                </div>
+
+
+                <div class="marW-20 h12 back_F7F7F7"></div>
+
+                <div class="marW-20">
+
+                    <div class="pad020">
+
+                        <div class="h24"></div>
+
+                        <div class="font_sblb">상품 설명</div>
+    
+                        <div class="h16"></div>
+
+                    </div>
+
+                    <div class="order_detail_more">
+
+                        <div class="card wel_detail_card radius0" youtube_src="https://www.youtube-nocookie.com/embed/gIJwqKjFd3Y?si=mvcn6hZoPTxiM-4n&controls=1&autoplay=1&mute=1">
+                            <div class="youtube_area disNone"></div>
+                            <img class="img_area" src="/html/page/app/matching/assets/src/images/sample/sam_youtube_thumnail.png" width="100%">
+                        </div>
+
+                        <div class="h08"></div>
+
+
+                        <img src="/html/page/app/matching/assets/src/images/sample/sam_detail.jpg" alt="상품이미지 상세">
+                        <img src="/html/page/app/matching/assets/src/images/sample/sam_detail02.jpg" alt="상품이미지 상세">
+
+
+                        <div class="toggle_btn_area">
+
+                            <a class="btn-large btn_default large flex_center gap08 evt_detailBtn">
+                                
+                                <span class="evt_title color_tp_s font_sbms">더 보기</span>
+                                <svg class="evt_arrow" xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M5.96967 8.46967C6.26256 8.17678 6.73744 8.17678 7.03033 8.46967L12.5 13.9393L17.9697 8.46967C18.2626 8.17678 18.7374 8.17678 19.0303 8.46967C19.3232 8.76256 19.3232 9.23744 19.0303 9.53033L13.0303 15.5303C12.7374 15.8232 12.2626 15.8232 11.9697 15.5303L5.96967 9.53033C5.67678 9.23744 5.67678 8.76256 5.96967 8.46967Z"
+                                        fill="#333333" />
+                                </svg>
+
+                            </a>
+
+                        </div>
+                    </div>
+
+
+                    
+                </div>
+                
+
+
+                <div class="marW-20 h12 back_F7F7F7"></div>
+
+
+                <div class="marW-20 pad_24_20_20">
+
+                    <div class="font_sblb">주문 유의사항</div>
+
+                    <div class="h16"></div>
+
+                    <div class="font_sbss">정확한 정보는 장기요양 기관에 문의해주세요. </div>
+    
+                    <ul class="list_dept1 gray_dot marT8">
+                        <li class="color_t_s font_sbsr">장기요양정보 조회 시점에 따라 정보가 다를 수 있어요. </li>
+                        <li class="color_t_s font_sbsr">장기요양기관에 본인부담금을 지불하셔야 주문이 가능해요.</li>
+                        <li class="color_t_s font_sbsr">최종결제금액 및 결제방법은 장기요양기관에서 확인해주세요.</li>
+                        <li class="color_t_s font_sbsr">복지용구 주문 시점이나, 어르신의 장기요양정보에 따라 주문정보가 다를 수 있어요. </li>
+                        <li class="color_t_s font_sbsr">교환/반품시, 장기요양기관에 문의해야해요. </li>
+                        <li class="color_t_s font_sbsr">주문취소는 [주문확인중] 상태에서만 가능해요. 이후에는 장기요양기관에 직접 문의하여 취소해주세요.</li>
+                    </ul>
+                    <ul class="list_dept1 black_dot marT8">
+                        <li class="font_sbss">복지용구의 A/S는 장기요양기관에서 안내 할 책임이 있음을 알려드려요. </li>
+                    </ul>
+
+                    <div class="h20"></div>
+
+                </div>
+
+
+
+            </section>
+        </main>
+
+
+        <footer class="page-footer">
+
+            <div class="relative">
+                <a class="waves-effect btn-large btn_primary w100p disabled">장바구니 담기</a>
+            </div>
+
+        </footer>
+
+
+
+    <!-- 장바구니 Modal fullsreen -->
+    <div id="modal_fullsreen" class="modal fullscreen cart_modal">
+
+        <div class="modal_header">
+            <h4 class="modal_title">꽃분이님의 장바구니</h4>
+            <div class="close_x modal-close waves-effect"></div>
+        </div>
+
+        <div class="modal-content noPad">
+
+            <div class="cart_totalChkArea">
+                <div>
+                    <input type="checkbox" name="" id="cart_chk_total" class="chk02_big">
+                    <label for="cart_chk_total" class="font_sbmr">
+                        <span class="">전체선택</span><span class="evtCartChkNum">(<span class="num_chk">3</span>/<span class="num_total">4</span>)</span>
+                    </label>
+                </div>
+                <a class="waves-effect btn btn-middle btn_cancel pad016">선택삭제</a>
+            </div>
+
+            <div class="padH24W20">
+                
+                <div class="align_between_center">
+                    <div class="font_sbms">워커11</div>
+                </div>
+                
+
+                <div class="h12"></div>
+
+                <div class="bder_box_01 pad_16_12_20">
+
+
+                    <!-- cart_obj_area 카트목록 아이템-->
+                    <div class="cart_obj_area">
+
+                        <div class="close_x p03"></div>
+
+                        <div class="cart_chk_area">
+                            <input type="checkbox" name="" id="cart_chk_01" class="chk02_big">
+                            <label for="cart_chk_01"></label>
+                        </div>
+                        <div class="cart_obj_item">
+                            <div class="itemImgArea">
+                                <div class="outStock">품절</div>
+                                <div class="no_Thumb_Img">
+                                    <img src="/html/page/app/matching/assets/src/images/04icon/back_trans.png" alt="thumb_img">
+                                </div>
+                                <!-- <img src="/html/page/app/matching/assets/src/images/sample/sam_order.png" alt="order_img"> -->
+                            </div>
+                            <div class="ctnArea">
+                                <div class="title font_sbsr">안전손잡이 벽걸이형 sdf sfddsf안전손잡이 벽걸이형 안전손잡이 벽걸이형 안전손잡이 벽걸이형 </div>
+                            </div>
+
+                            <div class="ctnArea_bottom">
+                                
+                                <div class="align_between_center">
+
+                                    <div class="order_quantity small_01">
+                                        <span class="minus"></span>
+                                        <input type="number" class="num input_noClass" value="0" onfocus="this.select()"></input>
+                                        <span class="plus"></span>
+                                    </div>
+    
+                                    <div class="price_area">
+                                        <span class="title font_sbss">예상금액</span>
+                                        <span class="price font_sbsb">8,220원</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!-- cart_obj_item -->
+
+                    </div>
+                    <!-- cart_obj_area -->
+                    
+                </div>
+                <!-- bder_box_01 -->
+
+            </div>
+            <!-- padH24W20 -->
+
+            <div class="h12 back_F7F7F7"></div>  
+
+            <div class="padH24W20">
+
+                <div class="align_between_center">
+                    <div class="font_sbms">미끄럼방지 양말</div>
+                </div>
+
+                <div class="h12"></div>
+
+                <div class="bder_box_01 pad_16_12_20">
+
+
+                    <!-- cart_obj_area 카트목록 아이템-->
+                    <div class="cart_obj_area">
+
+                        <div class="close_x p03"></div>
+
+                        <div class="cart_chk_area">
+                            <input type="checkbox" name="" id="cart_chk_02" class="chk02_big">
+                            <label for="cart_chk_02"></label>
+                        </div>
+                        <div class="cart_obj_item">
+                            <div class="itemImgArea">
+                                <div class="outStock">품절</div>
+                                <img src="/html/page/app/matching/assets/src/images/sample/sam_order02.png" alt="order_img">
+                            </div>
+                            <div class="ctnArea">
+                                <div class="title font_sbsr">미끄럼방지 휠체어 두줄방지 미끄럼방지 휠체어 두줄방지 미끄럼방지 휠체어 두줄방지</div>
+                                <!-- <div class="detail color_t_s font_sbsr">위풋 논슬립 돌돌이 양말 최대 두줄 노출양말 최대 두줄 노출</div> -->
+                            </div>
+
+                            <div class="ctnArea_bottom ">
+                                
+                                <div class="option_area breadcrumb_area">
+                                    <span>옵션 : 로즈</span>
+                                    <span>S(230~21135mm)</span>
+                                </div>
+                                
+                                <div class="align_between_center">
+
+                                    <div class="order_quantity small_01" >
+                                        <span class="minus"></span>
+                                        <input type="number" class="num input_noClass" value="1" onfocus="this.select()"></input>
+                                        <span class="plus"></span>
+                                    </div>
+    
+                                    <div class="price_area">
+                                        <span class="title font_sbss">예상금액</span>
+                                        <span class="price font_sbsb">9,998,220원</span>
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+                        <!-- cart_obj_item -->
+
+
+                    </div>
+                    <!-- cart_obj_area -->
+
+                    
+                    <!-- cart_obj_area 카트목록 아이템-->
+                    <div class="cart_obj_area">
+
+                        <div class="close_x p03"></div>
+
+                        <div class="cart_chk_area">
+                            <input type="checkbox" name="" id="cart_chk_03" class="chk02_big" disabled>
+                            <label for="cart_chk_03"></label>
+                        </div>
+                        <div class="cart_obj_item">
+                            <div class="itemImgArea">
+                                <div class="outStock">품절</div>
+                                <img src="/html/page/app/matching/assets/src/images/sample/sam_order02.png" alt="order_img">
+                            </div>
+                            <div class="ctnArea">
+                                <div class="title font_sbsr">미끄럼방지 비활성</div>
+                            </div>
+
+                            <div class="ctnArea_bottom ">
+
+                                <div class="option_area breadcrumb_area">
+                                    <span>옵션 : 로즈</span>
+                                    <span>S(230~235mm)</span>
+                                </div>
+
+                                <div class="align_between_center">
+
+                                    <div class="order_quantity small_01">
+                                        <span class="minus"></span>
+                                        <input type="number" class="num input_noClass" value="1" onfocus="this.select()"></input>
+                                        <span class="plus"></span>
+                                    </div>
+    
+                                    <div class="price_area">
+                                        <span class="title">예상금액</span>
+                                        <span class="price">220원</span>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                        <!-- cart_obj_item -->
+
+
+                    </div>
+                    <!-- cart_obj_area -->
+
+                   
+                </div>
+                <!-- bder_box_01 -->
+                
+            </div>
+            <!-- padH24W20 -->
+
+
+            <div class="h12 back_F7F7F7"></div>  
+
+            <div class="padH24W20">
+
+                <div class="align_between_center">
+                    <div class="font_sbms">자세변환용구</div>
+                    <div class="color_t_danger font_sbss">구매가능 : 2개</div>
+                </div>
+
+                <div class="h12"></div>
+
+                <div class="bder_box_01 danger pad_16_12_20">
+
+
+                    <!-- cart_obj_area 카트목록 아이템-->
+                    <div class="cart_obj_area">
+
+                        <div class="close_x p03"></div>
+
+                        <div class="cart_chk_area">
+                            <input type="checkbox" name="" id="cart_chk_04" class="chk02_big">
+                            <label for="cart_chk_04"></label>
+                        </div>
+                        <div class="cart_obj_item">
+                            <div class="itemImgArea">
+                                <div class="outStock">품절</div>
+                                <img src="/html/page/app/matching/assets/src/images/sample/sam_order02.png" alt="order_img">
+                            </div>
+                            <div class="ctnArea">
+                                <div class="title font_sbsr">미끄럼방지 휠체어 두줄방지 미끄럼방지 휠체어 두줄방지 미끄럼방지 휠체어 두줄방지 </div>
+                            </div>
+
+                            <div class="ctnArea_bottom ">
+                                
+                                <div class="option_area breadcrumb_area">
+                                    <span>옵션 : 로즈</span>
+                                    <span>S(230~21135mm)</span>
+                                </div>
+                                
+                                <div class="align_between_center">
+
+                                    <div class="order_quantity small_01" >
+                                        <span class="minus"></span>
+                                        <input type="number" class="num input_noClass" value="1" onfocus="this.select()"></input>
+                                        <span class="plus"></span>
+                                    </div>
+    
+                                    <div class="price_area">
+                                        <span class="title font_sbss">예상금액</span>
+                                        <span class="price font_sbsb">9,998,220원</span>
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+                        <!-- cart_obj_item -->
+
+
+                    </div>
+                    <!-- cart_obj_area -->
+
+                   
+                </div>
+                <!-- bder_box_01 -->
+                
+            </div>
+            <!-- padH24W20 -->
+
+
+
+
+
+
+            <div class="h12 back_F7F7F7"></div>
+
+            <div class="padH24W20">
+                
+                <div class="list_noti_danger color_t_danger font_sbss">
+                    <!-- BTS-23 202412 텍스트 변경-->
+                    장바구니는 다음날 모두 사라지니, 필요한 상품을 한번에 주문해주세요. 주문요청시 배송완료 전까지 추가 주문이 어려워요.
+                </div>
+
+                <ul class="list_dept1 gray_dot marT12">
+                    <li class="color_t_s font_sbsr">최종 결제금액 및 결제방법은 장기요양기관을 통해 확인해주세요. </li>
+                    <li class="color_t_s font_sbsr marT12">장기요양기관의 주문 검토 과정에서, 본인부담률 등 총 예상 금액이 변동 될 수 있어요.</li>
+                </ul>
+                
+
+
+            </div>
+            <!-- padH24W20 -->
+
+
+            <div class="h80"></div>
+
+            
+  
+        </div>
+        <!-- modal-content -->
+
+        <!-- 장바구니 하단팝업 -->
+        <div class="modal_cart_area pad_16_20_20">
+
+            <div class="align_between_center">
+                <div class="font_sbmr">
+                    총 <span class="font_sbmb">3개</span> 예상금액
+                </div>
+                <div class="font_sbmb">9,300원</div>
+            </div>
+
+            <div class="h16"></div>
+            
+            <div class="btn_area d-flex">
+                <a class="modal-close waves-effect btn btn-large w100p btn_primary">주문하기</a>
+              </div>
+
+        </div>
+
+
+        <!-- <div class="modal-footer modal_cart_area">
+          <div class="btn_area d-flex">
+            <a class="modal-close waves-effect btn btn-large w100p btn_primary">확인</a>
+          </div>
+        </div> -->
+  
+  
+  
+      </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <!-- wrapper -->
+
+
+
+    <script src="../js/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".order_detail_Swiper", {
+            autoHeight: true,
+            spaceBetween: 0,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                type: "fraction",
+            },
+        });
+    </script>
+
+
+
+
+</body>
+
+</html>

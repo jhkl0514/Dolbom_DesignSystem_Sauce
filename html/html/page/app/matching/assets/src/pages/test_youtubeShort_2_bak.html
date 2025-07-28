@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YoutubeShort Modal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    [class^='btn_p'] {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+      text-align: center;
+      cursor: pointer;
+      margin: 20px;
+    }
+
+    .modal_youtube {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal_youtube .youtube_snapArea {
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      scroll-snap-type: y mandatory;
+    }
+
+    .modal_youtube .youtube_snapArea .iframeArea {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+
+    .modal_youtube .youtube_snapArea .iframeArea .txt01 {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      background-color: #4f4a64ab;
+      color: #fff;
+      font-size: 32px;
+      z-index: 1001;
+    }
+    .modal_youtube .youtube_snapArea .iframeArea .txt01_2 {
+      position: absolute;
+      top: 70px;
+      left: 20px;
+      background-color: #000;
+      padding: 12px;
+      border-radius: 12px;
+      color: #ff0e0e;
+      font-size: 14px;
+      z-index: 1001;
+    }
+    .modal_youtube .youtube_snapArea .iframeArea .txt02 {
+      position: absolute;
+      bottom: 60px;
+      right: 10px;
+      background-color: #4ba884c4;
+      color: #fff;
+      font-size: 12px;
+      z-index: 1001;
+    }
+
+    .modal_youtube .youtube_snapArea iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    .modal_youtube .close_btn {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: #007bff9a;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 10px;
+      right: 10px;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 2000;
+    }
+  </style>
+</head>
+<body>
+
+<a class="btn_play01">Youtube쇼츠 재생01</a>
+
+
+
+
+<div class="modal_youtube" id="youtubeModal">
+  <div class="close_btn" id="closeModal">x</div>
+  <div class="youtube_snapArea">
+    <div class="iframeArea">
+      <div class="txt01">텍스트예시1</div>
+      <div class="txt01_2">동영상설명<br>내용이 표시됩니다.</div>
+      <div class="txt02">가나다라마바사1</div>
+      <iframe class="youtubeIframe01" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
+    <div class="iframeArea">
+      <div class="txt01">텍스트예시2</div>
+      <div class="txt01_2">동영상설명<br>내용이 표시됩니다.</div>
+      <div class="txt02">가나다라마바사2</div>
+      <iframe class="youtubeIframe02" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
+    <div class="iframeArea">
+      <div class="txt01">텍스트예시3</div>
+      <div class="txt01_2">동영상설명<br>내용이 표시됩니다.</div>
+      <div class="txt02">가나다라마바사3</div>
+      <iframe class="youtubeIframe03" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/QQ6IPAMRgUM?si=zCg2Rb5EMxSFXBzA"
+    title="YouTube video player" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe> -->
+<div>* 유튜브쇼츠 공개여부에 따라 다름</div>
+
+
+<script>
+  // DOM 요소 가져오기
+  const playButton = document.querySelector('.btn_play01');
+  const modal = document.getElementById('youtubeModal');
+  const closeModal = document.getElementById('closeModal');
+
+  const iframe01 = document.querySelector('.youtubeIframe01');
+  const iframe02 = document.querySelector('.youtubeIframe02');
+  const iframe03 = document.querySelector('.youtubeIframe03');
+
+  // 유튜브 쇼츠 영상 URL (playsinline 추가)
+  const youtubeVideoUrl_01 = "https://www.youtube.com/embed/QQ6IPAMRgUM?autoplay=1&rel=0&mute=1&playsinline=1";
+  const youtubeVideoUrl_02 = "https://www.youtube.com/embed/1NOnOHtnSC4?autoplay=1&rel=0&mute=1&playsinline=1";
+  const youtubeVideoUrl_03 = "https://www.youtube.com/embed/AfbusT0Qw5Q?autoplay=1&rel=0&mute=1&playsinline=1";
+
+  // 재생 버튼 클릭 이벤트
+  playButton.addEventListener('click', () => {
+      modal.style.display = 'flex'; // 모달 열기
+
+      // 유튜브 영상 URL 설정 (자동 재생 & 음소거)
+      iframe01.setAttribute('src', youtubeVideoUrl_01);
+      iframe02.setAttribute('src', youtubeVideoUrl_02);
+      iframe03.setAttribute('src', youtubeVideoUrl_03);
+  
+      // 1초 후 음소거 해제 시도
+      setTimeout(() => {
+        iframe01.contentWindow.postMessage('{"event":"command","func":"unMute","args":""}', '*');
+        iframe02.contentWindow.postMessage('{"event":"command","func":"unMute","args":""}', '*');
+        iframe03.contentWindow.postMessage('{"event":"command","func":"unMute","args":""}', '*');
+    }, 1000);
+  
+  
+    });
+
+  // 닫기 버튼 클릭 이벤트
+  closeModal.addEventListener('click', () => {
+      modal.style.display = 'none'; // 모달 닫기
+
+      // iframe 정지 (초기화)
+      iframe01.setAttribute('src', '');
+      iframe02.setAttribute('src', '');
+      iframe03.setAttribute('src', '');
+  });
+
+  // Intersection Observer 설정
+  const options = {
+      root: null, // 뷰포트를 루트로 설정
+      threshold: 0.5 // 50% 이상 노출될 때 콜백 실행
+  };
+
+  // Observer 콜백 함수
+  const callback = (entries) => {
+      entries.forEach(entry => {
+          const iframe = entry.target.querySelector('iframe');
+          if (entry.isIntersecting) {
+              iframe.setAttribute('src', iframe.dataset.src); // 뷰포트 안에 들어오면 영상 로드
+          } else {
+              iframe.setAttribute('src', ''); // 뷰포트 밖으로 나가면 영상 중지
+          }
+      });
+  };
+
+  // Observer 생성
+  const observer = new IntersectionObserver(callback, options);
+
+  // 각 iframeArea 요소에 Observer 연결
+  document.querySelectorAll('.iframeArea').forEach(area => {
+      observer.observe(area);
+  });
+
+  // 각 iframe에 data-src 속성 추가
+  iframe01.setAttribute('data-src', youtubeVideoUrl_01);
+  iframe02.setAttribute('data-src', youtubeVideoUrl_02);
+  iframe03.setAttribute('data-src', youtubeVideoUrl_03);
+</script>
+
+</body>
+</html>

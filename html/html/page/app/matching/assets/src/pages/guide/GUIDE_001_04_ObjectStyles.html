@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+
+    <title>GUIDE_001_04_ObjectStyles.html</title>
+
+
+    <!-- jquery -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/materialize.js"></script>
+
+    <!-- guide.js -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/materialize.min.css" />
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/style.css" />
+
+    <!-- guideStyle_2025.css -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/guideStyle_2025.css" />
+
+    <!-- guideStyle_2025.js -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guideStyle_2025.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="gs_header">
+
+            <a href="GUIDE_000_index.html" class="logo"><span>돌봄 디자인시스템</span></a>
+
+            <ul class="header_menu">
+                <li><a href="GUIDE_001_Foundation.html" class="active">Foundation</a></li>
+                <li><a href="GUIDE_002_Component.html">Component</a></li>
+                <li><a href="GUIDE_003_AppScreen.html">App Screen</a></li>
+                <li><a href="GUIDE_004_WebScreen.html">Web Screen</a></li>
+                <li><a href="GUIDE_005_StyleGuide.html">Style Guide</a></li>
+                <li class="search"><a href="#"></a></li>
+            </ul>
+
+        </div>
+
+    </header>
+
+    <div class="wrap">
+
+        <main>
+
+
+            <nav class="sidebar">
+                
+                <div class="sidebar_header">
+                    <div class="title_area">
+                        <div class="close_x"></div>
+                    </div>
+                    <div class="sidebar_search">
+                        <input type="text" placeholder="검색어를 입력해 주세요.">
+                        <div class="search">
+                            <a href="#"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="title">Foundation</h4>
+
+                <div class="sidebar_list">
+                    <ul class="tabs_dept_sidebar">
+                        <li class="tab"><a class="active" title="dept_app">App Screen</a></li>
+                        <li class="tab"><a class="" title="dept_web">Web Screen</a></li>
+                    </ul>
+
+                    <div class="tab_list dept_app" title="siteMap_guide">
+                        <ul class="dept1">
+                            <li><a href="GUIDE_001_Foundation.html">Typography</a></li>
+                            <li>
+                                <a class="arrow active">Colors</a>
+                                <ul class="dept2">
+                                    <li><a href="GUIDE_001_02_01_ThemeColor.html">Theme Color</a></li>
+                                    <li><a href="GUIDE_001_02_02_TextColor.html">Text Color</a></li>
+                                    <li><a href="GUIDE_001_02_03_BackgroundColor.html">Background Color</a></li>
+                                    <li><a href="GUIDE_001_02_04_BorderColor.html">Border Color</a></li>
+                                    <li><a href="GUIDE_001_02_05_IconColor.html">Icon Color</a></li>
+                                </ul>                            
+                            </li>
+                            <li><a href="GUIDE_001_03_Spacing.html">Spacing</a></li>
+                            <li><a class="active" href="GUIDE_001_04_ObjectStyles.html">Object Styles</a></li>
+                            <li><a href="GUIDE_001_05_Icon.html">Icon</a></li>
+                            <li><a href="GUIDE_001_06_BrandLogo.html">Brand Logo</a></li>
+                        </ul>
+                    </div>
+
+
+                </div>
+
+
+            </nav>
+
+
+ 
+            <section>
+
+
+                <div class="h48"></div>
+
+                <div class="titleNav">Object Styles</div>
+
+                <div class="h24"></div>
+ 
+                <div class="roundBox_01">
+                    객체 UI 시각적 일관성을 유지하기 위해 Radius, Border Width, Shadow의 세 가지 시각적 요소로 분류합니다.<br>
+                    버튼, 텍스트 입력 상자 등 디자인 구성 요소에 적용되는 스타일 속성을 정의합니다.
+                </div>
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Radius</h3>
+                
+                <div class="h12"></div>
+
+                <div class="color_tp_s font_sbmr">
+                    대부분의 구성요소에 Radius가 적용됩니다. Radius 값은 8의 배수를 사용하는 것을 권장합니다.
+                </div>
+
+                <div class="h24"></div>
+
+                <div class="roundBox_01 flex_center">
+                    <img src="/html/page/app/matching/assets/src/images/100guide/001_foundation/back_11_objectStyles.svg" alt="Typeface">
+                </div>
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Key Radius, 핵심 반경 값</h3>
+
+                <div class="h24"></div>
+
+                <table class="guide_table">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Raduis</th>
+                            <th>px</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>radius-8</td>
+                            <td>8</td>
+                            <td>버튼, 폼형태의 컴포넌트 구성 요소에 사용되는 값</td>
+                        </tr>
+                        <tr>
+                            <td>radius-16</td>
+                            <td>16</td>
+                            <td>팝업, 페이지,박스 형태에서 주로 사용되는 값</td>
+                        </tr>
+                        <tr>
+                            <td>radius-40</td>
+                            <td>40</td>
+                            <td>바텀시트 페이지에서 사용되는 값</td>
+                        </tr>
+                        <tr>
+                            <td>radius-circle</td>
+                            <td>999</td>
+                            <td>원형의 모양에서 사용되는 값</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Table of Figma Propertie, 피그마 속성</h3>
+
+                <div class="h24"></div>
+
+                <table class="guide_table">
+                    <colgroup>
+                        <col style="width:25%;">
+                        <col style="width:25%;">
+                        <col style="width:25%;">
+                        <col style="width:25%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>spacing</th>
+                            <th>px</th>
+                            <th>spacing</th>
+                            <th>px</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>radius-2</td>
+                            <td>2</td>
+                            <td>radius-12</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>radius-4</td>
+                            <td>4</td>
+                            <td>radius-12</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>radius-4</td>
+                            <td>4</td>
+                            <td>radius-16</td>
+                            <td>16</td>
+                        </tr>
+                        <tr>
+                            <td>radius-6</td>
+                            <td>6</td>
+                            <td>radius-40</td>
+                            <td>40</td>
+                        </tr>
+                        <tr>
+                            <td>radius-8</td>
+                            <td>8</td>
+                            <td>radius-circle</td>
+                            <td>999</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Border Width</h3>
+                
+                <div class="h12"></div>
+
+                <div class="color_tp_s font_sbmr">
+                    테두리는 3 가지(1px,1.5px, 2px) 형태를 제공합니다.<br>
+                    border-2(1.5px)은 페이지 단위에서는 사용을 지양하며, 아이콘에서만 사용할 것을 권장합니다.
+                </div>
+
+                <div class="h24"></div>
+
+                <div class="roundBox_01 flex_center">
+                    <img src="/html/page/app/matching/assets/src/images/100guide/001_foundation/back_12_objectStyles.svg" alt="Typeface">
+                </div>
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Table of Figma Propertie, 피그마 속성</h3>
+
+                <div class="h24"></div>
+
+                <table class="guide_table">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Raduis</th>
+                            <th>px</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>border-1</td>
+                            <td>1</td>
+                            <td>가장 자주 사용되는 디폴트 값</td>
+                        </tr>
+                        <tr>
+                            <td>border-2</td>
+                            <td>1.5</td>
+                            <td>아이콘에서만 사용할 것을 권장</td>
+                        </tr>
+                        <tr>
+                            <td>border-3</td>
+                            <td>2</td>
+                            <td>강조가 필요한 영역에 사용하는 값</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Elevation</h3>
+                
+                <div class="h12"></div>
+
+                <div class="color_tp_s font_sbmr">
+                    연회색 바탕에 주로 사용되는 그림자는 3 가지 타입으로 정의합니다.
+                </div>
+
+                <div class="h24"></div>
+
+                <div class="roundBox_01 flex_center padNo">
+                    <div>
+                        <div class="h10"></div>
+                        <img src="/html/page/app/matching/assets/src/images/100guide/001_foundation/back_13_objectStyles.svg" alt="Typeface">
+                        <div class="h30"></div>
+                    </div>
+                </div>
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Table of Figma Propertie, 피그마 속성</h3>
+
+                <div class="h24"></div>
+
+                <table class="guide_table">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>shadow</th>
+                            <th>Value</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>shadow-1</td>
+                            <td>
+                                0px 2px 16px rgba (0, 0, 0, 0.08),<br>
+                                0px 0px 1px rgba (0, 0, 0, 0.2)
+                            </td>
+                            <td>페이지, 카드 형태에서 주로 사용하며, 가장 일반적인 그림자 값</td>
+                        </tr>
+                        <tr>
+                            <td>shadow-2</td>
+                            <td>
+                                0px 8px 16px rgba (0, 0, 0, 0.12),<br>
+                                0px 0px 8px rgba (0, 0, 0, 0.12)
+                            </td>
+                            <td>팝업에서 사용하는 그림자 값</td>
+                        </tr>
+                        <tr>
+                            <td>shadow-3</td>
+                            <td>0px -4px 16px rgba (0, 0, 0, 0.12)</td>
+                            <td>바텀 내비게이션에 사용되는 그림자 값</td>
+                        </tr>
+                        <tr>
+                            <td>shadow-4</td>
+                            <td>0px 2px 4px rgba (0, 0, 0, 0.2)</td>
+                            <td>하단영역 강조가 필요할 때 사용되는 그림자 값</td>
+                        </tr>
+                        <tr>
+                            <td>shadow-5</td>
+                            <td>
+                                0px 2px 16px rgba (0, 0, 0, 0.12),<br>
+                                0px 0px 1px rgba (0, 0, 0, 0.2)
+                            </td>
+                            <td>페이지, 카드 형태에서 사용하는 그림자 값(Shadow-1번보다 강조)</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+
+
+                <div class="h100"></div>
+
+            </section>
+
+
+
+        </main>
+
+
+    </div>
+    <!-- wrapper -->
+
+
+</body>
+
+</html>

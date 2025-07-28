@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+
+  <title>F_SNR_001_om_main.html</title>
+
+
+  <!-- jquery -->
+  <script type="text/javascript" src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+  <!-- materialize -->
+  <script type="text/javascript" src="../js/materialize.min.js"></script>
+
+  <!-- guide.js -->
+  <script type="text/javascript" src="../js/custom/guide.js"></script>
+
+  <!-- materialize CSS -->
+  <link rel="stylesheet" href="../css/materialize.min.css" />
+
+
+  <!-- style.css -->
+  <link rel="stylesheet" href="../css/style.css" />
+
+
+  <!-- lottie -->
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+
+
+
+  <style>
+
+
+  </style>
+
+
+  <script>
+
+    $(function () {
+
+      $(document).ready(function () {
+        $('.tabs').tabs();
+      });
+
+    });
+
+  </script>
+
+
+  <!-- lottie -->
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+
+
+</head>
+
+<body class="back_gray">
+  <div class="wrapper">
+
+
+    <header>
+      <nav class="top">
+        <div class="btn_back">
+          <div class="txt">
+            <span class="txtEvt">어르신</span>
+          </div>
+        </div>
+
+      </nav>
+    </header>
+
+
+    <main>
+      <section class="default">
+
+        <div class="om_reg_area">
+          <ul>
+
+            <li class="fl_01 active waves-effect">꽃분이</li>
+            <li class="fl_02 waves-effect">꽃순이</li>
+            <li class="fl_02 waves-effect">꽃순이</li>
+            <li class="reg_btn waves-effect">어르신 등록</li>
+
+          </ul>
+        </div>
+
+        <div class="h20"></div>
+
+
+
+        <div class="card bder_primary w100p shadow_01 pad20">
+
+          <div class="card-content box_om_profile info_mdfy size_52 noPad cursor_p">
+
+            <div class="img_area fl_01">
+              <!-- <span class="txt">대표</span> -->
+            </div>
+
+            <div>
+              <div class="font_sbmr"><span class="font_sbmb">긴꽃분이</span>님</div>
+            </div>
+            <a class="rounded waves-effect btn btn_cancel align_center gap02">어르신 정보</a>
+
+          </div>
+
+          <div class="h16"></div>
+
+          <table class="table_basic bder_bottom bder_no">
+            <colgroup>
+              <col style="width:100px;">
+              <col>
+            </colgroup>
+            <tbody>
+              <tr>
+                <th class="font_sbsr color_t_s">요양인정번호</th>
+                <td>
+                  <span class="font_sbms">L123456****</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="font_sbsr color_t_s">장기요양기관</th>
+                <td class="">
+                  <a class="list_info table_info font_sbms line_clamp_1 modal-trigger" href="#modal_counPlace">
+                    행복메디칼 관악지점디칼복메디칼 관악지점디칼복메디칼 관악지점디칼 관악지점
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="h16"></div>
+
+
+
+            <!-- tab -->
+            <ul class="tabs tabs_layout01">
+              <li class="tab"><a class="active" href="#tab_a01">상담내역</a></li>
+              <li class="tab"><a href="#tab_a02">주문요청내역</a></li>
+            </ul>
+
+            <div class="h04"></div>
+
+
+
+            <div id="tab_a01" class="col s12">
+
+
+              <div class="card w100p noShadow radius0 bder_bottom">
+  
+                <div class="card-content box_coun_list _om_box padH12">
+  
+                  <!-- DEDS-331 202504 -->
+                  <div class="img_area trans_s01 ing"></div>
+  
+                  <div>
+                    <div class="font_sbss line_clamp_1">인정등급 간편테스트</div>
+
+                    <div class="breadcrumb_area marT4">
+                      <span class="color_t_s font_sss">상담연결중</span>
+                      <span class="color_t_s font_ssr">2014.01.10</span>
+                    </div>
+                  </div>
+                  <!-- DEDS-331 202504 end -->
+  
+                </div>
+  
+              </div>
+              <!-- card -->
+
+  
+  
+  
+              <div class="h08"></div>
+  
+              <a class="d-flex align-items-center justify-content-end marT4 marB4">
+                <span class="color_t_s font_sbsr">상담내역 보기</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M5.64645 3.64645C5.84171 3.45118 6.15829 3.45118 6.35355 3.64645L10.3536 7.64645C10.5488 7.84171 10.5488 8.15829 10.3536 8.35355L6.35355 12.3536C6.15829 12.5488 5.84171 12.5488 5.64645 12.3536C5.45118 12.1583 5.45118 11.8417 5.64645 11.6464L9.29289 8L5.64645 4.35355C5.45118 4.15829 5.45118 3.84171 5.64645 3.64645Z" fill="#999999"/>
+                </svg>
+              </a>
+  
+  
+  
+            </div>
+            <!-- tab_a01 -->
+
+
+
+            <div id="tab_a02">
+
+              <div class="card w100p noShadow radius0 bder_bottom">
+
+                <div class="card-content box_coun_list _om_box padH12">
+
+                  <div class="order_img_area">
+                    <img src="../images/03tool/tool03_06.png" alt="">
+                  </div>
+
+                  <!-- DEDS-331 202504 -->
+                  <div>
+                    <div class="font_sbss line_clamp_1">지팡이 외 6개 글이 길어지면 자동 줄임</div>
+                    <div class="breadcrumb_area marT4">
+                      <span class="color_t_s font_sss">주문확인중</span>
+                      <span class="color_t_s font_ssr">2015.01.10</span>
+                    </div>
+                  </div>
+                  <!-- DEDS-331 202504 end -->
+
+                </div>
+
+              </div>
+              <!-- card -->
+
+
+              <div class="h08"></div>
+
+              <a class="d-flex align-items-center justify-content-end marT4 marB4">
+                <span class="color_t_s font_sbsr">주문요청내역 보기</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M5.64645 3.64645C5.84171 3.45118 6.15829 3.45118 6.35355 3.64645L10.3536 7.64645C10.5488 7.84171 10.5488 8.15829 10.3536 8.35355L6.35355 12.3536C6.15829 12.5488 5.84171 12.5488 5.64645 12.3536C5.45118 12.1583 5.45118 11.8417 5.64645 11.6464L9.29289 8L5.64645 4.35355C5.45118 4.15829 5.45118 3.84171 5.64645 3.64645Z" fill="#999999"/>
+                </svg>
+              </a>
+
+
+            </div>
+            <!-- tab_a02 -->
+
+         
+
+
+
+        </div>
+        <!-- card -->
+
+
+
+        <div class="h32"></div>
+
+        상담만 있는 경우
+        <div class="card bder_primary w100p shadow_01 pad20">
+
+          <div class="card-content box_om_profile info_mdfy size_52 noPad cursor_p">
+
+            <div class="img_area fl_02">
+            </div>
+
+            <div>
+              <div class="font_sbmr"><span class="font_sbmb">상담있는</span>님</div>
+            </div>
+            <a class="rounded waves-effect btn btn_cancel align_center gap02">어르신 정보</a>
+
+          </div>
+
+          <div class="h16"></div>
+
+          <table class="table_basic bder_bottom bder_no">
+            <colgroup>
+              <col style="width:100px;">
+              <col>
+            </colgroup>
+            <tbody>
+              <tr>
+                <th class="font_sbsr color_t_s">요양인정번호</th>
+                <td>
+                  <span class="font_sbms">L123456****</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="font_sbsr color_t_s">장기요양기관</th>
+                <td>
+                  <span class="color_t_t font_sbmr line_clamp_1">연결된 기관 없음된 기관 없음</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <div class="h16"></div>
+
+          <div class="card w100p radius08 back_F5F5F5 noShadow">
+
+            <div class="card-content box_coun_list _om_box pad12">
+
+              <!-- DEDS-331 202504 -->
+              <div class="img_area trans_s01 ing">
+                <!-- <span class="txt font_sss">상담<br>연결중</span> -->
+              </div>
+
+              <div>
+                <div class="font_sbss line_clamp_1">인정등급 간편테스트 관심 복지용구 글이 길어지면 말줄임33</div>
+
+                <div class="breadcrumb_area marT4">
+                  <span class="color_t_s font_sss">상담연결중</span>
+                  <span class="color_t_s font_ssr">2024.01.10</span>
+                </div>
+              </div>
+              <!-- DEDS-331 202504 end-->
+
+            </div>
+
+          </div>
+
+          <div class="h08"></div>
+
+          <a class="d-flex align-items-center justify-content-end marT4 marB4">
+            <span class="color_t_s font_sbsr">상담내역 보기</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M5.64645 3.64645C5.84171 3.45118 6.15829 3.45118 6.35355 3.64645L10.3536 7.64645C10.5488 7.84171 10.5488 8.15829 10.3536 8.35355L6.35355 12.3536C6.15829 12.5488 5.84171 12.5488 5.64645 12.3536C5.45118 12.1583 5.45118 11.8417 5.64645 11.6464L9.29289 8L5.64645 4.35355C5.45118 4.15829 5.45118 3.84171 5.64645 3.64645Z" fill="#999999"></path>
+            </svg>
+          </a>
+          
+        </div>
+        <!-- card -->
+
+
+
+
+        <div class="h32"></div>
+
+        주문만 있는 경우
+        <div class="card bder_primary w100p shadow_01 pad20">
+
+          <div class="card-content box_om_profile info_mdfy size_52 noPad cursor_p">
+
+            <div class="img_area fl_02">
+            </div>
+
+            <div>
+              <div class="font_sbmr"><span class="font_sbmb">주문있는</span>님</div>
+            </div>
+            <a class="rounded waves-effect btn btn_cancel align_center gap02">어르신 정보</a>
+
+          </div>
+
+          <div class="h16"></div>
+
+          <table class="table_basic bder_bottom bder_no">
+            <colgroup>
+              <col style="width:100px;">
+              <col>
+            </colgroup>
+            <tbody>
+              <tr>
+                <th class="font_sbsr color_t_s">요양인정번호</th>
+                <td>
+                  <span class="font_sbms">L123456****</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="font_sbsr color_t_s">장기요양기관</th>
+                <td>
+                  <span class="color_t_t font_sbmr line_clamp_1">새 기관 연결중새 기관 연결중</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <div class="h16"></div>
+
+          <div class="card w100p radius08 back_F5F5F5 noShadow">
+
+            <div class="card-content box_coun_list _om_box pad12">
+
+              <div class="order_img_area">
+                <img src="../images/03tool/tool03_06.png" alt="">
+              </div>
+
+              <!-- DEDS-331 202504 -->
+              <div>
+                <div class="font_sbss line_clamp_1">지팡이 외 6개</div>
+
+                <div class="breadcrumb_area marT4">
+                  <span class="color_t_s font_sss">주문확인중</span>
+                  <span class="color_t_s font_ssr">2024.12.31</span>
+                </div>
+              </div>
+              <!-- DEDS-331 202504 end -->
+
+
+            </div>
+
+          </div>
+
+          <div class="h08"></div>
+
+          <a class="d-flex align-items-center justify-content-end marT4 marB4">
+            <span class="color_t_s font_sbsr">주문요청내역 보기</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M5.64645 3.64645C5.84171 3.45118 6.15829 3.45118 6.35355 3.64645L10.3536 7.64645C10.5488 7.84171 10.5488 8.15829 10.3536 8.35355L6.35355 12.3536C6.15829 12.5488 5.84171 12.5488 5.64645 12.3536C5.45118 12.1583 5.45118 11.8417 5.64645 11.6464L9.29289 8L5.64645 4.35355C5.45118 4.15829 5.45118 3.84171 5.64645 3.64645Z" fill="#999999"></path>
+            </svg>
+          </a>
+          
+        </div>
+        <!-- card -->
+
+
+
+
+        <div class="h32"></div>
+
+        주문/상담 이력이 모두 없을 떄
+        <div class="card bder_primary w100p shadow_01 pad_20_20_24">
+
+          <div class="card-content box_om_profile info_mdfy size_52 noPad cursor_p">
+
+            <div class="img_area fl_02">
+              <!-- <span class="txt">대표</span> -->
+            </div>
+
+            <div>
+              <div class="font_sbmr"><span class="font_sbmb">민꽃분이</span>님</div>
+            </div>
+            <a class="rounded waves-effect btn btn_cancel align_center gap02">어르신 정보</a>
+
+          </div>
+
+          <div class="h16"></div>
+
+          <table class="table_basic bder_bottom bder_no">
+            <colgroup>
+              <col style="width:100px;">
+              <col>
+            </colgroup>
+            <tbody>
+              <tr>
+                <th class="font_sbsr color_t_s">요양인정번호</th>
+                <td>
+                  <a href="" class="list_link table_link _t02 color_t_t font_sbmr">등록</a>
+                </td>
+              </tr>
+              <tr>
+                <th class="font_sbsr color_t_s">장기요양기관</th>
+                <td>
+                  <span class="color_t_t font_sbmr line_clamp_1">연결된 기관 없음</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+        <!-- card -->
+
+
+
+        <div class="h32"></div>
+
+        프로필정보
+        <div class="card bder_primary w100p shadow_01 pad_20_20_24">
+
+          <div class="card-content box_om_profile info_mdfy size_52 noPad cursor_p">
+
+            <div class="img_area fl_02">
+              <!-- <span class="txt">대표</span> -->
+            </div>
+
+            <div>
+              <div class="font_sbmr"><span class="font_sbmb">민꽃분이</span>님</div>
+            </div>
+            <a class="rounded waves-effect btn btn_cancel align_center gap02">어르신 정보</a>
+
+          </div>
+
+          <div class="h16"></div>
+
+          <table class="table_basic bder_bottom bder_no">
+            <colgroup>
+              <col style="width:100px;">
+              <col>
+            </colgroup>
+            <tbody>
+              <tr>
+                <th class="font_sbsr color_t_s">요양인정번호</th>
+                <td>
+                  <a href="" class="list_link table_link _t02 color_t_t font_sbmr">등록</a>
+                </td>
+              </tr>
+              <tr>
+                <th class="font_sbsr color_t_s">장기요양기관</th>
+                <td>
+                  <span class="color_t_t font_sbmr line_clamp_1">연결된 기관 연결된 기관 연결된 기관 연결된 기관 없음</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+        <!-- card -->
+
+
+        <div class="h32"></div>
+
+
+        <!-- card -->
+        <div class="card">
+
+          <div class="card-content">
+
+            <div class="color_t_p font_sbms">남은 장기요양급여</div>
+
+            <div class="h08"></div>
+
+            <span class="link_text big02 color_primary">1,600,000원</span>
+            <br>
+            <span class="link_text big02 color_primary">장기요양기관 확인 중</span>
+            <br>
+            <span class="link_text big02 color_teritiary">조회하기</span>
+
+
+            <div class="h24"></div>
+
+            <div class="pad12 radius08 back_FFF5E6 d-flex align-items-center gap08">
+              <object data="../images/08etc/icon_chk.svg"></object>
+              <span class="color_tp_s font_sbsr">놓치고 있는 복지용구는?</span>
+            </div>
+
+          </div>
+        </div>
+        <!-- card -->
+
+        <div class="h32"></div>
+
+
+
+
+        <!-- card 전체 링크클릭처리 해야됩니다
+        <div class="card">
+
+          <div class="card-content">
+
+            <div class="color_t_p font_sbms">복지용구 이용현황</div>
+
+            <div class="h08"></div>
+
+            <span class="link_text big color_primary">성인용보행기 외 5건</span>
+
+            <div class="d-flex align-items-center gap08">
+              <dotlottie-player src="/html/page/app/matching/assets/lottie/icon/icon_loading.json"
+                background="transparent" speed="1" style="width: 20px; height: 20px;" loop autoplay></dotlottie-player>
+              <span class="link_text big color_primary">조회 중</span>
+            </div>
+
+            <span class="link_text color_teritiary big">조회하기</span>
+
+
+            <div class="h24"></div>
+
+            <div class="pad12 radius08 back_FFF5E6 d-flex align-items-center gap08">
+              <object data="../images/08etc/icon_plus.svg"></object>
+              <span class="color_tp_s font_sbsr">추가로 받을 수 있는 복지용구는?</span>
+            </div>
+
+          </div>
+        </div>-->
+        <!-- card -->
+
+        <div class="h32"></div>
+
+
+
+
+
+
+
+
+        <div class="card active waves-effect w100p">
+
+          <div class="card-content box_om_profile pad20">
+
+            <div class="img_area fl_01">
+              <span class="txt">대표</span>
+            </div>
+
+            <div>
+              <div class="font_sbmr"><span class="font_sbmb">꽃분이</span>님</div>
+              <div class="marT5">
+                <span class="badge_reco_num">요양인정번호</span>
+                <span class="font_sbsb">L123456****</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- card -->
+
+        <div class="align_center">
+          <img src="../images/08etc/link_40.svg" alt="obj" class="disBlock">
+        </div>
+
+        <div class="card">
+
+          <div class="card-content">
+
+            <div class="box_sub02">
+              <div class="img_area">
+                <object data="../images/08etc/bp_40.svg"></object>
+              </div>
+              <div class="ctn_area">
+                <div class="font_sbls">행복메디칼 관악지점</div>
+              </div>
+            </div>
+
+            <div class="h16"></div>
+
+            <div class="step_area">
+              <!-- 텍스트영역에 active시 그래프영역에도 active 처리 - guide.js 참조-->
+              <ul class="step_txt_area">
+                <li>신청완료</li>
+                <li class="font_scxst">상담연결중</li>
+                <li class="active">상담진행중</li>
+                <li>상담완료</li>
+              </ul>
+              <ul class="step_graph_area">
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+              </ul>
+            </div>
+
+            <div class="h16"></div>
+
+            <div class="align_center gap04">
+              <dotlottie-player src="/html/page/app/matching/assets/lottie/icon/icon_loading.json"
+                background="transparent" speed="1" style="width: 20px; height: 20px;" loop autoplay></dotlottie-player>
+              <div class="color_tp_p font_sbss">어르신에게 적합한 곳을 연결 중이에요</div>
+            </div>
+
+            <div class="align_center gap04">
+              <dotlottie-player src="/html/page/app/matching/assets/lottie/icon/icon_loading.json"
+                background="transparent" speed="1" style="width: 20px; height: 20px;" loop autoplay></dotlottie-player>
+              <div class="color_tp_p font_sbss">적합한 곳을 찾았어요! 기다려주세요</div>
+            </div>
+
+            <div class="align_center gap04">
+              <dotlottie-player src="/html/page/app/matching/assets/lottie/icon/icon_loading.json"
+                background="transparent" speed="1" style="width: 20px; height: 20px;" loop autoplay></dotlottie-player>
+              <div class="color_tp_p font_sbss">곧 연락드릴게요</div>
+            </div>
+
+            <div class="align_center gap04">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18" fill="none">
+                <path
+                  d="M8.00016 2.14148C4.32016 2.14148 1.3335 5.21409 1.3335 8.99999C1.3335 12.7859 4.32016 15.8585 8.00016 15.8585C11.6802 15.8585 14.6668 12.7859 14.6668 8.99999C14.6668 5.21409 11.6802 2.14148 8.00016 2.14148ZM7.12352 11.9594C6.87342 12.2167 6.46024 12.2167 6.21014 11.9594L3.79049 9.47014C3.53603 9.20836 3.53603 8.79163 3.79049 8.52984C4.05511 8.25761 4.49219 8.2573 4.75719 8.52917L6.35466 10.168C6.52569 10.3435 6.80777 10.3433 6.97856 10.1676L11.2401 5.78345C11.5064 5.5095 11.9465 5.51028 12.2118 5.78516C12.4654 6.04792 12.4647 6.46454 12.2102 6.7264L7.12352 11.9594Z"
+                  fill="#FF8120" />
+              </svg>
+              <div class="color_tp_p font_sbss">상담완료</div>
+            </div>
+
+            <div class="align_center gap04">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M15.1668 8.99999C15.1668 12.7878 12.1821 15.8585 8.50016 15.8585C4.81826 15.8585 1.8335 12.7878 1.8335 8.99999C1.8335 5.21214 4.81826 2.14148 8.50016 2.14148C12.1821 2.14148 15.1668 5.21214 15.1668 8.99999ZM10.8485 6.58389C11.0465 6.77636 11.051 7.09292 10.8585 7.29093L9.19729 8.99998L10.8585 10.709C11.051 10.907 11.0465 11.2236 10.8485 11.4161C10.6505 11.6085 10.3339 11.604 10.1415 11.406L8.5 9.71733L6.85853 11.406C6.66606 11.604 6.34951 11.6085 6.1515 11.4161C5.95349 11.2236 5.949 10.907 6.14147 10.709L7.80271 8.99998L6.14147 7.29093C5.949 7.09292 5.95349 6.77636 6.1515 6.58389C6.34951 6.39142 6.66606 6.39591 6.85853 6.59392L8.5 8.28263L10.1415 6.59392C10.3339 6.39591 10.6505 6.39142 10.8485 6.58389Z"
+                  fill="#E53935" />
+              </svg>
+              <div class="color_t_danger font_sbss">취소되었어요</div>
+            </div>
+
+
+            <div class="h24"></div>
+
+
+            <a class="waves-effect btn-large btn_default w100p">상담내역 보기</a>
+
+          </div>
+        </div>
+
+        <div class="h32"></div>
+
+
+
+        <div class="card">
+
+          <div class="card-content">
+
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="color_t_p font_sbms">관심 복지용구</div>
+              <div class="waves-effect link_text small_thin">설정하기</div>
+            </div>
+
+            <div class="h24"></div>
+
+            <div class="wel_select_slide marW-20">
+
+              <div class="ctn waves-effect">
+                <div class="img_area">
+                  <img src="../images/02tool/tool02_01.svg" alt="성인용 보행기">
+                </div>
+                <span class="txt">성인용 보행기</span>
+              </div>
+              <!-- ctn -->
+
+              <div class="ctn waves-effect">
+                <div class="img_area">
+                  <img src="../images/02tool/tool02_04.svg" alt="안전손잡이">
+                </div>
+                <span class="txt">안전손잡이</span>
+              </div>
+              <!-- ctn -->
+
+              <div class="ctn waves-effect">
+                <div class="img_area">
+                  <img src="../images/02tool/tool02_03.svg" alt="지팡이">
+                </div>
+                <span class="txt">지팡이</span>
+              </div>
+              <!-- ctn -->
+
+              <div class="ctn waves-effect">
+                <div class="img_area">
+                  <img src="../images/02tool/tool02_08.svg" alt="욕창예방 방석">
+                </div>
+                <span class="txt">욕창예방 방석</span>
+              </div>
+              <!-- ctn -->
+
+              <div class="ctn waves-effect">
+                <div class="img_area">
+                  <img src="../images/02tool/tool02_02.svg" alt="수동휠체어">
+                </div>
+                <span class="txt">수동휠체어</span>
+              </div>
+              <!-- ctn -->
+
+              <div class="ctn waves-effect">
+                <div class="img_area">
+                  <img src="../images/02tool/tool02_05.svg" alt="미끄럼방지 매트">
+                </div>
+                <span class="txt">미끄럼방지<br>매트</span>
+              </div>
+              <!-- ctn -->
+
+              <div class="ctn waves-effect">
+                <div class="img_area">
+                  <img src="../images/02tool/tool02_06.svg" alt="미끄럼방지 양말">
+                </div>
+                <span class="txt">미끄럼방지<br>양말</span>
+              </div>
+              <!-- ctn -->
+
+              <div class="ctn waves-effect">
+                <div class="img_area">
+                  <img src="../images/02tool/tool02_07.svg" alt="욕창예방 매트리스">
+                </div>
+                <span class="txt">욕창예방<br>매트리스</span>
+              </div>
+              <!-- ctn -->
+
+              <div class="ctn waves-effect">
+                <div class="img_area">
+                  <img src="../images/02tool/tool02_09.svg" alt="자세변환용구">
+                </div>
+                <span class="txt">자세변환용구</span>
+              </div>
+              <!-- ctn -->
+
+              <div class="ctn waves-effect">
+                <div class="img_area">
+                  <img src="../images/02tool/tool02_10.svg" alt="요실금 팬티">
+                </div>
+                <span class="txt">요실금 팬티</span>
+              </div>
+              <!-- ctn -->
+
+              <div class="ctn waves-effect">
+                <div class="img_area">
+                  <img src="../images/02tool/tool02_11.svg" alt="목욕의자">
+                </div>
+                <span class="txt">목욕의자</span>
+              </div>
+              <!-- ctn -->
+
+              <div class="ctn waves-effect">
+                <div class="img_area">
+                  <img src="../images/02tool/tool02_12.svg" alt="이동변기">
+                </div>
+                <span class="txt">이동변기</span>
+              </div>
+              <!-- ctn -->
+
+              <div class="ctn waves-effect">
+                <div class="img_area">
+                  <img src="../images/02tool/tool02_13.svg" alt="간이변기">
+                </div>
+                <span class="txt">간이변기</span>
+              </div>
+              <!-- ctn -->
+
+              <div class="ctn waves-effect">
+                <div class="img_area">
+                  <img src="../images/02tool/tool02_14.svg" alt="경사로">
+                </div>
+                <span class="txt">경사로</span>
+              </div>
+              <!-- ctn -->
+
+
+
+
+
+
+            </div>
+
+
+
+
+            <div class="h24"></div>
+
+            <a class="waves-effect btn-large btn_default w100p">상담하기</a>
+
+          </div>
+        </div>
+        <!-- card -->
+
+        <div class="h32"></div>
+
+
+        <div class="card">
+
+          <div class="card-content">
+
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="color_t_p font_sbms">인정등급 간편 테스트</div>
+              <div class="waves-effect link_text small_thin">다시하기</div>
+            </div>
+
+            <div class="h24"></div>
+
+            <div class="align_center">
+
+              <img src="../images/11easy/easy_09.svg" alt="간편 테스트">
+
+            </div>
+
+            <div class="h24"></div>
+
+            <a class="waves-effect btn-large btn_default w100p">상담하기</a>
+
+          </div>
+        </div>
+        <!-- card -->
+
+
+        <!-- DEDS-118 202411 -->
+        <div class="h32"></div>
+
+        <div class="card">
+
+          <div class="card-content">
+
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="color_t_p font_sbms">인정등급 상세 테스트</div>
+              <div class="waves-effect link_text small_thin">다시하기</div>
+            </div>
+
+            <div class="h24"></div>
+
+            <div class="flex_center">
+              <div class="recu_rating_num noMar" style="height: 123px;">
+                  <span class="num">3</span>
+              </div>
+            </div>
+
+            <div class="h10"></div>
+
+            <div class="center font_sbms">3등급</div>
+
+            <div class="h24"></div>
+
+            <a class="waves-effect btn-large btn_default w100p">상담하기</a>
+
+          </div>
+        </div>
+        <!-- card -->
+
+
+        <div class="h32"></div>
+
+        <div class="card">
+
+          <div class="card-content">
+
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="color_t_p font_sbms">인정등급 상세 테스트</div>
+              <div class="waves-effect link_text small_thin">다시하기</div>
+            </div>
+
+            <div class="h24"></div>
+
+            <div class="flex_center">
+              <dotlottie-player src="/html/page/app/matching/assets/lottie/welfare/ratingNon.json"
+              background="transparent" speed="1" style="width: 150px;" loop autoplay></dotlottie-player>
+      
+            </div>
+
+            <div class="h24"></div>
+
+            <a class="waves-effect btn-large btn_default w100p">상담하기</a>
+
+          </div>
+        </div>
+        <!-- card -->
+        <!-- DEDS-118 202411 end -->
+
+        <div class="h32"></div>
+
+        <div class="card">
+
+          <div class="card-content">
+
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="color_t_p font_sbms">어르신 돌봄</div>
+              <div class="waves-effect link_text small_thin">설정하기</div>
+            </div>
+
+            <div class="h24"></div>
+
+            <div class="align_center">
+
+              <img src="../images/08etc/time03_80.svg" style="height:132px;" alt="어르신 돌봄">
+
+            </div>
+
+            <div class="h12"></div>
+
+            <div class="center font_sbms">8~10시간</div>
+
+            <div class="h24"></div>
+
+            <a class="waves-effect btn-large btn_default w100p">상담하기</a>
+
+          </div>
+        </div>
+        <!-- card -->
+
+
+
+      </section>
+    </main>
+
+    <footer class="page-footer bottomNav">
+
+      <ul class="bottomNav_menu">
+        <li class="motion_icon active">
+          <a class="">
+            <dotlottie-player src="https://lottie.host/9e91c6e1-8eb1-4209-a238-98da540176e0/1RvnUCbYPw.json"
+              background="transparent" speed="1" direction="1" playMode="normal" hover></dotlottie-player>
+
+            <div class="txt">어르신</div>
+          </a>
+        </li>
+        <li class="motion_icon">
+          <a class="">
+            <dotlottie-player src="https://lottie.host/3f91acc7-0657-4406-a6ad-7d2de4601c02/c3fGA0ecM1.json"
+              background="transparent" speed="1" direction="1" playMode="normal" hover></dotlottie-player>
+            <span class="txt">복지용구</span>
+          </a>
+        </li>
+        <li class="motion_icon ">
+          <a class="waves-effect">
+            <dotlottie-player src="https://lottie.host/e0cbc081-14b3-4b38-98f3-5a7cf0220eba/vLbWZeRXy0.json"
+              background="transparent" speed="1" direction="1" playMode="normal" hover></dotlottie-player>
+            <span class="txt">서비스</span>
+          </a>
+        </li>
+        <li class="motion_icon">
+          <a class="waves-effect">
+            <dotlottie-player src="https://lottie.host/20bd1841-9049-418d-a380-4efd32ea7ea0/A211g2qMuj.json"
+              background="transparent" speed="1" direction="1" playMode="normal" hover></dotlottie-player>
+            <span class="txt">길잡이</span>
+          </a>
+        </li>
+        <li class="motion_icon">
+          <a class="waves-effect">
+            <dotlottie-player src="https://lottie.host/3d783787-fbc2-4228-90ae-b375f518cd3f/N3UMj9jFOS.json"
+              background="transparent" speed="1" direction="1" playMode="normal" hover></dotlottie-player>
+            <span class="txt">전체</span>
+          </a>
+        </li>
+
+      </ul>
+
+    </footer>
+
+
+
+  </div>
+  <!-- wrapper -->
+
+
+
+  <!-- Modal modal_counPlace -->
+  <div id="modal_counPlace" class="modal bottom-sheet modal_om_select">
+
+    <div class="modal_header">
+      <h4 class="modal_title">행복메디칼</h4>
+      <div class="close_x modal-close waves-effect"></div>
+    </div>
+
+    <div class="modal-content">
+
+      <div class="marT4 color_t_s font_sbmr">
+        경기 구리시 장자대로1번길 20,<br>
+        (교문돈) 지하1층
+      </div>
+
+      <div class="h20"></div>
+
+
+
+
+    </div>
+
+    <div class="modal-footer">
+      <div class="btn_area d-flex">
+        <a class="waves-effect btn btn-middle btn_white_bder w100p align_center gap02">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M10.5813 9.7076C10.7268 9.76804 10.859 9.8566 10.9703 9.96823L12.0958 11.0977C12.2078 11.2074 12.2966 11.3385 12.3569 11.4831C12.4173 11.6278 12.4479 11.7831 12.447 11.9399C12.4474 12.0977 12.4166 12.2541 12.3563 12.4C12.296 12.5459 12.2075 12.6784 12.0958 12.79L11.557 13.3328C11.3219 13.5535 11.0452 13.7252 10.7429 13.8375C10.4407 13.9499 10.119 14.0009 9.79686 13.9873C9.68519 13.9933 9.57327 13.9933 9.4616 13.9873C7.96491 13.8437 6.14493 12.8658 4.63227 11.3492C3.11961 9.83253 2.13778 8.03251 2.01007 6.53581C1.95569 6.15984 1.98626 5.77645 2.09953 5.41384C2.21281 5.05123 2.4059 4.71862 2.66462 4.44044L3.20742 3.90163C3.31897 3.78994 3.45151 3.70141 3.59741 3.64113C3.74331 3.58086 3.89968 3.55002 4.05754 3.55041C4.21429 3.54953 4.36961 3.58016 4.51428 3.6405C4.65895 3.70083 4.79001 3.78964 4.89968 3.90163L6.02918 5.02715C6.14081 5.13839 6.22938 5.27057 6.28981 5.41611C6.35024 5.56165 6.38135 5.71769 6.38135 5.87527C6.38135 6.03286 6.35024 6.1889 6.28981 6.33444C6.22938 6.47998 6.14081 6.61216 6.02918 6.7234L5.45046 7.30212C5.86401 7.95372 6.34858 8.55742 6.89527 9.10214C7.43999 9.64884 8.0437 10.1334 8.69529 10.547L9.27402 9.96823C9.38525 9.8566 9.51743 9.76804 9.66297 9.7076C9.80851 9.64717 9.96455 9.61606 10.1221 9.61606C10.2797 9.61606 10.4358 9.64717 10.5813 9.7076ZM10.2873 2.46696C11.0134 2.76768 11.6728 3.20915 12.2275 3.76593C12.7909 4.3258 13.2366 4.99281 13.5382 5.72763C13.8398 6.46244 13.9913 7.25021 13.9836 8.04448C13.9836 8.15033 13.9416 8.25185 13.8667 8.3267C13.7919 8.40155 13.6903 8.4436 13.5845 8.4436C13.4786 8.4436 13.3771 8.40155 13.3023 8.3267C13.2274 8.25185 13.1854 8.15033 13.1854 8.04448C13.1912 7.35943 13.0612 6.68001 12.8031 6.04543C12.5449 5.41085 12.1637 4.83368 11.6813 4.34722C11.1989 3.86076 10.625 3.47464 9.9926 3.21115C9.36022 2.94766 8.68192 2.81202 7.99684 2.81204C7.89098 2.81204 7.78947 2.76999 7.71462 2.69514C7.63977 2.62029 7.59772 2.51878 7.59772 2.41292C7.59772 2.30707 7.63977 2.20555 7.71462 2.1307C7.78947 2.05586 7.89098 2.01381 7.99684 2.01381C8.78275 2.01223 9.56121 2.16624 10.2873 2.46696ZM10.4835 6.83759C10.3622 6.54217 10.183 6.274 9.95647 6.04887C9.73577 5.82474 9.47308 5.64629 9.1834 5.52371C8.89372 5.40113 8.58273 5.33682 8.2682 5.33445C8.16234 5.33445 8.06083 5.2924 7.98598 5.21755C7.91113 5.1427 7.86908 5.04118 7.86908 4.93533C7.86908 4.82947 7.91113 4.72796 7.98598 4.65311C8.06083 4.57826 8.16234 4.53621 8.2682 4.53621C8.69088 4.53618 9.10936 4.62007 9.49937 4.78302C9.88938 4.94597 10.2432 5.18474 10.5402 5.48547C10.8372 5.7862 11.0716 6.14291 11.2296 6.53492C11.3877 6.92692 11.4664 7.34642 11.4611 7.76907C11.4611 7.87492 11.4191 7.97644 11.3442 8.05129C11.2694 8.12614 11.1679 8.16818 11.062 8.16818C10.9562 8.16818 10.8547 8.12614 10.7798 8.05129C10.705 7.97644 10.6629 7.87492 10.6629 7.76907C10.6658 7.44972 10.6048 7.13301 10.4835 6.83759Z"
+              fill="#333333" />
+          </svg>
+          전화하기
+        </a>
+        <a class="waves-effect btn btn-middle btn_white_bder w100p align_center gap02">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M4.88103 2.66663C4.42638 2.66663 3.99034 2.84724 3.66885 3.16873C3.34736 3.49022 3.16675 3.92626 3.16675 4.38091V10.0952C3.16675 10.2468 3.22695 10.3921 3.33412 10.4993C3.44128 10.6064 3.58662 10.6666 3.73818 10.6666C3.88973 10.6666 4.03507 10.6064 4.14224 10.4993C4.2494 10.3921 4.30961 10.2468 4.30961 10.0952V4.38091C4.30961 4.22936 4.36981 4.08401 4.47697 3.97685C4.58414 3.86969 4.72948 3.80948 4.88103 3.80948H10.5953C10.7469 3.80948 10.8922 3.74928 10.9994 3.64212C11.1065 3.53495 11.1667 3.38961 11.1667 3.23805C11.1667 3.0865 11.1065 2.94116 10.9994 2.83399C10.8922 2.72683 10.7469 2.66663 10.5953 2.66663H4.88103ZM6.59532 4.95234C6.29221 4.95234 6.00152 5.07275 5.7872 5.28708C5.57287 5.5014 5.45246 5.79209 5.45246 6.0952V12.1904C5.45246 12.4935 5.57287 12.7842 5.7872 12.9986C6.00152 13.2129 6.29221 13.3333 6.59532 13.3333H12.6906C12.9937 13.3333 13.2844 13.2129 13.4987 12.9986C13.713 12.7842 13.8334 12.4935 13.8334 12.1904V6.0952C13.8334 5.79209 13.713 5.5014 13.4987 5.28708C13.2844 5.07275 12.9937 4.95234 12.6906 4.95234H6.59532Z"
+              fill="#333333" />
+          </svg>
+          주소복사하기
+        </a>
+      </div>
+    </div>
+
+
+  </div>
+
+
+</body>
+
+</html>

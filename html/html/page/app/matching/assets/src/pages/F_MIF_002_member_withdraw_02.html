@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+
+    <title>F_MIF_002_member_withdraw_02.html</title>
+
+
+    <!-- jquery -->
+    <script type="text/javascript" src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script type="text/javascript" src="../js/materialize.min.js"></script>
+
+    <!-- guide.js -->
+    <script type="text/javascript" src="../js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="../css/materialize.min.css" />
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <script>
+
+        $(function(){
+
+            //기타 취소사유 textarea 숨김
+            $('.evtTextarea_etc').hide();
+
+            //라디오버튼 클릭시 상담취소 버튼 활성화
+            $('.rd_area :radio').click(function(){
+
+                $('.evtBtn').removeClass('disabled');
+
+                //기타 라디오 활성화시 기타 취소사유 textarea 표시
+                if($(':radio.evtRadio_etc').is(':checked')==true){
+
+                    $('.evtTextarea_etc').show();
+
+                    }
+                    else{
+
+                    $('.evtTextarea_etc').hide();
+
+                    }
+
+
+            });
+
+
+
+
+
+
+
+
+
+            // 타이핑 제한
+            $('.textBox').on('input propertychange keyup', function (e) {
+                let content = $(this).val();
+                
+                // 글자수 세기
+                if (content.length == 0 || content == '') {
+                    $('.textCount').text('0');
+                } else {
+                    $('.textCount').text(content.length);
+                }
+                
+                // 글자수 제한
+                if (content.length > 20) {
+                    // 20자 부터는 타이핑 되지 않도록
+                    $(this).val(content.substring(0, 20));
+                    $('.textCount').text('20'); // 글자수 표시를 20으로 고정
+                }
+            });
+
+
+            //줄 제한
+            $('.textBox').keydown(function(){
+                var rows = $('.textBox').val().split('\n').length;
+                var maxRows = 2;
+                if( rows > maxRows){
+                    modifiedText = $('.textBox').val().split("\n").slice(0, maxRows);
+                    $('.textBox').val(modifiedText.join("\n"));
+                }
+            });
+
+        });
+
+</script>
+
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+
+
+        <header>
+            <nav class="top">
+                <a class="btn_back waves-effect" href="#">
+                    <span class="icon"></span>
+                    <span class="txt">회원탈퇴</span>
+                </a>
+            </nav>
+        </header>
+
+
+        <main>
+            <section class="intro">
+
+                <h3 class="title">
+                    탈퇴하는 이유를 알려주세요
+                </h3>
+
+                <div class="h40"></div>
+
+                <div class="rd_area">
+
+                    <input type="radio" name="withdraw" id="chk_c01" class="chk01_2 large">
+                    <label for="chk_c01">서비스가 불만족스러워요.</label>
+    
+                    <div class="h08"></div>
+        
+                    <input type="radio" name="withdraw" id="chk_c02" class="chk01_2 large">
+                    <label for="chk_c02">사이트 속도가 느려요.</label>
+    
+                    <div class="h08"></div>
+        
+                    <input type="radio" name="withdraw" id="chk_c03" class="chk01_2 large">
+                    <label for="chk_c03">이용 빈도가 적어요.</label>
+    
+                    <div class="h08"></div>
+        
+                    <input type="radio" name="withdraw" id="chk_c04" class="chk01_2 large">
+                    <label for="chk_c04">배송이 지연돼요.</label>
+    
+                    <div class="h08"></div>
+        
+                    <input type="radio" name="withdraw" id="chk_c05" class="chk01_2 large">
+                    <label for="chk_c05">상품 품질이 떨어져요.</label>
+    
+                    <div class="h08"></div>
+        
+                    <input type="radio" name="withdraw" id="chk_c06" class="chk01_2 large evtRadio_etc">
+                    <label for="chk_c06">기타</label>
+
+                </div>
+                <div class="h20"></div>
+
+                <div class="evtTextarea_etc">
+                    <div class="relative">
+                        <textarea rows="3" class="input_basic textBox" required="required" placeholder="탈퇴 사유를 입력해주세요" maxlength="20" style="height:110px !important;"></textarea>
+                        <div class="textLengthWrap">
+                            <span class="textCount">0</span>
+                            <span class="textTotal">/20</span>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="evtTextarea_etc">
+                    <div class="relative">
+                        <textarea rows="3" class="input_basic bder_danger textBox"
+                        required="required"
+                        placeholder="탈퇴 사유를 입력해주세요" maxlength="20" style="height:110px !important;">탈퇴 사유를 입력해주세요</textarea>
+                        <div class="textLengthWrap">
+                            <span class="textCount">13</span>
+                            <span class="textTotal">/20</span>
+                        </div>
+                    </div>
+                    <div class="vaild_txt error">탈퇴 사유를 입력해주세요</div>
+                </div>
+
+                <div class="h40"></div>
+
+    
+
+
+            </section>
+        </main>
+
+        <footer class="page-footer">
+
+            <div class="relative">
+                <a class="waves-effect btn-large btn_primary w100p">탈퇴하기</a>
+            </div>
+
+        </footer>
+
+
+
+
+
+    </div>
+    <!-- wrapper -->
+
+
+
+</body>
+
+</html>

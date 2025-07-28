@@ -1,0 +1,117 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+
+    <title>F_CSR_002_om_age65.html</title>
+
+
+    <!-- jquery -->
+    <script type="text/javascript" src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script type="text/javascript" src="../js/materialize.min.js"></script>
+
+    <!-- guide.js -->
+    <script type="text/javascript" src="../js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="../css/materialize.min.css" />
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <script>
+
+        $(function () {
+
+
+            //시도 지역선택 chip
+            $('.chip_area.c02 li').each(function(){
+
+                $(this).click(function () {
+
+                    //버튼 활성화 클래스변경
+                    $(this).parent('.chip_area.c02').find('li').removeClass('active');
+                    $(this).addClass('active');
+                    $('.evt_btn').removeClass('btn_disable');
+
+                });
+
+
+            });
+
+        });
+
+    </script>
+
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+
+
+        <header>
+            <nav class="top">
+                <a class="btn_back waves-effect" href="#">
+                    <span class="icon"></span> 
+                </a>
+
+
+            </nav>
+        </header>
+
+
+        <main>
+            <section class="intro">
+
+
+                <h3 class="title">
+                    어르신의 연세를 선택해주세요
+                </h3>
+
+                <div class="h40"></div>
+
+
+                <div class="color_t_s font_sbsr">어르신 연세</div>
+
+                <div class="h08"></div>
+                
+                <ul class="chip_area c02 noPad">
+
+                    <li>65세 이상</li>
+                    <li>65세 미만</li>
+                </ul>
+
+                <div class="vaild_txt">{1959년2월13일} 이전에 태어나신 어르신 기준</div> 
+
+
+            </section>
+        </main>
+
+
+        <footer class="page-footer">
+
+            <a class="waves-effect btn-large btn_disable w100p evt_btn">변경하기</a>
+
+        </footer>
+
+
+
+
+
+
+    </div>
+    <!-- wrapper -->
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+
+    <title>F_ALT_002_noti_setting.html</title>
+
+
+    <!-- jquery -->
+    <script type="text/javascript" src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script type="text/javascript" src="../js/materialize.min.js"></script>
+
+    <!-- guide.js -->
+    <script type="text/javascript" src="../js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="../css/materialize.min.css" />
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <script>
+
+        $(function () {
+
+
+            // //전체체크박스 - 혜택 정보 알림
+            // $('.allChk').on('click', function () {
+
+            //     if ($(this).is(':checked') == true) {
+            //         $('.noti_chk :checkbox').prop('checked', true);
+            //     }
+
+            //     else {
+            //         $('.noti_chk :checkbox').prop('checked', false);
+            //     }
+
+            // });
+
+            // //체크박스 전체 체크설정시 혜택 정보 알림 체크
+            // $('.noti_chk :checkbox').click(function(){
+
+            //     var total = $('.noti_chk :checkbox').length; //전체 체크박스 수
+            //     var checked = $('.noti_chk :checkbox:checked').length; //체크된 체크박스 수
+
+            //     if(total != checked){
+
+            //         $('.allChk').prop('checked', false);
+
+            //     }
+            //     else{
+
+            //         $('.allChk').prop('checked', true);
+
+            //     }
+
+            // });
+            
+
+
+        });
+
+    </script>
+
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+
+
+        <header>
+            <nav class="top">
+                <a class="btn_back waves-effect" href="#">
+                    <span class="icon"></span>
+                    <span class="txt">알림설정</span>
+                </a>
+            </nav>
+        </header>
+        <main>
+
+            <section class="default noPad">
+
+                <div class="h12 back_gray"></div>
+
+
+                <div class="padH12W20">
+
+                    <div class="list_normal">
+
+                        <div class="font_sbms">혜택 정보 알림</div>
+                        <div class="switch">
+                            <label>
+                                <input type="checkbox" class="allChk" checked>
+                                <span class="lever"></span>
+                            </label>
+                        </div>
+                   
+                    </div>
+
+                    <div class="color_t_t font_sbsr">이벤트 및 마케팅 정보 등</div>
+    
+                    <div class="h16"></div>
+                    <hr>
+                    <div class="h16"></div>
+   
+
+                    <div class="noti_chk">
+
+
+                        <div class="list_normal">
+    
+                            <div class="font_sbmr">앱푸시</div>
+    
+                            <div class="switch">
+                                <label>
+                                    <input type="checkbox">
+                                    <span class="lever"></span>
+                                </label>
+                            </div>
+                        
+                        </div>
+        
+                        <div class="list_normal">
+        
+                            <div class="font_sbmr">문자</div>
+    
+                            <div class="switch">
+                                <label>
+                                    <input type="checkbox">
+                                    <span class="lever"></span>
+                                </label>
+                            </div>
+                        
+                        </div>
+        
+                        <div class="list_normal">
+        
+                            <div class="font_sbmr">메일</div>
+    
+                            <div class="switch">
+                                <label>
+                                    <input type="checkbox">
+                                    <span class="lever"></span>
+                                </label>
+                            </div>
+                        
+                        </div>
+        
+                        <div class="list_normal">
+        
+                            <div class="font_sbmr">전화</div>
+    
+                            <div class="switch">
+                                <label>
+                                    <input type="checkbox">
+                                    <span class="lever"></span>
+                                </label>
+                            </div>
+                        
+                        </div>
+    
+                        <div class="h12"></div>
+    
+                        <div class="list_normal">
+    
+                            <div class="font_sbms">야간 혜택 동의</div>
+                            <div class="switch">
+                                <label>
+                                    <input type="checkbox" checked>
+                                    <span class="lever"></span>
+                                </label>
+                            </div>
+                       
+                        </div>
+    
+                        <div class="color_t_t font_sbsr">오후 9:00~오전 8:00 알림 발송</div>
+
+
+                    </div>
+                    <!-- noti_chk -->
+    
+
+
+                </div>
+
+
+
+
+            </section>
+        </main>
+
+
+
+    </div>
+    <!-- wrapper -->
+
+
+</body>
+
+</html>

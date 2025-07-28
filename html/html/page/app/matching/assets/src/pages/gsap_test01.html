@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>number counter</title>
+  
+    <!-- jquery -->
+    <script src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script src="../js/materialize.min.js"></script>
+
+    <!-- guide.js -->
+    <script src="../js/custom/guide.js"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+    <!-- ScrollTrigger Plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>    
+
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="../css/materialize.min.css">
+
+    <!-- DEDS-260 202412 AOS 추가 -->
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="../css/style.css">
+
+
+<style>
+
+    .box{width: 100px;height: 100px;}
+    .box1{background-color: orange;}
+    .box2{background-color: aquamarine; transform-origin: 50% 50%;}
+
+</style>
+
+<script>
+    $(function(){
+
+        gsap.fromTo(".box1", 
+            { x: -20 }, // 시작 위치
+            { x: 100, y:100, duration: 1, ease: "power1.in" } // 끝 위치
+        );
+
+    });
+
+
+    $(function(){
+
+        const tl = gsap.timeline({
+            default: {duration: 1},
+            onComplete: function(){
+                //tl.reverse();
+            }
+        })
+
+        tl.to('.box2',{y:100})
+        tl.to('.box2',{x:240})
+        tl.to('.box2',{rotate:180, borderRadius :'50%'})
+        tl.to('body',{backgroundColor: '#000'},"<")
+        tl.to('.box2',{scale: 1.5})
+        tl.to('.box2',{css: {transform: 'scale(5)'}})
+        tl.to('.box2',{backgroundColor : 'tomato'})
+        tl.to('.box2',{opacity : 0.5})
+        tl.to('.box2',{rotationX:180,rotationY:180})
+        tl.to('body',{backgroundColor : '#fff'},'<')
+
+        
+    });
+
+</script>
+
+</head>
+<body>
+    <main>
+
+
+        <div class="box box1"></div>
+        <div class="box box2">sdfdf</div>
+
+    </main>
+</body>
+</html>

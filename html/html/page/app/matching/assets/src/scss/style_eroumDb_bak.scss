@@ -1,0 +1,101 @@
+
+
+
+body{background-color: #eee;}
+
+
+//돌봄앱600px -> 이로움돌봄768px
+@media only screen and (min-width: 600px){
+    nav.top{
+        width: 100%;
+        left:0;
+    }
+    .wrapper{
+        width: 100%;
+    }            
+}
+
+@media only screen and (min-width: 768px){
+
+    nav.top{
+        width: 768px;
+        left: calc(50% - 384px);
+    }
+
+    .wrapper{
+        width: 768px;
+    }
+
+    .modal.fullscreen {
+        width:768px;
+    }
+
+    .modal.bottom-sheet{
+        width:768px;
+        left:calc(50% - 384px);
+    }
+
+
+    .bottom-sheet_handle .content {
+        max-width: 768px;
+    }
+
+}
+
+//카테고리 고정메뉴
+.orderFlxNav{max-width: 768px;}
+
+.footer_mapView{max-width: 768px;}
+
+// ★★★★★확인 후 돌봄앱css 이동예정
+
+//ancher값 조절
+.orderListArea {
+    scroll-margin-top: 104px;
+    
+}
+
+.tableWD_Evt{opacity: 0;transition: 0.2s all;}
+.tableWD_Evt.active{opacity: 1;}
+
+
+/* swiper처리로 기존기능제한 */
+.orderFlxNav{z-index: 98;}
+.orderFlxNav .welfare_swiper{border-bottom: 1px solid #EEE;}
+.orderFlxNav .welfare_swiper ul.tabs_wd{overflow-x: initial;border-bottom: none;}
+.orderFlxNav .welfare_swiper ul.tabs_wd .swiper-slide{width: auto;}
+
+
+
+/* 유튜브화면 16:9 */
+.youtube_size_wrap{
+    max-width: 800px;margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    line-height: 0;
+
+    .thumb_img{position: relative;
+
+        &::after{
+            content: '';
+            position: absolute;
+            display: block;
+            width: 100%;height: 100%;
+            top: 0;left: 0;
+            background: url('../images/youtube/icon_play.png') no-repeat center center;background-size: 90px;}
+    }
+        
+
+
+
+    .youtube_area{
+        position: relative;width: 100%; padding-bottom: 56.25%;
+    
+        iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+}

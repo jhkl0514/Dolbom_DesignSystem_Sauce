@@ -1,0 +1,202 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+  <!-- swiper -->
+<link rel="stylesheet" href="/html/core/vendor/swiperjs/swiper-bundle.min.css" />
+<style>
+
+    /* swipe */
+    .sel_welfare_area .swiper-wrapper {
+        margin: 48px 0;
+        transition-timing-function: linear;
+        }
+
+
+    .sel_welfare_area .swiper-slide {
+        width: 40%;
+        margin-left: 12px;
+        /* width: calc(100% - 40px); */
+        }
+    .sel_welfare_area .sel_box .title{
+        display: flex;
+        justify-content: center;
+
+    }
+
+</style>
+<div class="wrapper">
+	
+    <!-- 상단 뒤로가기 버튼 추가 -->
+    <jsp:include page="/WEB-INF/jsp/app/matching/common/topButton.jsp">
+        <jsp:param value="" name="addButton" />
+        <jsp:param value="놓친 복지용구 받기" name="addTitle" />
+        <jsp:param value="true" name="addHome" /> 
+    </jsp:include>
+
+    <main>
+        <section class="intro bottom_0">
+
+            <h3 class="title marT4">
+                장기요양기관에서<br>${recipient.recipientsNm}님의 요양정보를<br>확인하고 있어요
+            </h3>
+
+            <div class="h20"></div>
+
+            <div class="d-flex align-items-center gap04">
+                <div class="icon_btn i_sert02"></div>    
+                <div class="color_tp_s font_sbsr"><span class="font_sbsb">10~15분</span> 안에 요양정보를 확인할 수 있어요.</div>
+            </div>
+
+
+
+            <!-- Swiper -->
+            <div class="swiper sel_welfare_area marW-20">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="sel_box">
+                            <img src="/html/page/app/matching/assets/src/images/01tool/tool01_01.svg" alt="성인용 보행기">
+                            <div class="title">성인용 보행기</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="sel_box">
+                            <img src="/html/page/app/matching/assets/src/images/01tool/tool01_06.svg" alt="미끄럼방지 양말">
+                            <div class="title">미끄럼방지 양말</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="sel_box">
+                            <img src="/html/page/app/matching/assets/src/images/01tool/tool01_07.svg" alt="욕창예방매트리스">
+                            <div class="title">욕창예방매트리스</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="sel_box">
+                            <img src="/html/page/app/matching/assets/src/images/01tool/tool01_02.svg" alt="수동휠체어">
+                            <div class="title">수동휠체어</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="sel_box">
+                            <img src="/html/page/app/matching/assets/src/images/01tool/tool01_03.svg" alt="지팡이">
+                            <div class="title">지팡이</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="sel_box">
+                            <img src="/html/page/app/matching/assets/src/images/01tool/tool01_04.svg" alt="안전손잡이">
+                            <div class="title">안전손잡이</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="sel_box">
+                            <img src="/html/page/app/matching/assets/src/images/01tool/tool01_05.svg" alt="미끄럼방지 매트">
+                            <div class="title">미끄럼방지 매트</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="sel_box">
+                            <img src="/html/page/app/matching/assets/src/images/01tool/tool01_08.svg" alt="욕창예방방석">
+                            <div class="title">욕창예방방석</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="sel_box">
+                            <img src="/html/page/app/matching/assets/src/images/01tool/tool01_09.svg" alt="자세변환용구">
+                            <div class="title">자세변환용구</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="sel_box">
+                            <img src="/html/page/app/matching/assets/src/images/01tool/tool01_10.svg" alt="요실금팬티">
+                            <div class="title">요실금팬티</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="sel_box ">
+                            <img src="/html/page/app/matching/assets/src/images/01tool/tool01_11.svg" alt="목욕의자">
+                            <div class="title">목욕의자</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="sel_box">
+                            <img src="/html/page/app/matching/assets/src/images/01tool/tool01_12.svg" alt="이동변기">
+                            <div class="title">이동변기</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="sel_box">
+                            <img src="/html/page/app/matching/assets/src/images/01tool/tool01_13.svg" alt="간이변기">
+                            <div class="title">간이변기</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="sel_box">
+                            <img src="/html/page/app/matching/assets/src/images/01tool/tool01_14.svg" alt="경사로(실내용)">
+                            <div class="title">경사로(실내용)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="h12 back_F5F5F5 marW-20"></div>
+
+            <div class="pad020 back_EFF1FD marW-20">
+                
+                <div class="h40"></div>
+                
+                <div class="d-flex justify-content-between">
+                    <h3 class="title">
+                        복지용구<br>
+                        이렇게 이용하세요
+                    </h3>
+                    <img src="/html/page/app/matching/assets/src/images/09people/pp_08.svg" alt="">
+                </div>
+                
+                <a class="input_basic list_link arrow_dis font_sbmr no_bder" onclick="location.href='/matching/bbs/guide/linkview/wfe00001';">
+                    <div>실생활에서는 이렇게! <span class="font_sbmb">욕실</span></div>
+                </a>
+                <div class="input_basic list_link arrow_dis font_sbmr no_bder marT8" onclick="location.href='/matching/bbs/guide/linkview/wfe00002';">
+                    <div>실생활에서는 이렇게! <span class="font_sbmb">거실</span></div>
+                </div>
+                <div class="input_basic list_link arrow_dis font_sbmr no_bder marT8" onclick="location.href='/matching/bbs/guide/linkview/wfe00003';">
+                    <div>실생활에서는 이렇게! <span class="font_sbmb">침실</span></div>
+                </div>
+                <div class="input_basic list_link arrow_dis font_sbmr no_bder marT8" onclick="location.href='/matching/bbs/guide/linkview/wfe00004';">
+                    <div>실생활에서는 이렇게! <span class="font_sbmb">야외</span></div>
+                </div>
+
+                <div class="h40"></div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+    
+</div>
+
+<script src="/html/core/vendor/swiperjs/swiper-bundle.min.js"></script>
+
+<script>
+
+
+    //복지용구 아이콘
+    // ** service.jsp와 설정 값이 다름
+    var swiper = new Swiper(".sel_welfare_area", {
+        autoplay: {
+        delay: 0,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+        },
+        speed:3000,
+
+        loop:true,
+        
+        slidesPerView: "auto",
+        slidesPerGroup: 3,
+        loopedSlides: 1, //noSwiping : true,
+        observer:true, observeParents:true,
+    });
+
+    </script>

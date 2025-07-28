@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>F_SAG_002_welfare_order01.html</title>
+
+
+    <!-- jquery -->
+    <script src="../js/jquery/jquery-3.6.0.min.js"></script>
+
+
+  <!-- materialize -->
+  <script type="text/javascript" src="../js/materialize.js"></script>
+
+    <!-- guide.js -->
+    <script src="../js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="../css/materialize.min.css">
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        .orderFlxNav{position: fixed;width:100%;top: 0;left: 0;z-index: 101;background-color: #fff;
+            overflow-x: auto; white-space: nowrap;
+        }
+    </style>
+    
+    <script>
+
+
+
+        $(function(){
+            //scrollspy
+            $('.scrollspy').scrollSpy({
+                activeClass: 'active',
+                scrollOffset: 50,
+            });
+
+    // 탭 버튼을 자동으로 가로 스크롤하는 함수
+    function scrollToActiveTab() {
+        var activeTab = $('.tabs .active').parent();
+        var tabsContainer = $('.orderFlxNav');
+        
+        if (activeTab.length) {
+            var tabOffset = activeTab.position().left;  // 활성화된 탭의 왼쪽 위치
+            var tabWidth = activeTab.outerWidth();      // 탭의 너비
+            var containerScroll = tabsContainer.scrollLeft(); // 현재 스크롤 위치
+            var containerWidth = tabsContainer.width(); // 탭 컨테이너의 너비
+
+            // 활성화된 탭을 컨테이너 중앙으로 스크롤
+            var scrollTo = containerScroll + tabOffset - (containerWidth / 2) + (tabWidth / 2);
+            tabsContainer.animate({ scrollLeft: scrollTo }, 300); // 애니메이션으로 스크롤 이동
+        }
+    }
+
+    // 스크롤 스파이 이벤트가 발생할 때마다 탭을 스크롤
+    $(window).on('scroll', function() {
+        scrollToActiveTab();
+    });
+
+    // 초기화: 첫 번째 탭으로 스크롤
+    scrollToActiveTab();
+
+        });
+
+
+        
+    </script>
+
+
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+
+
+
+
+
+        <main>
+
+
+
+            <div class="orderFlxNav" style="background-color: rgb(250, 153, 88);">
+
+                <ul class="tabs">
+                    <li class="tab"><a href="#wd1">성인용보행기</a></li>
+                    <li class="tab"><a href="#wd2">수동휠체어</a></li>
+                    <li class="tab"><a href="#wd3">지팡이</a></li>
+                    <li class="tab"><a href="#wd4">안전손잡이</a></li>
+                    <li class="tab"><a href="#wd5">미끄럼방지 양말</a></li>
+                </ul>
+            </div>
+
+
+            <div>
+
+                <div id="wd1" class="scrollspy" style="height:600px;background-color: antiquewhite;">
+                    
+                    <p>성인용 보행기</p>
+                </div>
+                <!--  -->
+                <div id="wd2" class="scrollspy" style="height:600px;background-color: aqua;">
+                    
+                    <p>22성인용 보행기</p>
+                </div>
+                <!--  -->
+                <div id="wd3" class="scrollspy" style="height:600px;background-color: aquamarine;">
+                    
+                    <p>33성인용 보행기</p>
+                </div>
+                <!--  -->
+                <div id="wd4" class="scrollspy" style="height:600px;background-color: chartreuse;">
+                    
+                    44성인용 보행기
+                </div>
+                <!--  -->
+                <div id="wd5" class="scrollspy" style="height:600px;background-color: blue;">
+                    
+                    66성인용 보행기
+                </div>
+                <!-- orderListItem -->
+
+
+
+
+
+
+                
+            </div>
+
+
+
+
+            
+                <a href="#sd01">Introduction</a>
+                <a href="#sd02">Structure</a>
+                <a href="#sd03">Intialization</a>
+            
+            <div>
+                <div id="sd01" class="scrollspy" style="height:600px;background-color: rgb(226, 165, 85);">
+                    <p>Content </p>
+                </div>
+                
+                <div id="sd02" class="scrollspy" style="height:600px;background-color: rgb(152, 255, 215);">
+                    <p>Content </p>
+                </div>
+                
+                <div id="sd03" class="scrollspy" style="height:600px;background-color: rgb(199, 193, 255);">
+                    <p>Content </p>
+                </div>
+            </div>
+
+
+        </main>
+
+
+
+
+
+
+
+
+
+    </div>
+    <!-- wrapper -->
+
+
+
+
+
+</body>
+
+</html>

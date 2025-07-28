@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+
+    <title>GUIDE_002_17_Accordion.html</title>
+
+
+    <!-- jquery -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/jquery/jquery-3.6.0.min.js"></script>
+
+    <!-- materialize -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/materialize.js"></script>
+
+    <!-- guide.js -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guide.js"></script>
+
+    <!-- materialize CSS -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/materialize.min.css" />
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/style.css" />
+
+    <!-- guideStyle_2025.css -->
+    <link rel="stylesheet" href="/html/page/app/matching/assets/src/css/guideStyle_2025.css" />
+
+    <!-- guideStyle_2025.js -->
+    <script type="text/javascript" src="/html/page/app/matching/assets/src/js/custom/guideStyle_2025.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="gs_header">
+
+            <a href="GUIDE_000_index.html" class="logo"><span>돌봄 디자인시스템</span></a>
+
+            <ul class="header_menu">
+                <li><a href="GUIDE_001_Foundation.html">Foundation</a></li>
+                <li><a href="GUIDE_002_Component.html" class="active">Component</a></li>
+                <li><a href="GUIDE_003_AppScreen.html">App Screen</a></li>
+                <li><a href="GUIDE_004_WebScreen.html">Web Screen</a></li>
+                <li><a href="GUIDE_005_StyleGuide.html">Style Guide</a></li>
+                <li class="search"><a href="#"></a></li>
+            </ul>
+
+        </div>
+
+    </header>
+
+    <div class="wrap">
+
+        <main>
+
+
+            <nav class="sidebar">
+                
+                <div class="sidebar_header">
+                    <div class="title_area">
+                        <div class="close_x"></div>
+                    </div>
+                    <div class="sidebar_search">
+                        <input type="text" placeholder="검색어를 입력해 주세요.">
+                        <div class="search">
+                            <a href="#"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="title">Component</h4>
+
+                <div class="sidebar_list">
+                    <ul class="tabs_dept_sidebar">
+                        <li class="tab"><a class="active" title="dept_app">App Screen</a></li>
+                        <li class="tab"><a class="" title="dept_web">Web Screen</a></li>
+                    </ul>
+
+                    <div class="tab_list dept_app" title="siteMap_guide">
+                        <ul class="dept1">
+                            <li><a href="GUIDE_002_Component.html">Button</a></li>
+                            <li><a href="GUIDE_002_02_SelectionControls.html">Selection Controls</a></li>
+                            <li><a href="GUIDE_002_03_Link.html">Link</a></li>
+                            <li><a href="GUIDE_002_04_Chips.html">Chips</a></li>
+                            <li><a href="GUIDE_002_05_TextField.html">TextField</a></li>
+                            
+                            <li><a href="GUIDE_002_06_SelectField.html">SelectField</a></li>
+                            <li><a href="GUIDE_002_07_OptionList.html">OptionList</a></li>
+                            <li><a href="GUIDE_002_08_TopNavigation.html">Top Navigation</a></li>
+                            <li><a href="GUIDE_002_09_BottomNavigation.html">Bottom Navigation</a></li>
+                            <li><a href="GUIDE_002_10_List.html">List</a></li>
+                            
+                            <li><a href="GUIDE_002_11_Popup.html">Popup</a></li>
+                            <li><a href="GUIDE_002_12_BottomSheet.html">BottomSheet</a></li>
+                            <li><a href="GUIDE_002_13_Banner.html">Banner</a></li>
+                            <li><a href="GUIDE_002_14_Tab.html">Tab</a></li>
+                            <li><a href="GUIDE_002_15_NumberStepper.html">Number Stepper</a></li>
+
+                            <li><a href="GUIDE_002_16_TextAreaField.html">TextAreaField</a></li>
+                            <li><a class="active" href="GUIDE_002_17_Accordion.html">Accordion</a></li>
+                            <li><a href="GUIDE_002_18_Progressbar.html">Progressbar</a></li>
+
+                        </ul>
+                    </div>
+
+
+                </div>
+
+
+            </nav>
+
+
+ 
+            <section>
+
+
+                <div class="h48"></div>
+
+                <div class="titleNav">Accordion</div>
+
+                <div class="h24"></div>
+ 
+                <div class="roundBox_01">
+                    아코디언(Accordion)은 섹션의 중요한 세부 사항을 먼저 강조 표시하고 확장되면 더 많은 세부 정보를 표시하여 점진적으로 정보를 공개합니다.  
+                </div>
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Anatomy, 컴포넌트 내부요소</h3>
+
+                <div class="h24"></div>
+
+                <div class="roundBox_01 flex_center h240">
+                    <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_87_01_accordion.svg" alt="">
+                </div>
+
+                <div class="h16"></div>
+
+                <ul class="d-flex gap16 color_t_s font_ssr">
+                    <li>1.Title</li>
+                    <li>2.ArrowDown / UP</li>
+                    <li>3.Contents</li>
+                </ul>
+
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Type, 종류</h3>
+
+                <div class="h24"></div>
+
+                <div class="roundBox_01 noPad back_E0E0E0">
+                    <div class="grid_container">
+                        <div class="item flex_center h220">
+                            <div class="infoFix">
+                                <span class="f_head text">Collapsed</span>
+                                <div>
+                                    <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_88_01_accordion.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item flex_center h220">
+                            <div class="infoFix">
+                                <span class="f_head text">Expended</span>
+                                <div>
+                                    <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_88_02_accordion.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Size, 크기</h3>
+
+                <div class="h24"></div>
+
+                <div class="roundBox_01 noPad back_E0E0E0">
+                    <div class="grid_container">
+                        <div class="item flex_center h220">
+                            <div class="infoFix">
+                                <span class="f_head text">SM</span>
+                                <div>
+                                    <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_88_01_accordion.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item flex_center h220">
+                            <div class="infoFix">
+                                <span class="f_head text">LG</span>
+                                <div>
+                                    <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_89_02_accordion.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Table of Figma Propertie, 피그마 속성</h3>
+
+                <div class="h24"></div>
+
+                <table class="guide_table">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Values</th>
+                            <th>Default Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="color_tp_s font_sbss">Type</span></td>
+                            <td>Collapsed,Expended </td>
+                            <td>Collapsed</td>
+                        </tr>
+                        <tr>
+                            <td><span class="color_tp_s font_sbss">Size</span></td>
+                            <td>SM, LG</td>
+                            <td>SM</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="h52"></div>
+
+                <h3 class="title fw700">Spec, 제작가이드</h3>
+
+                <div class="h24"></div>
+
+                <h5 class="title fw700">헤더 전체를 클릭 가능하도록 만듭니다.</h5>
+
+                <div class="h08"></div>
+
+                <div class="color_tp_s font_sbmr">
+                    상호작용이 가능한 타깃 영역이 클수록 사용자가 더 쉽게 조작할 수 있어야 합니다.
+                    사용자가 패널을 펼치거나 접기 위해 헤더 전체를 클릭할 수 있도록 구현해야 합니다.
+                </div>
+
+                <div class="h24"></div>
+
+                <h5 class="title fw700">아코디언은 기본적으로 첫 번째 영역이 펼쳐진 상태여야 합니다.</h5>
+
+                <div class="h08"></div>
+
+                <div class="color_tp_s font_sbmr">
+                    여러 개의 아코디언이 있는 경우, 가장 처음 위치한 아코디언은 반드시 펼침 상태로 구현해야 합니다.
+                </div>
+
+                <div class="h24"></div>
+
+                <h5 class="title fw700">하나의 아코디언이 펼쳐지면, 기존에 열려 있던 아코디언은 닫혀야 합니다.</h5>
+
+                <div class="h08"></div>
+
+                <div class="color_tp_s font_sbmr">
+                    아코디언은 하나만 펼칠 수 있으며, 다른 항목을 펼치면 기존에 열려 있던 항목은 자동으로 닫혀야 합니다.
+                </div>
+
+                <div class="h16"></div>
+
+
+                <div class="roundBox_01 flex_center">
+                    <div>
+                        <div class="h20"></div>
+                        <img class="disBlock" src="/html/page/app/matching/assets/src/images/100guide/002_component/back_comp_90_01_accordion.svg" alt="">
+                        <div class="h20"></div>
+                    </div>
+                </div>
+
+
+
+                <div class="h100"></div>
+
+            </section>
+
+
+
+        </main>
+
+
+    </div>
+    <!-- wrapper -->
+
+</body>
+
+</html>

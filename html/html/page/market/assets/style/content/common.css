@@ -1,0 +1,25 @@
+@layer components {
+    .scrollbars-content {
+        @apply scrollbars -mx-1.5;
+        & .table-list, & .table-detail {
+            @apply table-auto mx-0 w-auto min-w-full;
+        }
+    }
+    
+    .error {
+        @apply mt-1 text-[0.8125rem]
+               md:text-sm;
+    }
+
+    .text-grade1 {
+        @apply text-[#FE9015];
+    }
+
+    .text-grade2 {
+        @apply text-[#3FA54D];
+    }
+    
+    .text-grade3 {
+        @apply text-[#BF944C];
+    }
+}
